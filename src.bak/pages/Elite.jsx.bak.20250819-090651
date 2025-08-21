@@ -1,0 +1,9 @@
+import React from "react";
+export default function Elite() {
+  return (
+    <div>
+      <h1>⭐ Elite</h1>
+      <p>Premium tools and analytics for elite users.</p>
+    </div>
+  );
+}

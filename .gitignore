@@ -1,0 +1,11 @@
+﻿node_modules/
+build/
+dist/
+.eslintcache
+.cache/
+coverage/
+.DS_Store
+*.log
+.env
+.env.*
+backup-*/

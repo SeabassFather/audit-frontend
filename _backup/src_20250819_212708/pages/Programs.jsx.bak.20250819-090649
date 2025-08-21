@@ -1,0 +1,9 @@
+import React from "react";
+export default function Programs() {
+  return (
+    <div>
+      <h1>📊 Programs</h1>
+      <p>Explore agriculture, water, factoring, mortgage loan, and other funding programs.</p>
+    </div>
+  );
+}
