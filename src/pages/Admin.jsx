@@ -1,13 +1,16 @@
 export default function Admin(){
+  const rows = [
+    {name:"DSAR Workflow", status:"Ready"},
+    {name:"Vendor Reviews", status:"In Progress"},
+    {name:"Policy Pack Generator", status:"Ready"},
+    {name:"KYC/KYB Checklist", status:"Ready"},
+  ];
   return (
     <div className="space-y-4">
       <div className="card">
-        <div className="font-semibold mb-2">Admin Controls</div>
-        <ul className="list-disc ml-5 text-gray-700">
-          <li>Toggle Demo/Live in the navbar (persisted locally).</li>
-          <li>Add compliance dashboards and partners here.</li>
-          <li>Hook to backend later  UI remains functional now.</li>
-        </ul>
+        <div className="text-lg font-semibold">Admin Controls</div>
+        <p className="text-gray-700 mt-2">Compliance toggles & partner integrations.</p>
+        <ul className="list-disc ml-5 mt-2">{rows.map(r=> <li key={r.name}><b>{r.name}</b>: {r.status}</li>)}</ul>
       </div>
     </div>
   );

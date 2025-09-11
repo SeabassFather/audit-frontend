@@ -3,13 +3,11 @@ function Home(){
     <div className="grid md:grid-cols-3 gap-4">
       <div className="md:col-span-2 card">
         <h1 className="text-2xl font-bold">Welcome to AuditDNA</h1>
-        <p className="text-gray-700 mt-2">
-          Unified audits for Agriculture, Mortgage, Compliance, Water/Soil, Finance, and more — over 275+ services.
-        </p>
+        <p className="text-gray-700 mt-2">Unified audits for Agriculture, Mortgage, Compliance, Water/Soil, Finance, and more  over 275+ services.</p>
         <ul className="list-disc ml-5 mt-3 text-gray-700">
           <li>Clean, light theme (no black). Silver/Blue base with Lemon & Spring accents.</li>
-          <li>Demo/Live toggle, Admin controls, Files and DocuSign areas.</li>
-          <li>USDA Pricing module with W1–W26 and 5-year average overlays.</li>
+          <li>USDA Pricing with W1W26 + 5-year average overlay.</li>
+          <li>Services catalog + Admin area.</li>
         </ul>
       </div>
       <div className="card">
