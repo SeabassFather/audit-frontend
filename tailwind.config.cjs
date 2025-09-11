@@ -1,23 +1,23 @@
-/** @type {import('tailwindcss').Config} */
+﻿/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
+  content: ["./index.html","./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       colors: {
-        brand: {
-          50: '#f3faff',
-          100: '#e6f3ff',
-          200: '#cfe8ff',
-          300: '#a9d6ff',
-          400: '#7bbdff',
-          500: '#4ca4ff',
-          600: '#1e8cff',
-          700: '#0b74e6',
-          800: '#075cb4',
-          900: '#064a8f'
-        }
-      }
+        silver: {
+          DEFAULT: "#c9d1d9",
+          100: "#eff2f4",
+          200: "#e2e6ea",
+          300: "#cfd6dd",
+          400: "#b7c3ce"
+        },
+        ocean:  { DEFAULT: "#2b6cb0", 600: "#2269c7", 700: "#1b57a4" },
+        lemon:  { DEFAULT: "#ffd95e" },
+        spring: { DEFAULT: "#38b96f" }
+      },
+      boxShadow: { soft: "0 10px 25px rgba(0,0,0,.08)" },
+      borderRadius: { xl2: "1.25rem" }
     }
   },
-  plugins: [],
+  plugins: []
 };
