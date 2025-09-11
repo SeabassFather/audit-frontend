@@ -1,24 +1,24 @@
-﻿{
-    "version":  "1.0.0",
-    "name":  "auditdna-ui-clean",
-    "scripts":  {
-                    "preview":  "vite preview",
-                    "build":  "vite build",
-                    "dev":  "vite"
-                },
-    "devDependencies":  {
-                            "@vitejs/plugin-react-swc":  "^3.7.1",
-                            "autoprefixer":  "^10.4.20",
-                            "vite":  "^5.4.10",
-                            "postcss":  "^8.4.47",
-                            "tailwindcss":  "^3.4.10"
-                        },
-    "type":  "module",
-    "dependencies":  {
-                         "react-router-dom":  "^6.27.0",
-                         "react":  "^18.3.1",
-                         "recharts":  "^2.12.7",
-                         "react-dom":  "^18.3.1"
-                     },
-    "private":  true
+{
+  "name": "auditdna-ui-clean",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.27.0",
+    "recharts": "^2.12.7"
+  },
+  "devDependencies": {
+    "vite": "^5.4.10",
+    "@vitejs/plugin-react-swc": "^3.7.1",
+    "tailwindcss": "^3.4.10",
+    "postcss": "^8.4.47",
+    "autoprefixer": "^10.4.20"
+  }
 }
