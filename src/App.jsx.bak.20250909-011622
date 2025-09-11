@@ -1,0 +1,30 @@
+import React from "react";
+
+export default function App() {
+  let hasTailwind = false;
+  try {
+    const v = getComputedStyle(document.documentElement)
+      .getPropertyValue("--tw-ring-offset-shadow");
+    hasTailwind = v !== "";
+  } catch {}
+
+  return (
+    <div className="fallback-wrap">
+      <div className="fallback-card">
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12 }}>
+          <h1 style={{ margin: 0 }}>✅ AuditDNA UI is running</h1>
+          <span className="badge">{hasTailwind ? "Tailwind OK" : "Plain CSS fallback"}</span>
+        </div>
+        <p style={{ marginTop: 12 }}>
+          If you see <strong>Tailwind OK</strong>, your PostCSS/Tailwind pipeline is working.
+          If you see <strong>Plain CSS fallback</strong>, the app still renders while we finish CSS wiring.
+        </p>
+        <ul style={{ marginTop: 8 }}>
+          <li>Home page renders from <code>src/App.jsx</code></li>
+          <li>Entry mounts from <code>src/main.jsx</code></li>
+          <li>Global styles: <code>src/styles.css</code></li>
+        </ul>
+      </div>
+    </div>
+  );
+}

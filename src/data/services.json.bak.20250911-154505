@@ -1,0 +1,27 @@
+[
+  {
+    "id":"agri",
+    "title":"Agriculture & Produce",
+    "items":[
+      {"id":"usda-prices","name":"USDA Price Overlays","desc":"W1W26 weekly pricing with 5yr avg","tags":["USDA","AMS","NASS","Charts"]},
+      {"id":"marketplace","name":"Ag Marketplace","desc":"Buyer  Grower matching","tags":["Search","Compare"]},
+      {"id":"factoring","name":"Factoring & Trade Finance","desc":"Cashflow for shipments","tags":["Finance","Risk"]}
+    ]
+  },
+  {
+    "id":"mortgage",
+    "title":"Mortgage & RealEstate",
+    "items":[
+      {"id":"mortgage-search","name":"Mortgage Search Engine","desc":"Filter by FICO, LTV, DSCR","tags":["TRID","ECOA","NMLS"]},
+      {"id":"cross-border","name":"CrossBorder Lending","desc":"U.S. buyers purchasing in MX","tags":["Compliance","KYC"]}
+    ]
+  },
+  {
+    "id":"compliance",
+    "title":"Compliance & Legal",
+    "items":[
+      {"id":"global-privacy","name":"Global Privacy Dashboard","desc":"CCPA/GLBA/GDPR/PIPEDA etc.","tags":["Policy","Legal"]},
+      {"id":"audits","name":"CPA/Attorney/Insurance Audits","desc":"Standardized audit packs","tags":["Audit","Risk"]}
+    ]
+  }
+]

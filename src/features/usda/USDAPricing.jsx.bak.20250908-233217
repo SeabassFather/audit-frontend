@@ -1,0 +1,85 @@
+// src/features/usda/USDAPricing.jsx
+import React, { useMemo, useState } from "react";
+import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, CartesianGrid } from "recharts";
+
+const COMMODITIES = [
+  { id: "papaya", label: "Papaya" },
+  { id: "oranges", label: "Oranges (Navel)" },
+  { id: "oranges-valencia", label: "Oranges (Valencia)" },
+  { id: "avocado", label: "Avocado (Hass)" },
+  { id: "tomato-roma", label: "Tomato (Roma)" }
+];
+
+function generateSeries(seed = 100, vol = 12) {
+  const rng = (i) => (Math.sin(i * 12.9898) * 43758.5453) % 1;
+  return Array.from({ length: 52 }, (_, i) => {
+    const noise = (rng(i) - 0.5) * vol;
+    return Math.max(0, +(seed + noise + (i % 13) - 6).toFixed(2));
+  });
+}
+
+function synthesizeCommodity(commodityId) {
+  const base = {
+    papaya: 22,
+    oranges: 28,
+    "oranges-valencia": 26,
+    avocado: 38,
+    "tomato-roma": 14,
+  }[commodityId] || 20;
+
+  const now = new Date();
+  const curYear = now.getFullYear();
+  const years = [curYear - 4, curYear - 3, curYear - 2, curYear - 1, curYear];
+  const series = years.map((y, idx) => ({ year: y, data: generateSeries(base + idx * 1.2) }));
+
+  const rows = Array.from({ length: 52 }, (_, i) => {
+    const row = { week: i + 1 };
+    series.forEach(({ year, data }) => { row[year] = data[i]; });
+    return row;
+  });
+  return { years, rows };
+}
+
+export default function USDAPricing() {
+  const [commodity, setCommodity] = useState(COMMODITIES[0].id);
+  const { years, rows } = useMemo(() => synthesizeCommodity(commodity), [commodity]);
+
+  return (
+    <div className="rounded-2xl border border-emerald-300 bg-emerald-50 p-4">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-3">
+        <h2 className="text-lg font-semibold text-slate-800">USDA Pricing  5-Year Overlay</h2>
+        <div className="flex items-center gap-2">
+          <label className="text-sm text-slate-600">Commodity</label>
+          <select
+            className="rounded-lg border border-slate-300 bg-white px-3 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-300"
+            value={commodity}
+            onChange={(e) => setCommodity(e.target.value)}
+          >
+            {COMMODITIES.map((c) => (
+              <option key={c.id} value={c.id}>{c.label}</option>
+            ))}
+          </select>
+        </div>
+      </div>
+
+      <div className="h-80 w-full">
+        <ResponsiveContainer width="100%" height="100%">
+          <LineChart data={rows} margin={{ top: 8, right: 16, left: 0, bottom: 8 }}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="week" tickFormatter={(w) => `W${w}`} />
+            <YAxis tickFormatter={(v) => `$${v}`}/>
+            <Tooltip formatter={(v) => `$${v}`}/>
+            <Legend />
+            {years.map((y) => (
+              <Line key={y} type="monotone" dataKey={y} dot={false} strokeWidth={2} />
+            ))}
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
+
+      <p className="mt-3 text-xs text-slate-600">
+        Placeholder data shown. Next step: wire to USDA/AMS data endpoint and compute 5-year averages with W1W26 summaries.
+      </p>
+    </div>
+  );
+}
