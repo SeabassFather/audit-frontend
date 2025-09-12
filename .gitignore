@@ -6,3 +6,7 @@ dist
 
 # Local Netlify folder
 .netlify
+
+!dist/
+
+!netlify/functions/

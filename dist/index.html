@@ -1,0 +1,23 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>AuditDNA</title><link rel="icon" href="data:,"><link rel="stylesheet" href="./styles.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+</head><body>
+<header class="topbar"><div class="container"><div class="brand">AuditDNA</div>
+<nav class="nav">
+  <a data-route="exec" href="#/exec">Executive</a>
+  <a data-route="mortgage" href="#/mortgage">Mortgage</a>
+  <a data-route="usda" href="#/usda">USDA</a>
+  <a data-route="factoring" href="#/factoring">Factoring</a>
+  <a data-route="services" href="#/services">Services</a>
+  <a data-route="legal" href="#/legal">Legal</a>
+  <a data-route="admin" href="#/admin">Admin</a>
+  <button id="cmdk" class="btn small">K</button>
+</nav></div></header>
+<main class="container"><div id="app"></div></main>
+<div id="toasts" class="toasts"></div>
+<div id="palette" class="palette hidden"><div class="pal-box">
+  <input id="pal-input" class="input" placeholder="Type a command"><div id="pal-list" class="pal-list"></div>
+</div></div>
+<script src="./app.js"></script></body></html>
