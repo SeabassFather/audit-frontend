@@ -24,6 +24,7 @@ async function ghPut(path, content, message){
   return true;
 }
 
+/* ---------------- CSV helpers ---------------- */
 function csvParse(text){
   const rows = text.trim().split(/\r?\n/).map(line=>{
     let out=[], cur="", q=false; for(let i=0;i<line.length;i++){ const ch=line[i];
@@ -31,49 +32,75 @@ function csvParse(text){
       else if(ch===',' && !q){ out.push(cur); cur=""; } else cur+=ch;
     } out.push(cur); return out;
   });
-  const head = rows.shift().map(h=>h.trim().toLowerCase());
-  return rows.filter(r=>r.length && r.some(x=>x!=="")).map(r=>Object.fromEntries(head.map((h,i)=>[h,(r[i]??"").trim()])));
+  const head = rows.shift().map(h=>h.trim());
+  return rows.filter(r=>r.length && r.some(x=>x!=="")).map(r=>Object.fromEntries(head.map((h,i)=>[h.trim(),(r[i]??"").trim()])));
 }
+function num(v){ if(v==null||v==="") return 0; const s=String(v).toLowerCase().replace(/[\$,_%\s]/g,""); if(s.includes("k")) return Number(s.replace("k",""))*1000; if(s.includes("m")) return Number(s.replace("m",""))*1_000_000; return Number(s); }
+
+/* ---------- mapping per type ---------- */
 function csvToDomain(type, rows){
   if(type==="commodities"){
     const map={}; rows.forEach(r=>{
-      const name=(r.commodity||r.name||"").trim(); const w=Number(r.week); const price=Number(r.price); const avg5 = r.avg5!==undefined? Number(r.avg5) : null;
+      const name=(r.commodity||r.name||"").trim(); const w=Number(r.week); const price=num(r.price); const avg5 = r.avg5!==undefined? num(r.avg5) : null;
       if(!name || !(w>=1 && w<=26) || Number.isNaN(price)) return;
       (map[name] ||= []).push({ week:w, price, ...(avg5!=null?{avg5}:{}) });
     }); for(const k in map) map[k].sort((a,b)=>a.week-b.week); return map;
   }
   if(type==="loans"){
-    return rows.map(r=>({ id:r.id, borrower:r.borrower, product:r.product, ltv:+r.ltv||0, fico:+r.fico||0, dti:+r.dti||0, stage:r.stage, status:r.status, close:r.close, amt:+r.amt||0 }))
-               .filter(x=>x.id && x.borrower);
+    const std = ["id","borrower","product","lender","state","purpose","ltv","fico","dti","stage","status","close","amt"];
+    return rows.map(r=>{
+      const o={
+        id:r.id, borrower:r.borrower, product:r.product,
+        lender:r.lender, state:r.state, purpose:r.purpose,
+        ltv:num(r.ltv)||0, fico:num(r.fico)||0, dti:num(r.dti)||0,
+        stage:r.stage, status:r.status, close:r.close, amt:num(r.amt)||0
+      };
+      // pass through any extra columns (rate, apr, term, occupancy, etc.)
+      for(const k of Object.keys(r)){ if(!std.includes(k)) o[k]=r[k]; }
+      return o;
+    }).filter(x=>x.id && x.borrower);
   }
   if(type==="issues"){
     return rows.map(r=>({ id:r.id, title:r.title, severity:r.severity, owner:r.owner, due:r.due, status:r.status }))
                .filter(x=>x.id && x.title);
   }
   if(type==="services"){
-    // id,title,domain,description,tags,status,slug
     return rows.map(r=>({
       id:r.id, title:r.title, domain:r.domain, description:r.description,
       tags:(r.tags||"").split(/[;,]/).map(s=>s.trim()).filter(Boolean),
       status:r.status||"Active", slug:r.slug||String(r.title||"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"")
     })).filter(x=>x.id && x.title);
   }
+  if(type==="factoring"){
+    return rows.map(r=>({
+      id:r.id, debtor:r.debtor, lender:r.lender, state:r.state, industry:r.industry,
+      amount:num(r.amount)||0, advance:num(r.advance)||0, fee:num(r.fee)||0,
+      term:r.term, recourse:(String(r.recourse||"").toLowerCase().startsWith("y")||String(r.recourse||"").toLowerCase()==="true"),
+      aging:num(r.aging)||0, risk:num(r.risk)||0, status:r.status
+    })).filter(x=>x.id && x.debtor);
+  }
+  if(type==="rules"){
+    return rows.map(r=>({
+      id:r.id, name:r.name, lender:r.lender,
+      min_fico: num(r.min_fico)||0, max_ltv: num(r.max_ltv)||100, max_dti: num(r.max_dti)||100,
+      min_amt: num(r.min_amt)||0, max_amt: num(r.max_amt)||9e15,
+      states: (r.states||"").split(/[,\s;|]+/).map(s=>s.trim()).filter(Boolean),
+      products: (r.products||"").split(/[,\s;|]+/).map(s=>s.trim()).filter(Boolean),
+      purposes: (r.purposes||"").split(/[,\s;|]+/).map(s=>s.trim()).filter(Boolean),
+      occupancy: (r.occupancy||"").split(/[,\s;|]+/).map(s=>s.trim()).filter(Boolean),
+      notes:r.notes||""
+    })).filter(x=>x.id && x.name);
+  }
   return rows;
 }
 
-/* ====== USER'S USDA ALGORITHM WIRED TO API ======
-   Query: /data?type=commodities&source=algo&commodities=A,B,C&weeks=26
-   Uses: base = 20 + (abs(hash(name)) % 30)
-         amp  = 5 + (abs(hash(name+"amp")) % 12)   // 5..16
-         avg5 = base-2 with phase-shift sine
-         noise(w,seed) = (hash(seed+":"+w) % 7) - 3
-================================================== */
+/* ====== USDA ALGO (your code) ====== */
 function hash(s){ let h=0; for(let i=0;i<s.length;i++){ h=((h<<5)-h)+s.charCodeAt(i); h|=0;} return h; }
 function noise(w, seed){ return ((hash(seed+":"+w)%7)-3); }
 function round(n){ return Math.round(n*100)/100; }
 function genSeries(name, weeks=26){
   const base = 20 + (Math.abs(hash(name)) % 30);
-  const amp = 5 + (Math.abs(hash(name+"amp")) % 12);
+  const amp = 5 + (Math.abs(hash(name+"amp")) % 12); // 5..16
   const avg = base - 2;
   return Array.from({length:weeks}, (_,i)=>{
     const w=i+1;
@@ -92,9 +119,9 @@ exports.handler = async (event)=>{
 
     const qs = event.queryStringParameters||{};
     const type = (qs.type||"").toLowerCase();
-    if(!["loans","issues","commodities","dsar","services"].includes(type)) return res(400,{error:"type must be loans|issues|commodities|dsar|services"});
+    if(!["loans","issues","commodities","dsar","services","factoring","rules"].includes(type)) return res(400,{error:"bad type"});
 
-    // DSAR create/list
+    // DSAR
     if(type==="dsar"){
       if(event.httpMethod==="POST"){
         const payload = JSON.parse(event.body||"{}");
@@ -113,7 +140,7 @@ exports.handler = async (event)=>{
       return res(405,{error:"method"});
     }
 
-    // Commodities: algorithmic mode using your code
+    // USDA algo mode
     if(type==="commodities" && String(qs.source||"").toLowerCase().startsWith("algo")){
       const list = (qs.commodities||"Avocado,Papaya,Orange,Lemon,Tomato,Onion,Corn,Carrot,Apple,Potato")
         .split(",").map(s=>s.trim()).filter(Boolean).slice(0,50);
@@ -122,7 +149,14 @@ exports.handler = async (event)=>{
       return res(200, map);
     }
 
-    const pathMap = { loans:"data/loans.json", issues:"data/issues.json", commodities:"data/commodities.json", services:"data/services.json" };
+    const pathMap = {
+      loans:"data/loans.json",
+      issues:"data/issues.json",
+      commodities:"data/commodities.json",
+      services:"data/services.json",
+      factoring:"data/factoring.json",
+      rules:"data/rules.json"
+    };
     const path = pathMap[type];
 
     if(event.httpMethod==="GET"){
@@ -140,30 +174,29 @@ exports.handler = async (event)=>{
       return res(200,{ok:true});
     }
 
-    // JSON upserts/patch
+    // JSON patch (upsert/delete, plus commodities put-map)
     if(event.httpMethod==="PATCH"){
       const body = event.body? JSON.parse(event.body) : {};
       const op = body.op||"";
       const got = await ghGet(path);
       let cur = got ? JSON.parse(got.text) : (type==="commodities"? {} : []);
-      if(type==="commodities"){
-        if(op==="put-map"){ cur = body.map||{}; }
-      } else {
+      if(type==="commodities"){ if(op==="put-map"){ cur = body.map||{}; } }
+      else {
         if(op==="upsert"){
           const item = body.item||{};
-          const idx = cur.findIndex(x=>String(x.id)===String(item.id));
-          if(idx>=0) cur[idx] = item; else cur.push(item);
+          const idx = Array.isArray(cur) ? cur.findIndex(x=>String(x.id)===String(item.id)) : -1;
+          if(idx>=0) cur[idx]=item; else (Array.isArray(cur)? cur.push(item) : (cur=[item]));
         }
         if(op==="delete"){
           const id = String(body.id||"");
-          cur = cur.filter(x=>String(x.id)!==id);
+          if(Array.isArray(cur)) cur = cur.filter(x=>String(x.id)!==id);
         }
       }
       await ghPut(path, JSON.stringify(cur,null,2), `Patch ${type} ${op}`);
       return res(200,{ok:true});
     }
 
-    // JSON replace
+    // Replace JSON
     if(event.httpMethod==="POST" || event.httpMethod==="PUT"){
       const body = event.body? JSON.parse(event.body) : {};
       await ghPut(path, JSON.stringify(body,null,2), `Replace ${type}`);
