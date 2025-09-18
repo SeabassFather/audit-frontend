@@ -1,0 +1,35 @@
+import { Routes, Route, Link } from "react-router-dom";
+import Home from "./pages/Home";
+import Services from "./pages/Services";
+import Auditing from "./pages/Auditing";
+import Compliance from "./pages/Compliance";
+import Pricing from "./pages/Pricing";
+import Mortgage from "./pages/Mortgage";
+import Factoring from "./pages/Factoring";
+
+export default function App(){
+  return (
+    <div>
+      <nav className="flex gap-6 p-4 bg-dnaBlue text-white">
+        <Link to="/">Home</Link>
+        <Link to="/services">Services</Link>
+        <Link to="/auditing">Auditing</Link>
+        <Link to="/compliance">Compliance</Link>
+        <Link to="/pricing">USDA Pricing</Link>
+        <Link to="/mortgage">Mortgage</Link>
+        <Link to="/factoring">Factoring</Link>
+      </nav>
+      <div className="p-6">
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/services" element={<Services/>}/>
+          <Route path="/auditing" element={<Auditing/>}/>
+          <Route path="/compliance" element={<Compliance/>}/>
+          <Route path="/pricing" element={<Pricing/>}/>
+          <Route path="/mortgage" element={<Mortgage/>}/>
+          <Route path="/factoring" element={<Factoring/>}/>
+        </Routes>
+      </div>
+    </div>
+  );
+}

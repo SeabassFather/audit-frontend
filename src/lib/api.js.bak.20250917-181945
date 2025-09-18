@@ -1,0 +1,6 @@
+const BASE = import.meta.env.VITE_API_BASE || 'http://localhost:5050';
+export async function getWeeklyPrices(commodity='avocado'){
+  const res = await fetch(${BASE}/api/usda/prices?commodity=);
+  if (!res.ok) throw new Error(HTTP );
+  return res.json();
+}

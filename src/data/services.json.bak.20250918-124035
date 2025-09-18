@@ -1,0 +1,84 @@
+{
+  "version": "1.0.0",
+  "updated": "2025-09-18T12:33:08Z",
+  "categories": [
+    {
+      "id": "business",
+      "title": "Business & Commercial",
+      "items": [
+        {"id": "biz-llc-formation", "name": "LLC / Entity Formation", "tags":["filings","secretary of state"], "desc":"Fast-track entity setup with EIN and registered agent options."},
+        {"id": "biz-factoring", "name": "Accounts Receivable Factoring", "tags":["cash flow","produce"], "desc":"Advance rates and same-day funding for growers/exporters."},
+        {"id": "biz-kyc-aml", "name": "KYC / AML Screening", "tags":["compliance"], "desc":"Sanctions, PEP, adverse media checks with audit trail."},
+        {"id": "biz-cross-border", "name": "Cross-Border Trade Onboarding", "tags":["US-MX","customs"], "desc":"US-MX importer setup, customs broker handoff, USDA holds review."}
+      ]
+    },
+    {
+      "id": "legal",
+      "title": "Legal & Regulatory",
+      "items": [
+        {"id": "legal-nda", "name": "Mutual NDA & Doc Vault", "tags":["contracts"], "desc":"One-click NDA issue + secure uploads for counterparties."},
+        {"id": "legal-privacy", "name": "Privacy Policy (US/EU/UK/CA/AU/SG)", "tags":["GDPR","CCPA"], "desc":"Internationalized privacy baseline mapped to jurisdictions."},
+        {"id": "legal-terms", "name": "Terms of Service Generator", "tags":["SaaS"], "desc":"Service-tiered ToS with arbitration & governing law options."},
+        {"id": "legal-udsa-brief", "name": "USDA Regulatory Briefing Kit", "tags":["USDA","AMS"], "desc":"Commodity labeling, inspection, and W1-W26 pricing guidance."}
+      ]
+    },
+    {
+      "id": "mortgage",
+      "title": "Mortgage & Real Estate",
+      "items": [
+        {"id": "mtg-search", "name": "Mortgage Search (US/MX)", "tags":["leasehold","DSCR"], "desc":"Lender matching including Mexico leaseholds (structure-only)."},
+        {"id": "mtg-heloc", "name": "2nd Liens / HELOC", "tags":["home equity"], "desc":"Standalone and piggyback options with instant pricing hooks."},
+        {"id": "mtg-valuation", "name": "Property Valuation Tools", "tags":["AVM"], "desc":"Comparable search, rent rolls, and NOI calculators."}
+      ]
+    },
+    {
+      "id": "agriculture",
+      "title": "Agriculture & USDA",
+      "items": [
+        {"id": "ag-usda-prices", "name": "USDA Price Explorer", "tags":["W1-W26","5yr avg"], "desc":"Commodity charts with weekly overlays and 5-year average."},
+        {"id": "ag-lab-uploads", "name": "Water/Soil Lab Uploads", "tags":["eco","compliance"], "desc":"PDF/CSV ingestion, trend charts, outlier flags."},
+        {"id": "ag-trace", "name": "Traceability & Lot QA", "tags":["ERP"], "desc":"Harvest → packout chain, QR labels, recall readiness."}
+      ]
+    },
+    {
+      "id": "finance",
+      "title": "Finance & Insurance",
+      "items": [
+        {"id": "fin-accounts", "name": "Treasury / Accounts Setup", "tags":["banking"], "desc":"Multi-currency, wires, FX quotes, signers & limits."},
+        {"id": "fin-insurance", "name": "Cargo & Liability Insurance", "tags":["marine","COI"], "desc":"Binders, endorsements, and claim pathways."}
+      ]
+    },
+    {
+      "id": "medical",
+      "title": "Medical & Benefits",
+      "items": [
+        {"id": "med-network", "name": "Provider Network Lookup", "tags":["PPO","intl"], "desc":"US/MX cross-border providers and out-of-network guidance."},
+        {"id": "med-claims", "name": "Claims Review & Appeals", "tags":["EOB"], "desc":"Automated EOB parsing, denials insight, appeal templates."}
+      ]
+    },
+    {
+      "id": "education",
+      "title": "Education & Training",
+      "items": [
+        {"id": "edu-compliance-101", "name": "Compliance 101", "tags":["new hire"], "desc":"Interactive onboarding for privacy, security, ethics."},
+        {"id": "edu-trade", "name": "US-MX Trade Primer", "tags":["import/export"], "desc":"Docs, duties, inspections, and financing options."}
+      ]
+    },
+    {
+      "id": "travel",
+      "title": "Travel & Identity",
+      "items": [
+        {"id": "trav-visa", "name": "Visa & Entry Guide", "tags":["tourist","work"], "desc":"Country-specific rules, insurance, safety checklist."},
+        {"id": "trav-sos", "name": "Emergency SOS Pack", "tags":["consulate"], "desc":"Embassy contacts, legal aid, secure data wallet."}
+      ]
+    },
+    {
+      "id": "consumer",
+      "title": "Consumer & Marketplace",
+      "items": [
+        {"id": "con-translate", "name": "Document Translation", "tags":["spanish","english"], "desc":"Certified translations with notarization options."},
+        {"id": "con-disputes", "name": "Consumer Dispute Hub", "tags":["credit","billing"], "desc":"Bureau disputes, chargebacks, identity theft kit."}
+      ]
+    }
+  ]
+}

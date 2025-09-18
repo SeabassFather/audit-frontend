@@ -1,0 +1,19 @@
+const deals = [
+  {debtor:"Grower A", amount:200000, advance:"80%", fee:"2%", status:"Active"},
+  {debtor:"Grower B", amount:150000, advance:"75%", fee:"2.5%", status:"Pending"}
+];
+export default function Factoring(){
+  return (
+    <div>
+      <h1 className="text-2xl font-bold">Produce Factoring</h1>
+      <table className="table-auto border mt-4">
+        <thead><tr><th>Debtor</th><th>Amount</th><th>Advance</th><th>Fee</th><th>Status</th></tr></thead>
+        <tbody>
+          {deals.map((d,i)=>
+            <tr key={i}><td>{d.debtor}</td><td>${d.amount.toLocaleString()}</td><td>{d.advance}</td><td>{d.fee}</td><td>{d.status}</td></tr>
+          )}
+        </tbody>
+      </table>
+    </div>
+  );
+}

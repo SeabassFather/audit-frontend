@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --card-bg: #ffffff; }
+
+body { font-family: ui-sans-serif, system-ui; }
+
+.container { max-width: 1200px; margin: 0 auto; }
+.card { background: var(--card-bg); border-radius: 1rem; box-shadow: theme("boxShadow.card"); }

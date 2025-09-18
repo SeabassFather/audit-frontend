@@ -1,0 +1,18 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./index.html','./src/**/*.{js,jsx,ts,tsx}'],
+  theme: {
+    extend: {
+      colors:{
+        silver:'#d7dde8',
+        softblue:'#c8e0ff',
+        lime:'#b6f09c',
+        softyellow:'#fff5b1'
+      },
+      backgroundImage:{
+        'auditdna-gradient':'linear-gradient(135deg,#f7fbff 0%, #eaf4ff 40%, #f9ffef 100%)'
+      }
+    }
+  },
+  plugins: []
+}

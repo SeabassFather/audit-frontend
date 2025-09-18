@@ -1,0 +1,69 @@
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import data from '../data/services.json';
+
+export default function Services(){
+  const [filter,setFilter]=useState('');
+  const [tag,setTag]=useState('');
+  const [open,setOpen]=useState(new Set());
+
+  const toggle=(id)=>{
+    const next=new Set(open);
+    if(next.has(id)) next.delete(id); else next.add(id);
+    setOpen(next);
+  };
+
+  const results=(data.categories||[]).map(cat=>{
+    const items=(cat.items||[]).filter(i=>{
+      const matchText=!filter || [i.name,i.desc,(i.tags||[]).join(' ')].join(' ').toLowerCase().includes(filter.toLowerCase());
+      const matchTag=!tag || (i.tags||[]).map(t=>t.toLowerCase()).includes(tag.toLowerCase());
+      return matchText && matchTag;
+    });
+    return {...cat,items};
+  });
+
+  const tags=[...new Set(results.flatMap(c=>c.items?.flatMap(i=>i.tags||[])||[]))].sort();
+
+  return (
+    <div className='card'>
+      <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',gap:12,flexWrap:'wrap'}}>
+        <h2 style={{margin:0}}>Services</h2>
+        <div style={{display:'flex',gap:8,alignItems:'center'}}>
+          <input className='input' placeholder='Search services...' value={filter} onChange={e=>setFilter(e.target.value)} style={{minWidth:240}}/>
+          <select className='select' value={tag} onChange={e=>setTag(e.target.value)}>
+            <option value=''>All tags</option>
+            {tags.map(t=><option key={t} value={t}>{t}</option>)}
+          </select>
+          <button className='btn' onClick={()=>{setFilter('');setTag('')}}>Clear</button>
+        </div>
+      </div>
+
+      <div style={{marginTop:16}}>
+        {results.map(cat=>(
+          <div key={cat.id} style={{border:'1px solid #ddd',borderRadius:8,marginBottom:10,overflow:'hidden'}}>
+            <button onClick={()=>toggle(cat.id)} style={{width:'100%',padding:'12px',textAlign:'left',background:'#f1f5f9',border:0,cursor:'pointer',fontWeight:600}}>
+              {cat.title} <span style={{float:'right',opacity:.7}}>{cat.items?.length||0} items</span>
+            </button>
+            {open.has(cat.id) && (
+              <div style={{padding:'10px 14px',background:'#fff'}}>
+                <div className='grid' style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(220px,1fr))',gap:10}}>
+                  {(cat.items||[]).map(it=>(
+                    <Link key={it.id} to={'/service/'+it.id} style={{textDecoration:'none',color:'inherit'}}>
+                      <div className='card' style={{padding:12}}>
+                        <div style={{fontWeight:600}}>{it.name}</div>
+                        <div style={{fontSize:13,color:'#475569'}}>{it.desc}</div>
+                        <div style={{marginTop:6,display:'flex',gap:6,flexWrap:'wrap'}}>
+                          {(it.tags||[]).map(t=><span key={t} className='badge' style={{cursor:'pointer',background:'#e2e8f0',padding:'2px 6px',borderRadius:4,fontSize:12}} onClick={e=>{e.preventDefault();setTag(t)}}>{t}</span>)}
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}

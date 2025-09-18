@@ -1,34 +1,47 @@
-import data from "../data/services.json";
-import { useState, useMemo } from "react";
+import { useState } from "react";
+import byCat from "../data/services.byCategory.json";
 
 export default function Services(){
   const [q,setQ] = useState("");
-  const filtered = useMemo(()=>{
-    const t=q.trim().toLowerCase();
-    if(!t) return data;
-    return data.map(c=>({...c, items:c.items.filter(s=> s.name.toLowerCase().includes(t) || (s.tags||[]).some(x=>x.toLowerCase().includes(t)))}))
-               .filter(c=>c.items.length>0);
-  },[q]);
+  const [open,setOpen] = useState({});
+  const cats = Object.keys(byCat);
+  const filter = (s)=> s.name.toLowerCase().includes(q.toLowerCase())
+    || (s.tags||[]).join(" ").toLowerCase().includes(q.toLowerCase());
+
   return (
-    <div className="space-y-4">
-      <div className="card">
-        <label className="text-sm text-gray-600">Filter</label>
-        <input className="w-full border border-silver-300 rounded-xl2 px-3 py-2" value={q} onChange={e=>setQ(e.target.value)} placeholder="Type to filter services..." />
+    <div>
+      <h1 className="text-2xl font-bold mb-4">AuditDNA Services</h1>
+      <input value={q} onChange={e=>setQ(e.target.value)} placeholder="Search by name or tag..." className="border p-2 w-full mb-4 rounded"/>
+      <div className="space-y-3">
+        {cats.map(cat=>{
+          const list = byCat[cat].filter(filter);
+          const isOpen = open[cat] ?? true;
+          return (
+            <div key={cat} className="card">
+              <button onClick={()=>setOpen({...open,[cat]:!isOpen})}
+                      className="w-full flex items-center justify-between px-4 py-3 rounded-t bg-dnaBlue text-white">
+                <span className="font-semibold">{cat}</span>
+                <span>{isOpen ? "−" : "+"}</span>
+              </button>
+              {isOpen && (
+                <div className="p-4">
+                  <ul className="grid md:grid-cols-2 gap-2">
+                    {list.map(s=>(
+                      <li key={s.id} className="border rounded p-3 hover:bg-slate-50">
+                        <a className="text-dnaBlue font-medium" href={`/service/${s.id}`}>{s.name}</a>
+                        <div className="mt-1 text-xs text-slate-600">
+                          {(s.tags||[]).slice(0,5).join(" · ")}
+                        </div>
+                      </li>
+                    ))}
+                    {list.length===0 && <div className="text-sm text-slate-500">No matches in this category.</div>}
+                  </ul>
+                </div>
+              )}
+            </div>
+          );
+        })}
       </div>
-      {filtered.map(cat=>(
-        <details key={cat.id} open className="card">
-          <summary className="cursor-pointer text-lg font-semibold">{cat.title}</summary>
-          <div className="mt-3 grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-            {cat.items.map(s=>(
-              <div key={s.id} className="border border-silver-200 rounded-xl2 p-3 hover:shadow-soft">
-                <div className="font-medium">{s.name}</div>
-                <div className="text-sm text-gray-600">{s.desc}</div>
-                <div className="mt-2 flex flex-wrap gap-2">{(s.tags||[]).map(t=> <span key={t} className="pill">{t}</span>)}</div>
-              </div>
-            ))}
-          </div>
-        </details>
-      ))}
     </div>
   );
 }

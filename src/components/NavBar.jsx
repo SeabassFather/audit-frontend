@@ -1,38 +1,31 @@
-import { NavLink, Link } from "react-router-dom";
-import { useEffect, useState } from "react";
-
-function Icon({label}){
-  return (
-    <span aria-hidden className="inline-grid place-items-center w-5 h-5 rounded bg-silver-200 text-gray-700 text-[10px] font-semibold">
-      {label}
-    </span>
-  );
-}
+import { NavLink } from "react-router-dom";
 
 export default function Navbar(){
-  const [mode,setMode] = useState(localStorage.getItem("adna-mode")||"Demo");
-  useEffect(()=>{ localStorage.setItem("adna-mode", mode); },[mode]);
+  const base="px-3 py-1.5 rounded-lg text-sm font-medium transition";
+  const active=base+" bg-white text-dnaBlue";
+  const idle=base+" text-white/90 hover:bg-white/20";
+
   return (
-    <header className="bg-white/90 backdrop-blur border-b border-silver-200">
-      <div className="container py-3 flex items-center gap-4">
-        <a href="/" className="flex items-center gap-2 text-ocean-800 font-bold text-lg">
-          <span className="inline-grid place-items-center w-9 h-9 rounded-xl2 bg-ocean-600 text-white shadow-soft">AD</span>
-          <span>AuditDNA</span>
-        </a>
-        <nav className="hidden md:flex items-center gap-5 ml-6">
-          <a href="/" className="active">Home</a>
-          <a href="/services" className="flex items-center gap-1"><Icon label="SV"/>Services</a>
-          <a href="/usda-pricing" className="flex items-center gap-1"><Icon label="PR"/>USDA Pricing</a>
-          <a href="/files" className="flex items-center gap-1"><Icon label="FL"/>Files</a>
-          <a href="/docusign" className="flex items-center gap-1"><Icon label="DS"/>DocuSign</a>
-          <a href="/admin" className="flex items-center gap-1"><Icon label="AD"/>Admin</a>
-        </nav>
-        <div className="ml-auto flex items-center gap-3">
-          <span className="pill">{mode} Mode</span>
-          <button className="btn" onClick={()=>setMode(m=> m==="Demo"?"Live":"Demo")}>Toggle Demo/Live</button>
-          <a className="btn btn-primary" href="#demo" onClick={(e)=>e.preventDefault()}>
-            <Icon label=":)"/> Demo Walkthrough
-          </a>
+    <header className="sticky top-0 z-40">
+      <div className="bg-dnaBlue">
+        <div className="container px-4 py-3 flex items-center gap-3">
+          <div className="w-9 h-9 rounded-lg bg-white/20 grid place-items-center font-bold text-white">AD</div>
+          <div className="text-white font-semibold">AuditDNA</div>
+          <nav className="ml-6 flex flex-wrap gap-2">
+            <NavLink to="/" end className={({isActive})=>isActive?active:idle}>Dashboard</NavLink>
+            <NavLink to="/services" className={({isActive})=>isActive?active:idle}>Services</NavLink>
+            <NavLink to="/engines" className={({isActive})=>isActive?active:idle}>Engines</NavLink>
+            <NavLink to="/findings" className={({isActive})=>isActive?active:idle}>Findings</NavLink>
+            <NavLink to="/results" className={({isActive})=>isActive?active:idle}>Results</NavLink>
+            <NavLink to="/mortgage-search" className={({isActive})=>isActive?active:idle}>Mortgage</NavLink>
+            <NavLink to="/ag-market" className={({isActive})=>isActive?active:idle}>Ag</NavLink>
+            <NavLink to="/trade-finance" className={({isActive})=>isActive?active:idle}>Trade Finance</NavLink>
+            <NavLink to="/pricing" className={({isActive})=>isActive?active:idle}>USDA</NavLink>
+            <NavLink to="/mortgage" className={({isActive})=>isActive?active:idle}>Legacy Mortgage</NavLink>
+            <NavLink to="/factoring" className={({isActive})=>isActive?active:idle}>Factoring</NavLink>
+            <NavLink to="/tickers" className={({isActive})=>isActive?active:idle}>Tickers</NavLink>
+            <NavLink to="/caseflow" className={({isActive})=>isActive?active:idle}>CaseFlow</NavLink>
+          </nav>
         </div>
       </div>
     </header>

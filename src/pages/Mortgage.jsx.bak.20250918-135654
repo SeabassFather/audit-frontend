@@ -1,0 +1,20 @@
+const rates = [
+  {lender:"Bank A", rate:"6.5%", type:"30yr Fixed"},
+  {lender:"Bank B", rate:"6.2%", type:"15yr Fixed"},
+  {lender:"Moxie (MX)", rate:"7.1%", type:"Leasehold Financing"}
+];
+export default function Mortgage(){
+  return (
+    <div>
+      <h1 className="text-2xl font-bold">Mortgage Search</h1>
+      <table className="table-auto border mt-4">
+        <thead><tr><th>Lender</th><th>Rate</th><th>Type</th></tr></thead>
+        <tbody>
+          {rates.map((r,i)=>
+            <tr key={i}><td>{r.lender}</td><td>{r.rate}</td><td>{r.type}</td></tr>
+          )}
+        </tbody>
+      </table>
+    </div>
+  );
+}

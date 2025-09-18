@@ -1,0 +1,14 @@
+import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Legend } from "recharts";
+const data = Array.from({length:26},(_,i)=>({week:"W"+(i+1),price: Math.round(10+Math.random()*5)}));
+export default function Pricing(){
+  return (
+    <div>
+      <h1 className="text-2xl font-bold mb-4">USDA Pricing (Synthetic)</h1>
+      <LineChart width={600} height={300} data={data}>
+        <Line type="monotone" dataKey="price" stroke="#16a34a" />
+        <CartesianGrid stroke="#ccc" />
+        <XAxis dataKey="week" /><YAxis /><Tooltip /><Legend />
+      </LineChart>
+    </div>
+  );
+}

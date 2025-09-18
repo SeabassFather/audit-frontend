@@ -1,0 +1,39 @@
+import { useState } from 'react'
+const API = import.meta.env.VITE_API_BASE || ''
+export default function Mortgage(){
+  const [form,setForm]=useState({country:'MX',region:'Estero Beach',leasehold:true,product:'Investment Property',propertyType:'Condo',amount:300000,ltv:0.7,fico:690,dti:0.42})
+  const [data,setData]=useState(null); const [loading,setLoading]=useState(false); const [err,setErr]=useState('')
+  const run=async()=>{ setLoading(true); setErr(''); try{
+    const res=await fetch(${API}/api/loans/search,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(form)})
+    if(!res.ok) throw new Error('HTTP '+res.status); setData(await res.json())
+  }catch(e){ setErr(String(e.message||e)) }finally{ setLoading(false) } }
+  return(<div className='card'>
+    <h2>Mortgage Search</h2>
+    <div className='grid' style={{gridTemplateColumns:'1fr 1fr'}}>
+      <div className='grid' style={{gridTemplateColumns:'1fr 1fr'}}>
+        <select className='select' value={form.country} onChange={e=>setForm({...form,country:e.target.value})}><option>MX</option><option>US</option></select>
+        <input className='input' placeholder='Region / City' value={form.region} onChange={e=>setForm({...form,region:e.target.value})}/>
+        <label><input type='checkbox' checked={!!form.leasehold} onChange={e=>setForm({...form,leasehold:e.target.checked})}/> Leasehold</label>
+        <select className='select' value={form.product} onChange={e=>setForm({...form,product:e.target.value})}>
+          {['Second Home','Investment Property','DSCR','Construction-to-Perm','Conventional','FHA','VA'].map(x=><option key={x}>{x}</option>)}
+        </select>
+        <select className='select' value={form.propertyType} onChange={e=>setForm({...form,propertyType:e.target.value})}>
+          {['Condo','Townhome','Single Family','Villa','Hotel Condo'].map(x=><option key={x}>{x}</option>)}
+        </select>
+        <input className='input' type='number' value={form.amount} onChange={e=>setForm({...form,amount:+e.target.value})}/>
+        <input className='input' type='number' step='0.01' value={form.ltv} onChange={e=>setForm({...form,ltv:+e.target.value})}/>
+        <input className='input' type='number' value={form.fico} onChange={e=>setForm({...form,fico:+e.target.value})}/>
+        <input className='input' type='number' step='0.01' value={form.dti} onChange={e=>setForm({...form,dti:+e.target.value})}/>
+        <button className='btn' onClick={run} disabled={loading}>{loading?'Searching':'Search Lenders'}</button>
+      </div>
+      <div>
+        {err && <div className='card' style={{background:'#fff1f2',borderColor:'#fecaca',marginBottom:12}}>Error: {err}</div>}
+        {!data ? <div className='card'><p>Set criteria and search.</p></div> :
+          <div className='card'><h3>Matches: {data.count}</h3>
+            <table className='table'><thead><tr><th>Lender</th><th>Products</th><th>Amt</th><th>LTV</th><th>FICO</th><th>Leasehold</th><th>Score</th></tr></thead>
+              <tbody>{data.results.map(r=><tr key={r.id}><td title={r.notes}>{r.name}</td><td>{(r.products||[]).join(', ')}</td><td>{[r.minAmount,r.maxAmount].every(x=>x!=null)?$-$usda{r.maxAmount.toLocaleString()}:'-'}</td><td>{r.maxLTV!=null?(r.maxLTV*100).toFixed(0)+'%':'-'}</td><td>{r.minFICO??'-'}</td><td>{r.supportsLeasehold?'Yes':'No'}</td><td>{r.score}</td></tr>)}</tbody>
+            </table>
+          </div>}
+      </div>
+    </div>
+  </div>)}

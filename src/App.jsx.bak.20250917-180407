@@ -1,0 +1,30 @@
+import React from "react";
+import { Link, Outlet, useLocation } from "react-router-dom";
+
+export default function App(){
+  const { pathname } = useLocation();
+  const tabs = [
+    { to:"/", label:"Dashboard" },
+    { to:"/usda", label:"USDA Commodities" },
+    { to:"/moxi", label:"MoXi Mortgage" },
+    { to:"/mexico-re", label:"Mexico Real Estate" },
+    { to:"/produce", label:"Produce Analytics" }
+  ];
+  return (
+    <div className="min-h-screen text-slate-800">
+      <div className="nav">
+        <div className="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between">
+          <div className="font-semibold">AuditDNA</div>
+          <div className="flex gap-3">
+            {tabs.map(t=> (
+              <Link key={t.to} to={t.to} className={"px-3 py-2 rounded-xl hover:bg-slate-100 " + (pathname===t.to ? "bg-slate-100" : "")}>{t.label}</Link>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className="max-w-7xl mx-auto px-6 py-8">
+        <Outlet/>
+      </div>
+    </div>
+  );
+}

@@ -1,0 +1,29 @@
+import { BrowserRouter, NavLink, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home.jsx'
+import Prices from './pages/Prices.jsx'
+import Mortgage from './pages/Mortgage.jsx'
+import Services from './pages/Services.jsx'
+import ServiceDetail from './pages/ServiceDetail.jsx'
+import './styles.css'
+
+export default function App(){
+  return (
+    <BrowserRouter>
+      <nav className='nav'>
+        <NavLink to='/' end className={({isActive})=>isActive?'active':''}>Dashboard</NavLink>
+        <NavLink to='/prices' className={({isActive})=>isActive?'active':''}>Produce Pricing</NavLink>
+        <NavLink to='/mortgage' className={({isActive})=>isActive?'active':''}>Mortgage Search</NavLink>
+        <NavLink to='/services' className={({isActive})=>isActive?'active':''}>Services</NavLink>
+      </nav>
+      <div className='container'>
+        <Routes>
+          <Route path='/' element={<Home/>}/>
+          <Route path='/prices' element={<Prices/>}/>
+          <Route path='/mortgage' element={<Mortgage/>}/>
+          <Route path='/services' element={<Services/>}/>
+          <Route path='/service/:id' element={<ServiceDetail/>}/>
+        </Routes>
+      </div>
+    </BrowserRouter>
+  )
+}

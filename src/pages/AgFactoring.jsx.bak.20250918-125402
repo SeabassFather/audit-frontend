@@ -1,0 +1,8 @@
+export default function AgFactoring(){
+  return (
+    <div className='card'>
+      <h2>Ag Factoring</h2>
+      <p>Place your receivables intake, KYC, and terms workflow here. (Form stub reserved.)</p>
+    </div>
+  )
+}

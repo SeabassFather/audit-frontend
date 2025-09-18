@@ -1,0 +1,8 @@
+export default function USDA(){
+  return (
+    <div className='card'>
+      <h2>USDA Prices</h2>
+      <p>Hook your Quick Stats + W1-W26 + 5yr average overlays here.</p>
+    </div>
+  )
+}

@@ -1,0 +1,28 @@
+import { useState } from 'react'
+export default function Mortgage(){
+  const [city,setCity] = useState('Ensenada  Estero Beach')
+  const [structureOnly,setStructureOnly] = useState(true)
+  const [budget,setBudget] = useState(350000)
+  return (
+    <div className='card'>
+      <div className='text-lg font-semibold mb-2'>Mortgage / Financing Finder (MX Structure / Leasehold)</div>
+      <div className='grid md:grid-cols-3 gap-3'>
+        <label className='block'>
+          <div className='text-xs text-gray-600'>City / Development</div>
+          <input className='border rounded-xl px-3 py-2 w-full' value={city} onChange={e=>setCity(e.target.value)} />
+        </label>
+        <label className='block'>
+          <div className='text-xs text-gray-600'>Budget (USD)</div>
+          <input type='number' className='border rounded-xl px-3 py-2 w-full' value={budget} onChange={e=>setBudget(+e.target.value)} />
+        </label>
+        <label className='flex items-end gap-2'>
+          <input type='checkbox' checked={structureOnly} onChange={e=>setStructureOnly(e.target.checked)}/>
+          <span>Structure / Leasehold (no land)</span>
+        </label>
+      </div>
+      <div className='mt-4 text-sm text-gray-700'>
+        (Placeholder) Well match lenders that allow structure/leasehold. Backend MoXi quote endpoint is ready.
+      </div>
+    </div>
+  )
+}

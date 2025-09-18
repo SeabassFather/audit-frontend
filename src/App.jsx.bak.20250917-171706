@@ -1,0 +1,49 @@
+import React from 'react'
+import { Routes, Route, Link } from 'react-router-dom'
+
+function Home(){
+  return (
+    <main className='mx-auto max-w-7xl px-6 py-10'>
+      <h1 className='text-3xl font-bold mb-8'>AuditDNA Dashboard</h1>
+      <div className='grid gap-6 sm:grid-cols-2 lg:grid-cols-4'>
+        <Link to='/usda' className='glass rounded-2xl p-6 hover:shadow-lg block'>
+          <div className='font-semibold text-lg'>USDA Commodities</div>
+          <div className='text-sm text-slate-500 mt-2'>Live NASS & AMS data, charts, CSV export</div>
+        </Link>
+        <Link to='/mortgage/moxxi' className='glass rounded-2xl p-6 hover:shadow-lg block'>
+          <div className='font-semibold text-lg'>MoXi Mortgage</div>
+          <div className='text-sm text-slate-500 mt-2'>Purchase, Refi, Cash-Out  65% LTV cap</div>
+        </Link>
+        <Link to='/real-estate' className='glass rounded-2xl p-6 hover:shadow-lg block'>
+          <div className='font-semibold text-lg'>Mexico Real Estate</div>
+          <div className='text-sm text-slate-500 mt-2'>Property search + cross-border financing</div>
+        </Link>
+        <Link to='/produce' className='glass rounded-2xl p-6 hover:shadow-lg block'>
+          <div className='font-semibold text-lg'>Produce Analytics</div>
+          <div className='text-sm text-slate-500 mt-2'>Seasonality, volatility, YoY</div>
+        </Link>
+      </div>
+    </main>
+  )
+}
+
+// Stubs so routes render without crashing if pages aren't ready yet
+const Stub = (t) => () => <div style={{padding:24,fontFamily:'ui-sans-serif'}}> {t}</div>
+
+const USDA       = Stub('USDA page')
+const Produce    = Stub('Produce page')
+const Moxxi      = Stub('MoXi page')
+const RealEstate = Stub('Real Estate page')
+
+export default function App(){
+  return (
+    <Routes>
+      <Route path='/' element={<Home />} />
+      <Route path='/usda' element={<USDA />} />
+      <Route path='/produce' element={<Produce />} />
+      <Route path='/mortgage/moxxi' element={<Moxxi />} />
+      <Route path='/real-estate' element={<RealEstate />} />
+      <Route path='*' element={<Home />} />
+    </Routes>
+  )
+}

@@ -1,0 +1,22 @@
+export default function Services(){
+  const cats = [
+    {title:"Business", items:["LLC Setup","Payroll Audit","Tax Filing"]},
+    {title:"Medical", items:["HIPAA Compliance","Insurance Claims Audit"]},
+    {title:"Education", items:["Accreditation","Student Loan Compliance"]},
+    {title:"Travel", items:["Visa Docs","Travel Insurance"]},
+    {title:"Consumer", items:["Privacy Policy","CCPA Compliance"]}
+  ];
+  return (
+    <div>
+      <h1 className="text-2xl font-bold mb-4">Services</h1>
+      {cats.map(c=>(
+        <div key={c.title} className="mb-4 p-4 border rounded-lg bg-white shadow">
+          <h2 className="font-semibold text-lg">{c.title}</h2>
+          <ul className="list-disc ml-6">
+            {c.items.map(i=><li key={i}>{i}</li>)}
+          </ul>
+        </div>
+      ))}
+    </div>
+  );
+}

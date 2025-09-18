@@ -1,0 +1,1 @@
+export default function Mortgage(){return <h1 className="text-2xl font-bold">Mortgage Search (Synthetic Defaults)</h1>; }

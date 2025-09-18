@@ -1,0 +1,8 @@
+export default function Auditing(){
+  return (
+    <div>
+      <h1 className="text-2xl font-bold">Auditing</h1>
+      <p>Internal audits, USDA audits, CPA reviews, GlobalGAP, and more.</p>
+    </div>
+  );
+}

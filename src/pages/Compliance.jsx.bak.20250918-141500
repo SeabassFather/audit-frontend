@@ -1,0 +1,19 @@
+const regs = {
+  "US": ["TRID","ECOA","GLBA","CCPA"],
+  "International": ["GDPR","PIPEDA","UK GDPR","Australia Privacy Act","Singapore PDPA"]
+};
+export default function Compliance(){
+  return (
+    <div>
+      <h1 className="text-2xl font-bold mb-4">Compliance Frameworks</h1>
+      {Object.keys(regs).map(k=>(
+        <div key={k} className="mb-4 border rounded shadow bg-white">
+          <h2 className="bg-dnaGreen text-white px-3 py-2 rounded-t">{k}</h2>
+          <ul className="p-3 space-y-1">
+            {regs[k].map(r=><li key={r}>• {r}</li>)}
+          </ul>
+        </div>
+      ))}
+    </div>
+  );
+}

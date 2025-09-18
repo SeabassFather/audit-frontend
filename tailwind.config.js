@@ -1,23 +1,15 @@
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: ['./index.html','./src/**/*.{js,jsx,ts,tsx}'],
+module.exports = {
+  content: ["./index.html","./src/**/*.{js,jsx}"],
   theme: {
     extend: {
       colors: {
-        auditdna: {
-          bg: '#F7FAFF',
-          steel: '#E5E7EB',
-          ink: '#0F172A',
-          primary: '#2563EB',
-          accent: '#84CC16',
-          glow: '#FDE047'
-        }
+        dnaBlue: "#2563eb",
+        dnaGreen: "#16a34a",
+        dnaYellow: "#eab308",
+        dnaSilver: "#e5e7eb"
       },
-      boxShadow: {
-        glass: '0 10px 30px rgba(2,6,23,.08)'
-      },
-      borderRadius: { '3xl': '1.5rem' }
+      boxShadow:{ card:"0 8px 24px rgba(0,0,0,.08)" }
     }
   },
-  plugins: [],
-}
+  plugins: []
+};

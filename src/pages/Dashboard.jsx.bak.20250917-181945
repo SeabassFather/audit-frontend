@@ -1,0 +1,19 @@
+export default function Dashboard(){
+  return (
+    <div className='grid md:grid-cols-2 gap-4'>
+      <div className='card'>
+        <div className='text-lg font-semibold mb-1'>Welcome</div>
+        <p>Unified audits, pricing, compliance, and finance. Use the nav to explore modules.</p>
+        <ul className='mt-2 list-disc pl-6'>
+          <li>Produce Pricing with W1W26 + 5yr avg overlay</li>
+          <li>Mortgage search (US buyers in MX  structure/leasehold)</li>
+        </ul>
+      </div>
+      <div className='card'>
+        <div className='text-lg font-semibold mb-1'>Quick Links</div>
+        <a className='navlink inline-block' href='/prices'>Go to Produce Pricing </a>
+        <a className='navlink inline-block ml-2' href='/mortgage'>Go to Mortgage Search </a>
+      </div>
+    </div>
+  )
+}

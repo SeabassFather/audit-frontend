@@ -1,0 +1,50 @@
+import { useState, useEffect } from "react";
+import {
+  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer
+} from "recharts";
+
+export default function USDA(){
+  const [data, setData] = useState([]);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    async function fetchData(){
+      try {
+        setError("");
+        const res = await fetch("http://localhost:5050/api/usda/prices");
+        if(!res.ok) throw new Error("HTTP " + res.status);
+        const j = await res.json();
+        setData(j || []);
+      } catch(e){
+        console.error("USDA fallback", e);
+        // fallback synthetic W1W26 data
+        const fake = Array.from({length:26},(_,i)=>({
+          week:"W"+(i+1),
+          current: 10+Math.random()*5,
+          avg5yr: 9+Math.random()*4
+        }));
+        setData(fake);
+        setError("Using fallback synthetic data");
+      }
+    }
+    fetchData();
+  }, []);
+
+  return (
+    <div className="card">
+      <h2>USDA Prices (W1W26 + 5yr Avg)</h2>
+      {error && <div style={{color:"red",marginBottom:8}}>{error}</div>}
+      <ResponsiveContainer width="100%" height={400}>
+        <LineChart data={data}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="week" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Line type="monotone" dataKey="current" stroke="#2563eb" name="Current" strokeWidth={2}/>
+          <Line type="monotone" dataKey="avg5yr" stroke="#16a34a" name="5yr Avg" strokeDasharray="5 5" strokeWidth={2}/>
+        </LineChart>
+      </ResponsiveContainer>
+    </div>
+  );
+}

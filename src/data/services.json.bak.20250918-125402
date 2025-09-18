@@ -1,0 +1,22 @@
+{ "version":"1.0.0", "updated":"2025-09-18T12:44:37Z",
+  "categories":[
+    {"id":"business","title":"Business & Commercial","items":[
+      {"id":"biz-llc-formation","name":"LLC / Entity Formation","tags":["filings","secretary of state"],"desc":"Fast-track entity setup with EIN and registered agent options."},
+      {"id":"biz-factoring","name":"Accounts Receivable Factoring","tags":["produce","cash flow"],"desc":"Advance rates and same-day funding for growers/exporters."},
+      {"id":"biz-kyc-aml","name":"KYC / AML Screening","tags":["compliance"],"desc":"Sanctions, PEP, adverse media checks with audit trail."}
+    ]},
+    {"id":"legal","title":"Legal & Regulatory","items":[
+      {"id":"legal-privacy","name":"Privacy Policy (US/EU/UK/CA/AU/SG)","tags":["GDPR","CCPA"],"desc":"Internationalized privacy baseline mapped to jurisdictions."},
+      {"id":"legal-terms","name":"Terms of Service Generator","tags":["SaaS"],"desc":"Tiered ToS with arbitration & governing law options."},
+      {"id":"legal-usda-brief","name":"USDA Regulatory Briefing Kit","tags":["USDA","AMS"],"desc":"Commodity labeling, inspection, W1-W26 guidance."}
+    ]},
+    {"id":"mortgage","title":"Mortgage & Real Estate","items":[
+      {"id":"mtg-search","name":"Mortgage Search (US/MX)","tags":["leasehold","DSCR"],"desc":"Lender matching including Mexico leaseholds (structure-only)."},
+      {"id":"mtg-heloc","name":"2nd Liens / HELOC","tags":["home equity"],"desc":"Standalone or piggyback options."}
+    ]},
+    {"id":"agriculture","title":"Agriculture & USDA","items":[
+      {"id":"ag-usda-prices","name":"USDA Price Explorer","tags":["W1-W26","5yr avg"],"desc":"Commodity charts with weekly overlays and 5-year average."},
+      {"id":"ag-lab-uploads","name":"Water/Soil Lab Uploads","tags":["eco","compliance"],"desc":"PDF/CSV ingestion, trend charts, outlier flags."}
+    ]}
+  ]
+}

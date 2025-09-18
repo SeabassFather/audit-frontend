@@ -1,0 +1,19 @@
+{ "version":"1.0.0", "updated":"2025-09-18T12:40:35Z",
+  "categories":[
+    {"id":"business","title":"Business & Commercial","items":[
+      {"id":"biz-llc-formation","name":"LLC / Entity Formation","tags":["filings"],"desc":"Fast-track entity setup."},
+      {"id":"biz-factoring","name":"Accounts Receivable Factoring","tags":["produce","cash flow"],"desc":"Advance rates for growers/exporters."}
+    ]},
+    {"id":"legal","title":"Legal & Regulatory","items":[
+      {"id":"legal-privacy","name":"Privacy Policy (US/EU/UK/CA/AU/SG)","tags":["GDPR","CCPA"],"desc":"Internationalized privacy baseline."},
+      {"id":"legal-udsa-brief","name":"USDA Regulatory Briefing Kit","tags":["USDA","AMS"],"desc":"Commodity labeling & W1-W26 guidance."}
+    ]},
+    {"id":"mortgage","title":"Mortgage & Real Estate","items":[
+      {"id":"mtg-search","name":"Mortgage Search (US/MX)","tags":["leasehold","DSCR"],"desc":"Lender matching incl. Mexico leaseholds."},
+      {"id":"mtg-heloc","name":"2nd Liens / HELOC","tags":["home equity"],"desc":"Standalone or piggyback."}
+    ]},
+    {"id":"agriculture","title":"Agriculture & USDA","items":[
+      {"id":"ag-usda-prices","name":"USDA Price Explorer","tags":["W1-W26","5yr avg"],"desc":"Weekly overlays and 5yr average."},
+      {"id":"ag-lab-uploads","name":"Water/Soil Lab Uploads","tags":["eco","compliance"],"desc":"PDF/CSV ingestion with flags."}
+    ]}
+  ] }

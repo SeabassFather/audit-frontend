@@ -1,0 +1,74 @@
+import { useEffect, useMemo, useState } from 'react'
+import { Link, useSearchParams } from 'react-router-dom'
+import data from '../data/services.json'
+
+export default function Services(){
+  const [sp,setSp]=useSearchParams()
+  const get=(k,d='')=>sp.get(k)??d
+  const set=(obj)=>{ const n=new URLSearchParams(sp); Object.entries(obj).forEach(([k,v])=>{ if(!v) n.delete(k); else n.set(k,v) }); setSp(n,{replace:false}) }
+
+  const [filter,setFilter]=useState(get('q',''))
+  const [tag,setTag]=useState(get('tag',''))
+  const [open,setOpen]=useState(new Set((get('open','')||'').split(',').filter(Boolean)))
+
+  useEffect(()=>{ set({ q: filter||undefined, tag: tag||undefined, open: [...open].join(',')||undefined }) }, [filter,tag,open])
+
+  const cats = data.categories || []
+  const results = useMemo(()=>{
+    const f=(filter||'').toLowerCase(); const t=(tag||'').toLowerCase()
+    return cats.map(cat=>{
+      const items=(cat.items||[]).filter(it=>{
+        const inText=!f || [it.name,it.desc,...(it.tags||[])].join(' ').toLowerCase().includes(f)
+        const inTag =!t || (it.tags||[]).some(x=>String(x).toLowerCase()===t)
+        return inText && inTag
+      })
+      return { ...cat, items }
+    })
+  }, [filter,tag,cats])
+
+  const toggle=id=>{ const n=new Set(open); n.has(id)?n.delete(id):n.add(id); setOpen(n) }
+
+  return (
+    <div className='card'>
+      <div style={{display:'flex',justifyContent:'space-between',gap:12,flexWrap:'wrap'}}>
+        <h2 style={{margin:0}}>Services</h2>
+        <div style={{display:'flex',gap:8,alignItems:'center'}}>
+          <input className='input' placeholder='Search services, tags, descriptions' value={filter} onChange={e=>setFilter(e.target.value)} style={{minWidth:320}}/>
+          <select className='select' value={tag} onChange={e=>setTag(e.target.value)}>
+            <option value=''>All tags</option>
+            {[...new Set(cats.flatMap(c=>c.items?.flatMap(i=>i.tags||[])||[]))].sort().map(t=><option key={t} value={t}>{t}</option>)}
+          </select>
+          <button className='btn' onClick={()=>{ setFilter(''); setTag('') }}>Clear</button>
+        </div>
+      </div>
+
+      <div style={{marginTop:12}}>
+        {results.map(cat=>(
+          <div key={cat.id} style={{border:'1px solid #e5e7eb',borderRadius:12,margin:'12px 0',overflow:'hidden'}}>
+            <button onClick={()=>toggle(cat.id)} style={{width:'100%',textAlign:'left',padding:'12px 14px',background:'#fff',border:0,cursor:'pointer'}}>
+              <div style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
+                <div style={{fontWeight:600}}>{cat.title}</div>
+                <div style={{fontSize:12,opacity:.7}}>{cat.items?.length ?? 0} items</div>
+              </div>
+            </button>
+            {open.has(cat.id) && (
+              <div style={{padding:'8px 14px 14px'}}>
+                <div className='grid' style={{gridTemplateColumns:'repeat(2, minmax(0,1fr))'}}>
+                  {(cat.items||[]).map(it=>(
+                    <Link to={/service/} key={it.id} className='card' style={{textDecoration:'none',color:'inherit'}}>
+                      <div className='card-title' style={{fontWeight:600}}>{it.name}</div>
+                      <div style={{fontSize:13,color:'#475569'}}>{it.desc}</div>
+                      <div style={{marginTop:6,display:'flex',gap:6,flexWrap:'wrap'}}>
+                        {(it.tags||[]).map(t=><span className='badge' key={t} onClick={e=>{e.preventDefault(); setTag(String(t))}} style={{cursor:'pointer'}}>{t}</span>)}
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}

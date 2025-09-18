@@ -1,0 +1,10 @@
+{
+  "Business":[ "LLC Formation","Payroll Audit","Corporate Tax Filing","Equipment Loan Structuring","Cross-Border Compliance","PO Financing","M&A Due Diligence","Vendor Contract Audit","Risk Assessment","Credit Advisory"],
+  "Medical":[ "HIPAA Compliance Audit","Insurance Claims Audit","GlobalGAP Produce Safety","Telemedicine Licensing","Lab Upload & Validation","Pharma Supply Chain Audit","Patient Data Privacy","OSHA Compliance","Hospital Billing Audit","MedTech Certification"],
+  "Education":[ "School Accreditation","Student Loan Compliance","Visa Documentation","Teacher Licensing","Board Governance Audit","International Partnerships","Continuing Education Compliance","Scholarship Audit","Research Ethics Review","Campus Safety Audit"],
+  "Legal":[ "Contract Review","Privacy Policy Drafting","GDPR Compliance","Employment Law Audit","Intellectual Property Audit","Immigration Compliance","Litigation Readiness","Data Retention Policies","Anti-Trust Audit","Ethics & Governance"],
+  "Travel":[ "Visa Processing","Insurance Verification","Customs Documentation","International Compliance","Airline Safety Audit","Hotel Licensing","Travel Risk Audit","Cross-Border Taxation","Eco-Tourism Certification","Passenger Data Privacy"],
+  "Insurance":[ "Claims Handling Audit","Policy Compliance","Reinsurance Documentation","Risk Modeling","AML Checks","Fraud Detection","Underwriting Audit","Consumer Protection","Agent Licensing","Cross-Border Coverage"],
+  "Consumer":[ "CCPA Compliance","GLBA Privacy","Return Policy Audit","Product Label Verification","Supply Chain Transparency","Data Security Audit","Complaint Handling","Consumer Credit Audit","Digital Consent Review","Ad/Marketing Compliance"],
+  "Eco":[ "Green Building Certification","Carbon Credit Verification","Water Tech Uploads","Eco Housing Compliance","Solar Energy Audits","Sustainability Reporting","Pollution Controls","Carbon Footprint Audit","Eco-Tax Credits","Recycling Program Audit"]
+}

@@ -1,0 +1,56 @@
+import { Routes, Route, Link } from "react-router-dom";
+import Home from "./pages/Home";
+import Services from "./pages/Services";
+import Auditing from "./pages/Auditing";
+import Compliance from "./pages/Compliance";
+import Pricing from "./pages/Pricing";
+import Mortgage from "./pages/Mortgage";
+import Factoring from "./pages/Factoring";
+import { useState, useEffect } from "react";
+
+function Ticker(){
+  const [msg,setMsg] = useState("");
+  useEffect(()=>{
+    const msgs = [
+      "USDA W12 Lettuce: $12.50/case",
+      "Mortgage 30yr Fixed Avg: 6.5%",
+      "Factoring Advances up to 80%"
+    ];
+    let i=0;
+    const id = setInterval(()=>{ setMsg(msgs[i%msgs.length]); i++; },3000);
+    return ()=>clearInterval(id);
+  },[]);
+  return <div className="bg-dnaSilver text-black text-sm px-4 py-1">{msg}</div>;
+}
+
+export default function App(){
+  const [demo,setDemo] = useState(true);
+  return (
+    <div>
+      <Ticker/>
+      <nav className="flex gap-6 p-4 bg-dnaBlue text-white items-center">
+        <Link to="/">Home</Link>
+        <Link to="/services">Services</Link>
+        <Link to="/auditing">Auditing</Link>
+        <Link to="/compliance">Compliance</Link>
+        <Link to="/pricing">USDA Pricing</Link>
+        <Link to="/mortgage">Mortgage</Link>
+        <Link to="/factoring">Factoring</Link>
+        <button onClick={()=>setDemo(!demo)} className="ml-auto bg-white text-dnaBlue px-3 py-1 rounded">
+          {demo ? "Demo Mode" : "Live Mode"}
+        </button>
+      </nav>
+      <div className="p-6">
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/services" element={<Services/>}/>
+          <Route path="/auditing" element={<Auditing/>}/>
+          <Route path="/compliance" element={<Compliance/>}/>
+          <Route path="/pricing" element={<Pricing/>}/>
+          <Route path="/mortgage" element={<Mortgage/>}/>
+          <Route path="/factoring" element={<Factoring/>}/>
+        </Routes>
+      </div>
+    </div>
+  );
+}

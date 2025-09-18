@@ -1,0 +1,24 @@
+export default function Dashboard(){
+  return (
+    <div className="grid grid-3">
+      <section className="card" style={{gridColumn:"span 2"}}>
+        <h1 className="h1">Welcome to AuditDNA</h1>
+        <p style={{color:"#4b5563",fontSize:14}}>
+          Includes USDA Prices (W1W26 + 5yr avg), Mortgage Search, and Ag Factoring.
+        </p>
+        <ul style={{fontSize:14,marginTop:8, paddingLeft:18}}>
+          <li>Theme: silver / blue / light yellow / green (no black backgrounds).</li>
+          <li>API base: <code>http://localhost:5050</code></li>
+        </ul>
+      </section>
+      <section className="card">
+        <h2 className="h2">Quick Links</h2>
+        <div className="mt-3" style={{display:"flex",flexDirection:"column",gap:8}}>
+          <a className="btn btn-primary" href="/prices">USDA Prices</a>
+          <a className="btn" href="/mortgage">Mortgage Search</a>
+          <a className="btn" href="/factoring">Ag Factoring</a>
+        </div>
+      </section>
+    </div>
+  );
+}

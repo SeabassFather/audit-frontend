@@ -1,0 +1,46 @@
+import { Routes, Route, Link } from "react-router-dom";
+import { useState } from "react";
+import Home from "./pages/Home";
+import Services from "./pages/Services";
+import ServiceDetail from "./pages/ServiceDetail";
+import Auditing from "./pages/Auditing";
+import Compliance from "./pages/Compliance";
+import Pricing from "./pages/Pricing";
+import Mortgage from "./pages/Mortgage";
+import Factoring from "./pages/Factoring";
+import Ticker from "./components/Ticker";
+
+export default function App(){
+  const [demo,setDemo] = useState(true);
+  return (
+    <div>
+      <Ticker/>
+      <nav className="bg-dnaBlue text-white">
+        <div className="container flex gap-6 items-center px-4 py-3">
+          <Link to="/" className="font-semibold">Home</Link>
+          <Link to="/services">Services</Link>
+          <Link to="/auditing">Auditing</Link>
+          <Link to="/compliance">Compliance</Link>
+          <Link to="/pricing">USDA Pricing</Link>
+          <Link to="/mortgage">Mortgage</Link>
+          <Link to="/factoring">Factoring</Link>
+          <button onClick={()=>setDemo(!demo)} className="ml-auto bg-white text-dnaBlue px-3 py-1 rounded">
+            {demo ? "Demo Mode" : "Live Mode"}
+          </button>
+        </div>
+      </nav>
+      <main className="container px-4 py-6">
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/services" element={<Services/>}/>
+          <Route path="/service/:id" element={<ServiceDetail/>}/>
+          <Route path="/auditing" element={<Auditing/>}/>
+          <Route path="/compliance" element={<Compliance/>}/>
+          <Route path="/pricing" element={<Pricing/>}/>
+          <Route path="/mortgage" element={<Mortgage/>}/>
+          <Route path="/factoring" element={<Factoring/>}/>
+        </Routes>
+      </main>
+    </div>
+  );
+}

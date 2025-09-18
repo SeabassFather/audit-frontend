@@ -1,0 +1,42 @@
+import { useParams, Link, useSearchParams } from 'react-router-dom';
+import data from '../data/services.json';
+
+export default function ServiceDetail(){
+  const {id}=useParams();
+  const [params] = useSearchParams();
+  let item=null,cat=null;
+
+  for(const c of (data.categories||[])){
+    const f=(c.items||[]).find(x=>x.id===id);
+    if(f){item=f;cat=c;break;}
+  }
+
+  if(!item) return(
+    <div className='card'>
+      <h2>Service not found</h2>
+      <Link to={'/services?'+params.toString()}>Back</Link>
+    </div>
+  );
+
+  return (
+    <div className='card'>
+      <h2>{item.name}</h2>
+      <p>{item.desc}</p>
+      <div style={{marginTop:10}}>
+        {(item.tags||[]).map(t=>
+          <span key={t} className='badge' style={{marginRight:6,background:'#dbeafe',padding:'2px 6px',borderRadius:4,fontSize:12}}>
+            {t}
+          </span>
+        )}
+      </div>
+      <hr style={{margin:'16px 0'}}/>
+      <div className='card' style={{background:'#f8fafc'}}>
+        <b>Workflow Placeholder</b>
+        <p>Insert forms, uploads, pricing widgets, or lender/USDA integrations for <i>{item.name}</i>.</p>
+      </div>
+      <Link className='btn' to={'/services?'+params.toString()} style={{marginTop:12,display:'inline-block'}}>
+        Back to Services
+      </Link>
+    </div>
+  )
+}

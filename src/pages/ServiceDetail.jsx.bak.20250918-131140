@@ -1,0 +1,1 @@
+export default function ServiceDetail(){return(<div className='card'><h2>Service Detail</h2></div>)}

@@ -1,0 +1,1 @@
+export default function Home(){return(<div className='card'><h2>Welcome to AuditDNA</h2></div>)}

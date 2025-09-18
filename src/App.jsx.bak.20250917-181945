@@ -1,0 +1,29 @@
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import Dashboard from './pages/Dashboard.jsx'
+import Prices from './pages/Prices.jsx'
+import Mortgage from './pages/Mortgage.jsx'
+
+export default function App(){
+  return (
+    <BrowserRouter>
+      <header className='sticky top-0 z-10 backdrop-blur bg-white/60 border-b'>
+        <div className='max-w-6xl mx-auto flex items-center justify-between p-4'>
+          <div className='brand'>AuditDNA</div>
+          <nav className='flex gap-2'>
+            <Link className='navlink' to='/'>Dashboard</Link>
+            <Link className='navlink' to='/prices'>Produce Pricing</Link>
+            <Link className='navlink' to='/mortgage'>Mortgage Search</Link>
+          </nav>
+        </div>
+      </header>
+      <main className='max-w-6xl mx-auto p-4'>
+        <Routes>
+          <Route path='/' element={<Dashboard/>}/>
+          <Route path='/prices' element={<Prices/>}/>
+          <Route path='/mortgage' element={<Mortgage/>}/>
+          <Route path='*' element={<div className='card'>Not Found</div>}/>
+        </Routes>
+      </main>
+    </BrowserRouter>
+  )
+}

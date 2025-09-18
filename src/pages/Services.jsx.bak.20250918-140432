@@ -1,0 +1,20 @@
+import { useState } from "react";
+import services from "../services.json";
+export default function Services(){
+  const [q,setQ] = useState("");
+  const cats = Object.keys(services);
+  return (
+    <div>
+      <h1 className="text-2xl font-bold mb-4">AuditDNA Services</h1>
+      <input value={q} onChange={e=>setQ(e.target.value)} placeholder="Search services..." className="border p-2 w-full mb-6 rounded"/>
+      {cats.map(cat=>(
+        <div key={cat} className="mb-6 border rounded bg-white shadow">
+          <h2 className="bg-dnaBlue text-white px-4 py-2 rounded-t">{cat}</h2>
+          <ul className="p-4 space-y-1">
+            {services[cat].filter(s=>s.toLowerCase().includes(q.toLowerCase())).map(s=><li key={s}>• {s}</li>)}
+          </ul>
+        </div>
+      ))}
+    </div>
+  );
+}

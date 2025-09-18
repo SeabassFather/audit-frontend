@@ -1,0 +1,34 @@
+import { BrowserRouter, NavLink, Routes, Route } from 'react-router-dom';
+import Breadcrumbs from './components/Breadcrumbs.jsx';
+import GlobalSearch from './components/GlobalSearch.jsx';
+
+import TickerStrip from './components/TickerStrip.jsx';
+import DemoLiveToggle from './components/DemoLiveToggle.jsx';
+
+import Home from './pages/Home.jsx';
+import USDA from './pages/USDA.jsx';
+import Mortgage from './pages/Mortgage.jsx';
+import AgFactoring from './pages/AgFactoring.jsx';
+import Services from './pages/Services.jsx';
+import ServiceDetail from './pages/ServiceDetail.jsx';
+
+export default function App(){
+  return (
+    <BrowserRouter>
+      
+<TickerStrip/>
+      <div className="container">
+        <Breadcrumbs/>
+        <GlobalSearch/>
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/usda" element={<USDA/>}/>
+          <Route path="/mortgage" element={<Mortgage/>}/>
+          <Route path="/agfactoring" element={<AgFactoring/>}/>
+          <Route path="/services" element={<Services/>}/>
+          <Route path="/service/:id" element={<ServiceDetail/>}/>
+        </Routes>
+      </div>
+    </BrowserRouter>
+  )
+}

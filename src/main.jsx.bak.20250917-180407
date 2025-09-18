@@ -1,0 +1,22 @@
+import React from "react";
+import { createRoot } from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./index.css";
+import App from "./App.jsx";
+import Dashboard from "./pages/Dashboard.jsx";
+import USDA from "./pages/USDA.jsx";
+import Moxi from "./pages/Moxi.jsx";
+import MexicoRE from "./pages/MexicoRE.jsx";
+import Produce from "./pages/Produce.jsx";
+
+const router = createBrowserRouter([
+  { path: "/", element: <App/>, children: [
+    { index: true, element: <Dashboard/> },
+    { path: "usda", element: <USDA/> },
+    { path: "moxi", element: <Moxi/> },
+    { path: "mexico-re", element: <MexicoRE/> },
+    { path: "produce", element: <Produce/> }
+  ]}
+]);
+
+createRoot(document.getElementById('root')).render(<RouterProvider router={router}/>);

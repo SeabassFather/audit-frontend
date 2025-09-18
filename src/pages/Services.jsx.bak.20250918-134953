@@ -1,0 +1,65 @@
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import data from '../data/services.json';
+
+export default function Services(){
+  const [filter,setFilter]=useState('');
+  const [tag,setTag]=useState('');
+  const [open,setOpen]=useState(new Set());
+
+  const toggle=(id)=>{const next=new Set(open);if(next.has(id))next.delete(id);else next.add(id);setOpen(next);};
+
+  const filterItems=(items)=>(items||[]).filter(i=>{
+    const matchText=!filter || [i.name,i.desc,(i.tags||[]).join(' ')].join(' ').toLowerCase().includes(filter.toLowerCase());
+    const matchTag=!tag || (i.tags||[]).map(t=>t.toLowerCase()).includes(tag.toLowerCase());
+    return matchText && matchTag;
+  });
+
+  const results=(data.categories||[]).map(cat=>{
+    const sub=(cat.subcategories||[]).map(sc=>({...sc,items:filterItems(sc.items)}));
+    const items=filterItems(cat.items||[]);
+    return {...cat,items,subcategories:sub};
+  });
+
+  const tags=[...new Set(results.flatMap(c=>[
+    ...(c.items||[]).flatMap(i=>i.tags||[]),
+    ...(c.subcategories||[]).flatMap(sc=>(sc.items||[]).flatMap(i=>i.tags||[]))
+  ]))].sort();
+
+  return (
+    <div className='card'>
+      <h2>Services</h2>
+      <div style={{display:'flex',gap:8,alignItems:'center',marginBottom:12}}>
+        <input className='input' placeholder='Search services...' value={filter} onChange={e=>setFilter(e.target.value)} style={{minWidth:240}}/>
+        <select className='select' value={tag} onChange={e=>setTag(e.target.value)}>
+          <option value=''>All tags</option>
+          {tags.map(t=><option key={t} value={t}>{t}</option>)}
+        </select>
+        <button className='btn' onClick={()=>{setFilter('');setTag('');setOpen(new Set());}}>Clear</button>
+      </div>
+
+      {results.map(cat=>(
+        <div key={cat.id} style={{border:'1px solid #ddd',borderRadius:8,marginBottom:10}}>
+          <button onClick={()=>toggle(cat.id)} style={{width:'100%',padding:'12px',textAlign:'left',background:'#f1f5f9',border:0,fontWeight:600}}>
+            {cat.title}
+          </button>
+          {open.has(cat.id) && (
+            <div style={{padding:'10px 14px'}}>
+              {cat.items?.length>0 && (
+                <ul>{cat.items.map(i=><li key={i.id}><Link to={'/service/'+i.id}>{i.name}</Link></li>)}</ul>
+              )}
+              {cat.subcategories?.map(sc=>(
+                <div key={sc.id} style={{marginBottom:10}}>
+                  <b>{sc.title}</b>
+                  <ul>
+                    {sc.items.map(i=><li key={i.id}><Link to={'/service/'+i.id}>{i.name}</Link></li>)}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+}

@@ -1,0 +1,45 @@
+import React, { useEffect, useState } from "react";
+import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from "recharts";
+
+export default function USDA(){
+  const [q,setQ] = useState("papaya");
+  const [data,setData] = useState([]);
+  const [loading,setLoading] = useState(false);
+
+  async function run(){
+    setLoading(true);
+    try{
+      const r = await fetch(`/api/usda?commodity=${encodeURIComponent(q)}`);
+      const j = await r.json();
+      setData(j.points||[]);
+    }finally{ setLoading(false); }
+  }
+  useEffect(()=>{ run(); },[]);
+
+  return (
+    <div>
+      <div className="flex items-end gap-3 mb-6">
+        <div>
+          <div className="text-sm text-slate-500">Commodity</div>
+          <input value={q} onChange={e=>setQ(e.target.value)} className="px-3 py-2 rounded-xl border border-slate-300" placeholder="papaya"/>
+        </div>
+        <button className="btn" onClick={run} disabled={loading}>{loading? 'Loading':'Search'}</button>
+        <a className="px-3 py-2" href={`/api/usda/csv?commodity=${encodeURIComponent(q)}`}>CSV</a>
+      </div>
+      <div className="card">
+        <div className="font-medium mb-3">Weekly Price (synthetic demo if API key missing)</div>
+        <div style={{width:'100%', height:360}}>
+          <ResponsiveContainer>
+            <LineChart data={data} margin={{ left: 16, right: 24, top: 8, bottom: 8 }}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="label"/>
+              <YAxis/>
+              <Tooltip/>
+              <Line type="monotone" dataKey="value" dot={false} />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
+      </div>
+    </div>
+  );
+}

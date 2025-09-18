@@ -1,0 +1,24 @@
+export default function Dashboard(){
+  return (
+    <div className="grid md:grid-cols-3 gap-4">
+      <section className="md:col-span-2 card">
+        <h1 className="h1 mb-2">Welcome to AuditDNA</h1>
+        <p className="text-sm text-gray-600">
+          This build includes USDA pricing (W1W26 with 5-year average), Mortgage Search, and Ag Factoring modules.
+        </p>
+        <ul className="mt-3 list-disc pl-5 text-sm">
+          <li>Color scheme: silver / blue / light yellow / green (no full black backgrounds).</li>
+          <li>API base: <code>http://localhost:5050</code></li>
+        </ul>
+      </section>
+      <section className="card">
+        <h2 className="h2 mb-2">Quick Links</h2>
+        <div className="flex flex-col gap-2">
+          <a className="btn btn-primary text-center" href="/prices">USDA Prices</a>
+          <a className="btn text-center" href="/mortgage">Mortgage Search</a>
+          <a className="btn text-center" href="/factoring">Ag Factoring</a>
+        </div>
+      </section>
+    </div>
+  );
+}

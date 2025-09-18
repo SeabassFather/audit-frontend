@@ -1,0 +1,41 @@
+import React from "react";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter, NavLink, Routes, Route } from "react-router-dom";
+import Dashboard from "./pages/Dashboard.jsx";
+import Prices from "./pages/Prices.jsx";
+import Mortgage from "./pages/Mortgage.jsx";
+import Factoring from "./pages/Factoring.jsx";
+import "./styles.css";
+
+function Tab({to, label}){
+  return <NavLink to={to} className={({isActive}) => "tab"+(isActive?" active":"")}>{label}</NavLink>;
+}
+
+function App(){
+  return (
+    <div style={{minHeight:"100vh",display:"flex",flexDirection:"column"}}>
+      <div className="nav">
+        <div className="nav-inner">
+          <div className="brand"> AuditDNA</div>
+          <div className="tabs">
+            <Tab to="/" label="Dashboard"/>
+            <Tab to="/prices" label="USDA Prices"/>
+            <Tab to="/mortgage" label="Mortgage Search"/>
+            <Tab to="/factoring" label="Ag Factoring"/>
+          </div>
+          <div style={{marginLeft:"auto"}}><a href="#" className="tab" onClick={(e)=>{e.preventDefault();location.reload();}}>Reload</a></div>
+        </div>
+      </div>
+      <main className="container" style={{flex:"1 1 auto"}}>
+        <Routes>
+          <Route path="/" element={<Dashboard/>}/>
+          <Route path="/prices" element={<Prices/>}/>
+          <Route path="/mortgage" element={<Mortgage/>}/>
+          <Route path="/factoring" element={<Factoring/>}/>
+        </Routes>
+      </main>
+    </div>
+  );
+}
+
+createRoot(document.getElementById("root")).render(<BrowserRouter><App/></BrowserRouter>);

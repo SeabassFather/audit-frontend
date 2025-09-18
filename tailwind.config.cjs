@@ -1,22 +1,17 @@
-﻿/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./index.html","./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       colors: {
-        silver: {
-          DEFAULT: "#c9d1d9",
-          100: "#eff2f4",
-          200: "#e2e6ea",
-          300: "#cfd6dd",
-          400: "#b7c3ce"
-        },
-        ocean:  { DEFAULT: "#2b6cb0", 600: "#2269c7", 700: "#1b57a4" },
-        lemon:  { DEFAULT: "#ffd95e" },
-        spring: { DEFAULT: "#38b96f" }
+        brand: {
+          50: '#f2fbf6', 100:'#e6f7ee', 200:'#c9efd9', 300:'#a5e4c0', 400:'#6ed79b', 500:'#3bc978',
+          600:'#2cab63', 700:'#248a50', 800:'#1d6d40', 900:'#145030'
+        }
       },
-      boxShadow: { soft: "0 10px 25px rgba(0,0,0,.08)" },
-      borderRadius: { xl2: "1.25rem" }
+      boxShadow: {
+        // custom soft shadow used by .card
+        'soft': '0 10px 30px rgba(0, 0, 0, 0.06)'
+      }
     }
   },
   plugins: []

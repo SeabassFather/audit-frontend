@@ -1,0 +1,32 @@
+import { useEffect, useState } from 'react'
+import { getWeeklyPrices } from '../lib/api'
+import PriceChart from '../components/PriceChart.jsx'
+export default function Prices(){
+  const [commodity, setCommodity] = useState('avocado')
+  const [loading, setLoading] = useState(false)
+  const [data, setData] = useState([])
+  const [err, setErr] = useState('')
+  async function load(c){
+    setLoading(true); setErr('');
+    try{
+      const raw = await getWeeklyPrices(c)
+      const out = raw.weeks.map((w,i)=>({ week: W, price: w, avg5: raw.avg5[i]}))
+      setData(out)
+    }catch(e){ setErr(String(e)) } finally{ setLoading(false) }
+  }
+  useEffect(()=>{ load(commodity) },[])
+  return (
+    <div className='space-y-4'>
+      <div className='card'>
+        <div className='text-lg font-semibold mb-2'>Commodity</div>
+        <div className='flex gap-2'>
+          <input className='border rounded-xl px-3 py-2 w-64' value={commodity}
+                 onChange={e=>setCommodity(e.target.value)} placeholder='e.g., avocado'/>
+          <button className='px-4 py-2 rounded-xl bg-lime hover:opacity-90' onClick={()=>load(commodity)}>Load</button>
+        </div>
+        {err && <div className='mt-2 text-red-600'>Error: {err}</div>}
+      </div>
+      {loading ? <div className='card'>Loading</div> : <PriceChart data={data} />}
+    </div>
+  )
+}

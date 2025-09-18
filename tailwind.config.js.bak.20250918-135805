@@ -1,0 +1,14 @@
+module.exports = {
+  content: ["./index.html","./src/**/*.{js,jsx}"],
+  theme: {
+    extend: {
+      colors: {
+        dnaBlue: "#2563eb",
+        dnaGreen: "#16a34a",
+        dnaYellow: "#eab308",
+        dnaSilver: "#d1d5db"
+      }
+    }
+  },
+  plugins: []
+};
