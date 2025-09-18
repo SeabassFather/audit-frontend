@@ -1,0 +1,19 @@
+import React from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import HomePage from "./pages/HomePage.jsx";
+import SearchPage from "./pages/SearchPage.jsx";
+import SearchUSDA from "./features/search/SearchUSDA.jsx";
+import SearchMexicoLoans from "./features/search/SearchMexicoLoans.jsx";
+import SearchFactoring from "./features/search/SearchFactoring.jsx";
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/search" element={<SearchPage />} />
+      <Route path="/search/usda" element={<SearchPage initialTab="usda" />} />
+      <Route path="/search/mexico-loans" element={<SearchPage initialTab="mexico" />} />
+      <Route path="/search/factoring" element={<SearchPage initialTab="factoring" />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
+  );
+}

@@ -1,0 +1,26 @@
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+
+const key = process.env.VITE_MMN_KEY || ""; // set before running for live calls
+const basic = key ? "Basic " + Buffer.from(`${key}:`).toString("base64") : "";
+
+export default defineConfig({
+  plugins: [react()],
+  server: {
+    port: 3001,
+    strictPort: false,
+    proxy: {
+      "/api/mmn": {
+        target: "https://marsapi.ams.usda.gov/services/v1.2",
+        changeOrigin: true,
+        secure: true,
+        rewrite: (p) => p.replace(/^\/api\/mmn/, ""),
+        configure: (proxy) => {
+          proxy.on("proxyReq", (proxyReq) => {
+            if (basic) proxyReq.setHeader("Authorization", basic);
+          });
+        },
+      },
+    },
+  },
+});

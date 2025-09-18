@@ -1,0 +1,16 @@
+[
+  { "id":"agri","title":"Agriculture & Produce","items":[
+    {"id":"usda-prices","name":"USDA Price Overlays","desc":"W1W26 with 5-yr avg","tags":["USDA","AMS","NASS"]},
+    {"id":"marketplace","name":"Ag Marketplace","desc":"Buyer  Grower matching","tags":["Search","Compare"]},
+    {"id":"water-soil","name":"Water & Soil Tech Audits","desc":"Reports & plans","tags":["Water","Soil"]}
+  ]},
+  { "id":"mortgage","title":"Mortgage & Real-Estate","items":[
+    {"id":"mortgage-search","name":"Mortgage Search Engine","desc":"Filter by FICO/LTV/DSCR","tags":["TRID","ECOA"]},
+    {"id":"cross-border","name":"Cross-Border Lending","desc":"U.S. buyers purchasing in MX","tags":["Compliance","KYC"]}
+  ]},
+  { "id":"compliance","title":"Compliance & Legal","items":[
+    {"id":"global-privacy","name":"Global Privacy Dashboard","desc":"CCPA/GLBA/GDPR/PIPEDA","tags":["Policy","Legal"]},
+    {"id":"audits","name":"Audit Center","desc":"Standardized checklists","tags":["Audit","Risk"]},
+    {"id":"reports","name":"Reports","desc":"Bundles for stakeholders","tags":["Decks","Zips"]}
+  ]}
+]

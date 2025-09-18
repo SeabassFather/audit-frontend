@@ -1,0 +1,2 @@
+id,debtor,lender,state,industry,amount,advance,fee,term,recourse,aging,risk,status
+F-9001,ACME Logistics,BlueFactor,CA,Transportation,450000,85,2.5,90,Yes,45,420,Active

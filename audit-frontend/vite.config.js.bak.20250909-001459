@@ -1,0 +1,33 @@
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+const mmnKey = process.env.VITE_MMN_KEY || "";
+const nassKey = process.env.VITE_NASS_KEY || "";
+const basic  = mmnKey ? "Basic " + Buffer.from(`${mmnKey}:`).toString("base64") : "";
+export default defineConfig({
+  plugins: [react()],
+  server: {
+    port: 3001,
+    strictPort: false,
+    proxy: {
+      "/api/mmn": {
+        target: "https://marsapi.ams.usda.gov/services/v1.2",
+        changeOrigin: true,
+        secure: true,
+        rewrite: (p) => p.replace(/^\/api\/mmn/, ""),
+        configure: (proxy) => {
+          proxy.on("proxyReq", (proxyReq) => { if (basic) proxyReq.setHeader("Authorization", basic); });
+        },
+      },
+      "/api/nass": {
+        target: "https://quickstats.nass.usda.gov/api",
+        changeOrigin: true,
+        secure: true,
+        rewrite: (p) => {
+          const stripped = p.replace(/^\/api\/nass/, "");
+          if (!nassKey) return stripped;
+          return stripped + (stripped.includes("?") ? "&" : "?") + "key=" + encodeURIComponent(nassKey);
+        },
+      },
+    },
+  },
+});

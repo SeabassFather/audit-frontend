@@ -1,0 +1,60 @@
+import React from 'react'
+import { Link, Routes, Route, NavLink } from 'react-router-dom'
+import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts'
+import { FlaskConical, Store, FolderTree } from 'lucide-react'
+import ServiceAccordion from './components/ServiceAccordion.jsx'
+import UsdaCommoditySearch from './features/usda/UsdaCommoditySearch.jsx'
+
+function useToggleState(key, initial){
+  const [val, setVal] = React.useState(()=> {
+    const saved = localStorage.getItem(key)
+    return saved ? JSON.parse(saved) : initial
+  })
+  React.useEffect(()=> localStorage.setItem(key, JSON.stringify(val)), [key, val])
+  return [val, setVal]
+}
+
+export default function App(){
+  const [mode, setMode] = useToggleState('auditdna.dataMode', 'demo') // 'demo' | 'live'
+  return (
+    <div>
+      <nav className='nav'>
+        <div className='nav-inner'>
+          <div className='brand'>AuditDNA</div>
+          <NavLink className='link' to='/'>Home</NavLink>
+          <NavLink className='link' to='/services'>Services</NavLink>
+          <NavLink className='link' to='/usda'>USDA Pricing</NavLink>
+          <div className='ml-auto flex items-center gap-2'>
+            <span className='text-xs text-gray-600'>Data:</span>
+            <button className='btn' onClick={()=> setMode(m => m==='demo' ? 'live' : 'demo')}>
+              {mode==='demo' ? <><FlaskConical size={16} className='mr-1'/> Demo</> : <>Live</>}
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <main className='max-w-7xl mx-auto px-4 py-6'>
+        <Routes>
+          <Route path='/' element={
+            <div className='grid md:grid-cols-2 gap-6'>
+              <div className='card'>
+                <div className='card-hd'>Quick Start</div>
+                <div className='card-bd text-sm text-gray-700'>
+                  Use <b>USDA Pricing</b> to search commodities and view 5-year weekly overlays (W1W26).
+                </div>
+              </div>
+              <div className='card'>
+                <div className='card-hd'>Mode</div>
+                <div className='card-bd text-sm text-gray-700'>
+                  Current: <b className='text-brand-700'>{mode.toUpperCase()}</b>. Toggle in the navbar to switch Demo/Live.
+                </div>
+              </div>
+            </div>
+          }/>
+          <Route path='/services' element={<ServiceAccordion />} />
+          <Route path='/usda' element={<UsdaCommoditySearch mode={mode} />} />
+        </Routes>
+      </main>
+    </div>
+  )
+}

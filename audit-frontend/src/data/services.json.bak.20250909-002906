@@ -1,0 +1,26 @@
+{
+  "categories": [
+    {
+      "title": "Agriculture & Trade",
+      "items": [
+        { "name": "USDA Pricing Analytics", "desc": "Weekly/W1W26 overlays, 5-year history." },
+        { "name": "Ag Factoring", "desc": "Invoice financing for growers and shippers." },
+        { "name": "Produce Marketplace", "desc": "Search commodities, specs, and price history." }
+      ]
+    },
+    {
+      "title": "Mortgage & Lending",
+      "items": [
+        { "name": "Mortgage Search Engine", "desc": "Match borrowers to products by criteria." },
+        { "name": "Compliance Audits (TRID/ECOA/GLBA)", "desc": "Multi-jurisdiction coverage." }
+      ]
+    },
+    {
+      "title": "Legal / CPA / Insurance",
+      "items": [
+        { "name": "Document Review", "desc": "Automated checks with human sign-off." },
+        { "name": "Claims & Underwriting QA" }
+      ]
+    }
+  ]
+}

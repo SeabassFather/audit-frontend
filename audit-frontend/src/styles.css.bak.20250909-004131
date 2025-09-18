@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+:root { color-scheme: light; }
+body { background: #ffffff; color: #111827; }
+
+/* util classes */
+.nav { @apply sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-gray-200; }
+.nav-inner { @apply max-w-7xl mx-auto px-4 py-3 flex items-center gap-4; }
+.brand { @apply text-xl font-semibold text-blue-800; }
+.link { @apply text-sm text-gray-700 hover:text-blue-700 transition; }
+.btn { @apply inline-flex items-center justify-center rounded-2xl px-4 py-2 border border-gray-300 bg-white hover:bg-gray-50; }
+.primary { @apply bg-blue-600 text-white border-blue-600 hover:bg-blue-700; }
+.card { @apply rounded-2xl border border-gray-200 bg-white shadow-sm; }
+.card-hd { @apply px-4 py-3 border-b border-gray-100 font-medium; }
+.card-bd { @apply p-4; }

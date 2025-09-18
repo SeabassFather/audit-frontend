@@ -1,0 +1,74 @@
+// src/data/servicesData.js
+export const serviceCategories = [
+  { id:"mortgage", title:"Mortgage & Lending", icon:"CreditCard", tone:"border-emerald-300 bg-emerald-50",
+    services:[
+      {id:"M001",name:"Purchase (Conforming / Jumbo)",route:"/service/m-purchase"},
+      {id:"M002",name:"Refinance / Cash-Out",route:"/service/m-refi"},
+      {id:"M003",name:"HELOC / Second Mortgage",route:"/service/m-heloc"},
+      {id:"M004",name:"FHA / VA / USDA Loans",route:"/service/m-gov"}
+    ]},
+  { id:"agri", title:"Agriculture & AgriTrade Connect", icon:"Leaf", tone:"border-lime-300 bg-lime-50",
+    services:[
+      {id:"A001",name:"USDA Pricing Search (5-Year)",route:"/usda-pricing"},
+      {id:"A002",name:"Produce Marketplace",route:"/agri/market"},
+      {id:"A003",name:"GrowerBuyer Match",route:"/agri/match"},
+      {id:"A004",name:"Factoring & Equipment Finance",route:"/agri/finance"}
+    ]},
+  { id:"compliance", title:"Global Compliance & Ethics", icon:"Shield", tone:"border-sky-300 bg-sky-50",
+    services:[
+      {id:"C001",name:"U.S. Consumer (GLBA, ECOA, FCRA, CCPA)",route:"/compliance/us"},
+      {id:"C002",name:"EU/UK (GDPR / UK GDPR)",route:"/compliance/eu-uk"},
+      {id:"C003",name:"Canada (PIPEDA)",route:"/compliance/ca"}
+    ]},
+  { id:"eco", title:"Eco & Water-Tech Modules", icon:"Droplets", tone:"border-cyan-300 bg-cyan-50",
+    services:[
+      {id:"E001",name:"Eco Housing Assessment",route:"/eco/housing"},
+      {id:"E002",name:"Water Technology",route:"/eco/water"},
+      {id:"E003",name:"Green Incentives / Rebates",route:"/eco/rebates"}
+    ]},
+  { id:"legal", title:"Legal / CPA / Insurance", icon:"Scale", tone:"border-amber-300 bg-amber-50",
+    services:[
+      {id:"L001",name:"Legal Audits & Docs",route:"/legal/docs"},
+      {id:"L002",name:"CPA Compliance",route:"/legal/cpa"},
+      {id:"L003",name:"Insurance Reviews",route:"/legal/insurance"}
+    ]},
+  { id:"education", title:"Education & Report Cards", icon:"GraduationCap", tone:"border-indigo-300 bg-indigo-50",
+    services:[
+      {id:"ED001",name:"K-12 / Higher-Ed Audits",route:"/edu/audits"},
+      {id:"ED002",name:"Report Card Analytics",route:"/edu/analytics"}
+    ]},
+  { id:"travel", title:"Travel & Global Citizen Watchdog", icon:"Globe", tone:"border-fuchsia-300 bg-fuchsia-50",
+    services:[
+      {id:"T001",name:"Traveler Protections",route:"/travel/protect"},
+      {id:"T002",name:"Multilingual Support",route:"/travel/i18n"}
+    ]},
+  { id:"consumer", title:"Consumer Protection", icon:"UserCheck", tone:"border-rose-300 bg-rose-50",
+    services:[
+      {id:"CP001",name:"Dispute Tools",route:"/consumer/disputes"},
+      {id:"CP002",name:"Identity & Fraud Aid",route:"/consumer/fraud"}
+    ]},
+  { id:"business", title:"Business & SMB", icon:"Briefcase", tone:"border-slate-300 bg-slate-50",
+    services:[
+      {id:"B001",name:"Incorporation / Compliance",route:"/biz/inc"},
+      {id:"B002",name:"Vendor Risk",route:"/biz/vendor"}
+    ]},
+  { id:"health", title:"Health & Medical", icon:"Stethoscope", tone:"border-teal-300 bg-teal-50",
+    services:[{id:"H001",name:"HIPAA Readiness",route:"/health/hipaa"}]},
+  { id:"finance", title:"Capital, Factoring & Equipment", icon:"DollarSign", tone:"border-emerald-300 bg-emerald-50",
+    services:[
+      {id:"F001",name:"Invoice Factoring",route:"/fin/factoring"},
+      {id:"F002",name:"Equipment Finance",route:"/fin/equipment"}
+    ]},
+  { id:"admin", title:"Admin / Files / DocuSign", icon:"Settings", tone:"border-gray-300 bg-white",
+    services:[
+      {id:"AD001",name:"Files",route:"/files"},
+      {id:"AD002",name:"DocuSign",route:"/docusign"}
+    ]},
+  { id:"analytics", title:"Dashboards & Tickers", icon:"BarChart3", tone:"border-purple-300 bg-purple-50",
+    services:[
+      {id:"AN001",name:"Real-Time Dashboards",route:"/dashboards"},
+      {id:"AN002",name:"Commodity Tickers",route:"/tickers"}
+    ]},
+  { id:"elite", title:"AuditDNA Elite Bundle", icon:"Crown", tone:"border-blue-300 bg-blue-50",
+    services:[{id:"EL001",name:"Elite Bundle Overview",route:"/elite"}]},
+];

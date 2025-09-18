@@ -1,0 +1,4 @@
+id,borrower,product,lender,state,purpose,ltv,fico,dti,stage,status,close,amt
+L-1001,Jane Roe,Conventional,Chase,CA,Purchase,78,720,41,Underwriting,Approved,2025-10-20,850000
+L-1002,John Smith,FHA,Wells Fargo,AZ,Refi,82,680,45,Processing,Cond Approved,2025-11-15,420000
+L-1003,Alicia Key,Jumbo,BofA,TX,CashOut,70,760,38,Disclosure,Submitted,2025-12-01,1250000

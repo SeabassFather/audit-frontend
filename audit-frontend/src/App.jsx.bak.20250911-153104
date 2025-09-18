@@ -1,0 +1,23 @@
+import React from "react";
+import NavBar from "./components/NavBar.jsx";
+import ServicesAccordion from "./components/Accordion.jsx";
+import UsdaPanel from "./features/usda/UsdaPanel.jsx";
+
+export default function App() {
+  return (
+    <div>
+      <NavBar />
+      <main className="container" style={{paddingTop:16}}>
+        <div className="card" style={{marginBottom:16}}>
+          <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:12}}>
+            <h1 style={{margin:0}}>AuditDNA UI</h1>
+            <span className="badge">Tailwind OK</span>
+          </div>
+          <p style={{marginTop:8}}>Search services below or query USDA data.</p>
+        </div>
+      </main>
+      <ServicesAccordion />
+      <UsdaPanel />
+    </div>
+  );
+}

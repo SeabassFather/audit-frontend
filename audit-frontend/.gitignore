@@ -1,0 +1,12 @@
+﻿node_modules
+dist
+.DS_Store
+.vscode
+.env
+
+# Local Netlify folder
+.netlify
+
+!dist/
+
+!netlify/functions/

@@ -1,0 +1,2 @@
+id,name,lender,min_fico,max_ltv,max_dti,min_amt,max_amt,states,products,purposes,occupancy,notes
+r1,Chase Conv 80/680,Chase,680,80,43,200000,1200000,CA|AZ,Conventional,Purchase|Refi,Primary,Standard box
