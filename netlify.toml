@@ -6,7 +6,7 @@
   directory = "netlify/functions"
 
 [dev]
-  command    = "npx http-server dist -p 5173 -c-1"
+  command    = "node server.cjs"
   port       = 3000
   targetPort = 5173
   publish    = "dist"

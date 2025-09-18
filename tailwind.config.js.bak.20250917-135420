@@ -1,0 +1,13 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
+  theme: {
+    extend: {
+      colors: {
+        auditdna: { bg: '#F6FAF6', primary: '#16a34a', accent: '#fde047', slate: '#0f172a' }
+      },
+      borderRadius: { '2xl': '1rem' }
+    }
+  },
+  plugins: [],
+}

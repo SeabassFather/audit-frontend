@@ -1,0 +1,78 @@
+import React from 'react'
+import { BrowserRouter, Routes, Route, NavLink, Navigate } from 'react-router-dom'
+import Home from './pages/Home.jsx'
+import MortgageMexico from './pages/MortgageMexico.jsx'
+import USDA from './pages/USDA.jsx'
+import Factoring from './pages/Factoring.jsx'
+import Water from './pages/Water.jsx'
+import Files from './pages/Files.jsx'
+import RealEstate from './pages/RealEstate.jsx'
+
+const tabs = [
+  { to: '/', label: 'Home' },
+  { to: '/usda', label: 'USDA Pricing' },
+  { to: '/mortgage/mexico', label: 'Mortgage (MX)' },
+  { to: '/real-estate', label: 'Real Estate (MX)' },
+  { to: '/factoring', label: 'Factoring' },
+  { to: '/water', label: 'Water' },
+  { to: '/files', label: 'Files' },
+  { to: '/admin', label: 'Admin', disabled:true },
+]
+
+function Nav(){
+  return (
+    <header className='sticky top-0 z-40'>
+      <div className='mx-auto max-w-7xl px-4 pt-5'>
+        <div className='glass rounded-3xl px-5 py-3 flex items-center justify-between'>
+          <div className='flex items-center gap-3'>
+            <div className='h-9 w-9 rounded-2xl bg-gradient-to-br from-auditdna-primary to-auditdna-accent'></div>
+            <div className='font-extrabold text-lg tracking-tight'>AUDITDNA</div>
+          </div>
+          <nav className='hidden md:flex items-center gap-2'>
+            {tabs.map(t=>(
+              t.disabled ? (
+                <span key={t.to} className='px-3 py-2 rounded-xl text-sm text-slate-400 cursor-not-allowed'>{t.label}</span>
+              ) : (
+                <NavLink
+                  key={t.to}
+                  to={t.to}
+                  className={({isActive})=>'px-3 py-2 rounded-xl text-sm font-medium ' + (isActive ? 'bg-auditdna-primary text-white' : 'text-slate-700 hover:bg-white')}>
+                  {t.label}
+                </NavLink>
+              )
+            ))}
+          </nav>
+        </div>
+      </div>
+    </header>
+  )
+}
+
+export default function App(){
+  return (
+    <BrowserRouter>
+      <Nav />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/mortgage/mexico' element={<MortgageMexico />} />
+        <Route path='/usda' element={<USDA />} />
+        <Route path='/factoring' element={<Factoring />} />
+        <Route path='/water' element={<Water />} />
+        <Route path='/files' element={<Files />} />
+        <Route path='/real-estate' element={<RealEstate />} />
+        <Route path='*' element={<Navigate to='/' replace />} />
+      </Routes>
+      <footer className='mt-10 mb-8'>
+        <div className='mx-auto max-w-7xl px-4'>
+          <div className='glass rounded-3xl p-4 text-xs text-slate-600 flex items-center justify-between'>
+            <span> AuditDNA</span>
+            <span className='inline-flex items-center gap-2'>
+              <span className='h-2.5 w-2.5 rounded-full bg-emerald-500'></span>
+              <span>FE+BE linked via /api  :5050</span>
+            </span>
+          </div>
+        </div>
+      </footer>
+    </BrowserRouter>
+  )
+}

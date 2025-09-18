@@ -1,0 +1,37 @@
+import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+
+const tiles = [
+  { to:'/mortgage/mexico', title:'Mortgage (USAMX)', sub:'Cross-border lenders & scenarios' },
+  { to:'/real-estate',     title:'Mexico Real Estate', sub:'Listings + finance route' },
+  { to:'/usda',            title:'USDA Pricing',       sub:'Commodity price charts & feeds' },
+  { to:'/factoring',       title:'Grower Factoring',   sub:'MX growers  USA factoring' },
+  { to:'/water',           title:'Water Tech Upload',  sub:'Soil/water test upload engine' },
+  { to:'/files',           title:'Files & Docs',       sub:'Docs, templates, exports' },
+]
+
+export default function Home(){
+  const [status, setStatus] = useState('Checking...')
+  useEffect(()=>{
+    const controller = new AbortController()
+    const id = setTimeout(()=>controller.abort(), 2500)
+    fetch('/api/health', {signal: controller.signal})
+      .then(r=>r.json()).then(()=>setStatus('Online'))
+      .catch(()=>setStatus('Offline'))
+      .finally(()=>clearTimeout(id))
+  },[])
+  return (
+    <main className='mx-auto max-w-6xl px-4 py-10'>
+      <h1 className='text-2xl font-bold mb-1'>Welcome to AUDITDNA</h1>
+      <div className='text-sm text-slate-600 mb-6'>Backend: <span className={status==='Online'?'text-emerald-600':'text-rose-600'}>{status}</span></div>
+      <div className='grid gap-4 md:grid-cols-3'>
+        {tiles.map((t,i)=>(
+          <Link key={i} to={t.to} className='card block hover:shadow-lg transition'>
+            <div className='text-auditdna-primary font-semibold'>{t.title}</div>
+            <div className='text-slate-500 text-sm'>{t.sub}</div>
+          </Link>
+        ))}
+      </div>
+    </main>
+  )
+}
