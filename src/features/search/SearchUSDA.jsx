@@ -52,7 +52,8 @@ export default function SearchUSDA(){
 
   const csv = useMemo(()=>{
     if(!rows.length) return null;
-    const text = ["date,value", ...rows.map(r=>`${r.date},${r.value}`)].join("\n");
+    const text = ["date,value", ...rows.map(r=>`${r.date},${r.value}`)].join("
+");
     const blob = new Blob([text], {type:"text/csv;charset=utf-8"});
     return URL.createObjectURL(blob);
   },[rows]);

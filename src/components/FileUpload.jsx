@@ -1,8 +1,10 @@
-export default function FileUpload({label="Upload", onFiles=()=>{}}){
+export default function FileUpload({label="Upload", multiple=false, accept, onFiles}){
   return (
-    <label className="inline-flex items-center gap-2 px-3 py-2 border rounded cursor-pointer bg-white shadow-sm">
+    <label className="block">
       <span className="text-sm">{label}</span>
-      <input type="file" className="hidden" multiple onChange={e=>onFiles([...e.target.files])}/>
+      <input type="file" multiple={multiple} accept={accept}
+             onChange={e=>onFiles?.(Array.from(e.target.files||[]))}
+             className="mt-1 block w-full border rounded p-2"/>
     </label>
   );
 }

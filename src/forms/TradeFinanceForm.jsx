@@ -1,68 +1,44 @@
-import { useState } from "react";
+import FileUpload from "../components/FileUpload";
 
-export default function TradeFinanceForm(){
-  const [v,setV]=useState({
-    legalName:"", duns:"", country:"Mexico", revenue:"", aging:"", facility:"Factoring",
-    amount:"", currency:"USD", debtor:"", terms:"Net 30", recurrence:"One-off", season:"",
-    collateral:"Inventory", shipping:"FOB", insurance:"Product COI", commitment:"60 days",
-    regions:"Mexico, Central America, South America"
-  });
-  const set = e => setV(o=>({...o,[e.target.name]: e.target.value}));
-  const preview = { business:{legalName:v.legalName,duns:v.duns,country:v.country,revenue:v.revenue,aging:v.aging},
-    facility:v.facility, invoice:{amount:v.amount,currency:v.currency,debtor:v.debtor,terms:v.terms,recurrence:v.recurrence,season:v.season},
-    collateral:{type:v.collateral, shipping:v.shipping, insurance:v.insurance},
-    commitment:v.commitment, regions:v.regions };
-
+export default function TradeFinanceForm({values,setValue,onSubmit,loading}){
   return (
-    <div className="grid md:grid-cols-2 gap-4">
-      <div className="card p-4 space-y-2">
-        <div className="font-semibold mb-1">Business</div>
-        <input className="border p-2 rounded w-full" name="legalName" placeholder="Legal name" value={v.legalName} onChange={set}/>
-        <div className="grid grid-cols-3 gap-2">
-          <input className="border p-2 rounded" name="duns" placeholder="DUNS" value={v.duns} onChange={set}/>
-          <input className="border p-2 rounded" name="country" placeholder="Country" value={v.country} onChange={set}/>
-          <input className="border p-2 rounded" name="revenue" placeholder="Annual revenue" value={v.revenue} onChange={set}/>
+    <div className="card p-4 space-y-3">
+      <div className="grid md:grid-cols-2 gap-3">
+        <div>
+          <div className="font-semibold mb-1">Business</div>
+          <input className="border rounded p-2 w-full mb-2" placeholder="Legal name" value={values.legalName} onChange={e=>setValue("legalName",e.target.value)}/>
+          <input className="border rounded p-2 w-full mb-2" placeholder="DUNS" value={values.duns} onChange={e=>setValue("duns",e.target.value)}/>
+          <input className="border rounded p-2 w-full" placeholder="Annual revenue" value={values.revenue} onChange={e=>setValue("revenue",e.target.value)}/>
+          <input className="border rounded p-2 w-full mt-2" placeholder="AR aging summary" value={values.arAging} onChange={e=>setValue("arAging",e.target.value)}/>
         </div>
-        <input className="border p-2 rounded w-full" name="aging" placeholder="AR aging summary" value={v.aging} onChange={set}/>
-        <div className="font-semibold mt-3">Facility desired</div>
-        <select className="border p-2 rounded w-full" name="facility" value={v.facility} onChange={set}>
-          <option>Factoring</option><option>PO Financing</option><option>Both</option>
-        </select>
-      </div>
-
-      <div className="card p-4 space-y-2">
-        <div className="font-semibold mb-1">Invoice / PO</div>
-        <div className="grid grid-cols-3 gap-2">
-          <input className="border p-2 rounded" name="amount" placeholder="Amount" value={v.amount} onChange={set}/>
-          <select className="border p-2 rounded" name="currency" value={v.currency} onChange={set}><option>USD</option><option>MXN</option></select>
-          <input className="border p-2 rounded" name="debtor" placeholder="Debtor/Buyer" value={v.debtor} onChange={set}/>
-        </div>
-        <div className="grid grid-cols-3 gap-2">
-          <select className="border p-2 rounded" name="terms" value={v.terms} onChange={set}><option>Net 30</option><option>Net 45</option><option>Net 60</option><option>Net 90</option></select>
-          <select className="border p-2 rounded" name="recurrence" value={v.recurrence} onChange={set}><option>One-off</option><option>Monthly</option><option>Seasonal</option></select>
-          <input className="border p-2 rounded" name="season" placeholder="Season (if seasonal)" value={v.season} onChange={set}/>
-        </div>
-        <div className="grid grid-cols-3 gap-2">
-          <input className="border p-2 rounded" name="collateral" placeholder="Collateral" value={v.collateral} onChange={set}/>
-          <input className="border p-2 rounded" name="shipping" placeholder="Shipping terms" value={v.shipping} onChange={set}/>
-          <input className="border p-2 rounded" name="insurance" placeholder="Insurance" value={v.insurance} onChange={set}/>
-        </div>
-        <div className="grid grid-cols-2 gap-2">
-          <select className="border p-2 rounded" name="commitment" value={v.commitment} onChange={set}>
-            <option>30 days</option><option>60 days</option><option>90 days</option><option>120 days</option><option>Seasonal</option>
-          </select>
-          <input className="border p-2 rounded" name="regions" placeholder="Regions allowed" value={v.regions} onChange={set}/>
+        <div>
+          <div className="font-semibold mb-1">Facility & Invoice/PO</div>
+          <div className="grid grid-cols-2 gap-2">
+            <select className="border rounded p-2" value={values.facility} onChange={e=>setValue("facility",e.target.value)}>
+              <option>Factoring</option><option>PO Financing</option><option>Both</option>
+            </select>
+            <input className="border rounded p-2" placeholder="Amount" value={values.amount} onChange={e=>setValue("amount",e.target.value)}/>
+            <select className="border rounded p-2" value={values.currency} onChange={e=>setValue("currency",e.target.value)}>
+              <option>USD</option><option>MXN</option><option>CAD</option>
+            </select>
+            <input className="border rounded p-2" placeholder="Debtor / Buyer" value={values.debtor} onChange={e=>setValue("debtor",e.target.value)}/>
+            <select className="border rounded p-2" value={values.terms} onChange={e=>setValue("terms",e.target.value)}>
+              <option>Net 30</option><option>Net 45</option><option>Net 60</option><option>Net 90</option>
+            </select>
+            <input className="border rounded p-2" placeholder="Collateral" value={values.collateral} onChange={e=>setValue("collateral",e.target.value)}/>
+            <select className="border rounded p-2 col-span-2" value={values.commitment} onChange={e=>setValue("commitment",e.target.value)}>
+              <option>30 days</option><option>60 days</option><option>90 days</option><option>120 days</option><option>Seasonal</option>
+            </select>
+          </div>
+          <div className="mt-2">
+            <FileUpload label="Uploads (PO, Invoice, MSA, insurance, certs)" multiple accept=".pdf,.png,.jpg" onFiles={()=>{}} />
+          </div>
         </div>
       </div>
-
-      <div className="md:col-span-2 card p-4">
-        <div className="font-semibold mb-2">Preview (tradeFinanceMatcher input)</div>
-        <pre className="text-xs overflow-auto">{JSON.stringify(preview,null,2)}</pre>
-        <div className="flex gap-2 mt-2">
-          <button className="bg-dnaBlue text-white px-3 py-2 rounded">Request Factoring</button>
-          <button className="border px-3 py-2 rounded">Request PO Finance</button>
-        </div>
-      </div>
+      <button onClick={onSubmit} disabled={loading}
+        className={"w-full mt-2 px-3 py-2 rounded text-white "+(loading?"bg-slate-400":"bg-dnaBlue")}>
+        {loading?"Matching…":"Find Trade Finance"}
+      </button>
     </div>
   );
 }

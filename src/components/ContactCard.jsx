@@ -13,7 +13,8 @@ function encodeMailtoBody(obj){
   if (obj.query) add("Query", JSON.stringify(obj.query));
   if (obj.app) add("Application", JSON.stringify(obj.app));
   if (obj.calc) add("Calc", JSON.stringify(obj.calc));
-  const body = lines.join("\n");
+  const body = lines.join("
+");
   return encodeURIComponent(body);
 }
 
