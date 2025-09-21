@@ -1,4 +1,4 @@
-﻿import { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import all from "../data/services.all.json";
 import UploadSheet from "../components/UploadSheet";
@@ -72,6 +72,7 @@ export default function Services(){
  Upload
  </button>
  <Link to={`/service/${s.id ?? slug(s.display)}`} className="border px-2 py-1 rounded text-sm" title="Open details">Details</Link>
+ </div>
  </div>
  ))}
  </div>

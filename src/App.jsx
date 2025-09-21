@@ -2,7 +2,7 @@ import React, { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 import UsdaSearch from "./pages/UsdaSearch";
 
-import Navbar from "./components/Navbar";
+import Navbar from "./components/NavBar";
 import Ticker from "./components/Ticker";
 import Footer from "./components/Footer";
 
