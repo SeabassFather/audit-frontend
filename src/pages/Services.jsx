@@ -1,121 +1,90 @@
-import { useMemo, useState } from "react";
-import byCat from "../data/services.byCategory.json";
-import UploadSheet from "../components/UploadSheet";
+﻿import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import all from "../data/services.all.json";
+import UploadSheet from "../components/UploadSheet";
 
-const allCats = Object.keys(byCat).sort();
-const allPhases = ["Assessment","Implementation","Monitoring"];
-const allTiers  = ["Starter","Pro","Elite"];
+// strip tier labels anywhere in the name
+function normalizeName(s=""){
+ return s
+ .replace(/\s*[ÃƒÆ’Ã†"Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â "ÃƒÆ’Ã†"ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†"Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†"Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†"ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†"Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†"Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†"ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â-]\s*(Starter|Elite|Pro).*/i,"")
+ .replace(/\s*\((Starter|Elite|Pro)\).*/i,"")
+ .replace(/\b(Starter|Elite|Pro)\b/ig,"")
+ .replace(/\s{2,}/g," ")
+ .trim();
+}
+function slug(s=""){ return s.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,""); }
 
 export default function Services(){
-  const [q, setQ] = useState("");
-  const [cat, setCat] = useState("All");
-  const [phase, setPhase] = useState("All");
-  const [tier, setTier] = useState("All");
-  const [open, setOpen] = useState(() => Object.fromEntries(allCats.map(c=>[c,true])));
-  const [sheet, setSheet] = useState({ open:false, svc:null });
+ const [q,setQ] = useState("");
+ const [cat,setCat] = useState("All");
+ const [sheet, setSheet] = useState({open:false, svc:null});
 
-  const cats = useMemo(()=>["All", ...allCats], []);
-  const filtered = useMemo(()=>{
-    const match = (s) => {
-      const text = (s.name + " " + (s.tags||[]).join(" ")).toLowerCase();
-      const okQ = !q || text.includes(q.toLowerCase());
-      const okPhase = phase==="All" || text.includes(phase.toLowerCase());
-      const okTier  = tier==="All"  || text.includes(tier.toLowerCase());
-      return okQ && okPhase && okTier;
-    };
-    const src = cat==="All" ? byCat : { [cat]: byCat[cat] || [] };
-    const out = {};
-    for(const k of Object.keys(src)) out[k] = (src[k]||[]).filter(match);
-    return out;
-  }, [q, cat, phase, tier]);
+ const raw = Array.isArray(all) ? all : (all.services || []);
+ const items = useMemo(()=> raw.map((s,i)=>({
+ ...s,
+ _id: s.id ?? i,
+ display: normalizeName(s.name ?? s.title ?? s.service ?? ""),
+ category: s.category ?? s.cat ?? "Other",
+ desc: s.desc ?? s.description ?? ""
+ })), [raw]);
 
-  const totalShown = useMemo(()=>Object.values(filtered).reduce((n,arr)=>n+arr.length,0), [filtered]);
+ const cats = useMemo(() => ["All", ...Array.from(new Set(items.map(s=>s.category))).sort()], [items]);
 
-  return (
-    <div className="dna-section">
-      <h1 className="text-2xl font-bold mb-3">AuditDNA Services</h1>
+ const filtered = useMemo(()=>{
+ const t = q.trim().toLowerCase();
+ return items
+ .filter(s => (cat==="All" || s.category===cat))
+ .filter(s => !t || s.display.toLowerCase().includes(t) || (Array.isArray(s.tags) && s.tags.join(" ").toLowerCase().includes(t)))
+ .sort((a,b)=> a.display.localeCompare(b.display));
+ }, [items,q,cat]);
 
-      {/* Filters */}
-      <div className="card p-3 sticky top-2 z-10 bg-white/90 backdrop-blur">
-        <div className="grid md:grid-cols-4 gap-2">
-          <input
-            placeholder="Search name or tags…"
-            className="border p-2 rounded"
-            value={q}
-            onChange={e=>setQ(e.target.value)}
-          />
-          <select className="border p-2 rounded" value={cat} onChange={e=>setCat(e.target.value)}>
-            {cats.map(c => <option key={c}>{c}</option>)}
-          </select>
-          <select className="border p-2 rounded" value={phase} onChange={e=>setPhase(e.target.value)}>
-            {["All", ...allPhases].map(p => <option key={p}>{p}</option>)}
-          </select>
-          <select className="border p-2 rounded" value={tier} onChange={e=>setTier(e.target.value)}>
-            {["All", ...allTiers].map(t => <option key={t}>{t}</option>)}
-          </select>
-        </div>
-        <div className="text-xs text-slate-600 mt-2">{totalShown.toLocaleString()} results</div>
-      </div>
+ return (
+ <div className="dna-section">
+ <div className="flex items-center justify-between gap-3 flex-wrap mb-3">
+ <h1 className="text-2xl font-bold">Services</h1>
+ <div className="flex gap-2">
+ <input
+ className="border rounded px-3 py-2 w-72"
+ placeholder="Search services"
+ value={q}
+ onChange={e=>setQ(e.target.value)}
+ />
+ <select className="border rounded px-2 py-2" value={cat} onChange={e=>setCat(e.target.value)}>
+ {cats.map(c=><option key={c} value={c}>{c}</option>)}
+ </select>
+ </div>
+ </div>
 
-      {/* Accordion by category */}
-      <div className="mt-3 space-y-3">
-        {allCats.map(catName=>{
-          const list = filtered[catName] || [];
-          const isOpen = !!open[catName];
-          return (
-            <div key={catName} className="card overflow-hidden">
-              <button
-                className="w-full flex items-center justify-between px-4 py-3 bg-slate-100 hover:bg-slate-200"
-                onClick={()=>setOpen({...open, [catName]:!isOpen})}
-              >
-                <span className="font-semibold">{catName}</span>
-                <span className="text-sm text-slate-600">{list.length}</span>
-              </button>
+ <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+ {filtered.map(s=>(
+ <div key={s._id} className="card p-4 flex flex-col gap-3">
+ <div>
+ <div className="text-xs text-slate-500">{s.category}</div>
+ <div className="font-semibold leading-snug">{s.display}</div>
+ </div>
+ {s.desc && <p className="text-sm text-slate-600">{s.desc}</p>}
+ <div className="flex gap-2 mt-auto">
+ <button
+ className="border px-2 py-1 rounded text-sm"
+ onClick={()=>setSheet({open:true, svc:s})}
+ title="Upload docs for intake"
+ >
+ Upload
+ </button>
+ <Link to={`/service/${s.id ?? slug(s.display)}`} className="border px-2 py-1 rounded text-sm" title="Open details">Details</Link>
+ </div>
+ ))}
+ </div>
 
-              {isOpen && (
-                <div className="p-3">
-                  {list.length===0 && <div className="text-sm text-slate-500">No matches in this category.</div>}
-                  <ul className="grid md:grid-cols-2 gap-2">
-                    {list.map(s => (
-                      <li key={s.id} className="border rounded p-3 bg-white">
-                        <div className="flex items-start justify-between gap-3">
-                          <div>
-                            <Link to={`/service/${s.id}`} className="text-dnaBlue font-medium hover:underline">
-                              {s.name}
-                            </Link>
-                            <div className="text-xs text-slate-600 mt-1">
-                              {(s.tags||[]).slice(0,6).join("  ")}
-                            </div>
-                          </div>
-                          <div className="flex gap-2 shrink-0">
-                            <button
-                              className="border px-2 py-1 rounded text-sm"
-                              onClick={()=>setSheet({ open:true, svc:s })}
-                              title="Upload docs for intake"
-                            >
-                              Upload
-                            </button>
-                            <Link
-                              to={`/service/${s.id}`}
-                              className="border px-2 py-1 rounded text-sm"
-                              title="Open details"
-                            >
-                              Details
-                            </Link>
-                          </div>
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-          );
-        })}
-      </div>
-
-      <UploadSheet open={sheet.open} service={sheet.svc} onClose={()=>setSheet({open:false, svc:null})}/>
-    </div>
-  );
+ <UploadSheet
+ open={sheet.open}
+ service={sheet.svc}
+ onClose={()=>setSheet({open:false, svc:null})}
+ />
+ </div>
+ );
 }
+
+
+
+

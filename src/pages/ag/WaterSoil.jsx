@@ -1,18 +1,23 @@
+import React, { useState } from "react";
+
 export default function WaterSoil(){
+  const [file,setFile] = useState(null);
+  const [msg,setMsg] = useState("");
+
+  function upload(e){
+    e.preventDefault();
+    if(!file){ setMsg("No file selected"); return; }
+    setMsg(`Uploaded: ${file.name}`);
+  }
+
   return (
-    <div className="space-y-4">
-      <div className="card">
-        <div className="text-lg font-semibold">Water & Soil Tech Audits</div>
-        <p className="text-gray-700 mt-2">Upload lab reports, water conditioning configs, and remediation plans. Generate a standardized audit summary for growers and lenders.</p>
-        <div className="grid md:grid-cols-3 gap-3 mt-3">
-          <input className="border border-silver-300 rounded-xl2 px-3 py-2" placeholder="Farm / Ranch"/>
-          <input className="border border-silver-300 rounded-xl2 px-3 py-2" placeholder="Region / State"/>
-          <input className="border border-silver-300 rounded-xl2 px-3 py-2" placeholder="Contact"/>
-          <button className="btn">Upload Lab Report (PDF)</button>
-          <button className="btn">Add Conditioning Specs</button>
-          <button className="btn btn-primary">Generate Audit</button>
-        </div>
-      </div>
+    <div className="p-4">
+      <h2 className="text-xl font-bold mb-2">Water & Soil Report Upload</h2>
+      <form onSubmit={upload}>
+        <input type="file" onChange={e=>setFile(e.target.files[0])}/>
+        <button type="submit" className="bg-green-600 text-white px-3 py-1 rounded ml-2">Upload</button>
+      </form>
+      {msg && <p className="mt-2 text-sm text-gray-700">{msg}</p>}
     </div>
   );
 }

@@ -1,6 +1,6 @@
 :root{
-  --blue:#2563eb; --green:#22c55e; --yellow:#fef08a; --silver:#e5e7eb; --ink:#111827; --card:#ffffff;
-  --radius:16px; --shadow:0 10px 25px rgba(0,0,0,.08);
+ --blue:#2563eb; --green:#22c55e; --yellow:#fef08a; --silver:#e5e7eb; --ink:#111827; --card:#ffffff;
+ --radius:16px; --shadow:0 10px 25px rgba(0,0,0,.08);
 }
 *{box-sizing:border-box}
 html,body,#root{height:100%}

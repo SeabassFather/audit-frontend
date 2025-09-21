@@ -1,14 +1,8 @@
 [build]
-  command = ""
+  command = "npm run build"
   publish = "dist"
 
-[functions]
-  directory = "netlify/functions"
-
-[dev]
-  command    = "node server.cjs"
-  port       = 3000
-  targetPort = 5173
-  publish    = "dist"
-  functions  = "netlify/functions"
-  autoLaunch = false
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
