@@ -1,6 +1,6 @@
 ﻿import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar.jsx";
+import Navbar from "./components/NavBar.jsx";
 import Footer from "./components/Footer.jsx";
 import Sidebar from "./components/Sidebar.jsx";
 import HomePage from "./pages/HomePage.jsx";
@@ -9,6 +9,7 @@ import Services from "./pages/Services.jsx";
 import ServiceDetails from "./pages/ServiceDetails.jsx";
 import Uploads from "./pages/Uploads.jsx";
 import Agreements from "./pages/Agreements.jsx";
+import Policies from "./pages/Policies.jsx";
 import Marketing from "./pages/Marketing.jsx";
 import PitchDeck from "./pages/PitchDeck.jsx";
 import Tickers from "./pages/Tickers.jsx";
@@ -28,6 +29,7 @@ export default function App() {
             <Route path="/services/:serviceId" element={<ServiceDetails />} />
             <Route path="/uploads" element={<Uploads />} />
             <Route path="/agreements" element={<Agreements />} />
+            <Route path="/policies" element={<Policies />} />
             <Route path="/marketing" element={<Marketing />} />
             <Route path="/pitchdeck" element={<PitchDeck />} />
             <Route path="/tickers" element={<Tickers />} />

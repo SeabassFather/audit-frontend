@@ -1,0 +1,67 @@
+QR CODE VERIFICATION GUIDE
+
+PURPOSE:
+QR codes provide secure, instant verification of audit documents, certificates, and compliance reports. This guide explains how to use AuditDNA's QR verification system.
+
+VERIFICATION PROCESS:
+
+STEP 1: LOCATE THE QR CODE
+- QR codes appear on all official AuditDNA documents
+- Usually positioned in the top-right or bottom-right corner
+- Accompanied by a unique verification ID
+
+STEP 2: SCAN THE CODE
+- Use any QR code scanner app on your mobile device
+- Point camera at the QR code until it focuses
+- Tap the notification that appears
+
+STEP 3: VERIFY AUTHENTICITY
+- Browser will open to verification page
+- Document details will display automatically
+- Green checkmark = Authentic document
+- Red X = Invalid or expired document
+
+WHAT YOU'LL SEE:
+✓ Document Type (e.g., "USDA Organic Certification")
+✓ Issue Date
+✓ Expiration Date (if applicable)
+✓ Issuing Authority
+✓ Document Status (Active/Expired/Revoked)
+✓ Digital Signature Verification
+
+TROUBLESHOOTING:
+
+QR CODE WON'T SCAN:
+- Ensure adequate lighting
+- Hold device steady, 6-8 inches from code
+- Clean camera lens
+- Try different QR scanner app
+
+VERIFICATION FAILS:
+- Check internet connection
+- Verify you're scanning complete QR code
+- Contact support if persistent issues
+
+SECURITY FEATURES:
+- Each QR code is unique and cannot be duplicated
+- Codes expire automatically with documents
+- Scanning logs maintained for audit trail
+- Real-time validation against secure database
+
+MOBILE OPTIMIZATION:
+- Works on all smartphones and tablets
+- No special app required
+- Optimized for low-bandwidth connections
+- Accessible design for all users
+
+SUPPORT:
+For technical issues or questions:
+- Email: support@auditdna.com  
+- Phone: 1-800-AUDIT-DNA
+- Live chat: Available 24/7 on our website
+
+Best Practices:
+- Always verify documents before accepting
+- Save verification screenshots for records
+- Report suspicious or invalid documents immediately
+- Keep QR codes clean and unobstructed on printed materials
