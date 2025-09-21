@@ -1,4 +1,4 @@
-export default function UsdaSearch(){
+﻿export default function UsdaSearch(){
  return (
  <div className="p-6">
  <h1 className="text-2xl font-bold">USDA Search</h1>

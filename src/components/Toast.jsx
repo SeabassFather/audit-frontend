@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 export default function Toast({text, showFor=1800}){
  const [on,setOn] = useState(true);
  useEffect(()=>{ const id=setTimeout(()=>setOn(false),showFor); return ()=>clearTimeout(id); },[showFor]);

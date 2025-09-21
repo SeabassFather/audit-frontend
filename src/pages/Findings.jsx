@@ -1,4 +1,4 @@
-import SeverityPill from "../components/SeverityPill";
+﻿import SeverityPill from "../components/SeverityPill";
 
 /** Section: Findings
  * Normalized evidence table across engines (scanner/OCR/search/compliance checks).

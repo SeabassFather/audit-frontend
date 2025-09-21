@@ -1,52 +1,41 @@
-import React, { Suspense, lazy } from "react";
+﻿import React from "react";
 import { Routes, Route } from "react-router-dom";
-import UsdaSearch from "./pages/UsdaSearch";
+import Navbar from "./components/Navbar.jsx";
+import Footer from "./components/Footer.jsx";
+import Sidebar from "./components/Sidebar.jsx";
+import HomePage from "./pages/HomePage.jsx";
+import Dashboard from "./pages/Dashboard.jsx";
+import Services from "./pages/Services.jsx";
+import ServiceDetails from "./pages/ServiceDetails.jsx";
+import Uploads from "./pages/Uploads.jsx";
+import Agreements from "./pages/Agreements.jsx";
+import Marketing from "./pages/Marketing.jsx";
+import PitchDeck from "./pages/PitchDeck.jsx";
+import Tickers from "./pages/Tickers.jsx";
+import Admin from "./pages/Admin.jsx";
 
-import Navbar from "./components/Navbar";
-import Ticker from "./components/Ticker";
-import Footer from "./components/Footer";
-
-const Dashboard = lazy(() => import("./pages/Dashboard"));
-const Services = lazy(() => import("./pages/Services"));
-const Engines = lazy(() => import("./pages/Engines"));
-const Findings = lazy(() => import("./pages/Findings"));
-const Results = lazy(() => import("./pages/Results"));
-const Uploads = lazy(() => import("./pages/Uploads"));
-const Modules = lazy(() => import("./pages/Modules"));
-const Admin = lazy(() => import("./pages/Admin"));
-const Login = lazy(() => import("./pages/Login"));
-
-function Spinner(){
- return <div className="p-6 text-center text-sm text-slate-500">LoadingÃƒÆ"Ã†"Ãƒâ€šÃ‚Â¢ÃƒÆ"Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ"Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¦</div>;
+export default function App() {
+  return (
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-brand-green via-brand-yellow to-brand-blue text-gray-900">
+      <Navbar />
+      <div className="flex flex-1">
+        <Sidebar />
+        <main className="flex-1 mx-auto max-w-7xl px-4 sm:px-6 py-8 space-y-8">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/services/:serviceId" element={<ServiceDetails />} />
+            <Route path="/uploads" element={<Uploads />} />
+            <Route path="/agreements" element={<Agreements />} />
+            <Route path="/marketing" element={<Marketing />} />
+            <Route path="/pitchdeck" element={<PitchDeck />} />
+            <Route path="/tickers" element={<Tickers />} />
+            <Route path="/admin" element={<Admin />} />
+          </Routes>
+        </main>
+      </div>
+      <Footer />
+    </div>
+  );
 }
-
-export default function App(){
- return (
- <div className="min-h-screen bg-slate-50 text-gray-900">
- <Ticker/>
- <Navbar/>
- <main className="container px-3 md:px-4 py-6">
- <Suspense fallback={<Spinner/>}>
- <Routes>
- <Route path="/" element={<Dashboard/>}/>
- <Route path="/services" element={<Services/>}/>
- <Route path="/engines" element={<Engines/>}/>
- <Route path="/findings" element={<Findings/>}/>
- <Route path="/results" element={<Results/>}/>
- <Route path="/uploads" element={<Uploads/>}/>
- <Route path="/modules" element={<Modules/>}/>
- <Route path="/admin" element={<Admin/>}/>
- <Route path="/login" element={<Login/>}/>
- <Route path="/engines/usda" element={<UsdaSearch />}/>n <Route path="/usda" element={<UsdaSearch/>}/> 
- </Routes>
- </Suspense>
- </main>
- <Footer/>
- </div>
- );
-}
-
-
-
-
-

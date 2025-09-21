@@ -1,10 +1,4 @@
-import RateTicker from "../components/RateTicker";
-import StockTicker from "../components/StockTicker";
-export default function Tickers(){
- return (
- <div className="flex flex-wrap gap-3">
- <RateTicker/>
- <StockTicker/>
- </div>
- );
-}
+﻿import React from "react";
+export default function Tickers() { return (
+  <div className="p-4"><h1 className="text-2xl font-bold mb-2">Tickers</h1></div>
+);}

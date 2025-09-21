@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+﻿import { useEffect, useRef, useState } from "react";
 import { useIntake } from "../contexts/intake";
 
 export default function UploadSheet({ open, onClose, service }) {
@@ -48,7 +48,7 @@ export default function UploadSheet({ open, onClose, service }) {
  >
  <div className="mb-3">Drop documents here</div>
  <input ref={inputRef} type="file" multiple className="hidden" onChange={onChange}/>
- <button onClick={choose} className="bg-dnaBlue text-white px-3 py-2 rounded">Choose filesÃƒÆ"Ã†"Ãƒâ€šÃ‚Â¢ÃƒÆ"Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ"Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¦</button>
+ <button onClick={choose} className="bg-dnaBlue text-white px-3 py-2 rounded">Choose filesÃƒÆ’Ã†"Ãƒâ€ "ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†"Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†"ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¦</button>
  </div>
 
  <div className="mt-6 grid grid-cols-2 gap-3">

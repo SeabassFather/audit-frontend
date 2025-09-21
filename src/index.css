@@ -1,18 +1,10 @@
-@tailwind base;
+﻿@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
- html, body, #root { height: 100%; }
- body { @apply bg-slate-50 text-slate-800; }
-}
+:root { --card-bg: #ffffff; }
 
-@layer components {
- .card { @apply bg-white border border-slate-200 rounded-2xl shadow-sm; }
- .badge { @apply inline-flex items-center px-2 py-1 rounded-full text-xs bg-slate-100 border border-slate-200 text-slate-700; }
- .btn { @apply inline-flex items-center justify-center rounded-lg px-3 py-2 text-sm font-medium transition; }
- .btn-primary { @apply btn bg-dnaBlue text-white hover:brightness-110; }
- .btn-outline { @apply btn border border-slate-300 bg-white hover:bg-slate-50; }
- .input { @apply w-full rounded border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-dnaBlue/40; }
- .label { @apply text-xs font-medium text-slate-500; }
-}
+body { font-family: ui-sans-serif, system-ui; }
+
+.container { max-width: 1200px; margin: 0 auto; }
+.card { background: var(--card-bg); border-radius: 1rem; box-shadow: theme("boxShadow.card"); }

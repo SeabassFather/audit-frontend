@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+﻿import React, { useState } from "react";
 import { fetchCommoditySeries } from "./usdaApi";
 
 export default function UsdaPanel() {
@@ -49,7 +49,7 @@ export default function UsdaPanel() {
  <input className="input" type="number" min="1" max="10" value={years} onChange={e=>setYears(e.target.value)} />
  </label>
  <div style={{display:"flex", alignItems:"end"}}>
- <button className="btn" onClick={run} disabled={busy}>{busy ? "LoadingÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦" : "Fetch"}</button>
+ <button className="btn" onClick={run} disabled={busy}>{busy ? "LoadingÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦" : "Fetch"}</button>
  </div>
  </div>
 

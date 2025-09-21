@@ -1,12 +1,10 @@
-/** @type {import(''tailwindcss'').Config} */
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
+  content: ['./index.html','./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
-      colors: {
-        dnaBlue: "#2563eb",
-        dnaGreen: "#16a34a",
-      }
+      colors: { primary:'#1e88e5', accent:'#8bc34a', sun:'#ffe082', steel:'#e3e7ee' },
+      borderRadius: { '2xl':'1rem' }
     }
   },
   plugins: []

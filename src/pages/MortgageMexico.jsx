@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+﻿import React, { useState } from 'react'
 export default function MortgageMexico(){
  const [fico, setFico] = useState(710)
  const [ltv, setLtv] = useState(0.70)

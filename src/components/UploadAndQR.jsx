@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+﻿import { useRef, useState } from "react";
 import QRCode from "qrcode";
 
 export default function UploadAndQR({ title="Upload", accept=".pdf,.csv,.xlsx" }){
@@ -30,7 +30,7 @@ export default function UploadAndQR({ title="Upload", accept=".pdf,.csv,.xlsx" }
  />
  {file && (
  <div className="text-xs text-slate-600">
- Selected: <span className="font-medium">{file.name}</span> Ãƒâ€šÃ‚Â· {(file.size/1024).toFixed(1)} KB
+ Selected: <span className="font-medium">{file.name}</span> ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â· {(file.size/1024).toFixed(1)} KB
  </div>
  )}
  <div className="flex gap-2">

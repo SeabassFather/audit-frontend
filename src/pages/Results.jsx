@@ -1,4 +1,4 @@
-import ResultBadge from "../components/ResultBadge";
+﻿import ResultBadge from "../components/ResultBadge";
 
 /** Section: Results
  * Final outcomes + regulator/disbursement actions, aligned with CaseFlow.

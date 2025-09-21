@@ -1,4 +1,4 @@
-export default function AuditCenter(){
+﻿export default function AuditCenter(){
  const checks = [
  {id:"id-kyc", name:"KYC/KYB complete"},
  {id:"id-aml", name:"AML screening performed"},

@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { Link } from "react-router-dom";
 import UploadSheet from "../components/UploadSheet";
 
@@ -6,7 +6,7 @@ export default function ModuleMortgage(){
  const [open, setOpen] = useState(false);
  return (
  <div className="dna-section">
- <h1 className="text-2xl font-bold">Mortgage ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Real Estate</h1>
+ <h1 className="text-2xl font-bold">Mortgage ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¢ Real Estate</h1>
  <div className="card p-4 space-y-3">
  <p className="text-sm text-slate-600">
  Run legacy mortgage tools, search lenders, and upload docs for fee/escrow audits.

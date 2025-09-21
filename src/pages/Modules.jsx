@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
+﻿import { Link } from "react-router-dom";
 
 export default function Modules(){
  const cards = [
- {href:"/module/ag", title:"Ag ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ USDA ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Factoring", desc:"USDA pricing, lab uploads, produce factoring tools."},
+ {href:"/module/ag", title:"Ag ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¢ USDA ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¢ Factoring", desc:"USDA pricing, lab uploads, produce factoring tools."},
  {href:"/module/mortgage", title:"Mortgage / Real Estate", desc:"Rates, products, search, legacy mortgage workflow."},
  {href:"/module/audit", title:"Auditing", desc:"Upload evidence, run checklists, generate reports."},
  {href:"/module/compliance", title:"Compliance", desc:"GDPR/CCPA/GLBA/TRID frameworks and tasks."},

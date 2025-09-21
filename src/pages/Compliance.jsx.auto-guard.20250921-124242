@@ -1,0 +1,34 @@
+const regs = {
+ "US": [
+ {code:"TRID", desc:"TILAÃƒÂ¢Ã¢â€šÂ¬"RESPA Integrated Disclosure rules for mortgage lending."},
+ {code:"ECOA", desc:"Equal Credit Opportunity Act fair lending obligations."},
+ {code:"GLBA", desc:"GrammÃƒÂ¢Ã¢â€šÂ¬"LeachÃƒÂ¢Ã¢â€šÂ¬"Bliley Act privacy & safeguarding."},
+ {code:"CCPA", desc:"California Consumer Privacy Act data rights."}
+ ],
+ "International": [
+ {code:"GDPR", desc:"EU data protection law ÃƒÂ¢Ã¢â€šÂ¬" lawful basis, DSR, DPIA."},
+ {code:"PIPEDA", desc:"Canada privacy for commercial activities."},
+ {code:"UK GDPR", desc:"United Kingdom GDPR post-Brexit."},
+ {code:"PDPA (SG)", desc:"Singapore Personal Data Protection Act."}
+ ]
+};
+export default function Compliance(){
+ return (
+ <div>
+ <h1 className="text-2xl font-bold mb-4">Compliance Frameworks</h1>
+ {Object.keys(regs).map(k=>(
+ <div key={k} className="card mb-4">
+ <div className="px-4 py-2 bg-dnaGreen text-white rounded-t font-semibold">{k}</div>
+ <div className="p-4 space-y-3">
+ {regs[k].map(r=>(
+ <div key={r.code}>
+ <div className="font-medium">{r.code}</div>
+ <div className="text-sm text-slate-600">{r.desc}</div>
+ </div>
+ ))}
+ </div>
+ </div>
+ ))}
+ </div>
+ );
+}

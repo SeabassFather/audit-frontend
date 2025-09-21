@@ -1,4 +1,4 @@
-export function rng(seed){ let h=0; for(const ch of seed){ h=((h<<5)-h)+ch.charCodeAt(0); h|=0 } return ()=> (h = (h*48271) % 0x7fffffff)/0x7fffffff; }
+﻿export function rng(seed){ let h=0; for(const ch of seed){ h=((h<<5)-h)+ch.charCodeAt(0); h|=0 } return ()=> (h = (h*48271) % 0x7fffffff)/0x7fffffff; }
 export function pick(arr, r){ return arr[Math.floor(r()*arr.length)] }
 export function mkLoans(n, seed="loans"){
  const r = rng(seed), states=["CA","TX","AZ","NV","FL","WA"], prods=["DSCR","SBA","Conventional","HELOC"];

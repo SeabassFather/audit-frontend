@@ -1,4 +1,4 @@
-import FileUpload from "../components/FileUpload";
+﻿import FileUpload from "../components/FileUpload";
 import { CertBadge } from "../components/RiskCertBadges";
 
 export default function AgSearchForm({values,setValue,onSubmit,loading}){
@@ -49,7 +49,7 @@ export default function AgSearchForm({values,setValue,onSubmit,loading}){
  </div>
  <button onClick={onSubmit} disabled={loading}
  className={"w-full mt-2 px-3 py-2 rounded text-white "+(loading?"bg-slate-400":"bg-dnaBlue")}>
- {loading?"SearchingÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦":"Find Growers"}
+ {loading?"SearchingÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦":"Find Growers"}
  </button>
  </div>
  );

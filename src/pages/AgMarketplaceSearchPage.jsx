@@ -1,4 +1,4 @@
-import { useAgMarketplaceSearch } from "../hooks/searchHooks";
+﻿import { useAgMarketplaceSearch } from "../hooks/searchHooks";
 import AgSearchForm from "../forms/AgSearchForm";
 import Spinner from "../components/Spinner";
 import { RiskBadge, CertBadge } from "../components/RiskCertBadges";
@@ -22,7 +22,7 @@ export default function AgMarketplaceSearchPage(){
  <ul className="mt-2 space-y-2">
  {results.map((g,i)=>(
  <li key={i} className="border rounded p-3">
- <div className="font-medium">{g.grower} ÃƒÂ¢Ã¢â€šÂ¬" {g.crop} ({g.weekly}/week)</div>
+ <div className="font-medium">{g.grower} ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬" {g.crop} ({g.weekly}/week)</div>
  <div className="flex items-center gap-2 mt-1">
  <RiskBadge level={g.risk}/>
  {g.certs?.map(c=><CertBadge key={c} label={c} valid/>)}

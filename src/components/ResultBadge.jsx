@@ -1,4 +1,4 @@
-export default function ResultBadge({ status = "OK" }) {
+﻿export default function ResultBadge({ status = "OK" }) {
  const colors = {
  OK: "bg-green-100 text-green-700",
  WARN: "bg-yellow-100 text-yellow-700",

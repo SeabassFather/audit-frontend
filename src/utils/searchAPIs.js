@@ -1,4 +1,4 @@
-export async function mortgageSearchAPI(payload){
+﻿export async function mortgageSearchAPI(payload){
  // TODO: POST to /api/search/mortgages in your backend
  return new Promise(r=>setTimeout(()=>r([
  { lender:"Lender A", rate:"6.25%", fit:"Strong", product:payload.product, reasons:["State license","DTI ok"] },

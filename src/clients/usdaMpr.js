@@ -1,4 +1,4 @@
-export async function mprFetchReport({ sector, reportCode, filters }) {
+﻿export async function mprFetchReport({ sector, reportCode, filters }) {
  // sector: "cattle" | "hog" | "lamb" | "pork" | etc.
  // reportCode: e.g. "LM_CT100"
  // filters: array of { fieldName, operatorType, values }

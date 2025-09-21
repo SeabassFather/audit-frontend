@@ -1,4 +1,4 @@
-﻿import React, { useState } from "react";
+import React, { useState } from "react";
 import { fetchCommoditySeries } from "./usdaApi";
 
 export default function UsdaPanel() {

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 export default function RateTicker(){
  const [i,setI]=useState(0);
  const items=[
