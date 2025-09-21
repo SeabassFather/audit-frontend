@@ -1,1 +1,0 @@
-import{r as e}from"./index-2G1ItshX.js";const r=e.createContext(null);function o(){const t=e.useContext(r);if(!t)throw new Error("useIntake must be used within <IntakeProvider>");return t}export{o as u};

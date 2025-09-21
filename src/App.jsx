@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Ticker from "./components/Ticker";
 import Footer from "./components/Footer";
+import ChatGPT from "./ChatGPT";
 
 const Dashboard = lazy(() => import("./pages/Dashboard"));
 const Services  = lazy(() => import("./pages/Services"));
@@ -40,6 +41,7 @@ export default function App(){
         </Suspense>
       </main>
       <Footer/>
+      <ChatGPT />
     </div>
   );
 }
