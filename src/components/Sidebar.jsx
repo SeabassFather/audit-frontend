@@ -1,6 +1,5 @@
 ﻿import React from "react";
 import { NavLink } from "react-router-dom";
-
 const links = [
   { to: "/dashboard", label: "Dashboard" },
   { to: "/services", label: "Services" },
@@ -9,25 +8,23 @@ const links = [
   { to: "/marketing", label: "Marketing" },
   { to: "/pitchdeck", label: "Pitch Deck" },
   { to: "/tickers", label: "Tickers" },
-  { to: "/admin", label: "Admin" }
+  { to: "/audit-engines", label: "AI Engines" },
+  { to: "/mexico-loans", label: "Mexico Real Estate/Loans" },
+  { to: "/admin", label: "Admin" },
 ];
-
 export default function Sidebar() {
   return (
-    <aside className="hidden md:block w-56 bg-brand-silver/60 min-h-screen border-r border-brand-silver py-6 px-3">
+    <aside className="w-52 min-h-screen bg-gradient-to-b from-green-200 via-yellow-100 to-cyan-100 py-4 px-2">
       <nav className="flex flex-col gap-2">
-        {links.map(link => (
+        {links.map(({ to, label }) => (
           <NavLink
-            key={link.to}
-            to={link.to}
+            key={to}
+            to={to}
             className={({ isActive }) =>
-              "block px-3 py-2 rounded-md font-medium text-sm " +
-              (isActive
-                ? "bg-gradient-to-r from-brand-blue to-brand-green text-gray-900"
-                : "text-gray-700 hover:bg-gradient-to-r hover:from-brand-green hover:to-brand-yellow")
+              `block py-2 px-3 rounded-lg font-semibold hover:bg-green-100 ${isActive ? "bg-green-300 text-green-900" : "text-gray-700"}`
             }
           >
-            {link.label}
+            {label}
           </NavLink>
         ))}
       </nav>

@@ -1,4 +1,14 @@
 ﻿import React from "react";
-export default function Services() { return (
-  <div className="p-4"><h1 className="text-2xl font-bold mb-2">Services</h1></div>
-);}
+import FeeScheduleTable from "../components/InfoModules/FeeScheduleTable";
+import ServiceCategoryList from "../components/InfoModules/ServiceCategoryList";
+export default function Services() {
+  return (
+    <div>
+      <h1 className="text-2xl font-bold mb-4">AuditDNA Services & Fees</h1>
+      <div className="mb-8">
+        <FeeScheduleTable />
+      </div>
+      <ServiceCategoryList />
+    </div>
+  );
+}

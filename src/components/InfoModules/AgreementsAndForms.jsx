@@ -1,6 +1,6 @@
 ﻿import React from "react";
-import { forms } from "../data/forms";
-export default function Agreements() {
+import { forms } from "../../data/forms";
+export default function AgreementsAndForms() {
   return (
     <div>
       <h1 className="text-2xl font-bold mb-4">Agreements & Forms</h1>
