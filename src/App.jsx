@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/NavBar.jsx";
 import Footer from "./components/Footer.jsx";
@@ -12,7 +12,11 @@ import Agreements from "./pages/Agreements.jsx";
 import Marketing from "./pages/Marketing.jsx";
 import PitchDeck from "./pages/PitchDeck.jsx";
 import Tickers from "./pages/Tickers.jsx";
+import Engines from "./pages/Engines.jsx";
 import Admin from "./pages/Admin.jsx";
+import Clients from "./pages/Clients.jsx";
+import Partners from "./pages/Partners.jsx";
+import Mexico from "./pages/Mexico.jsx";
 
 export default function App() {
   return (
@@ -31,6 +35,10 @@ export default function App() {
             <Route path="/marketing" element={<Marketing />} />
             <Route path="/pitchdeck" element={<PitchDeck />} />
             <Route path="/tickers" element={<Tickers />} />
+            <Route path="/engines" element={<Engines />} />
+            <Route path="/clients" element={<Clients />} />
+            <Route path="/partners" element={<Partners />} />
+            <Route path="/mexico" element={<Mexico />} />
             <Route path="/admin" element={<Admin />} />
           </Routes>
         </main>

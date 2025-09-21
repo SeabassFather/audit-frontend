@@ -2,9 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
-:root { --card-bg: #ffffff; }
+:root { 
+  --card-bg: #ffffff; 
+  --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
 
-body { font-family: ui-sans-serif, system-ui; }
+body { 
+  font-family: ui-sans-serif, system-ui; 
+  line-height: 1.6;
+}
 
 .container { max-width: 1200px; margin: 0 auto; }
-.card { background: var(--card-bg); border-radius: 1rem; box-shadow: theme("boxShadow.card"); }
+
+.card { 
+  background: var(--card-bg); 
+  border-radius: 1rem; 
+  box-shadow: var(--shadow-soft); 
+  padding: 1.5rem;
+  border: 1px solid rgba(229, 231, 235, 0.8);
+}
+
+.card-hover {
+  transition: all 0.2s ease-in-out;
+}
+
+.card-hover:hover {
+  box-shadow: var(--shadow-medium);
+  transform: translateY(-2px);
+}
+
+.btn {
+  @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+}
+
+.btn-primary {
+  @apply bg-gradient-to-r from-brand-blue to-brand-green text-white hover:shadow-lg focus:ring-brand-blue;
+}
+
+.btn-secondary {
+  @apply bg-gray-100 text-gray-700 hover:bg-gray-200 focus:ring-gray-300;
+}
+
+.btn-success {
+  @apply bg-gradient-to-r from-brand-green to-lime-500 text-white hover:shadow-lg focus:ring-brand-green;
+}
+
+.input-field {
+  @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent;
+}
+
+.widget {
+  @apply bg-white rounded-xl p-6 shadow-soft border border-gray-200;
+}
+
+.metric-card {
+  @apply bg-gradient-to-br from-white to-gray-50 rounded-xl p-6 shadow-soft border border-gray-200;
+}
