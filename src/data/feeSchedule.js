@@ -1,4 +1,4 @@
-﻿export const feeSchedule = [
+export const feeSchedule = [
   { category: "Mortgage Overcharge Audit", avgRecovery: "$3,500", baseFee: "$149.99 + 35%", notes: "Includes TILA, RESPA, escrow review" },
   { category: "Utilities Billing Audit (Electric/Water)", avgRecovery: "$550", baseFee: "$49.99 + 30%", notes: "Includes 12-month review" },
   { category: "Health Insurance Premium Audit", avgRecovery: "$1,200", baseFee: "$99.99 + 25%", notes: "Applicable to PPO/HMO private plans" },

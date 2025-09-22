@@ -1,0 +1,32 @@
+FINANCIAL AUDIT AUTHORIZATION FORM
+
+Company Name: _________________________________
+Business Address: _____________________________
+City, State, ZIP: _____________________________
+Primary Contact: ______________________________
+Phone: _______________  Email: ________________
+
+AUDIT SCOPE:
+☐ Financial Statement Review
+☐ Payroll Reconciliation  
+☐ Tax Compliance Audit
+☐ Internal Controls Assessment
+☐ Fraud Risk Assessment
+
+AUTHORIZATION:
+I hereby authorize AuditDNA to conduct the selected audit services for our organization. I understand that all information provided will be kept confidential and used solely for audit purposes.
+
+Authorized Signature: _________________________
+Print Name: __________________________________
+Title: ______________________________________
+Date: ______________________________________
+
+ADDITIONAL NOTES:
+____________________________________________
+____________________________________________
+____________________________________________
+
+For AuditDNA Use Only:
+Audit ID: ___________________
+Assigned Auditor: ___________
+Target Completion: __________

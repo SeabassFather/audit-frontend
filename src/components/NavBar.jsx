@@ -1,98 +1,168 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-const nav = [
-  { to: "/dashboard", label: "Dashboard", icon: "📊" },
-  { to: "/services", label: "Services", icon: "⚙️" },
-  { to: "/uploads", label: "Uploads", icon: "📤" },
-  { to: "/agreements", label: "Agreements", icon: "📋" },
-  { to: "/marketing", label: "Marketing", icon: "📢" },
-  { to: "/pitchdeck", label: "Pitch Deck", icon: "🎯" },
-  { to: "/tickers", label: "Tickers", icon: "📈" },
-  { to: "/audit-engines", label: "AI Engines", icon: "🤖" },
-  { to: "/mexico-loans", label: "Mexico Real Estate", icon: "🏘️" },
-  { to: "/admin", label: "Admin", icon: "👥" },
-];
+export default function Navbar() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const isAuthed = !!localStorage.getItem("auth_token");
 
-export default function NavBar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navLinkClass = ({ isActive }) =>
+    isActive
+      ? "nav-link-active"
+      : "nav-link-inactive";
+
+  const mainNavItems = [
+    { to: "/", label: "Dashboard", end: true },
+    { to: "/services", label: "Services" },
+    { to: "/uploads", label: "Uploads" },
+    { to: "/audit-engines", label: "AI Engines" },
+    { to: "/mexico-loans", label: "Mexico RE/Loans" },
+    { to: "/admin", label: "Admin" },
+  ];
+
+  const secondaryNavItems = [
+    { to: "/modules", label: "Modules" },
+    { to: "/tickers", label: "Tickers" },
+    { to: "/usda-search", label: "USDA" },
+    { to: "/chat", label: "Chat" },
+  ];
 
   return (
-    <header className="w-full bg-white/95 backdrop-blur-sm shadow-lg border-b border-gray-200 sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-green-500 to-blue-600 rounded-xl shadow-lg">
-              <span className="text-white font-bold text-lg">AD</span>
-            </div>
-            <div className="flex flex-col">
-              <h1 className="text-xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
-                AuditDNA
-              </h1>
-              <p className="text-xs text-gray-500 font-medium -mt-1">
-                AI Audit & Compliance Platform
-              </p>
-            </div>
+    <header className="sticky top-0 z-50 glass border-b border-slate-200/50 shadow-sm nav">
+      <div className="bg-gradient-to-r from-blue-600 via-blue-700 to-green-600">
+        <div className="container py-3">
+          <div className="flex items-center justify-between">
+            {/* Logo and Brand */}
+            <NavLink to="/dashboard" className="flex items-center gap-3 text-ocean-700 font-bold text-xl">
+              <div className="inline-grid place-items-center w-10 h-10 rounded-xl2 bg-gradient-to-br from-ocean-500 to-ocean-600 text-white shadow-soft">
+                AD
+              </div>
+              <div>
+                <div className="text-white font-bold text-lg leading-none">AuditDNA</div>
+                <div className="text-xs text-blue-100 font-normal">AI Audit & Compliance Platform</div>
+              </div>
+            </NavLink>
+
+            {/* Desktop Navigation */}
+            <nav className="hidden lg:flex items-center gap-1">
+              {mainNavItems.map((item) => (
+                <NavLink
+                  key={item.to}
+                  to={item.to}
+                  end={item.end}
+                  className={navLinkClass}
+                >
+                  {item.label}
+                </NavLink>
+              ))}
+              {isAuthed ? (
+                <button
+                  onClick={() => {
+                    localStorage.removeItem("auth_token");
+                    location.href = "/login";
+                  }}
+                  className="nav-link-inactive"
+                >
+                  Logout
+                </button>
+              ) : (
+                <NavLink to="/login" className={navLinkClass}>
+                  Login
+                </NavLink>
+              )}
+            </nav>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="lg:hidden p-2 rounded-lg text-white hover:bg-white/20 transition-colors"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-1">
-            {nav.map(({ to, label, icon }) => (
+          {/* Secondary Navigation (Desktop) */}
+          <div className="hidden lg:flex items-center gap-1 mt-2 pt-2 border-t border-white/20">
+            {secondaryNavItems.map((item) => (
               <NavLink
-                key={to}
-                to={to}
+                key={item.to}
+                to={item.to}
                 className={({ isActive }) =>
-                  `flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                    isActive
-                      ? "bg-gradient-to-r from-green-500 to-blue-500 text-white shadow-md"
-                      : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                  }`
+                  isActive
+                    ? "px-2 py-1 rounded text-xs bg-white/20 text-white font-medium"
+                    : "px-2 py-1 rounded text-xs text-white/80 hover:bg-white/10 transition-colors"
                 }
               >
-                <span className="text-base">{icon}</span>
-                <span>{label}</span>
+                {item.label}
               </NavLink>
             ))}
-          </nav>
-
-          {/* Mobile menu button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
-          >
-            <span className="sr-only">Open main menu</span>
-            {isMenuOpen ? (
-              <span className="text-xl">✕</span>
-            ) : (
-              <span className="text-xl">☰</span>
-            )}
-          </button>
+          </div>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
-      {isMenuOpen && (
-        <div className="lg:hidden border-t border-gray-200 bg-white/95 backdrop-blur-sm">
-          <nav className="px-4 py-2 space-y-1">
-            {nav.map(({ to, label, icon }) => (
-              <NavLink
-                key={to}
-                to={to}
-                onClick={() => setIsMenuOpen(false)}
-                className={({ isActive }) =>
-                  `flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="lg:hidden bg-white border-b border-slate-200 shadow-lg">
+          <div className="container py-4">
+            <nav className="space-y-2">
+              <div className="font-semibold text-slate-600 text-sm mb-3">Main Navigation</div>
+              {mainNavItems.map((item) => (
+                <NavLink
+                  key={item.to}
+                  to={item.to}
+                  end={item.end}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={({ isActive }) =>
                     isActive
-                      ? "bg-gradient-to-r from-green-500 to-blue-500 text-white shadow-md"
-                      : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                  }`
-                }
-              >
-                <span className="text-lg">{icon}</span>
-                <span>{label}</span>
-              </NavLink>
-            ))}
-          </nav>
+                      ? "block px-3 py-2 rounded-lg bg-blue-50 text-blue-700 font-medium"
+                      : "block px-3 py-2 rounded-lg text-slate-700 hover:bg-slate-50 transition-colors"
+                  }
+                >
+                  {item.label}
+                </NavLink>
+              ))}
+
+              <div className="divider my-3"></div>
+              <div className="font-semibold text-slate-600 text-sm mb-2">Tools & Features</div>
+              {secondaryNavItems.map((item) => (
+                <NavLink
+                  key={item.to}
+                  to={item.to}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={({ isActive }) =>
+                    isActive
+                      ? "block px-3 py-2 rounded-lg bg-green-50 text-green-700 font-medium"
+                      : "block px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50 transition-colors"
+                  }
+                >
+                  {item.label}
+                </NavLink>
+              ))}
+
+              <div className="divider my-3"></div>
+              {isAuthed ? (
+                <button
+                  onClick={() => {
+                    localStorage.removeItem("auth_token");
+                    location.href = "/login";
+                    setMobileMenuOpen(false);
+                  }}
+                  className="block w-full text-left px-3 py-2 rounded-lg text-red-600 hover:bg-red-50 transition-colors"
+                >
+                  Logout
+                </button>
+              ) : (
+                <NavLink
+                  to="/login"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block px-3 py-2 rounded-lg text-blue-600 hover:bg-blue-50 transition-colors font-medium"
+                >
+                  Login
+                </NavLink>
+              )}
+            </nav>
+          </div>
         </div>
       )}
     </header>

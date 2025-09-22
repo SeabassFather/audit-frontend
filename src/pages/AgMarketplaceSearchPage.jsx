@@ -1,7 +1,8 @@
 ﻿import { useAgMarketplaceSearch } from "../hooks/searchHooks";
 import AgSearchForm from "../forms/AgSearchForm";
 import Spinner from "../components/Spinner";
-import { RiskBadge, CertBadge } from "../components/RiskCertBadges";
+import RiskBadge from "../components/RiskBadge";
+import CertBadge from "../components/CertBadge";
 import UploadAndQR from "../components/UploadAndQR";
 
 export default function AgMarketplaceSearchPage(){
