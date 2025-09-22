@@ -1,0 +1,32 @@
+[
+  {
+    "id": "F-2001",
+    "debtor": "RetailCo",
+    "lender": "BlueCap",
+    "state": "CA",
+    "industry": "Retail",
+    "amount": 250000,
+    "advance": 85,
+    "fee": 2.2,
+    "term": "90d",
+    "recourse": true,
+    "aging": 38,
+    "risk": 12,
+    "status": "Review"
+  },
+  {
+    "id": "F-2002",
+    "debtor": "BuildCo",
+    "lender": "BlueCap",
+    "state": "TX",
+    "industry": "Construction",
+    "amount": 400000,
+    "advance": 80,
+    "fee": 2.6,
+    "term": "60d",
+    "recourse": false,
+    "aging": 25,
+    "risk": 18,
+    "status": "Active"
+  }
+]

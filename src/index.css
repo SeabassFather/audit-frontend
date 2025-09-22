@@ -1,10 +1,43 @@
-﻿@tailwind base;
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root { --card-bg: #ffffff; }
+/* Custom global styles for AuditDNA */
+body {
+  @apply bg-slate-50 text-slate-800;
+}
 
-body { font-family: ui-sans-serif, system-ui; }
+.nav-link-active {
+  @apply px-4 py-2 rounded font-semibold bg-blue-700 text-white shadow transition;
+}
+.nav-link-inactive {
+  @apply px-4 py-2 rounded text-slate-100 hover:bg-blue-800/60 hover:text-white transition;
+}
 
-.container { max-width: 1200px; margin: 0 auto; }
-.card { background: var(--card-bg); border-radius: 1rem; box-shadow: theme("boxShadow.card"); }
+/* Card and Button styles */
+.card {
+  @apply bg-white rounded-xl shadow p-6 border border-slate-100;
+}
+
+.btn {
+  @apply px-4 py-2 rounded-lg font-medium bg-blue-600 text-white hover:bg-blue-700 transition;
+}
+
+.divider {
+  @apply border-t border-slate-200 my-2;
+}
+
+/* Utility classes for metrics, charts, tickers */
+.metric-card {
+  @apply bg-gradient-to-br from-blue-50 to-green-50 rounded-lg shadow p-4 flex flex-col items-start;
+}
+.ticker {
+  @apply px-2 py-1 rounded bg-yellow-100 text-yellow-900 font-mono text-xs;
+}
+
+/* Responsive overrides if needed */
+@media (max-width: 640px) {
+  .card {
+    @apply p-2;
+  }
+}
