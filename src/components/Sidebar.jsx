@@ -10,18 +10,27 @@ const toolGroups = [
     ]
   },
   {
+    title: "Search Engines", 
+    links: [
+      { to: "/usda-search", label: "USDA Search", icon: "🌾" },
+      { to: "/factoring", label: "Factoring Search", icon: "💰" },
+      { to: "/search/mortgage", label: "Mortgage Search", icon: "🏘️" },
+      { to: "/search/watertech", label: "WaterTech Search", icon: "💧" },
+      { to: "/search/ag-marketplace", label: "Ag Marketplace", icon: "🚜" },
+      { to: "/search/trade-finance", label: "Trade Finance", icon: "📊" },
+    ]
+  },
+  {
     title: "Specialized Tools", 
     links: [
       { to: "/mexico-loans", label: "Mexico RE/Loans", icon: "🏠" },
-      { to: "/usda-search", label: "USDA Search", icon: "🌾" },
-      { to: "/factoring", label: "Factoring Search", icon: "💰" },
     ]
   },
   {
     title: "Data & Admin",
     links: [
       { to: "/uploads", label: "File Uploads", icon: "📁" },
-      { to: "/tickers", label: "Market Data", icon: "📊" },
+      { to: "/tickers", label: "Market Data", icon: "📈" },
       { to: "/admin", label: "Admin Panel", icon: "⚙️" },
       { to: "/docs", label: "Documentation", icon: "📚" },
     ]

@@ -4,12 +4,18 @@ import SearchMexicoLoans from "../features/search/SearchMexicoLoans";
 import SearchFactoring from "../features/search/SearchFactoring";
 import MortgageSearch from "./mortgage/MortgageSearch";
 import UsdaCommoditySearch from "../features/usda/UsdaCommoditySearch";
+import WaterSoil from "./ag/WaterSoil";
+import AgMarketplaceSearchPage from "./AgMarketplaceSearchPage";
+import TradeFinanceSearchPage from "./TradeFinanceSearchPage";
 
 const TABS = [
   { id: "usda", label: "USDA Pricing", component: SearchUSDA },
   { id: "mexico", label: "Mexico Real Estate", component: SearchMexicoLoans },
   { id: "factoring", label: "Factoring & Capital", component: SearchFactoring },
   { id: "mortgage", label: "US Mortgage", component: MortgageSearch },
+  { id: "watertech", label: "WaterTech", component: WaterSoil },
+  { id: "ag-marketplace", label: "Ag Marketplace", component: AgMarketplaceSearchPage },
+  { id: "trade-finance", label: "Trade Finance", component: TradeFinanceSearchPage },
   { id: "usda-commodity", label: "USDA Commodity Chart", component: UsdaCommoditySearch },
 ];
 

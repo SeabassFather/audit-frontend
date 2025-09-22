@@ -82,6 +82,10 @@ export default function App() {
             <Route path="/usda-search" element={<SearchPage initialTab="usda" />} />
             <Route path="/factoring" element={<SearchPage initialTab="factoring" />} />
             <Route path="/mexico-search" element={<SearchPage initialTab="mexico" />} />
+            <Route path="/mortgage-search" element={<SearchPage initialTab="mortgage" />} />
+            <Route path="/watertech-search" element={<SearchPage initialTab="watertech" />} />
+            <Route path="/ag-marketplace-search" element={<SearchPage initialTab="ag-marketplace" />} />
+            <Route path="/trade-finance-search" element={<SearchPage initialTab="trade-finance" />} />
 
             {/* Default route */}
             <Route path="*" element={<Dashboard />} />
