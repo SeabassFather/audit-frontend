@@ -10,9 +10,9 @@ const toolGroups = [
     ]
   },
   {
-    title: "Specialized Tools", 
+    title: "Loan & Finance Tools", 
     links: [
-      { to: "/mexico-loans", label: "Mexico RE/Loans", icon: "🏠" },
+      { to: "/mexico-search", label: "Mexico RE/Loans", icon: "🏠" },
       { to: "/usda-search", label: "USDA Search", icon: "🌾" },
       { to: "/factoring", label: "Factoring Search", icon: "💰" },
     ]
