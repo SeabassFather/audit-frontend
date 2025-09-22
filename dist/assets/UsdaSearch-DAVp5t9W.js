@@ -1,0 +1,1 @@
+import{j as e}from"./index-VjBi3Mlf.js";function t(){return e.jsxs("div",{className:"p-6",children:[e.jsx("h1",{className:"text-2xl font-bold",children:"USDA Search"}),e.jsx("p",{className:"text-slate-600 text-sm",children:"Live data hooks go here."})]})}export{t as default};
