@@ -1,7 +1,32 @@
-import { useState, useEffect } from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+﻿import React, { useMemo, useState } from "react";
+import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from "recharts";
+const COMMS = ["Avocado","Tomato","Lime","Blueberry","Strawberry"];
+function synthSeries(seed=1){ const out=[]; for(let w=1; w<=26; w++){ const base=18+w*0.25; const noise=Math.sin((w+seed)*0.7)*2+Math.cos((w+seed)*0.33)*1.3; out.push({week:"W"+w, price:+(base+noise).toFixed(2)}) } return out }
+function fiveYearAvg(){ const years=[1,2,3,4,5].map(i=> synthSeries(i).map(p=> p.price+(i-3)*0.4)); const avg=[]; for(let i=0;i<26;i++){ const m=years.reduce((a,arr)=>a+arr[i],0)/years.length; avg.push({week:"W"+(i+1), avg:+m.toFixed(2)}) } return avg }
 export default function USDA(){
-  const [data,setData]=useState([]);const [error,setError]=useState('');
-  useEffect(()=>{(async()=>{try{setError('');const r=await fetch('http://localhost:5050/api/usda/prices');if(!r.ok)throw new Error('HTTP '+r.status);setData(await r.json());}catch(e){setData(Array.from({length:26},(_,i)=>({week:'W'+(i+1),current:10+Math.random()*5,avg5yr:9+Math.random()*4})));setError('Fallback data');}})();},[]);
-  return(<div className='card'><h2>USDA Prices</h2>{error&&<div style={{color:'red'}}>{error}</div>}<ResponsiveContainer width='100%' height={400}><LineChart data={data}><CartesianGrid strokeDasharray='3 3'/><XAxis dataKey='week'/><YAxis/><Tooltip/><Legend/><Line type='monotone' dataKey='current' stroke='#2563eb' strokeWidth={2}/><Line type='monotone' dataKey='avg5yr' stroke='#16a34a' strokeDasharray='5 5' strokeWidth={2}/></LineChart></ResponsiveContainer></div>);
+  const [commodity,setCommodity]=useState(COMMS[0]);
+  const current=useMemo(()=>synthSeries(commodity.length),[commodity]);
+  const avg5=useMemo(()=>fiveYearAvg(),[]);
+  const data=current.map((p,i)=>({...p,avg:avg5[i].avg}));
+  return (
+    <div className="card">
+      <div className="flex flex-wrap items-end justify-between gap-3">
+        <div><h2 className="text-lg font-semibold">USDA Pricing</h2><p className="text-xs text-gray-500">Synthetic fallback shown. Wire API later.</p></div>
+        <div className="flex items-center gap-2"><label className="text-sm">Commodity</label>
+          <select value={commodity} onChange={e=>setCommodity(e.target.value)} className="rounded-md border px-2 py-1 text-sm">
+            {COMMS.map(c=> <option key={c} value={c}>{c}</option>)}
+          </select>
+        </div>
+      </div>
+      <div className="mt-4" style={{width:"100%",height:360}}>
+        <ResponsiveContainer>
+          <LineChart data={data}>
+            <CartesianGrid strokeDasharray="3 3"/><XAxis dataKey="week"/><YAxis/><Tooltip/><Legend/>
+            <Line type="monotone" dataKey="price" name="This Year" dot={false}/>
+            <Line type="monotone" dataKey="avg" name="5-Year Avg" strokeDasharray="5 5" dot={false}/>
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
+    </div>
+  );
 }

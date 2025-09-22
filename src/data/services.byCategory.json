@@ -2,7 +2,7 @@
     "":  [
              {
                  "id":  "business-llc-formation-assessment-starter",
-                 "name":  "LLC Formation — Assessment (Starter)",
+                 "name":  "LLC Formation  Assessment (Starter)",
                  "tags":  [
                               "Business",
                               "Assessment",
@@ -13,7 +13,7 @@
              },
              {
                  "id":  "business-llc-formation-assessment-pro",
-                 "name":  "LLC Formation — Assessment (Pro)",
+                 "name":  "LLC Formation  Assessment (Pro)",
                  "tags":  [
                               "Business",
                               "Assessment",
@@ -24,7 +24,7 @@
              },
              {
                  "id":  "business-llc-formation-assessment-elite",
-                 "name":  "LLC Formation — Assessment (Elite)",
+                 "name":  "LLC Formation  Assessment (Elite)",
                  "tags":  [
                               "Business",
                               "Assessment",
@@ -35,7 +35,7 @@
              },
              {
                  "id":  "business-llc-formation-implementation-starter",
-                 "name":  "LLC Formation — Implementation (Starter)",
+                 "name":  "LLC Formation  Implementation (Starter)",
                  "tags":  [
                               "Business",
                               "Implementation",
@@ -46,7 +46,7 @@
              },
              {
                  "id":  "business-llc-formation-implementation-pro",
-                 "name":  "LLC Formation — Implementation (Pro)",
+                 "name":  "LLC Formation  Implementation (Pro)",
                  "tags":  [
                               "Business",
                               "Implementation",
@@ -57,7 +57,7 @@
              },
              {
                  "id":  "business-llc-formation-implementation-elite",
-                 "name":  "LLC Formation — Implementation (Elite)",
+                 "name":  "LLC Formation  Implementation (Elite)",
                  "tags":  [
                               "Business",
                               "Implementation",
@@ -68,7 +68,7 @@
              },
              {
                  "id":  "business-llc-formation-monitoring-starter",
-                 "name":  "LLC Formation — Monitoring (Starter)",
+                 "name":  "LLC Formation  Monitoring (Starter)",
                  "tags":  [
                               "Business",
                               "Monitoring",
@@ -79,7 +79,7 @@
              },
              {
                  "id":  "business-llc-formation-monitoring-pro",
-                 "name":  "LLC Formation — Monitoring (Pro)",
+                 "name":  "LLC Formation  Monitoring (Pro)",
                  "tags":  [
                               "Business",
                               "Monitoring",
@@ -90,7 +90,7 @@
              },
              {
                  "id":  "business-llc-formation-monitoring-elite",
-                 "name":  "LLC Formation — Monitoring (Elite)",
+                 "name":  "LLC Formation  Monitoring (Elite)",
                  "tags":  [
                               "Business",
                               "Monitoring",
@@ -101,7 +101,7 @@
              },
              {
                  "id":  "business-payroll-audit-assessment-starter",
-                 "name":  "Payroll Audit — Assessment (Starter)",
+                 "name":  "Payroll Audit  Assessment (Starter)",
                  "tags":  [
                               "Business",
                               "Assessment",
@@ -112,7 +112,7 @@
              },
              {
                  "id":  "business-payroll-audit-assessment-pro",
-                 "name":  "Payroll Audit — Assessment (Pro)",
+                 "name":  "Payroll Audit  Assessment (Pro)",
                  "tags":  [
                               "Business",
                               "Assessment",
@@ -123,7 +123,7 @@
              },
              {
                  "id":  "business-payroll-audit-assessment-elite",
-                 "name":  "Payroll Audit — Assessment (Elite)",
+                 "name":  "Payroll Audit  Assessment (Elite)",
                  "tags":  [
                               "Business",
                               "Assessment",
@@ -134,7 +134,7 @@
              },
              {
                  "id":  "business-payroll-audit-implementation-starter",
-                 "name":  "Payroll Audit — Implementation (Starter)",
+                 "name":  "Payroll Audit  Implementation (Starter)",
                  "tags":  [
                               "Business",
                               "Implementation",
@@ -145,7 +145,7 @@
              },
              {
                  "id":  "business-payroll-audit-implementation-pro",
-                 "name":  "Payroll Audit — Implementation (Pro)",
+                 "name":  "Payroll Audit  Implementation (Pro)",
                  "tags":  [
                               "Business",
                               "Implementation",
@@ -156,7 +156,7 @@
              },
              {
                  "id":  "business-payroll-audit-implementation-elite",
-                 "name":  "Payroll Audit — Implementation (Elite)",
+                 "name":  "Payroll Audit  Implementation (Elite)",
                  "tags":  [
                               "Business",
                               "Implementation",
@@ -167,7 +167,7 @@
              },
              {
                  "id":  "business-payroll-audit-monitoring-starter",
-                 "name":  "Payroll Audit — Monitoring (Starter)",
+                 "name":  "Payroll Audit  Monitoring (Starter)",
                  "tags":  [
                               "Business",
                               "Monitoring",
@@ -178,7 +178,7 @@
              },
              {
                  "id":  "business-payroll-audit-monitoring-pro",
-                 "name":  "Payroll Audit — Monitoring (Pro)",
+                 "name":  "Payroll Audit  Monitoring (Pro)",
                  "tags":  [
                               "Business",
                               "Monitoring",
@@ -189,7 +189,7 @@
              },
              {
                  "id":  "business-payroll-audit-monitoring-elite",
-                 "name":  "Payroll Audit — Monitoring (Elite)",
+                 "name":  "Payroll Audit  Monitoring (Elite)",
                  "tags":  [
                               "Business",
                               "Monitoring",
@@ -200,7 +200,7 @@
              },
              {
                  "id":  "business-corporate-tax-filing-assessment-starter",
-                 "name":  "Corporate Tax Filing — Assessment (Starter)",
+                 "name":  "Corporate Tax Filing  Assessment (Starter)",
                  "tags":  [
                               "Business",
                               "Assessment",
@@ -212,7 +212,7 @@
              },
              {
                  "id":  "business-corporate-tax-filing-assessment-pro",
-                 "name":  "Corporate Tax Filing — Assessment (Pro)",
+                 "name":  "Corporate Tax Filing  Assessment (Pro)",
                  "tags":  [
                               "Business",
                               "Assessment",
@@ -224,7 +224,7 @@
              },
              {
                  "id":  "business-corporate-tax-filing-assessment-elite",
-                 "name":  "Corporate Tax Filing — Assessment (Elite)",
+                 "name":  "Corporate Tax Filing  Assessment (Elite)",
                  "tags":  [
                               "Business",
                               "Assessment",
@@ -236,7 +236,7 @@
              },
              {
                  "id":  "business-corporate-tax-filing-implementation-starter",
-                 "name":  "Corporate Tax Filing — Implementation (Starter)",
+                 "name":  "Corporate Tax Filing  Implementation (Starter)",
                  "tags":  [
                               "Business",
                               "Implementation",
@@ -248,7 +248,7 @@
              },
              {
                  "id":  "business-corporate-tax-filing-implementation-pro",
-                 "name":  "Corporate Tax Filing — Implementation (Pro)",
+                 "name":  "Corporate Tax Filing  Implementation (Pro)",
                  "tags":  [
                               "Business",
                               "Implementation",
@@ -260,7 +260,7 @@
              },
              {
                  "id":  "business-corporate-tax-filing-implementation-elite",
-                 "name":  "Corporate Tax Filing — Implementation (Elite)",
+                 "name":  "Corporate Tax Filing  Implementation (Elite)",
                  "tags":  [
                               "Business",
                               "Implementation",
@@ -272,7 +272,7 @@
              },
              {
                  "id":  "business-corporate-tax-filing-monitoring-starter",
-                 "name":  "Corporate Tax Filing — Monitoring (Starter)",
+                 "name":  "Corporate Tax Filing  Monitoring (Starter)",
                  "tags":  [
                               "Business",
                               "Monitoring",
@@ -284,7 +284,7 @@
              },
              {
                  "id":  "business-corporate-tax-filing-monitoring-pro",
-                 "name":  "Corporate Tax Filing — Monitoring (Pro)",
+                 "name":  "Corporate Tax Filing  Monitoring (Pro)",
                  "tags":  [
                               "Business",
                               "Monitoring",
@@ -296,7 +296,7 @@
              },
              {
                  "id":  "business-corporate-tax-filing-monitoring-elite",
-                 "name":  "Corporate Tax Filing — Monitoring (Elite)",
+                 "name":  "Corporate Tax Filing  Monitoring (Elite)",
                  "tags":  [
                               "Business",
                               "Monitoring",
@@ -308,7 +308,7 @@
              },
              {
                  "id":  "business-cross-border-trade-compliance-assessment-starter",
-                 "name":  "Cross-Border Trade Compliance — Assessment (Starter)",
+                 "name":  "Cross-Border Trade Compliance  Assessment (Starter)",
                  "tags":  [
                               "Business",
                               "Assessment",
@@ -320,7 +320,7 @@
              },
              {
                  "id":  "business-cross-border-trade-compliance-assessment-pro",
-                 "name":  "Cross-Border Trade Compliance — Assessment (Pro)",
+                 "name":  "Cross-Border Trade Compliance  Assessment (Pro)",
                  "tags":  [
                               "Business",
                               "Assessment",
@@ -332,7 +332,7 @@
              },
              {
                  "id":  "business-cross-border-trade-compliance-assessment-elite",
-                 "name":  "Cross-Border Trade Compliance — Assessment (Elite)",
+                 "name":  "Cross-Border Trade Compliance  Assessment (Elite)",
                  "tags":  [
                               "Business",
                               "Assessment",
@@ -344,7 +344,7 @@
              },
              {
                  "id":  "business-cross-border-trade-compliance-implementation-starter",
-                 "name":  "Cross-Border Trade Compliance — Implementation (Starter)",
+                 "name":  "Cross-Border Trade Compliance  Implementation (Starter)",
                  "tags":  [
                               "Business",
                               "Implementation",
@@ -356,7 +356,7 @@
              },
              {
                  "id":  "business-cross-border-trade-compliance-implementation-pro",
-                 "name":  "Cross-Border Trade Compliance — Implementation (Pro)",
+                 "name":  "Cross-Border Trade Compliance  Implementation (Pro)",
                  "tags":  [
                               "Business",
                               "Implementation",
@@ -368,7 +368,7 @@
              },
              {
                  "id":  "business-cross-border-trade-compliance-implementation-elite",
-                 "name":  "Cross-Border Trade Compliance — Implementation (Elite)",
+                 "name":  "Cross-Border Trade Compliance  Implementation (Elite)",
                  "tags":  [
                               "Business",
                               "Implementation",
@@ -380,7 +380,7 @@
              },
              {
                  "id":  "business-cross-border-trade-compliance-monitoring-starter",
-                 "name":  "Cross-Border Trade Compliance — Monitoring (Starter)",
+                 "name":  "Cross-Border Trade Compliance  Monitoring (Starter)",
                  "tags":  [
                               "Business",
                               "Monitoring",
@@ -392,7 +392,7 @@
              },
              {
                  "id":  "business-cross-border-trade-compliance-monitoring-pro",
-                 "name":  "Cross-Border Trade Compliance — Monitoring (Pro)",
+                 "name":  "Cross-Border Trade Compliance  Monitoring (Pro)",
                  "tags":  [
                               "Business",
                               "Monitoring",
@@ -404,7 +404,7 @@
              },
              {
                  "id":  "business-cross-border-trade-compliance-monitoring-elite",
-                 "name":  "Cross-Border Trade Compliance — Monitoring (Elite)",
+                 "name":  "Cross-Border Trade Compliance  Monitoring (Elite)",
                  "tags":  [
                               "Business",
                               "Monitoring",
@@ -416,7 +416,7 @@
              },
              {
                  "id":  "business-equipment-loan-structuring-assessment-starter",
-                 "name":  "Equipment Loan Structuring — Assessment (Starter)",
+                 "name":  "Equipment Loan Structuring  Assessment (Starter)",
                  "tags":  [
                               "Business",
                               "Assessment",
@@ -428,7 +428,7 @@
              },
              {
                  "id":  "business-equipment-loan-structuring-assessment-pro",
-                 "name":  "Equipment Loan Structuring — Assessment (Pro)",
+                 "name":  "Equipment Loan Structuring  Assessment (Pro)",
                  "tags":  [
                               "Business",
                               "Assessment",
@@ -440,7 +440,7 @@
              },
              {
                  "id":  "business-equipment-loan-structuring-assessment-elite",
-                 "name":  "Equipment Loan Structuring — Assessment (Elite)",
+                 "name":  "Equipment Loan Structuring  Assessment (Elite)",
                  "tags":  [
                               "Business",
                               "Assessment",
@@ -452,7 +452,7 @@
              },
              {
                  "id":  "business-equipment-loan-structuring-implementation-starter",
-                 "name":  "Equipment Loan Structuring — Implementation (Starter)",
+                 "name":  "Equipment Loan Structuring  Implementation (Starter)",
                  "tags":  [
                               "Business",
                               "Implementation",
@@ -464,7 +464,7 @@
              },
              {
                  "id":  "business-equipment-loan-structuring-implementation-pro",
-                 "name":  "Equipment Loan Structuring — Implementation (Pro)",
+                 "name":  "Equipment Loan Structuring  Implementation (Pro)",
                  "tags":  [
                               "Business",
                               "Implementation",
@@ -476,7 +476,7 @@
              },
              {
                  "id":  "business-equipment-loan-structuring-implementation-elite",
-                 "name":  "Equipment Loan Structuring — Implementation (Elite)",
+                 "name":  "Equipment Loan Structuring  Implementation (Elite)",
                  "tags":  [
                               "Business",
                               "Implementation",
@@ -488,7 +488,7 @@
              },
              {
                  "id":  "business-equipment-loan-structuring-monitoring-starter",
-                 "name":  "Equipment Loan Structuring — Monitoring (Starter)",
+                 "name":  "Equipment Loan Structuring  Monitoring (Starter)",
                  "tags":  [
                               "Business",
                               "Monitoring",
@@ -500,7 +500,7 @@
              },
              {
                  "id":  "business-equipment-loan-structuring-monitoring-pro",
-                 "name":  "Equipment Loan Structuring — Monitoring (Pro)",
+                 "name":  "Equipment Loan Structuring  Monitoring (Pro)",
                  "tags":  [
                               "Business",
                               "Monitoring",
@@ -512,7 +512,7 @@
              },
              {
                  "id":  "business-equipment-loan-structuring-monitoring-elite",
-                 "name":  "Equipment Loan Structuring — Monitoring (Elite)",
+                 "name":  "Equipment Loan Structuring  Monitoring (Elite)",
                  "tags":  [
                               "Business",
                               "Monitoring",
@@ -524,7 +524,7 @@
              },
              {
                  "id":  "business-vendor-contract-audit-assessment-starter",
-                 "name":  "Vendor Contract Audit — Assessment (Starter)",
+                 "name":  "Vendor Contract Audit  Assessment (Starter)",
                  "tags":  [
                               "Business",
                               "Assessment",
@@ -536,7 +536,7 @@
              },
              {
                  "id":  "business-vendor-contract-audit-assessment-pro",
-                 "name":  "Vendor Contract Audit — Assessment (Pro)",
+                 "name":  "Vendor Contract Audit  Assessment (Pro)",
                  "tags":  [
                               "Business",
                               "Assessment",
@@ -548,7 +548,7 @@
              },
              {
                  "id":  "business-vendor-contract-audit-assessment-elite",
-                 "name":  "Vendor Contract Audit — Assessment (Elite)",
+                 "name":  "Vendor Contract Audit  Assessment (Elite)",
                  "tags":  [
                               "Business",
                               "Assessment",
@@ -560,7 +560,7 @@
              },
              {
                  "id":  "business-vendor-contract-audit-implementation-starter",
-                 "name":  "Vendor Contract Audit — Implementation (Starter)",
+                 "name":  "Vendor Contract Audit  Implementation (Starter)",
                  "tags":  [
                               "Business",
                               "Implementation",
@@ -572,7 +572,7 @@
              },
              {
                  "id":  "business-vendor-contract-audit-implementation-pro",
-                 "name":  "Vendor Contract Audit — Implementation (Pro)",
+                 "name":  "Vendor Contract Audit  Implementation (Pro)",
                  "tags":  [
                               "Business",
                               "Implementation",
@@ -584,7 +584,7 @@
              },
              {
                  "id":  "business-vendor-contract-audit-implementation-elite",
-                 "name":  "Vendor Contract Audit — Implementation (Elite)",
+                 "name":  "Vendor Contract Audit  Implementation (Elite)",
                  "tags":  [
                               "Business",
                               "Implementation",
@@ -596,7 +596,7 @@
              },
              {
                  "id":  "business-vendor-contract-audit-monitoring-starter",
-                 "name":  "Vendor Contract Audit — Monitoring (Starter)",
+                 "name":  "Vendor Contract Audit  Monitoring (Starter)",
                  "tags":  [
                               "Business",
                               "Monitoring",
@@ -608,7 +608,7 @@
              },
              {
                  "id":  "business-vendor-contract-audit-monitoring-pro",
-                 "name":  "Vendor Contract Audit — Monitoring (Pro)",
+                 "name":  "Vendor Contract Audit  Monitoring (Pro)",
                  "tags":  [
                               "Business",
                               "Monitoring",
@@ -620,7 +620,7 @@
              },
              {
                  "id":  "business-vendor-contract-audit-monitoring-elite",
-                 "name":  "Vendor Contract Audit — Monitoring (Elite)",
+                 "name":  "Vendor Contract Audit  Monitoring (Elite)",
                  "tags":  [
                               "Business",
                               "Monitoring",
@@ -632,7 +632,7 @@
              },
              {
                  "id":  "business-m-a-due-diligence-assessment-starter",
-                 "name":  "M\u0026A Due Diligence — Assessment (Starter)",
+                 "name":  "M\u0026A Due Diligence  Assessment (Starter)",
                  "tags":  [
                               "Business",
                               "Assessment",
@@ -644,7 +644,7 @@
              },
              {
                  "id":  "business-m-a-due-diligence-assessment-pro",
-                 "name":  "M\u0026A Due Diligence — Assessment (Pro)",
+                 "name":  "M\u0026A Due Diligence  Assessment (Pro)",
                  "tags":  [
                               "Business",
                               "Assessment",
@@ -656,7 +656,7 @@
              },
              {
                  "id":  "business-m-a-due-diligence-assessment-elite",
-                 "name":  "M\u0026A Due Diligence — Assessment (Elite)",
+                 "name":  "M\u0026A Due Diligence  Assessment (Elite)",
                  "tags":  [
                               "Business",
                               "Assessment",
@@ -668,7 +668,7 @@
              },
              {
                  "id":  "business-m-a-due-diligence-implementation-starter",
-                 "name":  "M\u0026A Due Diligence — Implementation (Starter)",
+                 "name":  "M\u0026A Due Diligence  Implementation (Starter)",
                  "tags":  [
                               "Business",
                               "Implementation",
@@ -680,7 +680,7 @@
              },
              {
                  "id":  "business-m-a-due-diligence-implementation-pro",
-                 "name":  "M\u0026A Due Diligence — Implementation (Pro)",
+                 "name":  "M\u0026A Due Diligence  Implementation (Pro)",
                  "tags":  [
                               "Business",
                               "Implementation",
@@ -692,7 +692,7 @@
              },
              {
                  "id":  "business-m-a-due-diligence-implementation-elite",
-                 "name":  "M\u0026A Due Diligence — Implementation (Elite)",
+                 "name":  "M\u0026A Due Diligence  Implementation (Elite)",
                  "tags":  [
                               "Business",
                               "Implementation",
@@ -704,7 +704,7 @@
              },
              {
                  "id":  "business-m-a-due-diligence-monitoring-starter",
-                 "name":  "M\u0026A Due Diligence — Monitoring (Starter)",
+                 "name":  "M\u0026A Due Diligence  Monitoring (Starter)",
                  "tags":  [
                               "Business",
                               "Monitoring",
@@ -716,7 +716,7 @@
              },
              {
                  "id":  "business-m-a-due-diligence-monitoring-pro",
-                 "name":  "M\u0026A Due Diligence — Monitoring (Pro)",
+                 "name":  "M\u0026A Due Diligence  Monitoring (Pro)",
                  "tags":  [
                               "Business",
                               "Monitoring",
@@ -728,7 +728,7 @@
              },
              {
                  "id":  "business-m-a-due-diligence-monitoring-elite",
-                 "name":  "M\u0026A Due Diligence — Monitoring (Elite)",
+                 "name":  "M\u0026A Due Diligence  Monitoring (Elite)",
                  "tags":  [
                               "Business",
                               "Monitoring",
@@ -740,7 +740,7 @@
              },
              {
                  "id":  "business-risk-assessment-assessment-starter",
-                 "name":  "Risk Assessment — Assessment (Starter)",
+                 "name":  "Risk Assessment  Assessment (Starter)",
                  "tags":  [
                               "Business",
                               "Assessment",
@@ -751,7 +751,7 @@
              },
              {
                  "id":  "business-risk-assessment-assessment-pro",
-                 "name":  "Risk Assessment — Assessment (Pro)",
+                 "name":  "Risk Assessment  Assessment (Pro)",
                  "tags":  [
                               "Business",
                               "Assessment",
@@ -762,7 +762,7 @@
              },
              {
                  "id":  "business-risk-assessment-assessment-elite",
-                 "name":  "Risk Assessment — Assessment (Elite)",
+                 "name":  "Risk Assessment  Assessment (Elite)",
                  "tags":  [
                               "Business",
                               "Assessment",
@@ -773,7 +773,7 @@
              },
              {
                  "id":  "business-risk-assessment-implementation-starter",
-                 "name":  "Risk Assessment — Implementation (Starter)",
+                 "name":  "Risk Assessment  Implementation (Starter)",
                  "tags":  [
                               "Business",
                               "Implementation",
@@ -784,7 +784,7 @@
              },
              {
                  "id":  "business-risk-assessment-implementation-pro",
-                 "name":  "Risk Assessment — Implementation (Pro)",
+                 "name":  "Risk Assessment  Implementation (Pro)",
                  "tags":  [
                               "Business",
                               "Implementation",
@@ -795,7 +795,7 @@
              },
              {
                  "id":  "business-risk-assessment-implementation-elite",
-                 "name":  "Risk Assessment — Implementation (Elite)",
+                 "name":  "Risk Assessment  Implementation (Elite)",
                  "tags":  [
                               "Business",
                               "Implementation",
@@ -806,7 +806,7 @@
              },
              {
                  "id":  "business-risk-assessment-monitoring-starter",
-                 "name":  "Risk Assessment — Monitoring (Starter)",
+                 "name":  "Risk Assessment  Monitoring (Starter)",
                  "tags":  [
                               "Business",
                               "Monitoring",
@@ -817,7 +817,7 @@
              },
              {
                  "id":  "business-risk-assessment-monitoring-pro",
-                 "name":  "Risk Assessment — Monitoring (Pro)",
+                 "name":  "Risk Assessment  Monitoring (Pro)",
                  "tags":  [
                               "Business",
                               "Monitoring",
@@ -828,7 +828,7 @@
              },
              {
                  "id":  "business-risk-assessment-monitoring-elite",
-                 "name":  "Risk Assessment — Monitoring (Elite)",
+                 "name":  "Risk Assessment  Monitoring (Elite)",
                  "tags":  [
                               "Business",
                               "Monitoring",
@@ -839,7 +839,7 @@
              },
              {
                  "id":  "business-credit-advisory-assessment-starter",
-                 "name":  "Credit Advisory — Assessment (Starter)",
+                 "name":  "Credit Advisory  Assessment (Starter)",
                  "tags":  [
                               "Business",
                               "Assessment",
@@ -850,7 +850,7 @@
              },
              {
                  "id":  "business-credit-advisory-assessment-pro",
-                 "name":  "Credit Advisory — Assessment (Pro)",
+                 "name":  "Credit Advisory  Assessment (Pro)",
                  "tags":  [
                               "Business",
                               "Assessment",
@@ -861,7 +861,7 @@
              },
              {
                  "id":  "business-credit-advisory-assessment-elite",
-                 "name":  "Credit Advisory — Assessment (Elite)",
+                 "name":  "Credit Advisory  Assessment (Elite)",
                  "tags":  [
                               "Business",
                               "Assessment",
@@ -872,7 +872,7 @@
              },
              {
                  "id":  "business-credit-advisory-implementation-starter",
-                 "name":  "Credit Advisory — Implementation (Starter)",
+                 "name":  "Credit Advisory  Implementation (Starter)",
                  "tags":  [
                               "Business",
                               "Implementation",
@@ -883,7 +883,7 @@
              },
              {
                  "id":  "business-credit-advisory-implementation-pro",
-                 "name":  "Credit Advisory — Implementation (Pro)",
+                 "name":  "Credit Advisory  Implementation (Pro)",
                  "tags":  [
                               "Business",
                               "Implementation",
@@ -894,7 +894,7 @@
              },
              {
                  "id":  "business-credit-advisory-implementation-elite",
-                 "name":  "Credit Advisory — Implementation (Elite)",
+                 "name":  "Credit Advisory  Implementation (Elite)",
                  "tags":  [
                               "Business",
                               "Implementation",
@@ -905,7 +905,7 @@
              },
              {
                  "id":  "business-credit-advisory-monitoring-starter",
-                 "name":  "Credit Advisory — Monitoring (Starter)",
+                 "name":  "Credit Advisory  Monitoring (Starter)",
                  "tags":  [
                               "Business",
                               "Monitoring",
@@ -916,7 +916,7 @@
              },
              {
                  "id":  "business-credit-advisory-monitoring-pro",
-                 "name":  "Credit Advisory — Monitoring (Pro)",
+                 "name":  "Credit Advisory  Monitoring (Pro)",
                  "tags":  [
                               "Business",
                               "Monitoring",
@@ -927,7 +927,7 @@
              },
              {
                  "id":  "business-credit-advisory-monitoring-elite",
-                 "name":  "Credit Advisory — Monitoring (Elite)",
+                 "name":  "Credit Advisory  Monitoring (Elite)",
                  "tags":  [
                               "Business",
                               "Monitoring",
@@ -938,7 +938,7 @@
              },
              {
                  "id":  "business-export-licensing-assessment-starter",
-                 "name":  "Export Licensing — Assessment (Starter)",
+                 "name":  "Export Licensing  Assessment (Starter)",
                  "tags":  [
                               "Business",
                               "Assessment",
@@ -949,7 +949,7 @@
              },
              {
                  "id":  "business-export-licensing-assessment-pro",
-                 "name":  "Export Licensing — Assessment (Pro)",
+                 "name":  "Export Licensing  Assessment (Pro)",
                  "tags":  [
                               "Business",
                               "Assessment",
@@ -960,7 +960,7 @@
              },
              {
                  "id":  "business-export-licensing-assessment-elite",
-                 "name":  "Export Licensing — Assessment (Elite)",
+                 "name":  "Export Licensing  Assessment (Elite)",
                  "tags":  [
                               "Business",
                               "Assessment",
@@ -971,7 +971,7 @@
              },
              {
                  "id":  "business-export-licensing-implementation-starter",
-                 "name":  "Export Licensing — Implementation (Starter)",
+                 "name":  "Export Licensing  Implementation (Starter)",
                  "tags":  [
                               "Business",
                               "Implementation",
@@ -982,7 +982,7 @@
              },
              {
                  "id":  "business-export-licensing-implementation-pro",
-                 "name":  "Export Licensing — Implementation (Pro)",
+                 "name":  "Export Licensing  Implementation (Pro)",
                  "tags":  [
                               "Business",
                               "Implementation",
@@ -993,7 +993,7 @@
              },
              {
                  "id":  "business-export-licensing-implementation-elite",
-                 "name":  "Export Licensing — Implementation (Elite)",
+                 "name":  "Export Licensing  Implementation (Elite)",
                  "tags":  [
                               "Business",
                               "Implementation",
@@ -1004,7 +1004,7 @@
              },
              {
                  "id":  "business-export-licensing-monitoring-starter",
-                 "name":  "Export Licensing — Monitoring (Starter)",
+                 "name":  "Export Licensing  Monitoring (Starter)",
                  "tags":  [
                               "Business",
                               "Monitoring",
@@ -1015,7 +1015,7 @@
              },
              {
                  "id":  "business-export-licensing-monitoring-pro",
-                 "name":  "Export Licensing — Monitoring (Pro)",
+                 "name":  "Export Licensing  Monitoring (Pro)",
                  "tags":  [
                               "Business",
                               "Monitoring",
@@ -1026,7 +1026,7 @@
              },
              {
                  "id":  "business-export-licensing-monitoring-elite",
-                 "name":  "Export Licensing — Monitoring (Elite)",
+                 "name":  "Export Licensing  Monitoring (Elite)",
                  "tags":  [
                               "Business",
                               "Monitoring",
@@ -1037,7 +1037,7 @@
              },
              {
                  "id":  "legal-contract-review-assessment-starter",
-                 "name":  "Contract Review — Assessment (Starter)",
+                 "name":  "Contract Review  Assessment (Starter)",
                  "tags":  [
                               "Legal",
                               "Assessment",
@@ -1048,7 +1048,7 @@
              },
              {
                  "id":  "legal-contract-review-assessment-pro",
-                 "name":  "Contract Review — Assessment (Pro)",
+                 "name":  "Contract Review  Assessment (Pro)",
                  "tags":  [
                               "Legal",
                               "Assessment",
@@ -1059,7 +1059,7 @@
              },
              {
                  "id":  "legal-contract-review-assessment-elite",
-                 "name":  "Contract Review — Assessment (Elite)",
+                 "name":  "Contract Review  Assessment (Elite)",
                  "tags":  [
                               "Legal",
                               "Assessment",
@@ -1070,7 +1070,7 @@
              },
              {
                  "id":  "legal-contract-review-implementation-starter",
-                 "name":  "Contract Review — Implementation (Starter)",
+                 "name":  "Contract Review  Implementation (Starter)",
                  "tags":  [
                               "Legal",
                               "Implementation",
@@ -1081,7 +1081,7 @@
              },
              {
                  "id":  "legal-contract-review-implementation-pro",
-                 "name":  "Contract Review — Implementation (Pro)",
+                 "name":  "Contract Review  Implementation (Pro)",
                  "tags":  [
                               "Legal",
                               "Implementation",
@@ -1092,7 +1092,7 @@
              },
              {
                  "id":  "legal-contract-review-implementation-elite",
-                 "name":  "Contract Review — Implementation (Elite)",
+                 "name":  "Contract Review  Implementation (Elite)",
                  "tags":  [
                               "Legal",
                               "Implementation",
@@ -1103,7 +1103,7 @@
              },
              {
                  "id":  "legal-contract-review-monitoring-starter",
-                 "name":  "Contract Review — Monitoring (Starter)",
+                 "name":  "Contract Review  Monitoring (Starter)",
                  "tags":  [
                               "Legal",
                               "Monitoring",
@@ -1114,7 +1114,7 @@
              },
              {
                  "id":  "legal-contract-review-monitoring-pro",
-                 "name":  "Contract Review — Monitoring (Pro)",
+                 "name":  "Contract Review  Monitoring (Pro)",
                  "tags":  [
                               "Legal",
                               "Monitoring",
@@ -1125,7 +1125,7 @@
              },
              {
                  "id":  "legal-contract-review-monitoring-elite",
-                 "name":  "Contract Review — Monitoring (Elite)",
+                 "name":  "Contract Review  Monitoring (Elite)",
                  "tags":  [
                               "Legal",
                               "Monitoring",
@@ -1136,7 +1136,7 @@
              },
              {
                  "id":  "legal-employment-law-audit-assessment-starter",
-                 "name":  "Employment Law Audit — Assessment (Starter)",
+                 "name":  "Employment Law Audit  Assessment (Starter)",
                  "tags":  [
                               "Legal",
                               "Assessment",
@@ -1148,7 +1148,7 @@
              },
              {
                  "id":  "legal-employment-law-audit-assessment-pro",
-                 "name":  "Employment Law Audit — Assessment (Pro)",
+                 "name":  "Employment Law Audit  Assessment (Pro)",
                  "tags":  [
                               "Legal",
                               "Assessment",
@@ -1160,7 +1160,7 @@
              },
              {
                  "id":  "legal-employment-law-audit-assessment-elite",
-                 "name":  "Employment Law Audit — Assessment (Elite)",
+                 "name":  "Employment Law Audit  Assessment (Elite)",
                  "tags":  [
                               "Legal",
                               "Assessment",
@@ -1172,7 +1172,7 @@
              },
              {
                  "id":  "legal-employment-law-audit-implementation-starter",
-                 "name":  "Employment Law Audit — Implementation (Starter)",
+                 "name":  "Employment Law Audit  Implementation (Starter)",
                  "tags":  [
                               "Legal",
                               "Implementation",
@@ -1184,7 +1184,7 @@
              },
              {
                  "id":  "legal-employment-law-audit-implementation-pro",
-                 "name":  "Employment Law Audit — Implementation (Pro)",
+                 "name":  "Employment Law Audit  Implementation (Pro)",
                  "tags":  [
                               "Legal",
                               "Implementation",
@@ -1196,7 +1196,7 @@
              },
              {
                  "id":  "legal-employment-law-audit-implementation-elite",
-                 "name":  "Employment Law Audit — Implementation (Elite)",
+                 "name":  "Employment Law Audit  Implementation (Elite)",
                  "tags":  [
                               "Legal",
                               "Implementation",
@@ -1208,7 +1208,7 @@
              },
              {
                  "id":  "legal-employment-law-audit-monitoring-starter",
-                 "name":  "Employment Law Audit — Monitoring (Starter)",
+                 "name":  "Employment Law Audit  Monitoring (Starter)",
                  "tags":  [
                               "Legal",
                               "Monitoring",
@@ -1220,7 +1220,7 @@
              },
              {
                  "id":  "legal-employment-law-audit-monitoring-pro",
-                 "name":  "Employment Law Audit — Monitoring (Pro)",
+                 "name":  "Employment Law Audit  Monitoring (Pro)",
                  "tags":  [
                               "Legal",
                               "Monitoring",
@@ -1232,7 +1232,7 @@
              },
              {
                  "id":  "legal-employment-law-audit-monitoring-elite",
-                 "name":  "Employment Law Audit — Monitoring (Elite)",
+                 "name":  "Employment Law Audit  Monitoring (Elite)",
                  "tags":  [
                               "Legal",
                               "Monitoring",
@@ -1244,7 +1244,7 @@
              },
              {
                  "id":  "legal-privacy-policy-drafting-assessment-starter",
-                 "name":  "Privacy Policy Drafting — Assessment (Starter)",
+                 "name":  "Privacy Policy Drafting  Assessment (Starter)",
                  "tags":  [
                               "Legal",
                               "Assessment",
@@ -1256,7 +1256,7 @@
              },
              {
                  "id":  "legal-privacy-policy-drafting-assessment-pro",
-                 "name":  "Privacy Policy Drafting — Assessment (Pro)",
+                 "name":  "Privacy Policy Drafting  Assessment (Pro)",
                  "tags":  [
                               "Legal",
                               "Assessment",
@@ -1268,7 +1268,7 @@
              },
              {
                  "id":  "legal-privacy-policy-drafting-assessment-elite",
-                 "name":  "Privacy Policy Drafting — Assessment (Elite)",
+                 "name":  "Privacy Policy Drafting  Assessment (Elite)",
                  "tags":  [
                               "Legal",
                               "Assessment",
@@ -1280,7 +1280,7 @@
              },
              {
                  "id":  "legal-privacy-policy-drafting-implementation-starter",
-                 "name":  "Privacy Policy Drafting — Implementation (Starter)",
+                 "name":  "Privacy Policy Drafting  Implementation (Starter)",
                  "tags":  [
                               "Legal",
                               "Implementation",
@@ -1292,7 +1292,7 @@
              },
              {
                  "id":  "legal-privacy-policy-drafting-implementation-pro",
-                 "name":  "Privacy Policy Drafting — Implementation (Pro)",
+                 "name":  "Privacy Policy Drafting  Implementation (Pro)",
                  "tags":  [
                               "Legal",
                               "Implementation",
@@ -1304,7 +1304,7 @@
              },
              {
                  "id":  "legal-privacy-policy-drafting-implementation-elite",
-                 "name":  "Privacy Policy Drafting — Implementation (Elite)",
+                 "name":  "Privacy Policy Drafting  Implementation (Elite)",
                  "tags":  [
                               "Legal",
                               "Implementation",
@@ -1316,7 +1316,7 @@
              },
              {
                  "id":  "legal-privacy-policy-drafting-monitoring-starter",
-                 "name":  "Privacy Policy Drafting — Monitoring (Starter)",
+                 "name":  "Privacy Policy Drafting  Monitoring (Starter)",
                  "tags":  [
                               "Legal",
                               "Monitoring",
@@ -1328,7 +1328,7 @@
              },
              {
                  "id":  "legal-privacy-policy-drafting-monitoring-pro",
-                 "name":  "Privacy Policy Drafting — Monitoring (Pro)",
+                 "name":  "Privacy Policy Drafting  Monitoring (Pro)",
                  "tags":  [
                               "Legal",
                               "Monitoring",
@@ -1340,7 +1340,7 @@
              },
              {
                  "id":  "legal-privacy-policy-drafting-monitoring-elite",
-                 "name":  "Privacy Policy Drafting — Monitoring (Elite)",
+                 "name":  "Privacy Policy Drafting  Monitoring (Elite)",
                  "tags":  [
                               "Legal",
                               "Monitoring",
@@ -1352,7 +1352,7 @@
              },
              {
                  "id":  "legal-ip-portfolio-audit-assessment-starter",
-                 "name":  "IP Portfolio Audit — Assessment (Starter)",
+                 "name":  "IP Portfolio Audit  Assessment (Starter)",
                  "tags":  [
                               "Legal",
                               "Assessment",
@@ -1364,7 +1364,7 @@
              },
              {
                  "id":  "legal-ip-portfolio-audit-assessment-pro",
-                 "name":  "IP Portfolio Audit — Assessment (Pro)",
+                 "name":  "IP Portfolio Audit  Assessment (Pro)",
                  "tags":  [
                               "Legal",
                               "Assessment",
@@ -1376,7 +1376,7 @@
              },
              {
                  "id":  "legal-ip-portfolio-audit-assessment-elite",
-                 "name":  "IP Portfolio Audit — Assessment (Elite)",
+                 "name":  "IP Portfolio Audit  Assessment (Elite)",
                  "tags":  [
                               "Legal",
                               "Assessment",
@@ -1388,7 +1388,7 @@
              },
              {
                  "id":  "legal-ip-portfolio-audit-implementation-starter",
-                 "name":  "IP Portfolio Audit — Implementation (Starter)",
+                 "name":  "IP Portfolio Audit  Implementation (Starter)",
                  "tags":  [
                               "Legal",
                               "Implementation",
@@ -1400,7 +1400,7 @@
              },
              {
                  "id":  "legal-ip-portfolio-audit-implementation-pro",
-                 "name":  "IP Portfolio Audit — Implementation (Pro)",
+                 "name":  "IP Portfolio Audit  Implementation (Pro)",
                  "tags":  [
                               "Legal",
                               "Implementation",
@@ -1412,7 +1412,7 @@
              },
              {
                  "id":  "legal-ip-portfolio-audit-implementation-elite",
-                 "name":  "IP Portfolio Audit — Implementation (Elite)",
+                 "name":  "IP Portfolio Audit  Implementation (Elite)",
                  "tags":  [
                               "Legal",
                               "Implementation",
@@ -1424,7 +1424,7 @@
              },
              {
                  "id":  "legal-ip-portfolio-audit-monitoring-starter",
-                 "name":  "IP Portfolio Audit — Monitoring (Starter)",
+                 "name":  "IP Portfolio Audit  Monitoring (Starter)",
                  "tags":  [
                               "Legal",
                               "Monitoring",
@@ -1436,7 +1436,7 @@
              },
              {
                  "id":  "legal-ip-portfolio-audit-monitoring-pro",
-                 "name":  "IP Portfolio Audit — Monitoring (Pro)",
+                 "name":  "IP Portfolio Audit  Monitoring (Pro)",
                  "tags":  [
                               "Legal",
                               "Monitoring",
@@ -1448,7 +1448,7 @@
              },
              {
                  "id":  "legal-ip-portfolio-audit-monitoring-elite",
-                 "name":  "IP Portfolio Audit — Monitoring (Elite)",
+                 "name":  "IP Portfolio Audit  Monitoring (Elite)",
                  "tags":  [
                               "Legal",
                               "Monitoring",
@@ -1460,7 +1460,7 @@
              },
              {
                  "id":  "legal-immigration-compliance-assessment-starter",
-                 "name":  "Immigration Compliance — Assessment (Starter)",
+                 "name":  "Immigration Compliance  Assessment (Starter)",
                  "tags":  [
                               "Legal",
                               "Assessment",
@@ -1471,7 +1471,7 @@
              },
              {
                  "id":  "legal-immigration-compliance-assessment-pro",
-                 "name":  "Immigration Compliance — Assessment (Pro)",
+                 "name":  "Immigration Compliance  Assessment (Pro)",
                  "tags":  [
                               "Legal",
                               "Assessment",
@@ -1482,7 +1482,7 @@
              },
              {
                  "id":  "legal-immigration-compliance-assessment-elite",
-                 "name":  "Immigration Compliance — Assessment (Elite)",
+                 "name":  "Immigration Compliance  Assessment (Elite)",
                  "tags":  [
                               "Legal",
                               "Assessment",
@@ -1493,7 +1493,7 @@
              },
              {
                  "id":  "legal-immigration-compliance-implementation-starter",
-                 "name":  "Immigration Compliance — Implementation (Starter)",
+                 "name":  "Immigration Compliance  Implementation (Starter)",
                  "tags":  [
                               "Legal",
                               "Implementation",
@@ -1504,7 +1504,7 @@
              },
              {
                  "id":  "legal-immigration-compliance-implementation-pro",
-                 "name":  "Immigration Compliance — Implementation (Pro)",
+                 "name":  "Immigration Compliance  Implementation (Pro)",
                  "tags":  [
                               "Legal",
                               "Implementation",
@@ -1515,7 +1515,7 @@
              },
              {
                  "id":  "legal-immigration-compliance-implementation-elite",
-                 "name":  "Immigration Compliance — Implementation (Elite)",
+                 "name":  "Immigration Compliance  Implementation (Elite)",
                  "tags":  [
                               "Legal",
                               "Implementation",
@@ -1526,7 +1526,7 @@
              },
              {
                  "id":  "legal-immigration-compliance-monitoring-starter",
-                 "name":  "Immigration Compliance — Monitoring (Starter)",
+                 "name":  "Immigration Compliance  Monitoring (Starter)",
                  "tags":  [
                               "Legal",
                               "Monitoring",
@@ -1537,7 +1537,7 @@
              },
              {
                  "id":  "legal-immigration-compliance-monitoring-pro",
-                 "name":  "Immigration Compliance — Monitoring (Pro)",
+                 "name":  "Immigration Compliance  Monitoring (Pro)",
                  "tags":  [
                               "Legal",
                               "Monitoring",
@@ -1548,7 +1548,7 @@
              },
              {
                  "id":  "legal-immigration-compliance-monitoring-elite",
-                 "name":  "Immigration Compliance — Monitoring (Elite)",
+                 "name":  "Immigration Compliance  Monitoring (Elite)",
                  "tags":  [
                               "Legal",
                               "Monitoring",
@@ -1559,7 +1559,7 @@
              },
              {
                  "id":  "legal-litigation-readiness-assessment-starter",
-                 "name":  "Litigation Readiness — Assessment (Starter)",
+                 "name":  "Litigation Readiness  Assessment (Starter)",
                  "tags":  [
                               "Legal",
                               "Assessment",
@@ -1570,7 +1570,7 @@
              },
              {
                  "id":  "legal-litigation-readiness-assessment-pro",
-                 "name":  "Litigation Readiness — Assessment (Pro)",
+                 "name":  "Litigation Readiness  Assessment (Pro)",
                  "tags":  [
                               "Legal",
                               "Assessment",
@@ -1581,7 +1581,7 @@
              },
              {
                  "id":  "legal-litigation-readiness-assessment-elite",
-                 "name":  "Litigation Readiness — Assessment (Elite)",
+                 "name":  "Litigation Readiness  Assessment (Elite)",
                  "tags":  [
                               "Legal",
                               "Assessment",
@@ -1592,7 +1592,7 @@
              },
              {
                  "id":  "legal-litigation-readiness-implementation-starter",
-                 "name":  "Litigation Readiness — Implementation (Starter)",
+                 "name":  "Litigation Readiness  Implementation (Starter)",
                  "tags":  [
                               "Legal",
                               "Implementation",
@@ -1603,7 +1603,7 @@
              },
              {
                  "id":  "legal-litigation-readiness-implementation-pro",
-                 "name":  "Litigation Readiness — Implementation (Pro)",
+                 "name":  "Litigation Readiness  Implementation (Pro)",
                  "tags":  [
                               "Legal",
                               "Implementation",
@@ -1614,7 +1614,7 @@
              },
              {
                  "id":  "legal-litigation-readiness-implementation-elite",
-                 "name":  "Litigation Readiness — Implementation (Elite)",
+                 "name":  "Litigation Readiness  Implementation (Elite)",
                  "tags":  [
                               "Legal",
                               "Implementation",
@@ -1625,7 +1625,7 @@
              },
              {
                  "id":  "legal-litigation-readiness-monitoring-starter",
-                 "name":  "Litigation Readiness — Monitoring (Starter)",
+                 "name":  "Litigation Readiness  Monitoring (Starter)",
                  "tags":  [
                               "Legal",
                               "Monitoring",
@@ -1636,7 +1636,7 @@
              },
              {
                  "id":  "legal-litigation-readiness-monitoring-pro",
-                 "name":  "Litigation Readiness — Monitoring (Pro)",
+                 "name":  "Litigation Readiness  Monitoring (Pro)",
                  "tags":  [
                               "Legal",
                               "Monitoring",
@@ -1647,7 +1647,7 @@
              },
              {
                  "id":  "legal-litigation-readiness-monitoring-elite",
-                 "name":  "Litigation Readiness — Monitoring (Elite)",
+                 "name":  "Litigation Readiness  Monitoring (Elite)",
                  "tags":  [
                               "Legal",
                               "Monitoring",
@@ -1658,7 +1658,7 @@
              },
              {
                  "id":  "legal-data-retention-policy-assessment-starter",
-                 "name":  "Data Retention Policy — Assessment (Starter)",
+                 "name":  "Data Retention Policy  Assessment (Starter)",
                  "tags":  [
                               "Legal",
                               "Assessment",
@@ -1670,7 +1670,7 @@
              },
              {
                  "id":  "legal-data-retention-policy-assessment-pro",
-                 "name":  "Data Retention Policy — Assessment (Pro)",
+                 "name":  "Data Retention Policy  Assessment (Pro)",
                  "tags":  [
                               "Legal",
                               "Assessment",
@@ -1682,7 +1682,7 @@
              },
              {
                  "id":  "legal-data-retention-policy-assessment-elite",
-                 "name":  "Data Retention Policy — Assessment (Elite)",
+                 "name":  "Data Retention Policy  Assessment (Elite)",
                  "tags":  [
                               "Legal",
                               "Assessment",
@@ -1694,7 +1694,7 @@
              },
              {
                  "id":  "legal-data-retention-policy-implementation-starter",
-                 "name":  "Data Retention Policy — Implementation (Starter)",
+                 "name":  "Data Retention Policy  Implementation (Starter)",
                  "tags":  [
                               "Legal",
                               "Implementation",
@@ -1706,7 +1706,7 @@
              },
              {
                  "id":  "legal-data-retention-policy-implementation-pro",
-                 "name":  "Data Retention Policy — Implementation (Pro)",
+                 "name":  "Data Retention Policy  Implementation (Pro)",
                  "tags":  [
                               "Legal",
                               "Implementation",
@@ -1718,7 +1718,7 @@
              },
              {
                  "id":  "legal-data-retention-policy-implementation-elite",
-                 "name":  "Data Retention Policy — Implementation (Elite)",
+                 "name":  "Data Retention Policy  Implementation (Elite)",
                  "tags":  [
                               "Legal",
                               "Implementation",
@@ -1730,7 +1730,7 @@
              },
              {
                  "id":  "legal-data-retention-policy-monitoring-starter",
-                 "name":  "Data Retention Policy — Monitoring (Starter)",
+                 "name":  "Data Retention Policy  Monitoring (Starter)",
                  "tags":  [
                               "Legal",
                               "Monitoring",
@@ -1742,7 +1742,7 @@
              },
              {
                  "id":  "legal-data-retention-policy-monitoring-pro",
-                 "name":  "Data Retention Policy — Monitoring (Pro)",
+                 "name":  "Data Retention Policy  Monitoring (Pro)",
                  "tags":  [
                               "Legal",
                               "Monitoring",
@@ -1754,7 +1754,7 @@
              },
              {
                  "id":  "legal-data-retention-policy-monitoring-elite",
-                 "name":  "Data Retention Policy — Monitoring (Elite)",
+                 "name":  "Data Retention Policy  Monitoring (Elite)",
                  "tags":  [
                               "Legal",
                               "Monitoring",
@@ -1766,7 +1766,7 @@
              },
              {
                  "id":  "legal-antitrust-review-assessment-starter",
-                 "name":  "Antitrust Review — Assessment (Starter)",
+                 "name":  "Antitrust Review  Assessment (Starter)",
                  "tags":  [
                               "Legal",
                               "Assessment",
@@ -1777,7 +1777,7 @@
              },
              {
                  "id":  "legal-antitrust-review-assessment-pro",
-                 "name":  "Antitrust Review — Assessment (Pro)",
+                 "name":  "Antitrust Review  Assessment (Pro)",
                  "tags":  [
                               "Legal",
                               "Assessment",
@@ -1788,7 +1788,7 @@
              },
              {
                  "id":  "legal-antitrust-review-assessment-elite",
-                 "name":  "Antitrust Review — Assessment (Elite)",
+                 "name":  "Antitrust Review  Assessment (Elite)",
                  "tags":  [
                               "Legal",
                               "Assessment",
@@ -1799,7 +1799,7 @@
              },
              {
                  "id":  "legal-antitrust-review-implementation-starter",
-                 "name":  "Antitrust Review — Implementation (Starter)",
+                 "name":  "Antitrust Review  Implementation (Starter)",
                  "tags":  [
                               "Legal",
                               "Implementation",
@@ -1810,7 +1810,7 @@
              },
              {
                  "id":  "legal-antitrust-review-implementation-pro",
-                 "name":  "Antitrust Review — Implementation (Pro)",
+                 "name":  "Antitrust Review  Implementation (Pro)",
                  "tags":  [
                               "Legal",
                               "Implementation",
@@ -1821,7 +1821,7 @@
              },
              {
                  "id":  "legal-antitrust-review-implementation-elite",
-                 "name":  "Antitrust Review — Implementation (Elite)",
+                 "name":  "Antitrust Review  Implementation (Elite)",
                  "tags":  [
                               "Legal",
                               "Implementation",
@@ -1832,7 +1832,7 @@
              },
              {
                  "id":  "legal-antitrust-review-monitoring-starter",
-                 "name":  "Antitrust Review — Monitoring (Starter)",
+                 "name":  "Antitrust Review  Monitoring (Starter)",
                  "tags":  [
                               "Legal",
                               "Monitoring",
@@ -1843,7 +1843,7 @@
              },
              {
                  "id":  "legal-antitrust-review-monitoring-pro",
-                 "name":  "Antitrust Review — Monitoring (Pro)",
+                 "name":  "Antitrust Review  Monitoring (Pro)",
                  "tags":  [
                               "Legal",
                               "Monitoring",
@@ -1854,7 +1854,7 @@
              },
              {
                  "id":  "legal-antitrust-review-monitoring-elite",
-                 "name":  "Antitrust Review — Monitoring (Elite)",
+                 "name":  "Antitrust Review  Monitoring (Elite)",
                  "tags":  [
                               "Legal",
                               "Monitoring",
@@ -1865,7 +1865,7 @@
              },
              {
                  "id":  "legal-whistleblower-program-assessment-starter",
-                 "name":  "Whistleblower Program — Assessment (Starter)",
+                 "name":  "Whistleblower Program  Assessment (Starter)",
                  "tags":  [
                               "Legal",
                               "Assessment",
@@ -1876,7 +1876,7 @@
              },
              {
                  "id":  "legal-whistleblower-program-assessment-pro",
-                 "name":  "Whistleblower Program — Assessment (Pro)",
+                 "name":  "Whistleblower Program  Assessment (Pro)",
                  "tags":  [
                               "Legal",
                               "Assessment",
@@ -1887,7 +1887,7 @@
              },
              {
                  "id":  "legal-whistleblower-program-assessment-elite",
-                 "name":  "Whistleblower Program — Assessment (Elite)",
+                 "name":  "Whistleblower Program  Assessment (Elite)",
                  "tags":  [
                               "Legal",
                               "Assessment",
@@ -1898,7 +1898,7 @@
              },
              {
                  "id":  "legal-whistleblower-program-implementation-starter",
-                 "name":  "Whistleblower Program — Implementation (Starter)",
+                 "name":  "Whistleblower Program  Implementation (Starter)",
                  "tags":  [
                               "Legal",
                               "Implementation",
@@ -1909,7 +1909,7 @@
              },
              {
                  "id":  "legal-whistleblower-program-implementation-pro",
-                 "name":  "Whistleblower Program — Implementation (Pro)",
+                 "name":  "Whistleblower Program  Implementation (Pro)",
                  "tags":  [
                               "Legal",
                               "Implementation",
@@ -1920,7 +1920,7 @@
              },
              {
                  "id":  "legal-whistleblower-program-implementation-elite",
-                 "name":  "Whistleblower Program — Implementation (Elite)",
+                 "name":  "Whistleblower Program  Implementation (Elite)",
                  "tags":  [
                               "Legal",
                               "Implementation",
@@ -1931,7 +1931,7 @@
              },
              {
                  "id":  "legal-whistleblower-program-monitoring-starter",
-                 "name":  "Whistleblower Program — Monitoring (Starter)",
+                 "name":  "Whistleblower Program  Monitoring (Starter)",
                  "tags":  [
                               "Legal",
                               "Monitoring",
@@ -1942,7 +1942,7 @@
              },
              {
                  "id":  "legal-whistleblower-program-monitoring-pro",
-                 "name":  "Whistleblower Program — Monitoring (Pro)",
+                 "name":  "Whistleblower Program  Monitoring (Pro)",
                  "tags":  [
                               "Legal",
                               "Monitoring",
@@ -1953,7 +1953,7 @@
              },
              {
                  "id":  "legal-whistleblower-program-monitoring-elite",
-                 "name":  "Whistleblower Program — Monitoring (Elite)",
+                 "name":  "Whistleblower Program  Monitoring (Elite)",
                  "tags":  [
                               "Legal",
                               "Monitoring",
@@ -1964,7 +1964,7 @@
              },
              {
                  "id":  "legal-regulatory-filings-assessment-starter",
-                 "name":  "Regulatory Filings — Assessment (Starter)",
+                 "name":  "Regulatory Filings  Assessment (Starter)",
                  "tags":  [
                               "Legal",
                               "Assessment",
@@ -1975,7 +1975,7 @@
              },
              {
                  "id":  "legal-regulatory-filings-assessment-pro",
-                 "name":  "Regulatory Filings — Assessment (Pro)",
+                 "name":  "Regulatory Filings  Assessment (Pro)",
                  "tags":  [
                               "Legal",
                               "Assessment",
@@ -1986,7 +1986,7 @@
              },
              {
                  "id":  "legal-regulatory-filings-assessment-elite",
-                 "name":  "Regulatory Filings — Assessment (Elite)",
+                 "name":  "Regulatory Filings  Assessment (Elite)",
                  "tags":  [
                               "Legal",
                               "Assessment",
@@ -1997,7 +1997,7 @@
              },
              {
                  "id":  "legal-regulatory-filings-implementation-starter",
-                 "name":  "Regulatory Filings — Implementation (Starter)",
+                 "name":  "Regulatory Filings  Implementation (Starter)",
                  "tags":  [
                               "Legal",
                               "Implementation",
@@ -2008,7 +2008,7 @@
              },
              {
                  "id":  "legal-regulatory-filings-implementation-pro",
-                 "name":  "Regulatory Filings — Implementation (Pro)",
+                 "name":  "Regulatory Filings  Implementation (Pro)",
                  "tags":  [
                               "Legal",
                               "Implementation",
@@ -2019,7 +2019,7 @@
              },
              {
                  "id":  "legal-regulatory-filings-implementation-elite",
-                 "name":  "Regulatory Filings — Implementation (Elite)",
+                 "name":  "Regulatory Filings  Implementation (Elite)",
                  "tags":  [
                               "Legal",
                               "Implementation",
@@ -2030,7 +2030,7 @@
              },
              {
                  "id":  "legal-regulatory-filings-monitoring-starter",
-                 "name":  "Regulatory Filings — Monitoring (Starter)",
+                 "name":  "Regulatory Filings  Monitoring (Starter)",
                  "tags":  [
                               "Legal",
                               "Monitoring",
@@ -2041,7 +2041,7 @@
              },
              {
                  "id":  "legal-regulatory-filings-monitoring-pro",
-                 "name":  "Regulatory Filings — Monitoring (Pro)",
+                 "name":  "Regulatory Filings  Monitoring (Pro)",
                  "tags":  [
                               "Legal",
                               "Monitoring",
@@ -2052,7 +2052,7 @@
              },
              {
                  "id":  "legal-regulatory-filings-monitoring-elite",
-                 "name":  "Regulatory Filings — Monitoring (Elite)",
+                 "name":  "Regulatory Filings  Monitoring (Elite)",
                  "tags":  [
                               "Legal",
                               "Monitoring",
@@ -2063,7 +2063,7 @@
              },
              {
                  "id":  "medical-hipaa-compliance-audit-assessment-starter",
-                 "name":  "HIPAA Compliance Audit — Assessment (Starter)",
+                 "name":  "HIPAA Compliance Audit  Assessment (Starter)",
                  "tags":  [
                               "Medical",
                               "Assessment",
@@ -2075,7 +2075,7 @@
              },
              {
                  "id":  "medical-hipaa-compliance-audit-assessment-pro",
-                 "name":  "HIPAA Compliance Audit — Assessment (Pro)",
+                 "name":  "HIPAA Compliance Audit  Assessment (Pro)",
                  "tags":  [
                               "Medical",
                               "Assessment",
@@ -2087,7 +2087,7 @@
              },
              {
                  "id":  "medical-hipaa-compliance-audit-assessment-elite",
-                 "name":  "HIPAA Compliance Audit — Assessment (Elite)",
+                 "name":  "HIPAA Compliance Audit  Assessment (Elite)",
                  "tags":  [
                               "Medical",
                               "Assessment",
@@ -2099,7 +2099,7 @@
              },
              {
                  "id":  "medical-hipaa-compliance-audit-implementation-starter",
-                 "name":  "HIPAA Compliance Audit — Implementation (Starter)",
+                 "name":  "HIPAA Compliance Audit  Implementation (Starter)",
                  "tags":  [
                               "Medical",
                               "Implementation",
@@ -2111,7 +2111,7 @@
              },
              {
                  "id":  "medical-hipaa-compliance-audit-implementation-pro",
-                 "name":  "HIPAA Compliance Audit — Implementation (Pro)",
+                 "name":  "HIPAA Compliance Audit  Implementation (Pro)",
                  "tags":  [
                               "Medical",
                               "Implementation",
@@ -2123,7 +2123,7 @@
              },
              {
                  "id":  "medical-hipaa-compliance-audit-implementation-elite",
-                 "name":  "HIPAA Compliance Audit — Implementation (Elite)",
+                 "name":  "HIPAA Compliance Audit  Implementation (Elite)",
                  "tags":  [
                               "Medical",
                               "Implementation",
@@ -2135,7 +2135,7 @@
              },
              {
                  "id":  "medical-hipaa-compliance-audit-monitoring-starter",
-                 "name":  "HIPAA Compliance Audit — Monitoring (Starter)",
+                 "name":  "HIPAA Compliance Audit  Monitoring (Starter)",
                  "tags":  [
                               "Medical",
                               "Monitoring",
@@ -2147,7 +2147,7 @@
              },
              {
                  "id":  "medical-hipaa-compliance-audit-monitoring-pro",
-                 "name":  "HIPAA Compliance Audit — Monitoring (Pro)",
+                 "name":  "HIPAA Compliance Audit  Monitoring (Pro)",
                  "tags":  [
                               "Medical",
                               "Monitoring",
@@ -2159,7 +2159,7 @@
              },
              {
                  "id":  "medical-hipaa-compliance-audit-monitoring-elite",
-                 "name":  "HIPAA Compliance Audit — Monitoring (Elite)",
+                 "name":  "HIPAA Compliance Audit  Monitoring (Elite)",
                  "tags":  [
                               "Medical",
                               "Monitoring",
@@ -2171,7 +2171,7 @@
              },
              {
                  "id":  "medical-globalgap-produce-safety-assessment-starter",
-                 "name":  "GlobalGAP Produce Safety — Assessment (Starter)",
+                 "name":  "GlobalGAP Produce Safety  Assessment (Starter)",
                  "tags":  [
                               "Medical",
                               "Assessment",
@@ -2183,7 +2183,7 @@
              },
              {
                  "id":  "medical-globalgap-produce-safety-assessment-pro",
-                 "name":  "GlobalGAP Produce Safety — Assessment (Pro)",
+                 "name":  "GlobalGAP Produce Safety  Assessment (Pro)",
                  "tags":  [
                               "Medical",
                               "Assessment",
@@ -2195,7 +2195,7 @@
              },
              {
                  "id":  "medical-globalgap-produce-safety-assessment-elite",
-                 "name":  "GlobalGAP Produce Safety — Assessment (Elite)",
+                 "name":  "GlobalGAP Produce Safety  Assessment (Elite)",
                  "tags":  [
                               "Medical",
                               "Assessment",
@@ -2207,7 +2207,7 @@
              },
              {
                  "id":  "medical-globalgap-produce-safety-implementation-starter",
-                 "name":  "GlobalGAP Produce Safety — Implementation (Starter)",
+                 "name":  "GlobalGAP Produce Safety  Implementation (Starter)",
                  "tags":  [
                               "Medical",
                               "Implementation",
@@ -2219,7 +2219,7 @@
              },
              {
                  "id":  "medical-globalgap-produce-safety-implementation-pro",
-                 "name":  "GlobalGAP Produce Safety — Implementation (Pro)",
+                 "name":  "GlobalGAP Produce Safety  Implementation (Pro)",
                  "tags":  [
                               "Medical",
                               "Implementation",
@@ -2231,7 +2231,7 @@
              },
              {
                  "id":  "medical-globalgap-produce-safety-implementation-elite",
-                 "name":  "GlobalGAP Produce Safety — Implementation (Elite)",
+                 "name":  "GlobalGAP Produce Safety  Implementation (Elite)",
                  "tags":  [
                               "Medical",
                               "Implementation",
@@ -2243,7 +2243,7 @@
              },
              {
                  "id":  "medical-globalgap-produce-safety-monitoring-starter",
-                 "name":  "GlobalGAP Produce Safety — Monitoring (Starter)",
+                 "name":  "GlobalGAP Produce Safety  Monitoring (Starter)",
                  "tags":  [
                               "Medical",
                               "Monitoring",
@@ -2255,7 +2255,7 @@
              },
              {
                  "id":  "medical-globalgap-produce-safety-monitoring-pro",
-                 "name":  "GlobalGAP Produce Safety — Monitoring (Pro)",
+                 "name":  "GlobalGAP Produce Safety  Monitoring (Pro)",
                  "tags":  [
                               "Medical",
                               "Monitoring",
@@ -2267,7 +2267,7 @@
              },
              {
                  "id":  "medical-globalgap-produce-safety-monitoring-elite",
-                 "name":  "GlobalGAP Produce Safety — Monitoring (Elite)",
+                 "name":  "GlobalGAP Produce Safety  Monitoring (Elite)",
                  "tags":  [
                               "Medical",
                               "Monitoring",
@@ -2279,7 +2279,7 @@
              },
              {
                  "id":  "medical-telemedicine-licensing-assessment-starter",
-                 "name":  "Telemedicine Licensing — Assessment (Starter)",
+                 "name":  "Telemedicine Licensing  Assessment (Starter)",
                  "tags":  [
                               "Medical",
                               "Assessment",
@@ -2290,7 +2290,7 @@
              },
              {
                  "id":  "medical-telemedicine-licensing-assessment-pro",
-                 "name":  "Telemedicine Licensing — Assessment (Pro)",
+                 "name":  "Telemedicine Licensing  Assessment (Pro)",
                  "tags":  [
                               "Medical",
                               "Assessment",
@@ -2301,7 +2301,7 @@
              },
              {
                  "id":  "medical-telemedicine-licensing-assessment-elite",
-                 "name":  "Telemedicine Licensing — Assessment (Elite)",
+                 "name":  "Telemedicine Licensing  Assessment (Elite)",
                  "tags":  [
                               "Medical",
                               "Assessment",
@@ -2312,7 +2312,7 @@
              },
              {
                  "id":  "medical-telemedicine-licensing-implementation-starter",
-                 "name":  "Telemedicine Licensing — Implementation (Starter)",
+                 "name":  "Telemedicine Licensing  Implementation (Starter)",
                  "tags":  [
                               "Medical",
                               "Implementation",
@@ -2323,7 +2323,7 @@
              },
              {
                  "id":  "medical-telemedicine-licensing-implementation-pro",
-                 "name":  "Telemedicine Licensing — Implementation (Pro)",
+                 "name":  "Telemedicine Licensing  Implementation (Pro)",
                  "tags":  [
                               "Medical",
                               "Implementation",
@@ -2334,7 +2334,7 @@
              },
              {
                  "id":  "medical-telemedicine-licensing-implementation-elite",
-                 "name":  "Telemedicine Licensing — Implementation (Elite)",
+                 "name":  "Telemedicine Licensing  Implementation (Elite)",
                  "tags":  [
                               "Medical",
                               "Implementation",
@@ -2345,7 +2345,7 @@
              },
              {
                  "id":  "medical-telemedicine-licensing-monitoring-starter",
-                 "name":  "Telemedicine Licensing — Monitoring (Starter)",
+                 "name":  "Telemedicine Licensing  Monitoring (Starter)",
                  "tags":  [
                               "Medical",
                               "Monitoring",
@@ -2356,7 +2356,7 @@
              },
              {
                  "id":  "medical-telemedicine-licensing-monitoring-pro",
-                 "name":  "Telemedicine Licensing — Monitoring (Pro)",
+                 "name":  "Telemedicine Licensing  Monitoring (Pro)",
                  "tags":  [
                               "Medical",
                               "Monitoring",
@@ -2367,7 +2367,7 @@
              },
              {
                  "id":  "medical-telemedicine-licensing-monitoring-elite",
-                 "name":  "Telemedicine Licensing — Monitoring (Elite)",
+                 "name":  "Telemedicine Licensing  Monitoring (Elite)",
                  "tags":  [
                               "Medical",
                               "Monitoring",
@@ -2378,7 +2378,7 @@
              },
              {
                  "id":  "medical-lab-results-validation-assessment-starter",
-                 "name":  "Lab Results Validation — Assessment (Starter)",
+                 "name":  "Lab Results Validation  Assessment (Starter)",
                  "tags":  [
                               "Medical",
                               "Assessment",
@@ -2390,7 +2390,7 @@
              },
              {
                  "id":  "medical-lab-results-validation-assessment-pro",
-                 "name":  "Lab Results Validation — Assessment (Pro)",
+                 "name":  "Lab Results Validation  Assessment (Pro)",
                  "tags":  [
                               "Medical",
                               "Assessment",
@@ -2402,7 +2402,7 @@
              },
              {
                  "id":  "medical-lab-results-validation-assessment-elite",
-                 "name":  "Lab Results Validation — Assessment (Elite)",
+                 "name":  "Lab Results Validation  Assessment (Elite)",
                  "tags":  [
                               "Medical",
                               "Assessment",
@@ -2414,7 +2414,7 @@
              },
              {
                  "id":  "medical-lab-results-validation-implementation-starter",
-                 "name":  "Lab Results Validation — Implementation (Starter)",
+                 "name":  "Lab Results Validation  Implementation (Starter)",
                  "tags":  [
                               "Medical",
                               "Implementation",
@@ -2426,7 +2426,7 @@
              },
              {
                  "id":  "medical-lab-results-validation-implementation-pro",
-                 "name":  "Lab Results Validation — Implementation (Pro)",
+                 "name":  "Lab Results Validation  Implementation (Pro)",
                  "tags":  [
                               "Medical",
                               "Implementation",
@@ -2438,7 +2438,7 @@
              },
              {
                  "id":  "medical-lab-results-validation-implementation-elite",
-                 "name":  "Lab Results Validation — Implementation (Elite)",
+                 "name":  "Lab Results Validation  Implementation (Elite)",
                  "tags":  [
                               "Medical",
                               "Implementation",
@@ -2450,7 +2450,7 @@
              },
              {
                  "id":  "medical-lab-results-validation-monitoring-starter",
-                 "name":  "Lab Results Validation — Monitoring (Starter)",
+                 "name":  "Lab Results Validation  Monitoring (Starter)",
                  "tags":  [
                               "Medical",
                               "Monitoring",
@@ -2462,7 +2462,7 @@
              },
              {
                  "id":  "medical-lab-results-validation-monitoring-pro",
-                 "name":  "Lab Results Validation — Monitoring (Pro)",
+                 "name":  "Lab Results Validation  Monitoring (Pro)",
                  "tags":  [
                               "Medical",
                               "Monitoring",
@@ -2474,7 +2474,7 @@
              },
              {
                  "id":  "medical-lab-results-validation-monitoring-elite",
-                 "name":  "Lab Results Validation — Monitoring (Elite)",
+                 "name":  "Lab Results Validation  Monitoring (Elite)",
                  "tags":  [
                               "Medical",
                               "Monitoring",
@@ -2486,7 +2486,7 @@
              },
              {
                  "id":  "medical-pharma-supply-chain-audit-assessment-starter",
-                 "name":  "Pharma Supply Chain Audit — Assessment (Starter)",
+                 "name":  "Pharma Supply Chain Audit  Assessment (Starter)",
                  "tags":  [
                               "Medical",
                               "Assessment",
@@ -2499,7 +2499,7 @@
              },
              {
                  "id":  "medical-pharma-supply-chain-audit-assessment-pro",
-                 "name":  "Pharma Supply Chain Audit — Assessment (Pro)",
+                 "name":  "Pharma Supply Chain Audit  Assessment (Pro)",
                  "tags":  [
                               "Medical",
                               "Assessment",
@@ -2512,7 +2512,7 @@
              },
              {
                  "id":  "medical-pharma-supply-chain-audit-assessment-elite",
-                 "name":  "Pharma Supply Chain Audit — Assessment (Elite)",
+                 "name":  "Pharma Supply Chain Audit  Assessment (Elite)",
                  "tags":  [
                               "Medical",
                               "Assessment",
@@ -2525,7 +2525,7 @@
              },
              {
                  "id":  "medical-pharma-supply-chain-audit-implementation-starter",
-                 "name":  "Pharma Supply Chain Audit — Implementation (Starter)",
+                 "name":  "Pharma Supply Chain Audit  Implementation (Starter)",
                  "tags":  [
                               "Medical",
                               "Implementation",
@@ -2538,7 +2538,7 @@
              },
              {
                  "id":  "medical-pharma-supply-chain-audit-implementation-pro",
-                 "name":  "Pharma Supply Chain Audit — Implementation (Pro)",
+                 "name":  "Pharma Supply Chain Audit  Implementation (Pro)",
                  "tags":  [
                               "Medical",
                               "Implementation",
@@ -2551,7 +2551,7 @@
              },
              {
                  "id":  "medical-pharma-supply-chain-audit-implementation-elite",
-                 "name":  "Pharma Supply Chain Audit — Implementation (Elite)",
+                 "name":  "Pharma Supply Chain Audit  Implementation (Elite)",
                  "tags":  [
                               "Medical",
                               "Implementation",
@@ -2564,7 +2564,7 @@
              },
              {
                  "id":  "medical-pharma-supply-chain-audit-monitoring-starter",
-                 "name":  "Pharma Supply Chain Audit — Monitoring (Starter)",
+                 "name":  "Pharma Supply Chain Audit  Monitoring (Starter)",
                  "tags":  [
                               "Medical",
                               "Monitoring",
@@ -2577,7 +2577,7 @@
              },
              {
                  "id":  "medical-pharma-supply-chain-audit-monitoring-pro",
-                 "name":  "Pharma Supply Chain Audit — Monitoring (Pro)",
+                 "name":  "Pharma Supply Chain Audit  Monitoring (Pro)",
                  "tags":  [
                               "Medical",
                               "Monitoring",
@@ -2590,7 +2590,7 @@
              },
              {
                  "id":  "medical-pharma-supply-chain-audit-monitoring-elite",
-                 "name":  "Pharma Supply Chain Audit — Monitoring (Elite)",
+                 "name":  "Pharma Supply Chain Audit  Monitoring (Elite)",
                  "tags":  [
                               "Medical",
                               "Monitoring",
@@ -2603,7 +2603,7 @@
              },
              {
                  "id":  "medical-emr-security-review-assessment-starter",
-                 "name":  "EMR Security Review — Assessment (Starter)",
+                 "name":  "EMR Security Review  Assessment (Starter)",
                  "tags":  [
                               "Medical",
                               "Assessment",
@@ -2615,7 +2615,7 @@
              },
              {
                  "id":  "medical-emr-security-review-assessment-pro",
-                 "name":  "EMR Security Review — Assessment (Pro)",
+                 "name":  "EMR Security Review  Assessment (Pro)",
                  "tags":  [
                               "Medical",
                               "Assessment",
@@ -2627,7 +2627,7 @@
              },
              {
                  "id":  "medical-emr-security-review-assessment-elite",
-                 "name":  "EMR Security Review — Assessment (Elite)",
+                 "name":  "EMR Security Review  Assessment (Elite)",
                  "tags":  [
                               "Medical",
                               "Assessment",
@@ -2639,7 +2639,7 @@
              },
              {
                  "id":  "medical-emr-security-review-implementation-starter",
-                 "name":  "EMR Security Review — Implementation (Starter)",
+                 "name":  "EMR Security Review  Implementation (Starter)",
                  "tags":  [
                               "Medical",
                               "Implementation",
@@ -2651,7 +2651,7 @@
              },
              {
                  "id":  "medical-emr-security-review-implementation-pro",
-                 "name":  "EMR Security Review — Implementation (Pro)",
+                 "name":  "EMR Security Review  Implementation (Pro)",
                  "tags":  [
                               "Medical",
                               "Implementation",
@@ -2663,7 +2663,7 @@
              },
              {
                  "id":  "medical-emr-security-review-implementation-elite",
-                 "name":  "EMR Security Review — Implementation (Elite)",
+                 "name":  "EMR Security Review  Implementation (Elite)",
                  "tags":  [
                               "Medical",
                               "Implementation",
@@ -2675,7 +2675,7 @@
              },
              {
                  "id":  "medical-emr-security-review-monitoring-starter",
-                 "name":  "EMR Security Review — Monitoring (Starter)",
+                 "name":  "EMR Security Review  Monitoring (Starter)",
                  "tags":  [
                               "Medical",
                               "Monitoring",
@@ -2687,7 +2687,7 @@
              },
              {
                  "id":  "medical-emr-security-review-monitoring-pro",
-                 "name":  "EMR Security Review — Monitoring (Pro)",
+                 "name":  "EMR Security Review  Monitoring (Pro)",
                  "tags":  [
                               "Medical",
                               "Monitoring",
@@ -2699,7 +2699,7 @@
              },
              {
                  "id":  "medical-emr-security-review-monitoring-elite",
-                 "name":  "EMR Security Review — Monitoring (Elite)",
+                 "name":  "EMR Security Review  Monitoring (Elite)",
                  "tags":  [
                               "Medical",
                               "Monitoring",
@@ -2711,7 +2711,7 @@
              },
              {
                  "id":  "medical-osha-compliance-assessment-starter",
-                 "name":  "OSHA Compliance — Assessment (Starter)",
+                 "name":  "OSHA Compliance  Assessment (Starter)",
                  "tags":  [
                               "Medical",
                               "Assessment",
@@ -2722,7 +2722,7 @@
              },
              {
                  "id":  "medical-osha-compliance-assessment-pro",
-                 "name":  "OSHA Compliance — Assessment (Pro)",
+                 "name":  "OSHA Compliance  Assessment (Pro)",
                  "tags":  [
                               "Medical",
                               "Assessment",
@@ -2733,7 +2733,7 @@
              },
              {
                  "id":  "medical-osha-compliance-assessment-elite",
-                 "name":  "OSHA Compliance — Assessment (Elite)",
+                 "name":  "OSHA Compliance  Assessment (Elite)",
                  "tags":  [
                               "Medical",
                               "Assessment",
@@ -2744,7 +2744,7 @@
              },
              {
                  "id":  "medical-osha-compliance-implementation-starter",
-                 "name":  "OSHA Compliance — Implementation (Starter)",
+                 "name":  "OSHA Compliance  Implementation (Starter)",
                  "tags":  [
                               "Medical",
                               "Implementation",
@@ -2755,7 +2755,7 @@
              },
              {
                  "id":  "medical-osha-compliance-implementation-pro",
-                 "name":  "OSHA Compliance — Implementation (Pro)",
+                 "name":  "OSHA Compliance  Implementation (Pro)",
                  "tags":  [
                               "Medical",
                               "Implementation",
@@ -2766,7 +2766,7 @@
              },
              {
                  "id":  "medical-osha-compliance-implementation-elite",
-                 "name":  "OSHA Compliance — Implementation (Elite)",
+                 "name":  "OSHA Compliance  Implementation (Elite)",
                  "tags":  [
                               "Medical",
                               "Implementation",
@@ -2777,7 +2777,7 @@
              },
              {
                  "id":  "medical-osha-compliance-monitoring-starter",
-                 "name":  "OSHA Compliance — Monitoring (Starter)",
+                 "name":  "OSHA Compliance  Monitoring (Starter)",
                  "tags":  [
                               "Medical",
                               "Monitoring",
@@ -2788,7 +2788,7 @@
              },
              {
                  "id":  "medical-osha-compliance-monitoring-pro",
-                 "name":  "OSHA Compliance — Monitoring (Pro)",
+                 "name":  "OSHA Compliance  Monitoring (Pro)",
                  "tags":  [
                               "Medical",
                               "Monitoring",
@@ -2799,7 +2799,7 @@
              },
              {
                  "id":  "medical-osha-compliance-monitoring-elite",
-                 "name":  "OSHA Compliance — Monitoring (Elite)",
+                 "name":  "OSHA Compliance  Monitoring (Elite)",
                  "tags":  [
                               "Medical",
                               "Monitoring",
@@ -2810,7 +2810,7 @@
              },
              {
                  "id":  "medical-hospital-billing-audit-assessment-starter",
-                 "name":  "Hospital Billing Audit — Assessment (Starter)",
+                 "name":  "Hospital Billing Audit  Assessment (Starter)",
                  "tags":  [
                               "Medical",
                               "Assessment",
@@ -2822,7 +2822,7 @@
              },
              {
                  "id":  "medical-hospital-billing-audit-assessment-pro",
-                 "name":  "Hospital Billing Audit — Assessment (Pro)",
+                 "name":  "Hospital Billing Audit  Assessment (Pro)",
                  "tags":  [
                               "Medical",
                               "Assessment",
@@ -2834,7 +2834,7 @@
              },
              {
                  "id":  "medical-hospital-billing-audit-assessment-elite",
-                 "name":  "Hospital Billing Audit — Assessment (Elite)",
+                 "name":  "Hospital Billing Audit  Assessment (Elite)",
                  "tags":  [
                               "Medical",
                               "Assessment",
@@ -2846,7 +2846,7 @@
              },
              {
                  "id":  "medical-hospital-billing-audit-implementation-starter",
-                 "name":  "Hospital Billing Audit — Implementation (Starter)",
+                 "name":  "Hospital Billing Audit  Implementation (Starter)",
                  "tags":  [
                               "Medical",
                               "Implementation",
@@ -2858,7 +2858,7 @@
              },
              {
                  "id":  "medical-hospital-billing-audit-implementation-pro",
-                 "name":  "Hospital Billing Audit — Implementation (Pro)",
+                 "name":  "Hospital Billing Audit  Implementation (Pro)",
                  "tags":  [
                               "Medical",
                               "Implementation",
@@ -2870,7 +2870,7 @@
              },
              {
                  "id":  "medical-hospital-billing-audit-implementation-elite",
-                 "name":  "Hospital Billing Audit — Implementation (Elite)",
+                 "name":  "Hospital Billing Audit  Implementation (Elite)",
                  "tags":  [
                               "Medical",
                               "Implementation",
@@ -2882,7 +2882,7 @@
              },
              {
                  "id":  "medical-hospital-billing-audit-monitoring-starter",
-                 "name":  "Hospital Billing Audit — Monitoring (Starter)",
+                 "name":  "Hospital Billing Audit  Monitoring (Starter)",
                  "tags":  [
                               "Medical",
                               "Monitoring",
@@ -2894,7 +2894,7 @@
              },
              {
                  "id":  "medical-hospital-billing-audit-monitoring-pro",
-                 "name":  "Hospital Billing Audit — Monitoring (Pro)",
+                 "name":  "Hospital Billing Audit  Monitoring (Pro)",
                  "tags":  [
                               "Medical",
                               "Monitoring",
@@ -2906,7 +2906,7 @@
              },
              {
                  "id":  "medical-hospital-billing-audit-monitoring-elite",
-                 "name":  "Hospital Billing Audit — Monitoring (Elite)",
+                 "name":  "Hospital Billing Audit  Monitoring (Elite)",
                  "tags":  [
                               "Medical",
                               "Monitoring",
@@ -2918,7 +2918,7 @@
              },
              {
                  "id":  "medical-medical-device-licensing-assessment-starter",
-                 "name":  "Medical Device Licensing — Assessment (Starter)",
+                 "name":  "Medical Device Licensing  Assessment (Starter)",
                  "tags":  [
                               "Medical",
                               "Assessment",
@@ -2930,7 +2930,7 @@
              },
              {
                  "id":  "medical-medical-device-licensing-assessment-pro",
-                 "name":  "Medical Device Licensing — Assessment (Pro)",
+                 "name":  "Medical Device Licensing  Assessment (Pro)",
                  "tags":  [
                               "Medical",
                               "Assessment",
@@ -2942,7 +2942,7 @@
              },
              {
                  "id":  "medical-medical-device-licensing-assessment-elite",
-                 "name":  "Medical Device Licensing — Assessment (Elite)",
+                 "name":  "Medical Device Licensing  Assessment (Elite)",
                  "tags":  [
                               "Medical",
                               "Assessment",
@@ -2954,7 +2954,7 @@
              },
              {
                  "id":  "medical-medical-device-licensing-implementation-starter",
-                 "name":  "Medical Device Licensing — Implementation (Starter)",
+                 "name":  "Medical Device Licensing  Implementation (Starter)",
                  "tags":  [
                               "Medical",
                               "Implementation",
@@ -2966,7 +2966,7 @@
              },
              {
                  "id":  "medical-medical-device-licensing-implementation-pro",
-                 "name":  "Medical Device Licensing — Implementation (Pro)",
+                 "name":  "Medical Device Licensing  Implementation (Pro)",
                  "tags":  [
                               "Medical",
                               "Implementation",
@@ -2978,7 +2978,7 @@
              },
              {
                  "id":  "medical-medical-device-licensing-implementation-elite",
-                 "name":  "Medical Device Licensing — Implementation (Elite)",
+                 "name":  "Medical Device Licensing  Implementation (Elite)",
                  "tags":  [
                               "Medical",
                               "Implementation",
@@ -2990,7 +2990,7 @@
              },
              {
                  "id":  "medical-medical-device-licensing-monitoring-starter",
-                 "name":  "Medical Device Licensing — Monitoring (Starter)",
+                 "name":  "Medical Device Licensing  Monitoring (Starter)",
                  "tags":  [
                               "Medical",
                               "Monitoring",
@@ -3002,7 +3002,7 @@
              },
              {
                  "id":  "medical-medical-device-licensing-monitoring-pro",
-                 "name":  "Medical Device Licensing — Monitoring (Pro)",
+                 "name":  "Medical Device Licensing  Monitoring (Pro)",
                  "tags":  [
                               "Medical",
                               "Monitoring",
@@ -3014,7 +3014,7 @@
              },
              {
                  "id":  "medical-medical-device-licensing-monitoring-elite",
-                 "name":  "Medical Device Licensing — Monitoring (Elite)",
+                 "name":  "Medical Device Licensing  Monitoring (Elite)",
                  "tags":  [
                               "Medical",
                               "Monitoring",
@@ -3026,7 +3026,7 @@
              },
              {
                  "id":  "medical-clinical-trial-qa-assessment-starter",
-                 "name":  "Clinical Trial QA — Assessment (Starter)",
+                 "name":  "Clinical Trial QA  Assessment (Starter)",
                  "tags":  [
                               "Medical",
                               "Assessment",
@@ -3038,7 +3038,7 @@
              },
              {
                  "id":  "medical-clinical-trial-qa-assessment-pro",
-                 "name":  "Clinical Trial QA — Assessment (Pro)",
+                 "name":  "Clinical Trial QA  Assessment (Pro)",
                  "tags":  [
                               "Medical",
                               "Assessment",
@@ -3050,7 +3050,7 @@
              },
              {
                  "id":  "medical-clinical-trial-qa-assessment-elite",
-                 "name":  "Clinical Trial QA — Assessment (Elite)",
+                 "name":  "Clinical Trial QA  Assessment (Elite)",
                  "tags":  [
                               "Medical",
                               "Assessment",
@@ -3062,7 +3062,7 @@
              },
              {
                  "id":  "medical-clinical-trial-qa-implementation-starter",
-                 "name":  "Clinical Trial QA — Implementation (Starter)",
+                 "name":  "Clinical Trial QA  Implementation (Starter)",
                  "tags":  [
                               "Medical",
                               "Implementation",
@@ -3074,7 +3074,7 @@
              },
              {
                  "id":  "medical-clinical-trial-qa-implementation-pro",
-                 "name":  "Clinical Trial QA — Implementation (Pro)",
+                 "name":  "Clinical Trial QA  Implementation (Pro)",
                  "tags":  [
                               "Medical",
                               "Implementation",
@@ -3086,7 +3086,7 @@
              },
              {
                  "id":  "medical-clinical-trial-qa-implementation-elite",
-                 "name":  "Clinical Trial QA — Implementation (Elite)",
+                 "name":  "Clinical Trial QA  Implementation (Elite)",
                  "tags":  [
                               "Medical",
                               "Implementation",
@@ -3098,7 +3098,7 @@
              },
              {
                  "id":  "medical-clinical-trial-qa-monitoring-starter",
-                 "name":  "Clinical Trial QA — Monitoring (Starter)",
+                 "name":  "Clinical Trial QA  Monitoring (Starter)",
                  "tags":  [
                               "Medical",
                               "Monitoring",
@@ -3110,7 +3110,7 @@
              },
              {
                  "id":  "medical-clinical-trial-qa-monitoring-pro",
-                 "name":  "Clinical Trial QA — Monitoring (Pro)",
+                 "name":  "Clinical Trial QA  Monitoring (Pro)",
                  "tags":  [
                               "Medical",
                               "Monitoring",
@@ -3122,7 +3122,7 @@
              },
              {
                  "id":  "medical-clinical-trial-qa-monitoring-elite",
-                 "name":  "Clinical Trial QA — Monitoring (Elite)",
+                 "name":  "Clinical Trial QA  Monitoring (Elite)",
                  "tags":  [
                               "Medical",
                               "Monitoring",
@@ -3134,7 +3134,7 @@
              },
              {
                  "id":  "education-school-accreditation-assessment-starter",
-                 "name":  "School Accreditation — Assessment (Starter)",
+                 "name":  "School Accreditation  Assessment (Starter)",
                  "tags":  [
                               "Education",
                               "Assessment",
@@ -3145,7 +3145,7 @@
              },
              {
                  "id":  "education-school-accreditation-assessment-pro",
-                 "name":  "School Accreditation — Assessment (Pro)",
+                 "name":  "School Accreditation  Assessment (Pro)",
                  "tags":  [
                               "Education",
                               "Assessment",
@@ -3156,7 +3156,7 @@
              },
              {
                  "id":  "education-school-accreditation-assessment-elite",
-                 "name":  "School Accreditation — Assessment (Elite)",
+                 "name":  "School Accreditation  Assessment (Elite)",
                  "tags":  [
                               "Education",
                               "Assessment",
@@ -3167,7 +3167,7 @@
              },
              {
                  "id":  "education-school-accreditation-implementation-starter",
-                 "name":  "School Accreditation — Implementation (Starter)",
+                 "name":  "School Accreditation  Implementation (Starter)",
                  "tags":  [
                               "Education",
                               "Implementation",
@@ -3178,7 +3178,7 @@
              },
              {
                  "id":  "education-school-accreditation-implementation-pro",
-                 "name":  "School Accreditation — Implementation (Pro)",
+                 "name":  "School Accreditation  Implementation (Pro)",
                  "tags":  [
                               "Education",
                               "Implementation",
@@ -3189,7 +3189,7 @@
              },
              {
                  "id":  "education-school-accreditation-implementation-elite",
-                 "name":  "School Accreditation — Implementation (Elite)",
+                 "name":  "School Accreditation  Implementation (Elite)",
                  "tags":  [
                               "Education",
                               "Implementation",
@@ -3200,7 +3200,7 @@
              },
              {
                  "id":  "education-school-accreditation-monitoring-starter",
-                 "name":  "School Accreditation — Monitoring (Starter)",
+                 "name":  "School Accreditation  Monitoring (Starter)",
                  "tags":  [
                               "Education",
                               "Monitoring",
@@ -3211,7 +3211,7 @@
              },
              {
                  "id":  "education-school-accreditation-monitoring-pro",
-                 "name":  "School Accreditation — Monitoring (Pro)",
+                 "name":  "School Accreditation  Monitoring (Pro)",
                  "tags":  [
                               "Education",
                               "Monitoring",
@@ -3222,7 +3222,7 @@
              },
              {
                  "id":  "education-school-accreditation-monitoring-elite",
-                 "name":  "School Accreditation — Monitoring (Elite)",
+                 "name":  "School Accreditation  Monitoring (Elite)",
                  "tags":  [
                               "Education",
                               "Monitoring",
@@ -3233,7 +3233,7 @@
              },
              {
                  "id":  "education-student-aid-compliance-assessment-starter",
-                 "name":  "Student Aid Compliance — Assessment (Starter)",
+                 "name":  "Student Aid Compliance  Assessment (Starter)",
                  "tags":  [
                               "Education",
                               "Assessment",
@@ -3245,7 +3245,7 @@
              },
              {
                  "id":  "education-student-aid-compliance-assessment-pro",
-                 "name":  "Student Aid Compliance — Assessment (Pro)",
+                 "name":  "Student Aid Compliance  Assessment (Pro)",
                  "tags":  [
                               "Education",
                               "Assessment",
@@ -3257,7 +3257,7 @@
              },
              {
                  "id":  "education-student-aid-compliance-assessment-elite",
-                 "name":  "Student Aid Compliance — Assessment (Elite)",
+                 "name":  "Student Aid Compliance  Assessment (Elite)",
                  "tags":  [
                               "Education",
                               "Assessment",
@@ -3269,7 +3269,7 @@
              },
              {
                  "id":  "education-student-aid-compliance-implementation-starter",
-                 "name":  "Student Aid Compliance — Implementation (Starter)",
+                 "name":  "Student Aid Compliance  Implementation (Starter)",
                  "tags":  [
                               "Education",
                               "Implementation",
@@ -3281,7 +3281,7 @@
              },
              {
                  "id":  "education-student-aid-compliance-implementation-pro",
-                 "name":  "Student Aid Compliance — Implementation (Pro)",
+                 "name":  "Student Aid Compliance  Implementation (Pro)",
                  "tags":  [
                               "Education",
                               "Implementation",
@@ -3293,7 +3293,7 @@
              },
              {
                  "id":  "education-student-aid-compliance-implementation-elite",
-                 "name":  "Student Aid Compliance — Implementation (Elite)",
+                 "name":  "Student Aid Compliance  Implementation (Elite)",
                  "tags":  [
                               "Education",
                               "Implementation",
@@ -3305,7 +3305,7 @@
              },
              {
                  "id":  "education-student-aid-compliance-monitoring-starter",
-                 "name":  "Student Aid Compliance — Monitoring (Starter)",
+                 "name":  "Student Aid Compliance  Monitoring (Starter)",
                  "tags":  [
                               "Education",
                               "Monitoring",
@@ -3317,7 +3317,7 @@
              },
              {
                  "id":  "education-student-aid-compliance-monitoring-pro",
-                 "name":  "Student Aid Compliance — Monitoring (Pro)",
+                 "name":  "Student Aid Compliance  Monitoring (Pro)",
                  "tags":  [
                               "Education",
                               "Monitoring",
@@ -3329,7 +3329,7 @@
              },
              {
                  "id":  "education-student-aid-compliance-monitoring-elite",
-                 "name":  "Student Aid Compliance — Monitoring (Elite)",
+                 "name":  "Student Aid Compliance  Monitoring (Elite)",
                  "tags":  [
                               "Education",
                               "Monitoring",
@@ -3341,7 +3341,7 @@
              },
              {
                  "id":  "education-visa-documentation-assessment-starter",
-                 "name":  "Visa Documentation — Assessment (Starter)",
+                 "name":  "Visa Documentation  Assessment (Starter)",
                  "tags":  [
                               "Education",
                               "Assessment",
@@ -3352,7 +3352,7 @@
              },
              {
                  "id":  "education-visa-documentation-assessment-pro",
-                 "name":  "Visa Documentation — Assessment (Pro)",
+                 "name":  "Visa Documentation  Assessment (Pro)",
                  "tags":  [
                               "Education",
                               "Assessment",
@@ -3363,7 +3363,7 @@
              },
              {
                  "id":  "education-visa-documentation-assessment-elite",
-                 "name":  "Visa Documentation — Assessment (Elite)",
+                 "name":  "Visa Documentation  Assessment (Elite)",
                  "tags":  [
                               "Education",
                               "Assessment",
@@ -3374,7 +3374,7 @@
              },
              {
                  "id":  "education-visa-documentation-implementation-starter",
-                 "name":  "Visa Documentation — Implementation (Starter)",
+                 "name":  "Visa Documentation  Implementation (Starter)",
                  "tags":  [
                               "Education",
                               "Implementation",
@@ -3385,7 +3385,7 @@
              },
              {
                  "id":  "education-visa-documentation-implementation-pro",
-                 "name":  "Visa Documentation — Implementation (Pro)",
+                 "name":  "Visa Documentation  Implementation (Pro)",
                  "tags":  [
                               "Education",
                               "Implementation",
@@ -3396,7 +3396,7 @@
              },
              {
                  "id":  "education-visa-documentation-implementation-elite",
-                 "name":  "Visa Documentation — Implementation (Elite)",
+                 "name":  "Visa Documentation  Implementation (Elite)",
                  "tags":  [
                               "Education",
                               "Implementation",
@@ -3407,7 +3407,7 @@
              },
              {
                  "id":  "education-visa-documentation-monitoring-starter",
-                 "name":  "Visa Documentation — Monitoring (Starter)",
+                 "name":  "Visa Documentation  Monitoring (Starter)",
                  "tags":  [
                               "Education",
                               "Monitoring",
@@ -3418,7 +3418,7 @@
              },
              {
                  "id":  "education-visa-documentation-monitoring-pro",
-                 "name":  "Visa Documentation — Monitoring (Pro)",
+                 "name":  "Visa Documentation  Monitoring (Pro)",
                  "tags":  [
                               "Education",
                               "Monitoring",
@@ -3429,7 +3429,7 @@
              },
              {
                  "id":  "education-visa-documentation-monitoring-elite",
-                 "name":  "Visa Documentation — Monitoring (Elite)",
+                 "name":  "Visa Documentation  Monitoring (Elite)",
                  "tags":  [
                               "Education",
                               "Monitoring",
@@ -3440,7 +3440,7 @@
              },
              {
                  "id":  "education-teacher-licensing-assessment-starter",
-                 "name":  "Teacher Licensing — Assessment (Starter)",
+                 "name":  "Teacher Licensing  Assessment (Starter)",
                  "tags":  [
                               "Education",
                               "Assessment",
@@ -3451,7 +3451,7 @@
              },
              {
                  "id":  "education-teacher-licensing-assessment-pro",
-                 "name":  "Teacher Licensing — Assessment (Pro)",
+                 "name":  "Teacher Licensing  Assessment (Pro)",
                  "tags":  [
                               "Education",
                               "Assessment",
@@ -3462,7 +3462,7 @@
              },
              {
                  "id":  "education-teacher-licensing-assessment-elite",
-                 "name":  "Teacher Licensing — Assessment (Elite)",
+                 "name":  "Teacher Licensing  Assessment (Elite)",
                  "tags":  [
                               "Education",
                               "Assessment",

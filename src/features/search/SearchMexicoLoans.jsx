@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+﻿import React, { useMemo, useState } from "react";
 import ContactCard from "../../components/ContactCard";
 import { saveLead } from "../../lib/leads";
 
@@ -135,7 +135,7 @@ export default function SearchMexicoLoans(){
         partner="Partner-backed (private)"
         service="MEX-RE"
         onSubmit={handleLead}
-       targetEmail="saul@financelend.me" />
+      />
     </div>
   );
 }

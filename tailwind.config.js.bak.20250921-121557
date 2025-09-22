@@ -1,0 +1,16 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./index.html','./src/**/*.{js,jsx,ts,tsx}'],
+  theme: {
+    extend: {
+      colors: {
+        primary: '#1e88e5',       // blue
+        accent:  '#8bc34a',       // green
+        sun:     '#ffe082',       // light yellow
+        steel:   '#e3e7ee'        // silver-ish
+      },
+      borderRadius: { '2xl': '1rem' }
+    }
+  },
+  plugins: []
+}

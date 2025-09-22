@@ -1,4 +1,4 @@
-export default function Table({columns, rows}) {
+﻿export default function Table({columns, rows}){
   return (
     <div className="overflow-auto border border-silver-200 rounded-xl2">
       <table className="min-w-full text-sm">

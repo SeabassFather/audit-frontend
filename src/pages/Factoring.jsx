@@ -1,28 +1,35 @@
-const deals = [
-  {debtor:"Grower A", amount:200000, advance:"80%", fee:"2.0%", status:"Active"},
-  {debtor:"Grower B", amount:150000, advance:"75%", fee:"2.5%", status:"Pending"},
-  {debtor:"Grower C", amount: 50000, advance:"70%", fee:"3.0%", status:"Closed"}
-];
+﻿import { useMemo, useState } from 'react'
+const ROWS=[
+  { debtor:'Grower A', lender:'FactorOne', state:'CA', industry:'Produce', amount:250000, advance:'85%', fee:'2.0%', status:'Active' },
+  { debtor:'Grower B', lender:'AgCap',    state:'AZ', industry:'Produce', amount:120000, advance:'80%', fee:'2.5%', status:'Active' },
+  { debtor:'Importer X', lender:'MX-US',  state:'TX', industry:'Logistics', amount:300000, advance:'82%', fee:'2.2%', status:'Pending' }
+]
 export default function Factoring(){
-  return (
-    <div>
-      <h1 className="text-2xl font-bold mb-4">Produce Factoring</h1>
-      <table className="table-auto border-collapse w-full card">
-        <thead className="bg-dnaBlue text-white">
-          <tr><th className="p-2 border">Debtor</th><th className="p-2 border">Amount</th><th className="p-2 border">Advance</th><th className="p-2 border">Fee</th><th className="p-2 border">Status</th></tr>
-        </thead>
+  const [q,setQ]=useState('')
+  const list=useMemo(()=>{ const s=q.trim().toLowerCase(); if(!s) return ROWS
+    return ROWS.filter(r=> r.debtor.toLowerCase().includes(s)||r.lender.toLowerCase().includes(s)||r.state.toLowerCase().includes(s)||String(r.industry).toLowerCase().includes(s)||r.status.toLowerCase().includes(s)) },[q])
+  return(<div className='card'>
+    <div className='flex items-center justify-between'>
+      <h2 className='text-lg font-semibold'>Ag Factoring</h2>
+      <input className='rounded-md border px-3 py-1.5 text-sm' placeholder='Filter' value={q} onChange={e=>setQ(e.target.value)}/>
+    </div>
+    <div className='mt-3 overflow-x-auto'>
+      <table className='min-w-[720px] w-full text-sm'>
+        <thead className='bg-steel/60'><tr>
+          <th className='text-left p-2'>Debtor</th><th className='text-left p-2'>Lender</th><th className='text-left p-2'>State</th>
+          <th className='text-left p-2'>Industry</th><th className='text-left p-2'>Amount</th><th className='text-left p-2'>Advance</th>
+          <th className='text-left p-2'>Fee</th><th className='text-left p-2'>Status</th>
+        </tr></thead>
         <tbody>
-          {deals.map((d,i)=>(
-            <tr key={i} className="odd:bg-slate-50">
-              <td className="p-2 border">{d.debtor}</td>
-              <td className="p-2 border">${d.amount.toLocaleString()}</td>
-              <td className="p-2 border">{d.advance}</td>
-              <td className="p-2 border">{d.fee}</td>
-              <td className="p-2 border">{d.status}</td>
+          {list.map((r,i)=>(
+            <tr key={i} className='odd:bg-white even:bg-gray-50'>
+              <td className='p-2'>{r.debtor}</td><td className='p-2'>{r.lender}</td><td className='p-2'>{r.state}</td>
+              <td className='p-2'>{r.industry}</td><td className='p-2'></td>
+              <td className='p-2'>{r.advance}</td><td className='p-2'>{r.fee}</td><td className='p-2'>{r.status}</td>
             </tr>
           ))}
         </tbody>
       </table>
     </div>
-  );
+  </div>)
 }

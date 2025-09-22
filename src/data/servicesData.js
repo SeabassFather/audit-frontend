@@ -1,4 +1,4 @@
-// src/data/servicesData.js
+﻿// src/data/servicesData.js
 export const serviceCategories = [
   {
     id:"mortgage", title:"Mortgage & Lending", icon:"CreditCard", tone:"border-emerald-300 bg-emerald-50",

@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Legend } from "recharts";
 export default function Pricing(){
   const commodities = ["Lettuce","Tomatoes","Avocados","Strawberries"];

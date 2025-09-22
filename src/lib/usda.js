@@ -1,4 +1,4 @@
-// Minimal AMS/NASS wrapper with graceful synthetic fallback for dev
+﻿// Minimal AMS/NASS wrapper with graceful synthetic fallback for dev
 const NASS_API = "https://quickstats.nass.usda.gov/api/api_GET/"; // placeholder; use your own fetch later
 
 export function listCommodities(){

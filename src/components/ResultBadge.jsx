@@ -1,4 +1,13 @@
-export default function ResultBadge({status="Open"}){
-  const s = { Open:"bg-sky-100 text-sky-800", Pending:"bg-amber-100 text-amber-800", Closed:"bg-emerald-100 text-emerald-800" }[status] || "bg-slate-100 text-slate-800";
-  return <span className={`px-2 py-0.5 rounded text-xs font-semibold ${s}`}>{status}</span>;
+﻿export default function ResultBadge({ status = "OK" }) {
+ const colors = {
+ OK: "bg-green-100 text-green-700",
+ WARN: "bg-yellow-100 text-yellow-700",
+ FAIL: "bg-red-100 text-red-700"
+ };
+
+ return (
+ <span className={"px-2 py-0.5 rounded text-xs font-semibold ${colors[status]}"}>
+ {status}
+ </span>
+ );
 }

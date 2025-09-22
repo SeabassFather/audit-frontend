@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+﻿import React, { useMemo, useState } from "react";
 import ContactCard from "../../components/ContactCard";
 import { saveLead } from "../../lib/leads";
 
@@ -93,7 +93,7 @@ export default function SearchFactoring(){
         partner="Partner: Liquid Capital"
         service="FACTOR"
         onSubmit={handleLead}
-       targetEmail="saul@financelend.me" />
+      />
     </div>
   );
 }

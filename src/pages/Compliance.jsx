@@ -1,12 +1,12 @@
-const regs = {
+﻿const regs = {
   "US": [
-    {code:"TRID", desc:"TILA–RESPA Integrated Disclosure rules for mortgage lending."},
+    {code:"TRID", desc:"TILA-RESPA Integrated Disclosure rules for mortgage lending."},
     {code:"ECOA", desc:"Equal Credit Opportunity Act fair lending obligations."},
-    {code:"GLBA", desc:"Gramm–Leach–Bliley Act privacy & safeguarding."},
+    {code:"GLBA", desc:"GrammLeachBliley Act privacy & safeguarding."},
     {code:"CCPA", desc:"California Consumer Privacy Act data rights."}
   ],
   "International": [
-    {code:"GDPR", desc:"EU data protection law — lawful basis, DSR, DPIA."},
+    {code:"GDPR", desc:"EU data protection lawlawful basis, DSR, DPIA."},
     {code:"PIPEDA", desc:"Canada privacy for commercial activities."},
     {code:"UK GDPR", desc:"United Kingdom GDPR post-Brexit."},
     {code:"PDPA (SG)", desc:"Singapore Personal Data Protection Act."}

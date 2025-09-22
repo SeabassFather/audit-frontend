@@ -1,4 +1,4 @@
-const NASS_KEY = import.meta.env.VITE_NASS_KEY || '';
+﻿const NASS_KEY = import.meta.env.VITE_NASS_KEY || '';
 
 async function tryFetch(url) {
   try {
@@ -27,7 +27,7 @@ export async function fetchCommoditySeries({
       commodity_desc: commodity.toUpperCase(),
       year: String(y),
     });
-    const url = `https://quickstats.nass.usda.gov/api/api_GET/?${q.toString()}`;
+    const url = https://quickstats.nass.usda.gov/api/api_GET/?;
     const json = await tryFetch(url);
     if (!json || !json.data) return null;
 

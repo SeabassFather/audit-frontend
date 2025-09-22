@@ -1,4 +1,4 @@
-export function saveLead(lead){
+﻿export function saveLead(lead){
   try{
     const key = "auditdna.leads";
     const cur = JSON.parse(localStorage.getItem(key) || "[]");

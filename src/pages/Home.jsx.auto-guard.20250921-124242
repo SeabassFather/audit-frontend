@@ -1,0 +1,18 @@
+export default function Home(){
+  return (
+    <div className='grid gap-4 md:grid-cols-2'>
+      <div className='card'>
+        <h2 className='text-lg font-semibold'>Welcome to AuditDNA</h2>
+        <p className='mt-2 text-sm text-gray-700'>Frontend live with USDA, Services, Mortgage, Factoring.</p>
+      </div>
+      <div className='card'>
+        <h2 className='text-lg font-semibold'>Status</h2>
+        <ul className='mt-2 list-disc pl-5 text-sm text-gray-700'>
+          <li>Vite + React + Tailwind + Recharts</li>
+          <li>W1W26 + 5-year average (synthetic fallback)</li>
+          <li>Light silver/blue/yellow/green UI</li>
+        </ul>
+      </div>
+    </div>
+  )
+}

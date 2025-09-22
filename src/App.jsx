@@ -1,47 +1,73 @@
-import React, { Suspense, lazy } from "react";
+import React from "react";
 import { Routes, Route } from "react-router-dom";
-
-import Navbar from "./components/Navbar";
-import Ticker from "./components/Ticker";
+import Navbar from "./components/NavBar";
+import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
-import ChatGPT from "./ChatGPT";
+import Dashboard from "./pages/Dashboard";
+import Services from "./pages/Services";
+import Uploads from "./pages/Uploads";
+import Agreements from "./pages/Agreements";
+import Marketing from "./pages/Marketing";
+import PitchDeck from "./pages/PitchDeck";
+import TickerFeedPage from "./pages/TickerFeedPage";
+import AuditEnginesPage from "./pages/AuditEnginesPage";
+import MexicoRealEstateLoanPage from "./pages/MexicoRealEstateLoanPage";
+import Admin from "./pages/Admin";
+import ClientsList from "./pages/ClientsList";
+import PartnersList from "./pages/PartnersList";
+import SearchPage from "./pages/SearchPage";
 
-const Dashboard = lazy(() => import("./pages/Dashboard"));
-const Services  = lazy(() => import("./pages/Services"));
-const Engines   = lazy(() => import("./pages/Engines"));
-const Findings  = lazy(() => import("./pages/Findings"));
-const Results   = lazy(() => import("./pages/Results"));
-const Uploads   = lazy(() => import("./pages/Uploads"));
-const Modules   = lazy(() => import("./pages/Modules"));
-const Admin     = lazy(() => import("./pages/Admin"));
-const Login     = lazy(() => import("./pages/Login"));
+// Search Engine Components
+import SearchUSDAPage from "./pages/search/SearchUSDAPage";
+import SearchMexicoPage from "./pages/search/SearchMexicoPage";
+import SearchFactoringPage from "./pages/search/SearchFactoringPage";
+import SearchWaterTechPage from "./pages/search/SearchWaterTechPage";
+import SearchMortgagePage from "./pages/search/SearchMortgagePage";
+import SearchAgMarketplacePage from "./pages/search/SearchAgMarketplacePage";
+import SearchTradeFinancePage from "./pages/search/SearchTradeFinancePage";
 
-function Spinner(){
-  return <div className="p-6 text-center text-sm text-slate-500">Loading…</div>;
-}
-
-export default function App(){
+export default function App() {
   return (
-    <div className="min-h-screen bg-slate-50 text-gray-900">
-      <Ticker/>
-      <Navbar/>
-      <main className="container px-3 md:px-4 py-6">
-        <Suspense fallback={<Spinner/>}>
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-50 via-white to-gray-50">
+      <Navbar />
+      <div className="flex flex-1">
+        <Sidebar />
+        <main className="flex-1 p-8 overflow-auto">
           <Routes>
-            <Route path="/" element={<Dashboard/>}/>
-            <Route path="/services" element={<Services/>}/>
-            <Route path="/engines" element={<Engines/>}/>
-            <Route path="/findings" element={<Findings/>}/>
-            <Route path="/results" element={<Results/>}/>
-            <Route path="/uploads" element={<Uploads/>}/>
-            <Route path="/modules" element={<Modules/>}/>
-            <Route path="/admin" element={<Admin/>}/>
-            <Route path="/login" element={<Login/>}/>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/uploads" element={<Uploads />} />
+            <Route path="/agreements" element={<Agreements />} />
+            <Route path="/marketing" element={<Marketing />} />
+            <Route path="/pitchdeck" element={<PitchDeck />} />
+            <Route path="/tickers" element={<TickerFeedPage />} />
+            <Route path="/audit-engines" element={<AuditEnginesPage />} />
+            <Route path="/mexico-loans" element={<MexicoRealEstateLoanPage />} />
+            <Route path="/admin" element={<Admin />} />
+            <Route path="/clients" element={<ClientsList />} />
+            <Route path="/partners" element={<PartnersList />} />
+
+            {/* Explicit Search Engine Routes */}
+            <Route path="/search/usda" element={<SearchUSDAPage />} />
+            <Route path="/search/mexico" element={<SearchMexicoPage />} />
+            <Route path="/search/factoring" element={<SearchFactoringPage />} />
+            <Route path="/search/watertech" element={<SearchWaterTechPage />} />
+            <Route path="/search/mortgage" element={<SearchMortgagePage />} />
+            <Route path="/search/ag-marketplace" element={<SearchAgMarketplacePage />} />
+            <Route path="/search/trade-finance" element={<SearchTradeFinancePage />} />
+
+            {/* Generic SearchPage Routes for tabs */}
+            <Route path="/usda-search" element={<SearchPage initialTab="usda" />} />
+            <Route path="/factoring" element={<SearchPage initialTab="factoring" />} />
+            <Route path="/mexico-search" element={<SearchPage initialTab="mexico" />} />
+
+            {/* Default route */}
+            <Route path="*" element={<Dashboard />} />
           </Routes>
-        </Suspense>
-      </main>
-      <Footer/>
-      <ChatGPT />
+        </main>
+      </div>
+      <Footer />
     </div>
   );
 }

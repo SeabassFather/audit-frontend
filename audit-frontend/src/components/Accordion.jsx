@@ -6,7 +6,7 @@ function Group({ title, items, open, onToggle }) {
     <div className="card" style={{marginBottom:12}}>
       <button className="btn" onClick={onToggle} style={{width:"100%", justifyContent:"space-between", background:"transparent"}}>
         <span style={{fontWeight:600}}>{title}</span>
-        <span>{open ? "▾" : "▸"}</span>
+        <span>{open ? "â–¾" : "â–¸"}</span>
       </button>
       {open && (
         <div style={{marginTop:8, display:"grid", gridTemplateColumns:"repeat(auto-fill, minmax(220px, 1fr))", gap:8}}>
@@ -46,12 +46,12 @@ export default function ServicesAccordion() {
   return (
     <section id="services" className="container" style={{paddingTop:24}}>
       <h2 style={{marginBottom:12}}>Services <span className="badge">{services.length}</span></h2>
-      <input className="input" placeholder="Search services or category…" value={q} onChange={e=>setQ(e.target.value)} />
+      <input className="input" placeholder="Search services or categoryâ€¦" value={q} onChange={e=>setQ(e.target.value)} />
       <div style={{marginTop:12}}>
         {grouped.map(({cat, items}) => (
           <Group
             key={cat}
-            title={`${cat} — ${items.length}`}
+            title={`${cat} â€” ${items.length}`}
             items={items}
             open={!!open[cat]}
             onToggle={() => setOpen(o => ({...o, [cat]: !o[cat]}))}

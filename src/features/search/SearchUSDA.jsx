@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+﻿import React, { useMemo, useState } from "react";
 import { fetchNassPriceOverlay } from "../usda/nassClient";
 import { searchReports, fetchReportSeries } from "../usda/mmnClient";
 import ContactCard from "../../components/ContactCard";
@@ -52,8 +52,7 @@ export default function SearchUSDA(){
 
   const csv = useMemo(()=>{
     if(!rows.length) return null;
-    const text = ["date,value", ...rows.map(r=>`${r.date},${r.value}`)].join("
-");
+    const text = ["date,value", ...rows.map(r=>`${r.date},${r.value}`)].join("\n");
     const blob = new Blob([text], {type:"text/csv;charset=utf-8"});
     return URL.createObjectURL(blob);
   },[rows]);
@@ -115,7 +114,7 @@ export default function SearchUSDA(){
         partner=""
         service="USDA"
         onSubmit={handleLead}
-       targetEmail="saul@financelend.me" />
+      />
     </div>
   );
 }

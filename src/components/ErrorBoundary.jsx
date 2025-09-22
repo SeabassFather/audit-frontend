@@ -1,17 +1,18 @@
-import React from "react";
+﻿import React from 'react';
+
 export default class ErrorBoundary extends React.Component{
-  constructor(p){ super(p); this.state={err:null,info:null}; }
-  static getDerivedStateFromError(err){ return {err}; }
-  componentDidCatch(err,info){ this.setState({info}); console.error("UI error:", err, info); }
+  constructor(p){ super(p); this.state = { hasError:false, err:null }; }
+  static getDerivedStateFromError(err){ return { hasError:true, err }; }
+  componentDidCatch(err, info){ console.error('UI error:', err, info); }
   render(){
-    if(this.state.err){
-      return (
-        <div style={{padding:"16px"}}>
-          <div style={{color:"#dc2626", fontWeight:700, marginBottom:8}}>Runtime error</div>
-          <pre style={{whiteSpace:"pre-wrap"}}>{String(this.state.err)}</pre>
+    if (!this.state.hasError) return this.props.children;
+    return (
+      <div className='container'>
+        <div className='card mt-6'>
+          <h2 className='text-xl font-bold'>Something went wrong.</h2>
+          <pre className='mt-2 whitespace-pre-wrap text-sm text-red-700'>{String(this.state.err)}</pre>
         </div>
-      );
-    }
-    return this.props.children;
+      </div>
+    )
   }
 }
