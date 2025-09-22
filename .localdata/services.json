@@ -1,0 +1,28 @@
+[
+  {
+    "id": "svc-audit",
+    "title": "Mortgage QA & Audit",
+    "domain": "mortgage",
+    "description": "QC, post-close, pre-fund audits",
+    "tags": [
+      "mortgage",
+      "qa",
+      "audit"
+    ],
+    "status": "Active",
+    "slug": "mortgage-audit"
+  },
+  {
+    "id": "svc-kyc",
+    "title": "KYC/AML Compliance",
+    "domain": "compliance",
+    "description": "Identity, sanctions, AML monitoring",
+    "tags": [
+      "kyc",
+      "aml",
+      "compliance"
+    ],
+    "status": "Active",
+    "slug": "kyc-aml"
+  }
+]
