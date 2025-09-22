@@ -16,6 +16,7 @@ import Admin from "./pages/Admin";
 import ClientsList from "./pages/ClientsList";
 import PartnersList from "./pages/PartnersList";
 import SearchPage from "./pages/SearchPage";
+import ChatGPT from "./ChatGPT";
 
 export default function App() {
   return (
@@ -50,6 +51,7 @@ export default function App() {
         </main>
       </div>
       <Footer />
+      <ChatGPT />
     </div>
   );
 }
