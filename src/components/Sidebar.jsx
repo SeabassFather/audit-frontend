@@ -7,28 +7,36 @@ const toolGroups = [
     links: [
       { to: "/services", label: "Services & Pricing", icon: "⚡" },
       { to: "/audit-engines", label: "AI Audit Engines", icon: "🤖" },
+      { to: "/compliance/comprehensive", label: "Compliance Dashboard", icon: "📋" },
     ]
   },
   {
-    title: "Specialized Tools", 
+    title: "Financial Services", 
     links: [
-      { to: "/mexico-loans", label: "Mexico RE/Loans", icon: "🏠" },
-      { to: "/usda-search", label: "USDA Search", icon: "🌾" },
-      { to: "/factoring", label: "Factoring Search", icon: "💰" },
+      { to: "/mortgage/comprehensive-search", label: "Mortgage Search", icon: "🏠" },
+      { to: "/marketplace/factoring", label: "Ag Factoring", icon: "💰" },
+      { to: "/mexico-loans", label: "Mexico RE/Loans", icon: "🌎" },
     ]
   },
   {
-    title: "Data & Admin",
+    title: "Analytics & Data",
+    links: [
+      { to: "/pricing/usda-dashboard", label: "USDA Analytics", icon: "🌾" },
+      { to: "/tickers", label: "Market Data", icon: "📊" },
+      { to: "/environmental/eco-tech", label: "Eco & Water Tech", icon: "🌱" },
+    ]
+  },
+  {
+    title: "Admin & Tools",
     links: [
       { to: "/uploads", label: "File Uploads", icon: "📁" },
-      { to: "/tickers", label: "Market Data", icon: "📊" },
-      { to: "/admin", label: "Admin Panel", icon: "⚙️" },
+      { to: "/admin/comprehensive", label: "Admin Panel", icon: "⚙️" },
+      { to: "/agreements", label: "Agreements", icon: "📋" },
     ]
   },
   {
     title: "Business Tools",
     links: [
-      { to: "/agreements", label: "Agreements", icon: "📋" },
       { to: "/marketing", label: "Marketing", icon: "📢" },
       { to: "/pitchdeck", label: "Pitch Deck", icon: "🎯" },
     ]
