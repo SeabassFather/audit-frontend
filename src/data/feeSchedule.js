@@ -1,65 +1,16 @@
 export const feeSchedule = [
-  {
-    category: "Agricultural Audits",
-    services: [
-      { service: "USDA Organic Certification", standardFee: "$850", expeditedFee: "$1,200", premiumFee: "$1,500" },
-      { service: "GlobalGAP Compliance", standardFee: "$750", expeditedFee: "$1,050", premiumFee: "$1,300" },
-      { service: "Food Safety Audit", standardFee: "$650", expeditedFee: "$925", premiumFee: "$1,150" },
-      { service: "Soil & Water Testing", standardFee: "$450", expeditedFee: "$650", premiumFee: "$825" }
-    ]
-  },
-  {
-    category: "Financial Services", 
-    services: [
-      { service: "Financial Statement Review", standardFee: "$1,250", expeditedFee: "$1,750", premiumFee: "$2,200" },
-      { service: "Payroll Reconciliation", standardFee: "$550", expeditedFee: "$775", premiumFee: "$975" },
-      { service: "Tax Compliance Audit", standardFee: "$950", expeditedFee: "$1,350", premiumFee: "$1,675" },
-      { service: "Internal Controls Assessment", standardFee: "$1,150", expeditedFee: "$1,600", premiumFee: "$2,000" }
-    ]
-  },
-  {
-    category: "Mortgage & Lending",
-    services: [
-      { service: "Loan File Review", standardFee: "$275", expeditedFee: "$385", premiumFee: "$485" },
-      { service: "Appraisal Review", standardFee: "$195", expeditedFee: "$275", premiumFee: "$345" },
-      { service: "Compliance Check", standardFee: "$325", expeditedFee: "$455", premiumFee: "$575" },
-      { service: "Risk Assessment", standardFee: "$425", expeditedFee: "$595", premiumFee: "$745" }
-    ]
-  },
-  {
-    category: "Environmental",
-    services: [
-      { service: "Water Quality Analysis", standardFee: "$375", expeditedFee: "$525", premiumFee: "$665" },
-      { service: "Soil Contamination Test", standardFee: "$425", expeditedFee: "$595", premiumFee: "$745" },
-      { service: "Environmental Impact", standardFee: "$850", expeditedFee: "$1,200", premiumFee: "$1,500" },
-      { service: "Remediation Planning", standardFee: "$1,150", expeditedFee: "$1,600", premiumFee: "$2,000" }
-    ]
-  },
-  {
-    category: "Equipment & Factoring",
-    services: [
-      { service: "Equipment Appraisal", standardFee: "$450", expeditedFee: "$650", premiumFee: "$825" },
-      { service: "Invoice Factoring Review", standardFee: "$225", expeditedFee: "$315", premiumFee: "$395" },
-      { service: "Credit Assessment", standardFee: "$175", expeditedFee: "$245", premiumFee: "$305" },
-      { service: "Collateral Evaluation", standardFee: "$525", expeditedFee: "$735", premiumFee: "$925" }
-    ]
-  }
+  { category: "Mortgage Overcharge Audit", avgRecovery: "$3,500", baseFee: "$149.99 + 35%", notes: "Includes TILA, RESPA, escrow review" },
+  { category: "Utilities Billing Audit (Electric/Water)", avgRecovery: "$550", baseFee: "$49.99 + 30%", notes: "Includes 12-month review" },
+  { category: "Health Insurance Premium Audit", avgRecovery: "$1,200", baseFee: "$99.99 + 25%", notes: "Applicable to PPO/HMO private plans" },
+  { category: "Auto Loan Interest Audit", avgRecovery: "$1,100", baseFee: "$59.99 + 30%", notes: "Includes APR review, GAP, add-ons" },
+  { category: "Life Insurance Policy Audit", avgRecovery: "$1,800", baseFee: "$99.99 + 30%", notes: "Term, Whole, Universal included" },
+  { category: "Subscription/App Overcharge Review", avgRecovery: "$200", baseFee: "$29.99 + 30%", notes: "iTunes, Google, memberships" },
+  { category: "Buy Now Pay Later (BNPL) Audit", avgRecovery: "$400", baseFee: "$39.99 + 25%", notes: "Klarna, Affirm, Afterpay" },
+  { category: "401(k) / IRA Fee Audit", avgRecovery: "$900", baseFee: "$89.99 + 25%", notes: "Asset fee and advisor review" },
+  { category: "Zelle/Venmo/PayPal Refund Audit", avgRecovery: "$300", baseFee: "$34.99 + 30%", notes: "Consumer transaction rights" },
+  { category: "Employment Contract Audit", avgRecovery: "$2,400", baseFee: "$199.99 + 25%", notes: "Focuses on misclassification, wage theft" },
+  { category: "Telecom / Mobile Plan Audit", avgRecovery: "$500", baseFee: "$49.99 + 30%", notes: "Includes equipment charges review" },
+  { category: "Elder Exploitation / Power of Attorney", avgRecovery: "Varies", baseFee: "$199.99 + 35%", notes: "Sensitive case category" },
+  { category: "Divorce Financial Abuse Review", avgRecovery: "Varies", baseFee: "$199.99 + 35%", notes: "Must include divorce decree" },
+  { category: "Complete Protection Review (all audits)", avgRecovery: "$5,000+", baseFee: "$399.99 flat + 25%", notes: "Bundled full audit + reporting" }
 ];
-
-export const serviceTiers = {
-  standard: {
-    name: "Standard",
-    timeline: "10-14 business days",
-    features: ["Standard review process", "Email updates", "Digital delivery"]
-  },
-  expedited: {
-    name: "Expedited", 
-    timeline: "5-7 business days",
-    features: ["Priority processing", "Phone updates", "Digital + express delivery"]
-  },
-  premium: {
-    name: "Premium",
-    timeline: "2-3 business days",
-    features: ["Rush processing", "Real-time updates", "White-glove service", "Dedicated analyst"]
-  }
-};

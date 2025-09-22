@@ -1,4 +1,4 @@
-﻿import React, { useState } from "react";
+import React, { useState } from "react";
 
 const forms = [
   {
@@ -65,7 +65,6 @@ const InteractiveForm = ({ form, onClose }) => {
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    // In a real app, this would submit to backend
     alert("Form submitted successfully! You will receive a confirmation email shortly.");
     onClose();
   };

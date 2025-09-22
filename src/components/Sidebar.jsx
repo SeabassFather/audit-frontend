@@ -1,47 +1,74 @@
-﻿import React from "react";
-import { NavLink } from "react-router-dom";
+import React from "react";
+import { NavLink, useLocation } from "react-router-dom";
 
-const links = [
-  { to: "/dashboard", label: "Dashboard" },
-  { to: "/services", label: "Fee Schedule & Services" },
-  { to: "/agreements", label: "Agreements & Forms" },
-  { to: "/policies", label: "Policies" },
-  { to: "/uploads", label: "Uploads" },
-  { to: "/marketing", label: "Marketing" },
-  { to: "/pitchdeck", label: "Pitch Deck" },
-  { to: "/tickers", label: "Tickers" },
-  { to: "/admin", label: "Admin" }
+const toolGroups = [
+  {
+    title: "Core Services",
+    links: [
+      { to: "/services", label: "Services & Pricing", icon: "⚡" },
+      { to: "/audit-engines", label: "AI Audit Engines", icon: "🤖" },
+    ]
+  },
+  {
+    title: "Specialized Tools", 
+    links: [
+      { to: "/mexico-loans", label: "Mexico RE/Loans", icon: "🏠" },
+      { to: "/usda-search", label: "USDA Search", icon: "🌾" },
+      { to: "/factoring", label: "Factoring Search", icon: "💰" },
+    ]
+  },
+  {
+    title: "Data & Admin",
+    links: [
+      { to: "/uploads", label: "File Uploads", icon: "📁" },
+      { to: "/tickers", label: "Market Data", icon: "📊" },
+      { to: "/admin", label: "Admin Panel", icon: "⚙️" },
+    ]
+  },
+  {
+    title: "Business Tools",
+    links: [
+      { to: "/agreements", label: "Agreements", icon: "📋" },
+      { to: "/marketing", label: "Marketing", icon: "📢" },
+      { to: "/pitchdeck", label: "Pitch Deck", icon: "🎯" },
+    ]
+  },
+  {
+    title: "Documentation",
+    links: [
+      { to: "/docs", label: "Documentation", icon: "📚" },
+    ]
+  }
 ];
 
 export default function Sidebar() {
+  const location = useLocation();
+  
   return (
-    <aside className="hidden md:block w-56 bg-brand-silver/60 min-h-screen border-r border-brand-silver py-6 px-3">
-      <nav className="flex flex-col gap-2">
-        {links.map(link => (
-          <NavLink
-            key={link.to}
-            to={link.to}
-            className={({ isActive }) =>
-              "block px-3 py-2 rounded-md font-medium text-sm " +
-              (isActive
-                ? "bg-gradient-to-r from-brand-blue to-brand-green text-gray-900"
-                : "text-gray-700 hover:bg-gradient-to-r hover:from-brand-green hover:to-brand-yellow")
-            }
-          >
-            {link.label}
-          </NavLink>
+    <aside className="w-64 min-h-screen bg-gradient-to-b from-gray-50 to-white border-r border-gray-200/60 py-6 px-4">
+      <div className="space-y-6">
+        {toolGroups.map((group, groupIndex) => (
+          <div key={groupIndex} className="space-y-2">
+            <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider px-3">
+              {group.title}
+            </h3>
+            <nav className="space-y-1">
+              {group.links.map(({ to, label, icon }) => (
+                <NavLink
+                  key={to}
+                  to={to}
+                  className={({ isActive }) =>
+                    `flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-blue-50 transition 
+                     ${isActive ? "bg-blue-100 text-blue-700 font-semibold" : "text-gray-700"}`
+                  }
+                >
+                  <span className="text-base">{icon}</span>
+                  <span>{label}</span>
+                </NavLink>
+              ))}
+            </nav>
+          </div>
         ))}
-      </nav>
-      
-      {/* Helper section */}
-      <div className="mt-8 p-3 bg-blue-50 border border-blue-200 rounded-lg">
-        <h4 className="font-medium text-blue-900 text-sm mb-2">Quick Access</h4>
-        <div className="space-y-1 text-xs">
-          <div className="text-blue-700">📋 Forms & Agreements</div>
-          <div className="text-blue-700">💰 Transparent Pricing</div>
-          <div className="text-blue-700">🔐 Security Policies</div>
-          <div className="text-blue-700">⚡ 275+ Services</div>
-        </div>
       </div>
     </aside>
   );

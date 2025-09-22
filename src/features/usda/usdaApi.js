@@ -27,7 +27,7 @@ export async function fetchCommoditySeries({
       commodity_desc: commodity.toUpperCase(),
       year: String(y),
     });
-    const url = https://quickstats.nass.usda.gov/api/api_GET/?;
+    const url = `https://quickstats.nass.usda.gov/api/api_GET/?${q.toString()}`;
     const json = await tryFetch(url);
     if (!json || !json.data) return null;
 
