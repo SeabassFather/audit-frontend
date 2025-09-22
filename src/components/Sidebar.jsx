@@ -39,7 +39,7 @@ export default function Sidebar() {
   const location = useLocation();
   
   return (
-    <aside className="w-64 min-h-screen bg-gradient-to-b from-gray-50 to-white border-r border-gray-200/60 py-6 px-4">
+    <aside className="hidden lg:block w-64 min-h-screen bg-gradient-to-b from-gray-50 to-white border-r border-gray-200/60 py-6 px-4">
       <div className="space-y-6">
         {toolGroups.map((group, groupIndex) => (
           <div key={groupIndex} className="space-y-2">

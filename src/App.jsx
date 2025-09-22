@@ -23,7 +23,7 @@ export default function App() {
       <Navbar />
       <div className="flex flex-1">
         <Sidebar />
-        <main className="flex-1 p-8 overflow-auto">
+        <main className="flex-1 p-4 md:p-8 overflow-auto">
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/dashboard" element={<Dashboard />} />
