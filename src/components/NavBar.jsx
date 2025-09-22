@@ -1,39 +1,52 @@
 ﻿import React from "react";
 import { NavLink } from "react-router-dom";
+
 const nav = [
-  { to: "/", label: "Home" },
   { to: "/dashboard", label: "Dashboard" },
   { to: "/services", label: "Services" },
-  { to: "/uploads", label: "Uploads" },
-  { to: "/agreements", label: "Agreements" },
-  { to: "/marketing", label: "Marketing" },
-  { to: "/pitchdeck", label: "Pitch Deck" },
-  { to: "/tickers", label: "Tickers" },
   { to: "/audit-engines", label: "AI Engines" },
-  { to: "/mexico-loans", label: "Mexico Real Estate/Loans" },
+  { to: "/mexico-loans", label: "Mexico RE/Loans" },
+  { to: "/uploads", label: "Uploads" },
   { to: "/admin", label: "Admin" },
 ];
+
 export default function Navbar() {
   return (
-    <header className="w-full bg-white shadow flex items-center px-8 py-3">
-      <div className="font-bold text-xl text-green-700 flex items-center gap-2">
-        <span className="bg-green-200 px-2 py-1 rounded">AD</span>
-        AuditDNA
-        <span className="text-xs text-gray-600 font-normal">AI Audit & Compliance Platform</span>
-      </div>
-      <nav className="ml-auto flex gap-2">
-        {nav.map(({ to, label }) => (
-          <NavLink
-            key={to}
-            to={to}
-            className={({ isActive }) =>
-              `px-3 py-1.5 rounded ${isActive ? "bg-green-200 text-green-900 font-bold" : "hover:bg-green-100 text-gray-700"}`
-            }
-          >
-            {label}
+    <header className="nav">
+      <div className="container">
+        <div className="flex items-center justify-between py-4">
+          <NavLink to="/dashboard" className="flex items-center gap-3 text-ocean-700 font-bold text-xl">
+            <div className="inline-grid place-items-center w-10 h-10 rounded-xl2 bg-gradient-to-br from-ocean-500 to-ocean-600 text-white shadow-soft">
+              AD
+            </div>
+            <div>
+              <div>AuditDNA</div>
+              <div className="text-xs text-gray-500 font-normal">AI Audit & Compliance Platform</div>
+            </div>
           </NavLink>
-        ))}
-      </nav>
+          
+          <nav className="hidden md:flex items-center gap-1">
+            {nav.map(({ to, label }) => (
+              <NavLink
+                key={to}
+                to={to}
+                className={({ isActive }) =>
+                  `nav-link ${isActive ? "nav-link-active" : "nav-link-inactive"}`
+                }
+              >
+                {label}
+              </NavLink>
+            ))}
+          </nav>
+
+          {/* Mobile menu button - placeholder for future mobile menu */}
+          <button className="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
     </header>
   );
 }

@@ -15,15 +15,17 @@ import MexicoRealEstateLoanPage from "./pages/MexicoRealEstateLoanPage";
 import Admin from "./pages/Admin";
 import ClientsList from "./pages/ClientsList";
 import PartnersList from "./pages/PartnersList";
+import SearchPage from "./pages/SearchPage";
 
 export default function App() {
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-green-200 via-yellow-100 to-cyan-100">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-50 via-white to-gray-50">
       <Navbar />
       <div className="flex flex-1">
         <Sidebar />
-        <main className="flex-1 p-8">
+        <main className="flex-1 p-8 overflow-auto">
           <Routes>
+            <Route path="/" element={<Dashboard />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/services" element={<Services />} />
             <Route path="/uploads" element={<Uploads />} />
@@ -36,6 +38,13 @@ export default function App() {
             <Route path="/admin" element={<Admin />} />
             <Route path="/clients" element={<ClientsList />} />
             <Route path="/partners" element={<PartnersList />} />
+            
+            {/* Search Engine Routes */}
+            <Route path="/usda-search" element={<SearchPage initialTab="usda" />} />
+            <Route path="/factoring" element={<SearchPage initialTab="factoring" />} />
+            <Route path="/mexico-search" element={<SearchPage initialTab="mexico" />} />
+            
+            {/* Default route */}
             <Route path="*" element={<Dashboard />} />
           </Routes>
         </main>
