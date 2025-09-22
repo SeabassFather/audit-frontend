@@ -15,6 +15,7 @@ const toolGroups = [
       { to: "/mexico-loans", label: "Mexico RE/Loans", icon: "🏠" },
       { to: "/usda-search", label: "USDA Search", icon: "🌾" },
       { to: "/factoring", label: "Factoring Search", icon: "💰" },
+      { to: "/lenders-search", label: "Lenders Database", icon: "🏦" },
     ]
   },
   {

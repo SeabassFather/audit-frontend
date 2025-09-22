@@ -2,11 +2,13 @@
 import SearchUSDA from "../features/search/SearchUSDA";
 import SearchMexicoLoans from "../features/search/SearchMexicoLoans";
 import SearchFactoring from "../features/search/SearchFactoring";
+import SearchLenders from "../features/search/SearchLenders";
 
 const TABS = [
   { id: "usda", label: "USDA" },
   { id: "mexico", label: "Mexico Loans" },
   { id: "factoring", label: "Factoring" },
+  { id: "lenders", label: "Lenders" },
 ];
 
 export default function SearchPage({ initialTab = "usda" }) {
@@ -26,6 +28,7 @@ export default function SearchPage({ initialTab = "usda" }) {
       {tab === "usda" && <SearchUSDA />}
       {tab === "mexico" && <SearchMexicoLoans />}
       {tab === "factoring" && <SearchFactoring />}
+      {tab === "lenders" && <SearchLenders />}
     </div>
   );
 }

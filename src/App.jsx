@@ -43,6 +43,7 @@ export default function App() {
             <Route path="/usda-search" element={<SearchPage initialTab="usda" />} />
             <Route path="/factoring" element={<SearchPage initialTab="factoring" />} />
             <Route path="/mexico-search" element={<SearchPage initialTab="mexico" />} />
+            <Route path="/lenders-search" element={<SearchPage initialTab="lenders" />} />
             
             {/* Default route */}
             <Route path="*" element={<Dashboard />} />
