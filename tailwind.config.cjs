@@ -1,21 +1,37 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
+    "./index.html",
     "./src/**/*.{js,jsx,ts,tsx}",
-    "./public/index.html"
   ],
   theme: {
     extend: {
       colors: {
-        dnaSilver: "#F4F6F8",
+        primary: "#1e88e5",
+        accent: "#8bc34a",
+        sun: "#ffe082",
+        steel: "#e3e7ee",
         ocean: {
-          500: "#0ea5e9",
-          600: "#0284c7",
-          700: "#0369a1"
-        }
+          DEFAULT: "#2b6cb0",
+          500: "#3182ce",
+          600: "#2269c7",
+          700: "#1b57a4",
+        },
+        silver: {
+          DEFAULT: "#c9d1d9",
+          100: "#eff2f4",
+          200: "#e3e7ee",
+          300: "#c9d1d9",
+          400: "#bdbdbd"
+        },
+        dnaBlue: "#1e88e5",
+        dnaGreen: "#8bc34a",
       },
       boxShadow: {
-        card: "0 2px 8px 0 rgb(0 0 0 / 0.06)"
+        soft: "0 2px 8px 0 rgba(30,136,229,0.08)",
+      },
+      borderRadius: {
+        xl2: "1.2rem",
       }
     },
   },

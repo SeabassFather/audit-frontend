@@ -4,6 +4,7 @@ import Navbar from "./components/NavBar";
 import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
 import Dashboard from "./pages/Dashboard";
+import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Uploads from "./pages/Uploads";
 import Agreements from "./pages/Agreements";
@@ -12,6 +13,7 @@ import PitchDeck from "./pages/PitchDeck";
 import TickerFeedPage from "./pages/TickerFeedPage";
 import AuditEnginesPage from "./pages/AuditEnginesPage";
 import MexicoRealEstateLoanPage from "./pages/MexicoRealEstateLoanPage";
+import PricingUSDA from "./pages/PricingUSDA";
 import Admin from "./pages/Admin";
 import ClientsList from "./pages/ClientsList";
 import PartnersList from "./pages/PartnersList";
@@ -36,6 +38,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/services" element={<Services />} />
             <Route path="/uploads" element={<Uploads />} />
             <Route path="/agreements" element={<Agreements />} />
@@ -44,6 +47,7 @@ export default function App() {
             <Route path="/tickers" element={<TickerFeedPage />} />
             <Route path="/audit-engines" element={<AuditEnginesPage />} />
             <Route path="/mexico-loans" element={<MexicoRealEstateLoanPage />} />
+            <Route path="/usda-pricing" element={<PricingUSDA />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/clients" element={<ClientsList />} />
             <Route path="/partners" element={<PartnersList />} />
