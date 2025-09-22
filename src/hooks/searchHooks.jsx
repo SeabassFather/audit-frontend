@@ -2,15 +2,61 @@
 import { mortgageSearchAPI, agMarketplaceAPI, tradeFinanceAPI } from "../utils/searchAPIs";
 
 export function useMortgageSearch(){
- const [values,set] = useState({ borrowerName:"", email:"", phone:"", consent:true,
- address:"", propertyType:"Single Family", occupancy:"Primary",
- purpose:"Purchase", price:"", estValue:"", loanAmount:"", product:"Conventional",
- creditRange:"680-719", dti:"", ltv:"", income:"", assets:"", timing:"30 days", lock:"Float"
- });
- const [loading,setLoading]=useState(false), [results,setResults]=useState([]);
- const setValue=(k,v)=>set(s=>({...s,[k]:v}));
- async function submit(){ setLoading(true); setResults(await mortgageSearchAPI(values)); setLoading(false); }
- return {values,setValue,submit,loading,results};
+  const [values,set] = useState({ 
+    // Contact Information
+    borrowerName:"", 
+    email:"", 
+    phone:"", 
+    consent:true,
+    
+    // Property Information
+    address:"", 
+    propertyType:"Single Family", 
+    occupancy:"Primary Residence",
+    state:"",
+    
+    // Loan Information
+    purpose:"Purchase", 
+    product:"Conventional",
+    price:"", 
+    estValue:"", 
+    down:"",
+    loanAmount:"", 
+    
+    // Financial Information
+    creditRange:"720-759", 
+    monthlyIncome:"",
+    monthlyDebts:"",
+    incomeType:"W-2 Employment",
+    dti:"", 
+    ltv:"", 
+    income:"", 
+    assets:"", 
+    
+    // Business Information (for business loans)
+    businessName:"",
+    annualRevenue:"",
+    yearsInBusiness:"2+",
+    
+    // Process Information
+    timing:"30 days", 
+    lock:"Float"
+  });
+  const [loading,setLoading]=useState(false), [results,setResults]=useState([]);
+  const setValue=(k,v)=>set(s=>({...s,[k]:v}));
+  async function submit(){ 
+    setLoading(true); 
+    try {
+      const searchResults = await mortgageSearchAPI(values); 
+      setResults(searchResults);
+    } catch (error) {
+      console.error('Search failed:', error);
+      setResults([]);
+    } finally {
+      setLoading(false); 
+    }
+  }
+  return {values,setValue,submit,loading,results};
 }
 
 export function useAgMarketplaceSearch(){

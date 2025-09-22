@@ -74,7 +74,7 @@ export default function App() {
             <Route path="/search/mexico" element={<SearchMexicoPage />} />
             <Route path="/search/factoring" element={<SearchFactoringPage />} />
             <Route path="/search/watertech" element={<SearchWaterTechPage />} />
-            <Route path="/search/mortgage" element={<SearchMortgagePage />} />
+            <Route path="/search/mortgage" element={<MortgageSearchPage />} />
             <Route path="/search/ag-marketplace" element={<SearchAgMarketplacePage />} />
             <Route path="/search/trade-finance" element={<SearchTradeFinancePage />} />
 

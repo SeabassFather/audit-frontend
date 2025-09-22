@@ -1,7 +1,8 @@
-﻿export default function Spinner(){
+export default function Spinner(){
  return (
  <div className="w-full grid place-items-center py-16">
- <div className="animate-pulse text-sm text-slate-600">LoadingÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦</div>
+ <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+ <div className="mt-2 text-sm text-slate-600">Loading...</div>
  </div>
  );
 }

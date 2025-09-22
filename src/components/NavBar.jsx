@@ -23,6 +23,7 @@ export default function Navbar() {
     { to: "/modules", label: "Modules" },
     { to: "/tickers", label: "Tickers" },
     { to: "/usda-search", label: "USDA" },
+    { to: "/search/mortgage", label: "Mortgage Search" },
     { to: "/chat", label: "Chat" },
   ];
 
