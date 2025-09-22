@@ -10,6 +10,13 @@ const links = [
   { to: "/tickers", label: "Tickers" },
   { to: "/audit-engines", label: "AI Engines" },
   { to: "/mexico-loans", label: "Mexico Real Estate/Loans" },
+  { to: "/search/usda", label: "USDA Search" },
+  { to: "/search/mexico", label: "Mexico Loans Search" },
+  { to: "/search/factoring", label: "Factoring Search" },
+  { to: "/search/watertech", label: "WaterTech Search" },
+  { to: "/search/mortgage", label: "Mortgage Search" },
+  { to: "/search/ag-marketplace", label: "Ag Marketplace Search" },
+  { to: "/search/trade-finance", label: "Trade Finance Search" },
   { to: "/admin", label: "Admin" },
 ];
 export default function Sidebar() {

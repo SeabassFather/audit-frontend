@@ -1,6 +1,6 @@
 ﻿import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/NavBar";
 import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
 import Dashboard from "./pages/Dashboard";
@@ -15,6 +15,15 @@ import MexicoRealEstateLoanPage from "./pages/MexicoRealEstateLoanPage";
 import Admin from "./pages/Admin";
 import ClientsList from "./pages/ClientsList";
 import PartnersList from "./pages/PartnersList";
+
+// Search Engine Components
+import SearchUSDAPage from "./pages/search/SearchUSDAPage";
+import SearchMexicoPage from "./pages/search/SearchMexicoPage";
+import SearchFactoringPage from "./pages/search/SearchFactoringPage";
+import SearchWaterTechPage from "./pages/search/SearchWaterTechPage";
+import SearchMortgagePage from "./pages/search/SearchMortgagePage";
+import SearchAgMarketplacePage from "./pages/search/SearchAgMarketplacePage";
+import SearchTradeFinancePage from "./pages/search/SearchTradeFinancePage";
 
 export default function App() {
   return (
@@ -36,6 +45,14 @@ export default function App() {
             <Route path="/admin" element={<Admin />} />
             <Route path="/clients" element={<ClientsList />} />
             <Route path="/partners" element={<PartnersList />} />
+            {/* Search Engine Routes */}
+            <Route path="/search/usda" element={<SearchUSDAPage />} />
+            <Route path="/search/mexico" element={<SearchMexicoPage />} />
+            <Route path="/search/factoring" element={<SearchFactoringPage />} />
+            <Route path="/search/watertech" element={<SearchWaterTechPage />} />
+            <Route path="/search/mortgage" element={<SearchMortgagePage />} />
+            <Route path="/search/ag-marketplace" element={<SearchAgMarketplacePage />} />
+            <Route path="/search/trade-finance" element={<SearchTradeFinancePage />} />
             <Route path="*" element={<Dashboard />} />
           </Routes>
         </main>
