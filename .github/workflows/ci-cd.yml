@@ -1,0 +1,217 @@
+---
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+env:
+  NODE_VERSION: '20.x'  # Can be changed to '22.x' if desired
+  # Environment variables for Netlify compatibility
+  VITE_API_BASE_URL: ${{ vars.VITE_API_BASE_URL || 'http://localhost:3000' }}
+  VITE_NETLIFY_FUNCTIONS_URL: >-
+    ${{ vars.VITE_NETLIFY_FUNCTIONS_URL || '/.netlify/functions' }}
+
+jobs:
+  lint:
+    name: Lint Code
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Clear npm cache
+        run: npm cache clean --force
+
+      - name: Install dependencies
+        run: |
+          echo "📦 Installing dependencies with full logging..."
+          npm ci --verbose
+
+      - name: Run linting (placeholder)
+        run: |
+          echo "🔍 Linting checks..."
+          echo "✅ No specific linting rules configured yet"
+          # Future: Add eslint, prettier, or other linting tools here
+          # npm run lint
+
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Clear npm cache
+        run: npm cache clean --force
+
+      - name: Install dependencies
+        run: |
+          echo "📦 Installing dependencies with full logging..."
+          npm ci --verbose
+
+      - name: Run tests (placeholder)
+        run: |
+          echo "🧪 Running tests..."
+          echo "✅ No specific test suite configured yet"
+          # Future: Add test commands here
+          # npm run test
+
+  build-and-deploy:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+    needs: [lint, test]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Clear npm cache and clean install
+        run: |
+          echo "🧹 Clearing npm cache to avoid stale dependencies..."
+          npm cache clean --force
+          echo "🗑️ Removing node_modules and package-lock.json..."
+          rm -rf node_modules package-lock.json
+
+      - name: Install dependencies (matching Netlify environment)
+        run: |
+          echo "📦 Installing dependencies (Netlify-compatible)..."
+          echo "Working directory: $(pwd)"
+          echo "Node version: $(node --version)"
+          echo "NPM version: $(npm --version)"
+          npm ci --verbose
+
+      - name: Display environment info
+        run: |
+          echo "🔍 Environment Information:"
+          echo "Node.js version: $(node --version)"
+          echo "NPM version: $(npm --version)"
+          echo "Working directory: $(pwd)"
+          echo "Package.json location: $(ls -la package.json)"
+          echo "Environment variables:"
+          echo "  VITE_API_BASE_URL: $VITE_API_BASE_URL"
+          echo "  VITE_NETLIFY_FUNCTIONS_URL: $VITE_NETLIFY_FUNCTIONS_URL"
+
+      - name: Build application (matching Netlify build command)
+        run: |
+          echo "🏗️ Building application with full logging..."
+          echo "Build command: npm run build"
+          echo "Expected output directory: dist/"
+          npm run build --verbose
+
+      - name: Verify build output
+        run: |
+          echo "🔍 Verifying build output..."
+          ls -la dist/
+          echo "Build artifacts:"
+          find dist/ -type f -name "*.html" -o -name "*.js" -o -name "*.css" |
+            head -10
+
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: './dist'
+          production-branch: main
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy from GitHub Actions - ${{ github.sha }}"
+          enable-pull-request-comment: true
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        timeout-minutes: 10
+
+      - name: Build Status Summary
+        run: |
+          echo "✅ CI/CD Pipeline completed successfully"
+          echo "📦 Build artifacts generated in dist/ directory"
+          echo "🚀 Deployment status available in Netlify dashboard"
+          echo "🔗 Preview URLs will be available shortly"
+          echo "📋 Build Details:"
+          echo "  - Node.js version: $(node --version)"
+          echo "  - Build tool: Vite"
+          echo "  - Output directory: dist/"
+          echo "  - Deployment target: Netlify"
+
+      - name: Comment deployment status on PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo, number } = context.issue;
+            const sha = context.payload.pull_request.head.sha;
+
+            await github.rest.issues.createComment({
+              issue_number: number,
+              owner,
+              repo,
+              body: `🚀 **CI/CD Pipeline Status**
+
+              ✅ **Build completed successfully**
+              📦 **Artifacts ready for Netlify deployment**
+              🔧 **Node.js version:** ${process.env.NODE_VERSION}
+              📁 **Build output:** \`dist/\` directory
+              🔗 **Preview URL will be available shortly**
+
+              **Build Details:**
+              - Commit: \`${sha.substring(0, 7)}\`
+              - Build tool: Vite + React 18
+              - Cache cleared before install
+              - Full verbose logging enabled
+
+              *Automated deployment via GitHub Actions CI/CD Pipeline*`
+            });
+
+  # Alternative job for Node.js 22.x testing (optional)
+  build-node22:
+    name: Build with Node.js 22.x (Optional)
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 22.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+          cache: 'npm'
+
+      - name: Clear npm cache
+        run: npm cache clean --force
+
+      - name: Install dependencies
+        run: |
+          echo "📦 Installing dependencies with Node.js 22.x..."
+          npm ci --verbose
+
+      - name: Build with Node.js 22.x
+        run: |
+          echo "🏗️ Testing build compatibility with Node.js 22.x..."
+          echo "Node version: $(node --version)"
+          npm run build
+          echo "✅ Build successful with Node.js 22.x"
