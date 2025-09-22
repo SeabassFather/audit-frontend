@@ -1,4 +1,4 @@
-import React from 'react'
+﻿import React from 'react'
 import { fetchCommoditySeries } from './usdaApi'
 import CommodityChart from './CommodityChart.jsx'
 import { Search } from 'lucide-react'

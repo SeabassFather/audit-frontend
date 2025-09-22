@@ -1,4 +1,4 @@
-/**
+﻿/**
  * USDA Engines (real calls)
  * - QuickStats (NASS): https://quickstats.nass.usda.gov/api/get_param_values/?param=...
  * Data: https://quickstats.nass.usda.gov/api/api_GET/

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 export default function StockTicker(){
  const [i,setI]=useState(0);
  const items=[{s:"SPY",p:500.10},{s:"QQQ",p:430.22},{s:"IWM",p:211.44}];

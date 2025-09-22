@@ -69,3 +69,8 @@
     100% { transform: translateX(-100%); }
   }
 }
+
+/* Fallback for main branch style variables */
+:root { --card-bg: #ffffff; }
+body { font-family: ui-sans-serif, system-ui; }
+.container { max-width: 1200px; margin: 0 auto; }

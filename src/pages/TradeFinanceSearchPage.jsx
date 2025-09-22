@@ -1,4 +1,4 @@
-import { useTradeFinanceSearch } from "../hooks/searchHooks";
+﻿import { useTradeFinanceSearch } from "../hooks/searchHooks";
 import TradeFinanceForm from "../forms/TradeFinanceForm";
 import Spinner from "../components/Spinner";
 
@@ -16,7 +16,7 @@ export default function TradeFinanceSearchPage(){
  <ul className="mt-2 space-y-2">
  {results.map((m,i)=>(
  <li key={i} className="border rounded p-3">
- <div className="font-medium">{m.product} ÃƒÂ¢Ã¢â€šÂ¬" advance {m.advance}, tenor {m.tenor}</div>
+ <div className="font-medium">{m.product} ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬" advance {m.advance}, tenor {m.tenor}</div>
  <div className="text-xs text-slate-600">{m.note}</div>
  </li>
  ))}

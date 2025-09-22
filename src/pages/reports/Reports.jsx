@@ -1,4 +1,4 @@
-export default function Reports(){
+﻿export default function Reports(){
  return (
  <div className="space-y-4">
  <div className="card">

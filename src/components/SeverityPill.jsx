@@ -1,4 +1,4 @@
-export default function SeverityPill({ level = "Info" }) {
+﻿export default function SeverityPill({ level = "Info" }) {
  const map = {
  Info: "bg-slate-200 text-slate-800",
  Low: "bg-green-200 text-green-900",

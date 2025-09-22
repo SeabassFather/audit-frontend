@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { Link } from "react-router-dom";
 import UploadSheet from "../components/UploadSheet";
 
@@ -6,7 +6,7 @@ export default function ModuleAg(){
  const [open, setOpen] = useState(false);
  return (
  <div className="dna-section">
- <h1 className="text-2xl font-bold">Ag ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ USDA ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ WaterTech ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Factoring</h1>
+ <h1 className="text-2xl font-bold">Ag ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¢ USDA ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¢ WaterTech ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¢ Factoring</h1>
  <div className="card p-4 space-y-3">
  <p className="text-sm text-slate-600">
  Tools for agriculture supply chain, USDA pricing, lab uploads, and produce factoring.

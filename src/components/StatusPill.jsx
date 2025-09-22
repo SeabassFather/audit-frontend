@@ -1,4 +1,4 @@
-import React from 'react'
+﻿import React from 'react'
 export default function StatusPill({online}) {
  const c = online ? 'bg-emerald-100 text-emerald-700 border-emerald-300' : 'bg-rose-100 text-rose-700 border-rose-300'
  return <span className={'inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold border ' + c}>

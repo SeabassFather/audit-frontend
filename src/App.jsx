@@ -1,76 +1,73 @@
-import React, { Suspense, lazy } from "react";
+import React from "react";
 import { Routes, Route } from "react-router-dom";
-
 import Navbar from "./components/NavBar";
-import Ticker from "./components/Ticker";
+import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
+import Dashboard from "./pages/Dashboard";
+import Services from "./pages/Services";
+import Uploads from "./pages/Uploads";
+import Agreements from "./pages/Agreements";
+import Marketing from "./pages/Marketing";
+import PitchDeck from "./pages/PitchDeck";
+import TickerFeedPage from "./pages/TickerFeedPage";
+import AuditEnginesPage from "./pages/AuditEnginesPage";
+import MexicoRealEstateLoanPage from "./pages/MexicoRealEstateLoanPage";
+import Admin from "./pages/Admin";
+import ClientsList from "./pages/ClientsList";
+import PartnersList from "./pages/PartnersList";
+import SearchPage from "./pages/SearchPage";
 
-// Lazy load pages for better performance
-const Dashboard = lazy(() => import("./pages/Dashboard"));
-const Services = lazy(() => import("./pages/Services"));
-const ServiceDetail = lazy(() => import("./pages/ServiceDetail"));
-const Engines = lazy(() => import("./pages/Engines"));
-const Findings = lazy(() => import("./pages/Findings"));
-const Results = lazy(() => import("./pages/Results"));
-const Uploads = lazy(() => import("./pages/Uploads"));
-const Modules = lazy(() => import("./pages/Modules"));
-const Admin = lazy(() => import("./pages/Admin"));
-const Login = lazy(() => import("./pages/Login"));
-const Chat = lazy(() => import("./pages/Chat"));
-const Marketing = lazy(() => import("./pages/Marketing"));
-const PitchDeck = lazy(() => import("./pages/PitchDeck"));
-const Agreements = lazy(() => import("./pages/Agreements"));
-const Tickers = lazy(() => import("./pages/Tickers"));
-const UsdaSearch = lazy(() => import("./pages/UsdaSearch"));
-
-function Spinner() {
-  return (
-    <div className="flex items-center justify-center p-8">
-      <div className="animate-spin w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full"></div>
-      <span className="ml-3 text-slate-600">Loading...</span>
-    </div>
-  );
-}
+// Search Engine Components
+import SearchUSDAPage from "./pages/search/SearchUSDAPage";
+import SearchMexicoPage from "./pages/search/SearchMexicoPage";
+import SearchFactoringPage from "./pages/search/SearchFactoringPage";
+import SearchWaterTechPage from "./pages/search/SearchWaterTechPage";
+import SearchMortgagePage from "./pages/search/SearchMortgagePage";
+import SearchAgMarketplacePage from "./pages/search/SearchAgMarketplacePage";
+import SearchTradeFinancePage from "./pages/search/SearchTradeFinancePage";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-slate-50 text-gray-900">
-      <Ticker />
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-50 via-white to-gray-50">
       <Navbar />
-      <main className="container py-6">
-        <Suspense fallback={<Spinner />}>
+      <div className="flex flex-1">
+        <Sidebar />
+        <main className="flex-1 p-8 overflow-auto">
           <Routes>
-            {/* Main Pages */}
             <Route path="/" element={<Dashboard />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/service/:id" element={<ServiceDetail />} />
             <Route path="/uploads" element={<Uploads />} />
-            <Route path="/engines" element={<Engines />} />
-            <Route path="/findings" element={<Findings />} />
-            <Route path="/results" element={<Results />} />
-            <Route path="/modules" element={<Modules />} />
-            <Route path="/admin" element={<Admin />} />
-            <Route path="/login" element={<Login />} />
-            
-            {/* New Core Pages */}
-            <Route path="/chat" element={<Chat />} />
-            <Route path="/marketing" element={<Marketing />} />
-            <Route path="/pitch-deck" element={<PitchDeck />} />
             <Route path="/agreements" element={<Agreements />} />
-            <Route path="/tickers" element={<Tickers />} />
-            
-            {/* USDA and Engine Routes */}
-            <Route path="/engines/usda" element={<UsdaSearch />} />
-            <Route path="/usda" element={<UsdaSearch />} />
+            <Route path="/marketing" element={<Marketing />} />
+            <Route path="/pitchdeck" element={<PitchDeck />} />
+            <Route path="/tickers" element={<TickerFeedPage />} />
+            <Route path="/audit-engines" element={<AuditEnginesPage />} />
+            <Route path="/mexico-loans" element={<MexicoRealEstateLoanPage />} />
+            <Route path="/admin" element={<Admin />} />
+            <Route path="/clients" element={<ClientsList />} />
+            <Route path="/partners" element={<PartnersList />} />
+
+            {/* Explicit Search Engine Routes */}
+            <Route path="/search/usda" element={<SearchUSDAPage />} />
+            <Route path="/search/mexico" element={<SearchMexicoPage />} />
+            <Route path="/search/factoring" element={<SearchFactoringPage />} />
+            <Route path="/search/watertech" element={<SearchWaterTechPage />} />
+            <Route path="/search/mortgage" element={<SearchMortgagePage />} />
+            <Route path="/search/ag-marketplace" element={<SearchAgMarketplacePage />} />
+            <Route path="/search/trade-finance" element={<SearchTradeFinancePage />} />
+
+            {/* Generic SearchPage Routes for tabs */}
+            <Route path="/usda-search" element={<SearchPage initialTab="usda" />} />
+            <Route path="/factoring" element={<SearchPage initialTab="factoring" />} />
+            <Route path="/mexico-search" element={<SearchPage initialTab="mexico" />} />
+
+            {/* Default route */}
+            <Route path="*" element={<Dashboard />} />
           </Routes>
-        </Suspense>
-      </main>
+        </main>
+      </div>
       <Footer />
     </div>
   );
 }
-
-
-
-
-

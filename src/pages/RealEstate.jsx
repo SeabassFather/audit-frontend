@@ -1,4 +1,4 @@
-import { useEffect,useState } from "react";
+﻿import { useEffect,useState } from "react";
 export default function RealEstate(){
  const [list,setList]=useState([]);
  useEffect(()=>{ fetch("/api/realestate/mx").then(r=>r.json()).then(setList);},[]);

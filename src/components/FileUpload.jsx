@@ -1,4 +1,4 @@
-export default function FileUpload({label="Upload", multiple=false, accept, onFiles}){
+﻿export default function FileUpload({label="Upload", multiple=false, accept, onFiles}){
  return (
  <label className="block">
  <span className="text-sm">{label}</span>

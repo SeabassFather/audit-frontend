@@ -1,4 +1,4 @@
-const QS_BASE = "https://quickstats.nass.usda.gov/api/api_GET/";
+﻿const QS_BASE = "https://quickstats.nass.usda.gov/api/api_GET/";
 export async function quickStatsPricesReceived({
  key = import.meta.env.VITE_USDA_QS_KEY,
  commodity_desc,

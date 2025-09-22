@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 export default function Moxxi(){
  const [input,setInput]=useState({purpose:"purchase",fico:710,dti:0.38,ltv:0.65,loanAmount:400000});
  const [result,setResult]=useState(null);

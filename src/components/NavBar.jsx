@@ -1,5 +1,5 @@
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -14,34 +14,33 @@ export default function Navbar() {
     { to: "/", label: "Dashboard", end: true },
     { to: "/services", label: "Services" },
     { to: "/uploads", label: "Uploads" },
-    { to: "/engines", label: "Engines" },
-    { to: "/findings", label: "Findings" },
-    { to: "/results", label: "Results" },
+    { to: "/audit-engines", label: "AI Engines" },
+    { to: "/mexico-loans", label: "Mexico RE/Loans" },
     { to: "/admin", label: "Admin" },
   ];
 
   const secondaryNavItems = [
     { to: "/modules", label: "Modules" },
     { to: "/tickers", label: "Tickers" },
-    { to: "/usda", label: "USDA" },
+    { to: "/usda-search", label: "USDA" },
     { to: "/chat", label: "Chat" },
   ];
 
   return (
-    <header className="sticky top-0 z-50 glass border-b border-slate-200/50 shadow-sm">
+    <header className="sticky top-0 z-50 glass border-b border-slate-200/50 shadow-sm nav">
       <div className="bg-gradient-to-r from-blue-600 via-blue-700 to-green-600">
         <div className="container py-3">
           <div className="flex items-center justify-between">
             {/* Logo and Brand */}
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-yellow-300 to-green-400 grid place-items-center font-bold text-blue-900 shadow-md">
+            <NavLink to="/dashboard" className="flex items-center gap-3 text-ocean-700 font-bold text-xl">
+              <div className="inline-grid place-items-center w-10 h-10 rounded-xl2 bg-gradient-to-br from-ocean-500 to-ocean-600 text-white shadow-soft">
                 AD
               </div>
-              <div className="flex flex-col">
-                <h1 className="text-white font-bold text-lg leading-none">AuditDNA</h1>
-                <span className="text-blue-100 text-xs">Modern Audit Platform</span>
+              <div>
+                <div className="text-white font-bold text-lg leading-none">AuditDNA</div>
+                <div className="text-xs text-blue-100 font-normal">AI Audit & Compliance Platform</div>
               </div>
-            </div>
+            </NavLink>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-1">
@@ -123,7 +122,7 @@ export default function Navbar() {
                   {item.label}
                 </NavLink>
               ))}
-              
+
               <div className="divider my-3"></div>
               <div className="font-semibold text-slate-600 text-sm mb-2">Tools & Features</div>
               {secondaryNavItems.map((item) => (

@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 /** This UI models the consumer-protection flow: compute overcharge, notify title company,
  * escrow instructions, and auto-generate CFPB/regulator letters with consent on file.
  * (Letters/API hooks can be wired later.)
@@ -25,7 +25,7 @@ export default function CaseFlow(){
  };
  return (
  <div>
- <h1 className="text-2xl font-bold mb-4">CaseFlow ÃƒÂ¢Ã¢â€šÂ¬" Disbursement & Regulator Notices</h1>
+ <h1 className="text-2xl font-bold mb-4">CaseFlow ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬" Disbursement & Regulator Notices</h1>
  <div className="grid md:grid-cols-2 gap-4">
  <div className="card p-4 space-y-3">
  <div className="font-semibold">Case Intake</div>

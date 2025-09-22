@@ -1,4 +1,4 @@
-import FileUpload from "../components/FileUpload";
+﻿import FileUpload from "../components/FileUpload";
 
 export default function TradeFinanceForm({values,setValue,onSubmit,loading}){
  return (
@@ -37,7 +37,7 @@ export default function TradeFinanceForm({values,setValue,onSubmit,loading}){
  </div>
  <button onClick={onSubmit} disabled={loading}
  className={"w-full mt-2 px-3 py-2 rounded text-white "+(loading?"bg-slate-400":"bg-dnaBlue")}>
- {loading?"MatchingÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦":"Find Trade Finance"}
+ {loading?"MatchingÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦":"Find Trade Finance"}
  </button>
  </div>
  );

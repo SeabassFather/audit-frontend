@@ -1,4 +1,4 @@
-const MARS_BASE = "https://marsapi.ams.usda.gov/services/v1.1";
+﻿const MARS_BASE = "https://marsapi.ams.usda.gov/services/v1.1";
 function marsHeaders() {
  const key = import.meta.env.VITE_USDA_MARS_KEY || "";
  // API uses Basic auth with API key as username, blank password.
