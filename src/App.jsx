@@ -28,6 +28,21 @@ import SearchMortgagePage from "./pages/search/SearchMortgagePage";
 import SearchAgMarketplacePage from "./pages/search/SearchAgMarketplacePage";
 import SearchTradeFinancePage from "./pages/search/SearchTradeFinancePage";
 
+// Search Engine Modules
+import SearchUSDA from "./features/search/SearchUSDA";
+import SearchMexicoLoans from "./features/search/SearchMexicoLoans";
+import SearchFactoring from "./features/search/SearchFactoring";
+import MortgageSearch from "./pages/mortgage/MortgageSearch";
+import MortgageSearchPage from "./pages/MortgageSearchPage";
+import TradeFinanceSearchPage from "./pages/TradeFinanceSearchPage";
+import AgMarketplaceSearchPage from "./pages/AgMarketplaceSearchPage";
+import UsdaSearch from "./pages/UsdaSearch";
+import UsdaCommoditySearch from "./features/usda/UsdaCommoditySearch";
+
+// Legacy pages for hard nav
+import MortgageMexico from "./pages/MortgageMexico";
+import USDA from "./pages/USDA";
+
 export default function App() {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-50 via-white to-gray-50">
