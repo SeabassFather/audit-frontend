@@ -23,6 +23,7 @@ const toolGroups = [
       { to: "/uploads", label: "File Uploads", icon: "📁" },
       { to: "/tickers", label: "Market Data", icon: "📊" },
       { to: "/admin", label: "Admin Panel", icon: "⚙️" },
+      { to: "/docs", label: "Documentation", icon: "📚" },
     ]
   },
   {
