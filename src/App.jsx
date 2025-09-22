@@ -19,6 +19,8 @@ import ClientsList from "./pages/ClientsList";
 import PartnersList from "./pages/PartnersList";
 import SearchPage from "./pages/SearchPage";
 import Documentation from "./pages/Documentation";
+import Compliance from "./pages/Compliance";
+import ModuleCompliance from "./pages/ModuleCompliance";
 
 // Search Engine Components
 import SearchUSDAPage from "./pages/search/SearchUSDAPage";
@@ -68,6 +70,8 @@ export default function App() {
             <Route path="/clients" element={<ClientsList />} />
             <Route path="/partners" element={<PartnersList />} />
             <Route path="/docs" element={<Documentation />} />
+            <Route path="/compliance" element={<Compliance />} />
+            <Route path="/module-compliance" element={<ModuleCompliance />} />
 
             {/* Explicit Search Engine Routes */}
             <Route path="/search/usda" element={<SearchUSDAPage />} />
