@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/NavBar";
 import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
+import ChatGPT from "./ChatGPT";
 import Dashboard from "./pages/Dashboard";
 import Services from "./pages/Services";
 import Uploads from "./pages/Uploads";
@@ -68,6 +69,7 @@ export default function App() {
         </main>
       </div>
       <Footer />
+      <ChatGPT />
     </div>
   );
 }

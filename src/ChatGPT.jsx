@@ -1,10 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { CHAT_CONFIG, API_CONFIG } from './config/chatConfig';
 
 export default function ChatGPT() {
   const [messages, setMessages] = useState([
     {
       role: 'system',
-      content: 'Welcome to AuditDNA Chat Assistant! I can help you with compliance, auditing, and regulatory questions.',
+      content: CHAT_CONFIG.welcomeMessage,
       timestamp: new Date()
     }
   ]);
@@ -23,6 +24,17 @@ export default function ChatGPT() {
 
   const sendMessage = async () => {
     if (!inputValue.trim() || isLoading) return;
+    
+    // Input validation
+    if (inputValue.length > CHAT_CONFIG.maxInputLength) {
+      const errorMessage = {
+        role: 'system',
+        content: `Message too long. Please keep it under ${CHAT_CONFIG.maxInputLength} characters.`,
+        timestamp: new Date()
+      };
+      setMessages(prev => [...prev, errorMessage]);
+      return;
+    }
 
     const userMessage = {
       role: 'user',
@@ -35,7 +47,7 @@ export default function ChatGPT() {
     setIsLoading(true);
 
     try {
-      const response = await fetch('/.netlify/functions/chatgpt', {
+      const response = await fetch(API_CONFIG.endpoint, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -53,7 +65,7 @@ export default function ChatGPT() {
           content: data.response,
           timestamp: new Date()
         };
-        setMessages(prev => [...prev, assistantMessage]);
+        setMessages(prev => [...prev, assistantMessage].slice(-CHAT_CONFIG.maxMessages));
       } else {
         throw new Error(data.error || 'Failed to get response');
       }
@@ -61,7 +73,7 @@ export default function ChatGPT() {
       console.error('Chat error:', error);
       const errorMessage = {
         role: 'system',
-        content: 'Sorry, I encountered an error. Please try again.',
+        content: CHAT_CONFIG.errorMessages.apiError,
         timestamp: new Date()
       };
       setMessages(prev => [...prev, errorMessage]);
