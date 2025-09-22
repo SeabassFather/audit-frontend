@@ -1,24 +1,43 @@
-﻿@tailwind base;
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root { --card-bg: #ffffff; }
+/* Custom global styles for AuditDNA */
+body {
+  @apply bg-slate-50 text-slate-800;
+}
 
-body { font-family: ui-sans-serif, system-ui; }
+.nav-link-active {
+  @apply px-4 py-2 rounded font-semibold bg-blue-700 text-white shadow transition;
+}
+.nav-link-inactive {
+  @apply px-4 py-2 rounded text-slate-100 hover:bg-blue-800/60 hover:text-white transition;
+}
 
-.container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
-.card { background: var(--card-bg); border-radius: 1rem; box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24); padding: 1.5rem; }
+/* Card and Button styles */
+.card {
+  @apply bg-white rounded-xl shadow p-6 border border-slate-100;
+}
 
-/* Navigation styles for compatibility with different versions */
-.nav { @apply bg-white/90 backdrop-blur border-b border-gray-200; }
-.nav-link { @apply px-3 py-2 rounded-lg text-sm font-medium transition-colors; }
-.nav-link-active { @apply bg-ocean-600 text-white; }
-.nav-link-inactive { @apply text-gray-700 hover:text-ocean-600 hover:bg-gray-100; }
+.btn {
+  @apply px-4 py-2 rounded-lg font-medium bg-blue-600 text-white hover:bg-blue-700 transition;
+}
 
-/* Button styles */
-.btn { @apply px-4 py-2 rounded-lg font-medium transition-colors; }
-.btn-primary { @apply bg-ocean-600 text-white hover:bg-ocean-700; }
-.btn-sm { @apply px-3 py-1 text-sm; }
+.divider {
+  @apply border-t border-slate-200 my-2;
+}
 
-/* Pill styles for mode indicators */
-.pill { @apply px-3 py-1 bg-gray-100 rounded-full text-sm font-medium; }
+/* Utility classes for metrics, charts, tickers */
+.metric-card {
+  @apply bg-gradient-to-br from-blue-50 to-green-50 rounded-lg shadow p-4 flex flex-col items-start;
+}
+.ticker {
+  @apply px-2 py-1 rounded bg-yellow-100 text-yellow-900 font-mono text-xs;
+}
+
+/* Responsive overrides if needed */
+@media (max-width: 640px) {
+  .card {
+    @apply p-2;
+  }
+}
