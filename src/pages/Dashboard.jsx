@@ -1,147 +1,106 @@
-import React from "react";
-import { MetricCard, ActivityItem, TickerItem } from "../components/UIComponents.jsx";
-import { RevenueChart, ServiceDistributionChart, ClientGrowthChart } from "../components/Charts.jsx";
-import { dashboardMetrics, recentActivities, topServices, chartData } from "../data/dashboardData.js";
-import { tickerData } from "../data/tickerData.js";
+﻿import React from "react";
+import { NavLink } from "react-router-dom";
+
+const stats = [
+  { label: "Active Audits", value: "1,247", change: "+12%", color: "text-green-600" },
+  { label: "Total Recovery", value: "$2.8M", change: "+23%", color: "text-blue-600" },
+  { label: "Success Rate", value: "94.2%", change: "+2.1%", color: "text-purple-600" },
+  { label: "Active Clients", value: "356", change: "+8%", color: "text-orange-600" },
+];
+
+const quickActions = [
+  { to: "/services", label: "Start New Audit", icon: "🔍", description: "Launch a comprehensive financial audit" },
+  { to: "/uploads", label: "Upload Documents", icon: "📁", description: "Upload client documents for processing" },
+  { to: "/audit-engines", label: "AI Analysis", icon: "🤖", description: "Access AI-powered audit tools" },
+  { to: "/mexico-loans", label: "Mexico RE/Loans", icon: "🏠", description: "Cross-border real estate services" },
+];
+
+const recentActivity = [
+  { type: "audit", client: "Jane Grower", action: "Mortgage audit completed", amount: "$3,240", time: "2 hours ago" },
+  { type: "recovery", client: "Marco Buyer", action: "Recovery payment received", amount: "$1,850", time: "4 hours ago" },
+  { type: "upload", client: "Lee Driver", action: "Documents uploaded", amount: "", time: "6 hours ago" },
+  { type: "audit", client: "Sarah Martinez", action: "Insurance audit initiated", amount: "$1,200", time: "1 day ago" },
+];
 
 export default function Dashboard() {
-  const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-  
   return (
     <div className="space-y-8">
       {/* Header */}
-      <div className="bg-gradient-to-r from-brand-blue via-brand-green to-brand-yellow rounded-2xl p-6 text-white">
-        <div className="flex justify-between items-center">
-          <div>
-            <h1 className="text-3xl font-bold">Dashboard Overview</h1>
-            <p className="text-white/90 mt-2">
-              Welcome back! Here's what's happening with your AuditDNA platform today.
-            </p>
-          </div>
-          <div className="text-right">
-            <div className="text-sm opacity-90">Last updated</div>
-            <div className="text-lg font-semibold">{currentTime}</div>
-          </div>
+      <div className="flex justify-between items-start">
+        <div>
+          <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
+          <p className="text-gray-600 mt-2">Welcome back! Here's your AuditDNA overview.</p>
         </div>
+        <NavLink to="/services" className="btn btn-primary">
+          Start New Audit
+        </NavLink>
       </div>
 
-      {/* Key Metrics */}
+      {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {dashboardMetrics.map((metric) => (
-          <MetricCard
-            key={metric.id}
-            title={metric.title}
-            value={metric.value}
-            change={metric.change}
-            trend={metric.trend}
-            icon={metric.icon}
-            color={metric.color}
-          />
+        {stats.map((stat, index) => (
+          <div key={index} className="card-simple">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm font-medium text-gray-600">{stat.label}</p>
+                <p className="text-2xl font-bold text-gray-900 mt-1">{stat.value}</p>
+              </div>
+              <div className={`text-sm font-medium ${stat.color}`}>
+                {stat.change}
+              </div>
+            </div>
+          </div>
         ))}
       </div>
 
-      {/* Charts Row */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <RevenueChart data={chartData.monthlyRevenue} />
-        <ServiceDistributionChart data={chartData.serviceDistribution} />
-      </div>
-
-      {/* Secondary Row */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Recent Activities */}
-        <div className="lg:col-span-2">
-          <div className="widget">
-            <div className="flex justify-between items-center mb-4">
-              <h3 className="text-lg font-semibold">Recent Activities</h3>
-              <button className="text-brand-blue hover:text-brand-green text-sm font-medium">
-                View All
-              </button>
-            </div>
-            <div className="space-y-2">
-              {recentActivities.slice(0, 5).map((activity) => (
-                <ActivityItem key={activity.id} activity={activity} />
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Live Tickers */}
-        <div className="widget">
-          <div className="flex justify-between items-center mb-4">
-            <h3 className="text-lg font-semibold">Live Market Data</h3>
-            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-          </div>
-          <div className="space-y-3">
-            {tickerData.commodities.slice(0, 4).map((ticker) => (
-              <TickerItem key={ticker.symbol} ticker={ticker} />
-            ))}
-          </div>
-          <button className="btn btn-secondary w-full mt-4">
-            View All Tickers
-          </button>
-        </div>
-      </div>
-
-      {/* Top Services Performance */}
-      <div className="widget">
-        <h3 className="text-lg font-semibold mb-6">Top Performing Services</h3>
+      {/* Quick Actions */}
+      <div className="card">
+        <h2 className="text-xl font-semibold text-gray-900 mb-6">Quick Actions</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {topServices.map((service) => (
-            <div key={service.id} className="bg-gray-50 rounded-lg p-4">
-              <h4 className="font-medium text-gray-900 mb-2">{service.name}</h4>
-              <div className="space-y-2">
-                <div className="flex justify-between text-sm">
-                  <span className="text-gray-600">Usage</span>
-                  <span className="font-medium">{service.usage}%</span>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-2">
-                  <div 
-                    className="bg-gradient-to-r from-brand-green to-brand-blue h-2 rounded-full"
-                    style={{ width: `${service.usage}%` }}
-                  ></div>
-                </div>
-                <div className="flex justify-between text-sm">
-                  <span className="text-gray-600">Clients</span>
-                  <span className="font-medium">{service.clients}</span>
-                </div>
-                <div className="flex justify-between text-sm">
-                  <span className="text-gray-600">Revenue</span>
-                  <span className="font-medium text-brand-blue">{service.revenue}</span>
-                </div>
-              </div>
-            </div>
+          {quickActions.map((action, index) => (
+            <NavLink 
+              key={index} 
+              to={action.to}
+              className="p-4 rounded-lg border border-gray-200 hover:border-ocean-300 hover:bg-ocean-50 transition-all duration-200 group"
+            >
+              <div className="text-2xl mb-2">{action.icon}</div>
+              <h3 className="font-medium text-gray-900 group-hover:text-ocean-700">{action.label}</h3>
+              <p className="text-sm text-gray-600 mt-1">{action.description}</p>
+            </NavLink>
           ))}
         </div>
       </div>
 
-      {/* Quick Actions */}
-      <div className="widget">
-        <h3 className="text-lg font-semibold mb-4">Quick Actions</h3>
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-          <button className="btn btn-primary flex flex-col items-center p-4">
-            <span className="text-lg mb-2">📊</span>
-            <span className="text-sm">New Audit</span>
-          </button>
-          <button className="btn btn-secondary flex flex-col items-center p-4">
-            <span className="text-lg mb-2">👥</span>
-            <span className="text-sm">Add Client</span>
-          </button>
-          <button className="btn btn-secondary flex flex-col items-center p-4">
-            <span className="text-lg mb-2">📄</span>
-            <span className="text-sm">Upload Docs</span>
-          </button>
-          <button className="btn btn-secondary flex flex-col items-center p-4">
-            <span className="text-lg mb-2">🔗</span>
-            <span className="text-sm">New Partner</span>
-          </button>
-          <button className="btn btn-secondary flex flex-col items-center p-4">
-            <span className="text-lg mb-2">📈</span>
-            <span className="text-sm">View Reports</span>
-          </button>
-          <button className="btn btn-secondary flex flex-col items-center p-4">
-            <span className="text-lg mb-2">⚙️</span>
-            <span className="text-sm">Settings</span>
-          </button>
+      {/* Recent Activity */}
+      <div className="card">
+        <div className="flex justify-between items-center mb-6">
+          <h2 className="text-xl font-semibold text-gray-900">Recent Activity</h2>
+          <NavLink to="/admin" className="text-sm text-ocean-600 hover:text-ocean-700 font-medium">
+            View All
+          </NavLink>
+        </div>
+        <div className="space-y-4">
+          {recentActivity.map((activity, index) => (
+            <div key={index} className="flex items-center justify-between py-3 border-b border-gray-100 last:border-b-0">
+              <div className="flex items-center gap-4">
+                <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm ${
+                  activity.type === 'audit' ? 'bg-blue-100 text-blue-600' :
+                  activity.type === 'recovery' ? 'bg-green-100 text-green-600' :
+                  'bg-gray-100 text-gray-600'
+                }`}>
+                  {activity.type === 'audit' ? '🔍' : activity.type === 'recovery' ? '💰' : '📁'}
+                </div>
+                <div>
+                  <p className="font-medium text-gray-900">{activity.client}</p>
+                  <p className="text-sm text-gray-600">{activity.action}</p>
+                </div>
+              </div>
+              <div className="text-right">
+                {activity.amount && <p className="font-medium text-gray-900">{activity.amount}</p>}
+                <p className="text-sm text-gray-500">{activity.time}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>

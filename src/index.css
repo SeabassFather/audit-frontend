@@ -1,61 +1,43 @@
-﻿@tailwind base;
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root { 
-  --card-bg: #ffffff; 
-  --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+/* Custom global styles for AuditDNA */
+body {
+  @apply bg-slate-50 text-slate-800;
 }
 
-body { 
-  font-family: ui-sans-serif, system-ui; 
-  line-height: 1.6;
+.nav-link-active {
+  @apply px-4 py-2 rounded font-semibold bg-blue-700 text-white shadow transition;
+}
+.nav-link-inactive {
+  @apply px-4 py-2 rounded text-slate-100 hover:bg-blue-800/60 hover:text-white transition;
 }
 
-.container { max-width: 1200px; margin: 0 auto; }
-
-.card { 
-  background: var(--card-bg); 
-  border-radius: 1rem; 
-  box-shadow: var(--shadow-soft); 
-  padding: 1.5rem;
-  border: 1px solid rgba(229, 231, 235, 0.8);
-}
-
-.card-hover {
-  transition: all 0.2s ease-in-out;
-}
-
-.card-hover:hover {
-  box-shadow: var(--shadow-medium);
-  transform: translateY(-2px);
+/* Card and Button styles */
+.card {
+  @apply bg-white rounded-xl shadow p-6 border border-slate-100;
 }
 
 .btn {
-  @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  @apply px-4 py-2 rounded-lg font-medium bg-blue-600 text-white hover:bg-blue-700 transition;
 }
 
-.btn-primary {
-  @apply bg-gradient-to-r from-brand-blue to-brand-green text-white hover:shadow-lg focus:ring-brand-blue;
+.divider {
+  @apply border-t border-slate-200 my-2;
 }
 
-.btn-secondary {
-  @apply bg-gray-100 text-gray-700 hover:bg-gray-200 focus:ring-gray-300;
-}
-
-.btn-success {
-  @apply bg-gradient-to-r from-brand-green to-lime-500 text-white hover:shadow-lg focus:ring-brand-green;
-}
-
-.input-field {
-  @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent;
-}
-
-.widget {
-  @apply bg-white rounded-xl p-6 shadow-soft border border-gray-200;
-}
-
+/* Utility classes for metrics, charts, tickers */
 .metric-card {
-  @apply bg-gradient-to-br from-white to-gray-50 rounded-xl p-6 shadow-soft border border-gray-200;
+  @apply bg-gradient-to-br from-blue-50 to-green-50 rounded-lg shadow p-4 flex flex-col items-start;
+}
+.ticker {
+  @apply px-2 py-1 rounded bg-yellow-100 text-yellow-900 font-mono text-xs;
+}
+
+/* Responsive overrides if needed */
+@media (max-width: 640px) {
+  .card {
+    @apply p-2;
+  }
 }

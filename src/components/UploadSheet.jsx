@@ -7,7 +7,7 @@ export default function UploadSheet({ open, onClose, service }) {
  const [qrUrl, setQrUrl] = useState("");
  if (!open) return null;
 
- const link = ${location.origin}/service/${service?.id ?? ""};
+ const link = `${location.origin}/service/${service?.id ?? ""}`;
 
  useEffect(() => {
  let alive = true;
