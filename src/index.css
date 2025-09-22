@@ -6,5 +6,19 @@
 
 body { font-family: ui-sans-serif, system-ui; }
 
-.container { max-width: 1200px; margin: 0 auto; }
-.card { background: var(--card-bg); border-radius: 1rem; box-shadow: theme("boxShadow.card"); }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+.card { background: var(--card-bg); border-radius: 1rem; box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24); padding: 1.5rem; }
+
+/* Navigation styles for compatibility with different versions */
+.nav { @apply bg-white/90 backdrop-blur border-b border-gray-200; }
+.nav-link { @apply px-3 py-2 rounded-lg text-sm font-medium transition-colors; }
+.nav-link-active { @apply bg-ocean-600 text-white; }
+.nav-link-inactive { @apply text-gray-700 hover:text-ocean-600 hover:bg-gray-100; }
+
+/* Button styles */
+.btn { @apply px-4 py-2 rounded-lg font-medium transition-colors; }
+.btn-primary { @apply bg-ocean-600 text-white hover:bg-ocean-700; }
+.btn-sm { @apply px-3 py-1 text-sm; }
+
+/* Pill styles for mode indicators */
+.pill { @apply px-3 py-1 bg-gray-100 rounded-full text-sm font-medium; }
