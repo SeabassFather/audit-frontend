@@ -24,8 +24,26 @@ module.exports = {
           300: "#c9d1d9",
           400: "#bdbdbd"
         },
+        // Professional AuditDNA Theme Colors
         dnaBlue: "#1e88e5",
         dnaGreen: "#8bc34a",
+        dnaLime: "#c6f01a",
+        dnaYellow: "#ffd54f",
+        dnaLight: "#f8fafc",
+        // Extended blue palette for compliance
+        compliance: {
+          25: "#f8fafc",
+          50: "#eff8ff",
+          100: "#dbeafe", 
+          200: "#bfdbfe",
+          300: "#93c5fd",
+          400: "#60a5fa",
+          500: "#3b82f6",
+          600: "#2563eb",
+          700: "#1d4ed8",
+          800: "#1e40af",
+          900: "#1e3a8a",
+        }
       },
       boxShadow: {
         soft: "0 2px 8px 0 rgba(30,136,229,0.08)",

@@ -23,6 +23,63 @@ body {
   @apply px-4 py-2 rounded-lg font-medium bg-blue-600 text-white hover:bg-blue-700 transition;
 }
 
+.btn-primary {
+  @apply bg-dnaBlue hover:bg-blue-700 text-white;
+}
+
+.btn-secondary {
+  @apply bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300;
+}
+
+.btn-success {
+  @apply bg-dnaGreen hover:bg-green-600 text-white;
+}
+
+.btn-warning {
+  @apply bg-dnaYellow hover:bg-yellow-500 text-slate-800;
+}
+
+/* Professional Compliance Theme Components */
+.compliance-card {
+  @apply bg-white rounded-xl shadow-soft border border-compliance-200 p-6 hover:shadow-lg transition-shadow;
+}
+
+.compliance-header {
+  @apply bg-gradient-to-r from-compliance-600 to-compliance-700 text-white px-6 py-4 rounded-t-xl font-semibold;
+}
+
+.compliance-tab {
+  @apply px-4 py-2 rounded-lg font-medium text-slate-600 hover:text-compliance-700 hover:bg-compliance-50 transition-all;
+}
+
+.compliance-tab-active {
+  @apply bg-compliance-600 text-white shadow-sm;
+}
+
+.status-badge {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+}
+
+.status-ready {
+  @apply bg-green-100 text-green-800;
+}
+
+.status-progress {
+  @apply bg-dnaYellow/20 text-yellow-800;
+}
+
+.status-planned {
+  @apply bg-slate-100 text-slate-600;
+}
+
+.upload-zone {
+  @apply border-2 border-dashed border-compliance-300 rounded-xl p-8 text-center hover:border-compliance-400 transition-colors bg-compliance-25;
+}
+
+.upload-zone-active {
+  @apply border-compliance-500 bg-compliance-50;
+}
+
 .divider {
   @apply border-t border-slate-200 my-2;
 }
