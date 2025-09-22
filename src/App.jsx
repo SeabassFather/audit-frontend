@@ -18,26 +18,28 @@ import PartnersList from "./pages/PartnersList";
 
 export default function App() {
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-green-200 via-yellow-100 to-cyan-100">
+    <div className="min-h-screen flex flex-col bg-gray-50">
       <NavBar />
-      <div className="flex flex-1">
+      <div className="flex flex-1 overflow-hidden">
         <Sidebar />
-        <main className="flex-1 p-8">
-          <Routes>
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/uploads" element={<Uploads />} />
-            <Route path="/agreements" element={<Agreements />} />
-            <Route path="/marketing" element={<Marketing />} />
-            <Route path="/pitchdeck" element={<PitchDeck />} />
-            <Route path="/tickers" element={<TickerFeedPage />} />
-            <Route path="/audit-engines" element={<AuditEnginesPage />} />
-            <Route path="/mexico-loans" element={<MexicoRealEstateLoanPage />} />
-            <Route path="/admin" element={<Admin />} />
-            <Route path="/clients" element={<ClientsList />} />
-            <Route path="/partners" element={<PartnersList />} />
-            <Route path="*" element={<Dashboard />} />
-          </Routes>
+        <main className="flex-1 overflow-y-auto bg-white">
+          <div className="p-6 lg:p-8 max-w-7xl mx-auto">
+            <Routes>
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/uploads" element={<Uploads />} />
+              <Route path="/agreements" element={<Agreements />} />
+              <Route path="/marketing" element={<Marketing />} />
+              <Route path="/pitchdeck" element={<PitchDeck />} />
+              <Route path="/tickers" element={<TickerFeedPage />} />
+              <Route path="/audit-engines" element={<AuditEnginesPage />} />
+              <Route path="/mexico-loans" element={<MexicoRealEstateLoanPage />} />
+              <Route path="/admin" element={<Admin />} />
+              <Route path="/clients" element={<ClientsList />} />
+              <Route path="/partners" element={<PartnersList />} />
+              <Route path="*" element={<Dashboard />} />
+            </Routes>
+          </div>
         </main>
       </div>
       <Footer />
