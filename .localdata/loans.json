@@ -1,0 +1,32 @@
+[
+  {
+    "id": "L-1001",
+    "borrower": "Acme LLC",
+    "product": "Agency-Fixed",
+    "lender": "Wells",
+    "state": "CA",
+    "purpose": "Purchase",
+    "ltv": 72,
+    "fico": 742,
+    "dti": 34,
+    "stage": "UW",
+    "status": "Active",
+    "close": "2025-10-01",
+    "amt": 650000
+  },
+  {
+    "id": "L-1002",
+    "borrower": "Beta LLC",
+    "product": "DSCR",
+    "lender": "Chase",
+    "state": "TX",
+    "purpose": "Refi",
+    "ltv": 70,
+    "fico": 700,
+    "dti": 40,
+    "stage": "UW",
+    "status": "Active",
+    "close": "2025-10-10",
+    "amt": 450000
+  }
+]

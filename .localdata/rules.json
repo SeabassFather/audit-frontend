@@ -1,0 +1,83 @@
+[
+  {
+    "id": "R-1",
+    "name": "Agency Prime",
+    "lender": "Wells",
+    "min_fico": 680,
+    "max_ltv": 80,
+    "max_dti": 45,
+    "min_amt": 100000,
+    "max_amt": 2000000,
+    "states": [
+      "CA",
+      "TX",
+      "FL"
+    ],
+    "products": [
+      "Agency-Fixed",
+      "Agency-ARM"
+    ],
+    "purposes": [
+      "Purchase",
+      "Refi"
+    ],
+    "occupancy": [
+      "OO",
+      "NOO"
+    ]
+  },
+  {
+    "id": "R-2",
+    "name": "DSCR Core",
+    "lender": "Chase",
+    "min_fico": 700,
+    "max_ltv": 75,
+    "max_dti": 50,
+    "min_amt": 150000,
+    "max_amt": 1500000,
+    "states": [
+      "CA",
+      "TX",
+      "FL",
+      "AZ"
+    ],
+    "products": [
+      "DSCR"
+    ],
+    "purposes": [
+      "Purchase",
+      "Refi"
+    ],
+    "occupancy": [
+      "NOO"
+    ]
+  },
+  {
+    "id": "R-3",
+    "name": "Bank Statement",
+    "lender": "Citi",
+    "min_fico": 680,
+    "max_ltv": 85,
+    "max_dti": 50,
+    "min_amt": 250000,
+    "max_amt": 3000000,
+    "states": [
+      "CA",
+      "NY",
+      "NJ",
+      "FL"
+    ],
+    "products": [
+      "Non-QM",
+      "Bank-Statement"
+    ],
+    "purposes": [
+      "Purchase",
+      "Refi"
+    ],
+    "occupancy": [
+      "OO",
+      "NOO"
+    ]
+  }
+]
