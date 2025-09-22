@@ -8,8 +8,8 @@ export default function ContactCard({
   onSubmit,                 // function(payload)
 }) {
   const [form, setForm] = useState({
-    fullName: "", email: "", phone: "",
-    company: "", notes: "", ...initial
+    fullName: "John Smith", email: "john.smith@agritech.com", phone: "+1 (555) 123-4567",
+    company: "AgriTech Solutions LLC", notes: "Interested in factoring for produce invoices", ...initial
   });
 
   function setField(k, v){ setForm((f)=>({ ...f, [k]: v })); }

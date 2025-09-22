@@ -2,11 +2,11 @@
 import ContactCard from "../../components/ContactCard";
 import { saveLead } from "../../lib/leads";
 
-const SECTORS = ["Trucking","Logistics","Manufacturing","Services","Staffing","General"];
+const SECTORS = ["Agriculture/Produce","Trucking","Logistics","Manufacturing","Services","Staffing","General"];
 
 export default function SearchFactoring(){
   const [f,setF] = useState({
-    sector:"Trucking", monthlyVolume:25000, advanceMin:85,
+    sector:"Agriculture/Produce", monthlyVolume:25000, advanceMin:85,
     avgInvoice:1500, customers:15, topCustomerPct:35, recourse:"Recourse",
     country:"US/MX", region:"North America", yearsInBiz:2, arAgingGood:true
   });
@@ -70,6 +70,18 @@ export default function SearchFactoring(){
               <option value="true">Yes</option><option value="false">No</option>
             </select>
           </div>
+          <div>
+            <label className="text-xs text-slate-600">Country/Region</label>
+            <select className="w-full rounded-lg border border-slate-300 px-3 py-2" value={f.country} onChange={e=>change("country", e.target.value)}>
+              <option>US/MX</option><option>US Only</option><option>Mexico Only</option><option>International</option>
+            </select>
+          </div>
+          <div>
+            <label className="text-xs text-slate-600">Operating Region</label>
+            <select className="w-full rounded-lg border border-slate-300 px-3 py-2" value={f.region} onChange={e=>change("region", e.target.value)}>
+              <option>North America</option><option>US West Coast</option><option>US East Coast</option><option>Mexico</option><option>Central America</option>
+            </select>
+          </div>
         </div>
 
         <div className="rounded-xl border border-slate-200 bg-white p-3 grid sm:grid-cols-3 gap-3">
@@ -83,7 +95,7 @@ export default function SearchFactoring(){
           </div>
           <div>
             <div className="text-xs text-slate-500">Typical Advance</div>
-            <div className="text-sm">8592%</div>
+            <div className="text-sm">85-92%</div>
           </div>
         </div>
       </div>
