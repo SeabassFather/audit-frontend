@@ -1,33 +1,68 @@
 ﻿import React from "react";
-import { NavLink } from "react-router-dom";
-const links = [
-  { to: "/dashboard", label: "Dashboard" },
-  { to: "/services", label: "Services" },
-  { to: "/uploads", label: "Uploads" },
-  { to: "/agreements", label: "Agreements" },
-  { to: "/marketing", label: "Marketing" },
-  { to: "/pitchdeck", label: "Pitch Deck" },
-  { to: "/tickers", label: "Tickers" },
-  { to: "/audit-engines", label: "AI Engines" },
-  { to: "/mexico-loans", label: "Mexico Real Estate/Loans" },
-  { to: "/admin", label: "Admin" },
+import { NavLink, useLocation } from "react-router-dom";
+
+const toolGroups = [
+  {
+    title: "Core Services",
+    links: [
+      { to: "/services", label: "Services & Pricing", icon: "⚡" },
+      { to: "/audit-engines", label: "AI Audit Engines", icon: "🤖" },
+    ]
+  },
+  {
+    title: "Specialized Tools", 
+    links: [
+      { to: "/mexico-loans", label: "Mexico RE/Loans", icon: "🏠" },
+      { to: "/usda-search", label: "USDA Search", icon: "🌾" },
+      { to: "/factoring", label: "Factoring Search", icon: "💰" },
+    ]
+  },
+  {
+    title: "Data & Admin",
+    links: [
+      { to: "/uploads", label: "File Uploads", icon: "📁" },
+      { to: "/tickers", label: "Market Data", icon: "📊" },
+      { to: "/admin", label: "Admin Panel", icon: "⚙️" },
+    ]
+  },
+  {
+    title: "Business Tools",
+    links: [
+      { to: "/agreements", label: "Agreements", icon: "📋" },
+      { to: "/marketing", label: "Marketing", icon: "📢" },
+      { to: "/pitchdeck", label: "Pitch Deck", icon: "🎯" },
+    ]
+  }
 ];
+
 export default function Sidebar() {
+  const location = useLocation();
+  
   return (
-    <aside className="w-52 min-h-screen bg-gradient-to-b from-green-200 via-yellow-100 to-cyan-100 py-4 px-2">
-      <nav className="flex flex-col gap-2">
-        {links.map(({ to, label }) => (
-          <NavLink
-            key={to}
-            to={to}
-            className={({ isActive }) =>
-              `block py-2 px-3 rounded-lg font-semibold hover:bg-green-100 ${isActive ? "bg-green-300 text-green-900" : "text-gray-700"}`
-            }
-          >
-            {label}
-          </NavLink>
+    <aside className="w-64 min-h-screen bg-gradient-to-b from-gray-50 to-white border-r border-gray-200/60 py-6 px-4">
+      <div className="space-y-6">
+        {toolGroups.map((group, groupIndex) => (
+          <div key={groupIndex} className="space-y-2">
+            <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider px-3">
+              {group.title}
+            </h3>
+            <nav className="space-y-1">
+              {group.links.map(({ to, label, icon }) => (
+                <NavLink
+                  key={to}
+                  to={to}
+                  className={({ isActive }) =>
+                    `nav-link w-full justify-start ${isActive ? "nav-link-active" : "nav-link-inactive"}`
+                  }
+                >
+                  <span className="text-base">{icon}</span>
+                  <span>{label}</span>
+                </NavLink>
+              ))}
+            </nav>
+          </div>
         ))}
-      </nav>
+      </div>
     </aside>
   );
 }
