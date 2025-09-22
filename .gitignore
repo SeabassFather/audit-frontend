@@ -7,6 +7,13 @@ dist
 # Local Netlify folder
 .netlify
 
-!dist/
+# Build outputs for all subprojects
+auditdna-frontend/dist
+auditdna-platform/build
+audit-frontend/dist
 
+# Keep necessary Netlify functions
 !netlify/functions/
+
+# CI/CD artifacts
+deploy/

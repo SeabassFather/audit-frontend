@@ -1,0 +1,128 @@
+name: CI/CD - Build and Deploy Frontend
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        project:
+          - name: "main"
+            path: "."
+            build_command: "npm run build"
+            artifact_name: "main-build"
+            build_dir: "dist"
+          - name: "auditdna-frontend" 
+            path: "auditdna-frontend"
+            build_command: "npm run build"
+            artifact_name: "auditdna-frontend-build"
+            build_dir: "dist"
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+
+    - name: Install dependencies for ${{ matrix.project.name }}
+      run: |
+        cd ${{ matrix.project.path }}
+        # Clean install to ensure consistent builds
+        rm -rf node_modules package-lock.json || true
+        npm install
+
+    - name: Run build for ${{ matrix.project.name }}
+      run: |
+        cd ${{ matrix.project.path }}
+        ${{ matrix.project.build_command }}
+
+    - name: Upload build artifacts for ${{ matrix.project.name }}
+      uses: actions/upload-artifact@v4
+      with:
+        name: ${{ matrix.project.artifact_name }}
+        path: ${{ matrix.project.path }}/${{ matrix.project.build_dir }}
+        retention-days: 30
+
+  deploy-main:
+    needs: build-and-deploy
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Download main build artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: main-build
+        path: ./deploy
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v4
+      if: github.ref == 'refs/heads/main'
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./deploy
+        
+    # Alternative deployment options (uncomment as needed):
+    
+    # Deploy to Netlify (if NETLIFY_SITE_ID and NETLIFY_AUTH_TOKEN are configured)
+    # - name: Deploy to Netlify
+    #   uses: nwtgck/actions-netlify@v3.0
+    #   if: github.ref == 'refs/heads/main'
+    #   with:
+    #     publish-dir: './deploy'
+    #     production-branch: main
+    #     github-token: ${{ secrets.GITHUB_TOKEN }}
+    #     deploy-message: "Deploy from GitHub Actions"
+    #   env:
+    #     NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+    #     NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+    # Deploy to Vercel (if VERCEL_TOKEN and VERCEL_ORG_ID/VERCEL_PROJECT_ID are configured)
+    # - name: Deploy to Vercel
+    #   uses: amondnet/vercel-action@v25
+    #   if: github.ref == 'refs/heads/main'
+    #   with:
+    #     vercel-token: ${{ secrets.VERCEL_TOKEN }}
+    #     vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+    #     vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+    #     working-directory: ./deploy
+
+  status-check:
+    needs: [build-and-deploy, deploy-main]
+    runs-on: ubuntu-latest
+    if: always()
+    
+    steps:
+    - name: Report build status
+      run: |
+        echo "Build and deployment workflow completed"
+        echo "Build status: ${{ needs.build-and-deploy.result }}"
+        echo "Deploy status: ${{ needs.deploy-main.result }}"
+        
+        if [ "${{ needs.build-and-deploy.result }}" != "success" ]; then
+          echo "❌ Build failed for one or more projects"
+          exit 1
+        fi
+        
+        if [ "${{ github.ref }}" == "refs/heads/main" ] && [ "${{ needs.deploy-main.result }}" != "success" ]; then
+          echo "❌ Deployment failed"
+          exit 1
+        fi
+        
+        echo "✅ All builds successful"
+        if [ "${{ github.ref }}" == "refs/heads/main" ]; then
+          echo "✅ Deployment successful"
+        fi
