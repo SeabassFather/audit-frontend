@@ -132,6 +132,29 @@ npx netlify deploy --prod --dir=dist
 - **Accessible**: WCAG-compliant design patterns
 - **SEO Ready**: Proper meta tags and semantic HTML
 
+## 📋 Legal & Audit Traceability
+
+AuditDNA maintains comprehensive legal and compliance documentation for full audit traceability:
+
+### Legal Documentation
+- **[Legal Audit Report](./docs/legal/AuditDNA_Legal_Audit_Report_2025-08-01_Version15.md)** - Comprehensive legal audit (Version 15)
+- **[Financial Authorization](./docs/legal/Financial_Audit_Authorization.txt)** - Financial audit authorization
+- **[Partner Access Disclosure](./docs/legal/Partner_Access_Disclosure.txt)** - Partner access management
+- **[Business Platform Overview](./docs/legal/Business_Consumer_Protection_Platform_Overview.txt)** - Full business/consumer protection platform
+- **[Due Diligence Checklist](./docs/legal/Financial_Due_Diligence_Checklist.txt)** - Financial due diligence documentation
+
+### Compliance Framework
+- ✅ **GDPR** - General Data Protection Regulation
+- ✅ **CCPA** - California Consumer Privacy Act
+- ✅ **GLBA** - Gramm-Leach-Bliley Act
+- ✅ **PIPEDA** - Personal Information Protection
+- ✅ **SOX** - Sarbanes-Oxley Act
+- ✅ **CFPB** - Consumer Financial Protection Bureau
+- ✅ **RESPA** - Real Estate Settlement Procedures Act
+- ✅ **TILA** - Truth in Lending Act
+
+📁 **[View Complete Legal Documentation](./docs/legal/README.md)**
+
 ## 🤝 Contributing
 
 1. Fork the repository
