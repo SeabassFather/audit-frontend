@@ -19,6 +19,8 @@ import ClientsList from "./pages/ClientsList";
 import PartnersList from "./pages/PartnersList";
 import SearchPage from "./pages/SearchPage";
 import Documentation from "./pages/Documentation";
+import Eco from "./pages/Eco";
+import ComplianceDashboard from "./pages/compliance/ComplianceDashboard";
 
 // Search Engine Components
 import SearchUSDAPage from "./pages/search/SearchUSDAPage";
@@ -39,6 +41,7 @@ import TradeFinanceSearchPage from "./pages/TradeFinanceSearchPage";
 import AgMarketplaceSearchPage from "./pages/AgMarketplaceSearchPage";
 import UsdaSearch from "./pages/UsdaSearch";
 import UsdaCommoditySearch from "./features/usda/UsdaCommoditySearch";
+import WaterSoil from "./pages/ag/WaterSoil";
 
 // Legacy pages for hard nav
 import MortgageMexico from "./pages/MortgageMexico";
@@ -68,6 +71,9 @@ export default function App() {
             <Route path="/clients" element={<ClientsList />} />
             <Route path="/partners" element={<PartnersList />} />
             <Route path="/docs" element={<Documentation />} />
+            <Route path="/eco" element={<Eco />} />
+            <Route path="/compliance-dashboard" element={<ComplianceDashboard />} />
+            <Route path="/water-soil" element={<WaterSoil />} />
 
             {/* Explicit Search Engine Routes */}
             <Route path="/search/usda" element={<SearchUSDAPage />} />
