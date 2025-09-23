@@ -8,7 +8,7 @@ on:
     branches: [main]
 
 env:
-  NODE_VERSION: '20.x'  # Can be changed to '22.x' if desired
+  NODE_VERSION: '22.12'  # Updated to 22.12+ for Vite compatibility
   # Environment variables for Netlify compatibility
   VITE_API_BASE_URL: ${{ vars.VITE_API_BASE_URL || 'http://localhost:3000' }}
   VITE_NETLIFY_FUNCTIONS_URL: >-
@@ -187,7 +187,7 @@ jobs:
 
   # Alternative job for Node.js 22.x testing (optional)
   build-node22:
-    name: Build with Node.js 22.x (Optional)
+    name: Build with Node.js 22.12+ (Optional)
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request'
 
@@ -195,10 +195,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js 22.x
+      - name: Setup Node.js 22.12+
         uses: actions/setup-node@v4
         with:
-          node-version: '22.x'
+          node-version: '22.12'
           cache: 'npm'
 
       - name: Clear npm cache
@@ -206,12 +206,12 @@ jobs:
 
       - name: Install dependencies
         run: |
-          echo "📦 Installing dependencies with Node.js 22.x..."
+          echo "📦 Installing dependencies with Node.js 22.12+..."
           npm ci --verbose
 
       - name: Build with Node.js 22.x
         run: |
-          echo "🏗️ Testing build compatibility with Node.js 22.x..."
+          echo "🏗️ Testing build compatibility with Node.js 22.12+..."
           echo "Node version: $(node --version)"
           npm run build
-          echo "✅ Build successful with Node.js 22.x"
+          echo "✅ Build successful with Node.js 22.12+"

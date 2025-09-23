@@ -109,6 +109,18 @@ const fileMapData = {
           { name: ".env Configuration", desc: "Environment variables guide", route: "#env-config" },
           { name: "Build Scripts", desc: "Automated build process", route: "#build-scripts" }
         ]
+      },
+      {
+        name: "Legal & Compliance",
+        icon: "⚖️",
+        files: [
+          { name: "Legal Documentation Index", desc: "Complete legal docs overview", route: "/docs/legal/README.md" },
+          { name: "Legal Audit Report", desc: "Comprehensive legal audit (v15)", route: "/docs/legal/AuditDNA_Legal_Audit_Report_2025-08-01_Version15.md" },
+          { name: "Financial Authorization", desc: "Financial audit authorization", route: "/docs/legal/Financial_Audit_Authorization.txt" },
+          { name: "Partner Access Disclosure", desc: "Partner access management", route: "/docs/legal/Partner_Access_Disclosure.txt" },
+          { name: "Business Platform Overview", desc: "Full business/consumer protection", route: "/docs/legal/Business_Consumer_Protection_Platform_Overview.txt" },
+          { name: "Due Diligence Checklist", desc: "Financial due diligence docs", route: "/docs/legal/Financial_Due_Diligence_Checklist.txt" }
+        ]
       }
     ]
   }
