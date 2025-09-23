@@ -21,6 +21,9 @@ export default function Navbar() {
 
   const secondaryNavItems = [
     { to: "/modules", label: "Modules" },
+    { to: "/comprehensive-modules", label: "Comprehensive" },
+    { to: "/engines", label: "Engines" },
+    { to: "/checklist", label: "Checklist" },
     { to: "/tickers", label: "Tickers" },
     { to: "/usda-search", label: "USDA" },
     { to: "/chat", label: "Chat" },

@@ -20,6 +20,11 @@ import PartnersList from "./pages/PartnersList";
 import SearchPage from "./pages/SearchPage";
 import Documentation from "./pages/Documentation";
 
+// Comprehensive Module System Components
+import ComprehensiveModulesPage from "./pages/ComprehensiveModulesPage";
+import ComprehensiveEnginesPage from "./pages/ComprehensiveEnginesPage";
+import DevelopmentChecklistPage from "./pages/DevelopmentChecklistPage";
+
 // Search Engine Components
 import SearchUSDAPage from "./pages/search/SearchUSDAPage";
 import SearchMexicoPage from "./pages/search/SearchMexicoPage";
@@ -68,6 +73,13 @@ export default function App() {
             <Route path="/clients" element={<ClientsList />} />
             <Route path="/partners" element={<PartnersList />} />
             <Route path="/docs" element={<Documentation />} />
+
+            {/* Comprehensive Module System Routes */}
+            <Route path="/comprehensive-modules" element={<ComprehensiveModulesPage />} />
+            <Route path="/comprehensive-engines" element={<ComprehensiveEnginesPage />} />
+            <Route path="/engines" element={<ComprehensiveEnginesPage />} />
+            <Route path="/checklist" element={<DevelopmentChecklistPage />} />
+            <Route path="/development-checklist" element={<DevelopmentChecklistPage />} />
 
             {/* Explicit Search Engine Routes */}
             <Route path="/search/usda" element={<SearchUSDAPage />} />
