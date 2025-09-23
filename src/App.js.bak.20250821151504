@@ -1,0 +1,27 @@
+import React from "react";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import AgMarket from "./features/ag/AgMarket.jsx";
+import LoanMatchForm from "./components/LoanMatchForm.jsx";
+import Category from "./pages/Category.jsx";
+import "./features/ag/styles.css";
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <nav className="topnav">
+        <Link to="/">Home</Link><span></span>
+        <Link to="/ag">Ag Market</Link><span></span>
+        <Link to="/loans">Loans</Link><span></span>
+        <Link to="/category">Category</Link>
+      </nav>
+      <div className="page">
+        <Routes>
+          <Route path="/" element={<div><h2>AuditDNA</h2><p>Welcome.</p></div>} />
+          <Route path="/ag" element={<AgMarket />} />
+          <Route path="/loans" element={<LoanMatchForm />} />
+          <Route path="/category" element={<Category />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
+  );
+}

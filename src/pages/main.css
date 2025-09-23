@@ -1,0 +1,5 @@
+body { font-family: Inter, Arial, sans-serif; background: #f7f8fa; margin: 0; }
+input, select, textarea { font-family: inherit; }
+.btn-main { background: #253858; color: #fff; padding: 1rem 2.2rem; border-radius: 12px; font-weight: 700; font-size: 1.1rem; text-decoration: none; box-shadow: 0 2px 8px rgba(0,0,0,0.06); margin: 0.5rem 0; display: inline-block; transition: background 0.2s; border: none; cursor: pointer; }
+.btn-main:hover { background: #34548c; }
+.input-main { width: 100%; padding: 0.6rem; border-radius: 6px; border: 1px solid #e4e7ec; margin-bottom: 0.7rem; font-size: 1rem; box-sizing: border-box; }

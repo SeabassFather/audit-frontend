@@ -1,35 +1,25 @@
-import React, { useMemo, useState } from "react";
+import React from "react";
 import { useParams, Link } from "react-router-dom";
-import { CATEGORIES } from "../data/serviceData";
-import { slugify } from "../utils/slugify";
+import Page from "../ui/Page";
+import Card from "../ui/Card";
+import serviceTree from "../data/serviceTree";
 
 export default function Category(){
   const { slug } = useParams();
-  const [q, setQ] = useState("");
-  const cat = useMemo(()=> CATEGORIES.find(c => slugify(c.title) === slug), [slug]);
-
-  if(!cat) return <div className="p-4">Category not found.</div>;
-
-  const list = useMemo(()=> {
-    const t = q.toLowerCase();
-    return !t ? cat.services : cat.services.filter(s =>
-      s.name.toLowerCase().includes(t) || (s.desc||"").toLowerCase().includes(t)
-    );
-  }, [cat, q]);
-
+  const cat = serviceTree.find(c => c.key === slug);
+  if (!cat) return <Page title="Not found"><div className="small-muted">Unknown category.</div></Page>;
   return (
-    <div className="p-4">
-      <h2 className="h2">{cat.title}</h2>
-      <input className="filter" placeholder="Filter…" value={q} onChange={e=>setQ(e.target.value)} />
-      <div className="card-grid">
-        {list.map(s => (
-          <Link key={s.id} to={`/service/${s.id}`} className="card link">
-            <div className="card-title">{s.name}</div>
-            <div className="subtext">{s.desc}</div>
-          </Link>
-        ))}
-        {list.length === 0 && <div className="subtext">No services match.</div>}
-      </div>
-    </div>
+    <Page title={cat.title} subtitle={cat.description}>
+      <Card title="Modules & Services">
+        <ul className="ticker-list">
+          {(cat.services||[]).map(s=>(
+            <li key={s.key}>
+              <span>{s.title}</span>
+              <Link to={s.route} className="btn" style={{padding:"6px 10px"}}>Open</Link>
+            </li>
+          ))}
+        </ul>
+      </Card>
+    </Page>
   );
 }

@@ -1,0 +1,45 @@
+/* eslint-disable import/no-anonymous-default-export */
+const API_BASE = (process.env.REACT_APP_API_BASE || "/api").trim();
+
+const endpoints = {
+  tickersRate: () => `${API_BASE}/market/rates/ticker`,
+  tickersStock: () => `${API_BASE}/market/stocks/ticker`,
+  mortgage: {
+    search: () => `${API_BASE}/search/mortgages`,
+    lock:   () => `${API_BASE}/mortgage/lock-rate`,
+    price:  () => `${API_BASE}/mortgage/price-scenario`,
+    lead:   () => `${API_BASE}/mortgage/lead`
+  },
+  trade: {
+    search:    () => `${API_BASE}/search/trade-finance`,
+    factoring: () => `${API_BASE}/trade/factoring`,
+    pofinance: () => `${API_BASE}/trade/po-finance`,
+    lead:      () => `${API_BASE}/trade/lead`
+  },
+  ag: {
+    onboard: () => `${API_BASE}/ag/onboard`,
+    market:  () => `${API_BASE}/ag/market`
+  }
+};
+
+async function apiGet(url) {
+  const res = await fetch(url, { credentials: "include" });
+  if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+  return res.json();
+}
+
+async function apiPost(url, body) {
+  const res = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type":"application/json" },
+    body: JSON.stringify(body),
+    credentials: "include"
+  });
+  const text = await res.text();
+  if (!res.ok) throw new Error(`${res.status} ${res.statusText} :: ${text}`);
+  try { return JSON.parse(text); } catch { return text; }
+}
+
+const api = { API_BASE, endpoints, apiGet, apiPost };
+export { API_BASE, endpoints, apiGet, apiPost };
+export default api;

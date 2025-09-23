@@ -1,0 +1,275 @@
+import React, { useEffect, useMemo, useState } from "react";
+import { getCommodities, getCommodityData, normalizeCommodityRecord } from "./dataProvider";
+
+const palette = (i) => ["#2563eb","#16a34a","#ea580c","#9333ea","#dc2626","#059669","#eab308"][i % 7];
+const range = (a,b)=>Array.from({length:b-a+1},(_,i)=>a+i);
+const mean = (arr)=>{const v=arr.filter(Number.isFinite); return v.length? v.reduce((p,c)=>p+c,0)/v.length : NaN;};
+const pct = (oldV,newV)=> (Number.isFinite(oldV)&&oldV!==0&&Number.isFinite(newV))?((newV-oldV)/oldV)*100:NaN;
+const maxIdx = (arr)=>{let m=-Infinity,idx=0;for(let i=0;i<arr.length;i++){if(Number.isFinite(arr[i])&&arr[i]>m){m=arr[i];idx=i+1;}}return idx;};
+const niceTicks=(min,max,count)=>{const span=max-min||1;const step=Math.pow(10,Math.floor(Math.log10(span/count)));const err=(span/count)/step;const mult=err>=7.5?10:err>=3.5?5:err>=1.5?2:1;const s=mult*step;const mn=Math.floor(min/s)*s;const mx=Math.ceil(max/s)*s;const out=[];for(let v=mn;v<=mx+1e-9;v+=s)out.push(v);return out;};
+
+export default function AgMarket(){
+  const [list, setList] = useState([]);
+  const [commodity, setCommodity] = useState("");
+  const [half, setHalf] = useState("H1"); // H1:126, H2:2752
+  const [record, setRecord] = useState(null);
+  const [showYears, setShowYears] = useState(new Set());
+  const [loading, setLoading] = useState(true);
+  const [err, setErr] = useState("");
+
+  useEffect(()=>{ (async()=>{
+    try{ setLoading(true); const names = await getCommodities(); setList(names); setCommodity(names[0]||""); }
+    catch(e){ setErr(String(e.message||e)); } finally{ setLoading(false); }
+  })(); 
+    param($m)
+    $deps = $m.Groups[1].Value
+    if ($deps -match '\bhr\b') { return $m.Value }  # already has hr
+    # Look for the memo that computes byYear/avg (common place where hr is used)
+    # Conservative: if the block body earlier references "hr", add it.
+    # (simple heuristic: add hr to deps if not present and deps include rec or years)
+    if ($deps -match '\b(record|years|half)\b') { return "}, [$deps, hr]);" }
+    return $m.Value
+  
+
+  useEffect(()=>{ if(!commodity) return; (async()=>{
+    try{ setLoading(true); const rec = normalizeCommodityRecord(await getCommodityData(commodity)); setRecord(rec);
+      const yrs = Object.keys(rec.years).map(Number).filter(Number.isFinite).sort((a,b)=>a-b);
+      setShowYears(new Set(yrs.slice(-2)));
+    } catch(e){ setErr(String(e.message||e)); } finally{ setLoading(false); }
+  })(); 
+    param($m)
+    $deps = $m.Groups[1].Value
+    if ($deps -match '\bhr\b') { return $m.Value }  # already has hr
+    # Look for the memo that computes byYear/avg (common place where hr is used)
+    # Conservative: if the block body earlier references "hr", add it.
+    # (simple heuristic: add hr to deps if not present and deps include rec or years)
+    if ($deps -match '\b(record|years|half)\b') { return "}, [$deps, hr]);" }
+    return $m.Value
+  
+
+  const hr = half==="H1" ? [1,26] : [27,52];
+  const years = useMemo(()=> record ? Object.keys(record.years).map(Number).sort((a,b)=>a-b) : [], [record]);
+
+  const byYear = useMemo(()=>{
+    if (!record) return [];
+    const s = Math.max(1, hr[0]) - 1, e = Math.min(52, hr[1]) - 1;
+    return years.map(y=>{
+      const src = record.years[y]||[];
+      const slice = []; for (let i=s;i<=e;i++) slice.push(Number(src[i] ?? NaN));
+      return { year: y, weeks: slice };
+    });
+  
+    param($m)
+    $deps = $m.Groups[1].Value
+    if ($deps -match '\bhr\b') { return $m.Value }  # already has hr
+    # Look for the memo that computes byYear/avg (common place where hr is used)
+    # Conservative: if the block body earlier references "hr", add it.
+    # (simple heuristic: add hr to deps if not present and deps include rec or years)
+    if ($deps -match '\b(record|years|half)\b') { return "}, [$deps, hr]);" }
+    return $m.Value
+  
+
+  const avg = useMemo(()=>{
+    const len = Math.max(0, ...byYear.map(s=>s.weeks.length));
+    const out = [];
+    for (let i=0;i<len;i++){
+      const nums = byYear.map(s=>s.weeks[i]).filter(Number.isFinite);
+      out.push(nums.length ? Math.round((nums.reduce((p,c)=>p+c,0)/nums.length)*100)/100 : NaN);
+    }
+    return out;
+  
+    param($m)
+    $deps = $m.Groups[1].Value
+    if ($deps -match '\bhr\b') { return $m.Value }  # already has hr
+    # Look for the memo that computes byYear/avg (common place where hr is used)
+    # Conservative: if the block body earlier references "hr", add it.
+    # (simple heuristic: add hr to deps if not present and deps include rec or years)
+    if ($deps -match '\b(record|years|half)\b') { return "}, [$deps, hr]);" }
+    return $m.Value
+  
+
+  const kpi = useMemo(()=>{
+    const ly = years[years.length-1], py = years[years.length-2];
+    const latest = byYear.find(s=>s.year===ly)?.weeks||[];
+    const prev = byYear.find(s=>s.year===py)?.weeks||[];
+    return { ly, py, latestMean: mean(latest), prevMean: mean(prev), yoy: pct(mean(prev), mean(latest)), peak: maxIdx(latest) };
+  
+    param($m)
+    $deps = $m.Groups[1].Value
+    if ($deps -match '\bhr\b') { return $m.Value }  # already has hr
+    # Look for the memo that computes byYear/avg (common place where hr is used)
+    # Conservative: if the block body earlier references "hr", add it.
+    # (simple heuristic: add hr to deps if not present and deps include rec or years)
+    if ($deps -match '\b(record|years|half)\b') { return "}, [$deps, hr]);" }
+    return $m.Value
+  
+
+  return (
+    <>
+      <header style={{display:"flex",gap:12,alignItems:"center",flexWrap:"wrap",marginBottom:8}}>
+        <h2 style={{margin:0}}>Ag Market  {commodity || ""}</h2>
+        <span className="badge">Mode: {process.env.REACT_APP_DATA_MODE || "bundle"}</span>
+      </header>
+
+      {/* Controls */}
+      <div style={{display:"flex",gap:12,flexWrap:"wrap",alignItems:"center",marginBottom:8}}>
+        <Typeahead options={list} value={commodity} onSelect={setCommodity} placeholder="Search commodity" />
+        <label style={{fontSize:12,display:"inline-flex",gap:6,alignItems:"center"}}>
+          Half:
+          <select value={half} onChange={(e)=>setHalf(e.target.value)} style={{padding:"6px 8px",borderRadius:8,border:"1px solid var(--border)",background:"var(--bg)",color:"var(--fg)"}}>
+            <option value="H1">W1W26</option><option value="H2">W27W52</option>
+          </select>
+        </label>
+        <div style={{display:"flex",gap:8,alignItems:"center",flexWrap:"wrap"}}>
+          <span style={{fontSize:12,opacity:.8}}>Show years:</span>
+          {years.map(y=>(
+            <button key={y}
+              onClick={()=>{ const next=new Set(showYears); next.has(y)?next.delete(y):next.add(y); setShowYears(next); }}
+              className="year-chip"
+              style={{fontSize:12,padding:"6px 8px",borderRadius:8,border:"1px solid var(--border)",background:showYears.has(y)?"#111":"transparent",color:showYears.has(y)?"#fff":"var(--fg)"}}
+              type="button"
+            >{y}</button>
+          ))}
+        </div>
+      </div>
+
+      {err && <div className="err">{err}</div>}
+      {loading && <div className="skel"></div>}
+
+      {/* KPIs */}
+      <div className="cardgrid" style={{marginTop:8, marginBottom:8}}>
+        <KPI title={`Mean (${kpi.ly ?? ""})`} value={kpi.latestMean} sub={half==="H1"?"W1W26":"W27W52"} />
+        <KPI title={`Mean (${kpi.py ?? ""})`} value={kpi.prevMean} sub="YoY base" />
+        <KPI title="YoY ÃƒÅ½Ã¢â‚¬Â %" value={kpi.yoy} sub="(curr vs prev)" format="pct" />
+        <KPI title="Peak week (curr)" value={kpi.peak||NaN} sub="Local max index" format="week" />
+      </div>
+
+      {/* Chart */}
+      <Chart
+        title={`${commodity || ""}  ${half==="H1"?"Weeks 126":"Weeks 2752"}`}
+        unit={record?.unit || "$/unit"}
+        weeks={range(hr[0],hr[1])}
+        series={[
+          ...byYear.filter(s=>showYears.has(s.year)).map(s=>({ name:String(s.year), values:s.weeks })),
+          { name:"5-yr Avg", values: avg, thick:true }
+        ]}
+      />
+
+      {/* Data table */}
+      <Table
+        weeks={range(hr[0],hr[1])}
+        series={[
+          ...byYear.filter(s=>showYears.has(s.year)).map(s=>({ name:String(s.year), values:s.weeks })),
+          { name:"5-yr Avg", values: avg }
+        ]}
+      />
+
+      {!list.length && <div className="badge" style={{marginTop:12}}>No commodities found. Add JSON to src/data/commodities or set REACT_APP_DATA_MODE=http</div>}
+    </>
+  );
+}
+
+function Typeahead({ options=[], value, onSelect, placeholder }){
+  const [q,setQ]=useState(value||"");
+  const list=useMemo(()=>{ const t=(q||"").trim().toLowerCase(); if(!t) return options.slice(0,12); return options.filter(o=>o.toLowerCase().includes(t)).slice(0,12); 
+    param($m)
+    $deps = $m.Groups[1].Value
+    if ($deps -match '\bhr\b') { return $m.Value }  # already has hr
+    # Look for the memo that computes byYear/avg (common place where hr is used)
+    # Conservative: if the block body earlier references "hr", add it.
+    # (simple heuristic: add hr to deps if not present and deps include rec or years)
+    if ($deps -match '\b(record|years|half)\b') { return "}, [$deps, hr]);" }
+    return $m.Value
+  
+  useEffect(()=>{ setQ(value||""); 
+    param($m)
+    $deps = $m.Groups[1].Value
+    if ($deps -match '\bhr\b') { return $m.Value }  # already has hr
+    # Look for the memo that computes byYear/avg (common place where hr is used)
+    # Conservative: if the block body earlier references "hr", add it.
+    # (simple heuristic: add hr to deps if not present and deps include rec or years)
+    if ($deps -match '\b(record|years|half)\b') { return "}, [$deps, hr]);" }
+    return $m.Value
+  
+  return (
+    <div style={{position:"relative",minWidth:260}}>
+      <input value={q} placeholder={placeholder||"Commodity"} onChange={(e)=>setQ(e.target.value)}
+        onKeyDown={(e)=>{ if(e.key==="Enter"){ const pick=list[0]||q; setQ(pick); onSelect?.(pick);} }}
+        style={{padding:"8px 10px",border:"1px solid var(--border)",borderRadius:10,width:"100%",background:"var(--bg)",color:"var(--fg)"}}/>
+      {!!q && (
+        <div style={{position:"absolute",top:40,left:0,right:0,background:"var(--bg)",border:"1px solid var(--border)",borderRadius:10,zIndex:10,boxShadow:"0 8px 24px rgba(0,0,0,.08)",maxHeight:240,overflowY:"auto"}}>
+          {list.map(opt=> <div key={opt} onMouseDown={(e)=>{e.preventDefault(); setQ(opt); onSelect?.(opt);}} style={{padding:"8px 10px",cursor:"pointer"}}>{opt}</div> )}
+          {list.length===0 && <div style={{padding:"8px 10px",fontSize:12,color:"var(--muted)"}}>No matches</div>}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function KPI({ title, value, sub, format }) {
+  const txt = Number.isFinite(value) ? (format==="pct" ? value.toFixed(1)+"%" : format==="week" ? "W"+value : "$"+value.toFixed(2)) : "";
+  return <div className="card"><h3>{title}</h3><div className="big">{txt}</div>{sub?<div style={{fontSize:12,color:"var(--muted)"}}>{sub}</div>:null}</div>;
+}
+
+function Chart({ title, unit="$/unit", weeks=[], series=[] }) {
+  const dims={w:1000,h:380,pad:48}; const flat=series.flatMap(s=>s.values).filter(Number.isFinite);
+  const yMin=Math.max(0, Math.min(...flat, Infinity)-0.2), yMax=Math.max(...flat, 1)+0.2;
+  const x=(i)=>dims.pad+(i*(dims.w-2*dims.pad))/Math.max(1,weeks.length-1);
+  const y=(v)=>dims.h-dims.pad-((v-yMin)/(yMax-yMin||1))*(dims.h-2*dims.pad);
+  const xTicks=[]; for(let i=0;i<weeks.length;i++) if(i%5===0||i===weeks.length-1) xTicks.push({i,w:weeks[i]});
+  return (
+    <div className="panel">
+      <div className="hdr"><strong>{title}</strong><span className="badge">{unit}</span></div>
+      <div className="body">
+        <svg viewBox={`0 0 ${dims.w} ${dims.h}`} width="100%" height="auto" role="img">
+          <line x1={dims.pad} y1={dims.h-dims.pad} x2={dims.w-dims.pad} y2={dims.h-dims.pad} stroke="var(--border)" />
+          <line x1={dims.pad} y1={dims.pad} x2={dims.pad} y2={dims.h-dims.pad} stroke="var(--border)" />
+          {niceTicks(yMin,yMax,6).map(t=>(
+            <g key={`y-${t}`}><line x1={dims.pad} y1={y(t)} x2={dims.w-dims.pad} y2={y(t)} stroke="var(--border)" opacity="0.4"/><text x={dims.pad-8} y={y(t)} textAnchor="end" dominantBaseline="middle" fontSize="10">{t.toFixed(1)}</text></g>
+          ))}
+          {xTicks.map(t=> <text key={`x-${t.i}`} x={x(t.i)} y={dims.h-dims.pad+14} textAnchor="middle" fontSize="10">W{t.w}</text> )}
+          {series.map((s,idx)=>{ const pts=s.values.map((v,i)=>[x(i),y(v)]).filter(([,yy])=>Number.isFinite(yy));
+            const d=pts.map(([xx,yy],i)=>i===0?`M ${xx} ${yy}`:`L ${xx} ${yy}`).join(" ");
+            const stroke=s.thick?"var(--fg)":palette(idx); const sw=s.thick?3:1.6; const dash=s.dashed?"5,5":"0";
+            return <path key={s.name} d={d} fill="none" stroke={stroke} strokeWidth={sw} strokeDasharray={dash} opacity={s.thick?1:0.95} />;
+          })}
+          <Legend series={series} x={dims.pad} y={dims.pad-12}/>
+        </svg>
+      </div>
+    </div>
+  );
+}
+function Legend({series,x,y}){ return (
+  <g transform={`translate(${x},${y})`}>
+    {series.map((s,i)=>(
+      <g key={s.name} transform={`translate(${i*130},0)`}>
+        <rect width="10" height="10" y="-10" fill={s.thick?"var(--fg)":palette(i)} />
+        <text x="14" y="-2" fontSize="10">{s.name}</text>
+      </g>
+    ))}
+  </g>
+);}
+
+function Table({ weeks=[], series=[] }) {
+  const headers=["Week",...series.map(s=>s.name)];
+  const fmt=(n)=> Number.isFinite(n)? n.toFixed(2) : "";
+  return (
+    <div className="panel">
+      <div className="hdr"><strong>Weekly values</strong><span className="badge">read-only</span></div>
+      <div className="body" style={{overflowX:"auto"}}>
+        <table className="table">
+          <thead><tr>{headers.map(h=><th key={h}>{h}</th>)}</tr></thead>
+          <tbody>
+            {weeks.map((w,i)=>(
+              <tr key={w}>
+                <td>W{w}</td>
+                {series.map(s => <td key={s.name+"-"+i} style={{textAlign:"right"}}>{fmt(s.values[i])}</td>)}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+

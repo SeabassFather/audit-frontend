@@ -1,0 +1,12 @@
+import jsPDF from "jspdf";
+import "jspdf-autotable";
+export function generateIntakePdf(serviceName, savedId, formData){
+  const doc=new jsPDF();
+  doc.setFontSize(14); doc.text(${serviceName}  Intake Summary,14,16);
+  doc.setFontSize(10); if(savedId) doc.text(Case ID: ,14,23);
+  doc.text(Timestamp: ,14,29);
+  const rows=Object.entries(formData||{}).map(([k,v])=>[k,String(v??"")]);
+  // eslint-disable-next-line no-undef
+  doc.autoTable({ startY:36, head:[["Field","Value"]], body:rows, styles:{cellPadding:2,fontSize:9}, headStyles:{fillColor:[240,240,240]} });
+  return doc;
+}

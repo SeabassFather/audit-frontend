@@ -1,29 +1,30 @@
 import React from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
-import Shell from "./components/Shell";
-import Dashboard from "./pages/Dashboard";
-import Elite from "./pages/Elite";
-import Compliance from "./pages/Compliance";
-import USDA from "./pages/USDA";
-import LenderMatch from "./pages/LenderMatch";
-import ProduceInquiry from "./pages/ProduceInquiry";
-import Zadarma from "./pages/Zadarma";
-import Settings from "./pages/Settings";
-import About from "./pages/About";
-import ErrorBoundary from "./components/ErrorBoundary";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
+import Home from "./pages/Home.jsx";
+import ServicesPage from "./pages/ServicesPage.jsx";
+import ServiceStart from "./pages/ServiceStart.jsx";
+import Cases from "./pages/Cases.jsx";
+import CaseDetail from "./pages/CaseDetail.jsx";
+
 export default function App(){
-  return(<ErrorBoundary><Shell>
-    <Routes>
-      <Route path='/' element={<Dashboard/>}/>
-      <Route path='/elite' element={<Elite/>}/>
-      <Route path='/compliance' element={<Compliance/>}/>
-      <Route path='/usda' element={<USDA/>}/>
-      <Route path='/lender-match' element={<LenderMatch/>}/>
-      <Route path='/forms/produce-inquiry' element={<ProduceInquiry/>}/>
-      <Route path='/zadarma' element={<Zadarma/>}/>
-      <Route path='/settings' element={<Settings/>}/>
-      <Route path='/about' element={<About/>}/>
-      <Route path='*' element={<Navigate to='/' replace/>}/>
-    </Routes>
-  </Shell></ErrorBoundary>);
+  return (
+    <Router>
+      <nav style={{padding:"12px 16px", borderBottom:"1px solid #e5e7eb", display:"flex", gap:12}}>
+        <Link to="/">Home</Link>
+        <Link to="/services">Services</Link>
+        <Link to="/cases">Cases</Link>
+      </nav>
+      <div style={{padding:16}}>
+        <Routes>
+          <Route path="/" element={<Home/>} />
+          <Route path="/services" element={<ServicesPage/>} />
+          <Route path="/service/:id" element={<ServiceStart/>} />
+          <Route path="/cases" element={<Cases/>} />
+          <Route path="/cases/:id" element={<CaseDetail/>} />
+          <Route path="*" element={<div>Not Found</div>} />
+        </Routes>
+      </div>
+    </Router>
+  );
 }

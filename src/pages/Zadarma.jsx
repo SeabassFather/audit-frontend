@@ -1,2 +1,0 @@
-import React from "react";
-export default function Zadarma(){ return(<div className='card'><h2>Zadarma (Stub)</h2><p>Dialer & call notes UI goes here; wire to your PBX/CRM API when ready.</p></div>); }

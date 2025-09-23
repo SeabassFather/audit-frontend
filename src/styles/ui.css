@@ -1,0 +1,138 @@
+:root{
+  --bg:#f6f7fb;
+  --surface:#ffffff;
+  --text:#111827;
+  --muted:#6b7280;
+  --primary:#111827;
+  --border:#e5e7eb;
+  --radius:14px;
+  --shadow:0 10px 30px rgba(17,24,39,.08);
+}
+
+*{ box-sizing:border-box; }
+html,body,#root{ height:100%; }
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans";
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+  letter-spacing:.1px;
+}
+
+/* Page shell */
+.app-container{ max-width:1200px; margin:0 auto; padding:28px 24px 60px; }
+.page-title{ font-size:28px; font-weight:800; letter-spacing:.2px; margin:6px 0 18px; }
+.page-sub{ color:var(--muted); font-size:13px; margin-bottom:16px; }
+
+/* Card */
+.card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:22px;
+}
+
+/* Grid form */
+.form-grid{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+@media (max-width: 920px){ .form-grid{ grid-template-columns:1fr; } }
+
+fieldset{ border:1px solid var(--border); border-radius:12px; padding:16px; }
+legend{ padding:0 6px; color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.12em; }
+
+/* Labels + inputs */
+label{ display:block; font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.08em; margin:0 0 6px 2px; }
+input, select, textarea{
+  width:100%;
+  background:#fff !important;   /* kill the black inputs */
+  color:var(--text) !important;
+  border:1px solid var(--border) !important;
+  border-radius:10px;
+  padding:10px 12px;
+  outline:none;
+  transition:border-color .15s, box-shadow .15s;
+}
+input::placeholder, textarea::placeholder{ color:#9ca3af; }
+input:focus, select:focus, textarea:focus{
+  border-color:#111827;
+  box-shadow:0 0 0 3px rgba(17,24,39,.12);
+}
+
+/* Radios / checkboxes */
+input[type="checkbox"], input[type="radio"]{
+  width:auto; height:auto; margin-right:8px; vertical-align:middle;
+}
+
+/* Buttons */
+button, .btn{
+  appearance:none; border:0; cursor:pointer; user-select:none;
+  background:#111827; color:#fff; border-radius:999px;
+  padding:10px 16px; font-weight:700; letter-spacing:.2px;
+  box-shadow:0 6px 18px rgba(17,24,39,.2);
+  transition:transform .06s ease, box-shadow .15s ease, opacity .15s ease;
+}
+button:hover,.btn:hover{ transform:translateY(-1px); box-shadow:0 10px 22px rgba(17,24,39,.25); }
+button:active,.btn:active{ transform:translateY(0); box-shadow:0 6px 16px rgba(17,24,39,.2); }
+
+/* Utility layout hooks if you wrap columns */
+.row{ display:flex; gap:20px; flex-wrap:wrap; }
+.col{ flex:1 1 340px; min-width:280px; }
+
+/* Tighten any ugly code headers or stray hints on the page */
+code, pre{ background:#0a0a0a; color:#e5e7eb; padding:8px 10px; border-radius:8px; }
+.small-muted{ color:var(--muted); font-size:12px; }
+
+/* Nav (light cleanup, wont fight your markup) */
+nav a, header a{ color:#111827; text-decoration:none; font-weight:600; margin-right:14px; }
+nav a:hover, header a:hover{ text-decoration:underline; }
+
+/* File input */
+input[type="file"]{ padding:8px; }/* --- tiny add-ons for list layout & grid --- */
+.ticker-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+@media (max-width:920px){ .ticker-grid{ grid-template-columns:1fr; } }
+.ticker-list { margin:0; padding:0; list-style:none; }
+.ticker-list li { display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px dashed var(--border); }
+.ticker-list li:last-child { border-bottom:none; }
+.badge { font-size:12px; padding:4px 8px; border-radius:999px; background:#eef2ff; }
+
+/* category grid polish */ .btn{display:inline-block} .card .btn{font-size:12px;padding:6px 12px}
+.btn{display:inline-block;background:#111827;color:#fff;border-radius:8px;padding:6px 12px;text-decoration:none;font-weight:700}
+.input{border:1px solid #e5e7eb;border-radius:10px;padding:8px 10px;width:260px}
+.card{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:14px}
+.app-container{max-width:1100px;margin:0 auto;padding:0 16px}
+.small-muted{font-size:12px;color:#6b7280}
+.ticker-list{list-style:none;margin:0;padding:0}
+.ticker-list li{display:flex;justify-content:space-between;gap:14px;padding:10px 0;border-bottom:1px dashed #e5e7eb}
+.ticker-list li:last-child{border-bottom:none}
+
+.btn{display:inline-block;background:#111827;color:#fff;border-radius:8px;padding:6px 12px;text-decoration:none;font-weight:700}
+.input{border:1px solid #e5e7eb;border-radius:10px;padding:8px 10px;width:260px}
+.card{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:14px}
+.app-container{max-width:1100px;margin:0 auto;padding:0 16px}
+.small-muted{font-size:12px;color:#6b7280}
+.ticker-list{list-style:none;margin:0;padding:0}
+.ticker-list li{display:flex;justify-content:space-between;gap:14px;padding:10px 0;border-bottom:1px dashed #e5e7eb}
+.ticker-list li:last-child{border-bottom:none}
+
+.btn{display:inline-block;background:#111827;color:#fff;border-radius:8px;padding:6px 12px;text-decoration:none;font-weight:700}
+.input{border:1px solid #e5e7eb;border-radius:10px;padding:8px 10px;width:100%}
+.card{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:14px;margin-bottom:16px}
+.app-container{max-width:1100px;margin:0 auto;padding:0 16px}
+.small-muted{font-size:12px;color:#6b7280}
+.ticker-list{list-style:none;margin:0;padding:0}
+.ticker-list li{display:flex;justify-content:space-between;gap:14px;padding:10px 0;border-bottom:1px dashed #e5e7eb}
+.ticker-list li:last-child{border-bottom:none}
+
+.app-container{max-width:1200px;margin:0 auto;padding:0 16px}
+.btn{display:inline-block;background:#111827;color:#fff;border-radius:10px;padding:7px 12px;text-decoration:none;font-weight:800}
+.card{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:16px}
+.small-muted{font-size:12px;color:#6b7280}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.header{background:#fff;border-bottom:1px solid #e5e7eb}
+.header .wrap{display:flex;align-items:center;gap:12px;min-height:54px}
+.header nav{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+
+.grid{display:grid;gap:16px}
+.grid-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.badge{display:inline-block;border:1px solid #e5e7eb;border-radius:9999px;padding:2px 8px;font-size:12px}

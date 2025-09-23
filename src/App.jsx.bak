@@ -1,0 +1,35 @@
+import ProtectedRoute from "./components/ProtectedRoute";
+import LegalsHub from "./pages/Admin/LegalsHub";
+import Legal from "./pages/Legal";
+import DevNav from "./components/DevNav";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar.jsx";
+import Footer from "./components/Footer.jsx";
+import Home from "./pages/Home.jsx";
+import TickersPage from "./pages/TickersPage.jsx";
+import MortgageSearchPage from "./pages/MortgageSearchPage.jsx";
+import TradeFinanceSearchPage from "./pages/TradeFinanceSearchPage.jsx";
+import ConsumerServices from "./pages/ConsumerServices.jsx";
+import ServiceCategoryDetail from "./pages/ServiceCategoryDetail.jsx";
+
+export default function App(){
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-sky-50 to-green-50 text-gray-900">
+      <Navbar />
+      <main className="app-container" style={{paddingTop:20, paddingBottom:40}}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<ConsumerServices />} />
+          <Route path="/services/:slug" element={<ServiceCategoryDetail />} />
+          <Route path="/tickers" element={<TickersPage />} />
+          <Route path="/mortgages" element={<MortgageSearchPage />} />
+          <Route path="/trade" element={<TradeFinanceSearchPage />} />
+          <Route path="/legal" element={<Legal />} />
+  <Route path="/admin/legals-hub" element={<LegalsHub />} />
+</Routes>
+      </main>
+      <Footer />
+    </div>
+  );
+}

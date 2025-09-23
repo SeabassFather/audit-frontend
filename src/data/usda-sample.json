@@ -1,7 +1,0 @@
-[
-  { "commodity":"Apples","region":"WA","price":"28.50","unit":"$/crate","date":"2024-10-02" },
-  { "commodity":"Lettuce","region":"CA","price":"14.20","unit":"$/case","date":"2024-10-04" },
-  { "commodity":"Tomatoes","region":"FL","price":"18.10","unit":"$/case","date":"2024-10-05" },
-  { "commodity":"Corn","region":"IA","price":"4.72","unit":"$/bu","date":"2024-10-06" },
-  { "commodity":"Soybeans","region":"IL","price":"12.88","unit":"$/bu","date":"2024-10-06" }
-]
