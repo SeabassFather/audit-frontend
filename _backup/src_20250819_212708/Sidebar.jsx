@@ -1,6 +1,12 @@
 ﻿import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { FaHome, FaListAlt, FaSearchDollar, FaShieldAlt, FaStar } from "react-icons/fa";
+import {
+  FaHome,
+  FaListAlt,
+  FaSearchDollar,
+  FaShieldAlt,
+  FaStar,
+} from "react-icons/fa";
 
 export default function Sidebar() {
   const [soundEnabled, setSoundEnabled] = useState(true);
@@ -35,27 +41,52 @@ export default function Sidebar() {
       <h2 className="logo"> AuditDNA</h2>
       <ul>
         <li>
-          <NavLink to="/" className={({ isActive }) => isActive ? "active-link" : ""} onMouseEnter={playHover} onClick={playClick}>
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? "active-link" : "")}
+            onMouseEnter={playHover}
+            onClick={playClick}
+          >
             <FaHome className="icon" /> Home
           </NavLink>
         </li>
         <li>
-          <NavLink to="/programs" className={({ isActive }) => isActive ? "active-link" : ""} onMouseEnter={playHover} onClick={playClick}>
+          <NavLink
+            to="/programs"
+            className={({ isActive }) => (isActive ? "active-link" : "")}
+            onMouseEnter={playHover}
+            onClick={playClick}
+          >
             <FaListAlt className="icon" /> Programs
           </NavLink>
         </li>
         <li>
-          <NavLink to="/loanmatch" className={({ isActive }) => isActive ? "active-link" : ""} onMouseEnter={playHover} onClick={playClick}>
+          <NavLink
+            to="/loanmatch"
+            className={({ isActive }) => (isActive ? "active-link" : "")}
+            onMouseEnter={playHover}
+            onClick={playClick}
+          >
             <FaSearchDollar className="icon" /> Loan Match
           </NavLink>
         </li>
         <li>
-          <NavLink to="/compliance" className={({ isActive }) => isActive ? "active-link" : ""} onMouseEnter={playHover} onClick={playClick}>
+          <NavLink
+            to="/compliance"
+            className={({ isActive }) => (isActive ? "active-link" : "")}
+            onMouseEnter={playHover}
+            onClick={playClick}
+          >
             <FaShieldAlt className="icon" /> Compliance
           </NavLink>
         </li>
         <li>
-          <NavLink to="/elite" className={({ isActive }) => isActive ? "active-link" : ""} onMouseEnter={playHover} onClick={playClick}>
+          <NavLink
+            to="/elite"
+            className={({ isActive }) => (isActive ? "active-link" : "")}
+            onMouseEnter={playHover}
+            onClick={playClick}
+          >
             <FaStar className="icon" /> Elite
           </NavLink>
         </li>

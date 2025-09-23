@@ -42,9 +42,11 @@ app.post("/api/mexico-loans", (req, res) => {
     (loan) =>
       amt >= loan.minAmount &&
       amt <= loan.maxAmount &&
-      loan.regions.includes(region)
+      loan.regions.includes(region),
   );
   res.json(matched);
 });
 
-app.listen(PORT, () => console.log(`Mock Mexico Loan API running on port ${PORT}`));
+app.listen(PORT, () =>
+  console.log(`Mock Mexico Loan API running on port ${PORT}`),
+);

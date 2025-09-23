@@ -1,7 +1,10 @@
-:root{
-  --bg:#f7f7f8;
-  --fg:#1f2937;
-  --primary:#b0bec5;
-  --accent:#a3d9a5;
+:root {
+  --bg: #f7f7f8;
+  --fg: #1f2937;
+  --primary: #b0bec5;
+  --accent: #a3d9a5;
 }
-body{background:var(--bg);color:var(--fg);}
+body {
+  background: var(--bg);
+  color: var(--fg);
+}

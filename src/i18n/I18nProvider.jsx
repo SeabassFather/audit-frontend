@@ -32,18 +32,21 @@ const dict = {
     copy: "Copiar",
     download: "Descargar",
     start: "Iniciar",
-  }
+  },
 };
 
-const I18nCtx = createContext({ lang: "en", t: (k)=>k, setLang: ()=>{} });
+const I18nCtx = createContext({ lang: "en", t: (k) => k, setLang: () => {} });
 
-export function I18nProvider({ children }){
+export function I18nProvider({ children }) {
   const [lang, setLang] = useState("en");
-  const value = useMemo(()=>({
-    lang,
-    setLang,
-    t: (k)=> (dict[lang] && dict[lang][k]) || k
-  }), [lang]);
+  const value = useMemo(
+    () => ({
+      lang,
+      setLang,
+      t: (k) => (dict[lang] && dict[lang][k]) || k,
+    }),
+    [lang],
+  );
   return <I18nCtx.Provider value={value}>{children}</I18nCtx.Provider>;
 }
 

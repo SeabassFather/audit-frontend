@@ -2,10 +2,34 @@
 // ✔ You can freely add/edit services below; the UI adjusts automatically.
 
 import {
-  Home, Shield, Building, Activity, BarChart3, Settings, Users, FileText,
-  Globe, DollarSign, TrendingUp, Target, Crown, Bell, Lock, CreditCard,
-  GraduationCap, Zap, Wifi, Heart, Briefcase, Flag, MapPin, Award, Leaf,
-  Scale, CheckCircle, Database
+  Home,
+  Shield,
+  Building,
+  Activity,
+  BarChart3,
+  Settings,
+  Users,
+  FileText,
+  Globe,
+  DollarSign,
+  TrendingUp,
+  Target,
+  Crown,
+  Bell,
+  Lock,
+  CreditCard,
+  GraduationCap,
+  Zap,
+  Wifi,
+  Heart,
+  Briefcase,
+  Flag,
+  MapPin,
+  Award,
+  Leaf,
+  Scale,
+  CheckCircle,
+  Database,
 } from "lucide-react";
 
 const cat = (id, title, icon, items) => ({ id, title, icon, items });
@@ -153,7 +177,9 @@ export const SERVICE_CATEGORIES_BASE = [
 ];
 
 // little water drop icon (lucide has Droplet; alias here to avoid extra imports if needed)
-function DropletIcon() { return Zap; }
+function DropletIcon() {
+  return Zap;
+}
 
 // ——— Filler: auto-extend to at least 275 services ———
 // We’ll duplicate small labeled “(Reserved Slot)” items across categories
@@ -176,5 +202,5 @@ function ensureAtLeast275(categories) {
 }
 
 export const SERVICE_CATEGORIES = ensureAtLeast275(
-  SERVICE_CATEGORIES_BASE.map(c => ({ ...c, items: [...c.items] }))
+  SERVICE_CATEGORIES_BASE.map((c) => ({ ...c, items: [...c.items] })),
 );

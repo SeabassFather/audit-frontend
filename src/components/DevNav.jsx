@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function DevNav(){
-  const Item = (props) => <Link {...props} className="px-3 py-2 rounded border" />;
+export default function DevNav() {
+  const Item = (props) => (
+    <Link {...props} className="px-3 py-2 rounded border" />
+  );
   return (
     <div className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b p-3 mb-4">
       <div className="max-w-6xl mx-auto flex flex-wrap gap-2 text-sm">

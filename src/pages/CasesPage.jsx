@@ -52,68 +52,78 @@ const cases = [
     amount: "$400,000",
     analyst: "L. Kim",
     lastAction: "Declined - Noncompliance",
-  }
+  },
 ];
 
 // Status color mapping for financial style
 const statusColors = {
-  "Open": "#2e7d32",
+  Open: "#2e7d32",
   "In Review": "#f9a825",
-  "Closed": "#1565c0",
-  "Declined": "#c62828",
+  Closed: "#1565c0",
+  Declined: "#c62828",
 };
 
 export default function CasesPage() {
   return (
     <div style={{ padding: "32px", minHeight: "100vh", background: "#f7f8fa" }}>
       {/* Header */}
-      <div style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        marginBottom: "32px"
-      }}>
-        <h1 style={{
-          fontSize: "2.2rem",
-          fontWeight: 700,
-          letterSpacing: "-1px",
-          color: "#181D2F"
-        }}>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          marginBottom: "32px",
+        }}
+      >
+        <h1
+          style={{
+            fontSize: "2.2rem",
+            fontWeight: 700,
+            letterSpacing: "-1px",
+            color: "#181D2F",
+          }}
+        >
           <FaFileAlt style={{ marginRight: "12px", color: "#cb356b" }} />
           Cases
         </h1>
-        <button style={{
-          background: "linear-gradient(90deg,#cb356b,#bd3f32)",
-          color: "#fff",
-          border: "none",
-          borderRadius: "8px",
-          padding: "12px 28px",
-          fontWeight: 600,
-          fontSize: "1.08rem",
-          display: "flex",
-          alignItems: "center",
-          cursor: "pointer",
-          boxShadow: "0 2px 8px rgba(203,53,107,0.08)"
-        }}>
+        <button
+          style={{
+            background: "linear-gradient(90deg,#cb356b,#bd3f32)",
+            color: "#fff",
+            border: "none",
+            borderRadius: "8px",
+            padding: "12px 28px",
+            fontWeight: 600,
+            fontSize: "1.08rem",
+            display: "flex",
+            alignItems: "center",
+            cursor: "pointer",
+            boxShadow: "0 2px 8px rgba(203,53,107,0.08)",
+          }}
+        >
           <FaPlus style={{ marginRight: "8px" }} /> New Case
         </button>
       </div>
 
       {/* Search and Filter */}
-      <div style={{
-        display: "flex",
-        gap: "16px",
-        marginBottom: "24px"
-      }}>
+      <div
+        style={{
+          display: "flex",
+          gap: "16px",
+          marginBottom: "24px",
+        }}
+      >
         <div style={{ flex: 2, position: "relative" }}>
-          <FaSearch style={{
-            position: "absolute",
-            top: "50%",
-            left: "16px",
-            transform: "translateY(-50%)",
-            opacity: 0.3,
-            fontSize: "1.1em"
-          }} />
+          <FaSearch
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "16px",
+              transform: "translateY(-50%)",
+              opacity: 0.3,
+              fontSize: "1.1em",
+            }}
+          />
           <input
             type="text"
             placeholder="Search by Case ID, client, or service…"
@@ -123,18 +133,20 @@ export default function CasesPage() {
               borderRadius: "8px",
               border: "1px solid #e1e5ea",
               fontSize: "1rem",
-              background: "#fff"
+              background: "#fff",
             }}
           />
         </div>
-        <select style={{
-          flex: 1,
-          borderRadius: "8px",
-          border: "1px solid #e1e5ea",
-          padding: "12px 16px",
-          fontSize: "1rem",
-          background: "#fff"
-        }}>
+        <select
+          style={{
+            flex: 1,
+            borderRadius: "8px",
+            border: "1px solid #e1e5ea",
+            padding: "12px 16px",
+            fontSize: "1rem",
+            background: "#fff",
+          }}
+        >
           <option value="all">All status</option>
           <option value="open">Open</option>
           <option value="inreview">In Review</option>
@@ -144,17 +156,21 @@ export default function CasesPage() {
       </div>
 
       {/* Cases Table */}
-      <div style={{
-        background: "#fff",
-        borderRadius: "12px",
-        boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
-        overflow: "hidden"
-      }}>
-        <table style={{
-          width: "100%",
-          borderCollapse: "collapse",
-          minWidth: "900px"
-        }}>
+      <div
+        style={{
+          background: "#fff",
+          borderRadius: "12px",
+          boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
+          overflow: "hidden",
+        }}
+      >
+        <table
+          style={{
+            width: "100%",
+            borderCollapse: "collapse",
+            minWidth: "900px",
+          }}
+        >
           <thead>
             <tr style={{ background: "#f6f6f8" }}>
               <th style={thStyle}>Case ID</th>
@@ -170,23 +186,28 @@ export default function CasesPage() {
           </thead>
           <tbody>
             {cases.map((c, i) => (
-              <tr key={c.id} style={{
-                background: i % 2 === 0 ? "#fff" : "#f7f8fa",
-                transition: "background 0.2s",
-                ":hover": { background: "#f1f1f7" }
-              }}>
+              <tr
+                key={c.id}
+                style={{
+                  background: i % 2 === 0 ? "#fff" : "#f7f8fa",
+                  transition: "background 0.2s",
+                  ":hover": { background: "#f1f1f7" },
+                }}
+              >
                 <td style={tdStyle}>{c.id}</td>
                 <td style={tdStyle}>{c.service}</td>
                 <td style={tdStyle}>{c.client}</td>
                 <td style={tdStyle}>
-                  <span style={{
-                    background: statusColors[c.status] + '22',
-                    color: statusColors[c.status],
-                    borderRadius: "5px",
-                    fontWeight: 600,
-                    padding: "4px 12px",
-                    fontSize: ".98rem"
-                  }}>
+                  <span
+                    style={{
+                      background: statusColors[c.status] + "22",
+                      color: statusColors[c.status],
+                      borderRadius: "5px",
+                      fontWeight: 600,
+                      padding: "4px 12px",
+                      fontSize: ".98rem",
+                    }}
+                  >
                     {c.status}
                   </span>
                 </td>
@@ -195,15 +216,17 @@ export default function CasesPage() {
                 <td style={tdStyle}>{c.created}</td>
                 <td style={tdStyle}>{c.lastAction}</td>
                 <td style={tdStyle}>
-                  <button style={{
-                    background: "#f0f3fa",
-                    border: "none",
-                    borderRadius: "6px",
-                    padding: "7px 18px",
-                    color: "#cb356b",
-                    fontWeight: 600,
-                    cursor: "pointer"
-                  }}>
+                  <button
+                    style={{
+                      background: "#f0f3fa",
+                      border: "none",
+                      borderRadius: "6px",
+                      padding: "7px 18px",
+                      color: "#cb356b",
+                      fontWeight: 600,
+                      cursor: "pointer",
+                    }}
+                  >
                     View
                   </button>
                 </td>
@@ -212,7 +235,9 @@ export default function CasesPage() {
           </tbody>
         </table>
         {cases.length === 0 && (
-          <div style={{ textAlign: "center", color: "#8d98a8", padding: "48px" }}>
+          <div
+            style={{ textAlign: "center", color: "#8d98a8", padding: "48px" }}
+          >
             <div style={{ fontSize: "1.3rem", fontWeight: 600 }}>
               No cases found
             </div>

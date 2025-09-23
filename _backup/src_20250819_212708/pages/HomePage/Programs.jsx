@@ -17,7 +17,9 @@ export default function Programs() {
         </div>
         <div className="card">
           <h3>Factoring 📊</h3>
-          <p>Improve cash flow with invoice factoring and receivables funding.</p>
+          <p>
+            Improve cash flow with invoice factoring and receivables funding.
+          </p>
         </div>
         <div className="card">
           <h3>Mortgage Loans 🏠</h3>

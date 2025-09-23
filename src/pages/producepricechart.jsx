@@ -1,10 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
 import {
-  Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
 } from "chart.js";
 
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+);
 
 export default function ProducePriceChart({ commodity, usdaParams }) {
   const [chartData, setChartData] = useState(null);
@@ -15,22 +30,23 @@ export default function ProducePriceChart({ commodity, usdaParams }) {
 
   useEffect(() => {
     if (!commodity || !usdaParams) return;
-    setLoading(true); setError("");
+    setLoading(true);
+    setError("");
     const year = new Date().getFullYear();
     const url =
       `https://quickstats.nass.usda.gov/api/api_GET/?key=${USDA_API_KEY}` +
       `&commodity_desc=${encodeURIComponent(usdaParams.commodity_desc)}` +
       `&statisticcat_desc=${encodeURIComponent(usdaParams.statisticcat_desc)}` +
       `&unit_desc=${encodeURIComponent(usdaParams.unit_desc)}` +
-      `&year__GE=${year-4}&year__LE=${year}` +
+      `&year__GE=${year - 4}&year__LE=${year}` +
       `&agg_level_desc=NATIONAL&format=JSON`;
 
     fetch(url)
-      .then(resp => resp.json())
-      .then(json => {
+      .then((resp) => resp.json())
+      .then((json) => {
         const raw = json.data || [];
         let byYear = {};
-        raw.forEach(d => {
+        raw.forEach((d) => {
           const yr = d.year;
           const price = parseFloat(d.Value.replace(",", ""));
           if (!isNaN(price)) {
@@ -39,8 +55,8 @@ export default function ProducePriceChart({ commodity, usdaParams }) {
           }
         });
         const years = Object.keys(byYear).sort();
-        const prices = years.map(yr =>
-          byYear[yr].reduce((a, b) => a + b, 0) / byYear[yr].length
+        const prices = years.map(
+          (yr) => byYear[yr].reduce((a, b) => a + b, 0) / byYear[yr].length,
         );
         setChartData({
           labels: years,
@@ -53,17 +69,23 @@ export default function ProducePriceChart({ commodity, usdaParams }) {
               tension: 0.3,
               pointRadius: 4,
               pointHoverRadius: 7,
-              borderWidth: 3
-            }
-          ]
+              borderWidth: 3,
+            },
+          ],
         });
       })
       .catch(() => setError("Failed to load USDA data."))
       .finally(() => setLoading(false));
   }, [commodity, usdaParams]);
 
-  if (loading) return <div style={{textAlign:"center", color:"#cb356b"}}>Loading chart…</div>;
-  if (error) return <div style={{color:"#c62828", textAlign:"center"}}>{error}</div>;
+  if (loading)
+    return (
+      <div style={{ textAlign: "center", color: "#cb356b" }}>
+        Loading chart…
+      </div>
+    );
+  if (error)
+    return <div style={{ color: "#c62828", textAlign: "center" }}>{error}</div>;
   if (!chartData) return null;
 
   return (
@@ -73,12 +95,12 @@ export default function ProducePriceChart({ commodity, usdaParams }) {
         responsive: true,
         plugins: {
           legend: { display: false },
-          title: { display: false }
+          title: { display: false },
         },
         scales: {
           x: { title: { display: true, text: "Year" } },
-          y: { title: { display: true, text: "Price (USD)" } }
-        }
+          y: { title: { display: true, text: "Price (USD)" } },
+        },
       }}
       height={120}
     />

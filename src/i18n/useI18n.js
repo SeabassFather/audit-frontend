@@ -21,31 +21,34 @@ export function useI18n() {
     localStorage.setItem("lang", lang);
   }, [lang]);
 
-  const dict = useMemo(() => ({
-    en: {
-      marketplace: "Ag Marketplace",
-      buyer: "Buyer",
-      seller: "Seller",
-      compare: "Compare",
-      selectBuyerSeller: "Select one buyer and one seller.",
-      contactSeller: "Contact seller",
-      matchScore: "Match Score",
-      prices: "USDA Weekly Price Graphs",
-      commodity: "Commodity",
-    },
-    es: {
-      marketplace: "Mercado Agrícola",
-      buyer: "Comprador",
-      seller: "Vendedor",
-      compare: "Comparar",
-      selectBuyerSeller: "Seleccione un comprador y un vendedor.",
-      contactSeller: "Contactar vendedor",
-      matchScore: "Puntaje de coincidencia",
-      prices: "Gráficas Semanales de Precios (USDA)",
-      commodity: "Producto",
-    }
-  }), []);
+  const dict = useMemo(
+    () => ({
+      en: {
+        marketplace: "Ag Marketplace",
+        buyer: "Buyer",
+        seller: "Seller",
+        compare: "Compare",
+        selectBuyerSeller: "Select one buyer and one seller.",
+        contactSeller: "Contact seller",
+        matchScore: "Match Score",
+        prices: "USDA Weekly Price Graphs",
+        commodity: "Commodity",
+      },
+      es: {
+        marketplace: "Mercado Agrícola",
+        buyer: "Comprador",
+        seller: "Vendedor",
+        compare: "Comparar",
+        selectBuyerSeller: "Seleccione un comprador y un vendedor.",
+        contactSeller: "Contactar vendedor",
+        matchScore: "Puntaje de coincidencia",
+        prices: "Gráficas Semanales de Precios (USDA)",
+        commodity: "Producto",
+      },
+    }),
+    [],
+  );
 
-  const t = useCallback((key) => (dict[lang]?.[key] ?? key), [dict, lang]);
+  const t = useCallback((key) => dict[lang]?.[key] ?? key, [dict, lang]);
   return { t, lang, setLang };
 }

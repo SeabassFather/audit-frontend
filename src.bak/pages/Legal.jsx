@@ -1,5 +1,5 @@
 import React from "react";
-export default function Legal(){
+export default function Legal() {
   return (
     <section>
       <div className="badge">Legal</div>

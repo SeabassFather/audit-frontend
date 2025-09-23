@@ -39,7 +39,7 @@ export default function AgModule() {
       const r = await fetch(
         `https://api.nal.usda.gov/fdc/v1/foods/search?api_key=${
           process.env.REACT_APP_USDA_API_KEY
-        }&query=${encodeURIComponent(query)}`
+        }&query=${encodeURIComponent(query)}`,
       );
       const j = await r.json();
       setResults(j.foods || []);
@@ -88,7 +88,9 @@ export default function AgModule() {
         </div>
       </div>
 
-      <h3 className="h2" style={{ marginTop: "20px" }}>ðŸ“Š Live Tickers</h3>
+      <h3 className="h2" style={{ marginTop: "20px" }}>
+        ðŸ“Š Live Tickers
+      </h3>
       <div className="grid">
         <Ticker label="Corn Prices" endpoint="/api/ticker/corn" />
         <Ticker label="Wheat Prices" endpoint="/api/ticker/wheat" />

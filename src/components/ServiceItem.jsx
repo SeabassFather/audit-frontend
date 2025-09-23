@@ -6,8 +6,10 @@ export default function ServiceItem({ title, description, links }) {
       <div className="text-sm text-gray-600 mb-2">{description}</div>
       {links && (
         <div className="flex flex-wrap gap-2 mb-2">
-          {links.map((l,i) => (
-            <a key={i} href={l.to} className="underline text-blue-700 text-xs">{l.label}</a>
+          {links.map((l, i) => (
+            <a key={i} href={l.to} className="underline text-blue-700 text-xs">
+              {l.label}
+            </a>
           ))}
         </div>
       )}

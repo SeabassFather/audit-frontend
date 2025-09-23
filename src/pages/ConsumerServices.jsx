@@ -22,20 +22,20 @@ const card = {
   padding: "2rem",
   minWidth: "350px",
   maxWidth: "450px",
-  margin: "2rem auto"
+  margin: "2rem auto",
 };
 const title = {
   fontSize: "1.2rem",
   fontWeight: "bold",
   marginBottom: "1rem",
-  color: "#253858"
+  color: "#253858",
 };
 const list = {
   fontSize: "1rem",
   color: "#3a4767",
   lineHeight: "2rem",
   margin: 0,
-  paddingLeft: "1.2rem"
+  paddingLeft: "1.2rem",
 };
 
 export default ConsumerServices;

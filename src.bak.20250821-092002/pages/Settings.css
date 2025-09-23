@@ -24,9 +24,12 @@
 .slider {
   position: absolute;
   cursor: pointer;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: #ccc;
-  transition: .4s;
+  transition: 0.4s;
   border-radius: 34px;
 }
 
@@ -38,13 +41,13 @@
   left: 3px;
   bottom: 3px;
   background-color: white;
-  transition: .4s;
+  transition: 0.4s;
   border-radius: 50%;
 }
 
 input:checked + .slider {
   background-color: #1e90ff;
-  box-shadow: 0 0 8px rgba(30,144,255,0.6);
+  box-shadow: 0 0 8px rgba(30, 144, 255, 0.6);
 }
 
 input:checked + .slider:before {

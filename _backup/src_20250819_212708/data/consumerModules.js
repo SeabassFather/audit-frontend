@@ -16,7 +16,7 @@ const consumerModules = [
   "Child Support / Wage Garnishment Review",
   "Unclaimed Property Search & Recovery",
   "Zelle/Venmo/CashApp Recovery",
-  "401(k) & Retirement Account Fee Audit"
+  "401(k) & Retirement Account Fee Audit",
 ];
 
 export default consumerModules;

@@ -2,7 +2,7 @@ import React from "react";
 export default function TabsBar({ tabs = [], value, onChange }) {
   return (
     <div className="tabs flex gap-2">
-      {tabs.map(t => (
+      {tabs.map((t) => (
         <button
           key={t.id}
           className={"tab" + (t.id === value ? " active" : "")}

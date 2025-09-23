@@ -11,5 +11,10 @@ export async function priceScenario(payload = {}) {
 export async function submitMortgageLead(payload = {}) {
   return apiPost(endpoints.mortgage.lead, payload);
 }
-const MortgageAPI = { searchMortgages, lockRate, priceScenario, submitMortgageLead };
+const MortgageAPI = {
+  searchMortgages,
+  lockRate,
+  priceScenario,
+  submitMortgageLead,
+};
 export default MortgageAPI;

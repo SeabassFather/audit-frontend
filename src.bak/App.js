@@ -13,8 +13,7 @@ export default function App() {
         <header style={{ background: "#eee", padding: "10px" }}>
           <h1>AuditDNA</h1>
           <nav>
-            <Link to="/">Home</Link> |{" "}
-            <Link to="/programs">Programs</Link> |{" "}
+            <Link to="/">Home</Link> | <Link to="/programs">Programs</Link> |{" "}
             <Link to="/loan-match">Loan Match</Link> |{" "}
             <Link to="/compliance">Compliance</Link> |{" "}
             <Link to="/elite">Elite</Link>

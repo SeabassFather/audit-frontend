@@ -7,7 +7,7 @@ const uploadSchema = new mongoose.Schema({
   testDate: Date,
   certification: String,
   fileUrl: String,
-  createdAt: { type: Date, default: Date.now }
+  createdAt: { type: Date, default: Date.now },
 });
 
 export default mongoose.model("Upload", uploadSchema);

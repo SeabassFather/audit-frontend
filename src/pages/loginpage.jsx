@@ -15,16 +15,32 @@ export default function LoginPage() {
       <h2 className="text-2xl font-bold mb-6">Login</h2>
       <form
         className="space-y-4"
-        onSubmit={e => {
+        onSubmit={(e) => {
           e.preventDefault();
           if (login(username, password)) navigate("/");
           else setErr("Invalid credentials.");
         }}
       >
-        <input className="block w-full border rounded p-2" placeholder="Username" value={username} onChange={e => setUsername(e.target.value)} />
-        <input className="block w-full border rounded p-2" type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
+        <input
+          className="block w-full border rounded p-2"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <input
+          className="block w-full border rounded p-2"
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
         {err && <div className="text-red-600">{err}</div>}
-        <button className="w-full bg-blue-700 text-white py-2 rounded" type="submit">Login</button>
+        <button
+          className="w-full bg-blue-700 text-white py-2 rounded"
+          type="submit"
+        >
+          Login
+        </button>
       </form>
     </div>
   );

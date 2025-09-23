@@ -108,7 +108,7 @@ const searchEngines = [
     url: "https://www.ecosia.org",
     status: "Active",
     lastChecked: "2025-09-03",
-  }
+  },
 ];
 
 const thStyle = {
@@ -128,7 +128,13 @@ export default function SearchEnginesPage() {
   return (
     <div style={{ padding: "2rem" }}>
       <h1 style={{ marginBottom: "1rem" }}>Search Engines</h1>
-      <table style={{ width: "100%", borderCollapse: "collapse", background: "#fff" }}>
+      <table
+        style={{
+          width: "100%",
+          borderCollapse: "collapse",
+          background: "#fff",
+        }}
+      >
         <thead>
           <tr style={{ background: "#f6f6f6" }}>
             <th style={thStyle}>ID</th>
@@ -148,13 +154,17 @@ export default function SearchEnginesPage() {
               <td style={tdStyle}>{e.type}</td>
               <td style={tdStyle}>{e.country}</td>
               <td style={tdStyle}>
-                <a href={e.url} target="_blank" rel="noopener noreferrer">{e.url}</a>
+                <a href={e.url} target="_blank" rel="noopener noreferrer">
+                  {e.url}
+                </a>
               </td>
               <td style={tdStyle}>
-                <span style={{
-                  color: e.status === "Active" ? "#19733b" : "#b71c1c",
-                  fontWeight: 600,
-                }}>
+                <span
+                  style={{
+                    color: e.status === "Active" ? "#19733b" : "#b71c1c",
+                    fontWeight: 600,
+                  }}
+                >
                   {e.status}
                 </span>
               </td>

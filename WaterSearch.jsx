@@ -1,7 +1,12 @@
 import { useState } from "react";
 
 export default function WaterSearch() {
-  const [filters, setFilters] = useState({ property: "", region: "", lab: "", certification: "" });
+  const [filters, setFilters] = useState({
+    property: "",
+    region: "",
+    lab: "",
+    certification: "",
+  });
   const [results, setResults] = useState([]);
 
   async function handleSearch() {
@@ -13,11 +18,28 @@ export default function WaterSearch() {
   return (
     <div className="p-4 border rounded">
       <h2 className="font-bold mb-2">Search Uploaded Reports</h2>
-      <input placeholder="Property" onChange={e=>setFilters({...filters,property:e.target.value})}/>
-      <input placeholder="Region" onChange={e=>setFilters({...filters,region:e.target.value})}/>
-      <input placeholder="Lab Name" onChange={e=>setFilters({...filters,lab:e.target.value})}/>
-      <input placeholder="Certification" onChange={e=>setFilters({...filters,certification:e.target.value})}/>
-      <button className="bg-blue-600 text-white px-3 py-2 rounded mt-2" onClick={handleSearch}>
+      <input
+        placeholder="Property"
+        onChange={(e) => setFilters({ ...filters, property: e.target.value })}
+      />
+      <input
+        placeholder="Region"
+        onChange={(e) => setFilters({ ...filters, region: e.target.value })}
+      />
+      <input
+        placeholder="Lab Name"
+        onChange={(e) => setFilters({ ...filters, lab: e.target.value })}
+      />
+      <input
+        placeholder="Certification"
+        onChange={(e) =>
+          setFilters({ ...filters, certification: e.target.value })
+        }
+      />
+      <button
+        className="bg-blue-600 text-white px-3 py-2 rounded mt-2"
+        onClick={handleSearch}
+      >
         Search
       </button>
 
@@ -33,7 +55,7 @@ export default function WaterSearch() {
           </tr>
         </thead>
         <tbody>
-          {results.map((r,i)=>(
+          {results.map((r, i) => (
             <tr key={i}>
               <td className="border p-2">{r.property}</td>
               <td className="border p-2">{r.region}</td>
@@ -41,7 +63,13 @@ export default function WaterSearch() {
               <td className="border p-2">{r.testDate}</td>
               <td className="border p-2">{r.certification}</td>
               <td className="border p-2">
-                <a className="text-blue-500 underline" href={r.fileUrl} target="_blank">Download</a>
+                <a
+                  className="text-blue-500 underline"
+                  href={r.fileUrl}
+                  target="_blank"
+                >
+                  Download
+                </a>
               </td>
             </tr>
           ))}

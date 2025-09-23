@@ -13,11 +13,14 @@ app.get("/api/compliance/usda-lookup", async (req, res) => {
     const { company, country, state, commodity, season } = req.query;
     // Example USDA farmers market directory (public, demo)
     const url = `https://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=${encodeURIComponent(
-      state || "90210"
+      state || "90210",
     )}`;
     const r = await fetch(url);
     const d = await r.json();
-    res.json({ query: { company, country, state, commodity, season }, results: d });
+    res.json({
+      query: { company, country, state, commodity, season },
+      results: d,
+    });
   } catch (e) {
     console.error(e);
     res.status(500).json({ error: "USDA lookup failed" });
@@ -29,7 +32,7 @@ app.get("/api/compliance/fda-recalls", async (req, res) => {
   try {
     const { firm, state, product, dateFrom, dateTo } = req.query;
     const url = `https://api.fda.gov/food/enforcement.json?search=${encodeURIComponent(
-      firm || product || "salmonella"
+      firm || product || "salmonella",
     )}&limit=10`;
     const r = await fetch(url);
     const d = await r.json();

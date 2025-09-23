@@ -3,11 +3,17 @@ import { Link, useLocation } from "react-router-dom";
 
 // SAFE import: if AuthContext isn't wired yet, we won't crash.
 import * as Auth from "../../context/AuthContext";
-const useAuth = Auth && Auth.useAuth ? Auth.useAuth : (() => ({ profile: null, logout: () => {} }));
+const useAuth =
+  Auth && Auth.useAuth
+    ? Auth.useAuth
+    : () => ({ profile: null, logout: () => {} });
 
 // If you still use AppModeContext, keep it; otherwise we’ll fall back safely.
 import * as Mode from "../../context/AppModeContext";
-const useAppMode = Mode && Mode.useAppMode ? Mode.useAppMode : (() => ({ mode: "demo", setMode: () => {} }));
+const useAppMode =
+  Mode && Mode.useAppMode
+    ? Mode.useAppMode
+    : () => ({ mode: "demo", setMode: () => {} });
 
 const NavItem = ({ to, children }) => {
   const { pathname } = useLocation();
@@ -64,11 +70,17 @@ export default function Navbar() {
 
             {profile ? (
               <>
-                <span className="text-xs text-neutral-300">{profile.name || profile.email}</span>
-                <button className="btn" onClick={logout}>Logout</button>
+                <span className="text-xs text-neutral-300">
+                  {profile.name || profile.email}
+                </span>
+                <button className="btn" onClick={logout}>
+                  Logout
+                </button>
               </>
             ) : (
-              <Link to="/login" className="btn">Login</Link>
+              <Link to="/login" className="btn">
+                Login
+              </Link>
             )}
           </div>
         </nav>

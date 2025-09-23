@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+﻿import React, { useEffect, useState } from "react";
 export default function Legal() {
   const [items, setItems] = useState([]);
   useEffect(()=>{
     (async ()=>{
       try{
         const base =
-          (typeof import !== "undefined" && import.meta && import.meta.env && import.meta.env.VITE_API_BASE) ||
+          ((import.meta.env && import.meta.env.VITE_API_BASE) ||
           (typeof process !== "undefined" && process.env && process.env.REACT_APP_API_BASE) ||
           "http://localhost:3002";
         const url = (base.endsWith("/api")?base:base+"/api") + "/legals?visibility=public&published=true";

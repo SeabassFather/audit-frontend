@@ -79,7 +79,8 @@ export default function MexicoLoanMatcher() {
               <li key={loan.id} className="border rounded p-4 bg-gray-50">
                 <div className="font-bold">{loan.lender}</div>
                 <div>
-                  <strong>Amount:</strong> ${loan.minAmount.toLocaleString()} - ${loan.maxAmount.toLocaleString()} {loan.currency}
+                  <strong>Amount:</strong> ${loan.minAmount.toLocaleString()} -
+                  ${loan.maxAmount.toLocaleString()} {loan.currency}
                 </div>
                 <div>
                   <strong>Regions:</strong> {loan.regions.join(", ")}

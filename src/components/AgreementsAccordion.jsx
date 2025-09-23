@@ -7,7 +7,7 @@ const agreements = [
   "Factoring Agreement",
   "UCC Consent",
   "Data Privacy Notices",
-  "Import/Logistics Consent"
+  "Import/Logistics Consent",
 ];
 
 export default function AgreementsAccordion() {
@@ -19,7 +19,9 @@ export default function AgreementsAccordion() {
 
   return (
     <div>
-      <h2 style={{ marginBottom: 24, color: "#253858" }}>Required Agreements</h2>
+      <h2 style={{ marginBottom: 24, color: "#253858" }}>
+        Required Agreements
+      </h2>
       <button
         onClick={() => setOpen(!open)}
         style={{
@@ -32,24 +34,38 @@ export default function AgreementsAccordion() {
           fontWeight: 700,
           fontSize: "1.08rem",
           cursor: "pointer",
-          marginBottom: 5
+          marginBottom: 5,
         }}
       >
         Agreements List
       </button>
       {open && (
-        <div style={{ background: "#fff", borderRadius: 7, padding: "0.9rem 1rem", marginBottom: 7 }}>
+        <div
+          style={{
+            background: "#fff",
+            borderRadius: 7,
+            padding: "0.9rem 1rem",
+            marginBottom: 7,
+          }}
+        >
           <ul>
             {agreements.map((item, i) => (
               <li key={i} style={{ marginBottom: 12 }}>
                 <span style={{ fontWeight: 500, color: "#333" }}>{item}</span>
                 <br />
-                <input type="file" onChange={e => handleUpload(item, e)} style={{ marginTop: 5 }} />
+                <input
+                  type="file"
+                  onChange={(e) => handleUpload(item, e)}
+                  style={{ marginTop: 5 }}
+                />
               </li>
             ))}
           </ul>
           <div style={{ marginTop: 10 }}>
-            PDF Viewer: <a href="#" style={{ color: "#253858" }}>View Sample Agreement</a>
+            PDF Viewer:{" "}
+            <a href="#" style={{ color: "#253858" }}>
+              View Sample Agreement
+            </a>
           </div>
         </div>
       )}

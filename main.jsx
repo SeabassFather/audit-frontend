@@ -7,5 +7,5 @@ import "./assets/custom.css"; // Your styles
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>
+  </React.StrictMode>,
 );

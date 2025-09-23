@@ -8,16 +8,19 @@ const ServiceIcon = () => (
   </span>
 );
 
-export default function ServiceDetail(){
+export default function ServiceDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const svc = useMemo(()=> ALL_SERVICES.find(s => s.id === id), [id]);
-  if(!svc) return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-gray-800 to-gray-900">
-      <p className="text-2xl text-green-400">Service not found.</p>
-      <button className="btn-nav mt-4" onClick={() => navigate("/services")}>Back</button>
-    </div>
-  );
+  const svc = useMemo(() => ALL_SERVICES.find((s) => s.id === id), [id]);
+  if (!svc)
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-gray-800 to-gray-900">
+        <p className="text-2xl text-green-400">Service not found.</p>
+        <button className="btn-nav mt-4" onClick={() => navigate("/services")}>
+          Back
+        </button>
+      </div>
+    );
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 py-10 px-4 animate__animated animate__fadeIn">
@@ -35,12 +38,18 @@ export default function ServiceDetail(){
       <div className="rounded-2xl bg-gradient-to-tr from-gray-100 to-yellow-100 shadow-xl px-6 py-5 flex flex-col">
         <div className="font-bold text-green-700 mb-2">Actions</div>
         <div className="flex gap-3">
-          <button className="px-5 py-2 rounded-xl font-bold text-gray-900 bg-gradient-to-r from-green-400 to-yellow-200 shadow-lg hover:scale-105 transition hover:bg-green-500 hover:text-white">Start Intake</button>
-          <button className="px-5 py-2 rounded-xl font-bold text-green-500 bg-gradient-to-r from-gray-100 to-yellow-100 border border-green-300 shadow hover:bg-yellow-100 hover:text-green-800 transition">Add to Queue</button>
+          <button className="px-5 py-2 rounded-xl font-bold text-gray-900 bg-gradient-to-r from-green-400 to-yellow-200 shadow-lg hover:scale-105 transition hover:bg-green-500 hover:text-white">
+            Start Intake
+          </button>
+          <button className="px-5 py-2 rounded-xl font-bold text-green-500 bg-gradient-to-r from-gray-100 to-yellow-100 border border-green-300 shadow hover:bg-yellow-100 hover:text-green-800 transition">
+            Add to Queue
+          </button>
         </div>
       </div>
       <div className="mt-12">
-        <button className="btn-nav" onClick={() => navigate("/services")}>← All Services</button>
+        <button className="btn-nav" onClick={() => navigate("/services")}>
+          ← All Services
+        </button>
       </div>
       <style>{`
         .btn-nav {

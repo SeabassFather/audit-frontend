@@ -1,7 +1,15 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-const Item = ({to,label}) => <NavLink to={to} className={({isActive})=>"navlink"+(isActive?" active":"")}><span></span><span>{label}</span></NavLink>;
-export default function SideNav(){
+const Item = ({ to, label }) => (
+  <NavLink
+    to={to}
+    className={({ isActive }) => "navlink" + (isActive ? " active" : "")}
+  >
+    <span></span>
+    <span>{label}</span>
+  </NavLink>
+);
+export default function SideNav() {
   return (
     <aside className="side">
       <Item to="/" label="Home / Dashboard" />

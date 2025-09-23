@@ -6,16 +6,16 @@ const services = [
     children: [
       "Authentication & Authorization",
       "Database & Data Layer",
-      "Document Management"
-    ]
+      "Document Management",
+    ],
   },
   {
     name: "AI & Automation",
     children: [
       "Audit Chain (OCR → AI Validation → Rules Engine)",
       "Automated Letter Generation",
-      "Notifications"
-    ]
+      "Notifications",
+    ],
   },
   {
     name: "Regulatory Compliance Audits",
@@ -23,16 +23,16 @@ const services = [
       "Financial (Mortgages, Utilities, Insurance, Credit)",
       "Legal (Contract Audits, CFPB Complaints, UCC)",
       "Food & Agriculture (FDA, USDA, Organic, HACCP)",
-      "Environmental & Travel (Carbon, ESG, Pollution Reporting)"
-    ]
+      "Environmental & Travel (Carbon, ESG, Pollution Reporting)",
+    ],
   },
   {
     name: "Professional Services & IP",
     children: [
       "Patent Strategy & Portfolio Management",
       "Attorney Tools",
-      "CPA/Tax Tools"
-    ]
+      "CPA/Tax Tools",
+    ],
   },
   {
     name: "Expansion Modules",
@@ -42,16 +42,16 @@ const services = [
       "Government & Military",
       "Crowdsourced Witnessing",
       "Financial Wellness Coaching",
-      "Medical Test Audit"
-    ]
+      "Medical Test Audit",
+    ],
   },
   {
     name: "Investor & Partner Portal",
     children: [
       "Pledge Intake Form & API",
       "Tokenized Equity",
-      "Dashboard (Charts, Exports)"
-    ]
+      "Dashboard (Charts, Exports)",
+    ],
   },
 ];
 
@@ -64,7 +64,9 @@ export default function ServicesComplianceAccordion() {
 
   return (
     <div>
-      <h2 style={{ marginBottom: 24, color: "#253858" }}>Services & Compliance</h2>
+      <h2 style={{ marginBottom: 24, color: "#253858" }}>
+        Services & Compliance
+      </h2>
       {services.map((cat, idx) => (
         <div key={cat.name} style={{ marginBottom: 16 }}>
           <button
@@ -79,19 +81,32 @@ export default function ServicesComplianceAccordion() {
               fontWeight: 700,
               fontSize: "1.08rem",
               cursor: "pointer",
-              marginBottom: 5
+              marginBottom: 5,
             }}
           >
             {cat.name}
           </button>
           {openIdx === idx && (
-            <div style={{ background: "#fff", borderRadius: 7, padding: "0.9rem 1rem", marginBottom: 7 }}>
+            <div
+              style={{
+                background: "#fff",
+                borderRadius: 7,
+                padding: "0.9rem 1rem",
+                marginBottom: 7,
+              }}
+            >
               <ul>
                 {cat.children.map((sub, j) => (
                   <li key={j} style={{ marginBottom: 12 }}>
-                    <span style={{ fontWeight: 500, color: "#333" }}>{sub}</span>
+                    <span style={{ fontWeight: 500, color: "#333" }}>
+                      {sub}
+                    </span>
                     <br />
-                    <input type="file" onChange={e => handleUpload(cat, sub, e)} style={{ marginTop: 5 }} />
+                    <input
+                      type="file"
+                      onChange={(e) => handleUpload(cat, sub, e)}
+                      style={{ marginTop: 5 }}
+                    />
                   </li>
                 ))}
               </ul>

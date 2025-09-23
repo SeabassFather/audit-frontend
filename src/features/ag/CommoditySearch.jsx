@@ -1,5 +1,10 @@
 import React, { useMemo, useState } from "react";
-export default function CommoditySearch({ options = [], value, onSelect, placeholder }) {
+export default function CommoditySearch({
+  options = [],
+  value,
+  onSelect,
+  placeholder,
+}) {
   const [q, setQ] = useState(value || "");
   const list = useMemo(() => {
     const t = (q || "").trim().toLowerCase();
@@ -20,16 +25,49 @@ export default function CommoditySearch({ options = [], value, onSelect, placeho
           }
         }}
         placeholder={placeholder || "Commodity"}
-        style={{ padding: "8px 10px", border: "1px solid #e5e7eb", borderRadius: 10, width: "100%" }}
+        style={{
+          padding: "8px 10px",
+          border: "1px solid #e5e7eb",
+          borderRadius: 10,
+          width: "100%",
+        }}
       />
       {q && (
-        <div style={{ position: "absolute", top: 40, left: 0, right: 0, background: "#fff", border: "1px solid #e5e7eb", borderRadius: 10, zIndex: 10, boxShadow: "0 8px 24px rgba(0,0,0,0.08)", maxHeight: 240, overflowY: "auto" }}>
+        <div
+          style={{
+            position: "absolute",
+            top: 40,
+            left: 0,
+            right: 0,
+            background: "#fff",
+            border: "1px solid #e5e7eb",
+            borderRadius: 10,
+            zIndex: 10,
+            boxShadow: "0 8px 24px rgba(0,0,0,0.08)",
+            maxHeight: 240,
+            overflowY: "auto",
+          }}
+        >
           {list.map((opt) => (
-            <div key={opt} onMouseDown={(e) => { e.preventDefault(); setQ(opt); if (typeof onSelect === "function") onSelect(opt); }} style={{ padding: "8px 10px", cursor: "pointer" }}>
+            <div
+              key={opt}
+              onMouseDown={(e) => {
+                e.preventDefault();
+                setQ(opt);
+                if (typeof onSelect === "function") onSelect(opt);
+              }}
+              style={{ padding: "8px 10px", cursor: "pointer" }}
+            >
               {opt}
             </div>
           ))}
-          {list.length === 0 && <div style={{ padding: "8px 10px", color: "#6b7280", fontSize: 12 }}>No matches</div>}
+          {list.length === 0 && (
+            <div
+              style={{ padding: "8px 10px", color: "#6b7280", fontSize: 12 }}
+            >
+              No matches
+            </div>
+          )}
         </div>
       )}
     </div>

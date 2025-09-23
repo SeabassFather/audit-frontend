@@ -11,5 +11,10 @@ export async function createPOFinance(payload = {}) {
 export async function submitTradeFinance(payload = {}) {
   return apiPost(endpoints.trade.lead, payload);
 }
-const TradeFinanceAPI = { searchTradeFinance, createFactoring, createPOFinance, submitTradeFinance };
+const TradeFinanceAPI = {
+  searchTradeFinance,
+  createFactoring,
+  createPOFinance,
+  submitTradeFinance,
+};
 export default TradeFinanceAPI;

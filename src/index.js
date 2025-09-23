@@ -1,4 +1,4 @@
-import './styles/ui.css';
+import "./styles/ui.css";
 import React from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
@@ -8,5 +8,5 @@ const root = createRoot(el);
 root.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>
+  </React.StrictMode>,
 );

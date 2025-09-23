@@ -1,1 +1,9 @@
-import React from "react"; export default function USDA(){return <div className="p-4"><h2 className="h2">USDA</h2><div className="empty">connect backend endpoint(s)</div></div>}
+import React from "react";
+export default function USDA() {
+  return (
+    <div className="p-4">
+      <h2 className="h2">USDA</h2>
+      <div className="empty">connect backend endpoint(s)</div>
+    </div>
+  );
+}

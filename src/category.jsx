@@ -13,8 +13,8 @@ export default function Category() {
     if (!cat || !Array.isArray(cat.services)) return [];
     const term = q.trim().toLowerCase();
     if (!term) return cat.services;
-    return cat.services.filter(s =>
-      `${s.id} ${s.name} ${s.desc || ""}`.toLowerCase().includes(term)
+    return cat.services.filter((s) =>
+      `${s.id} ${s.name} ${s.desc || ""}`.toLowerCase().includes(term),
     );
   }, [catId, q]);
 

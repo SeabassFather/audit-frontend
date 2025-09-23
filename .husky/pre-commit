@@ -1,0 +1,12 @@
+#!/bin/sh
+. "/_/husky.sh"
+
+echo '?? Running pre-commit checks...'
+
+# Format staged files (ignore errors)
+npx prettier --write . || true
+
+# Lint staged files (warn only, never block commit)
+npx eslint . --max-warnings=0 || true
+
+echo '? Pre-commit finished (non-blocking)'

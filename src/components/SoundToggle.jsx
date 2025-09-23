@@ -1,10 +1,18 @@
 import React, { useEffect, useRef, useState } from "react";
 
-function useClickSound(enabled){
+function useClickSound(enabled) {
   const ctxRef = useRef(null);
-  useEffect(()=>{ if(!enabled) return; ctxRef.current = new (window.AudioContext||window.webkitAudioContext)(); return ()=>{try{ctxRef.current?.close()}catch{}};}, [enabled]);
+  useEffect(() => {
+    if (!enabled) return;
+    ctxRef.current = new (window.AudioContext || window.webkitAudioContext)();
+    return () => {
+      try {
+        ctxRef.current?.close();
+      } catch {}
+    };
+  }, [enabled]);
   const play = () => {
-    if(!enabled || !ctxRef.current) return;
+    if (!enabled || !ctxRef.current) return;
     const ctx = ctxRef.current;
     const o = ctx.createOscillator();
     const g = ctx.createGain();
@@ -12,21 +20,32 @@ function useClickSound(enabled){
     o.frequency.setValueAtTime(440, ctx.currentTime);
     g.gain.setValueAtTime(0.05, ctx.currentTime);
     g.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.08);
-    o.connect(g); g.connect(ctx.destination);
-    o.start(); o.stop(ctx.currentTime + 0.09);
+    o.connect(g);
+    g.connect(ctx.destination);
+    o.start();
+    o.stop(ctx.currentTime + 0.09);
   };
   return play;
 }
 
-export default function SoundToggle(){
+export default function SoundToggle() {
   const saved = localStorage.getItem("auditdna_sound");
   const [enabled, setEnabled] = useState(saved !== "off");
   const play = useClickSound(enabled);
 
-  useEffect(()=>{ localStorage.setItem("auditdna_sound", enabled ? "on":"off"); }, [enabled]);
+  useEffect(() => {
+    localStorage.setItem("auditdna_sound", enabled ? "on" : "off");
+  }, [enabled]);
 
   return (
-    <button className="btn" onClick={()=>{ setEnabled(e=>!e); play(); }} title="Toggle UI sounds">
+    <button
+      className="btn"
+      onClick={() => {
+        setEnabled((e) => !e);
+        play();
+      }}
+      title="Toggle UI sounds"
+    >
       {enabled ? " Sound ON" : " Sound OFF"}
     </button>
   );
@@ -36,12 +55,18 @@ export default function SoundToggle(){
 export const uiClick = () => {
   const s = localStorage.getItem("auditdna_sound") !== "off";
   if (!s) return;
-  try{
-    const ctx = new (window.AudioContext||window.webkitAudioContext)();
-    const o = ctx.createOscillator(); const g = ctx.createGain();
-    o.type="square"; o.frequency.value=480; g.gain.value=0.06;
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const o = ctx.createOscillator();
+    const g = ctx.createGain();
+    o.type = "square";
+    o.frequency.value = 480;
+    g.gain.value = 0.06;
     g.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.07);
-    o.connect(g); g.connect(ctx.destination); o.start(); o.stop(ctx.currentTime+0.08);
-    setTimeout(()=>ctx.close(),120);
-  }catch{}
+    o.connect(g);
+    g.connect(ctx.destination);
+    o.start();
+    o.stop(ctx.currentTime + 0.08);
+    setTimeout(() => ctx.close(), 120);
+  } catch {}
 };

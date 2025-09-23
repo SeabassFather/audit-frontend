@@ -1,12 +1,12 @@
 // C:\AuditDNA\MiniAPI\server.js
-const express = require('express');
-const cors = require('cors');
+const express = require("express");
+const cors = require("cors");
 
 const app = express();
-app.use(cors());           // allow http://localhost:3000
+app.use(cors()); // allow http://localhost:3000
 app.use(express.json());
 
-const series = base =>
+const series = (base) =>
   Array.from({ length: 26 }, (_, i) => ({
     week: i + 1,
     price: +(base + Math.sin(i / 3) * 3 + i * 0.15).toFixed(2),
@@ -14,9 +14,9 @@ const series = base =>
 
 const DATASET = {
   Papaya: {
-    varieties: ['Maradol', 'Tainung'],
-    unit: '$/case',
-    market: 'US composite',
+    varieties: ["Maradol", "Tainung"],
+    unit: "$/case",
+    market: "US composite",
     years: {
       2020: series(18.5),
       2021: series(19.2),
@@ -26,9 +26,9 @@ const DATASET = {
     },
   },
   Orange: {
-    varieties: ['Navel', 'Valencia'],
-    unit: '$/40lb',
-    market: 'US composite',
+    varieties: ["Navel", "Valencia"],
+    unit: "$/40lb",
+    market: "US composite",
     years: {
       2020: series(24.0),
       2021: series(25.0),
@@ -38,9 +38,9 @@ const DATASET = {
     },
   },
   Avocado: {
-    varieties: ['Hass'],
-    unit: '$/40lb',
-    market: 'US composite',
+    varieties: ["Hass"],
+    unit: "$/40lb",
+    market: "US composite",
     years: {
       2020: series(32.0),
       2021: series(29.5),
@@ -52,8 +52,8 @@ const DATASET = {
 };
 
 // GET /usda/prices?commodity=Papaya
-app.get('/usda/prices', (req, res) => {
-  const name = (req.query.commodity || '').trim();
+app.get("/usda/prices", (req, res) => {
+  const name = (req.query.commodity || "").trim();
   const entry = DATASET[name];
   if (!entry) {
     return res.status(404).json({ error: `Unknown commodity: ${name}` });
@@ -62,6 +62,6 @@ app.get('/usda/prices', (req, res) => {
 });
 
 const PORT = process.env.PORT || 5050;
-app.listen(PORT, '127.0.0.1', () => {
+app.listen(PORT, "127.0.0.1", () => {
   console.log(`Mini API listening on http://127.0.0.1:${PORT}`);
 });

@@ -1,36 +1,75 @@
 import React, { useState } from "react";
-import { Upload, FlaskConical, FileText, FileUp, ShieldCheck, TrendingUp } from "lucide-react";
+import {
+  Upload,
+  FlaskConical,
+  FileText,
+  FileUp,
+  ShieldCheck,
+  TrendingUp,
+} from "lucide-react";
 
 // Tabs for main sections
 const tabs = [
   { key: "water", label: "Water Lab Reports", icon: FlaskConical },
   { key: "soil", label: "Soil Testing & Compliance", icon: ShieldCheck },
   { key: "marketing", label: "Marketing Services", icon: TrendingUp },
-  { key: "upload", label: "Upload Center", icon: FileUp }
+  { key: "upload", label: "Upload Center", icon: FileUp },
 ];
 
 function WaterLabReports() {
   return (
     <div className="space-y-4">
-      <h2 className="text-2xl font-bold text-blue-700 mb-2">Primary Water Quality Parameters</h2>
+      <h2 className="text-2xl font-bold text-blue-700 mb-2">
+        Primary Water Quality Parameters
+      </h2>
       <ul className="list-disc pl-6 text-slate-700">
-        <li><b>pH (6.5-8.4 optimal range):</b> Measures water acidity/alkalinity</li>
-        <li><b>Electrical Conductivity (EC):</b> Measures dissolved salt content</li>
-        <li><b>Total Dissolved Solids (TDS):</b> Total concentration of dissolved substances</li>
-        <li><b>Hardness:</b> Calcium and magnesium content (50-150 ppm optimal)</li>
-        <li><b>Alkalinity:</b> Water's buffering capacity (30-150 mg/L optimal)</li>
+        <li>
+          <b>pH (6.5-8.4 optimal range):</b> Measures water acidity/alkalinity
+        </li>
+        <li>
+          <b>Electrical Conductivity (EC):</b> Measures dissolved salt content
+        </li>
+        <li>
+          <b>Total Dissolved Solids (TDS):</b> Total concentration of dissolved
+          substances
+        </li>
+        <li>
+          <b>Hardness:</b> Calcium and magnesium content (50-150 ppm optimal)
+        </li>
+        <li>
+          <b>Alkalinity:</b> Water's buffering capacity (30-150 mg/L optimal)
+        </li>
       </ul>
-      <h3 className="text-xl font-bold text-blue-700 mt-6">Secondary Analysis Parameters</h3>
+      <h3 className="text-xl font-bold text-blue-700 mt-6">
+        Secondary Analysis Parameters
+      </h3>
       <ul className="list-disc pl-6 text-slate-700">
-        <li><b>Sodium Adsorption Ratio (SAR):</b> Sodium hazard assessment</li>
-        <li><b>Sodium Percentage (%Na):</b> Relative sodium concentration</li>
-        <li><b>Chloride levels:</b> Plant toxicity and equipment corrosion potential</li>
-        <li><b>Sulfate content:</b> Taste and scale formation</li>
-        <li><b>Nitrate-nitrogen:</b> Nutrient content analysis</li>
-        <li><b>Phosphorus and Potassium:</b> Essential nutrients</li>
-        <li><b>Boron:</b> Micronutrient/toxicity assessment</li>
+        <li>
+          <b>Sodium Adsorption Ratio (SAR):</b> Sodium hazard assessment
+        </li>
+        <li>
+          <b>Sodium Percentage (%Na):</b> Relative sodium concentration
+        </li>
+        <li>
+          <b>Chloride levels:</b> Plant toxicity and equipment corrosion
+          potential
+        </li>
+        <li>
+          <b>Sulfate content:</b> Taste and scale formation
+        </li>
+        <li>
+          <b>Nitrate-nitrogen:</b> Nutrient content analysis
+        </li>
+        <li>
+          <b>Phosphorus and Potassium:</b> Essential nutrients
+        </li>
+        <li>
+          <b>Boron:</b> Micronutrient/toxicity assessment
+        </li>
       </ul>
-      <h3 className="text-xl font-bold text-blue-700 mt-6">Specialized Testing</h3>
+      <h3 className="text-xl font-bold text-blue-700 mt-6">
+        Specialized Testing
+      </h3>
       <ul className="list-disc pl-6 text-slate-700">
         <li>Heavy metals (Iron, Manganese, Copper, Zinc)</li>
         <li>Carbonate/Bicarbonate levels</li>
@@ -38,7 +77,10 @@ function WaterLabReports() {
         <li>Residual Sodium Carbonate (RSC)</li>
         <li>Permeability Index (PI)</li>
       </ul>
-      <p className="mt-4 text-xs text-slate-500">Sources: Penn State, Oklahoma State University, Interpreting Irrigation Water Tests</p>
+      <p className="mt-4 text-xs text-slate-500">
+        Sources: Penn State, Oklahoma State University, Interpreting Irrigation
+        Water Tests
+      </p>
     </div>
   );
 }
@@ -46,7 +88,9 @@ function WaterLabReports() {
 function SoilTestingCompliance() {
   return (
     <div className="space-y-4">
-      <h2 className="text-2xl font-bold text-teal-700 mb-2">Essential Soil Parameters</h2>
+      <h2 className="text-2xl font-bold text-teal-700 mb-2">
+        Essential Soil Parameters
+      </h2>
       <ul className="list-disc pl-6 text-slate-700">
         <li>Soil pH and buffering capacity</li>
         <li>Soil salinity (ECe)</li>
@@ -56,7 +100,9 @@ function SoilTestingCompliance() {
         <li>Organic matter content</li>
         <li>Soil texture analysis</li>
       </ul>
-      <h3 className="text-xl font-bold text-teal-700 mt-6">Compliance Testing</h3>
+      <h3 className="text-xl font-bold text-teal-700 mt-6">
+        Compliance Testing
+      </h3>
       <ul className="list-disc pl-6 text-slate-700">
         <li>Environmental compliance for water discharge</li>
         <li>Agricultural runoff monitoring</li>
@@ -71,8 +117,12 @@ function SoilTestingCompliance() {
 function MarketingServices() {
   return (
     <div className="space-y-4">
-      <h2 className="text-2xl font-bold text-indigo-700 mb-2">Marketing Services for Sectors</h2>
-      <h3 className="text-lg font-bold text-indigo-700 mt-2">For Agricultural Growers</h3>
+      <h2 className="text-2xl font-bold text-indigo-700 mb-2">
+        Marketing Services for Sectors
+      </h2>
+      <h3 className="text-lg font-bold text-indigo-700 mt-2">
+        For Agricultural Growers
+      </h3>
       <ul className="list-disc pl-6 text-slate-700">
         <li>Irrigation efficiency audits and optimization</li>
         <li>Fertilizer reduction programs (20% savings guarantee)</li>
@@ -81,7 +131,9 @@ function MarketingServices() {
         <li>Soil health improvement programs</li>
         <li>Water quality monitoring and reporting</li>
       </ul>
-      <h3 className="text-lg font-bold text-indigo-700 mt-2">For Housing Communities/HOAs</h3>
+      <h3 className="text-lg font-bold text-indigo-700 mt-2">
+        For Housing Communities/HOAs
+      </h3>
       <ul className="list-disc pl-6 text-slate-700">
         <li>Landscape irrigation optimization</li>
         <li>Lawn and garden water efficiency programs</li>
@@ -89,7 +141,9 @@ function MarketingServices() {
         <li>Sustainable water management consulting</li>
         <li>Pool and recreational water treatment</li>
       </ul>
-      <h3 className="text-lg font-bold text-indigo-700 mt-2">For Golf Courses and Turf Management</h3>
+      <h3 className="text-lg font-bold text-indigo-700 mt-2">
+        For Golf Courses and Turf Management
+      </h3>
       <ul className="list-disc pl-6 text-slate-700">
         <li>Turf quality enhancement programs</li>
         <li>Irrigation system efficiency upgrades</li>
@@ -97,7 +151,9 @@ function MarketingServices() {
         <li>Water conservation compliance assistance</li>
         <li>Course maintenance cost reduction</li>
       </ul>
-      <h3 className="text-lg font-bold text-indigo-700 mt-2">For Commercial/Industrial Facilities</h3>
+      <h3 className="text-lg font-bold text-indigo-700 mt-2">
+        For Commercial/Industrial Facilities
+      </h3>
       <ul className="list-disc pl-6 text-slate-700">
         <li>Cooling tower scale prevention</li>
         <li>Boiler efficiency improvement</li>
@@ -105,7 +161,9 @@ function MarketingServices() {
         <li>Equipment maintenance reduction</li>
         <li>Environmental compliance assistance</li>
       </ul>
-      <h3 className="text-lg font-bold text-indigo-700 mt-2">For Nurseries and Greenhouses</h3>
+      <h3 className="text-lg font-bold text-indigo-700 mt-2">
+        For Nurseries and Greenhouses
+      </h3>
       <ul className="list-disc pl-6 text-slate-700">
         <li>Plant health and growth optimization</li>
         <li>Nutrient efficiency programs</li>
@@ -113,7 +171,9 @@ function MarketingServices() {
         <li>Water quality monitoring systems</li>
         <li>Organic certification support</li>
       </ul>
-      <h3 className="text-lg font-bold text-indigo-700 mt-2">Additional Service Opportunities</h3>
+      <h3 className="text-lg font-bold text-indigo-700 mt-2">
+        Additional Service Opportunities
+      </h3>
       <ul className="list-disc pl-6 text-slate-700">
         <li>Water treatment system consultation</li>
         <li>ROI analysis and financial reporting</li>
@@ -122,7 +182,8 @@ function MarketingServices() {
         <li>Technology integration with existing systems</li>
       </ul>
       <p className="mt-4 text-xs text-slate-500">
-        <b>Note:</b> We guarantee 20% reduction in water/fertilizer/chemicals and a 20% yield increase, backed by a one-year money-back guarantee.
+        <b>Note:</b> We guarantee 20% reduction in water/fertilizer/chemicals
+        and a 20% yield increase, backed by a one-year money-back guarantee.
       </p>
     </div>
   );
@@ -162,7 +223,8 @@ function UploadCenter() {
           className="block w-full mb-2"
         />
         <label className="block text-slate-700 font-semibold mb-2">
-          Additional Information (e.g. soil type, plant type, water use, location, notes)
+          Additional Information (e.g. soil type, plant type, water use,
+          location, notes)
         </label>
         <textarea
           rows={4}
@@ -179,7 +241,8 @@ function UploadCenter() {
         </button>
       </form>
       <p className="mt-2 text-xs text-slate-500">
-        All uploads are securely handled for analysis. Our team will determine process frequency and design recommendations based on your data.
+        All uploads are securely handled for analysis. Our team will determine
+        process frequency and design recommendations based on your data.
       </p>
     </div>
   );

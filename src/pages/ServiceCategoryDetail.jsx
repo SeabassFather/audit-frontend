@@ -9,22 +9,25 @@ const ServiceIcon = () => (
   </span>
 );
 
-function findCategory(slug){
-  const list = Array.isArray(tree) ? tree : (tree?.categories || []);
-  return list.find(x => (x?.slug || x?.path) === slug);
+function findCategory(slug) {
+  const list = Array.isArray(tree) ? tree : tree?.categories || [];
+  return list.find((x) => (x?.slug || x?.path) === slug);
 }
 
-export default function ServiceCategoryDetail(){
+export default function ServiceCategoryDetail() {
   const { slug } = useParams();
   const navigate = useNavigate();
   const cat = findCategory(slug);
 
-  if (!cat) return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-gray-800 to-gray-900">
-      <p className="text-2xl text-green-400">Category not found.</p>
-      <Link className="btn-nav mt-4" to="/services">Back to Services</Link>
-    </div>
-  );
+  if (!cat)
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-gray-800 to-gray-900">
+        <p className="text-2xl text-green-400">Category not found.</p>
+        <Link className="btn-nav mt-4" to="/services">
+          Back to Services
+        </Link>
+      </div>
+    );
 
   const items = cat.services || cat.items || [];
   return (
@@ -33,12 +36,23 @@ export default function ServiceCategoryDetail(){
         <ServiceIcon />
         {cat.title}
       </h2>
-      {cat.description ? <p className="mb-8 text-lg text-yellow-200">{cat.description}</p> : null}
+      {cat.description ? (
+        <p className="mb-8 text-lg text-yellow-200">{cat.description}</p>
+      ) : null}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {items.map((it,i) => (
-          <div key={i} className="rounded-2xl bg-gradient-to-tr from-gray-700 to-gray-900 shadow-xl px-6 py-5 flex flex-col hover:scale-105 transition-all border border-green-300">
-            <h4 className="text-xl font-bold text-green-300 mb-2">{it?.title || it?.name || `Item ${i+1}`}</h4>
-            {(it?.desc || it?.description) ? <p className="text-sm text-gray-100 mb-4">{it.desc || it.description}</p> : null}
+        {items.map((it, i) => (
+          <div
+            key={i}
+            className="rounded-2xl bg-gradient-to-tr from-gray-700 to-gray-900 shadow-xl px-6 py-5 flex flex-col hover:scale-105 transition-all border border-green-300"
+          >
+            <h4 className="text-xl font-bold text-green-300 mb-2">
+              {it?.title || it?.name || `Item ${i + 1}`}
+            </h4>
+            {it?.desc || it?.description ? (
+              <p className="text-sm text-gray-100 mb-4">
+                {it.desc || it.description}
+              </p>
+            ) : null}
             <div className="flex gap-3 mt-auto">
               <button
                 className="px-5 py-2 rounded-xl font-bold text-gray-900 bg-gradient-to-r from-green-400 to-yellow-200 shadow-lg hover:scale-105 transition hover:bg-green-500 hover:text-white"
@@ -57,7 +71,9 @@ export default function ServiceCategoryDetail(){
         ))}
       </div>
       <div className="mt-12">
-        <Link className="btn-nav" to="/services">← All Categories</Link>
+        <Link className="btn-nav" to="/services">
+          ← All Categories
+        </Link>
       </div>
       <style>{`
         .btn-nav {
