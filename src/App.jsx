@@ -19,6 +19,7 @@ import ClientsList from "./pages/ClientsList";
 import PartnersList from "./pages/PartnersList";
 import SearchPage from "./pages/SearchPage";
 import Documentation from "./pages/Documentation";
+import BusinessStrategy from "./pages/BusinessStrategy";
 
 // Search Engine Components
 import SearchUSDAPage from "./pages/search/SearchUSDAPage";
@@ -67,6 +68,7 @@ export default function App() {
             <Route path="/admin" element={<Admin />} />
             <Route path="/clients" element={<ClientsList />} />
             <Route path="/partners" element={<PartnersList />} />
+            <Route path="/business-strategy" element={<BusinessStrategy />} />
             <Route path="/docs" element={<Documentation />} />
 
             {/* Explicit Search Engine Routes */}

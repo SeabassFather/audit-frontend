@@ -29,6 +29,7 @@ const toolGroups = [
   {
     title: "Business Tools",
     links: [
+      { to: "/business-strategy", label: "Business Strategy", icon: "🏢" },
       { to: "/agreements", label: "Agreements", icon: "📋" },
       { to: "/marketing", label: "Marketing", icon: "📢" },
       { to: "/pitchdeck", label: "Pitch Deck", icon: "🎯" },
