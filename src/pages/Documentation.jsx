@@ -32,6 +32,7 @@ const fileMapData = {
           { name: "Dashboard.jsx", desc: "Main dashboard view", route: "/src/pages/Dashboard.jsx" },
           { name: "Services.jsx", desc: "Services listing page", route: "/src/pages/Services.jsx" },
           { name: "Admin.jsx", desc: "Admin panel interface", route: "/src/pages/Admin.jsx" },
+          { name: "BusinessArchitecture.jsx", desc: "Business architecture & operations", route: "/src/pages/BusinessArchitecture.jsx" },
           { name: "PricingUSDA.jsx", desc: "USDA pricing tools", route: "/src/pages/PricingUSDA.jsx" }
         ]
       },
@@ -42,6 +43,14 @@ const fileMapData = {
           { name: "SearchUSDA.jsx", desc: "USDA data search engine", route: "/src/features/search/SearchUSDA.jsx" },
           { name: "SearchFactoring.jsx", desc: "Factoring search tools", route: "/src/features/search/SearchFactoring.jsx" },
           { name: "UsdaCommoditySearch.jsx", desc: "Commodity price search", route: "/src/features/usda/UsdaCommoditySearch.jsx" }
+        ]
+      },
+      {
+        name: "Business Architecture",
+        icon: "🏗️",
+        files: [
+          { name: "businessArchitecture.js", desc: "Business operations data", route: "/src/data/businessArchitecture.js" },
+          { name: "DataExportModule.jsx", desc: "Data export component", route: "/src/components/DataExportModule.jsx" }
         ]
       }
     ]

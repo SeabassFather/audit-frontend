@@ -24,6 +24,7 @@ const toolGroups = [
       { to: "/tickers", label: "Market Data", icon: "📊" },
       { to: "/admin", label: "Admin Panel", icon: "⚙️" },
       { to: "/docs", label: "Documentation", icon: "📚" },
+      { to: "/business-architecture", label: "Business Architecture", icon: "🏗️" },
     ]
   },
   {
