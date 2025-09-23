@@ -10,6 +10,15 @@ const toolGroups = [
     ]
   },
   {
+    title: "Comprehensive Features",
+    links: [
+      { to: "/california-business", label: "CA Business Empire", icon: "🏆" },
+      { to: "/future-expansion", label: "Future Expansion 2026-2030", icon: "🚀" },
+      { to: "/deployment-infrastructure", label: "Deployment & Infrastructure", icon: "☁️" },
+      { to: "/interactive-checklists", label: "Interactive Checklists", icon: "✅" },
+    ]
+  },
+  {
     title: "Specialized Tools", 
     links: [
       { to: "/mexico-loans", label: "Mexico RE/Loans", icon: "🏠" },

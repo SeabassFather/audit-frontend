@@ -20,6 +20,12 @@ import PartnersList from "./pages/PartnersList";
 import SearchPage from "./pages/SearchPage";
 import Documentation from "./pages/Documentation";
 
+// New comprehensive feature pages
+import CaliforniaBusiness from "./pages/CaliforniaBusiness";
+import FutureExpansion from "./pages/FutureExpansion";
+import DeploymentInfrastructure from "./pages/DeploymentInfrastructure";
+import InteractiveChecklists from "./pages/InteractiveChecklists";
+
 // Search Engine Components
 import SearchUSDAPage from "./pages/search/SearchUSDAPage";
 import SearchMexicoPage from "./pages/search/SearchMexicoPage";
@@ -68,6 +74,12 @@ export default function App() {
             <Route path="/clients" element={<ClientsList />} />
             <Route path="/partners" element={<PartnersList />} />
             <Route path="/docs" element={<Documentation />} />
+
+            {/* New Comprehensive Feature Routes */}
+            <Route path="/california-business" element={<CaliforniaBusiness />} />
+            <Route path="/future-expansion" element={<FutureExpansion />} />
+            <Route path="/deployment-infrastructure" element={<DeploymentInfrastructure />} />
+            <Route path="/interactive-checklists" element={<InteractiveChecklists />} />
 
             {/* Explicit Search Engine Routes */}
             <Route path="/search/usda" element={<SearchUSDAPage />} />
