@@ -1,50 +1,23 @@
 {
-<<<<<<< HEAD
   "name": "auditdna-frontend",
   "version": "1.0.0",
-  "description": "AuditDNA Frontend",
-  "main": "main.jsx",
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test"
-  },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "^5.0.1",
-    "tailwindcss": "^3.3.2"
-  },
-  "devDependencies": {},
-=======
-  "homepage": "https://yourdomain.com/your-app",
-  "name": "temp-app",
-  "version": "0.1.0",
   "private": true,
   "description": "AuditDNA Frontend",
   "main": "src/index.js",
->>>>>>> 4c57fa2e0f70c6badb472984f1b309f3139963d2
   "engines": {
     "node": ">=20.11.1 <=22.2.0",
     "npm": ">=9.6.7"
   },
-<<<<<<< HEAD
-=======
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
->>>>>>> 4c57fa2e0f70c6badb472984f1b309f3139963d2
   "browserslist": [
     ">0.2%",
     "not dead",
     "not op_mini all"
-<<<<<<< HEAD
-  ]
-}
-=======
   ],
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.13",
@@ -54,10 +27,11 @@
     "jspdf-autotable": "^3.8.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "^5.0.1"
+    "react-router-dom": "^6.0.0",
+    "react-scripts": "^5.0.1",
+    "tailwindcss": "^3.3.2"
   },
   "devDependencies": {
     "husky": "^8.0.0"
   }
 }
->>>>>>> 4c57fa2e0f70c6badb472984f1b309f3139963d2
