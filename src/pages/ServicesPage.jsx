@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 // Demo commodity data
 const commodities = [
@@ -14,7 +15,7 @@ const commodities = [
   },
 ];
 
-export default function MarketPricesPage() {
+export default function ServicesPage() {
   const [lang, setLang] = useState("EN");
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState(commodities[0]);
@@ -71,21 +72,21 @@ export default function MarketPricesPage() {
           </span>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
-          <a href="#" style={headerLink}>
+          <Link to="/services" style={headerLink}>
             Services
-          </a>
-          <a href="#" style={headerLink}>
+          </Link>
+          <Link to="/cases" style={headerLink}>
             Cases
-          </a>
-          <a href="#" style={headerLink}>
+          </Link>
+          <Link to="/usda" style={headerLink}>
             USDA Prices
-          </a>
-          <a href="#" style={headerLink}>
+          </Link>
+          <Link to="/marketplace" style={headerLink}>
             Ag Marketplace
-          </a>
-          <a href="#" style={headerLink}>
+          </Link>
+          <Link to="/admin" style={headerLink}>
             Admin
-          </a>
+          </Link>
           <button
             style={{
               border: "none",
