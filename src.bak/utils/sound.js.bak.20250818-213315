@@ -1,0 +1,19 @@
+import { getSoundEnabled } from "./prefs";
+
+let ctx;
+function ensureCtx(){ if (!ctx) ctx = new (window.AudioContext || window.webkitAudioContext)(); }
+
+export function playClick(){
+  if (!getSoundEnabled()) return;
+  try{
+    ensureCtx();
+    const o = ctx.createOscillator();
+    const g = ctx.createGain();
+    o.type = "sine";
+    o.frequency.value = 880; // crisp ping
+    g.gain.value = 0.05;
+    o.connect(g); g.connect(ctx.destination);
+    o.start();
+    setTimeout(()=>{ o.stop(); }, 60); // super short
+  }catch(_){}
+}

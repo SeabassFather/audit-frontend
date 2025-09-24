@@ -1,0 +1,10 @@
+﻿import React from "react";
+
+export default function Compliance() {
+  return (
+    <div className="page">
+      <h1> Compliance</h1>
+      <p>Stay on top of compliance, governance, and regulatory requirements.</p>
+    </div>
+  );
+}

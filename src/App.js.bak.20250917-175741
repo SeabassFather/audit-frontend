@@ -1,0 +1,39 @@
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import ServicesPage from "./pages/ServicesPage";
+import ServiceStart from "./pages/ServiceStart";
+import Cases from "./pages/Cases";
+import CaseDetail from "./pages/CaseDetail";
+import ProducePrices from "./pages/ProducePrices";
+import Admin from "./pages/Admin";
+import AgMarketplace from "./pages/AgMarketplace";
+
+import TopRibbonTicker from "./components/TopRibbonTicker";
+import HeaderBar from "./components/HeaderBar";
+import { I18nProvider } from "./i18n/I18nProvider";
+
+function App() {
+  return (
+    <I18nProvider>
+      <Router>
+        <TopRibbonTicker />
+        <HeaderBar />
+        <main className="min-h-screen bg-gray-50">
+          <Routes>
+            <Route path="/" element={<ServicesPage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/start/:slug" element={<ServiceStart />} />
+            <Route path="/cases" element={<Cases />} />
+            <Route path="/cases/:id" element={<CaseDetail />} />
+            <Route path="/market/prices" element={<ProducePrices />} />
+            <Route path="/marketplace" element={<AgMarketplace />} />
+            <Route path="/admin" element={<Admin />} />
+          </Routes>
+        </main>
+      </Router>
+    </I18nProvider>
+  );
+}
+
+export default App;

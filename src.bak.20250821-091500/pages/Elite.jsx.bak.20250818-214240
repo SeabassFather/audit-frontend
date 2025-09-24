@@ -1,0 +1,10 @@
+﻿import React from "react";
+
+export default function Elite() {
+  return (
+    <div className="page">
+      <h1> Elite</h1>
+      <p>Exclusive services and benefits for premium members.</p>
+    </div>
+  );
+}

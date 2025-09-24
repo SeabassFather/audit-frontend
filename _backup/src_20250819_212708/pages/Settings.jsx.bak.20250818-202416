@@ -1,0 +1,15 @@
+﻿import React from "react";
+
+export default function Settings() {
+  return (
+    <div style={{ padding: "30px", background: "", minHeight: "100vh" }}>
+      <h1 style={{ color: "" }}> Settings</h1>
+<label style={{ display:"block", margin:"15px 0", color:"#555" }}>
+  <input type="checkbox" /> Enable Notifications
+</label>
+<label style={{ display:"block", margin:"15px 0", color:"#555" }}>
+  <input type="checkbox" /> Dark Mode
+</label>
+    </div>
+  );
+}
