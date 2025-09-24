@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+# AuditDNA Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the frontend for the AuditDNA platform.
 
-## Available Scripts
+## Project Structure
 
-In the project directory, you can run:
+- **Frontend Repo:** [audit-frontend](https://github.com/SeabassFather/audit-frontend)
+- **Backend Repo:** [auditdna-backend-1](https://github.com/SeabassFather/auditdna-backend-1)
 
-### `npm start`
+## Local Development Setup
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 1. Clone Both Repositories
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+git clone https://github.com/SeabassFather/audit-frontend.git
+git clone https://github.com/SeabassFather/auditdna-backend-1.git
+```
 
-### `npm test`
+### 2. Install Dependencies
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+# Frontend
+cd audit-frontend
+npm install
 
-### `npm run build`
+# Backend
+cd ../auditdna-backend-1
+npm install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 3. Configure Environment Variables
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Frontend (.env)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Create a `.env` file in `audit-frontend`:
 
-### `npm run eject`
+```
+REACT_APP_API_URL=http://localhost:5000
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Replace the URL with your backend's local address if different.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Backend (.env)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Refer to the backend repo for its required environment variables.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 4. Start Both Projects
 
-## Learn More
+```bash
+# Backend
+cd auditdna-backend-1
+npm start
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Frontend (in a separate terminal)
+cd audit-frontend
+npm start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 5. Integration
 
-### Code Splitting
+- The frontend will communicate with the backend API at the address specified in `REACT_APP_API_URL`.
+- For production, update the API URL accordingly.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Backend Repository
 
-### Analyzing the Bundle Size
+See [auditdna-backend-1](https://github.com/SeabassFather/auditdna-backend-1) for backend setup and API documentation.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## Contribution Guide
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. For UI and client-side changes, use this repo.
+2. For API or server-side logic, use the backend repo.
+3. When making breaking changes to API, update the frontend integration and note changes in both repos.
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Troubleshooting
 
-### Deployment
+- If you get CORS errors, ensure the backend allows requests from your frontend origin.
+- Double-check environment variables.
+- Consult backend repo for API routes and docs.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## Need Help?
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Issues and questions welcome via [GitHub Issues](https://github.com/SeabassFather/audit-frontend/issues).
