@@ -5,17 +5,33 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import HomePage from "./pages/HomePage";
-import MortgageSearchPage from "./pages/MortgageSearchPage";
-import AgMarketplaceSearchPage from "./pages/AgMarketplaceSearchPage";
-import TradeFinanceSearchPage from "./pages/TradeFinanceSearchPage";
-import TickersPage from "./pages/TickersPage";
-import AuditDNAPage from "./pages/AuditDNAPage";
-import CompliancePage from "./pages/CompliancePage";
-import LoginPage from "./pages/LoginPage";
-import { AuthProvider, useAuth } from "./auth/AuthContext";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import HomePage from "./HomePage";
+import MortgageSearchPage from "./MortgageSearchPage";
+import AgMarketplaceSearchPage from "./AgMarketplaceSearchPage";
+import TradeFinanceSearchPage from "./TradeFinanceSearchPage";
+import TickersPage from "./TickersPage";
+import PartnerAgreementsPage from "./PartnerAgreementsPage";
+import MarketingPage from "./MarketingPage";
+import PitchDeckPage from "./PitchDeckPage";
+import UploadPage from "./UploadPage";
+import ScannerPage from "./ScannerPage";
+import FacialRecognitionPage from "./FacialRecognitionPage";
+
+// Simple Auth Context for demo
+const AuthContext = React.createContext();
+const useAuth = () => React.useContext(AuthContext);
+
+function AuthProvider({ children }) {
+  const [isLoggedIn, setIsLoggedIn] = React.useState(true); // Demo mode - always logged in
+  
+  return (
+    <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
+      {children}
+    </AuthContext.Provider>
+  );
+}
 
 function PrivateRoute({ children }) {
   const { isLoggedIn } = useAuth();
@@ -26,8 +42,29 @@ export default function App() {
   return (
     <AuthProvider>
       <Router>
-        <Navbar />
-        <main className="mx-auto max-w-7xl px-4 sm:px-6 py-8">
+        <div className="min-h-screen bg-gray-50">
+          <Navbar />
+          <main>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/mortgages" element={<MortgageSearchPage />} />
+              <Route path="/ag-market" element={<AgMarketplaceSearchPage />} />
+              <Route path="/trade-finance" element={<TradeFinanceSearchPage />} />
+              <Route path="/tickers" element={<TickersPage />} />
+              <Route path="/partner-agreements" element={<PartnerAgreementsPage />} />
+              <Route path="/marketing" element={<MarketingPage />} />
+              <Route path="/pitch-deck" element={<PitchDeckPage />} />
+              <Route path="/upload" element={<UploadPage />} />
+              <Route path="/scanner" element={<ScannerPage />} />
+              <Route path="/facial-recognition" element={<FacialRecognitionPage />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </AuthProvider>
+  );
+}
           <Routes>
             <Route path="/login" element={<LoginPage />} />
             <Route
