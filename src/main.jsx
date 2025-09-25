@@ -9,6 +9,7 @@ import Factoring from "./pages/Factoring.jsx";
 import Services from "./pages/Services.jsx";
 import Compliance from "./pages/Compliance.jsx";
 import Search from "./pages/Search.jsx";
+import EliteModulesPage from "./pages/EliteModulesPage.jsx";
 const Tab = ({ to, label }) => (
   <NavLink to={to} className="tab">
     {label}
@@ -28,6 +29,7 @@ function App() {
           <Tab to="/factoring" label="Ag Factoring" />
           <Tab to="/services" label="Services" />
           <Tab to="/compliance" label="Compliance" />
+          <Tab to="/elite-modules" label="Elite Modules" />
           <Tab to="/search" label="Global Search" />
         </div>
       </div>
@@ -39,6 +41,7 @@ function App() {
           <Route path="/factoring" element={<Factoring />} />
           <Route path="/services" element={<Services />} />
           <Route path="/compliance" element={<Compliance />} />
+          <Route path="/elite-modules" element={<EliteModulesPage />} />
           <Route path="/search" element={<Search />} />
         </Routes>
       </main>
