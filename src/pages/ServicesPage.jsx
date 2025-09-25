@@ -11,9 +11,9 @@ export default function ServicesPage() {
     <div>
       <header>
         <nav>
-          <a href="#" style={headerLink}>Services</a>
-          <a href="#" style={headerLink}>Cases</a>
-          <a href="#" style={headerLink}>About</a>
+          <button style={headerLink}>Services</button>
+          <button style={headerLink}>Cases</button>
+          <button style={headerLink}>About</button>
         </nav>
       </header>
       <main>

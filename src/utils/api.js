@@ -1,29 +1,85 @@
-import { API_BASE } from "./constants";
+const BASE = process.env.REACT_APP_API_BASE || "http://127.0.0.1:3001";
 
-async function req(path, { method = "GET", json, headers = {}, ...rest } = {}) {
-  const init = { method, credentials: "include", headers, ...rest };
-  if (json !== undefined) {
-    init.headers = { "Content-Type": "application/json", ...headers };
-    init.body = JSON.stringify(json);
+async function jsonOrEmpty(res) {
+  try {
+    return await res.json();
+  } catch {
+    return {};
   }
-  const res = await fetch(`${API_BASE}${path}`, init);
-  if (!res.ok) {
-    const t = await res.text().catch(() => "");
-    throw new Error(`HTTP ${res.status}: ${t || res.statusText}`);
-  }
-  const ct = res.headers.get("content-type") || "";
-  return ct.includes("application/json") ? res.json() : res.text();
 }
 
-export const api = {
-  get: (p) => req(p),
-  post: (p, json) => req(p, { method: "POST", json }),
-  put: (p, json) => req(p, { method: "PUT", json }),
-  del: (p) => req(p, { method: "DELETE" }),
+export async function apiGet(path) {
+  const r = await fetch(`${BASE}${path}`);
+  const d = await jsonOrEmpty(r);
+  if (!r.ok) throw new Error(d.error || r.statusText);
+  return d;
+}
 
-  // Files (pre-signed URL flow expected on backend)
-  requestPresign: (payload) =>
-    req("/files/presign", { method: "POST", json: payload }),
-  confirmUpload: (payload) =>
-    req("/files/confirm", { method: "POST", json: payload }),
+export async function apiPost(path, body) {
+  const r = await fetch(`${BASE}${path}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body || {}),
+  });
+  const d = await jsonOrEmpty(r);
+  if (!r.ok) throw new Error(d.error || r.statusText);
+  return d;
+}
+
+export async function apiUpload(path, formData) {
+  const r = await fetch(`${BASE}${path}`, { method: "POST", body: formData });
+  const d = await jsonOrEmpty(r);
+  if (!r.ok) throw new Error(d.error || r.statusText);
+  return d;
+}
+
+export async function apiNotify(payload) {
+  return apiPost("/api/notify", payload);
+}
+
+export async function apiAuthLogin(credentials) {
+  return apiPost("/api/auth/login", credentials);
+}
+
+// API endpoints configuration
+export const endpoints = {
+  mortgage: {
+    search: "/api/mortgage/search",
+    lock: "/api/mortgage/lock-rate",
+    price: "/api/mortgage/price-scenario",
+    lead: "/api/mortgage/submit-lead",
+  },
+  ag: {
+    search: "/api/ag/search",
+    commodities: "/api/ag/commodities",
+    prices: "/api/ag/prices",
+    growers: "/api/ag/growers",
+  },
+  trade: {
+    search: "/api/trade-finance/search",
+    factoring: "/api/trade-finance/factoring",
+    invoice: "/api/trade-finance/invoice",
+    sba: "/api/trade-finance/sba",
+  },
+  tickers: {
+    rates: "/api/tickers/rates",
+    stocks: "/api/tickers/stocks",
+    commodities: "/api/tickers/commodities",
+  },
+  upload: "/api/upload",
+  ocr: "/api/ocr",
+  facial: "/api/facial-recognition",
 };
+
+// Modern API wrapper
+export const api = {
+  get: (path) => apiGet(path),
+  post: (path, body) => apiPost(path, body),
+  upload: (path, formData) => apiUpload(path, formData),
+  notify: (payload) => apiNotify(payload),
+  auth: {
+    login: (credentials) => apiAuthLogin(credentials),
+  },
+};
+
+export { BASE as API_BASE };
