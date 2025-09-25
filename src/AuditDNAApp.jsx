@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import {
   BarChart3, Shield, FileText, Upload, Search as SearchIcon, TrendingUp, Leaf, CreditCard, DollarSign
 } from "lucide-react";
-import servicesCatalogue from "./auditdna-services-catalogue"; // 285+ services, 10 pillars/categories
+import servicesCatalogue from "./auditdna-services-catalogue.jsx"; // 285+ services, 10 pillars/categories
 import AuditDNAApiService from "./audit-dna-search"; // your API search/upload class
 
 const proModules = [
