@@ -1,40 +1,34 @@
-﻿import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
-import Home from "./pages/Home";
-import Services from "./pages/Services";
-import USDA from "./pages/USDA";
-import Mortgage from "./pages/Mortgage";
-import Factoring from "./pages/Factoring";
-export default function App() {
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import Services from './pages/Services';
+import Cases from './pages/Cases';
+import FileUploads from './pages/FileUploads';
+import AdminDashboard from './pages/AdminDashboard';
+import './styles/ui.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+function App() {
   return (
-    <BrowserRouter>
-      <nav className="flex gap-4 p-3 border-b border-gray-200">
-        {[
-          ["/", "Home"],
-          ["/usda", "USDA Pricing"],
-          ["/services", "Services"],
-          ["/mortgage", "Mortgage"],
-          ["/factoring", "Factoring"],
-        ].map(([to, label]) => (
-          <NavLink
-            key={to}
-            to={to}
-            className={({ isActive }) =>
-              "px-2 py-1 rounded-md " +
-              (isActive ? "bg-yellow-200" : "hover:bg-gray-100")
-            }
-          >
-            {label}
-          </NavLink>
-        ))}
-      </nav>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/usda" element={<USDA />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/mortgage" element={<Mortgage />} />
-        <Route path="/factoring" element={<Factoring />} />
-      </Routes>
-    </BrowserRouter>
+    <Router>
+      <div className="d-flex flex-column min-vh-100">
+        <Navbar />
+        <main className="flex-grow-1">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/cases" element={<Cases />} />
+            <Route path="/files" element={<FileUploads />} />
+            <Route path="/admin" element={<AdminDashboard />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 }
+
+export default App;
 

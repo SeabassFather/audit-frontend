@@ -1,123 +1,203 @@
-import { useMemo, useState } from "react";
-const cats = [
-  "Business Compliance",
-  "Commercial",
-  "Legal",
-  "Medical",
-  "Educational",
-  "Travel",
-  "Insurance",
-  "Consumer",
-  "Real Estate",
-  "Agriculture",
-  "Water Technology",
-  "Environmental",
-  "Finance",
-  "Cross-Border Trade",
-  "Logistics",
-  "HR & Payroll",
-  "Cybersecurity",
-  "Data Privacy",
-  "Debt & Collections",
-  "Tax & Accounting",
-  "Due Diligence",
-  "KYC/AML",
-  "Audits & QA",
-  "Safety & OSHA",
-  "Training & Certifications",
-];
-const all = cats.flatMap((c) =>
-  Array.from({ length: 12 }, (_, i) => ({
-    id: `${c}-${i + 1}`,
-    category: c,
-    name: `${c}  Service ${i + 1}`,
-    summary: `High-impact ${c.toLowerCase()} solution #${i + 1}`,
-    tags: [c.split(" ")[0].toLowerCase(), "audit", "compliance", "auditdna"],
-    status: (i + 1) % 5 === 0 ? "Pilot" : "Available",
-    sla: `${7 + ((i + 1) % 5)} days`,
-  })),
-);
-function groups(list) {
-  const m = new Map();
-  for (const s of list) {
-    if (!m.has(s.category)) m.set(s.category, []);
-    m.get(s.category).push(s);
-  }
-  return Array.from(m.entries()).map(([k, v]) => ({ category: k, items: v }));
-}
-export default function Services() {
-  const [q, setQ] = useState(
-    new URLSearchParams(location.search).get("query") || "",
-  );
-  const filtered = useMemo(() => {
-    const s = q.trim().toLowerCase();
-    if (!s) return all;
-    return all.filter((x) =>
-      [x.name, x.summary, x.category, (x.tags || []).join(" ")]
-        .join(" ")
-        .toLowerCase()
-        .includes(s),
-    );
-  }, [q]);
-  const g = useMemo(() => groups(filtered), [filtered]);
+import React, { useState } from 'react';
+
+const Services = () => {
+  const [activeService, setActiveService] = useState(null);
+
+  const services = [
+    {
+      id: 1,
+      title: "Mortgage Audit Services",
+      description: "Comprehensive mortgage loan auditing and compliance verification",
+      icon: "🏠",
+      features: [
+        "Loan file review and analysis",
+        "Regulatory compliance checking",
+        "Documentation verification",
+        "Risk assessment reporting"
+      ],
+      pricing: "Starting at $299/audit"
+    },
+    {
+      id: 2,
+      title: "Agricultural Compliance",
+      description: "USDA and agricultural regulatory compliance services",
+      icon: "🌾",
+      features: [
+        "USDA certification assistance",
+        "Organic compliance verification",
+        "Crop insurance documentation",
+        "Subsidy program compliance"
+      ],
+      pricing: "Starting at $199/assessment"
+    },
+    {
+      id: 3,
+      title: "Trade Finance Auditing",
+      description: "International trade finance document review and compliance",
+      icon: "🌐",
+      features: [
+        "Letter of credit verification",
+        "Export documentation review",
+        "Anti-money laundering checks",
+        "Cross-border compliance"
+      ],
+      pricing: "Starting at $499/transaction"
+    },
+    {
+      id: 4,
+      title: "Document Management",
+      description: "Secure document storage and workflow management",
+      icon: "📁",
+      features: [
+        "Encrypted document storage",
+        "Version control system",
+        "Automated workflows",
+        "Compliance tracking"
+      ],
+      pricing: "Starting at $99/month"
+    },
+    {
+      id: 5,
+      title: "Risk Assessment",
+      description: "Comprehensive risk analysis and mitigation strategies",
+      icon: "⚠️",
+      features: [
+        "Risk scoring algorithms",
+        "Predictive analytics",
+        "Compliance monitoring",
+        "Real-time alerts"
+      ],
+      pricing: "Starting at $399/assessment"
+    },
+    {
+      id: 6,
+      title: "Regulatory Reporting",
+      description: "Automated regulatory report generation and submission",
+      icon: "📊",
+      features: [
+        "Automated report generation",
+        "Regulatory deadline tracking",
+        "Multi-format exports",
+        "Audit trail maintenance"
+      ],
+      pricing: "Starting at $149/month"
+    }
+  ];
+
   return (
-    <div>
-      <div className="card">
-        <div className="h1">AuditDNA Services</div>
-        <div className="controls">
-          <div style={{ flex: "1 1 auto" }}>
-            <div className="subtle">Search all {all.length} services</div>
-            <input
-              style={{ width: "100%" }}
-              value={q}
-              onChange={(e) => setQ(e.target.value)}
-              placeholder="legal, mortgage, OSHA, water tech, etc"
-            />
+    <div className="container py-5">
+      {/* Page Header */}
+      <div className="text-center mb-5">
+        <h1 className="display-4 fw-bold text-secondary-blue mb-3">
+          Our Services
+        </h1>
+        <p className="lead text-muted col-lg-8 mx-auto">
+          Comprehensive audit and compliance solutions tailored for financial services, 
+          agriculture, and trade finance industries. Choose from our range of professional services.
+        </p>
+      </div>
+
+      {/* Services Grid */}
+      <div className="row g-4 mb-5">
+        {services.map(service => (
+          <div key={service.id} className="col-lg-4 col-md-6">
+            <div className="card card-auditdna h-100">
+              <div className="card-header bg-accent-yellow text-center">
+                <div className="display-4 mb-2">{service.icon}</div>
+                <h5 className="card-title mb-0 text-dark">{service.title}</h5>
+              </div>
+              <div className="card-body d-flex flex-column">
+                <p className="card-text text-muted mb-3">{service.description}</p>
+                
+                <ul className="list-unstyled mb-3 flex-grow-1">
+                  {service.features.map((feature, index) => (
+                    <li key={index} className="mb-2">
+                      <small className="text-muted">
+                        <span className="text-success me-2">✓</span>
+                        {feature}
+                      </small>
+                    </li>
+                  ))}
+                </ul>
+                
+                <div className="mt-auto">
+                  <div className="d-flex justify-content-between align-items-center">
+                    <small className="text-secondary-blue fw-bold">
+                      {service.pricing}
+                    </small>
+                    <button 
+                      className="btn btn-secondary-blue btn-sm"
+                      onClick={() => setActiveService(service.id)}
+                    >
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Service Details Modal */}
+      {activeService && (
+        <div className="modal show d-block" tabIndex="-1" style={{backgroundColor: 'rgba(0,0,0,0.5)'}}>
+          <div className="modal-dialog modal-lg">
+            <div className="modal-content">
+              <div className="modal-header bg-secondary-blue text-white">
+                <h5 className="modal-title">
+                  {services.find(s => s.id === activeService)?.title}
+                </h5>
+                <button 
+                  type="button" 
+                  className="btn-close btn-close-white" 
+                  onClick={() => setActiveService(null)}
+                ></button>
+              </div>
+              <div className="modal-body">
+                <div className="row">
+                  <div className="col-md-8">
+                    <p className="mb-3">
+                      {services.find(s => s.id === activeService)?.description}
+                    </p>
+                    <h6 className="fw-bold mb-3">Service Features:</h6>
+                    <ul>
+                      {services.find(s => s.id === activeService)?.features.map((feature, index) => (
+                        <li key={index} className="mb-2">{feature}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="col-md-4">
+                    <div className="bg-accent-yellow p-3 rounded">
+                      <h6 className="fw-bold mb-2">Pricing</h6>
+                      <p className="h5 text-secondary-blue">
+                        {services.find(s => s.id === activeService)?.pricing}
+                      </p>
+                      <button className="btn btn-secondary-blue w-100 mt-2">
+                        Get Quote
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="mt-4 grid grid-2">
-        {g.map((grp, i) => (
-          <details key={i} className="accordion" open={i < 4}>
-            <summary>
-              {grp.category}
-              <span className="badge" style={{ marginLeft: 8 }}>
-                {grp.items.length}
-              </span>
-            </summary>
-            <section>
-              <table className="table">
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Summary</th>
-                    <th>Tags</th>
-                    <th>Status</th>
-                    <th>SLA</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {grp.items.map((item) => (
-                    <tr key={item.id}>
-                      <td style={{ fontWeight: 700 }}>{item.name}</td>
-                      <td>{item.summary}</td>
-                      <td>
-                        {(item.tags || []).map((t) => (
-                          <span className="tag" key={t}>
-                            {t}
-                          </span>
-                        ))}
-                      </td>
-                      <td>{item.status}</td>
-                      <td>{item.sla}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </section>
-          </details>
-        ))}
+      )}
+
+      {/* Call to Action */}
+      <div className="bg-primary-silver rounded-3 p-5 text-center">
+        <h3 className="fw-bold text-secondary-blue mb-3">Need Custom Solutions?</h3>
+        <p className="text-muted mb-4">
+          Our team can create tailored audit and compliance solutions specific to your industry needs.
+        </p>
+        <div className="d-flex justify-content-center gap-3 flex-wrap">
+          <button className="btn btn-secondary-blue">Contact Sales</button>
+          <button className="btn btn-accent-green">Schedule Demo</button>
+        </div>
       </div>
     </div>
   );
-}
+};
+
+export default Services;
