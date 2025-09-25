@@ -1,1 +1,27 @@
-{"name":"auditdna-frontend","version":"1.0.0","private":true,"description":"AuditDNA Frontend","main":"src/index.js","engines":{"node":">=20.11.1 <=22.2.0","npm":">=9.6.7"},"scripts":{"start":"react-scripts start","build":"react-scripts build","test":"react-scripts test","eject":"react-scripts eject"},"browserslist":[">0.2%","not dead","not op_mini all"],"dependencies":{"@tailwindcss/forms":"^0.5.10","@tailwindcss/postcss":"^4.1.13","autoprefixer":"^10.4.21","bootstrap":"^5.3.0","lucide-react":"^0.544.0","postcss":"^8.5.6","react":"^18.2.0","react-dom":"^18.2.0","react-router-dom":"^6.0.0","react-scripts":"^5.0.1","tailwindcss":"^4.1.13"},"devDependencies":{"ajv":"^6.12.6","ajv-keywords":"^3.5.2","jspdf":"^2.5.1","jspdf-autotable":"^3.8.0"}}
+{
+  "name": "auditdna-frontend",
+  "version": "1.0.0",
+  "lockfileVersion": 3,
+  "requires": true,
+  "packages": {
+    "": {
+      "name": "auditdna-frontend",
+      "version": "1.0.0",
+      "dependencies": {
+        "bootstrap": "^5.3.8",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-router-dom": "^6.22.3",
+        "web-vitals": "^2.1.4"
+      },
+      "devDependencies": {
+        "jspdf": "^3.0.3",
+        "jspdf-autotable": "^5.0.2"
+      },
+      "engines": {
+        "node": ">=20.11.1 <=22.2.0",
+        "npm": ">=9.6.7"
+      }
+    }
+  }
+}
