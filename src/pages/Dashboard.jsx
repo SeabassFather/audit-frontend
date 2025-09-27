@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend } from "recharts";
+import { useNavigate } from "react-router-dom";
+import { logout } from "../utils/auth";
 
 // Helper for authenticated fetch
 async function fetchApi(url, options = {}) {
@@ -11,6 +13,7 @@ async function fetchApi(url, options = {}) {
 }
 
 export default function Dashboard() {
+  const navigate = useNavigate();
   // State for real metrics
   const [audits, setAudits] = useState({ count: 0, pass: 0, fail: 0 });
   const [usda, setUsda] = useState({ prices: [], avg5yr: [], alerts: [], count: 0 });
@@ -82,19 +85,22 @@ export default function Dashboard() {
       <aside className="w-20 bg-slate-900 text-white flex flex-col items-center py-6 shadow-lg">
         <div className="mb-8 text-2xl font-bold">AD</div>
         <nav className="flex flex-col gap-6">
-          <SidebarIcon label="Home" />
-          <SidebarIcon label="USDA" />
-          <SidebarIcon label="Mortgage" />
-          <SidebarIcon label="Factoring" />
-          <SidebarIcon label="WaterTech" />
-          <SidebarIcon label="Compliance" />
-          <SidebarIcon label="Docs" />
-          <SidebarIcon label="Admin" />
+          <SidebarIcon label="Home" onClick={() => navigate("/dashboard")} active={true} />
+          <SidebarIcon label="USDA" onClick={() => navigate("/usda-pricing")} />
+          <SidebarIcon label="Mortgage" onClick={() => navigate("/mortgage-search")} />
+          <SidebarIcon label="Factoring" onClick={() => alert("Factoring module coming soon")} />
+          <SidebarIcon label="WaterTech" onClick={() => alert("WaterTech module coming soon")} />
+          <SidebarIcon label="Compliance" onClick={() => alert("Compliance module coming soon")} />
+          <SidebarIcon label="Docs" onClick={() => alert("Docs module coming soon")} />
+          <SidebarIcon label="Admin" onClick={() => navigate("/elite-modules")} />
         </nav>
       </aside>
       {/* Main Content */}
       <div className="flex-1 flex flex-col">
-        <Header />
+        <Header onLogout={() => {
+          logout();
+          navigate("/login");
+        }} />
         <main className="p-6">
           <h1 className="text-3xl font-bold mb-6">AuditDNA OS Dashboard</h1>
           {/* Metrics cards */}
@@ -112,6 +118,7 @@ export default function Dashboard() {
               subtitle={usda.alerts.map(a => a.message).join(", ")}
               color="bg-yellow-100 text-yellow-900"
               icon="🥑"
+              onClick={() => navigate("/usda-pricing")}
             />
             <DashboardCard
               title="Mortgage Deals"
@@ -119,6 +126,7 @@ export default function Dashboard() {
               subtitle={`Pending: ${mortgage.pending}`}
               color="bg-green-100 text-green-900"
               icon="🏠"
+              onClick={() => navigate("/mortgage-search")}
             />
             <DashboardCard
               title="Factoring Contracts"
@@ -202,10 +210,13 @@ export default function Dashboard() {
 }
 
 // Sidebar icon stub
-function SidebarIcon({ label }) {
+function SidebarIcon({ label, onClick, active = false }) {
   return (
-    <div className="flex flex-col items-center group cursor-pointer">
-      <div className="h-8 w-8 bg-slate-800 rounded-lg mb-1 flex items-center justify-center group-hover:bg-blue-600 transition">
+    <div 
+      className={`flex flex-col items-center group cursor-pointer ${active ? 'text-blue-400' : ''}`}
+      onClick={onClick}
+    >
+      <div className={`h-8 w-8 rounded-lg mb-1 flex items-center justify-center transition ${active ? 'bg-blue-600' : 'bg-slate-800 group-hover:bg-blue-600'}`}>
         {/* Put SVG icon here per label for Step 4 */}
       </div>
       <span className="text-xs">{label}</span>
@@ -214,27 +225,56 @@ function SidebarIcon({ label }) {
 }
 
 // Header stub
-function Header() {
+function Header({ onLogout }) {
   return (
     <header className="w-full h-16 bg-white shadow flex items-center px-8 justify-between">
       <div className="flex items-center gap-3">
         <span className="font-bold text-xl text-blue-700">AuditDNA OS</span>
       </div>
       {/* Topbar features: search, notifications, avatar go here (Step 4) */}
+      <div className="flex items-center gap-4">
+        <div className="relative">
+          <input 
+            type="text" 
+            placeholder="Quick search..."
+            className="px-3 py-1 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          />
+        </div>
+        <button className="relative p-2 text-gray-600 hover:text-blue-600 transition">
+          🔔
+          <span className="absolute -top-1 -right-1 h-3 w-3 bg-red-500 rounded-full text-xs text-white flex items-center justify-center">
+            3
+          </span>
+        </button>
+        <button 
+          onClick={onLogout}
+          className="px-4 py-2 text-sm bg-gray-100 hover:bg-gray-200 rounded-lg transition"
+        >
+          Logout
+        </button>
+      </div>
     </header>
   );
 }
 
 // Enhanced card w/ metric, subtitle, color, and icon
-function DashboardCard({ title, value, subtitle, color, icon }) {
+function DashboardCard({ title, value, subtitle, color, icon, onClick }) {
   return (
-    <div className={`rounded-xl shadow p-6 flex flex-col items-start ${color}`}> 
+    <div 
+      className={`rounded-xl shadow p-6 flex flex-col items-start transition-transform cursor-pointer hover:scale-105 ${color}`}
+      onClick={onClick}
+    > 
       <div className="flex items-center gap-3 mb-2">
         <span className="text-2xl">{icon}</span>
         <span className="font-semibold text-lg">{title}</span>
       </div>
       <span className="text-3xl font-bold mb-1">{value}</span>
       <span className="text-sm opacity-70">{subtitle}</span>
+      {onClick && (
+        <div className="mt-3 text-sm font-medium opacity-60">
+          Click to view details →
+        </div>
+      )}
     </div>
   );
 }
