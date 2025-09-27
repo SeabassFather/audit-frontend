@@ -1,12 +1,6 @@
-import "./styles/ui.css";
 import React from "react";
-import { createRoot } from "react-dom/client";
-import App from "./pages/App";
+import ReactDOM from "react-dom/client";
+import SpartanApp from "./SpartanApp";
 
-const el = document.getElementById("root");
-const root = createRoot(el);
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-);
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<SpartanApp />);
