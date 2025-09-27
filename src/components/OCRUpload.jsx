@@ -152,9 +152,10 @@ export default function OCRUpload({ onTextExtracted, documentType = "general" })
 
         {/* Demo Button for Testing */}
         <div className="mb-6 text-center">
-          <button
-            onClick={() => {
-              const sampleContractText = `MORTGAGE LOAN AGREEMENT
+          <div className="space-x-4">
+            <button
+              onClick={() => {
+                const sampleContractText = `MORTGAGE LOAN AGREEMENT
 
 Borrower: John Doe
 Lender: Wells Fargo Bank
@@ -188,18 +189,44 @@ Co-Borrower Signature: ______________ Date: _________
 
 This document contains the terms and conditions of your mortgage loan agreement with Wells Fargo Bank.`;
 
-              setExtractedText(sampleContractText);
-              setConfidence(0.95);
-              
-              if (onTextExtracted) {
-                onTextExtracted(sampleContractText);
-              }
-            }}
-            className="bg-green-600 text-white py-2 px-6 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
-          >
-            🎯 Use Demo Contract (for testing)
-          </button>
-          <p className="text-sm text-gray-500 mt-2">Click to simulate a mortgage contract upload with compliance data</p>
+                setExtractedText(sampleContractText);
+                setConfidence(0.95);
+                
+                if (onTextExtracted) {
+                  onTextExtracted(sampleContractText);
+                }
+              }}
+              className="bg-green-600 text-white py-2 px-6 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+            >
+              🎯 Demo PASS Contract
+            </button>
+            
+            <button
+              onClick={() => {
+                const failingContractText = `MORTGAGE AGREEMENT
+
+Borrower: Jane Smith
+Lender: ABC Bank
+Property: 456 Oak Street
+Loan: $200,000
+
+This is a basic mortgage contract without proper disclosures.
+No mention of timing requirements.
+Missing required signatures and documentation.`;
+
+                setExtractedText(failingContractText);
+                setConfidence(0.75);
+                
+                if (onTextExtracted) {
+                  onTextExtracted(failingContractText);
+                }
+              }}
+              className="bg-red-600 text-white py-2 px-6 rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+            >
+              ⚠️ Demo FAIL Contract
+            </button>
+          </div>
+          <p className="text-sm text-gray-500 mt-2">Click to simulate different contract scenarios with compliance outcomes</p>
         </div>
 
         {/* Error Display */}
