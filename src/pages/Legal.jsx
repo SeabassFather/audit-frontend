@@ -5,7 +5,6 @@ export default function Legal() {
     (async ()=>{
       try{
         const base =
-          ((import.meta.env && import.meta.env.VITE_API_BASE) ||
           (typeof process !== "undefined" && process.env && process.env.REACT_APP_API_BASE) ||
           "http://localhost:3002";
         const url = (base.endsWith("/api")?base:base+"/api") + "/legals?visibility=public&published=true";

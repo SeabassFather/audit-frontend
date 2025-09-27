@@ -53,12 +53,7 @@ export default function ProduceTrendsAll({ areaTitle = "USDA Ag Produce", commod
         if (nextData[c.name]) return;
         const year = new Date().getFullYear();
         const url =
-          `t`thttps://quickstats.nass.usda.gov/api/api_GET/?key=${import.meta.env.VITE_NASS_KEY}&commodity_desc=FRUIT&year=${new Date().getFullYear()}
-          &commodity_desc= +
-          &statisticcat_desc= +
-          &unit_desc= +
-          &year__GE=&year__LE= +
-          &agg_level_desc=NATIONAL&format=JSON;
+          `https://quickstats.nass.usda.gov/api/api_GET/?key=${process.env.REACT_APP_NASS_KEY || USDA_API_KEY}&commodity_desc=${encodeURIComponent(c.nass.commodity_desc)}&statisticcat_desc=${encodeURIComponent(c.nass.statisticcat_desc)}&unit_desc=${encodeURIComponent(c.nass.unit_desc)}&year__GE=${year-5}&year__LE=${year}&agg_level_desc=NATIONAL&format=JSON`;
         try {
           const resp = await fetch(url);
           const json = await resp.json();

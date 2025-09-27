@@ -12,10 +12,9 @@ Write-Host "📦 Creating snapshot: $zipPath"
 $include = @(
     "$root\src",
     "$root\public",
-    "$root\dist",
+    "$root\build",
     "$root\package.json",
     "$root\package-lock.json",
-    "$root\vite.config.js",
     "$root\tailwind.config.js",
     "$root\postcss.config.js",
     "$root\netlify.toml",
