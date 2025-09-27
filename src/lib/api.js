@@ -1,6 +1,6 @@
 ﻿import axios from "axios";
 export const API_BASE =
-  import.meta.env.VITE_API_BASE || "http://localhost:5050";
+  process.env.REACT_APP_API_BASE || "http://localhost:5050";
 export const api = axios.create({ baseURL: API_BASE, timeout: 20000 });
 
 export async function getUSDAWeeklyPrices(params) {

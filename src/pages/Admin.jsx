@@ -11,8 +11,7 @@ export default function Admin() {
           <h3 className="font-semibold">Environment</h3>
           <ul className="text-sm mt-2 list-disc ml-5">
             <li>
-              Set <code>VITE_API_BASE</code> or <code>REACT_APP_API_BASE</code>{" "}
-              for API
+              Set <code>REACT_APP_API_BASE</code> for API
             </li>
             <li>Use Navbar button to toggle Demo/Live data</li>
           </ul>
