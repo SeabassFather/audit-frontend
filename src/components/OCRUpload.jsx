@@ -150,6 +150,58 @@ export default function OCRUpload({ onTextExtracted, documentType = "general" })
           )}
         </div>
 
+        {/* Demo Button for Testing */}
+        <div className="mb-6 text-center">
+          <button
+            onClick={() => {
+              const sampleContractText = `MORTGAGE LOAN AGREEMENT
+
+Borrower: John Doe
+Lender: Wells Fargo Bank
+Property Address: 123 Main Street, Anytown, ST 12345
+Loan Amount: $350,000
+Interest Rate: 4.25% APR
+Term: 30 years
+
+DISCLOSURE TIMING:
+This Loan Estimate was provided on January 15, 2024, within 3 business days of application.
+The Closing Disclosure will be provided at least 3 business days before closing.
+
+FINANCE CHARGES:
+Total Interest: $245,867.32
+Origination Fee: $3,500
+Processing Fee: $895
+Underwriting Fee: $1,295
+
+EQUAL CREDIT OPPORTUNITY:
+This institution does not discriminate based on race, color, religion, national origin, sex, marital status, age, or because all or part of the applicant's income derives from any public assistance program.
+
+DEMOGRAPHIC INFORMATION:
+Borrower demographic information collected for HMDA reporting purposes.
+Ethnicity: Hispanic or Latino
+Race: White
+Sex: Male
+
+SIGNATURES:
+Borrower Signature: _________________ Date: _________
+Co-Borrower Signature: ______________ Date: _________
+
+This document contains the terms and conditions of your mortgage loan agreement with Wells Fargo Bank.`;
+
+              setExtractedText(sampleContractText);
+              setConfidence(0.95);
+              
+              if (onTextExtracted) {
+                onTextExtracted(sampleContractText);
+              }
+            }}
+            className="bg-green-600 text-white py-2 px-6 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+          >
+            🎯 Use Demo Contract (for testing)
+          </button>
+          <p className="text-sm text-gray-500 mt-2">Click to simulate a mortgage contract upload with compliance data</p>
+        </div>
+
         {/* Error Display */}
         {error && (
           <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-md">
