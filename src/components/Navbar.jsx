@@ -13,7 +13,6 @@ const Navbar = () => {
           <div className="logo-badge me-2">A</div>
           AuditDNA
         </Link>
-        
         <button 
           className="navbar-toggler" 
           type="button" 
@@ -25,7 +24,6 @@ const Navbar = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
@@ -69,7 +67,6 @@ const Navbar = () => {
               </Link>
             </li>
           </ul>
-          
           <ul className="navbar-nav">
             <li className="nav-item">
               <a 
