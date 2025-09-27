@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import SpartanApp from "./SpartanApp.jsx";
-
+import App from "./App";
+import "./index.css";
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<SpartanApp />);
+root.render(<App />);

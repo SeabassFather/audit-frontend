@@ -1,23 +1,20 @@
-import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
-import USDA from "./pages/USDA";
-import Mortgage from "./pages/Mortgage";
-import Factoring from "./pages/Factoring";
-
-export default function App(){
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import LoginPage from "./pages/LoginPage";
+import EliteModulesPage from "./pages/EliteModulesPage";
+import { useAuth } from "./utils/auth";
+function ProtectedRoute({ children }) {
+  const { isAuthenticated } = useAuth();
+  return isAuthenticated ? children : <Navigate to="/login" />;
+}
+export default function App() {
   return (
-    <BrowserRouter>
-      <nav className="flex gap-4 p-4 border-b">
-        <NavLink to="/" end>Home</NavLink>
-        <NavLink to="/usda">USDA Pricing</NavLink>
-        <NavLink to="/mortgage">Mortgage</NavLink>
-        <NavLink to="/factoring">Ag Factoring</NavLink>
-      </nav>
+    <Router>
       <Routes>
-        <Route path="/usda" element={<USDA/>}/>
-        <Route path="/mortgage" element={<Mortgage/>}/>
-        <Route path="/factoring" element={<Factoring/>}/>
-        <Route path="/" element={<div className="p-6">Welcome to AuditDNA</div>}/>
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/elite-modules" element={<ProtectedRoute><EliteModulesPage /></ProtectedRoute>} />
+        <Route path="/*" element={<Navigate to="/elite-modules" />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
