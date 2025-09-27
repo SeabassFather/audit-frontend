@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { login } from "../utils/auth";
+import AuditDNALogo from "../components/AuditDNALogo";
 
 export default function LoginPage() {
   const [username, setUsername] = useState("");
@@ -19,59 +20,69 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-      <div className="max-w-md w-full bg-white rounded-xl shadow-lg p-8">
+    <div className="min-h-screen flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #87CEEB 0%, #FFFFFF 100%)' }}>
+      <div className="max-w-md w-full bg-white rounded-xl shadow-lg p-8" style={{ border: '1px solid var(--border)' }}>
         <div className="text-center mb-8">
-          <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 mx-auto mb-4" />
-          <h2 className="text-2xl font-bold text-gray-900">AuditDNA Login</h2>
-          <p className="text-gray-600 mt-2">Access your dashboard</p>
+          <div className="flex justify-center mb-4">
+            <AuditDNALogo size="large" />
+          </div>
+          <h2 className="text-2xl font-bold text-primary">AuditDNA Login</h2>
+          <p className="text-medium mt-2">Access your dashboard</p>
         </div>
         
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-dark mb-2">
               Username
             </label>
             <input
               type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:border-blue-500"
+              style={{ borderColor: 'var(--border)' }}
               placeholder="Enter username"
               required
             />
           </div>
           
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-dark mb-2">
               Password
             </label>
             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:border-blue-500"
+              style={{ borderColor: 'var(--border)' }}
               placeholder="Enter password"
               required
             />
           </div>
 
           {error && (
-            <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
+            <div className="text-red-600 text-sm text-center px-4 py-3 rounded-lg" style={{ background: 'var(--light-yellow)', border: '1px solid #FFC107' }}>
               {error}
             </div>
           )}
 
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-200"
+            className="w-full py-2 px-4 rounded-lg text-white font-medium transition"
+            style={{ 
+              background: 'linear-gradient(135deg, var(--light-blue) 0%, var(--lime) 100%)',
+              boxShadow: 'var(--shadow)'
+            }}
+            onMouseOver={(e) => e.target.style.transform = 'translateY(-1px)'}
+            onMouseOut={(e) => e.target.style.transform = 'translateY(0)'}
           >
             Login
           </button>
         </form>
 
-        <div className="mt-6 text-center text-sm text-gray-500">
-          Demo credentials: admin / password123
+        <div className="mt-6 text-center text-sm text-medium">
+          Demo credentials: <strong>admin</strong> / <strong>password123</strong>
         </div>
       </div>
     </div>

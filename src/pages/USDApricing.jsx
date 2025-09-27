@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend } from "recharts";
 
 // API service - placeholder for real backend integration
@@ -41,11 +41,7 @@ export default function USDApricing() {
     c.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  useEffect(() => {
-    loadPricingData();
-  }, [commodity]);
-
-  async function loadPricingData() {
+  const loadPricingData = useCallback(async () => {
     setLoading(true);
     try {
       const data = await fetchUSDApricing(commodity);
@@ -54,7 +50,11 @@ export default function USDApricing() {
       console.error("Failed to load USDA pricing data:", error);
     }
     setLoading(false);
-  }
+  }, [commodity]);
+
+  useEffect(() => {
+    loadPricingData();
+  }, [loadPricingData]);
 
   return (
     <div className="min-h-screen bg-gray-50">
