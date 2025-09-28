@@ -53,12 +53,7 @@ export default function ProduceTrendsAll({ areaTitle = "USDA Ag Produce", commod
         if (nextData[c.name]) return;
         const year = new Date().getFullYear();
         const url =
-          `t`thttps://quickstats.nass.usda.gov/api/api_GET/?key=${import.meta.env.VITE_NASS_KEY}&commodity_desc=FRUIT&year=${new Date().getFullYear()}
-          &commodity_desc= +
-          &statisticcat_desc= +
-          &unit_desc= +
-          &year__GE=&year__LE= +
-          &agg_level_desc=NATIONAL&format=JSON;
+          `https://quickstats.nass.usda.gov/api/api_GET/?key=${import.meta.env.VITE_NASS_KEY}&commodity_desc=FRUIT&year=${new Date().getFullYear()}&agg_level_desc=NATIONAL&format=JSON`;
         try {
           const resp = await fetch(url);
           const json = await resp.json();
@@ -85,7 +80,7 @@ export default function ProduceTrendsAll({ areaTitle = "USDA Ag Produce", commod
             latest: years.length ? prices[prices.length - 1] : null
           };
         } catch {
-          setError(Failed to fetch  from USDA.);
+          setError("Failed to fetch from USDA.");
         }
       });
       await Promise.all(promises);
@@ -133,7 +128,7 @@ export default function ProduceTrendsAll({ areaTitle = "USDA Ag Produce", commod
           return (
             <div key={c.name} style={{
               background: "#f8f9fc",
-              border: 2px solid ,
+              border: "2px solid #ddd",
               borderRadius: 13,
               padding: "12px 18px",
               minWidth: 120,

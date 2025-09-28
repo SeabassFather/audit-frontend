@@ -5,8 +5,8 @@ import USDA from "./pages/USDA";
 import Mortgage from "./pages/Mortgage";
 import Factoring from "./pages/Factoring";
 import Compliance from "./pages/Compliance";
-import WaterTech from "./pages/WaterTech";
-import AuditReport from "./pages/AuditReport";
+import WaterTech from "./pages/WaterTechPage";
+import AuditReport from "./pages/Audit";
 
 export default function App() {
   return (
