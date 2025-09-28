@@ -5,8 +5,8 @@ import USDA from "./pages/USDA";
 import Mortgage from "./pages/Mortgage";
 import Factoring from "./pages/Factoring";
 import Compliance from "./pages/Compliance";
-import WaterTech from "./pages/WaterTech";
-import AuditReport from "./pages/AuditReport";
+import WaterTechPage from "./pages/WaterTechPage";
+import Audit from "./pages/Audit";
 
 export default function App() {
   return (
@@ -18,8 +18,8 @@ export default function App() {
           <Route path="/mortgage" element={<Mortgage />} />
           <Route path="/factoring" element={<Factoring />} />
           <Route path="/compliance" element={<Compliance />} />
-          <Route path="/water-tech" element={<WaterTech />} />
-          <Route path="/audit-report" element={<AuditReport />} />
+          <Route path="/water-tech" element={<WaterTechPage />} />
+          <Route path="/audit-report" element={<Audit />} />
         </Routes>
       </Layout>
     </BrowserRouter>
