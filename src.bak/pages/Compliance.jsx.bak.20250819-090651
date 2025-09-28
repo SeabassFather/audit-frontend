@@ -1,9 +1,0 @@
-import React from "react";
-export default function Compliance() {
-  return (
-    <div>
-      <h1>📑 Compliance</h1>
-      <p>Stay updated with regulations and compliance checks.</p>
-    </div>
-  );
-}
