@@ -1,12 +1,13 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
 import Dashboard from "./pages/Dashboard";
-import USDA from "./pages/USDA";
+import USDA from "./pages/Usda";
 import Mortgage from "./pages/Mortgage";
 import Factoring from "./pages/Factoring";
 import Compliance from "./pages/Compliance";
-import WaterTech from "./pages/WaterTechPage";
-import AuditReport from "./pages/Audit";
+import WaterTechPage from "./pages/WaterTechPage";
+import Audit from "./pages/Audit";
+import AuditReport from "./pages/AuditReport";
 
 export default function App() {
   return (
@@ -18,7 +19,8 @@ export default function App() {
           <Route path="/mortgage" element={<Mortgage />} />
           <Route path="/factoring" element={<Factoring />} />
           <Route path="/compliance" element={<Compliance />} />
-          <Route path="/water-tech" element={<WaterTech />} />
+          <Route path="/water-tech" element={<WaterTechPage />} />
+          <Route path="/audit" element={<Audit />} />
           <Route path="/audit-report" element={<AuditReport />} />
         </Routes>
       </Layout>
