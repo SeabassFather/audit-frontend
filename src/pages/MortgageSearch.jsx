@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import DashboardLayout from "../components/DashboardLayout";
 
 // API service for mortgage search - TODO: Replace with real backend
 async function searchMortgages(criteria) {
@@ -106,28 +107,11 @@ export default function MortgageSearch() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-white shadow-sm border-b border-gray-200">
-        <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-green-400 to-green-600" />
-            <h1 className="text-2xl font-bold text-gray-900">Mortgage Search</h1>
-          </div>
-          <button 
-            onClick={() => window.history.back()}
-            className="px-4 py-2 text-sm bg-gray-100 hover:bg-gray-200 rounded-lg transition"
-          >
-            ← Back to Dashboard
-          </button>
-        </div>
-      </header>
-
-      <div className="container mx-auto px-6 py-8">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-gray-600 mb-8">
-            Submit your loan criteria to find the best mortgage options from our network of lenders.
-          </p>
+    <DashboardLayout title="Mortgage Search" activeSection="mortgage">
+      <div className="max-w-4xl mx-auto">
+        <p className="text-gray-600 mb-8">
+          Submit your loan criteria to find the best mortgage options from our network of lenders.
+        </p>
 
           {/* Search Form */}
           <div className="bg-white rounded-xl shadow p-6 mb-8">
@@ -366,8 +350,7 @@ export default function MortgageSearch() {
               </div>
             </div>
           )}
-        </div>
       </div>
-    </div>
+    </DashboardLayout>
   );
 }

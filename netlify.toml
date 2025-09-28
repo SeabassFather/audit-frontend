@@ -7,9 +7,18 @@
 
 [build.environment]
   NODE_VERSION = "20"
-
   # === AuditDNA App Variables ===
   REACT_APP_API_BASE = "https://api.auditdna.org"
   REACT_APP_ENV = "production"
   REACT_APP_FEATURE_FLAGS = "usda,mortgage,factoring"
   REACT_APP_OWNER_NAME = "AuditDNA"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

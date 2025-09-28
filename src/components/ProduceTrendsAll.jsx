@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { Line, Bar } from "react-chartjs-2";
 import {
   Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, BarElement, Title, Tooltip, Legend
@@ -80,7 +80,7 @@ export default function ProduceTrendsAll({ areaTitle = "USDA Ag Produce", commod
             latest: years.length ? prices[prices.length - 1] : null
           };
         } catch {
-          setError(Failed to fetch  from USDA.);
+          setError("Failed to fetch from USDA.");
         }
       });
       await Promise.all(promises);
@@ -128,7 +128,7 @@ export default function ProduceTrendsAll({ areaTitle = "USDA Ag Produce", commod
           return (
             <div key={c.name} style={{
               background: "#f8f9fc",
-              border: 2px solid ,
+              border: "2px solid #e5e5e5",
               borderRadius: 13,
               padding: "12px 18px",
               minWidth: 120,
@@ -140,16 +140,16 @@ export default function ProduceTrendsAll({ areaTitle = "USDA Ag Produce", commod
                 color: CHART_COLORS[idx % CHART_COLORS.length]
               }}>{c.name}</div>
               <div style={{ fontSize: ".97rem", color: "#222" }}>
-                <span style={{ fontWeight: 600 }}>High:</span> {d.high ? $ : "-"}
+                <span style={{ fontWeight: 600 }}>High:</span> {d.high ? `$${d.high.toFixed(2)}` : "-"}
               </div>
               <div style={{ fontSize: ".97rem", color: "#222" }}>
-                <span style={{ fontWeight: 600 }}>Low:</span> {d.low ? $ : "-"}
+                <span style={{ fontWeight: 600 }}>Low:</span> {d.low ? `$${d.low.toFixed(2)}` : "-"}
               </div>
               <div style={{ fontSize: ".97rem", color: "#222" }}>
-                <span style={{ fontWeight: 600 }}>Avg:</span> {d.avg ? $ : "-"}
+                <span style={{ fontWeight: 600 }}>Avg:</span> {d.avg ? `$${d.avg.toFixed(2)}` : "-"}
               </div>
               <div style={{ fontSize: ".97rem", color: "#222" }}>
-                <span style={{ fontWeight: 600 }}>Current:</span> {d.latest ? $ : "-"}
+                <span style={{ fontWeight: 600 }}>Current:</span> {d.latest ? `$${d.latest.toFixed(2)}` : "-"}
               </div>
             </div>
           );
