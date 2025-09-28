@@ -1,29 +1,27 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import LoginPage from "./pages/LoginPage";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./Layout";
 import Dashboard from "./pages/Dashboard";
-import MortgageSearch from "./pages/MortgageSearch";
-import USDApricing from "./pages/USDApricing";
-import EliteModulesPage from "./pages/EliteModulesPage";
-import { useAuth } from "./utils/auth";
-
-function ProtectedRoute({ children }) {
-  const { isAuthenticated } = useAuth();
-  return isAuthenticated ? children : <Navigate to="/login" />;
-}
+import USDA from "./pages/USDA";
+import Mortgage from "./pages/Mortgage";
+import Factoring from "./pages/Factoring";
+import Compliance from "./pages/Compliance";
+import WaterTech from "./pages/WaterTech";
+import AuditReport from "./pages/AuditReport";
 
 export default function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
-        <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
-        <Route path="/mortgage-search" element={<ProtectedRoute><MortgageSearch /></ProtectedRoute>} />
-        <Route path="/usda-pricing" element={<ProtectedRoute><USDApricing /></ProtectedRoute>} />
-        <Route path="/elite-modules" element={<ProtectedRoute><EliteModulesPage /></ProtectedRoute>} />
-        <Route path="/*" element={<Navigate to="/" />} />
-      </Routes>
-    </Router>
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/usda" element={<USDA />} />
+          <Route path="/mortgage" element={<Mortgage />} />
+          <Route path="/factoring" element={<Factoring />} />
+          <Route path="/compliance" element={<Compliance />} />
+          <Route path="/water-tech" element={<WaterTech />} />
+          <Route path="/audit-report" element={<AuditReport />} />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
   );
 }
