@@ -3,5 +3,4 @@
   { "id": "water", "name": "Water Usage Audit", "link": "/eco/water", "category": "Eco" },
   { "id": "energy", "name": "Renewable Energy Credits", "link": "/eco/energy", "category": "Eco" },
   { "id": "soil", "name": "Soil Health Index", "link": "/eco/soil", "category": "Eco" }
-  //  expand with recycling, LEED, clean tech, solar audits, etc.
 ]

@@ -3,5 +3,4 @@
   { "id": "healthcare", "name": "Healthcare Plan Comparison", "link": "/consumer/healthcare", "category": "Consumer" },
   { "id": "auto-loans", "name": "Auto Loan Search", "link": "/consumer/auto-loans", "category": "Consumer" },
   { "id": "credit-score", "name": "Credit Score Check", "link": "/consumer/credit-score", "category": "Consumer" }
-  //  expand with Medicare, retirement, payroll, 401k audits, etc.
 ]

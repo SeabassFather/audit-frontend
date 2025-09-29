@@ -4,5 +4,4 @@
   { "id": "insurance", "name": "Insurance Comparison", "link": "/finance/insurance", "category": "Finance" },
   { "id": "factoring", "name": "Ag Factoring Services", "link": "/finance/factoring", "category": "Finance" },
   { "id": "credit", "name": "Credit Audit", "link": "/finance/credit", "category": "Finance" }
-  //  expand with cross-border finance, Mexico mortgage, factoring, SBA, etc.
 ]
