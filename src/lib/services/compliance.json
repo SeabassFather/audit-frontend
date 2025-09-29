@@ -1,12 +1,7 @@
 ﻿[
-  { "id": "trid", "name": "TRID Compliance", "link": "/compliance/trid", "category": "Auditing & Compliance" },
-  { "id": "respa", "name": "RESPA Compliance", "link": "/compliance/respa", "category": "Auditing & Compliance" },
-  { "id": "ecoa", "name": "ECOA Compliance", "link": "/compliance/ecoa", "category": "Auditing & Compliance" },
-  { "id": "hmda", "name": "HMDA Reporting", "link": "/compliance/hmda", "category": "Auditing & Compliance" },
-  { "id": "gdpr", "name": "GDPR Compliance", "link": "/compliance/gdpr", "category": "Auditing & Compliance" },
-  { "id": "ccpa", "name": "CCPA Compliance", "link": "/compliance/ccpa", "category": "Auditing & Compliance" },
-  { "id": "hipaa", "name": "HIPAA Compliance", "link": "/compliance/hipaa", "category": "Auditing & Compliance" },
-  { "id": "sox", "name": "Sarbanes-Oxley (SOX)", "link": "/compliance/sox", "category": "Auditing & Compliance" },
-  { "id": "pci", "name": "PCI-DSS Compliance", "link": "/compliance/pci", "category": "Auditing & Compliance" },
-  { "id": "basel3", "name": "Basel III Compliance", "link": "/compliance/basel3", "category": "Auditing & Compliance" }
+  { "id": "ccpa", "name": "California Consumer Privacy Act (CCPA)", "link": "/compliance/ccpa", "category": "Compliance" },
+  { "id": "gdpr", "name": "General Data Protection Regulation (GDPR)", "link": "/compliance/gdpr", "category": "Compliance" },
+  { "id": "hipaa", "name": "Health Insurance Portability & Accountability Act (HIPAA)", "link": "/compliance/hipaa", "category": "Compliance" },
+  { "id": "sox", "name": "Sarbanes-Oxley (SOX)", "link": "/compliance/sox", "category": "Compliance" },
+  { "id": "finra", "name": "FINRA Rules", "link": "/compliance/finra", "category": "Compliance" }
 ]

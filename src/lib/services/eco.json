@@ -1,7 +1,6 @@
 ﻿[
-  { "id": "carbon-footprint", "name": "Carbon Footprint Tracker", "link": "/eco/carbon-footprint", "category": "Eco & Sustainability" },
-  { "id": "green-housing", "name": "Green Housing / ADU Compliance", "link": "/eco/green-housing", "category": "Eco & Sustainability" },
-  { "id": "soil-lab", "name": "Soil Lab Upload", "link": "/eco/soil-lab", "category": "Eco & Sustainability" },
-  { "id": "water-lab", "name": "Water Lab Upload", "link": "/eco/water-lab", "category": "Eco & Sustainability" },
-  { "id": "emissions", "name": "Emissions Compliance", "link": "/eco/emissions", "category": "Eco & Sustainability" }
+  { "id": "carbon", "name": "Carbon Footprint Tracker", "link": "/eco/carbon", "category": "Eco" },
+  { "id": "water", "name": "Water Usage Audit", "link": "/eco/water", "category": "Eco" },
+  { "id": "energy", "name": "Renewable Energy Credits", "link": "/eco/energy", "category": "Eco" },
+  { "id": "soil", "name": "Soil Health Index", "link": "/eco/soil", "category": "Eco" }
 ]

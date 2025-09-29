@@ -1,7 +1,7 @@
 ﻿[
-  { "id": "mexico-finance", "name": "Mexico Mortgage & Real Estate Finance", "link": "/finance/mexico", "category": "International Finance" },
-  { "id": "banxico", "name": "BANXICO Reference Rates", "link": "/finance/banxico", "category": "International Finance" },
-  { "id": "factoring", "name": "Ag Factoring", "link": "/finance/factoring", "category": "Business" },
-  { "id": "sba-loan", "name": "SBA Loan Search", "link": "/finance/sba", "category": "Business" },
-  { "id": "lease-finance", "name": "Commercial Lease Finance", "link": "/finance/lease", "category": "Business" }
+  { "id": "mortgage", "name": "Mortgage Search Engine", "link": "/finance/mortgage", "category": "Finance" },
+  { "id": "student-loans", "name": "Student Loan Analyzer", "link": "/finance/student-loans", "category": "Finance" },
+  { "id": "insurance", "name": "Insurance Comparison", "link": "/finance/insurance", "category": "Finance" },
+  { "id": "factoring", "name": "Ag Factoring Services", "link": "/finance/factoring", "category": "Finance" },
+  { "id": "credit", "name": "Credit Audit", "link": "/finance/credit", "category": "Finance" }
 ]
