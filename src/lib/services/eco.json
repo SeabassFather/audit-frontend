@@ -1,5 +1,7 @@
-﻿[ { "id": "carbon-footprint", "name": "Carbon Footprint Tracker", "link": "/eco/carbon-footprint", "category": "Eco & Sustainability" },
+﻿[
+  { "id": "carbon-footprint", "name": "Carbon Footprint Tracker", "link": "/eco/carbon-footprint", "category": "Eco & Sustainability" },
   { "id": "green-housing", "name": "Green Housing / ADU Compliance", "link": "/eco/green-housing", "category": "Eco & Sustainability" },
   { "id": "soil-lab", "name": "Soil Lab Upload", "link": "/eco/soil-lab", "category": "Eco & Sustainability" },
   { "id": "water-lab", "name": "Water Lab Upload", "link": "/eco/water-lab", "category": "Eco & Sustainability" },
-  { "id": "emissions", "name": "Emissions Compliance", "link": "/eco/emissions", "category": "Eco & Sustainability" } ]
+  { "id": "emissions", "name": "Emissions Compliance", "link": "/eco/emissions", "category": "Eco & Sustainability" }
+]

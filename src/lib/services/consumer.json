@@ -1,6 +1,8 @@
-﻿[ { "id": "consumer-loan", "name": "Consumer Loan Search", "link": "/consumer/loans", "category": "Consumer" },
+﻿[
+  { "id": "consumer-loan", "name": "Consumer Loan Search", "link": "/consumer/loans", "category": "Consumer" },
   { "id": "student-loan", "name": "Student Loan Search", "link": "/consumer/student-loans", "category": "Consumer" },
   { "id": "auto-loan", "name": "Auto Loan Search", "link": "/consumer/auto-loans", "category": "Consumer" },
   { "id": "insurance", "name": "Insurance Search", "link": "/consumer/insurance", "category": "Consumer" },
   { "id": "utilities", "name": "Utility Billing Audit", "link": "/consumer/utilities", "category": "Consumer" },
-  { "id": "credit-card", "name": "Credit Card Audit", "link": "/consumer/credit", "category": "Consumer" } ]
+  { "id": "credit-card", "name": "Credit Card Audit", "link": "/consumer/credit", "category": "Consumer" }
+]

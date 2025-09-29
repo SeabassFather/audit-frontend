@@ -1,4 +1,5 @@
-﻿[ { "id": "trid", "name": "TRID Compliance", "link": "/compliance/trid", "category": "Auditing & Compliance" },
+﻿[
+  { "id": "trid", "name": "TRID Compliance", "link": "/compliance/trid", "category": "Auditing & Compliance" },
   { "id": "respa", "name": "RESPA Compliance", "link": "/compliance/respa", "category": "Auditing & Compliance" },
   { "id": "ecoa", "name": "ECOA Compliance", "link": "/compliance/ecoa", "category": "Auditing & Compliance" },
   { "id": "hmda", "name": "HMDA Reporting", "link": "/compliance/hmda", "category": "Auditing & Compliance" },
@@ -7,4 +8,5 @@
   { "id": "hipaa", "name": "HIPAA Compliance", "link": "/compliance/hipaa", "category": "Auditing & Compliance" },
   { "id": "sox", "name": "Sarbanes-Oxley (SOX)", "link": "/compliance/sox", "category": "Auditing & Compliance" },
   { "id": "pci", "name": "PCI-DSS Compliance", "link": "/compliance/pci", "category": "Auditing & Compliance" },
-  { "id": "basel3", "name": "Basel III Compliance", "link": "/compliance/basel3", "category": "Auditing & Compliance" } ]
+  { "id": "basel3", "name": "Basel III Compliance", "link": "/compliance/basel3", "category": "Auditing & Compliance" }
+]

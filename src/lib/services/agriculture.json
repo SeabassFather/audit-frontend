@@ -1,4 +1,5 @@
-﻿[ { "id": "avocados", "name": "Avocado Pricing (USDA)", "link": "/usda/avocados", "category": "Agriculture" },
+﻿[
+  { "id": "avocados", "name": "Avocado Pricing (USDA)", "link": "/usda/avocados", "category": "Agriculture" },
   { "id": "lettuce", "name": "Lettuce Pricing (USDA)", "link": "/usda/lettuce", "category": "Agriculture" },
   { "id": "strawberries", "name": "Strawberry Pricing (USDA)", "link": "/usda/strawberries", "category": "Agriculture" },
   { "id": "broccoli", "name": "Broccoli Pricing (USDA)", "link": "/usda/broccoli", "category": "Agriculture" },
@@ -24,4 +25,5 @@
   { "id": "hogs", "name": "Hog Pricing (USDA)", "link": "/usda/hogs", "category": "Agriculture" },
   { "id": "poultry", "name": "Poultry Pricing (USDA)", "link": "/usda/poultry", "category": "Agriculture" },
   { "id": "eggs", "name": "Egg Pricing (USDA)", "link": "/usda/eggs", "category": "Agriculture" },
-  { "id": "milk", "name": "Milk Pricing (USDA)", "link": "/usda/milk", "category": "Agriculture" } ]
+  { "id": "milk", "name": "Milk Pricing (USDA)", "link": "/usda/milk", "category": "Agriculture" }
+]

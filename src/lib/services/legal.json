@@ -1,4 +1,6 @@
-﻿[ { "id": "contracts", "name": "Contract Review", "link": "/legal/contracts", "category": "Legal" },
+﻿[
+  { "id": "contracts", "name": "Contract Review", "link": "/legal/contracts", "category": "Legal" },
   { "id": "ip-audit", "name": "Intellectual Property Audit", "link": "/legal/ip-audit", "category": "Legal" },
   { "id": "cpa", "name": "CPA Services", "link": "/legal/cpa", "category": "Legal" },
-  { "id": "attorney", "name": "Attorney Services", "link": "/legal/attorney", "category": "Legal" } ]
+  { "id": "attorney", "name": "Attorney Services", "link": "/legal/attorney", "category": "Legal" }
+]
