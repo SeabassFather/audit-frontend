@@ -1,0 +1,5 @@
+﻿[
+  { "id": "contracts", "name": "Contract Review", "link": "/legal/contracts", "category": "Legal" },
+  { "id": "cpa", "name": "CPA Services", "link": "/legal/cpa", "category": "Legal" }
+  // ... ~15 entries ...
+]

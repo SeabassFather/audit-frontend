@@ -1,0 +1,6 @@
+﻿[
+  { "id": "avocados", "name": "Avocado Pricing (USDA)", "link": "/usda/avocados", "category": "Agriculture" },
+  { "id": "lettuce", "name": "Lettuce Pricing (USDA)", "link": "/usda/lettuce", "category": "Agriculture" },
+  { "id": "strawberries", "name": "Strawberry Pricing (USDA)", "link": "/usda/strawberries", "category": "Agriculture" }
+  // ... continue full USDA list (~120) ...
+]

@@ -1,0 +1,6 @@
+﻿[
+  { "id": "consumer-loan", "name": "Consumer Loan Search", "link": "/consumer/loans", "category": "Consumer" },
+  { "id": "student-loan", "name": "Student Loan Search", "link": "/consumer/student-loans", "category": "Consumer" },
+  { "id": "insurance", "name": "Insurance Search", "link": "/consumer/insurance", "category": "Consumer" }
+  // ... ~70 entries ...
+]

@@ -1,0 +1,5 @@
+﻿[
+  { "id": "carbon-footprint", "name": "Carbon Footprint Tracker", "link": "/eco/carbon", "category": "Eco & Sustainability" },
+  { "id": "water-lab", "name": "Water Lab Upload", "link": "/eco/water", "category": "Eco & Sustainability" }
+  // ... ~25 eco modules ...
+]

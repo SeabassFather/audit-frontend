@@ -1,0 +1,6 @@
+﻿[
+  { "id": "mortgage-audit", "name": "Mortgage Audit", "link": "/compliance/mortgage", "category": "Auditing & Compliance" },
+  { "id": "utility-audit", "name": "Utility Audit", "link": "/compliance/utility", "category": "Auditing & Compliance" },
+  { "id": "gdpr", "name": "GDPR Compliance", "link": "/compliance/gdpr", "category": "Auditing & Compliance" }
+  // ... ~50 regs ...
+]
