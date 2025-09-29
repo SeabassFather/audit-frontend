@@ -1,6 +1,9 @@
 ﻿[
   { "id": "mortgage-audit", "name": "Mortgage Audit", "link": "/compliance/mortgage", "category": "Auditing & Compliance" },
   { "id": "utility-audit", "name": "Utility Audit", "link": "/compliance/utility", "category": "Auditing & Compliance" },
-  { "id": "gdpr", "name": "GDPR Compliance", "link": "/compliance/gdpr", "category": "Auditing & Compliance" }
-  // ... ~50 regs ...
+  { "id": "gdpr", "name": "GDPR Compliance", "link": "/compliance/gdpr", "category": "Auditing & Compliance" },
+  { "id": "ccpa", "name": "CCPA Compliance", "link": "/compliance/ccpa", "category": "Auditing & Compliance" },
+  { "id": "hipaa", "name": "HIPAA Compliance", "link": "/compliance/hipaa", "category": "Auditing & Compliance" },
+  { "id": "respa", "name": "RESPA Compliance", "link": "/compliance/respa", "category": "Auditing & Compliance" },
+  { "id": "trid", "name": "TRID Compliance", "link": "/compliance/trid", "category": "Auditing & Compliance" }
 ]

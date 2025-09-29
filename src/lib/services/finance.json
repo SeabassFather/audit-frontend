@@ -1,5 +1,6 @@
 ﻿[
   { "id": "mexico-finance", "name": "Mexico Mortgage & Real Estate Finance", "link": "/mexico-finance", "category": "International Finance" },
-  { "id": "factoring", "name": "Ag Factoring", "link": "/factoring", "category": "Business" }
-  // ... ~20 entries ...
+  { "id": "banxico", "name": "BANXICO Reference Rates", "link": "/mexico-finance/banxico", "category": "International Finance" },
+  { "id": "factoring", "name": "Ag Factoring", "link": "/factoring", "category": "Business" },
+  { "id": "sba-loan", "name": "SBA Loan Search", "link": "/business/sba", "category": "Business" }
 ]

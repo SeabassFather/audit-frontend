@@ -1,6 +1,30 @@
 ﻿[
   { "id": "avocados", "name": "Avocado Pricing (USDA)", "link": "/usda/avocados", "category": "Agriculture" },
   { "id": "lettuce", "name": "Lettuce Pricing (USDA)", "link": "/usda/lettuce", "category": "Agriculture" },
-  { "id": "strawberries", "name": "Strawberry Pricing (USDA)", "link": "/usda/strawberries", "category": "Agriculture" }
-  // ... continue full USDA list (~120) ...
+  { "id": "strawberries", "name": "Strawberry Pricing (USDA)", "link": "/usda/strawberries", "category": "Agriculture" },
+  { "id": "broccoli", "name": "Broccoli Pricing (USDA)", "link": "/usda/broccoli", "category": "Agriculture" },
+  { "id": "tomatoes", "name": "Tomato Pricing (USDA)", "link": "/usda/tomatoes", "category": "Agriculture" },
+  { "id": "onions", "name": "Onion Pricing (USDA)", "link": "/usda/onions", "category": "Agriculture" },
+  { "id": "grapes", "name": "Grape Pricing (USDA)", "link": "/usda/grapes", "category": "Agriculture" },
+  { "id": "oranges", "name": "Orange Pricing (USDA)", "link": "/usda/oranges", "category": "Agriculture" },
+  { "id": "lemons", "name": "Lemon Pricing (USDA)", "link": "/usda/lemons", "category": "Agriculture" },
+  { "id": "apples", "name": "Apple Pricing (USDA)", "link": "/usda/apples", "category": "Agriculture" },
+  { "id": "bananas", "name": "Banana Pricing (USDA)", "link": "/usda/bananas", "category": "Agriculture" },
+  { "id": "pears", "name": "Pear Pricing (USDA)", "link": "/usda/pears", "category": "Agriculture" },
+  { "id": "peppers", "name": "Pepper Pricing (USDA)", "link": "/usda/peppers", "category": "Agriculture" },
+  { "id": "cucumbers", "name": "Cucumber Pricing (USDA)", "link": "/usda/cucumbers", "category": "Agriculture" },
+  { "id": "watermelon", "name": "Watermelon Pricing (USDA)", "link": "/usda/watermelon", "category": "Agriculture" },
+  { "id": "melons", "name": "Melon Pricing (USDA)", "link": "/usda/melons", "category": "Agriculture" },
+  { "id": "potatoes", "name": "Potato Pricing (USDA)", "link": "/usda/potatoes", "category": "Agriculture" },
+  { "id": "corn", "name": "Corn Pricing (USDA)", "link": "/usda/corn", "category": "Agriculture" },
+  { "id": "soybeans", "name": "Soybean Pricing (USDA)", "link": "/usda/soybeans", "category": "Agriculture" },
+  { "id": "wheat", "name": "Wheat Pricing (USDA)", "link": "/usda/wheat", "category": "Agriculture" },
+  { "id": "rice", "name": "Rice Pricing (USDA)", "link": "/usda/rice", "category": "Agriculture" },
+  { "id": "sugar", "name": "Sugar Pricing (USDA)", "link": "/usda/sugar", "category": "Agriculture" },
+  { "id": "coffee", "name": "Coffee Pricing (USDA)", "link": "/usda/coffee", "category": "Agriculture" },
+  { "id": "cattle", "name": "Cattle Pricing (USDA)", "link": "/usda/cattle", "category": "Agriculture" },
+  { "id": "hogs", "name": "Hog Pricing (USDA)", "link": "/usda/hogs", "category": "Agriculture" },
+  { "id": "poultry", "name": "Poultry Pricing (USDA)", "link": "/usda/poultry", "category": "Agriculture" },
+  { "id": "eggs", "name": "Egg Pricing (USDA)", "link": "/usda/eggs", "category": "Agriculture" },
+  { "id": "milk", "name": "Milk Pricing (USDA)", "link": "/usda/milk", "category": "Agriculture" }
 ]
