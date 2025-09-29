@@ -4,4 +4,5 @@
   { "id": "hipaa", "name": "Health Insurance Portability & Accountability Act (HIPAA)", "link": "/compliance/hipaa", "category": "Compliance" },
   { "id": "sox", "name": "Sarbanes-Oxley (SOX)", "link": "/compliance/sox", "category": "Compliance" },
   { "id": "finra", "name": "FINRA Rules", "link": "/compliance/finra", "category": "Compliance" }
+  //  add ~55 more compliance frameworks (PCI DSS, NIST, ISO 27001, USDA GAP, FDA FSMA, etc.)
 ]
