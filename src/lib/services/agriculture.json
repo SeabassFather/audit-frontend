@@ -27,4 +27,5 @@
   { "id": "poultry", "name": "Poultry Pricing (USDA)", "link": "/usda/poultry", "category": "Agriculture" },
   { "id": "eggs", "name": "Egg Pricing (USDA)", "link": "/usda/eggs", "category": "Agriculture" },
   { "id": "milk", "name": "Milk Pricing (USDA)", "link": "/usda/milk", "category": "Agriculture" }
+  //  continue full USDA list up to ~120 
 ]

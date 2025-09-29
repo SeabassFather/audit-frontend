@@ -2,5 +2,7 @@
   { "id": "carbon-footprint", "name": "Carbon Footprint Tracker", "link": "/eco/carbon", "category": "Eco & Sustainability" },
   { "id": "green-housing", "name": "Green Housing / ADU Compliance", "link": "/eco/housing", "category": "Eco & Sustainability" },
   { "id": "soil-lab", "name": "Soil Lab Upload", "link": "/eco/soil", "category": "Eco & Sustainability" },
-  { "id": "water-lab", "name": "Water Lab Upload", "link": "/eco/water", "category": "Eco & Sustainability" }
+  { "id": "water-lab", "name": "Water Lab Upload", "link": "/eco/water", "category": "Eco & Sustainability" },
+  { "id": "emissions", "name": "Emissions Compliance", "link": "/eco/emissions", "category": "Eco & Sustainability" }
+  //  continue up to ~25 
 ]
