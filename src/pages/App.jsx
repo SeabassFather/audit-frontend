@@ -1,132 +1,56 @@
-import React from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import HomePage from "./HomePage";
-import MortgageSearchPage from "./MortgageSearchPage";
-import AgMarketplaceSearchPage from "./AgMarketplaceSearchPage";
-import TradeFinanceSearchPage from "./TradeFinanceSearchPage";
-import TickersPage from "./TickersPage";
-import PartnerAgreementsPage from "./PartnerAgreementsPage";
-import MarketingPage from "./MarketingPage";
-import PitchDeckPage from "./PitchDeckPage";
-import UploadPage from "./UploadPage";
-import ScannerPage from "./ScannerPage";
-import FacialRecognitionPage from "./FacialRecognitionPage";
-
-// Simple Auth Context for demo
-const AuthContext = React.createContext();
-const useAuth = () => React.useContext(AuthContext);
-
-function AuthProvider({ children }) {
-  const [isLoggedIn, setIsLoggedIn] = React.useState(true); // Demo mode - always logged in
-  
-  return (
-    <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
-      {children}
-    </AuthContext.Provider>
-  );
-}
-
-function PrivateRoute({ children }) {
-  const { isLoggedIn } = useAuth();
-  return isLoggedIn ? children : <Navigate to="/login" replace />;
-}
+import React, { useState } from "react";
+import Sidebar from "./components/Sidebar";
 
 export default function App() {
+  const [selected, setSelected] = useState(null);
+
   return (
-    <AuthProvider>
-      <Router>
-        <div className="min-h-screen bg-gray-50">
-          <Navbar />
-          <main>
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/mortgages" element={<MortgageSearchPage />} />
-              <Route path="/ag-market" element={<AgMarketplaceSearchPage />} />
-              <Route path="/trade-finance" element={<TradeFinanceSearchPage />} />
-              <Route path="/tickers" element={<TickersPage />} />
-              <Route path="/partner-agreements" element={<PartnerAgreementsPage />} />
-              <Route path="/marketing" element={<MarketingPage />} />
-              <Route path="/pitch-deck" element={<PitchDeckPage />} />
-              <Route path="/upload" element={<UploadPage />} />
-              <Route path="/scanner" element={<ScannerPage />} />
-              <Route path="/facial-recognition" element={<FacialRecognitionPage />} />
-            </Routes>
-          </main>
-          <Footer />
-        </div>
-      </Router>
-    </AuthProvider>
-  );
-}
-          <Routes>
-            <Route path="/login" element={<LoginPage />} />
-            <Route
-              path="/"
-              element={
-                <PrivateRoute>
-                  <HomePage />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="/mortgages"
-              element={
-                <PrivateRoute>
-                  <MortgageSearchPage />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="/ag-market"
-              element={
-                <PrivateRoute>
-                  <AgMarketplaceSearchPage />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="/trade-finance"
-              element={
-                <PrivateRoute>
-                  <TradeFinanceSearchPage />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="/tickers"
-              element={
-                <PrivateRoute>
-                  <TickersPage />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="/auditdna"
-              element={
-                <PrivateRoute>
-                  <AuditDNAPage />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="/compliance"
-              element={
-                <PrivateRoute>
-                  <CompliancePage />
-                </PrivateRoute>
-              }
-            />
-          </Routes>
-        </main>
-        <Footer />
-      </Router>
-    </AuthProvider>
+    <div style={{ display: "flex", background: "#181e2f", minHeight: "100vh" }}>
+      <Sidebar onSelectService={(cat, subCat, svc) => setSelected({ cat, subCat, svc })} />
+      <main style={{
+        flex: 1,
+        minHeight: "100vh",
+        padding: "3rem 2.5rem",
+        background: "#232d44",
+        color: "#fff",
+        fontFamily: "Inter, Arial, sans-serif",
+      }}>
+        <h1 style={{
+          fontSize: "2.2rem",
+          fontWeight: 800,
+          letterSpacing: "-0.03em",
+          color: "#0077c7",
+          marginBottom: "1.2rem",
+        }}>
+          AuditDNA Dashboard
+        </h1>
+        {!selected ? (
+          <div style={{
+            marginTop: "2.5rem",
+            color: "#b8c5d1",
+            fontSize: "1.2rem",
+            fontWeight: 500,
+          }}>
+            Select a service from the sidebar to view details.
+          </div>
+        ) : (
+          <div style={{
+            marginTop: "2.2rem",
+            background: "#181e2f",
+            borderRadius: "1.3rem",
+            boxShadow: "0 4px 18px #0077c712",
+            padding: "1.8rem 2rem",
+            maxWidth: "500px",
+          }}>
+            <h2 style={{ fontSize: "1.15rem", color: "#FFD600", fontWeight: 700 }}>
+              {selected.cat.label}: {selected.svc}
+            </h2>
+            <p style={{ marginTop: "1rem", color: "#b8c5d1" }}>
+              Service details and workflow for <span style={{ color: "#0077c7" }}>{selected.svc}</span> will appear here.
+            </p>
+          </div>
+        )}
+      </main>
+    </div>
   );
 }

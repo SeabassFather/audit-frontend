@@ -1,0 +1,23 @@
+[
+  { "id": "usda", "name": "USDA Produce Pricing", "link": "/usda", "category": "Agriculture" },
+  { "id": "mortgage", "name": "Mortgage Search", "link": "/mortgage", "category": "Consumer" },
+  { "id": "factoring", "name": "Ag Factoring", "link": "/factoring", "category": "Business" },
+  { "id": "compliance", "name": "Compliance Engine", "link": "/compliance", "category": "Auditing & Compliance" },
+  { "id": "watertech", "name": "WaterTech Upload", "link": "/watertech", "category": "Eco & Sustainability" },
+  { "id": "mexico-finance", "name": "Mexico Mortgage & Real Estate Finance", "link": "/mexico-finance", "category": "International Finance" },
+  { "id": "reports", "name": "Audit Reports", "link": "/reports", "category": "Core" },
+
+  { "id": "mortgage-audit", "name": "Mortgage Audit", "link": "/compliance/mortgage", "category": "Auditing & Compliance" },
+  { "id": "utility-audit", "name": "Utility Audit", "link": "/compliance/utility", "category": "Auditing & Compliance" },
+  { "id": "lease-audit", "name": "Lease Audit", "link": "/compliance/lease", "category": "Auditing & Compliance" },
+  { "id": "sba-audit", "name": "SBA Audit", "link": "/compliance/sba", "category": "Auditing & Compliance" },
+  { "id": "commercial-loan-audit", "name": "Commercial Loan Audit", "link": "/compliance/commercial-loan", "category": "Auditing & Compliance" },
+  { "id": "insurance-audit", "name": "Insurance Audit", "link": "/compliance/insurance", "category": "Auditing & Compliance" },
+  { "id": "payroll-audit", "name": "Payroll Audit", "link": "/compliance/payroll", "category": "Auditing & Compliance" },
+  { "id": "401k-audit", "name": "401k / Benefits Audit", "link": "/compliance/401k", "category": "Auditing & Compliance" },
+
+  { "id": "avocados", "name": "Avocado Pricing (USDA)", "link": "/usda/avocados", "category": "Agriculture" },
+  { "id": "strawberries", "name": "Strawberry Pricing (USDA)", "link": "/usda/strawberries", "category": "Agriculture" },
+  { "id": "broccoli", "name": "Broccoli Pricing (USDA)", "link": "/usda/broccoli", "category": "Agriculture" },
+  { "id": "lettuce", "name": "Lettuce Pricing (USDA)", "link": "/usda/lettuce", "category": "Agriculture" }
+]

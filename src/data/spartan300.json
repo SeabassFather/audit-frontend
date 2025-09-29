@@ -1,0 +1,24 @@
+{
+  "categories": [
+    {
+      "name": "Elite Suite",
+      "services": [
+        { "id": "mortgage-search", "name": "Mortgage Search" },
+        { "id": "ag-marketplace", "name": "Ag Marketplace" }
+      ]
+    },
+    {
+      "name": "Factoring & PO Finance",
+      "services": [
+        { "id": "factoring", "name": "Ag Factoring" }
+      ]
+    },
+    {
+      "name": "Business & Compliance",
+      "services": [
+        { "id": "compliance", "name": "Compliance Engine" },
+        { "id": "audit-report", "name": "Audit Reports" }
+      ]
+    }
+  ]
+}
