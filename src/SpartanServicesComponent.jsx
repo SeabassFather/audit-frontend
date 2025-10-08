@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import servicesData from '../data/services.json';
+import spartanServices from './data/spartan_services.json';
 import { X, Upload, CheckCircle, ChevronDown, Building, Phone, Calendar, DollarSign, Shield } from 'lucide-react';
 
 function ContactCard({ serviceName, onClose }) {
@@ -356,17 +356,40 @@ export default function Services() {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    if (servicesData && Array.isArray(servicesData)) {
-      setCategories(servicesData);
+    // Convert spartan_services.json object to array format
+    if (spartanServices && typeof spartanServices === 'object') {
+      const categoriesArray = Object.entries(spartanServices).map(([category, items]) => ({
+        category,
+        items,
+        icon: getCategoryIcon(category)
+      }));
+      setCategories(categoriesArray);
     }
   }, []);
+
+  // Helper function to get appropriate icon for each category
+  const getCategoryIcon = (category) => {
+    const iconMap = {
+      'Agriculture & Food Systems': '🌾',
+      'Mortgage & Real Estate': '🏠',
+      'Legal & Compliance': '⚖️',
+      'Finance & Factoring': '💰',
+      'Education & Workforce': '🎓',
+      'Eco & Sustainability': '🌍',
+      'Healthcare & Insurance': '🏥',
+      'Global Trade & Logistics': '🌐',
+      'Technology & Data': '💻',
+      'Consumer & Retail': '🛒'
+    };
+    return iconMap[category] || '🛠️';
+  };
 
   return (
     <div className="p-6 space-y-6 bg-gray-50 min-h-screen">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">Professional Services</h1>
+        <h1 className="text-3xl font-bold text-gray-900">AuditDNA Services Catalog</h1>
         <p className="text-gray-600 mt-2 text-lg">
-          Comprehensive audit, compliance, and advisory services across all industries
+          Professional auditing, compliance, and advisory services - 200+ services across all industries
         </p>
       </div>
 

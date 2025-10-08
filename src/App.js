@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Dashboard from './pages/Dashboard';
-import servicesData from './data/services.json';
+import spartanServices from './data/spartan_services.json';
 import USDA from './pages/USDA';
 import WaterTech from './pages/WaterTech';
 import Mortgage from './pages/Mortgage';
@@ -103,15 +103,42 @@ function ServicesTab() {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    if (servicesData && Array.isArray(servicesData)) {
-      setCategories(servicesData);
+    // Convert spartan_services.json object to array format
+    if (spartanServices && typeof spartanServices === 'object') {
+      const categoriesArray = Object.entries(spartanServices).map(([category, items]) => ({
+        category,
+        items,
+        icon: getCategoryIcon(category)
+      }));
+      setCategories(categoriesArray);
     }
   }, []);
 
+  // Helper function to get appropriate icon for each category
+  const getCategoryIcon = (category) => {
+    const iconMap = {
+      'Agriculture & Food Systems': '🌾',
+      'Mortgage & Real Estate': '🏠',
+      'Legal & Compliance': '⚖️',
+      'Finance & Factoring': '💰',
+      'Education & Workforce': '🎓',
+      'Eco & Sustainability': '🌍',
+      'Healthcare & Insurance': '🏥',
+      'Global Trade & Logistics': '🌐',
+      'Technology & Data': '💻',
+      'Consumer & Retail': '🛒'
+    };
+    return iconMap[category] || '🛠️';
+  };
+
   return (
     <div style={{ padding: '32px' }}>
-      <h1>Professional Services</h1>
-      {categories.map((cat, idx) => (
+      <h1>AuditDNA Services Catalog</h1>
+      <p style={{ color: '#6b7280', marginTop: '8px', fontSize: '18px' }}>
+        Professional auditing, compliance, and advisory services - 200+ services across all industries
+      </p>
+      <div style={{ marginTop: '24px' }}>
+        {categories.map((cat, idx) => (
         <div
           key={idx}
           style={{
@@ -158,6 +185,7 @@ function ServicesTab() {
           onClose={() => setSelectedService(null)}
         />
       )}
+      </div>
     </div>
   );
 }
