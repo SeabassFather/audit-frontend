@@ -1,0 +1,3 @@
+﻿# AuditDNA robots.txt
+User-agent: *
+Disallow:

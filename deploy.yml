@@ -1,0 +1,57 @@
+    - name: Build Compliance Kit
+      run: |
+        mkdir -p dist
+        zip -r dist/AuditDNA_Compliance_Tariff_Kit.zip 
+data compliance eco docs
+
+    - name: Package Frontend Build
+      run: |
+        cd frontend/dist
+        zip -r ../../dist/AuditDNA_Frontend_Build.zip .
+
+    - name: Upload Assets
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: ${{ github.sha }}
+        files: |
+          dist/AuditDNA_Compliance_Tariff_Kit.zip
+          dist/AuditDNA_Frontend_Build.zip
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
+name: AuditDNA Deploy
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 22.2.0
+
+    - name: Install Dependencies
+      run: |
+        cd frontend
+        npm install
+        npm run build
+
+    - name: Build Compliance Kit
+      run: |
+        mkdir -p dist/kit
+        zip -r dist/AuditDNA_Compliance_Tariff_Kit.zip data compliance eco docs
+
+    - name: Upload Kit Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: AuditDNA_Compliance_Tariff_Kit
+        path: dist/AuditDNA_Compliance_Tariff_Kit.zip

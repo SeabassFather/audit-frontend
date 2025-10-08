@@ -1,62 +1,38 @@
-import { useEffect, useMemo, useState } from "react";
-import { listFactoringDeals } from "../lib/api";
-export default function Factoring() {
-  const [q, setQ] = useState("");
-  const [rows, setRows] = useState([]);
-  useEffect(() => {
-    (async () => {
-      const r = await listFactoringDeals();
-      setRows(r.deals || []);
-    })();
-  }, []);
-  const filtered = useMemo(
-    () =>
-      rows.filter((x) =>
-        JSON.stringify(x).toLowerCase().includes(q.toLowerCase()),
-      ),
-    [rows, q],
-  );
+export default function Factoring(){
+  const invoices = [
+    { debtor: "Farm Co.", lender: "AgriBank", amount: 50000, advance: "80%", fee: "3%", status: "Pending" },
+    { debtor: "Produce LLC", lender: "FinanceCorp", amount: 75000, advance: "85%", fee: "2.5%", status: "Approved" }
+  ];
+
   return (
-    <div className="card">
-      <div className="h1">Ag Factoring</div>
-      <div className="controls">
-        <div style={{ flex: "1 1 auto" }}>
-          <div className="subtle">Search</div>
-          <input
-            style={{ width: "100%" }}
-            value={q}
-            onChange={(e) => setQ(e.target.value)}
-            placeholder="debtor, lender, commodity, status"
-          />
-        </div>
-        <button className="tab">New Deal</button>
-      </div>
-      <div className="mt-4" style={{ overflowX: "auto" }}>
-        <table className="table">
-          <thead>
-            <tr>
-              <th>Debtor</th>
-              <th>Lender</th>
-              <th>Country</th>
-              <th>Commodity</th>
-              <th>Amount</th>
-              <th>Status</th>
+    <div className="p-6">
+      <h1 className="text-2xl font-bold mb-4">Ag Factoring</h1>
+      <table className="w-full border-collapse bg-white shadow rounded">
+        <thead className="bg-gray-100">
+          <tr>
+            <th className="p-2 text-left">Debtor</th>
+            <th className="p-2 text-left">Lender</th>
+            <th className="p-2 text-left">Amount</th>
+            <th className="p-2 text-left">Advance</th>
+            <th className="p-2 text-left">Fee</th>
+            <th className="p-2 text-left">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {invoices.map((inv,i)=>(
+            <tr key={i} className="border-t">
+              <td className="p-2">{inv.debtor}</td>
+              <td className="p-2">{inv.lender}</td>
+              <td className="p-2">${inv.amount.toLocaleString()}</td>
+              <td className="p-2">{inv.advance}</td>
+              <td className="p-2">{inv.fee}</td>
+              <td className="p-2">{inv.status}</td>
             </tr>
-          </thead>
-          <tbody>
-            {filtered.map((r, i) => (
-              <tr key={i}>
-                <td>{r.debtor}</td>
-                <td>{r.lender}</td>
-                <td>{r.country}</td>
-                <td>{r.commodity}</td>
-                <td>${(+r.amount || 0).toLocaleString()}</td>
-                <td>{r.status}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }
+
+

@@ -1,50 +1,38 @@
+import React from "react";
 import { NavLink } from "react-router-dom";
 
-const base =
-  "nav-link px-3 py-2 rounded text-sm font-medium transition-colors";
-const idle =
-  base + " text-white/80 hover:text-white hover:bg-white/10";
-const active =
-  base + " text-white bg-white/20";
-
 export default function Navbar() {
-  const links = [
-    { to: "/", label: "Dashboard" },
-    { to: "/modules", label: "Modules" },
-    { to: "/services", label: "Services" },
-    { to: "/engines", label: "Engines" },
-    { to: "/findings", label: "Findings" },
-    { to: "/results", label: "Results" },
-    { to: "/admin", label: "Admin" },
-    { to: "/login", label: "Login" },
-    { to: "/mortgage-search", label: "Mortgage Search" },
-    { to: "/ag-market", label: "Ag Market" },
-    { to: "/trade-finance", label: "Trade Finance" },
+  const navItems = [
+    { path: "/", label: "Dashboard" },
+    { path: "/services", label: "Services" },
+    { path: "/mexico", label: "Mexico" },
+    { path: "/compliance", label: "Compliance" },
+    { path: "/eco", label: "Eco" },
+    { path: "/admin", label: "Admin" }
   ];
 
   return (
-    <header className="bg-blue-600 text-white">
-      <nav className="container flex items-center gap-1 py-2">
-        <div className="mr-2 flex items-center gap-2">
-          <div className="h-7 w-7 rounded bg-white/20 grid place-items-center font-bold">
-            AD
-          </div>
-          <span className="hidden sm:block font-semibold">AuditDNA</span>
-        </div>
-
-        <div className="flex flex-wrap items-center gap-1">
-          {links.map(l => (
+    <nav className="bg-gradient-to-r from-slate-800 via-slate-900 to-slate-800 shadow-lg">
+      <div className="container mx-auto flex justify-between items-center px-6 py-4">
+        <div className="text-xl font-bold text-white">AuditDNA</div>
+        <div className="flex gap-6">
+          {navItems.map((item, idx) => (
             <NavLink
-              key={l.to}
-              to={l.to}
-              className={({ isActive }) => (isActive ? active : idle)}
-              end={l.to === "/"}
+              key={idx}
+              to={item.path}
+              className={({ isActive }) =>
+                `text-sm px-3 py-2 rounded-md transition ${
+                  isActive
+                    ? "bg-blue-600 text-white"
+                    : "text-slate-200 hover:bg-slate-700 hover:text-yellow-300"
+                }`
+              }
             >
-              {l.label}
+              {item.label}
             </NavLink>
           ))}
         </div>
-      </nav>
-    </header>
+      </div>
+    </nav>
   );
 }

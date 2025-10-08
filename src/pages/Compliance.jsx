@@ -1,65 +1,52 @@
 import { useState } from "react";
+import UploadWidget from "../components/UploadWidget";
+import WaterSearch from "../components/WaterSearch";
+import Tariffs from "./Tariffs";
+
 export default function Compliance() {
-  const [notes, setNotes] = useState("");
+  const [downloading, setDownloading] = useState(false);
+
+  async function downloadKit() {
+    setDownloading(true);
+    const res = await fetch("/api/compliance/download-kit");
+    const blob = await res.blob();
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "AuditDNA_Compliance_Tariff_Kit.zip";
+    a.click();
+    setDownloading(false);
+  }
+
   return (
-    <div className="grid grid-2">
-      <section className="card">
-        <div className="h1">Compliance & Ethics</div>
-        <p className="subtle">
-          Upload certifications, lab reports, GlobalGAP, water/soil tests,
-          privacy & terms, etc.
-        </p>
-        <div className="controls">
-          <div>
-            <div className="subtle">Upload</div>
-            <input type="file" />
-          </div>
-          <div>
-            <div className="subtle">Category</div>
-            <select>
-              <option>USDA</option>
-              <option>GlobalGAP</option>
-              <option>Water/Sanitation</option>
-              <option>Privacy/Terms</option>
-            </select>
-          </div>
-          <button className="tab">Save</button>
-        </div>
-        <div className="mt-4">
-          <div className="h3">Notes</div>
-          <textarea
-            rows="6"
-            style={{ width: "100%" }}
-            value={notes}
-            onChange={(e) => setNotes(e.target.value)}
-            placeholder="Add context, links, or action items"
-          />
-        </div>
-      </section>
-      <section className="card">
-        <div className="h2">Regulatory Briefing Kits</div>
-        <ul>
-          <li>
-            <a className="tab" href="#">
-              Internationalized Privacy Policy
-            </a>
-          </li>
-          <li>
-            <a className="tab" href="#">
-              Terms of Service
-            </a>
-          </li>
-          <li>
-            <a className="tab" href="#">
-              USDA/AMS Pricing Kit
-            </a>
-          </li>
-          <li>
-            <a className="tab" href="#">
-              Global Compliance & Ethics Dashboard
-            </a>
-          </li>
+    <div className="p-6 space-y-8">
+      <h1 className="text-2xl font-bold">Global Compliance Dashboard</h1>
+      <p className="text-gray-600">Federal, State, International Law, USDA pricing, Tariffs, and Eco uploads.</p>
+      <section>
+        <h2 className="text-xl font-semibold mb-2">Federal & State Compliance</h2>
+        <ul className="list-disc list-inside text-gray-700">
+          <li>CFPB – Consumer Lending, Fair Credit, UDAAP</li>
+          <li>IRS – Capital Gains, Corporate Tax, Income Tax</li>
+          <li>State Privacy + Tax Codes (CA, TX, NY, FL)</li>
         </ul>
+      </section>
+      <section>
+        <h2 className="text-xl font-semibold mb-2">Water & Soil Compliance</h2>
+        <UploadWidget />
+        <WaterSearch />
+      </section>
+      <section>
+        <h2 className="text-xl font-semibold mb-2">International Trade & Tariffs</h2>
+        <Tariffs />
+      </section>
+      <section>
+        <button
+          onClick={downloadKit}
+          disabled={downloading}
+          className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
+        >
+          {downloading ? "Preparing Kit..." : "Download Compliance + Tariff Kit"}
+        </button>
       </section>
     </div>
   );

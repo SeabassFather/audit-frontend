@@ -1,336 +1,158 @@
 import React, { useState } from 'react';
+import { Shield, CheckCircle, XCircle, Clock, Users, Home, TrendingUp, Bell } from 'lucide-react';
 
-const AdminDashboard = () => {
-  const [activeTab, setActiveTab] = useState('overview');
+const AdminDashboard = ({ pendingListings = [], agents = [], approvedListings = [], onApprove, onReject }) => {
+  const [selectedListing, setSelectedListing] = useState(null);
+  const [activeTab, setActiveTab] = useState('pending');
+  const [rejectReason, setRejectReason] = useState('');
 
-  const systemStats = {
-    totalUsers: 245,
-    activeCases: 18,
-    filesProcessed: 1247,
-    systemUptime: '99.9%'
-  };
+  const handleApprove = (listingId) => { onApprove(listingId); setSelectedListing(null); };
+  const handleReject = (listingId) => { if (!rejectReason.trim()) { alert('Please provide a reason for rejection'); return; } onReject(listingId, rejectReason); setSelectedListing(null); setRejectReason(''); };
 
-  const recentActivities = [
-    {
-      id: 1,
-      action: "New user registered",
-      user: "john.doe@company.com",
-      timestamp: "2 hours ago",
-      type: "user"
-    },
-    {
-      id: 2,
-      action: "Case #125 completed",
-      user: "jane.smith@auditdna.com",
-      timestamp: "4 hours ago",
-      type: "case"
-    },
-    {
-      id: 3,
-      action: "System backup completed",
-      user: "system",
-      timestamp: "6 hours ago",
-      type: "system"
-    },
-    {
-      id: 4,
-      action: "Document uploaded",
-      user: "mike.johnson@client.com",
-      timestamp: "8 hours ago",
-      type: "file"
-    }
+  const formatPrice = (price) => { return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0 }).format(price); };
+
+  const stats = [
+    { icon: Clock, label: 'Pending Approval', value: pendingListings.length, color: 'bg-yellow-500', textColor: 'text-yellow-600' },
+    { icon: CheckCircle, label: 'Approved Listings', value: approvedListings.length, color: 'bg-green-500', textColor: 'text-green-600' },
+    { icon: Users, label: 'Active Agents', value: agents.length, color: 'bg-purple-500', textColor: 'text-purple-600' },
+    { icon: TrendingUp, label: 'Total Value', value: formatPrice(approvedListings.reduce((sum, listing) => sum + (listing.price || 0), 0)), color: 'bg-blue-500', textColor: 'text-blue-600' }
   ];
-
-  const systemHealth = [
-    { service: "API Gateway", status: "Healthy", uptime: "99.9%" },
-    { service: "Database", status: "Healthy", uptime: "100%" },
-    { service: "File Storage", status: "Warning", uptime: "98.5%" },
-    { service: "Authentication", status: "Healthy", uptime: "99.8%" },
-    { service: "Notification Service", status: "Healthy", uptime: "99.2%" }
-  ];
-
-  const getActivityIcon = (type) => {
-    const icons = {
-      'user': '👤',
-      'case': '📋',
-      'system': '⚙️',
-      'file': '📁'
-    };
-    return icons[type] || '📝';
-  };
-
-  const getStatusBadge = (status) => {
-    const statusClasses = {
-      'Healthy': 'bg-success text-white',
-      'Warning': 'bg-warning text-dark',
-      'Critical': 'bg-danger text-white'
-    };
-    return statusClasses[status] || 'bg-secondary text-white';
-  };
-
-  const renderTabContent = () => {
-    switch(activeTab) {
-      case 'overview':
-        return (
-          <div>
-            {/* System Stats */}
-            <div className="row g-4 mb-5">
-              <div className="col-lg-3 col-md-6">
-                <div className="card card-auditdna">
-                  <div className="card-body text-center">
-                    <div className="display-4 mb-2">👥</div>
-                    <div className="h2 fw-bold text-secondary-blue mb-1">
-                      {systemStats.totalUsers}
-                    </div>
-                    <div className="text-muted small">Total Users</div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-6">
-                <div className="card card-auditdna">
-                  <div className="card-body text-center">
-                    <div className="display-4 mb-2">📋</div>
-                    <div className="h2 fw-bold text-warning mb-1">
-                      {systemStats.activeCases}
-                    </div>
-                    <div className="text-muted small">Active Cases</div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-6">
-                <div className="card card-auditdna">
-                  <div className="card-body text-center">
-                    <div className="display-4 mb-2">📁</div>
-                    <div className="h2 fw-bold text-info mb-1">
-                      {systemStats.filesProcessed}
-                    </div>
-                    <div className="text-muted small">Files Processed</div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-6">
-                <div className="card card-auditdna">
-                  <div className="card-body text-center">
-                    <div className="display-4 mb-2">⚡</div>
-                    <div className="h2 fw-bold text-success mb-1">
-                      {systemStats.systemUptime}
-                    </div>
-                    <div className="text-muted small">System Uptime</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Recent Activities */}
-            <div className="row">
-              <div className="col-lg-8">
-                <div className="card card-auditdna">
-                  <div className="card-header bg-accent-yellow">
-                    <h5 className="card-title mb-0 text-dark">Recent Activities</h5>
-                  </div>
-                  <div className="card-body">
-                    {recentActivities.map(activity => (
-                      <div key={activity.id} className="d-flex align-items-center mb-3 pb-3 border-bottom">
-                        <div className="me-3">
-                          <span className="fs-4">{getActivityIcon(activity.type)}</span>
-                        </div>
-                        <div className="flex-grow-1">
-                          <div className="fw-semibold">{activity.action}</div>
-                          <small className="text-muted">by {activity.user}</small>
-                        </div>
-                        <div className="text-muted small">
-                          {activity.timestamp}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-lg-4">
-                <div className="card card-auditdna">
-                  <div className="card-header bg-accent-green">
-                    <h5 className="card-title mb-0 text-dark">Quick Actions</h5>
-                  </div>
-                  <div className="card-body">
-                    <div className="d-grid gap-2">
-                      <button className="btn btn-secondary-blue">
-                        Create New User
-                      </button>
-                      <button className="btn btn-accent-green">
-                        Generate Report
-                      </button>
-                      <button className="btn btn-primary-silver">
-                        System Backup
-                      </button>
-                      <button className="btn btn-outline-secondary">
-                        View Logs
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        );
-
-      case 'users':
-        return (
-          <div className="card card-auditdna">
-            <div className="card-header bg-accent-yellow">
-              <h5 className="card-title mb-0 text-dark">User Management</h5>
-            </div>
-            <div className="card-body">
-              <p className="text-muted mb-4">Manage user accounts, permissions, and access controls.</p>
-              <div className="d-flex gap-3 mb-4">
-                <button className="btn btn-secondary-blue">Add New User</button>
-                <button className="btn btn-accent-green">Import Users</button>
-                <button className="btn btn-outline-secondary">Export Users</button>
-              </div>
-              <div className="alert alert-info">
-                <strong>Demo Mode:</strong> User management functionality would be implemented here with full CRUD operations, role management, and permissions.
-              </div>
-            </div>
-          </div>
-        );
-
-      case 'system':
-        return (
-          <div>
-            <div className="card card-auditdna mb-4">
-              <div className="card-header bg-accent-yellow">
-                <h5 className="card-title mb-0 text-dark">System Health</h5>
-              </div>
-              <div className="card-body">
-                <div className="table-responsive">
-                  <table className="table table-hover">
-                    <thead>
-                      <tr>
-                        <th>Service</th>
-                        <th>Status</th>
-                        <th>Uptime</th>
-                        <th>Actions</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {systemHealth.map((service, index) => (
-                        <tr key={index}>
-                          <td className="fw-semibold">{service.service}</td>
-                          <td>
-                            <span className={`badge ${getStatusBadge(service.status)}`}>
-                              {service.status}
-                            </span>
-                          </td>
-                          <td>{service.uptime}</td>
-                          <td>
-                            <button className="btn btn-sm btn-outline-secondary me-2">
-                              Monitor
-                            </button>
-                            <button className="btn btn-sm btn-outline-primary">
-                              Restart
-                            </button>
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-
-            <div className="card card-auditdna">
-              <div className="card-header bg-accent-green">
-                <h5 className="card-title mb-0 text-dark">System Configuration</h5>
-              </div>
-              <div className="card-body">
-                <div className="row">
-                  <div className="col-md-6">
-                    <h6 className="fw-bold mb-3">General Settings</h6>
-                    <div className="mb-3">
-                      <label className="form-label">System Name</label>
-                      <input type="text" className="form-control" value="AuditDNA Platform" />
-                    </div>
-                    <div className="mb-3">
-                      <label className="form-label">Max File Size (MB)</label>
-                      <input type="number" className="form-control" value="10" />
-                    </div>
-                  </div>
-                  <div className="col-md-6">
-                    <h6 className="fw-bold mb-3">Security Settings</h6>
-                    <div className="form-check mb-2">
-                      <input className="form-check-input" type="checkbox" checked />
-                      <label className="form-check-label">
-                        Enable Two-Factor Authentication
-                      </label>
-                    </div>
-                    <div className="form-check mb-2">
-                      <input className="form-check-input" type="checkbox" checked />
-                      <label className="form-check-label">
-                        Require Password Complexity
-                      </label>
-                    </div>
-                  </div>
-                </div>
-                <hr />
-                <div className="d-flex gap-2">
-                  <button className="btn btn-secondary-blue">Save Changes</button>
-                  <button className="btn btn-outline-secondary">Reset to Defaults</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        );
-
-      default:
-        return null;
-    }
-  };
 
   return (
-    <div className="container py-5">
-      {/* Page Header */}
-      <div className="text-center mb-5">
-        <h1 className="display-4 fw-bold text-secondary-blue mb-3">
-          Admin Dashboard
-        </h1>
-        <p className="lead text-muted">
-          System administration and configuration management console
-        </p>
-      </div>
-
-      {/* Navigation Tabs */}
-      <div className="card card-auditdna mb-4">
-        <div className="card-header bg-primary-silver p-0">
-          <ul className="nav nav-tabs nav-fill">
-            <li className="nav-item">
-              <button 
-                className={`nav-link ${activeTab === 'overview' ? 'active text-secondary-blue fw-bold' : 'text-muted'}`}
-                onClick={() => setActiveTab('overview')}
-              >
-                Overview
-              </button>
-            </li>
-            <li className="nav-item">
-              <button 
-                className={`nav-link ${activeTab === 'users' ? 'active text-secondary-blue fw-bold' : 'text-muted'}`}
-                onClick={() => setActiveTab('users')}
-              >
-                User Management
-              </button>
-            </li>
-            <li className="nav-item">
-              <button 
-                className={`nav-link ${activeTab === 'system' ? 'active text-secondary-blue fw-bold' : 'text-muted'}`}
-                onClick={() => setActiveTab('system')}
-              >
-                System Settings
-              </button>
-            </li>
-          </ul>
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 py-8 px-4">
+      <div className="max-w-7xl mx-auto">
+        <div className="bg-gradient-to-r from-red-600 to-purple-600 rounded-xl shadow-2xl p-6 mb-8 border-4 border-yellow-400">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <div className="bg-white p-3 rounded-full"><Shield className="w-8 h-8 text-red-600" /></div>
+              <div><h1 className="text-3xl font-bold text-white flex items-center gap-2">ADMIN CONTROL PANEL<Bell className="w-6 h-6 text-yellow-400 animate-pulse" /></h1><p className="text-red-100">Saul Garcia - Platform Administrator</p></div>
+            </div>
+            {pendingListings.length > 0 && <div className="bg-yellow-400 text-gray-900 px-4 py-2 rounded-full font-bold animate-pulse">{pendingListings.length} NEW LISTINGS PENDING</div>}
+          </div>
         </div>
-        <div className="card-body">
-          {renderTabContent()}
+        <div className="grid md:grid-cols-4 gap-6 mb-8">
+          {stats.map((stat, index) => (
+            <div key={index} className="bg-white rounded-xl shadow-lg p-6 border-l-4 border-purple-600">
+              <div className="flex items-center justify-between mb-3"><div className={`p-3 rounded-lg ${stat.color} bg-opacity-10`}><stat.icon className={`w-6 h-6 ${stat.textColor}`} /></div></div>
+              <p className="text-gray-600 text-sm mb-1">{stat.label}</p>
+              <p className="text-3xl font-bold text-gray-900">{stat.value}</p>
+            </div>
+          ))}
         </div>
+        <div className="bg-white rounded-t-xl shadow-lg border-b-2 border-gray-200">
+          <div className="flex gap-2 p-2">
+            <button onClick={() => setActiveTab('pending')} className={`flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all ${activeTab === 'pending' ? 'bg-gradient-to-r from-yellow-500 to-orange-500 text-white shadow-lg' : 'text-gray-600 hover:bg-gray-100'}`}><Clock className="w-5 h-5" />Pending Approval ({pendingListings.length})</button>
+            <button onClick={() => setActiveTab('approved')} className={`flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all ${activeTab === 'approved' ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-lg' : 'text-gray-600 hover:bg-gray-100'}`}><CheckCircle className="w-5 h-5" />Approved ({approvedListings.length})</button>
+            <button onClick={() => setActiveTab('agents')} className={`flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all ${activeTab === 'agents' ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg' : 'text-gray-600 hover:bg-gray-100'}`}><Users className="w-5 h-5" />Agents ({agents.length})</button>
+          </div>
+        </div>
+        <div className="bg-white rounded-b-xl shadow-lg p-6 min-h-[400px]">
+          {activeTab === 'pending' && (
+            <div>
+              {pendingListings.length === 0 ? (
+                <div className="text-center py-12"><Clock className="w-16 h-16 text-gray-300 mx-auto mb-4" /><p className="text-xl font-semibold text-gray-600">No pending listings</p><p className="text-gray-500">All listings have been reviewed</p></div>
+              ) : (
+                <div className="space-y-4">
+                  {pendingListings.map((listing) => (
+                    <div key={listing.listingId} className="border-2 border-yellow-200 rounded-xl p-6 bg-yellow-50 hover:shadow-lg transition-all">
+                      <div className="flex justify-between items-start">
+                        <div className="flex-1">
+                          <div className="flex items-center gap-3 mb-3">
+                            <span className="bg-yellow-500 text-white px-3 py-1 rounded-full text-xs font-bold animate-pulse">PENDING REVIEW</span>
+                            <span className="text-sm text-gray-600">Listed {new Date(listing.createdAt).toLocaleDateString()}</span>
+                          </div>
+                          <h3 className="text-2xl font-bold text-gray-900 mb-2">{listing.location}</h3>
+                          <p className="text-gray-600 mb-3">{listing.region} • {listing.propertyType}</p>
+                          <div className="grid md:grid-cols-2 gap-4 mb-4">
+                            <div><p className="text-sm text-gray-600">Price</p><p className="text-2xl font-bold text-purple-600">{formatPrice(listing.price)}</p></div>
+                            <div><p className="text-sm text-gray-600">Owner Type</p><p className="font-semibold text-gray-900">{listing.ownerType}</p></div>
+                          </div>
+                          <div className="bg-white rounded-lg p-4 mb-4">
+                            <p className="text-sm font-semibold text-gray-700 mb-2">Listed By:</p>
+                            <p className="font-bold text-gray-900">{listing.agentName}</p>
+                            <p className="text-sm text-gray-600">{listing.agentAgency}</p>
+                            <p className="text-sm text-gray-600">{listing.agentEmail} • {listing.agentPhone}</p>
+                          </div>
+                          <div className="bg-white rounded-lg p-4">
+                            <p className="text-sm font-semibold text-gray-700 mb-2">Property Owner:</p>
+                            <p className="font-bold text-gray-900">{listing.ownerName}</p>
+                            <p className="text-sm text-gray-600">{listing.ownerAddress}</p>
+                            <p className="text-sm text-gray-600">{listing.ownerEmail} • {listing.ownerPhone}</p>
+                          </div>
+                        </div>
+                        <div className="ml-6 flex flex-col gap-3">
+                          <button onClick={() => setSelectedListing(listing)} className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all whitespace-nowrap">Review Details</button>
+                          <button onClick={() => handleApprove(listing.listingId)} className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-all flex items-center gap-2"><CheckCircle className="w-5 h-5" />Approve</button>
+                          <button onClick={() => setSelectedListing(listing)} className="bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-all flex items-center gap-2"><XCircle className="w-5 h-5" />Reject</button>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+          {activeTab === 'approved' && (
+            <div>
+              {approvedListings.length === 0 ? (
+                <div className="text-center py-12"><Home className="w-16 h-16 text-gray-300 mx-auto mb-4" /><p className="text-xl font-semibold text-gray-600">No approved listings yet</p></div>
+              ) : (
+                <div className="grid md:grid-cols-2 gap-6">
+                  {approvedListings.map((listing) => (
+                    <div key={listing.listingId} className="border-2 border-green-200 rounded-xl p-6 bg-green-50">
+                      <div className="flex items-center gap-2 mb-3"><CheckCircle className="w-5 h-5 text-green-600" /><span className="bg-green-600 text-white px-3 py-1 rounded-full text-xs font-bold">APPROVED</span></div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">{listing.location}</h3>
+                      <p className="text-gray-600 mb-2">{listing.region}</p>
+                      <p className="text-2xl font-bold text-purple-600 mb-3">{formatPrice(listing.price)}</p>
+                      <p className="text-sm text-gray-600">Agent: <span className="font-semibold">{listing.agentName}</span></p>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+          {activeTab === 'agents' && (
+            <div>
+              {agents.length === 0 ? (
+                <div className="text-center py-12"><Users className="w-16 h-16 text-gray-300 mx-auto mb-4" /><p className="text-xl font-semibold text-gray-600">No registered agents</p></div>
+              ) : (
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {agents.map((agent) => (
+                    <div key={agent.agentId} className="border-2 border-purple-200 rounded-xl p-6 bg-purple-50">
+                      <div className="flex items-center gap-2 mb-3">
+                        <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl">{agent.fullName.charAt(0)}</div>
+                        <div><h3 className="font-bold text-gray-900">{agent.fullName}</h3><p className="text-sm text-gray-600">{agent.agency}</p></div>
+                      </div>
+                      <div className="space-y-1 text-sm text-gray-700">
+                        <p><strong>Email:</strong> {agent.email}</p>
+                        <p><strong>Phone:</strong> {agent.phone}</p>
+                        <p><strong>Registered:</strong> {new Date(agent.registeredAt).toLocaleDateString()}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+        {selectedListing && activeTab === 'pending' && (
+          <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50" onClick={() => setSelectedListing(null)}>
+            <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full p-8" onClick={(e) => e.stopPropagation()}>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Review Listing</h2>
+              <div className="mb-6"><h3 className="font-bold text-lg mb-2">{selectedListing.location}</h3><p className="text-gray-600">{selectedListing.region} • {formatPrice(selectedListing.price)}</p></div>
+              <div className="space-y-4 mb-6">
+                <div><p className="text-sm font-semibold text-gray-700">Description (English):</p><p className="text-gray-600 bg-gray-50 p-3 rounded">{selectedListing.descriptionEnglish}</p></div>
+                <div><p className="text-sm font-semibold text-gray-700">Descripción (Español):</p><p className="text-gray-600 bg-gray-50 p-3 rounded">{selectedListing.descriptionSpanish}</p></div>
+              </div>
+              <div className="mb-6"><label className="block text-sm font-semibold text-gray-700 mb-2">Reason for Rejection (optional)</label><textarea value={rejectReason} onChange={(e) => setRejectReason(e.target.value)} rows={4} placeholder="Enter reason for rejection..." className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500" /></div>
+              <div className="flex gap-3">
+                <button onClick={() => handleApprove(selectedListing.listingId)} className="flex-1 bg-green-600 text-white py-3 rounded-lg font-bold hover:bg-green-700 transition-all flex items-center justify-center gap-2"><CheckCircle className="w-5 h-5" />Approve Listing</button>
+                <button onClick={() => handleReject(selectedListing.listingId)} className="flex-1 bg-red-600 text-white py-3 rounded-lg font-bold hover:bg-red-700 transition-all flex items-center justify-center gap-2"><XCircle className="w-5 h-5" />Reject Listing</button>
+                <button onClick={() => { setSelectedListing(null); setRejectReason(''); }} className="px-6 bg-gray-300 text-gray-700 py-3 rounded-lg font-bold hover:bg-gray-400 transition-all">Cancel</button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
