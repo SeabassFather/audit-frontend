@@ -18,6 +18,7 @@ import PitchDeckPage from "./PitchDeckPage";
 import UploadPage from "./UploadPage";
 import ScannerPage from "./ScannerPage";
 import FacialRecognitionPage from "./FacialRecognitionPage";
+import AuditCatalogPage from "./AuditCatalogPage";
 
 // Simple Auth Context for demo
 const AuthContext = React.createContext();
@@ -57,6 +58,7 @@ export default function App() {
               <Route path="/upload" element={<UploadPage />} />
               <Route path="/scanner" element={<ScannerPage />} />
               <Route path="/facial-recognition" element={<FacialRecognitionPage />} />
+              <Route path="/audit-catalog" element={<AuditCatalogPage />} />
             </Routes>
           </main>
           <Footer />
