@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuditDNA Catalog - Superman Style Preview</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .animate-fadeIn { animation: fadeIn 0.3s ease-in-out; }
+        .animate-scaleIn { animation: scaleIn 0.3s ease-in-out; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-100 via-blue-50 to-slate-200">
+    <div class="min-h-screen flex">
+        <!-- Sidebar with Bold Blue Gradients -->
+        <nav class="w-80 bg-gradient-to-br from-blue-600 via-blue-500 to-blue-700 shadow-2xl border-r border-blue-400/30">
+            <div class="p-6 border-b border-blue-400/40 bg-gradient-to-r from-blue-700/40 to-transparent">
+                <h1 class="text-3xl font-extrabold text-white drop-shadow-lg flex items-center gap-3">
+                    <svg class="w-8 h-8 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                    </svg>
+                    AuditDNA
+                </h1>
+                <p class="text-sm text-blue-100 pt-2 font-medium">Audit &amp; Compliance Catalog</p>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="p-4">
+                <input type="text" placeholder="Search services..." 
+                    class="w-full px-4 py-2 rounded-xl bg-white/20 backdrop-blur-md border border-white/30 text-white placeholder-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:bg-white/30 transition-all">
+            </div>
+
+            <!-- Category Navigation -->
+            <ul class="mt-2 space-y-2 px-4 pb-6">
+                <li>
+                    <button class="flex items-center w-full px-4 py-3 rounded-xl font-bold text-left transition-all transform hover:scale-105 hover:shadow-xl bg-white text-blue-600 shadow-lg shadow-blue-900/50">
+                        <svg class="mr-3 w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                        <span class="flex-1">Consumer Protection</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-blue-100 text-blue-700">10</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="flex items-center w-full px-4 py-3 rounded-xl font-bold text-left transition-all transform hover:scale-105 hover:shadow-xl bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm">
+                        <svg class="mr-3 w-5 h-5 text-blue-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                        </svg>
+                        <span class="flex-1">Mortgage & Lending</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-white/20 text-blue-100">5</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="flex items-center w-full px-4 py-3 rounded-xl font-bold text-left transition-all transform hover:scale-105 hover:shadow-xl bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm">
+                        <svg class="mr-3 w-5 h-5 text-blue-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                        </svg>
+                        <span class="flex-1">Agriculture & Trade</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-white/20 text-blue-100">6</span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-8 overflow-y-auto">
+            <div class="animate-fadeIn">
+                <!-- Animated Header -->
+                <h2 class="text-5xl font-extrabold bg-gradient-to-r from-blue-600 via-blue-500 to-blue-700 text-transparent bg-clip-text mb-3 drop-shadow-lg">
+                    Consumer Protection
+                </h2>
+                <div class="h-1 w-32 bg-gradient-to-r from-blue-600 to-blue-400 rounded-full shadow-lg shadow-blue-500/50"></div>
+                <p class="text-slate-600 mt-4 text-lg font-medium">10 services available</p>
+
+                <!-- Services Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+                    <!-- Service Card 1 -->
+                    <div class="group relative bg-white/60 backdrop-blur-lg rounded-2xl border border-white/40 shadow-lg hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-300 transform hover:-translate-y-2 cursor-pointer overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="relative p-6">
+                            <div class="flex items-start justify-between mb-3">
+                                <div class="flex-1">
+                                    <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors">Mortgage Loan Audit</h3>
+                                    <span class="text-xs text-blue-600 font-semibold mt-1 inline-block">CS001</span>
+                                </div>
+                                <div class="ml-2 p-2 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-md group-hover:shadow-lg group-hover:shadow-blue-500/50 transition-all">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-600 leading-relaxed">Compliance + math audit of note, TIL/RESPA, amortization, APR vs APOR.</p>
+                            <button class="mt-4 w-full px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-500 text-white font-semibold rounded-xl shadow-md hover:shadow-xl hover:shadow-blue-500/50 transition-all transform hover:scale-105">
+                                View Details
+                            </button>
+                        </div>
+                        <div class="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-blue-400/50 transition-all pointer-events-none"></div>
+                    </div>
+
+                    <!-- Service Card 2 -->
+                    <div class="group relative bg-white/60 backdrop-blur-lg rounded-2xl border border-white/40 shadow-lg hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-300 transform hover:-translate-y-2 cursor-pointer overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="relative p-6">
+                            <div class="flex items-start justify-between mb-3">
+                                <div class="flex-1">
+                                    <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors">Escrow Fee Reconciliation</h3>
+                                    <span class="text-xs text-blue-600 font-semibold mt-1 inline-block">CS002</span>
+                                </div>
+                                <div class="ml-2 p-2 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-md group-hover:shadow-lg group-hover:shadow-blue-500/50 transition-all">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-600 leading-relaxed">Tax/insurance escrow analysis, shortages, over-collections, refund calc.</p>
+                            <button class="mt-4 w-full px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-500 text-white font-semibold rounded-xl shadow-md hover:shadow-xl hover:shadow-blue-500/50 transition-all transform hover:scale-105">
+                                View Details
+                            </button>
+                        </div>
+                        <div class="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-blue-400/50 transition-all pointer-events-none"></div>
+                    </div>
+
+                    <!-- Service Card 3 -->
+                    <div class="group relative bg-white/60 backdrop-blur-lg rounded-2xl border border-white/40 shadow-lg hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-300 transform hover:-translate-y-2 cursor-pointer overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="relative p-6">
+                            <div class="flex items-start justify-between mb-3">
+                                <div class="flex-1">
+                                    <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors">Promissory Note Audit</h3>
+                                    <span class="text-xs text-blue-600 font-semibold mt-1 inline-block">CS003</span>
+                                </div>
+                                <div class="ml-2 p-2 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-md group-hover:shadow-lg group-hover:shadow-blue-500/50 transition-all">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-600 leading-relaxed">Truth-in-lending, usury, signature/authenticity checks.</p>
+                            <button class="mt-4 w-full px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-500 text-white font-semibold rounded-xl shadow-md hover:shadow-xl hover:shadow-blue-500/50 transition-all transform hover:scale-105">
+                                View Details
+                            </button>
+                        </div>
+                        <div class="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-blue-400/50 transition-all pointer-events-none"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
