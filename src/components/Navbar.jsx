@@ -1,101 +1,91 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
 
-const Navbar = () => {
-  const location = useLocation();
+// SAFE import: if AuthContext isn't wired yet, we won't crash.
+import * as Auth from "../../context/AuthContext";
+const useAuth =
+  Auth && Auth.useAuth
+    ? Auth.useAuth
+    : () => ({ profile: null, logout: () => {} });
 
-  const isActive = (path) => location.pathname === path;
+// If you still use AppModeContext, keep it; otherwise we’ll fall back safely.
+import * as Mode from "../../context/AppModeContext";
+const useAppMode =
+  Mode && Mode.useAppMode
+    ? Mode.useAppMode
+    : () => ({ mode: "demo", setMode: () => {} });
 
+const NavItem = ({ to, children }) => {
+  const { pathname } = useLocation();
+  const active = pathname === to;
   return (
-    <nav className="navbar navbar-expand-lg navbar-auditdna sticky-top">
-      <div className="container">
-        <Link className="navbar-brand d-flex align-items-center" to="/">
-          <div className="logo-badge me-2">A</div>
-          AuditDNA
-        </Link>
-        
-        <button 
-          className="navbar-toggler" 
-          type="button" 
-          data-bs-toggle="collapse" 
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav" 
-          aria-expanded="false" 
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <Link 
-                className={`nav-link px-3 py-2 ${isActive('/') ? 'active' : ''}`} 
-                to="/"
-              >
-                Home
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link 
-                className={`nav-link px-3 py-2 ${isActive('/services') ? 'active' : ''}`} 
-                to="/services"
-              >
-                Services
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link 
-                className={`nav-link px-3 py-2 ${isActive('/cases') ? 'active' : ''}`} 
-                to="/cases"
-              >
-                Cases
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link 
-                className={`nav-link px-3 py-2 ${isActive('/files') ? 'active' : ''}`} 
-                to="/files"
-              >
-                File Uploads
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link 
-                className={`nav-link px-3 py-2 ${isActive('/admin') ? 'active' : ''}`} 
-                to="/admin"
-              >
-                Admin Dashboard
-              </Link>
-            </li>
-          </ul>
-          
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <a 
-                className="nav-link px-3 py-2" 
-                href="https://nass.usda.gov/Data_and_Statistics/index.php" 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                USDA Commodity Explorer
-              </a>
-            </li>
-            <li className="nav-item">
-              <a 
-                className="nav-link px-3 py-2" 
-                href="https://www.docusign.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                DocuSign
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <Link
+      to={to}
+      className={`px-3 py-2 rounded-xl text-sm ${
+        active ? "bg-white/10 text-white" : "text-slate-300 hover:bg-white/5"
+      }`}
+    >
+      {children}
+    </Link>
   );
 };
 
-export default Navbar;
+export default function Navbar() {
+  const { mode, setMode } = useAppMode();
+  const { profile, logout } = useAuth();
+
+  return (
+    <div className="sticky top-0 z-40">
+      <div className="backdrop-blur bg-neutral-950/70 border-b border-neutral-800">
+        <nav className="container py-3 flex items-center gap-3">
+          <div className="flex items-center gap-2">
+            <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600" />
+            <div className="font-bold text-lg tracking-tight">AuditDNA</div>
+          </div>
+
+          <div className="flex-1" />
+
+          <div className="hidden md:flex items-center gap-1">
+            <NavItem to="/">Home</NavItem>
+            <NavItem to="/services">Services</NavItem>
+            <NavItem to="/marketplace">AgriTrade</NavItem>
+            <NavItem to="/factoring">Factoring</NavItem>
+            <NavItem to="/equipment">Equipment</NavItem>
+            <NavItem to="/mortgage">Mortgage</NavItem>
+            <NavItem to="/lender-match">Lender Match</NavItem>
+            <NavItem to="/usda-pricing">USDA Pricing</NavItem>
+            <NavItem to="/admin">Admin</NavItem>
+          </div>
+
+          <div className="flex-1" />
+
+          <div className="flex items-center gap-2">
+            <span className="text-xs text-neutral-400">Mode</span>
+            <button
+              onClick={() => setMode(mode === "demo" ? "live" : "demo")}
+              className={`btn ${mode === "live" ? "bg-green-600/70 border-green-400/40" : "bg-slate-900/80"}`}
+            >
+              {String(mode || "demo").toUpperCase()}
+            </button>
+
+            {profile ? (
+              <>
+                <span className="text-xs text-neutral-300">
+                  {profile.name || profile.email}
+                </span>
+                <button className="btn" onClick={logout}>
+                  Logout
+                </button>
+              </>
+            ) : (
+              <Link to="/login" className="btn">
+                Login
+              </Link>
+            )}
+          </div>
+        </nav>
+      </div>
+      <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+    </div>
+  );
+}
