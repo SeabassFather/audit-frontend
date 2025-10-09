@@ -4,6 +4,7 @@ import spartanServices from './data/spartan_services.json';
 import USDA from './pages/USDA';
 import WaterTech from './pages/WaterTech';
 import Mortgage from './pages/Mortgage';
+import USDAGrowerSearchEngine from './pages/USDAGrowerSearchEngine';
 
 // ---------------- CONTACT CARD ----------------
 function ContactCard({ serviceName, onClose }) {
@@ -192,9 +193,10 @@ function ServicesTab() {
 
 // ---------------- SEARCH ENGINES ----------------
 function SearchEngines() {
-  const [activeEngine, setActiveEngine] = useState('usda');
+  const [activeEngine, setActiveEngine] = useState('grower');
   const engines = [
-    { key: 'usda', label: 'USDA Pricing', icon: '🌾' },
+    { key: 'grower', label: 'Grower Search', icon: '🌾' },
+    { key: 'usda', label: 'USDA Pricing', icon: '💵' },
     { key: 'watertech', label: 'WaterTech', icon: '💧' },
     { key: 'mortgage', label: 'Mortgage', icon: '🏠' },
     { key: 'factoring', label: 'Factoring', icon: '💰' },
@@ -211,6 +213,7 @@ function SearchEngines() {
         ))}
       </div>
       <div>
+        {activeEngine === 'grower' && <USDAGrowerSearchEngine />}
         {activeEngine === 'usda' && <USDA />}
         {activeEngine === 'watertech' && <WaterTech />}
         {activeEngine === 'mortgage' && <Mortgage />}
