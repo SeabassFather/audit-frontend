@@ -1,46 +1,28 @@
 import React, { useState } from "react";
-import { useNavigate, Navigate } from "react-router-dom";
-import { useAuth } from "../auth/AuthContext";
-
+import { useNavigate } from "react-router-dom";
+import { login } from "../utils/auth";
 export default function LoginPage() {
-  const { isLoggedIn, login } = useAuth();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [err, setErr] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
-
-  if (isLoggedIn) return <Navigate to="/" replace />;
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const result = login(username, password);
+    if (result.success) {
+      navigate("/elite-modules");
+    } else {
+      setError(result.message);
+    }
+  };
   return (
-    <div className="max-w-md mx-auto py-24">
-      <h2 className="text-2xl font-bold mb-6">Login</h2>
-      <form
-        className="space-y-4"
-        onSubmit={(e) => {
-          e.preventDefault();
-          if (login(username, password)) navigate("/");
-          else setErr("Invalid credentials.");
-        }}
-      >
-        <input
-          className="block w-full border rounded p-2"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <input
-          className="block w-full border rounded p-2"
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        {err && <div className="text-red-600">{err}</div>}
-        <button
-          className="w-full bg-blue-700 text-white py-2 rounded"
-          type="submit"
-        >
-          Login
-        </button>
+    <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <form className="bg-white p-8 rounded shadow-md w-full max-w-sm" onSubmit={handleSubmit}>
+        <h1 className="text-2xl font-bold mb-6 text-center">Admin Login</h1>
+        <input type="text" placeholder="Username" className="w-full mb-3 p-2 border rounded" value={username} onChange={e => setUsername(e.target.value)} />
+        <input type="password" placeholder="Password" className="w-full mb-3 p-2 border rounded" value={password} onChange={e => setPassword(e.target.value)} />
+        {error && <div className="text-red-600 mb-3">{error}</div>}
+        <button type="submit" className="w-full bg-blue-600 text-white font-bold py-2 rounded">Login</button>
       </form>
     </div>
   );
