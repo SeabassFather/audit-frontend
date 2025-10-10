@@ -1,0 +1,191 @@
+/* AuditDNA Brand Colors & Bootstrap Customizations */
+:root {
+  --primary-silver: #e5e7eb;
+  --secondary-blue: #0d6efd;
+  --accent-light-yellow: #fff3cd;
+  --accent-light-green: #d1e7dd;
+  --text-dark: #212529;
+  --text-muted: #6c757d;
+  --white: #ffffff;
+  --border-light: #dee2e6;
+  --shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+/* Bootstrap theme customizations */
+.bg-primary-silver {
+  background-color: var(--primary-silver) !important;
+}
+
+.text-primary-silver {
+  color: var(--primary-silver) !important;
+}
+
+.bg-secondary-blue {
+  background-color: var(--secondary-blue) !important;
+}
+
+.text-secondary-blue {
+  color: var(--secondary-blue) !important;
+}
+
+.bg-accent-yellow {
+  background-color: var(--accent-light-yellow) !important;
+}
+
+.text-accent-yellow {
+  color: var(--accent-light-yellow) !important;
+}
+
+.bg-accent-green {
+  background-color: var(--accent-light-green) !important;
+}
+
+.text-accent-green {
+  color: var(--accent-light-green) !important;
+}
+
+/* Custom navbar styling */
+.navbar-auditdna {
+  background-color: var(--white);
+  border-bottom: 2px solid var(--primary-silver);
+  box-shadow: var(--shadow);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: var(--secondary-blue) !important;
+  font-size: 1.75rem;
+}
+
+.nav-link {
+  color: var(--text-dark) !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--secondary-blue) !important;
+  background-color: var(--primary-silver);
+  border-radius: 0.375rem;
+}
+
+.nav-link.active {
+  color: var(--secondary-blue) !important;
+  background-color: var(--accent-light-yellow);
+  border-radius: 0.375rem;
+}
+
+/* Hero section styling */
+.hero-section {
+  background: linear-gradient(135deg, var(--primary-silver) 0%, var(--white) 100%);
+  border: 1px solid var(--border-light);
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+/* Card customizations */
+.card-auditdna {
+  border: 1px solid var(--primary-silver);
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.card-auditdna:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.card-auditdna .card-header {
+  background-color: var(--accent-light-yellow);
+  border-bottom: 1px solid var(--primary-silver);
+  border-radius: 0.75rem 0.75rem 0 0 !important;
+}
+
+/* Button customizations */
+.btn-primary-silver {
+  background-color: var(--primary-silver);
+  border-color: var(--primary-silver);
+  color: var(--text-dark);
+}
+
+.btn-primary-silver:hover {
+  background-color: #d1d5db;
+  border-color: #d1d5db;
+  color: var(--text-dark);
+}
+
+.btn-secondary-blue {
+  background-color: var(--secondary-blue);
+  border-color: var(--secondary-blue);
+  color: var(--white);
+}
+
+.btn-secondary-blue:hover {
+  background-color: #0b5ed7;
+  border-color: #0a58ca;
+  color: var(--white);
+}
+
+.btn-accent-green {
+  background-color: var(--accent-light-green);
+  border-color: var(--accent-light-green);
+  color: var(--text-dark);
+}
+
+.btn-accent-green:hover {
+  background-color: #badbcc;
+  border-color: #badbcc;
+  color: var(--text-dark);
+}
+
+/* Footer styling */
+.footer-auditdna {
+  background-color: var(--primary-silver);
+  border-top: 2px solid var(--border-light);
+  margin-top: auto;
+}
+
+.footer-auditdna .text-muted {
+  color: var(--text-muted) !important;
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+  
+  .hero-section {
+    margin: 1rem 0;
+  }
+  
+  .card-auditdna {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Custom spacing */
+.py-6 {
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+
+.my-6 {
+  margin-top: 3rem !important;
+  margin-bottom: 3rem !important;
+}
+
+/* Logo styling */
+.logo-badge {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--secondary-blue), #0b5ed7);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 1.25rem;
+}

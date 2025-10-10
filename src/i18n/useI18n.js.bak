@@ -1,0 +1,19 @@
+import { useCallback, useMemo } from "react";
+
+/**
+ * Minimal placeholder i18n hook.
+ * - 	(key) returns a label from a tiny dictionary or the key itself
+ * - lang is fixed to "en" for now
+ */
+export function useI18n() {
+  const dict = useMemo(() => ({
+    marketplace: "Ag Marketplace",
+    buyer: "Buyer",
+    seller: "Seller",
+    compare: "Compare",
+  }), []);
+
+  const t = useCallback((key) => dict[key] ?? key, [dict]);
+
+  return { t, lang: "en" };
+}

@@ -1,0 +1,44 @@
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Sidebar from "./components/Sidebar";
+import Topbar from "./components/Topbar";
+
+import Dashboard from "./pages/Dashboard";
+import Category from "./pages/Category";
+import ServiceDetail from "./pages/ServiceDetail";
+import Elite from "./pages/Elite";
+import Settings from "./pages/Settings";
+import MortgageSearchPage from "./pages/MortgageSearchPage";
+import AgMarketplaceSearchPage from "./pages/AgMarketplaceSearchPage";
+import TradeFinanceSearchPage from "./pages/TradeFinanceSearchPage";
+import USDAOrganicSearchPage from "./pages/USDAOrganicSearchPage";
+import WaterTechUploads from "./pages/WaterTechUploads";
+import TickersPage from "./pages/TickersPage";
+import NotFound from "./pages/NotFound";
+
+export default function App(){
+  return (
+    <div className="app">
+      <Sidebar />
+      <div className="main">
+        <Topbar />
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<Dashboard/>}/>
+            <Route path="/elite" element={<Elite/>}/>
+            <Route path="/settings" element={<Settings/>}/>
+            <Route path="/mortgage-search" element={<MortgageSearchPage/>}/>
+            <Route path="/ag-market" element={<AgMarketplaceSearchPage/>}/>
+            <Route path="/trade-finance" element={<TradeFinanceSearchPage/>}/>
+            <Route path="/usda-organic" element={<USDAOrganicSearchPage/>}/>
+            <Route path="/water-tech" element={<WaterTechUploads/>}/>
+            <Route path="/tickers" element={<TickersPage/>}/>
+            <Route path="/cat/:slug" element={<Category/>}/>
+            <Route path="/service/:id" element={<ServiceDetail/>}/>
+            <Route path="*" element={<NotFound/>}/>
+          </Routes>
+        </div>
+      </div>
+    </div>
+  );
+}

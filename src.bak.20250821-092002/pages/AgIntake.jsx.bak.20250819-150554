@@ -1,0 +1,36 @@
+import React, { useState } from "react";
+import { apiPost } from "../utils/api";
+import UploadArea from "../components/UploadArea";
+
+export default function AgIntake(){
+  const [p,setP]=useState({ company:"", contact:"", email:"", commodity:"Tomatoes", country:"USA", acreage:100 });
+  const [out,setOut]=useState(null); const [err,setErr]=useState("");
+  const go=async(e)=>{ e.preventDefault(); setErr(""); setOut(null);
+    try{ setOut(await apiPost("/api/search/ag", p)); }catch(ex){ setErr(String(ex)); }
+  };
+
+  return (
+    <section>
+      <div className="badge">Agriculture</div>
+      <h1 className="h1">Ag Intake</h1>
+      <form onSubmit={go} className="grid grid-2">
+        <input className="input" placeholder="Company" value={p.company} onChange={e=>setP({...p,company:e.target.value})}/>
+        <input className="input" placeholder="Contact" value={p.contact} onChange={e=>setP({...p,contact:e.target.value})}/>
+        <input className="input" placeholder="Email" value={p.email} onChange={e=>setP({...p,email:e.target.value})}/>
+        <input className="input" placeholder="Country" value={p.country} onChange={e=>setP({...p,country:e.target.value})}/>
+        <input className="input" placeholder="Commodity" value={p.commodity} onChange={e=>setP({...p,commodity:e.target.value})}/>
+        <input className="input" placeholder="Acreage" value={p.acreage} onChange={e=>setP({...p,acreage:Number(e.target.value)||0})}/>
+        <div className="toolbar"><button className="btn success" type="submit">Submit</button></div>
+      </form>
+
+      <div className="grid grid-3" style={{marginTop:14}}>
+        <UploadArea title="Lab Reports (PDF/CSV)" accept=".pdf,.csv,.xlsx" />
+        <UploadArea title="Certifications" accept=".pdf,.jpg,.png" />
+        <UploadArea title="Shipping Docs" accept=".pdf,.jpg,.png" />
+      </div>
+
+      {err && <div style={{color:"#b00020", marginTop:10}}>{err}</div>}
+      {out && <pre className="card" style={{marginTop:12, overflow:"auto"}}>{JSON.stringify(out,null,2)}</pre>}
+    </section>
+  );
+}

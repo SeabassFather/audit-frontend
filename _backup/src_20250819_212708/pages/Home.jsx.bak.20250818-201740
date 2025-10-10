@@ -1,0 +1,10 @@
+import React from "react";
+
+export default function Home(){
+  return (
+    <div style={{padding:20}}>
+      <h1>Home (Clean)</h1>
+      <p>This file was auto-repaired. Replace with your real home content.</p>
+    </div>
+  );
+}

@@ -1,0 +1,58 @@
+import React, { useState } from "react";
+import { apiPost, apiNotify } from "../utils/api";
+import UploadArea from "../components/UploadArea";
+
+export default function AgMarketplaceSearchPage(){
+  const [p,setP]=useState({
+    role:"Seller", company:"", contact:"", email:"", phone:"",
+    commodity:"Tomatoes", variety:"", size:"", pack:"", count:"",
+    market:"Open", country:"", state:"", pallets:"", priceTarget:"", certifications:[]
+  });
+  const [rows,setRows]=useState([]); const [e,setE]=useState(""); const [busy,setBusy]=useState(false);
+  const upd=(k,v)=>setP(prev=>({...prev,[k]:v}));
+  const toggle=(val)=>setP(prev=>{ const s=new Set(prev.certifications); s.has(val)?s.delete(val):s.add(val); return {...prev,certifications:[...s]};});
+
+  const search=async()=>{ setE(""); setBusy(true); try{
+      const r=await apiPost("/api/ag/search", p); setRows(r.items||[]);
+      await apiNotify({ topic:"ag-intake", channel:["email","sms"], meta:p });
+    }catch(err){ setE(String(err)); } finally{ setBusy(false); } };
+
+  return (<div className="grid" style={{gap:12}}>
+    <div className="card">
+      <h3 style={{marginTop:0}}>Ag Intake</h3>
+      <div className="row">
+        <label>Role<select className="select" value={p.role} onChange={e=>upd("role",e.target.value)}><option>Seller</option><option>Buyer</option></select></label>
+        <label>Company<input className="input" value={p.company} onChange={e=>upd("company",e.target.value)} /></label>
+        <label>Contact<input className="input" value={p.contact} onChange={e=>upd("contact",e.target.value)} /></label>
+        <label>Email<input className="input" value={p.email} onChange={e=>upd("email",e.target.value)} /></label>
+        <label>Phone<input className="input" value={p.phone} onChange={e=>upd("phone",e.target.value)} /></label>
+        <label>Commodity<input className="input" value={p.commodity} onChange={e=>upd("commodity",e.target.value)} /></label>
+        <label>Variety<input className="input" value={p.variety} onChange={e=>upd("variety",e.target.value)} /></label>
+        <label>Size<input className="input" value={p.size} onChange={e=>upd("size",e.target.value)} /></label>
+        <label>Pack<input className="input" value={p.pack} onChange={e=>upd("pack",e.target.value)} /></label>
+        <label>Count<input className="input" value={p.count} onChange={e=>upd("count",e.target.value)} /></label>
+        <label>Market<select className="select" value={p.market} onChange={e=>upd("market",e.target.value)}><option>Open</option><option>Contract</option></select></label>
+        <label>Country<input className="input" value={p.country} onChange={e=>upd("country",e.target.value)} /></label>
+        <label>State<input className="input" value={p.state} onChange={e=>upd("state",e.target.value)} /></label>
+        <label>Pallets<input className="input" value={p.pallets} onChange={e=>upd("pallets",e.target.value)} /></label>
+        <label>Price Target (USD)<input className="input" value={p.priceTarget} onChange={e=>upd("priceTarget",e.target.value)} /></label>
+        <div style={{gridColumn:"1 / -1"}}>
+          <div className="small">Certifications</div>
+          {["GlobalG.A.P.","PrimusGFS","USDA Organic","FDA"].map(x=>(
+            <label key={x} style={{marginRight:12}}><input type="checkbox" checked={p.certifications.includes(x)} onChange={()=>toggle(x)} /> {x}</label>
+          ))}
+        </div>
+        <div><button className="btn btn-accent" onClick={search} disabled={busy}>{busy?"Searching...":"Search"}</button></div>
+        {e && <div className="small" style={{color:"#b00"}}>{e}</div>}
+      </div>
+    </div>
+    <div className="card">
+      {rows.length===0 ? <div className="small">No results yet.</div> : <pre className="json">{JSON.stringify(rows,null,2)}</pre>}
+    </div>
+    <div className="grid grid-3">
+      <UploadArea title="Upload: Certifications" to="/api/upload/ag" accept=".pdf,.png,.jpg" extraFields={{kind:"certifications"}} notifyTopic="ag-certs" />
+      <UploadArea title="Upload: QC / Lab" to="/api/upload/ag" accept=".pdf,.csv,.xlsx" extraFields={{kind:"lab"}} notifyTopic="ag-lab" />
+      <UploadArea title="Upload: Logistics" to="/api/upload/ag" accept=".pdf,.png,.jpg" extraFields={{kind:"logistics"}} notifyTopic="ag-logistics" />
+    </div>
+  </div>);
+}

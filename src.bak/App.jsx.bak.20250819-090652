@@ -1,0 +1,39 @@
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, NavLink } from "react-router-dom";
+import Home from "./pages/Home";
+import Programs from "./pages/Programs";
+import LoanMatch from "./pages/LoanMatch";
+import Compliance from "./pages/Compliance";
+import Elite from "./pages/Elite";
+import Settings from "./pages/Settings";
+import "./index.css";
+
+export default function App() {
+  return (
+    <Router>
+      <div className="app-layout">
+        <aside className="sidebar">
+          <h2 className="logo">⚡ AuditDNA</h2>
+          <nav>
+            <NavLink to="/" end>🏠 Home</NavLink>
+            <NavLink to="/programs">📊 Programs</NavLink>
+            <NavLink to="/loan-match">💰 Loan Match</NavLink>
+            <NavLink to="/compliance">📑 Compliance</NavLink>
+            <NavLink to="/elite">⭐ Elite</NavLink>
+            <NavLink to="/settings">⚙️ Settings</NavLink>
+          </nav>
+        </aside>
+        <main className="content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/programs" element={<Programs />} />
+            <Route path="/loan-match" element={<LoanMatch />} />
+            <Route path="/compliance" element={<Compliance />} />
+            <Route path="/elite" element={<Elite />} />
+            <Route path="/settings" element={<Settings />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
+  );
+}

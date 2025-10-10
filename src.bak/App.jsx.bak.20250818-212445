@@ -1,0 +1,62 @@
+﻿import React from "react";
+import { BrowserRouter as Router, Route, Routes, NavLink } from "react-router-dom";
+import { FaHome, FaTasks, FaSearch, FaBalanceScale, FaCrown } from "react-icons/fa";
+import Home from "./pages/Home";
+import Programs from "./pages/Programs";
+import LoanMatch from "./pages/LoanMatch";
+import Compliance from "./pages/Compliance";
+import Elite from "./pages/Elite";
+
+export default function App() {
+  return (
+    <Router>
+      <div style={{ display: "flex", minHeight: "100vh", fontFamily: "Segoe UI, sans-serif" }}>
+        
+        {/* Sidebar */}
+        <nav style={{
+          width: "220px",
+          background: "linear-gradient(180deg, #dfe4ea, #c8d6e5)",
+          padding: "20px",
+          boxShadow: "2px 0 8px rgba(0,0,0,0.1)"
+        }}>
+          <h2 style={{ color: "#222", marginBottom: "30px" }}>AuditDNA</h2>
+          <ul style={{ listStyle: "none", padding: 0 }}>
+            <li><NavLink to="/" style={linkStyle} className={({isActive}) => isActive ? "active-link" : ""}><FaHome style={iconStyle("#1e90ff")} /> Home</NavLink></li>
+            <li><NavLink to="/programs" style={linkStyle} className={({isActive}) => isActive ? "active-link" : ""}><FaTasks style={iconStyle("#2ed573")} /> Programs</NavLink></li>
+            <li><NavLink to="/loanmatch" style={linkStyle} className={({isActive}) => isActive ? "active-link" : ""}><FaSearch style={iconStyle("#ffa502")} /> Loan Match</NavLink></li>
+            <li><NavLink to="/compliance" style={linkStyle} className={({isActive}) => isActive ? "active-link" : ""}><FaBalanceScale style={iconStyle("#3742fa")} /> Compliance</NavLink></li>
+            <li><NavLink to="/elite" style={linkStyle} className={({isActive}) => isActive ? "active-link" : ""}><FaCrown style={iconStyle("#eccc68")} /> Elite</NavLink></li>
+          </ul>
+        </nav>
+
+        {/* Main Content */}
+        <main style={{ flex: 1, padding: "40px", background: "#f1f2f6" }}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/programs" element={<Programs />} />
+            <Route path="/loanmatch" element={<LoanMatch />} />
+            <Route path="/compliance" element={<Compliance />} />
+            <Route path="/elite" element={<Elite />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
+  );
+}
+
+const linkStyle = {
+  textDecoration: "none",
+  color: "#333",
+  display: "flex",
+  alignItems: "center",
+  fontSize: "16px",
+  padding: "10px 12px",
+  borderRadius: "8px",
+  marginBottom: "12px",
+  transition: "all 0.3s ease"
+};
+
+const iconStyle = (color) => ({
+  marginRight: "10px",
+  color
+});

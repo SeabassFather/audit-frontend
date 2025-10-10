@@ -1,0 +1,32 @@
+﻿import React, { useState, useEffect } from "react";
+import "./Settings.css";
+
+export default function Settings() {
+  const [soundEnabled, setSoundEnabled] = useState(true);
+
+  useEffect(() => {
+    const saved = localStorage.getItem("soundEnabled");
+    if (saved !== null) setSoundEnabled(saved === "true");
+  }, []);
+
+  const toggleSound = () => {
+    const newVal = !soundEnabled;
+    setSoundEnabled(newVal);
+    localStorage.setItem("soundEnabled", newVal);
+  };
+
+  return (
+    <div style={{ padding: "20px" }}>
+      <h1> Settings</h1>
+      <p>Manage your preferences here.</p>
+
+      <div className="toggle-container">
+        <span> Sound Effects</span>
+        <label className="switch">
+          <input type="checkbox" checked={soundEnabled} onChange={toggleSound} />
+          <span className="slider"></span>
+        </label>
+      </div>
+    </div>
+  );
+}

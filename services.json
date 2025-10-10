@@ -1,0 +1,70 @@
+{
+  "global": [
+    "CFPB Compliance Audit",
+    "FHA Mortgage Standards",
+    "GDPR Data Audit",
+    "AML / KYC Checks",
+    "PIPEDA Audit (Canada)",
+    "UK GDPR Audit",
+    "PDPA Audit (Singapore)",
+    "Cross-Border Finance Compliance"
+  ],
+  "eco": [
+    "Agri-Maxx Water Conditioning",
+    "Soil & Lab Test Upload",
+    "Eco-Friendly Housing Compliance",
+    "Carbon Footprint Report",
+    "GlobalGAP Certification",
+    "Renewable Energy Project Audit"
+  ],
+  "legal": [
+    "NDA Contract Review",
+    "TRID Mortgage Disclosure Audit",
+    "ECOA Compliance",
+    "CCPA Data Privacy Check",
+    "Consumer Protection Audit",
+    "Global Trade Legal Risk"
+  ],
+  "healthcare": [
+    "HIPAA Compliance Audit",
+    "Claims Processing Validation",
+    "Pharma Supply Chain Audit",
+    "Hospital Accreditation Audit"
+  ],
+  "payroll": [
+    "401k Compliance Audit",
+    "Pension Fund Review",
+    "Cross-Border Payroll Compliance",
+    "Employee Benefits Validation"
+  ],
+  "travel": [
+    "Eco-Tourism Certification",
+    "Travel Insurance Compliance",
+    "Global Visa Regulation Check",
+    "Hotel Safety Standards Audit"
+  ],
+  "tech": [
+    "Cybersecurity Risk Audit",
+    "AI Ethics & Bias Compliance",
+    "Data Privacy Framework Audit",
+    "Cloud Security Validation"
+  ],
+  "mortgage": [
+    "Mortgage Loan Search",
+    "Lender Matching Engine",
+    "Property Valuation Audit",
+    "Mexico Cross-Border Mortgage Compliance"
+  ],
+  "usda": [
+    "USDA Commodity Pricing Trends",
+    "5-Year Produce Graphs",
+    "Weekly W1–W26 Market Data",
+    "QuickStats API Integration"
+  ],
+  "factoring": [
+    "Ag Factoring Search",
+    "Purchase Order Financing",
+    "Grower Financing Compliance",
+    "Mexico/US Trade Risk Analysis"
+  ]
+}

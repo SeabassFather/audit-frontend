@@ -1,0 +1,61 @@
+﻿/* Sidebar Layout */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 220px;
+  height: 100%;
+  background: linear-gradient(180deg, #f0f2f5, #e6e9ef);
+  padding: 20px;
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #1e90ff;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin: 1rem 0;
+}
+
+.sidebar a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: #333;
+  padding: 10px 15px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+/* Hover glow */
+.sidebar a:hover {
+  background: rgba(30, 144, 255, 0.15);
+  color: #1e90ff !important;
+  transform: translateX(6px);
+  box-shadow: 0 0 8px rgba(30, 144, 255, 0.4);
+}
+
+/* Active highlight */
+.active-link {
+  background: rgba(30, 144, 255, 0.25);
+  font-weight: bold;
+  color: #1e90ff !important;
+  box-shadow: inset 3px 0 0 #1e90ff;
+}
+
+/* Icon style */
+.icon {
+  font-size: 1.3rem;
+}

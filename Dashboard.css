@@ -1,0 +1,173 @@
+import React, { useState, useEffect } from "react";
+import {
+  DollarSign,
+  TrendingUp,
+  Briefcase,
+  PhoneCall,
+  FileText,
+  Landmark,
+  Globe,
+  ShieldCheck,
+  Upload,
+  Activity,
+  FileBarChart,
+  Leaf,
+  Stethoscope,
+  Users,
+  Scale,
+  Plane,
+} from "lucide-react";
+import AuditUpload from "../components/AuditUpload";
+
+export default function Dashboard() {
+  const [expanded, setExpanded] = useState(false);
+  const [complianceResults, setComplianceResults] = useState([]);
+
+  // Mock data
+  const [mortgageRate, setMortgageRate] = useState({ rate: "6.23%", term: "15Y Fixed", change: "+0.01%" });
+  const [commodities, setCommodities] = useState([
+    { name: "Corn", price: "$473", change: "+1.10" },
+    { name: "Wheat", price: "$605", change: "+0.75" },
+    { name: "Avocado", price: "$32/case", change: "-0.50" },
+  ]);
+  const [markets, setMarkets] = useState({ index: "NASDAQ", value: "23,784", change: "-31" });
+  const [zadarmaStatus, setZadarmaStatus] = useState("Connected ✅");
+  const [escrowStatus, setEscrowStatus] = useState("3 Active Deals");
+  const [lenders, setLenders] = useState(["BBVA", "Santander MX", "Banorte", "Wells Fargo Cross-Border"]);
+
+  // Agencies
+  const agencies = {
+    Mexico: ["CNBV", "CONDUSEF", "SAT", "INAI", "SHF", "PROFECO", "SEMARNAT", "COFEPRIS"],
+    Global: ["CFPB", "FHA", "GDPR", "AML", "PIPEDA", "PDPA", "UK GDPR"],
+  };
+
+  return (
+    <div className="p-8 min-h-screen bg-gradient-to-br from-blue-50 via-white to-yellow-50">
+      <h1 className="text-3xl font-bold text-slate-800 mb-6">AuditDNA Dashboard</h1>
+      <p className="text-slate-500 mb-10">Compliance, audit, trade, and finance in one ecosystem</p>
+
+      {/* Workflow */}
+      <div className="mb-10">
+        <h2 className="text-xl font-bold text-slate-700 mb-4">Audit & Compliance Workflow</h2>
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+          {[
+            { step: "Upload", icon: <Upload />, color: "bg-blue-100" },
+            { step: "Audit Engine", icon: <Activity />, color: "bg-green-100" },
+            { step: "Compliance Check", icon: <ShieldCheck />, color: "bg-yellow-100" },
+            { step: "Risk Scoring", icon: <Scale />, color: "bg-orange-100" },
+            { step: "Report", icon: <FileBarChart />, color: "bg-teal-100" },
+          ].map((s, idx) => (
+            <div key={idx} className={`${s.color} p-6 rounded-xl text-center shadow hover:shadow-lg transition`}>
+              <div className="text-3xl mb-2 flex justify-center">{s.icon}</div>
+              <div className="font-semibold text-slate-700">{s.step}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Upload */}
+      <AuditUpload />
+
+      {/* Data Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-10">
+        {/* Mortgage */}
+        <Card icon={<DollarSign className="text-green-600" />} title="Mortgage">
+          <p className="text-2xl font-bold">{mortgageRate.rate}</p>
+          <p className="text-sm text-slate-500">{mortgageRate.term}</p>
+          <p className="text-green-500">{mortgageRate.change}</p>
+        </Card>
+
+        {/* Commodities */}
+        <Card icon={<TrendingUp className="text-yellow-500" />} title="Commodities">
+          {commodities.map((c, idx) => (
+            <div key={idx} className="flex justify-between text-sm mb-2">
+              <span>{c.name}</span>
+              <span className="font-medium">{c.price}</span>
+              <span className={c.change.startsWith("-") ? "text-red-500" : "text-green-600"}>{c.change}</span>
+            </div>
+          ))}
+        </Card>
+
+        {/* Markets */}
+        <Card icon={<Briefcase className="text-blue-600" />} title="Markets">
+          <p className="text-2xl font-bold">{markets.value}</p>
+          <p className="text-sm text-slate-500">{markets.index}</p>
+          <p className={markets.change.startsWith("-") ? "text-red-500" : "text-green-600"}>{markets.change}</p>
+        </Card>
+
+        {/* Zadarma */}
+        <Card icon={<PhoneCall className="text-purple-500" />} title="Zadarma VOIP">
+          <p className="text-lg">{zadarmaStatus}</p>
+        </Card>
+
+        {/* Escrow */}
+        <Card icon={<FileText className="text-orange-500" />} title="Escrow">
+          <p className="text-lg">{escrowStatus}</p>
+        </Card>
+
+        {/* Lenders */}
+        <Card icon={<Landmark className="text-teal-500" />} title="Lender Matching">
+          {lenders.map((l, idx) => (
+            <p key={idx} className="text-sm">{l}</p>
+          ))}
+        </Card>
+
+        {/* Eco */}
+        <Card icon={<Leaf className="text-green-600" />} title="Eco Module">
+          <p>Agri-Maxx Water Conditioning</p>
+          <p>Soil & Lab Uploads</p>
+          <p>Eco Housing Compliance</p>
+        </Card>
+
+        {/* Healthcare */}
+        <Card icon={<Stethoscope className="text-red-600" />} title="Healthcare Audits">
+          <p>HIPAA Compliance</p>
+          <p>Claims Audit</p>
+          <p>Pharma Supply Chain</p>
+        </Card>
+
+        {/* Global Compliance */}
+        <Card icon={<Globe className="text-sky-600" />} title="Global Compliance">
+          <p>CFPB, GDPR, AML, PIPEDA</p>
+          <p>Mexico & LatAm Regulators</p>
+          <p>Cross-Border Finance</p>
+        </Card>
+      </div>
+
+      {/* Agencies Accordion */}
+      <div className="rounded-xl bg-white p-6 shadow-md hover:shadow-lg transition">
+        <div className="flex items-center justify-between cursor-pointer" onClick={() => setExpanded(!expanded)}>
+          <div className="flex items-center gap-3">
+            <Globe className="text-sky-600" />
+            <h2 className="font-semibold text-slate-700">Mexico & Global Agencies</h2>
+          </div>
+          <span className="text-slate-500">{expanded ? "▲" : "▼"}</span>
+        </div>
+        {expanded && (
+          <div className="mt-4 space-y-4">
+            {Object.entries(agencies).map(([region, list], idx) => (
+              <div key={idx}>
+                <h3 className="font-medium text-slate-600 mb-2">{region}</h3>
+                <ul className="list-disc list-inside text-sm text-slate-700 space-y-1">
+                  {list.map((a, i) => <li key={i}>{a}</li>)}
+                </ul>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function Card({ icon, title, children }) {
+  return (
+    <div className="rounded-xl bg-white p-6 shadow-md hover:shadow-lg transition">
+      <div className="flex items-center gap-3 mb-4">
+        {icon}
+        <h2 className="font-semibold text-slate-700">{title}</h2>
+      </div>
+      {children}
+    </div>
+  );
+}
