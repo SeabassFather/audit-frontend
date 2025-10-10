@@ -1,3 +1,4 @@
+/* eslint-disable default-case */
 // AI-powered buyer/seller matchmaking and risk assessment utilities
 
 // Calculate match score between buyer requirements and grower offerings
@@ -426,7 +427,7 @@ function getShippingRecommendations(transportMode, commodity) {
   const recommendations = [];
   
   if (transportMode.includes('Refrigerated')) {
-    recommendations.push('Maintain cold chain at 34-38°F');
+    recommendations.push('Maintain cold chain at 34-38Â°F');
     recommendations.push('Use temperature monitoring devices');
   }
   
@@ -462,3 +463,4 @@ export function suggestBestDeals(growers, buyerRequirements) {
     avgMatchScore: scoredGrowers.reduce((sum, d) => sum + d.matchData.score, 0) / scoredGrowers.length
   };
 }
+

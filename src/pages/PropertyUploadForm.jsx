@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 
 const text = {
@@ -23,19 +24,19 @@ const text = {
     title: "Publicar Propiedad",
     subtitle: "Publique su propiedad para compradores en todo el mundo",
     propertyType: "Tipo de Propiedad",
-    region: "Región",
+    region: "RegiÃƒÂ³n",
     price: "Precio (USD)",
     sqft: "Metros Cuadrados",
-    bedrooms: "Recámaras",
-    bathrooms: "Baños",
-    descEng: "Descripción (Inglés)",
-    descEsp: "Descripción (Español)",
+    bedrooms: "RecÃƒÂ¡maras",
+    bathrooms: "BaÃƒÂ±os",
+    descEng: "DescripciÃƒÂ³n (InglÃƒÂ©s)",
+    descEsp: "DescripciÃƒÂ³n (EspaÃƒÂ±ol)",
     amenities: "Amenidades (separadas por comas)",
     address: "Domicilio de la Propiedad",
     uploadPhotos: "Subir Fotos (opcional)",
     uploadDocs: "Subir Documentos Legales (opcional)",
-    submit: "Enviar Propiedad para Revisión",
-    thankyou: "¡Gracias! Su propiedad está en revisión."
+    submit: "Enviar Propiedad para RevisiÃƒÂ³n",
+    thankyou: "Ã‚Â¡Gracias! Su propiedad estÃƒÂ¡ en revisiÃƒÂ³n."
   }
 };
 

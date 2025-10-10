@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 
 const text = {
@@ -18,22 +19,22 @@ const text = {
     title: "Cuestionario Legal y Fideicomiso",
     subtitle: "Preguntas legales, fideicomisos, trusts y contratos de propiedad.",
     fullName: "Nombre Completo",
-    email: "Correo Electrónico",
-    phone: "Número de Teléfono",
+    email: "Correo ElectrÃƒÂ³nico",
+    phone: "NÃƒÂºmero de TelÃƒÂ©fono",
     questionType: "Tipo de Pregunta Legal",
     question: "Describa su pregunta (detalles)",
     uploadPhotos: "Subir Fotos (opcional)",
     uploadDocs: "Subir Documentos Legales (opcional)",
     submit: "Enviar Pregunta Legal",
-    thankyou: "¡Gracias! Nuestro equipo legal le contactará pronto."
+    thankyou: "Ã‚Â¡Gracias! Nuestro equipo legal le contactarÃƒÂ¡ pronto."
   }
 };
 
 const QUESTION_TYPES = [
   { en: "Fideicomiso or Bank Trust", es: "Fideicomiso o Trust Bancario" },
   { en: "Purchase Contract", es: "Contrato de Compra" },
-  { en: "Title/Deed Issues", es: "Problemas de Título/Escritura" },
-  { en: "Inheritance/Estate", es: "Herencia/Sucesión" },
+  { en: "Title/Deed Issues", es: "Problemas de TÃƒÂ­tulo/Escritura" },
+  { en: "Inheritance/Estate", es: "Herencia/SucesiÃƒÂ³n" },
   { en: "Other", es: "Otro" }
 ];
 

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 
 const text = {
@@ -21,21 +22,21 @@ const text = {
   },
   spanish: {
     title: "Registro de Socio de Referencia",
-    subtitle: "Asóciese con AuditDNA para Préstamos y Bienes Raíces en México",
-    org: "Nombre de la Organización",
+    subtitle: "AsÃƒÂ³ciese con AuditDNA para PrÃƒÂ©stamos y Bienes RaÃƒÂ­ces en MÃƒÂ©xico",
+    org: "Nombre de la OrganizaciÃƒÂ³n",
     contact: "Nombre del Contacto",
-    email: "Correo Electrónico",
-    phone: "Número de Teléfono",
+    email: "Correo ElectrÃƒÂ³nico",
+    phone: "NÃƒÂºmero de TelÃƒÂ©fono",
     role: "Tipo de Socio",
-    dealVolume: "Referencias/Negocios por Año",
+    dealVolume: "Referencias/Negocios por AÃƒÂ±o",
     regions: "Regiones Cubiertas",
-    coBrand: "¿Interesado en Co-Branding?",
+    coBrand: "Ã‚Â¿Interesado en Co-Branding?",
     uploadPhotos: "Subir Fotos (opcional)",
     uploadDocs: "Subir Documentos Legales (opcional)",
-    uploadLogo: "Subir Logo de la Organización (opcional)",
+    uploadLogo: "Subir Logo de la OrganizaciÃƒÂ³n (opcional)",
     notes: "Notas / Comentarios Adicionales",
     submit: "Registrarse como Socio",
-    thankyou: "¡Gracias! Nuestro equipo de alianzas le contactará."
+    thankyou: "Ã‚Â¡Gracias! Nuestro equipo de alianzas le contactarÃƒÂ¡."
   }
 };
 

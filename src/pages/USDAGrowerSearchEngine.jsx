@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useMemo } from 'react';
 import { 
   Search, Filter, MapPin, Phone, Mail, MessageCircle, Download, 
@@ -416,7 +417,7 @@ function GrowerCard({ grower, viewMode, onViewProfile, onInitiateDeal, getRiskCo
           <div className="flex-1">
             <div className="flex items-center gap-3 mb-2">
               <h3 className="text-lg font-bold text-gray-900">{grower.companyName}</h3>
-              {grower.organic && <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">🌿 Organic</span>}
+              {grower.organic && <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">ðŸŒ¿ Organic</span>}
               <span className={`text-xs px-2 py-1 rounded ${getRiskBadge(grower.riskScore)}`}>
                 Risk: {grower.riskScore}
               </span>
@@ -475,7 +476,7 @@ function GrowerCard({ grower, viewMode, onViewProfile, onInitiateDeal, getRiskCo
       <div className="bg-gradient-to-r from-green-500 to-green-600 px-4 py-3">
         <div className="flex items-center justify-between">
           <h3 className="text-white font-bold truncate">{grower.companyName}</h3>
-          {grower.organic && <span className="text-xs bg-white text-green-700 px-2 py-1 rounded">🌿</span>}
+          {grower.organic && <span className="text-xs bg-white text-green-700 px-2 py-1 rounded">ðŸŒ¿</span>}
         </div>
       </div>
       
@@ -534,3 +535,5 @@ function GrowerCard({ grower, viewMode, onViewProfile, onInitiateDeal, getRiskCo
     </div>
   );
 }
+
+

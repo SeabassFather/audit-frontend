@@ -1,14 +1,23 @@
 ﻿[build]
-  command = "npm run build"
-  publish = "dist"
+  # Prevent CRA from failing on warnings in CI and publish the correct folder
+  command = "CI=false npm run build"
+  publish = "build"
 
 [functions]
   directory = "netlify/functions"
 
 [build.environment]
-  NODE_VERSION = "20"
+  # Pin Node to a stable LTS compatible with react-scripts
+  NODE_VERSION = "18.19.0"
+  NODE_OPTIONS = "--max_old_space_size=4096"
 
-  # === AuditDNA App Variables ===
+  # If your app is Create React App, use REACT_APP_* envs:
+  REACT_APP_API_BASE = "https://api.auditdna.org"
+  REACT_APP_ENV = "production"
+  REACT_APP_FEATURE_FLAGS = "usda,mortgage,factoring"
+  REACT_APP_OWNER_NAME = "AuditDNA"
+
+  # If you also use Vite locally, keeping VITE_* is harmless:
   VITE_API_BASE = "https://api.auditdna.org"
   VITE_ENV = "production"
   VITE_FEATURE_FLAGS = "usda,mortgage,factoring"

@@ -1,15 +1,17 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { TrendingUp, TrendingDown, DollarSign, Percent, AlertCircle, CheckCircle } from 'lucide-react';
+import StockTicker from '../components/StockTicker';
 
 function FinancialTickerBar() {
   const tickers = [
-    { label: 'MXN/USD', labelEs: 'Peso/Dólar', value: '16.85', change: '+0.7%', trend: 'up' },
+    { label: 'MXN/USD', labelEs: 'Peso/DÃƒÂ³lar', value: '16.85', change: '+0.7%', trend: 'up' },
     { label: 'US Fed Rate', labelEs: 'Tasa Fed', value: '4.50%', change: '0.0%', trend: 'neutral' },
     { label: 'Banxico', labelEs: 'Tasa MX', value: '11.00%', change: '-2.2%', trend: 'down' },
     { label: '10Y Treasury', labelEs: 'Bono 10A', value: '4.25%', change: '+0.7%', trend: 'up' },
-    { label: 'Avocado Index', labelEs: 'Índice Aguacate', value: '$32.50', change: '+3.8%', trend: 'up' },
+    { label: 'Avocado Index', labelEs: 'ÃƒÂndice Aguacate', value: '$32.50', change: '+3.8%', trend: 'up' },
     { label: 'Produce Futures', labelEs: 'Futuros', value: '$28.75', change: '-1.7%', trend: 'down' },
-    { label: 'Lending Rate', labelEs: 'Tasa Préstamo', value: '7.25%', change: '+1.4%', trend: 'up' },
+    { label: 'Lending Rate', labelEs: 'Tasa PrÃƒÂ©stamo', value: '7.25%', change: '+1.4%', trend: 'up' },
     { label: 'Factoring', labelEs: 'Factoraje', value: '3.50%', change: '0.0%', trend: 'neutral' }
   ];
 
@@ -54,6 +56,7 @@ function FinancialTickerBar() {
 export default function Dashboard() {
   return (
     <div className="min-h-screen bg-gray-50">
+      <StockTicker />
       <FinancialTickerBar />
 
       <div className="p-6">

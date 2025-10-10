@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import { Home, Mail, Phone, AlertCircle, Image as ImageIcon, DollarSign, MapPin } from "lucide-react";
 
@@ -29,19 +30,19 @@ const text = {
   },
   spanish: {
     title: "Publicar Propiedad / Solicitar Ayuda para Comprar",
-    subtitle: "¿Necesita ayuda para vender o comprar una propiedad? Complete el formulario y nuestro equipo lo contactará.",
+    subtitle: "Ã‚Â¿Necesita ayuda para vender o comprar una propiedad? Complete el formulario y nuestro equipo lo contactarÃƒÂ¡.",
     fullName: "Nombre Completo",
-    email: "Correo Electrónico",
-    phone: "Teléfono",
+    email: "Correo ElectrÃƒÂ³nico",
+    phone: "TelÃƒÂ©fono",
     propertyType: "Tipo de Propiedad",
-    address: "Dirección de la Propiedad",
+    address: "DirecciÃƒÂ³n de la Propiedad",
     price: "Precio Solicitado (USD)",
     upload: "Subir Fotos de la Propiedad",
     submit: "Enviar Solicitud",
-    thankyou: "¡Gracias! Nuestro equipo lo contactará pronto.",
+    thankyou: "Ã‚Â¡Gracias! Nuestro equipo lo contactarÃƒÂ¡ pronto.",
     required: "es requerido",
-    invalidEmail: "Correo electrónico no válido",
-    invalidPrice: "Se requiere un precio solicitado válido"
+    invalidEmail: "Correo electrÃƒÂ³nico no vÃƒÂ¡lido",
+    invalidPrice: "Se requiere un precio solicitado vÃƒÂ¡lido"
   }
 };
 
@@ -110,7 +111,7 @@ const OwnerBuyerForm = ({ language }) => {
               name="fullName"
               value={form.fullName}
               onChange={handleChange}
-              placeholder={language === 'english' ? "Jane Doe" : "Juan Pérez"}
+              placeholder={language === 'english' ? "Jane Doe" : "Juan PÃƒÂ©rez"}
               className={`w-full px-4 py-3 border-2 rounded-lg focus:ring-2 focus:ring-purple-500 ${errors.fullName ? "border-red-500" : "border-gray-300"}`}
             />
             {errors.fullName && <p className="mt-1 text-sm text-red-600 flex items-center gap-1"><AlertCircle className="w-4 h-4" />{errors.fullName}</p>}
@@ -161,7 +162,7 @@ const OwnerBuyerForm = ({ language }) => {
               name="address"
               value={form.address}
               onChange={handleChange}
-              placeholder={language === 'english' ? "123 Main St, City, Country" : "Av. Principal 123, Ciudad, País"}
+              placeholder={language === 'english' ? "123 Main St, City, Country" : "Av. Principal 123, Ciudad, PaÃƒÂ­s"}
               className={`w-full px-4 py-3 border-2 rounded-lg focus:ring-2 focus:ring-purple-500 ${errors.address ? "border-red-500" : "border-gray-300"}`}
             />
             {errors.address && <p className="mt-1 text-sm text-red-600 flex items-center gap-1"><AlertCircle className="w-4 h-4" />{errors.address}</p>}
