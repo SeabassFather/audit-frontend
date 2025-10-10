@@ -1,0 +1,7227 @@
+[
+  {
+    "id": "USDA0001",
+    "type": "grower",
+    "companyName": "Salinas Valley Farms",
+    "dba": "Salinas Valley",
+    "location": {
+      "region": "california",
+      "city": "Salinas",
+      "state": "CA",
+      "country": "USA",
+      "coordinates": {
+        "lat": 36.6843534218468,
+        "lng": -121.6943671720495
+      }
+    },
+    "commodities": [
+      "avocados",
+      "romaine"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "303,000 lbs",
+      "annual": "10M lbs"
+    },
+    "capacity": "medium",
+    "contact": {
+      "name": "Contact at Salinas",
+      "phone": "+1-975-555-2556",
+      "email": "info@salinasvalleyfarms.com",
+      "whatsapp": "+1-275-555-8701"
+    },
+    "established": 2009,
+    "employees": 348,
+    "riskScore": 91,
+    "rating": 4.7,
+    "reviewCount": 77,
+    "bio": "USDA NOP certified organic grower. Certifier: California Certified Organic Farmers (CCOF). Specializing in avocados, romaine.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "California Certified Organic Farmers (CCOF) Audit Report"
+    ],
+    "deals": 133,
+    "onTimeDelivery": 97,
+    "crm": {
+      "salesforce": null,
+      "hubspot": "HUB5962"
+    },
+    "usdaData": {
+      "certifier": "California Certified Organic Farmers (CCOF)",
+      "certificationDate": "2022-09-01",
+      "scopes": "avocados; romaine",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0002",
+    "type": "processor",
+    "companyName": "Fresno Organic Growers",
+    "dba": "Fresno Organic",
+    "location": {
+      "region": "california",
+      "city": "Fresno",
+      "state": "CA",
+      "country": "USA",
+      "coordinates": {
+        "lat": 36.70375685804819,
+        "lng": -119.76312875364127
+      }
+    },
+    "commodities": [
+      "almonds",
+      "cranberries",
+      "pineapples"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "403,000 lbs",
+      "annual": "4M lbs"
+    },
+    "capacity": "low",
+    "contact": {
+      "name": "Contact at Fresno",
+      "phone": "+1-360-555-3978",
+      "email": "info@fresnoorganicgrowers.com",
+      "whatsapp": null
+    },
+    "established": 1990,
+    "employees": 281,
+    "riskScore": 95,
+    "rating": 4.1,
+    "reviewCount": 149,
+    "bio": "USDA NOP certified organic processor. Certifier: Oregon Tilth. Specializing in almonds, cranberries, pineapples.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Oregon Tilth Audit Report"
+    ],
+    "deals": 40,
+    "onTimeDelivery": 93,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Oregon Tilth",
+      "certificationDate": "2024-05-01",
+      "scopes": "almonds; cranberries; pineapples",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0003",
+    "type": "grower",
+    "companyName": "Apples Farms of Bakersfield",
+    "dba": "Apples Farms",
+    "location": {
+      "region": "california",
+      "city": "Bakersfield",
+      "state": "CA",
+      "country": "USA",
+      "coordinates": {
+        "lat": 35.32729177780517,
+        "lng": -119.05620106196281
+      }
+    },
+    "commodities": [
+      "apples",
+      "corn"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "416,000 lbs",
+      "annual": "2M lbs"
+    },
+    "capacity": "medium",
+    "contact": {
+      "name": "Contact at Apples",
+      "phone": "+1-808-555-3068",
+      "email": "info@applesfarmsofbakersf.com",
+      "whatsapp": null
+    },
+    "established": 2000,
+    "employees": 367,
+    "riskScore": 92,
+    "rating": 4.6,
+    "reviewCount": 184,
+    "bio": "USDA NOP certified organic grower. Certifier: Quality Assurance International (QAI). Specializing in apples, corn.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Quality Assurance International (QAI) Audit Report"
+    ],
+    "deals": 110,
+    "onTimeDelivery": 92,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Quality Assurance International (QAI)",
+      "certificationDate": "2022-04-01",
+      "scopes": "apples; corn",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0004",
+    "type": "processor",
+    "companyName": "Watsonville Fresh Produce",
+    "dba": "Watsonville Fresh",
+    "location": {
+      "region": "california",
+      "city": "Watsonville",
+      "state": "CA",
+      "country": "USA",
+      "coordinates": {
+        "lat": 36.90522049683966,
+        "lng": -121.79898970972499
+      }
+    },
+    "commodities": [
+      "apricots",
+      "horseradish",
+      "cantaloupe",
+      "lentils"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "251,000 lbs",
+      "annual": "5M lbs"
+    },
+    "capacity": "medium",
+    "contact": {
+      "name": "Contact at Watsonville",
+      "phone": "+1-938-555-6900",
+      "email": "info@watsonvillefreshprod.com",
+      "whatsapp": null
+    },
+    "established": 2019,
+    "employees": 54,
+    "riskScore": 95,
+    "rating": 4.3,
+    "reviewCount": 195,
+    "bio": "USDA NOP certified organic processor. Certifier: MOSA Certified Organic. Specializing in apricots, horseradish, cantaloupe, lentils.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "MOSA Certified Organic Audit Report"
+    ],
+    "deals": 88,
+    "onTimeDelivery": 94,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "MOSA Certified Organic",
+      "certificationDate": "2020-03-01",
+      "scopes": "apricots; horseradish; cantaloupe; lentils",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0005",
+    "type": "grower",
+    "companyName": "Organic Artichokes Co.",
+    "dba": "Organic Artichokes",
+    "location": {
+      "region": "california",
+      "city": "Oxnard",
+      "state": "CA",
+      "country": "USA",
+      "coordinates": {
+        "lat": 34.169104917086486,
+        "lng": -119.1499065477466
+      }
+    },
+    "commodities": [
+      "artichokes"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "298,000 lbs",
+      "annual": "8M lbs"
+    },
+    "capacity": "high",
+    "contact": {
+      "name": "Contact at Organic",
+      "phone": "+1-522-555-3604",
+      "email": "info@organicartichokesco.com",
+      "whatsapp": "+1-459-555-1594"
+    },
+    "established": 1995,
+    "employees": 262,
+    "riskScore": 85,
+    "rating": 4.5,
+    "reviewCount": 54,
+    "bio": "USDA NOP certified organic grower. Certifier: Organic Crop Improvement Association (OCIA). Specializing in artichokes.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Organic Crop Improvement Association (OCIA) Audit Report"
+    ],
+    "deals": 147,
+    "onTimeDelivery": 93,
+    "crm": {
+      "salesforce": "SF790073",
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Organic Crop Improvement Association (OCIA)",
+      "certificationDate": "2024-11-01",
+      "scopes": "artichokes",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0006",
+    "type": "grower",
+    "companyName": "Homestead Asparagus Growers",
+    "dba": "Homestead Asparagus",
+    "location": {
+      "region": "florida",
+      "city": "Homestead",
+      "state": "FL",
+      "country": "USA",
+      "coordinates": {
+        "lat": 25.430643340865874,
+        "lng": -80.49087464717466
+      }
+    },
+    "commodities": [
+      "asparagus"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "71,000 lbs",
+      "annual": "7M lbs"
+    },
+    "capacity": "high",
+    "contact": {
+      "name": "Contact at Homestead",
+      "phone": "+1-221-555-2173",
+      "email": "info@homesteadasparagusgr.com",
+      "whatsapp": "+1-438-555-8642"
+    },
+    "established": 2009,
+    "employees": 503,
+    "riskScore": 90,
+    "rating": 4.8,
+    "reviewCount": 136,
+    "bio": "USDA NOP certified organic grower. Certifier: Global Organic Alliance. Specializing in asparagus.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Global Organic Alliance Audit Report"
+    ],
+    "deals": 114,
+    "onTimeDelivery": 99,
+    "crm": {
+      "salesforce": null,
+      "hubspot": "HUB7093"
+    },
+    "usdaData": {
+      "certifier": "Global Organic Alliance",
+      "certificationDate": "2023-08-01",
+      "scopes": "asparagus",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0007",
+    "type": "handler",
+    "companyName": "Premium Bananas Farms",
+    "dba": "Premium Bananas",
+    "location": {
+      "region": "florida",
+      "city": "Plant City",
+      "state": "FL",
+      "country": "USA",
+      "coordinates": {
+        "lat": 28.00324634530659,
+        "lng": -82.15592921947997
+      }
+    },
+    "commodities": [
+      "bananas",
+      "okra"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "127,000 lbs",
+      "annual": "1M lbs"
+    },
+    "capacity": "low",
+    "contact": {
+      "name": "Contact at Premium",
+      "phone": "+1-942-555-8621",
+      "email": "info@premiumbananasfarms.com",
+      "whatsapp": "+1-317-555-0213"
+    },
+    "established": 2021,
+    "employees": 120,
+    "riskScore": 98,
+    "rating": 5,
+    "reviewCount": 186,
+    "bio": "USDA NOP certified organic handler. Certifier: Pennsylvania Certified Organic (PCO). Specializing in bananas, okra.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Pennsylvania Certified Organic (PCO) Audit Report"
+    ],
+    "deals": 69,
+    "onTimeDelivery": 98,
+    "crm": {
+      "salesforce": null,
+      "hubspot": "HUB5892"
+    },
+    "usdaData": {
+      "certifier": "Pennsylvania Certified Organic (PCO)",
+      "certificationDate": "2023-08-01",
+      "scopes": "bananas; okra",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0008",
+    "type": "handler",
+    "companyName": "Immokalee Agriculture Group",
+    "dba": "Immokalee Agriculture",
+    "location": {
+      "region": "florida",
+      "city": "Immokalee",
+      "state": "FL",
+      "country": "USA",
+      "coordinates": {
+        "lat": 26.44816980239587,
+        "lng": -81.41910470022047
+      }
+    },
+    "commodities": [
+      "beans",
+      "pecans"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "107,000 lbs",
+      "annual": "3M lbs"
+    },
+    "capacity": "low",
+    "contact": {
+      "name": "Contact at Immokalee",
+      "phone": "+1-205-555-4078",
+      "email": "info@immokaleeagriculture.com",
+      "whatsapp": "+1-342-555-4644"
+    },
+    "established": 1988,
+    "employees": 188,
+    "riskScore": 82,
+    "rating": 4.8,
+    "reviewCount": 182,
+    "bio": "USDA NOP certified organic handler. Certifier: Ecocert ICO. Specializing in beans, pecans.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Ecocert ICO Audit Report"
+    ],
+    "deals": 33,
+    "onTimeDelivery": 96,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Ecocert ICO",
+      "certificationDate": "2024-05-01",
+      "scopes": "beans; pecans",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0009",
+    "type": "grower",
+    "companyName": "Green Valley Beets",
+    "dba": "Green Valley",
+    "location": {
+      "region": "texas",
+      "city": "Rio Grande Valley",
+      "state": "TX",
+      "country": "USA",
+      "coordinates": {
+        "lat": 26.226002357497617,
+        "lng": -98.2250259348392
+      }
+    },
+    "commodities": [
+      "beets"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "447,000 lbs",
+      "annual": "3M lbs"
+    },
+    "capacity": "medium",
+    "contact": {
+      "name": "Contact at Green",
+      "phone": "+1-653-555-3104",
+      "email": "info@greenvalleybeets.com",
+      "whatsapp": null
+    },
+    "established": 2020,
+    "employees": 52,
+    "riskScore": 84,
+    "rating": 4.4,
+    "reviewCount": 207,
+    "bio": "USDA NOP certified organic grower. Certifier: Vermont Organic Farmers (VOF). Specializing in beets.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Vermont Organic Farmers (VOF) Audit Report"
+    ],
+    "deals": 178,
+    "onTimeDelivery": 95,
+    "crm": {
+      "salesforce": "SF142511",
+      "hubspot": "HUB6648"
+    },
+    "usdaData": {
+      "certifier": "Vermont Organic Farmers (VOF)",
+      "certificationDate": "2024-03-01",
+      "scopes": "beets",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0010",
+    "type": "grower",
+    "companyName": "Sustainable Winter Garden Farms",
+    "dba": "Sustainable Winter",
+    "location": {
+      "region": "texas",
+      "city": "Winter Garden",
+      "state": "TX",
+      "country": "USA",
+      "coordinates": {
+        "lat": 28.675695432990018,
+        "lng": -99.51987973734741
+      }
+    },
+    "commodities": [
+      "bell peppers",
+      "watermelon"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "93,000 lbs",
+      "annual": "7M lbs"
+    },
+    "capacity": "high",
+    "contact": {
+      "name": "Contact at Sustainable",
+      "phone": "+1-751-555-0335",
+      "email": "info@sustainablewintergar.com",
+      "whatsapp": "+1-330-555-4282"
+    },
+    "established": 1990,
+    "employees": 371,
+    "riskScore": 90,
+    "rating": 4.7,
+    "reviewCount": 58,
+    "bio": "USDA NOP certified organic grower. Certifier: OneCert. Specializing in bell peppers, watermelon.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "OneCert Audit Report"
+    ],
+    "deals": 178,
+    "onTimeDelivery": 99,
+    "crm": {
+      "salesforce": null,
+      "hubspot": "HUB6546"
+    },
+    "usdaData": {
+      "certifier": "OneCert",
+      "certificationDate": "2022-02-01",
+      "scopes": "bell peppers; watermelon",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0011",
+    "type": "grower",
+    "companyName": "Berries International",
+    "dba": "Berries International",
+    "location": {
+      "region": "washington",
+      "city": "Yakima",
+      "state": "WA",
+      "country": "USA",
+      "coordinates": {
+        "lat": 46.56369333953689,
+        "lng": -120.55504654146976
+      }
+    },
+    "commodities": [
+      "berries",
+      "bell peppers",
+      "green beans",
+      "dates"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "142,000 lbs",
+      "annual": "2M lbs"
+    },
+    "capacity": "low",
+    "contact": {
+      "name": "Contact at Berries",
+      "phone": "+1-333-555-2025",
+      "email": "info@berriesinternational.com",
+      "whatsapp": null
+    },
+    "established": 2011,
+    "employees": 51,
+    "riskScore": 80,
+    "rating": 4.1,
+    "reviewCount": 160,
+    "bio": "USDA NOP certified organic grower. Certifier: Mayacert. Specializing in berries, bell peppers, green beans, dates.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Mayacert Audit Report"
+    ],
+    "deals": 96,
+    "onTimeDelivery": 90,
+    "crm": {
+      "salesforce": "SF707978",
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Mayacert",
+      "certificationDate": "2023-05-01",
+      "scopes": "berries; bell peppers; green beans; dates",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0012",
+    "type": "grower",
+    "companyName": "Heritage Blackberries Growers",
+    "dba": "Heritage Blackberries",
+    "location": {
+      "region": "washington",
+      "city": "Wenatchee",
+      "state": "WA",
+      "country": "USA",
+      "coordinates": {
+        "lat": 47.37363701696427,
+        "lng": -120.28619567908845
+      }
+    },
+    "commodities": [
+      "blackberries"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "389,000 lbs",
+      "annual": "7M lbs"
+    },
+    "capacity": "low",
+    "contact": {
+      "name": "Contact at Heritage",
+      "phone": "+1-859-555-6701",
+      "email": "info@heritageblackberries.com",
+      "whatsapp": null
+    },
+    "established": 1995,
+    "employees": 164,
+    "riskScore": 86,
+    "rating": 4.3,
+    "reviewCount": 60,
+    "bio": "USDA NOP certified organic grower. Certifier: Certimex. Specializing in blackberries.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Certimex Audit Report"
+    ],
+    "deals": 120,
+    "onTimeDelivery": 94,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Certimex",
+      "certificationDate": "2020-05-01",
+      "scopes": "blackberries",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0013",
+    "type": "processor",
+    "companyName": "Hood River Organic Collective",
+    "dba": "Hood River",
+    "location": {
+      "region": "oregon",
+      "city": "Hood River",
+      "state": "OR",
+      "country": "USA",
+      "coordinates": {
+        "lat": 45.6964396794228,
+        "lng": -121.53346801181247
+      }
+    },
+    "commodities": [
+      "blueberries",
+      "tomatillos",
+      "cauliflower"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "442,000 lbs",
+      "annual": "5M lbs"
+    },
+    "capacity": "low",
+    "contact": {
+      "name": "Contact at Hood",
+      "phone": "+1-261-555-4786",
+      "email": "info@hoodriverorganiccoll.com",
+      "whatsapp": null
+    },
+    "established": 2009,
+    "employees": 379,
+    "riskScore": 96,
+    "rating": 4.5,
+    "reviewCount": 62,
+    "bio": "USDA NOP certified organic processor. Certifier: Control Union Certifications. Specializing in blueberries, tomatillos, cauliflower.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Control Union Certifications Audit Report"
+    ],
+    "deals": 81,
+    "onTimeDelivery": 95,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Control Union Certifications",
+      "certificationDate": "2020-05-01",
+      "scopes": "blueberries; tomatillos; cauliflower",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0014",
+    "type": "handler",
+    "companyName": "Pure Broccoli Farms",
+    "dba": "Pure Broccoli",
+    "location": {
+      "region": "oregon",
+      "city": "Willamette Valley",
+      "state": "OR",
+      "country": "USA",
+      "coordinates": {
+        "lat": 44.01576111437676,
+        "lng": -123.1047737268992
+      }
+    },
+    "commodities": [
+      "broccoli",
+      "asparagus",
+      "limes"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "146,000 lbs",
+      "annual": "9M lbs"
+    },
+    "capacity": "high",
+    "contact": {
+      "name": "Contact at Pure",
+      "phone": "+1-498-555-4568",
+      "email": "info@purebroccolifarms.com",
+      "whatsapp": "+1-739-555-9493"
+    },
+    "established": 2019,
+    "employees": 329,
+    "riskScore": 82,
+    "rating": 4.8,
+    "reviewCount": 54,
+    "bio": "USDA NOP certified organic handler. Certifier: Clemson University. Specializing in broccoli, asparagus, limes.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Clemson University Audit Report"
+    ],
+    "deals": 98,
+    "onTimeDelivery": 90,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Clemson University",
+      "certificationDate": "2023-02-01",
+      "scopes": "broccoli; asparagus; limes",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0015",
+    "type": "grower",
+    "companyName": "Yuma Harvest Group",
+    "dba": "Yuma Harvest",
+    "location": {
+      "region": "arizona",
+      "city": "Yuma",
+      "state": "AZ",
+      "country": "USA",
+      "coordinates": {
+        "lat": 32.738921752527226,
+        "lng": -114.63587423702475
+      }
+    },
+    "commodities": [
+      "brussels sprouts"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "194,000 lbs",
+      "annual": "3M lbs"
+    },
+    "capacity": "low",
+    "contact": {
+      "name": "Contact at Yuma",
+      "phone": "+1-951-555-4599",
+      "email": "info@yumaharvestgroup.com",
+      "whatsapp": "+1-461-555-2824"
+    },
+    "established": 2010,
+    "employees": 470,
+    "riskScore": 92,
+    "rating": 4.9,
+    "reviewCount": 187,
+    "bio": "USDA NOP certified organic grower. Certifier: USDA Accredited Certifying Agent. Specializing in brussels sprouts.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "USDA Accredited Certifying Agent Audit Report"
+    ],
+    "deals": 71,
+    "onTimeDelivery": 95,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "USDA Accredited Certifying Agent",
+      "certificationDate": "2020-05-01",
+      "scopes": "brussels sprouts",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0016",
+    "type": "handler",
+    "companyName": "Phoenix Valley Farms",
+    "dba": "Phoenix Valley",
+    "location": {
+      "region": "arizona",
+      "city": "Phoenix",
+      "state": "AZ",
+      "country": "USA",
+      "coordinates": {
+        "lat": 33.452689490634675,
+        "lng": -112.06528274593417
+      }
+    },
+    "commodities": [
+      "cabbage"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "248,000 lbs",
+      "annual": "3M lbs"
+    },
+    "capacity": "medium",
+    "contact": {
+      "name": "Contact at Phoenix",
+      "phone": "+1-650-555-2974",
+      "email": "info@phoenixvalleyfarms.com",
+      "whatsapp": "+1-247-555-3664"
+    },
+    "established": 1994,
+    "employees": 499,
+    "riskScore": 80,
+    "rating": 4.3,
+    "reviewCount": 104,
+    "bio": "USDA NOP certified organic handler. Certifier: California Certified Organic Farmers (CCOF). Specializing in cabbage.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "California Certified Organic Farmers (CCOF) Audit Report"
+    ],
+    "deals": 73,
+    "onTimeDelivery": 98,
+    "crm": {
+      "salesforce": "SF773969",
+      "hubspot": "HUB8736"
+    },
+    "usdaData": {
+      "certifier": "California Certified Organic Farmers (CCOF)",
+      "certificationDate": "2021-06-01",
+      "scopes": "cabbage",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0017",
+    "type": "grower",
+    "companyName": "Culiacán Organic Growers",
+    "dba": "Culiacán Organic",
+    "location": {
+      "region": "sinaloa",
+      "city": "Culiacán",
+      "state": "Sinaloa",
+      "country": "Mexico",
+      "coordinates": {
+        "lat": 24.858253612455144,
+        "lng": -107.34792384334122
+      }
+    },
+    "commodities": [
+      "cantaloupe",
+      "lettuce",
+      "cherries",
+      "arugula"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "179,000 lbs",
+      "annual": "8M lbs"
+    },
+    "capacity": "low",
+    "contact": {
+      "name": "Contact at Culiacán",
+      "phone": "+1-459-555-4092",
+      "email": "info@culiacnorganicgrower.com",
+      "whatsapp": "+1-521-555-5559"
+    },
+    "established": 2011,
+    "employees": 260,
+    "riskScore": 85,
+    "rating": 4.7,
+    "reviewCount": 31,
+    "bio": "USDA NOP certified organic grower. Certifier: Oregon Tilth. Specializing in cantaloupe, lettuce, cherries, arugula.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Oregon Tilth Audit Report"
+    ],
+    "deals": 23,
+    "onTimeDelivery": 93,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Oregon Tilth",
+      "certificationDate": "2021-12-01",
+      "scopes": "cantaloupe; lettuce; cherries; arugula",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0018",
+    "type": "processor",
+    "companyName": "Carrots Farms of Los Mochis",
+    "dba": "Carrots Farms",
+    "location": {
+      "region": "sinaloa",
+      "city": "Los Mochis",
+      "state": "Sinaloa",
+      "country": "Mexico",
+      "coordinates": {
+        "lat": 25.76332466567195,
+        "lng": -108.95249778625714
+      }
+    },
+    "commodities": [
+      "carrots",
+      "peppers",
+      "persimmons"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "421,000 lbs",
+      "annual": "1M lbs"
+    },
+    "capacity": "medium",
+    "contact": {
+      "name": "Contact at Carrots",
+      "phone": "+1-263-555-0765",
+      "email": "info@carrotsfarmsoflosmoc.com",
+      "whatsapp": null
+    },
+    "established": 1989,
+    "employees": 194,
+    "riskScore": 97,
+    "rating": 5,
+    "reviewCount": 110,
+    "bio": "USDA NOP certified organic processor. Certifier: Quality Assurance International (QAI). Specializing in carrots, peppers, persimmons.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Quality Assurance International (QAI) Audit Report"
+    ],
+    "deals": 167,
+    "onTimeDelivery": 99,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Quality Assurance International (QAI)",
+      "certificationDate": "2021-01-01",
+      "scopes": "carrots; peppers; persimmons",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0019",
+    "type": "grower",
+    "companyName": "Uruapan Fresh Produce",
+    "dba": "Uruapan Fresh",
+    "location": {
+      "region": "michoacan",
+      "city": "Uruapan",
+      "state": "Michoacán",
+      "country": "Mexico",
+      "coordinates": {
+        "lat": 19.3704920733424,
+        "lng": -102.07554532472861
+      }
+    },
+    "commodities": [
+      "cauliflower",
+      "yams",
+      "pomegranates"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "329,000 lbs",
+      "annual": "1M lbs"
+    },
+    "capacity": "low",
+    "contact": {
+      "name": "Contact at Uruapan",
+      "phone": "+1-454-555-5537",
+      "email": "info@uruapanfreshproduce.com",
+      "whatsapp": null
+    },
+    "established": 2000,
+    "employees": 248,
+    "riskScore": 92,
+    "rating": 4.2,
+    "reviewCount": 102,
+    "bio": "USDA NOP certified organic grower. Certifier: MOSA Certified Organic. Specializing in cauliflower, yams, pomegranates.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "MOSA Certified Organic Audit Report"
+    ],
+    "deals": 81,
+    "onTimeDelivery": 95,
+    "crm": {
+      "salesforce": "SF808100",
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "MOSA Certified Organic",
+      "certificationDate": "2024-03-01",
+      "scopes": "cauliflower; yams; pomegranates",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0020",
+    "type": "grower",
+    "companyName": "Organic Celery Co.",
+    "dba": "Organic Celery",
+    "location": {
+      "region": "baja",
+      "city": "San Quintín",
+      "state": "Baja California",
+      "country": "Mexico",
+      "coordinates": {
+        "lat": 30.567056762004277,
+        "lng": -115.94086098839395
+      }
+    },
+    "commodities": [
+      "celery",
+      "mangoes",
+      "chickpeas"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "121,000 lbs",
+      "annual": "5M lbs"
+    },
+    "capacity": "high",
+    "contact": {
+      "name": "Contact at Organic",
+      "phone": "+1-555-555-2547",
+      "email": "info@organicceleryco.com",
+      "whatsapp": "+1-592-555-3922"
+    },
+    "established": 1990,
+    "employees": 455,
+    "riskScore": 89,
+    "rating": 4.3,
+    "reviewCount": 152,
+    "bio": "USDA NOP certified organic grower. Certifier: Organic Crop Improvement Association (OCIA). Specializing in celery, mangoes, chickpeas.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Organic Crop Improvement Association (OCIA) Audit Report"
+    ],
+    "deals": 92,
+    "onTimeDelivery": 92,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Organic Crop Improvement Association (OCIA)",
+      "certificationDate": "2020-09-01",
+      "scopes": "celery; mangoes; chickpeas",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0021",
+    "type": "grower",
+    "companyName": "Salinas Cherries Growers",
+    "dba": "Salinas Cherries",
+    "location": {
+      "region": "california",
+      "city": "Salinas",
+      "state": "CA",
+      "country": "USA",
+      "coordinates": {
+        "lat": 36.67819864377115,
+        "lng": -121.63912562008161
+      }
+    },
+    "commodities": [
+      "cherries",
+      "eggplant"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "167,000 lbs",
+      "annual": "8M lbs"
+    },
+    "capacity": "low",
+    "contact": {
+      "name": "Contact at Salinas",
+      "phone": "+1-757-555-0528",
+      "email": "info@salinascherriesgrowe.com",
+      "whatsapp": null
+    },
+    "established": 2021,
+    "employees": 506,
+    "riskScore": 80,
+    "rating": 4.8,
+    "reviewCount": 50,
+    "bio": "USDA NOP certified organic grower. Certifier: Global Organic Alliance. Specializing in cherries, eggplant.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Global Organic Alliance Audit Report"
+    ],
+    "deals": 207,
+    "onTimeDelivery": 99,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Global Organic Alliance",
+      "certificationDate": "2020-01-01",
+      "scopes": "cherries; eggplant",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0022",
+    "type": "grower",
+    "companyName": "Premium Chili peppers Farms",
+    "dba": "Premium Chili",
+    "location": {
+      "region": "california",
+      "city": "Fresno",
+      "state": "CA",
+      "country": "USA",
+      "coordinates": {
+        "lat": 36.75995836029852,
+        "lng": -119.7841112947108
+      }
+    },
+    "commodities": [
+      "chili peppers",
+      "cucumbers",
+      "endive"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "548,000 lbs",
+      "annual": "8M lbs"
+    },
+    "capacity": "low",
+    "contact": {
+      "name": "Contact at Premium",
+      "phone": "+1-360-555-1530",
+      "email": "info@premiumchilipeppersf.com",
+      "whatsapp": null
+    },
+    "established": 2017,
+    "employees": 492,
+    "riskScore": 98,
+    "rating": 4.4,
+    "reviewCount": 56,
+    "bio": "USDA NOP certified organic grower. Certifier: Pennsylvania Certified Organic (PCO). Specializing in chili peppers, cucumbers, endive.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Pennsylvania Certified Organic (PCO) Audit Report"
+    ],
+    "deals": 101,
+    "onTimeDelivery": 96,
+    "crm": {
+      "salesforce": null,
+      "hubspot": "HUB2651"
+    },
+    "usdaData": {
+      "certifier": "Pennsylvania Certified Organic (PCO)",
+      "certificationDate": "2020-07-01",
+      "scopes": "chili peppers; cucumbers; endive",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0023",
+    "type": "grower",
+    "companyName": "Bakersfield Agriculture Group",
+    "dba": "Bakersfield Agriculture",
+    "location": {
+      "region": "california",
+      "city": "Bakersfield",
+      "state": "CA",
+      "country": "USA",
+      "coordinates": {
+        "lat": 35.37684386955688,
+        "lng": -119.03829320494907
+      }
+    },
+    "commodities": [
+      "citrus"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "181,000 lbs",
+      "annual": "8M lbs"
+    },
+    "capacity": "medium",
+    "contact": {
+      "name": "Contact at Bakersfield",
+      "phone": "+1-122-555-4985",
+      "email": "info@bakersfieldagricultu.com",
+      "whatsapp": null
+    },
+    "established": 2013,
+    "employees": 384,
+    "riskScore": 98,
+    "rating": 4.1,
+    "reviewCount": 16,
+    "bio": "USDA NOP certified organic grower. Certifier: Ecocert ICO. Specializing in citrus.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Ecocert ICO Audit Report"
+    ],
+    "deals": 172,
+    "onTimeDelivery": 92,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Ecocert ICO",
+      "certificationDate": "2023-01-01",
+      "scopes": "citrus",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0024",
+    "type": "handler",
+    "companyName": "Green Valley Corn",
+    "dba": "Green Valley",
+    "location": {
+      "region": "california",
+      "city": "Watsonville",
+      "state": "CA",
+      "country": "USA",
+      "coordinates": {
+        "lat": 36.936972388175455,
+        "lng": -121.76757786899508
+      }
+    },
+    "commodities": [
+      "corn",
+      "zucchini",
+      "peas",
+      "green beans"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "169,000 lbs",
+      "annual": "8M lbs"
+    },
+    "capacity": "high",
+    "contact": {
+      "name": "Contact at Green",
+      "phone": "+1-549-555-1802",
+      "email": "info@greenvalleycorn.com",
+      "whatsapp": "+1-719-555-8965"
+    },
+    "established": 2017,
+    "employees": 365,
+    "riskScore": 90,
+    "rating": 4.1,
+    "reviewCount": 121,
+    "bio": "USDA NOP certified organic handler. Certifier: Vermont Organic Farmers (VOF). Specializing in corn, zucchini, peas, green beans.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Vermont Organic Farmers (VOF) Audit Report"
+    ],
+    "deals": 19,
+    "onTimeDelivery": 98,
+    "crm": {
+      "salesforce": "SF564871",
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Vermont Organic Farmers (VOF)",
+      "certificationDate": "2020-10-01",
+      "scopes": "corn; zucchini; peas; green beans",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0025",
+    "type": "handler",
+    "companyName": "Sustainable Oxnard Farms",
+    "dba": "Sustainable Oxnard",
+    "location": {
+      "region": "california",
+      "city": "Oxnard",
+      "state": "CA",
+      "country": "USA",
+      "coordinates": {
+        "lat": 34.1831108124367,
+        "lng": -119.13151280146509
+      }
+    },
+    "commodities": [
+      "cranberries",
+      "shallots",
+      "cucumbers",
+      "nectarines"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "531,000 lbs",
+      "annual": "2M lbs"
+    },
+    "capacity": "high",
+    "contact": {
+      "name": "Contact at Sustainable",
+      "phone": "+1-211-555-6843",
+      "email": "info@sustainableoxnardfar.com",
+      "whatsapp": null
+    },
+    "established": 2015,
+    "employees": 100,
+    "riskScore": 92,
+    "rating": 5,
+    "reviewCount": 167,
+    "bio": "USDA NOP certified organic handler. Certifier: OneCert. Specializing in cranberries, shallots, cucumbers, nectarines.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "OneCert Audit Report"
+    ],
+    "deals": 57,
+    "onTimeDelivery": 95,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "OneCert",
+      "certificationDate": "2020-12-01",
+      "scopes": "cranberries; shallots; cucumbers; nectarines",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0026",
+    "type": "handler",
+    "companyName": "Cucumbers International",
+    "dba": "Cucumbers International",
+    "location": {
+      "region": "florida",
+      "city": "Homestead",
+      "state": "FL",
+      "country": "USA",
+      "coordinates": {
+        "lat": 25.467776608773033,
+        "lng": -80.47065111736207
+      }
+    },
+    "commodities": [
+      "cucumbers",
+      "olives",
+      "watercress"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "448,000 lbs",
+      "annual": "2M lbs"
+    },
+    "capacity": "low",
+    "contact": {
+      "name": "Contact at Cucumbers",
+      "phone": "+1-348-555-1299",
+      "email": "info@cucumbersinternation.com",
+      "whatsapp": null
+    },
+    "established": 2002,
+    "employees": 183,
+    "riskScore": 98,
+    "rating": 4.7,
+    "reviewCount": 137,
+    "bio": "USDA NOP certified organic handler. Certifier: Mayacert. Specializing in cucumbers, olives, watercress.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Mayacert Audit Report"
+    ],
+    "deals": 60,
+    "onTimeDelivery": 99,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Mayacert",
+      "certificationDate": "2023-09-01",
+      "scopes": "cucumbers; olives; watercress",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0027",
+    "type": "grower",
+    "companyName": "Heritage Dates Growers",
+    "dba": "Heritage Dates",
+    "location": {
+      "region": "florida",
+      "city": "Plant City",
+      "state": "FL",
+      "country": "USA",
+      "coordinates": {
+        "lat": 28.04448734352928,
+        "lng": -82.07558940104697
+      }
+    },
+    "commodities": [
+      "dates"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "242,000 lbs",
+      "annual": "8M lbs"
+    },
+    "capacity": "high",
+    "contact": {
+      "name": "Contact at Heritage",
+      "phone": "+1-953-555-2930",
+      "email": "info@heritagedatesgrowers.com",
+      "whatsapp": "+1-510-555-9569"
+    },
+    "established": 1996,
+    "employees": 28,
+    "riskScore": 90,
+    "rating": 4.6,
+    "reviewCount": 198,
+    "bio": "USDA NOP certified organic grower. Certifier: Certimex. Specializing in dates.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Certimex Audit Report"
+    ],
+    "deals": 113,
+    "onTimeDelivery": 94,
+    "crm": {
+      "salesforce": "SF908629",
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Certimex",
+      "certificationDate": "2024-05-01",
+      "scopes": "dates",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0028",
+    "type": "grower",
+    "companyName": "Immokalee Organic Collective",
+    "dba": "Immokalee Organic",
+    "location": {
+      "region": "florida",
+      "city": "Immokalee",
+      "state": "FL",
+      "country": "USA",
+      "coordinates": {
+        "lat": 26.43478676595079,
+        "lng": -81.42517865762296
+      }
+    },
+    "commodities": [
+      "eggplant"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "373,000 lbs",
+      "annual": "7M lbs"
+    },
+    "capacity": "medium",
+    "contact": {
+      "name": "Contact at Immokalee",
+      "phone": "+1-736-555-6037",
+      "email": "info@immokaleeorganiccoll.com",
+      "whatsapp": "+1-578-555-5184"
+    },
+    "established": 2021,
+    "employees": 314,
+    "riskScore": 86,
+    "rating": 4.5,
+    "reviewCount": 179,
+    "bio": "USDA NOP certified organic grower. Certifier: Control Union Certifications. Specializing in eggplant.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Control Union Certifications Audit Report"
+    ],
+    "deals": 177,
+    "onTimeDelivery": 94,
+    "crm": {
+      "salesforce": null,
+      "hubspot": "HUB3881"
+    },
+    "usdaData": {
+      "certifier": "Control Union Certifications",
+      "certificationDate": "2023-05-01",
+      "scopes": "eggplant",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0029",
+    "type": "grower",
+    "companyName": "Pure Figs Farms",
+    "dba": "Pure Figs",
+    "location": {
+      "region": "texas",
+      "city": "Rio Grande Valley",
+      "state": "TX",
+      "country": "USA",
+      "coordinates": {
+        "lat": 26.185569625109398,
+        "lng": -98.22547484585554
+      }
+    },
+    "commodities": [
+      "figs"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "389,000 lbs",
+      "annual": "5M lbs"
+    },
+    "capacity": "high",
+    "contact": {
+      "name": "Contact at Pure",
+      "phone": "+1-174-555-2652",
+      "email": "info@purefigsfarms.com",
+      "whatsapp": null
+    },
+    "established": 2010,
+    "employees": 137,
+    "riskScore": 88,
+    "rating": 4.5,
+    "reviewCount": 40,
+    "bio": "USDA NOP certified organic grower. Certifier: Clemson University. Specializing in figs.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Clemson University Audit Report"
+    ],
+    "deals": 139,
+    "onTimeDelivery": 94,
+    "crm": {
+      "salesforce": "SF170251",
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Clemson University",
+      "certificationDate": "2021-02-01",
+      "scopes": "figs",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0030",
+    "type": "grower",
+    "companyName": "Winter Garden Harvest Group",
+    "dba": "Winter Garden",
+    "location": {
+      "region": "texas",
+      "city": "Winter Garden",
+      "state": "TX",
+      "country": "USA",
+      "coordinates": {
+        "lat": 28.682378508384243,
+        "lng": -99.51629359711622
+      }
+    },
+    "commodities": [
+      "garlic",
+      "raspberries",
+      "broccoli",
+      "soybeans"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "87,000 lbs",
+      "annual": "8M lbs"
+    },
+    "capacity": "high",
+    "contact": {
+      "name": "Contact at Winter",
+      "phone": "+1-350-555-0944",
+      "email": "info@wintergardenharvestg.com",
+      "whatsapp": "+1-959-555-8807"
+    },
+    "established": 1995,
+    "employees": 356,
+    "riskScore": 87,
+    "rating": 4.2,
+    "reviewCount": 98,
+    "bio": "USDA NOP certified organic grower. Certifier: USDA Accredited Certifying Agent. Specializing in garlic, raspberries, broccoli, soybeans.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "USDA Accredited Certifying Agent Audit Report"
+    ],
+    "deals": 67,
+    "onTimeDelivery": 92,
+    "crm": {
+      "salesforce": "SF374684",
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "USDA Accredited Certifying Agent",
+      "certificationDate": "2024-10-01",
+      "scopes": "garlic; raspberries; broccoli; soybeans",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0031",
+    "type": "grower",
+    "companyName": "Yakima Valley Farms",
+    "dba": "Yakima Valley",
+    "location": {
+      "region": "washington",
+      "city": "Yakima",
+      "state": "WA",
+      "country": "USA",
+      "coordinates": {
+        "lat": 46.64188674747463,
+        "lng": -120.51427882728058
+      }
+    },
+    "commodities": [
+      "ginger",
+      "oats",
+      "lettuce",
+      "eggplant"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "108,000 lbs",
+      "annual": "7M lbs"
+    },
+    "capacity": "medium",
+    "contact": {
+      "name": "Contact at Yakima",
+      "phone": "+1-929-555-4897",
+      "email": "info@yakimavalleyfarms.com",
+      "whatsapp": "+1-491-555-1365"
+    },
+    "established": 1986,
+    "employees": 93,
+    "riskScore": 96,
+    "rating": 4.5,
+    "reviewCount": 73,
+    "bio": "USDA NOP certified organic grower. Certifier: California Certified Organic Farmers (CCOF). Specializing in ginger, oats, lettuce, eggplant.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "California Certified Organic Farmers (CCOF) Audit Report"
+    ],
+    "deals": 174,
+    "onTimeDelivery": 99,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "California Certified Organic Farmers (CCOF)",
+      "certificationDate": "2020-12-01",
+      "scopes": "ginger; oats; lettuce; eggplant",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0032",
+    "type": "grower",
+    "companyName": "Wenatchee Organic Growers",
+    "dba": "Wenatchee Organic",
+    "location": {
+      "region": "washington",
+      "city": "Wenatchee",
+      "state": "WA",
+      "country": "USA",
+      "coordinates": {
+        "lat": 47.44542136387256,
+        "lng": -120.33072583147438
+      }
+    },
+    "commodities": [
+      "grapefruit",
+      "chard"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "366,000 lbs",
+      "annual": "2M lbs"
+    },
+    "capacity": "high",
+    "contact": {
+      "name": "Contact at Wenatchee",
+      "phone": "+1-761-555-6876",
+      "email": "info@wenatcheeorganicgrow.com",
+      "whatsapp": "+1-359-555-1872"
+    },
+    "established": 1992,
+    "employees": 386,
+    "riskScore": 85,
+    "rating": 4.4,
+    "reviewCount": 55,
+    "bio": "USDA NOP certified organic grower. Certifier: Oregon Tilth. Specializing in grapefruit, chard.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Oregon Tilth Audit Report"
+    ],
+    "deals": 83,
+    "onTimeDelivery": 96,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Oregon Tilth",
+      "certificationDate": "2021-05-01",
+      "scopes": "grapefruit; chard",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0033",
+    "type": "processor",
+    "companyName": "Grapes Farms of Hood River",
+    "dba": "Grapes Farms",
+    "location": {
+      "region": "oregon",
+      "city": "Hood River",
+      "state": "OR",
+      "country": "USA",
+      "coordinates": {
+        "lat": 45.66279886961852,
+        "lng": -121.52692913822713
+      }
+    },
+    "commodities": [
+      "grapes"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "356,000 lbs",
+      "annual": "3M lbs"
+    },
+    "capacity": "medium",
+    "contact": {
+      "name": "Contact at Grapes",
+      "phone": "+1-380-555-7903",
+      "email": "info@grapesfarmsofhoodriv.com",
+      "whatsapp": "+1-864-555-0609"
+    },
+    "established": 1995,
+    "employees": 479,
+    "riskScore": 89,
+    "rating": 4.9,
+    "reviewCount": 175,
+    "bio": "USDA NOP certified organic processor. Certifier: Quality Assurance International (QAI). Specializing in grapes.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Quality Assurance International (QAI) Audit Report"
+    ],
+    "deals": 201,
+    "onTimeDelivery": 96,
+    "crm": {
+      "salesforce": null,
+      "hubspot": "HUB1447"
+    },
+    "usdaData": {
+      "certifier": "Quality Assurance International (QAI)",
+      "certificationDate": "2021-05-01",
+      "scopes": "grapes",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0034",
+    "type": "grower",
+    "companyName": "Willamette Valley Fresh Produce",
+    "dba": "Willamette Valley",
+    "location": {
+      "region": "oregon",
+      "city": "Willamette Valley",
+      "state": "OR",
+      "country": "USA",
+      "coordinates": {
+        "lat": 44.02261880938304,
+        "lng": -123.12485991584269
+      }
+    },
+    "commodities": [
+      "green beans",
+      "brussels sprouts",
+      "berries"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "305,000 lbs",
+      "annual": "8M lbs"
+    },
+    "capacity": "high",
+    "contact": {
+      "name": "Contact at Willamette",
+      "phone": "+1-347-555-7916",
+      "email": "info@willamettevalleyfres.com",
+      "whatsapp": "+1-255-555-1120"
+    },
+    "established": 2000,
+    "employees": 165,
+    "riskScore": 86,
+    "rating": 4.7,
+    "reviewCount": 109,
+    "bio": "USDA NOP certified organic grower. Certifier: MOSA Certified Organic. Specializing in green beans, brussels sprouts, berries.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "MOSA Certified Organic Audit Report"
+    ],
+    "deals": 93,
+    "onTimeDelivery": 92,
+    "crm": {
+      "salesforce": "SF914302",
+      "hubspot": "HUB1592"
+    },
+    "usdaData": {
+      "certifier": "MOSA Certified Organic",
+      "certificationDate": "2024-12-01",
+      "scopes": "green beans; brussels sprouts; berries",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0035",
+    "type": "processor",
+    "companyName": "Organic Honeydew Co.",
+    "dba": "Organic Honeydew",
+    "location": {
+      "region": "arizona",
+      "city": "Yuma",
+      "state": "AZ",
+      "country": "USA",
+      "coordinates": {
+        "lat": 32.68863789586287,
+        "lng": -114.67189985966027
+      }
+    },
+    "commodities": [
+      "honeydew",
+      "rice"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "60,000 lbs",
+      "annual": "5M lbs"
+    },
+    "capacity": "high",
+    "contact": {
+      "name": "Contact at Organic",
+      "phone": "+1-532-555-1180",
+      "email": "info@organichoneydewco.com",
+      "whatsapp": null
+    },
+    "established": 2016,
+    "employees": 272,
+    "riskScore": 90,
+    "rating": 4.9,
+    "reviewCount": 76,
+    "bio": "USDA NOP certified organic processor. Certifier: Organic Crop Improvement Association (OCIA). Specializing in honeydew, rice.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Organic Crop Improvement Association (OCIA) Audit Report"
+    ],
+    "deals": 184,
+    "onTimeDelivery": 90,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Organic Crop Improvement Association (OCIA)",
+      "certificationDate": "2023-08-01",
+      "scopes": "honeydew; rice",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0036",
+    "type": "processor",
+    "companyName": "Phoenix Jalapeños Growers",
+    "dba": "Phoenix Jalapeños",
+    "location": {
+      "region": "arizona",
+      "city": "Phoenix",
+      "state": "AZ",
+      "country": "USA",
+      "coordinates": {
+        "lat": 33.460832294657905,
+        "lng": -112.02824552194576
+      }
+    },
+    "commodities": [
+      "jalapeños",
+      "cherries",
+      "thyme"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "413,000 lbs",
+      "annual": "3M lbs"
+    },
+    "capacity": "high",
+    "contact": {
+      "name": "Contact at Phoenix",
+      "phone": "+1-192-555-7493",
+      "email": "info@phoenixjalapeosgrowe.com",
+      "whatsapp": "+1-414-555-5233"
+    },
+    "established": 2009,
+    "employees": 283,
+    "riskScore": 94,
+    "rating": 4.7,
+    "reviewCount": 60,
+    "bio": "USDA NOP certified organic processor. Certifier: Global Organic Alliance. Specializing in jalapeños, cherries, thyme.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Global Organic Alliance Audit Report"
+    ],
+    "deals": 160,
+    "onTimeDelivery": 92,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Global Organic Alliance",
+      "certificationDate": "2024-12-01",
+      "scopes": "jalapeños; cherries; thyme",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0037",
+    "type": "grower",
+    "companyName": "Premium Kale Farms",
+    "dba": "Premium Kale",
+    "location": {
+      "region": "sinaloa",
+      "city": "Culiacán",
+      "state": "Sinaloa",
+      "country": "Mexico",
+      "coordinates": {
+        "lat": 24.856924589901976,
+        "lng": -107.3690337040532
+      }
+    },
+    "commodities": [
+      "kale",
+      "tarragon"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap",
+      "senasica"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "446,000 lbs",
+      "annual": "5M lbs"
+    },
+    "capacity": "low",
+    "contact": {
+      "name": "Contact at Premium",
+      "phone": "+1-644-555-1565",
+      "email": "info@premiumkalefarms.com",
+      "whatsapp": "+1-531-555-6692"
+    },
+    "established": 1994,
+    "employees": 50,
+    "riskScore": 97,
+    "rating": 4.1,
+    "reviewCount": 175,
+    "bio": "USDA NOP certified organic grower. Certifier: Pennsylvania Certified Organic (PCO). Specializing in kale, tarragon.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Pennsylvania Certified Organic (PCO) Audit Report"
+    ],
+    "deals": 163,
+    "onTimeDelivery": 91,
+    "crm": {
+      "salesforce": null,
+      "hubspot": "HUB1715"
+    },
+    "usdaData": {
+      "certifier": "Pennsylvania Certified Organic (PCO)",
+      "certificationDate": "2022-01-01",
+      "scopes": "kale; tarragon",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0038",
+    "type": "processor",
+    "companyName": "Los Mochis Agriculture Group",
+    "dba": "Los Mochis",
+    "location": {
+      "region": "sinaloa",
+      "city": "Los Mochis",
+      "state": "Sinaloa",
+      "country": "Mexico",
+      "coordinates": {
+        "lat": 25.793554632118067,
+        "lng": -108.96547637524016
+      }
+    },
+    "commodities": [
+      "kiwi",
+      "lemons",
+      "pumpkins",
+      "citrus"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap",
+      "senasica"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "448,000 lbs",
+      "annual": "7M lbs"
+    },
+    "capacity": "high",
+    "contact": {
+      "name": "Contact at Los",
+      "phone": "+1-650-555-1822",
+      "email": "info@losmochisagriculture.com",
+      "whatsapp": "+1-443-555-5890"
+    },
+    "established": 2001,
+    "employees": 78,
+    "riskScore": 94,
+    "rating": 4.5,
+    "reviewCount": 158,
+    "bio": "USDA NOP certified organic processor. Certifier: Ecocert ICO. Specializing in kiwi, lemons, pumpkins, citrus.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Ecocert ICO Audit Report"
+    ],
+    "deals": 110,
+    "onTimeDelivery": 96,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Ecocert ICO",
+      "certificationDate": "2024-09-01",
+      "scopes": "kiwi; lemons; pumpkins; citrus",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0039",
+    "type": "processor",
+    "companyName": "Green Valley Lemons",
+    "dba": "Green Valley",
+    "location": {
+      "region": "michoacan",
+      "city": "Uruapan",
+      "state": "Michoacán",
+      "country": "Mexico",
+      "coordinates": {
+        "lat": 19.39459916372935,
+        "lng": -102.06873112767576
+      }
+    },
+    "commodities": [
+      "lemons",
+      "almonds",
+      "rhubarb"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap",
+      "senasica"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "217,000 lbs",
+      "annual": "4M lbs"
+    },
+    "capacity": "low",
+    "contact": {
+      "name": "Contact at Green",
+      "phone": "+1-538-555-5293",
+      "email": "info@greenvalleylemons.com",
+      "whatsapp": "+1-345-555-0765"
+    },
+    "established": 2005,
+    "employees": 71,
+    "riskScore": 82,
+    "rating": 5,
+    "reviewCount": 162,
+    "bio": "USDA NOP certified organic processor. Certifier: Vermont Organic Farmers (VOF). Specializing in lemons, almonds, rhubarb.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Vermont Organic Farmers (VOF) Audit Report"
+    ],
+    "deals": 35,
+    "onTimeDelivery": 90,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Vermont Organic Farmers (VOF)",
+      "certificationDate": "2020-06-01",
+      "scopes": "lemons; almonds; rhubarb",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0040",
+    "type": "grower",
+    "companyName": "Sustainable San Quintín Farms",
+    "dba": "Sustainable San",
+    "location": {
+      "region": "baja",
+      "city": "San Quintín",
+      "state": "Baja California",
+      "country": "Mexico",
+      "coordinates": {
+        "lat": 30.555004857480846,
+        "lng": -115.94742244291162
+      }
+    },
+    "commodities": [
+      "lettuce"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap",
+      "senasica"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "91,000 lbs",
+      "annual": "4M lbs"
+    },
+    "capacity": "high",
+    "contact": {
+      "name": "Contact at Sustainable",
+      "phone": "+1-925-555-7887",
+      "email": "info@sustainablesanquintn.com",
+      "whatsapp": null
+    },
+    "established": 1993,
+    "employees": 216,
+    "riskScore": 88,
+    "rating": 4.5,
+    "reviewCount": 73,
+    "bio": "USDA NOP certified organic grower. Certifier: OneCert. Specializing in lettuce.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "OneCert Audit Report"
+    ],
+    "deals": 163,
+    "onTimeDelivery": 96,
+    "crm": {
+      "salesforce": null,
+      "hubspot": "HUB3499"
+    },
+    "usdaData": {
+      "certifier": "OneCert",
+      "certificationDate": "2024-04-01",
+      "scopes": "lettuce",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0041",
+    "type": "grower",
+    "companyName": "Limes International",
+    "dba": "Limes International",
+    "location": {
+      "region": "california",
+      "city": "Salinas",
+      "state": "CA",
+      "country": "USA",
+      "coordinates": {
+        "lat": 36.63858506842595,
+        "lng": -121.67132854963907
+      }
+    },
+    "commodities": [
+      "limes",
+      "walnuts",
+      "microgreens"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "518,000 lbs",
+      "annual": "5M lbs"
+    },
+    "capacity": "medium",
+    "contact": {
+      "name": "Contact at Limes",
+      "phone": "+1-130-555-1841",
+      "email": "info@limesinternational.com",
+      "whatsapp": "+1-191-555-5784"
+    },
+    "established": 1993,
+    "employees": 403,
+    "riskScore": 88,
+    "rating": 4.5,
+    "reviewCount": 153,
+    "bio": "USDA NOP certified organic grower. Certifier: Mayacert. Specializing in limes, walnuts, microgreens.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Mayacert Audit Report"
+    ],
+    "deals": 108,
+    "onTimeDelivery": 97,
+    "crm": {
+      "salesforce": "SF908985",
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Mayacert",
+      "certificationDate": "2023-05-01",
+      "scopes": "limes; walnuts; microgreens",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0042",
+    "type": "processor",
+    "companyName": "Heritage Mangoes Growers",
+    "dba": "Heritage Mangoes",
+    "location": {
+      "region": "california",
+      "city": "Fresno",
+      "state": "CA",
+      "country": "USA",
+      "coordinates": {
+        "lat": 36.69696805129142,
+        "lng": -119.77082350679333
+      }
+    },
+    "commodities": [
+      "mangoes"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "483,000 lbs",
+      "annual": "2M lbs"
+    },
+    "capacity": "medium",
+    "contact": {
+      "name": "Contact at Heritage",
+      "phone": "+1-107-555-4664",
+      "email": "info@heritagemangoesgrowe.com",
+      "whatsapp": "+1-515-555-8417"
+    },
+    "established": 1991,
+    "employees": 276,
+    "riskScore": 95,
+    "rating": 4.7,
+    "reviewCount": 66,
+    "bio": "USDA NOP certified organic processor. Certifier: Certimex. Specializing in mangoes.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Certimex Audit Report"
+    ],
+    "deals": 91,
+    "onTimeDelivery": 96,
+    "crm": {
+      "salesforce": "SF225466",
+      "hubspot": "HUB3762"
+    },
+    "usdaData": {
+      "certifier": "Certimex",
+      "certificationDate": "2024-02-01",
+      "scopes": "mangoes",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0043",
+    "type": "processor",
+    "companyName": "Bakersfield Organic Collective",
+    "dba": "Bakersfield Organic",
+    "location": {
+      "region": "california",
+      "city": "Bakersfield",
+      "state": "CA",
+      "country": "USA",
+      "coordinates": {
+        "lat": 35.36505339474915,
+        "lng": -118.9794635177666
+      }
+    },
+    "commodities": [
+      "melons",
+      "green beans"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "147,000 lbs",
+      "annual": "1M lbs"
+    },
+    "capacity": "medium",
+    "contact": {
+      "name": "Contact at Bakersfield",
+      "phone": "+1-705-555-8712",
+      "email": "info@bakersfieldorganicco.com",
+      "whatsapp": null
+    },
+    "established": 2009,
+    "employees": 326,
+    "riskScore": 87,
+    "rating": 4.7,
+    "reviewCount": 44,
+    "bio": "USDA NOP certified organic processor. Certifier: Control Union Certifications. Specializing in melons, green beans.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Control Union Certifications Audit Report"
+    ],
+    "deals": 98,
+    "onTimeDelivery": 90,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Control Union Certifications",
+      "certificationDate": "2020-08-01",
+      "scopes": "melons; green beans",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0044",
+    "type": "grower",
+    "companyName": "Pure Mushrooms Farms",
+    "dba": "Pure Mushrooms",
+    "location": {
+      "region": "california",
+      "city": "Watsonville",
+      "state": "CA",
+      "country": "USA",
+      "coordinates": {
+        "lat": 36.884803698119626,
+        "lng": -121.79037952001995
+      }
+    },
+    "commodities": [
+      "mushrooms",
+      "ginger",
+      "tomatoes",
+      "cilantro"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "520,000 lbs",
+      "annual": "4M lbs"
+    },
+    "capacity": "low",
+    "contact": {
+      "name": "Contact at Pure",
+      "phone": "+1-985-555-9893",
+      "email": "info@puremushroomsfarms.com",
+      "whatsapp": null
+    },
+    "established": 1991,
+    "employees": 169,
+    "riskScore": 90,
+    "rating": 4.9,
+    "reviewCount": 106,
+    "bio": "USDA NOP certified organic grower. Certifier: Clemson University. Specializing in mushrooms, ginger, tomatoes, cilantro.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Clemson University Audit Report"
+    ],
+    "deals": 201,
+    "onTimeDelivery": 93,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Clemson University",
+      "certificationDate": "2024-04-01",
+      "scopes": "mushrooms; ginger; tomatoes; cilantro",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0045",
+    "type": "handler",
+    "companyName": "Oxnard Harvest Group",
+    "dba": "Oxnard Harvest",
+    "location": {
+      "region": "california",
+      "city": "Oxnard",
+      "state": "CA",
+      "country": "USA",
+      "coordinates": {
+        "lat": 34.14912343427072,
+        "lng": -119.14430467456867
+      }
+    },
+    "commodities": [
+      "nectarines",
+      "oranges",
+      "blueberries"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "422,000 lbs",
+      "annual": "2M lbs"
+    },
+    "capacity": "low",
+    "contact": {
+      "name": "Contact at Oxnard",
+      "phone": "+1-789-555-9502",
+      "email": "info@oxnardharvestgroup.com",
+      "whatsapp": null
+    },
+    "established": 2001,
+    "employees": 173,
+    "riskScore": 85,
+    "rating": 4.9,
+    "reviewCount": 97,
+    "bio": "USDA NOP certified organic handler. Certifier: USDA Accredited Certifying Agent. Specializing in nectarines, oranges, blueberries.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "USDA Accredited Certifying Agent Audit Report"
+    ],
+    "deals": 88,
+    "onTimeDelivery": 92,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "USDA Accredited Certifying Agent",
+      "certificationDate": "2024-02-01",
+      "scopes": "nectarines; oranges; blueberries",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0046",
+    "type": "handler",
+    "companyName": "Homestead Valley Farms",
+    "dba": "Homestead Valley",
+    "location": {
+      "region": "florida",
+      "city": "Homestead",
+      "state": "FL",
+      "country": "USA",
+      "coordinates": {
+        "lat": 25.446534191251416,
+        "lng": -80.50740286266901
+      }
+    },
+    "commodities": [
+      "okra",
+      "barley",
+      "blueberries",
+      "radicchio"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "98,000 lbs",
+      "annual": "4M lbs"
+    },
+    "capacity": "low",
+    "contact": {
+      "name": "Contact at Homestead",
+      "phone": "+1-341-555-7284",
+      "email": "info@homesteadvalleyfarms.com",
+      "whatsapp": null
+    },
+    "established": 1995,
+    "employees": 461,
+    "riskScore": 97,
+    "rating": 4.8,
+    "reviewCount": 82,
+    "bio": "USDA NOP certified organic handler. Certifier: California Certified Organic Farmers (CCOF). Specializing in okra, barley, blueberries, radicchio.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "California Certified Organic Farmers (CCOF) Audit Report"
+    ],
+    "deals": 140,
+    "onTimeDelivery": 98,
+    "crm": {
+      "salesforce": null,
+      "hubspot": "HUB7347"
+    },
+    "usdaData": {
+      "certifier": "California Certified Organic Farmers (CCOF)",
+      "certificationDate": "2024-01-01",
+      "scopes": "okra; barley; blueberries; radicchio",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0047",
+    "type": "handler",
+    "companyName": "Plant City Organic Growers",
+    "dba": "Plant City",
+    "location": {
+      "region": "florida",
+      "city": "Plant City",
+      "state": "FL",
+      "country": "USA",
+      "coordinates": {
+        "lat": 28.035427522285495,
+        "lng": -82.09475131428903
+      }
+    },
+    "commodities": [
+      "olives"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "524,000 lbs",
+      "annual": "9M lbs"
+    },
+    "capacity": "high",
+    "contact": {
+      "name": "Contact at Plant",
+      "phone": "+1-257-555-7840",
+      "email": "info@plantcityorganicgrow.com",
+      "whatsapp": null
+    },
+    "established": 1985,
+    "employees": 497,
+    "riskScore": 85,
+    "rating": 4.2,
+    "reviewCount": 106,
+    "bio": "USDA NOP certified organic handler. Certifier: Oregon Tilth. Specializing in olives.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Oregon Tilth Audit Report"
+    ],
+    "deals": 91,
+    "onTimeDelivery": 96,
+    "crm": {
+      "salesforce": null,
+      "hubspot": "HUB7340"
+    },
+    "usdaData": {
+      "certifier": "Oregon Tilth",
+      "certificationDate": "2021-07-01",
+      "scopes": "olives",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0048",
+    "type": "processor",
+    "companyName": "Onions Farms of Immokalee",
+    "dba": "Onions Farms",
+    "location": {
+      "region": "florida",
+      "city": "Immokalee",
+      "state": "FL",
+      "country": "USA",
+      "coordinates": {
+        "lat": 26.4446008854329,
+        "lng": -81.38008917842322
+      }
+    },
+    "commodities": [
+      "onions",
+      "spinach",
+      "honeydew"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "289,000 lbs",
+      "annual": "7M lbs"
+    },
+    "capacity": "high",
+    "contact": {
+      "name": "Contact at Onions",
+      "phone": "+1-621-555-8157",
+      "email": "info@onionsfarmsofimmokal.com",
+      "whatsapp": "+1-470-555-1560"
+    },
+    "established": 2007,
+    "employees": 75,
+    "riskScore": 94,
+    "rating": 4.6,
+    "reviewCount": 189,
+    "bio": "USDA NOP certified organic processor. Certifier: Quality Assurance International (QAI). Specializing in onions, spinach, honeydew.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Quality Assurance International (QAI) Audit Report"
+    ],
+    "deals": 183,
+    "onTimeDelivery": 94,
+    "crm": {
+      "salesforce": null,
+      "hubspot": "HUB1392"
+    },
+    "usdaData": {
+      "certifier": "Quality Assurance International (QAI)",
+      "certificationDate": "2020-03-01",
+      "scopes": "onions; spinach; honeydew",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0049",
+    "type": "processor",
+    "companyName": "Rio Grande Valley Fresh Produce",
+    "dba": "Rio Grande",
+    "location": {
+      "region": "texas",
+      "city": "Rio Grande Valley",
+      "state": "TX",
+      "country": "USA",
+      "coordinates": {
+        "lat": 26.190099230509055,
+        "lng": -98.2539934025704
+      }
+    },
+    "commodities": [
+      "oranges",
+      "beans",
+      "quinoa"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "134,000 lbs",
+      "annual": "9M lbs"
+    },
+    "capacity": "medium",
+    "contact": {
+      "name": "Contact at Rio",
+      "phone": "+1-188-555-0460",
+      "email": "info@riograndevalleyfresh.com",
+      "whatsapp": "+1-794-555-6707"
+    },
+    "established": 2004,
+    "employees": 321,
+    "riskScore": 80,
+    "rating": 4.8,
+    "reviewCount": 133,
+    "bio": "USDA NOP certified organic processor. Certifier: MOSA Certified Organic. Specializing in oranges, beans, quinoa.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "MOSA Certified Organic Audit Report"
+    ],
+    "deals": 134,
+    "onTimeDelivery": 90,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "MOSA Certified Organic",
+      "certificationDate": "2020-05-01",
+      "scopes": "oranges; beans; quinoa",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0050",
+    "type": "grower",
+    "companyName": "Organic Papayas Co.",
+    "dba": "Organic Papayas",
+    "location": {
+      "region": "texas",
+      "city": "Winter Garden",
+      "state": "TX",
+      "country": "USA",
+      "coordinates": {
+        "lat": 28.65747689542253,
+        "lng": -99.52910291875713
+      }
+    },
+    "commodities": [
+      "papayas",
+      "zucchini"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "114,000 lbs",
+      "annual": "4M lbs"
+    },
+    "capacity": "high",
+    "contact": {
+      "name": "Contact at Organic",
+      "phone": "+1-781-555-4327",
+      "email": "info@organicpapayasco.com",
+      "whatsapp": null
+    },
+    "established": 2004,
+    "employees": 243,
+    "riskScore": 87,
+    "rating": 4.1,
+    "reviewCount": 18,
+    "bio": "USDA NOP certified organic grower. Certifier: Organic Crop Improvement Association (OCIA). Specializing in papayas, zucchini.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Organic Crop Improvement Association (OCIA) Audit Report"
+    ],
+    "deals": 83,
+    "onTimeDelivery": 91,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Organic Crop Improvement Association (OCIA)",
+      "certificationDate": "2021-08-01",
+      "scopes": "papayas; zucchini",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0051",
+    "type": "handler",
+    "companyName": "Yakima Peaches Growers",
+    "dba": "Yakima Peaches",
+    "location": {
+      "region": "washington",
+      "city": "Yakima",
+      "state": "WA",
+      "country": "USA",
+      "coordinates": {
+        "lat": 46.60248655439145,
+        "lng": -120.54786871091027
+      }
+    },
+    "commodities": [
+      "peaches",
+      "kale",
+      "peas"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "358,000 lbs",
+      "annual": "6M lbs"
+    },
+    "capacity": "low",
+    "contact": {
+      "name": "Contact at Yakima",
+      "phone": "+1-126-555-6313",
+      "email": "info@yakimapeachesgrowers.com",
+      "whatsapp": null
+    },
+    "established": 1995,
+    "employees": 268,
+    "riskScore": 80,
+    "rating": 4.8,
+    "reviewCount": 144,
+    "bio": "USDA NOP certified organic handler. Certifier: Global Organic Alliance. Specializing in peaches, kale, peas.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Global Organic Alliance Audit Report"
+    ],
+    "deals": 131,
+    "onTimeDelivery": 91,
+    "crm": {
+      "salesforce": "SF812586",
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Global Organic Alliance",
+      "certificationDate": "2020-07-01",
+      "scopes": "peaches; kale; peas",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0052",
+    "type": "grower",
+    "companyName": "Premium Pears Farms",
+    "dba": "Premium Pears",
+    "location": {
+      "region": "washington",
+      "city": "Wenatchee",
+      "state": "WA",
+      "country": "USA",
+      "coordinates": {
+        "lat": 47.435010994945216,
+        "lng": -120.30429915093914
+      }
+    },
+    "commodities": [
+      "pears"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "457,000 lbs",
+      "annual": "2M lbs"
+    },
+    "capacity": "low",
+    "contact": {
+      "name": "Contact at Premium",
+      "phone": "+1-375-555-5354",
+      "email": "info@premiumpearsfarms.com",
+      "whatsapp": "+1-282-555-0008"
+    },
+    "established": 2001,
+    "employees": 306,
+    "riskScore": 88,
+    "rating": 4.2,
+    "reviewCount": 63,
+    "bio": "USDA NOP certified organic grower. Certifier: Pennsylvania Certified Organic (PCO). Specializing in pears.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Pennsylvania Certified Organic (PCO) Audit Report"
+    ],
+    "deals": 73,
+    "onTimeDelivery": 91,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Pennsylvania Certified Organic (PCO)",
+      "certificationDate": "2020-02-01",
+      "scopes": "pears",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0053",
+    "type": "handler",
+    "companyName": "Hood River Agriculture Group",
+    "dba": "Hood River",
+    "location": {
+      "region": "oregon",
+      "city": "Hood River",
+      "state": "OR",
+      "country": "USA",
+      "coordinates": {
+        "lat": 45.72363228564429,
+        "lng": -121.55232076214922
+      }
+    },
+    "commodities": [
+      "peas",
+      "persimmons",
+      "potatoes"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "482,000 lbs",
+      "annual": "6M lbs"
+    },
+    "capacity": "medium",
+    "contact": {
+      "name": "Contact at Hood",
+      "phone": "+1-613-555-2475",
+      "email": "info@hoodriveragriculture.com",
+      "whatsapp": "+1-420-555-9662"
+    },
+    "established": 1990,
+    "employees": 264,
+    "riskScore": 84,
+    "rating": 4,
+    "reviewCount": 46,
+    "bio": "USDA NOP certified organic handler. Certifier: Ecocert ICO. Specializing in peas, persimmons, potatoes.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Ecocert ICO Audit Report"
+    ],
+    "deals": 50,
+    "onTimeDelivery": 99,
+    "crm": {
+      "salesforce": "SF284273",
+      "hubspot": "HUB8383"
+    },
+    "usdaData": {
+      "certifier": "Ecocert ICO",
+      "certificationDate": "2020-05-01",
+      "scopes": "peas; persimmons; potatoes",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0054",
+    "type": "grower",
+    "companyName": "Green Valley Pecans",
+    "dba": "Green Valley",
+    "location": {
+      "region": "oregon",
+      "city": "Willamette Valley",
+      "state": "OR",
+      "country": "USA",
+      "coordinates": {
+        "lat": 44.01851454213632,
+        "lng": -123.08902319692574
+      }
+    },
+    "commodities": [
+      "pecans",
+      "chickpeas"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "119,000 lbs",
+      "annual": "4M lbs"
+    },
+    "capacity": "high",
+    "contact": {
+      "name": "Contact at Green",
+      "phone": "+1-314-555-2360",
+      "email": "info@greenvalleypecans.com",
+      "whatsapp": null
+    },
+    "established": 1999,
+    "employees": 420,
+    "riskScore": 87,
+    "rating": 4.2,
+    "reviewCount": 50,
+    "bio": "USDA NOP certified organic grower. Certifier: Vermont Organic Farmers (VOF). Specializing in pecans, chickpeas.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Vermont Organic Farmers (VOF) Audit Report"
+    ],
+    "deals": 206,
+    "onTimeDelivery": 92,
+    "crm": {
+      "salesforce": "SF530933",
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Vermont Organic Farmers (VOF)",
+      "certificationDate": "2024-05-01",
+      "scopes": "pecans; chickpeas",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0055",
+    "type": "processor",
+    "companyName": "Sustainable Yuma Farms",
+    "dba": "Sustainable Yuma",
+    "location": {
+      "region": "arizona",
+      "city": "Yuma",
+      "state": "AZ",
+      "country": "USA",
+      "coordinates": {
+        "lat": 32.66257096683192,
+        "lng": -114.62820643434152
+      }
+    },
+    "commodities": [
+      "peppers"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "164,000 lbs",
+      "annual": "6M lbs"
+    },
+    "capacity": "low",
+    "contact": {
+      "name": "Contact at Sustainable",
+      "phone": "+1-686-555-7948",
+      "email": "info@sustainableyumafarms.com",
+      "whatsapp": "+1-513-555-5767"
+    },
+    "established": 2006,
+    "employees": 86,
+    "riskScore": 87,
+    "rating": 4.8,
+    "reviewCount": 17,
+    "bio": "USDA NOP certified organic processor. Certifier: OneCert. Specializing in peppers.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "OneCert Audit Report"
+    ],
+    "deals": 13,
+    "onTimeDelivery": 96,
+    "crm": {
+      "salesforce": "SF841213",
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "OneCert",
+      "certificationDate": "2023-07-01",
+      "scopes": "peppers",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0056",
+    "type": "grower",
+    "companyName": "Persimmons International",
+    "dba": "Persimmons International",
+    "location": {
+      "region": "arizona",
+      "city": "Phoenix",
+      "state": "AZ",
+      "country": "USA",
+      "coordinates": {
+        "lat": 33.4429160814099,
+        "lng": -112.0388653185411
+      }
+    },
+    "commodities": [
+      "persimmons"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "461,000 lbs",
+      "annual": "10M lbs"
+    },
+    "capacity": "medium",
+    "contact": {
+      "name": "Contact at Persimmons",
+      "phone": "+1-789-555-6345",
+      "email": "info@persimmonsinternatio.com",
+      "whatsapp": "+1-926-555-1527"
+    },
+    "established": 1993,
+    "employees": 499,
+    "riskScore": 83,
+    "rating": 4.8,
+    "reviewCount": 148,
+    "bio": "USDA NOP certified organic grower. Certifier: Mayacert. Specializing in persimmons.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Mayacert Audit Report"
+    ],
+    "deals": 178,
+    "onTimeDelivery": 90,
+    "crm": {
+      "salesforce": null,
+      "hubspot": "HUB6108"
+    },
+    "usdaData": {
+      "certifier": "Mayacert",
+      "certificationDate": "2023-11-01",
+      "scopes": "persimmons",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0057",
+    "type": "handler",
+    "companyName": "Heritage Pineapples Growers",
+    "dba": "Heritage Pineapples",
+    "location": {
+      "region": "sinaloa",
+      "city": "Culiacán",
+      "state": "Sinaloa",
+      "country": "Mexico",
+      "coordinates": {
+        "lat": 24.805258482824996,
+        "lng": -107.37758880090216
+      }
+    },
+    "commodities": [
+      "pineapples"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap",
+      "primusgfs",
+      "senasica"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "109,000 lbs",
+      "annual": "5M lbs"
+    },
+    "capacity": "medium",
+    "contact": {
+      "name": "Contact at Heritage",
+      "phone": "+1-537-555-2977",
+      "email": "info@heritagepineapplesgr.com",
+      "whatsapp": null
+    },
+    "established": 2018,
+    "employees": 378,
+    "riskScore": 90,
+    "rating": 4.4,
+    "reviewCount": 151,
+    "bio": "USDA NOP certified organic handler. Certifier: Certimex. Specializing in pineapples.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Certimex Audit Report"
+    ],
+    "deals": 150,
+    "onTimeDelivery": 91,
+    "crm": {
+      "salesforce": "SF803418",
+      "hubspot": "HUB5383"
+    },
+    "usdaData": {
+      "certifier": "Certimex",
+      "certificationDate": "2023-07-01",
+      "scopes": "pineapples",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0058",
+    "type": "processor",
+    "companyName": "Los Mochis Organic Collective",
+    "dba": "Los Mochis",
+    "location": {
+      "region": "sinaloa",
+      "city": "Los Mochis",
+      "state": "Sinaloa",
+      "country": "Mexico",
+      "coordinates": {
+        "lat": 25.836025510165104,
+        "lng": -108.98614655343509
+      }
+    },
+    "commodities": [
+      "pistachios",
+      "strawberries",
+      "herbs",
+      "sorghum"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap",
+      "primusgfs",
+      "senasica"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "498,000 lbs",
+      "annual": "2M lbs"
+    },
+    "capacity": "high",
+    "contact": {
+      "name": "Contact at Los",
+      "phone": "+1-739-555-8978",
+      "email": "info@losmochisorganiccoll.com",
+      "whatsapp": "+1-161-555-0270"
+    },
+    "established": 2019,
+    "employees": 506,
+    "riskScore": 92,
+    "rating": 4.7,
+    "reviewCount": 162,
+    "bio": "USDA NOP certified organic processor. Certifier: Control Union Certifications. Specializing in pistachios, strawberries, herbs, sorghum.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Control Union Certifications Audit Report"
+    ],
+    "deals": 155,
+    "onTimeDelivery": 91,
+    "crm": {
+      "salesforce": "SF778284",
+      "hubspot": "HUB9730"
+    },
+    "usdaData": {
+      "certifier": "Control Union Certifications",
+      "certificationDate": "2024-06-01",
+      "scopes": "pistachios; strawberries; herbs; sorghum",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0059",
+    "type": "grower",
+    "companyName": "Pure Plums Farms",
+    "dba": "Pure Plums",
+    "location": {
+      "region": "michoacan",
+      "city": "Uruapan",
+      "state": "Michoacán",
+      "country": "Mexico",
+      "coordinates": {
+        "lat": 19.404225691439375,
+        "lng": -102.04863894037508
+      }
+    },
+    "commodities": [
+      "plums",
+      "pineapples",
+      "beets",
+      "quinoa"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "157,000 lbs",
+      "annual": "8M lbs"
+    },
+    "capacity": "low",
+    "contact": {
+      "name": "Contact at Pure",
+      "phone": "+1-985-555-1372",
+      "email": "info@pureplumsfarms.com",
+      "whatsapp": null
+    },
+    "established": 2003,
+    "employees": 173,
+    "riskScore": 80,
+    "rating": 4,
+    "reviewCount": 121,
+    "bio": "USDA NOP certified organic grower. Certifier: Clemson University. Specializing in plums, pineapples, beets, quinoa.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Clemson University Audit Report"
+    ],
+    "deals": 112,
+    "onTimeDelivery": 90,
+    "crm": {
+      "salesforce": null,
+      "hubspot": "HUB7267"
+    },
+    "usdaData": {
+      "certifier": "Clemson University",
+      "certificationDate": "2023-02-01",
+      "scopes": "plums; pineapples; beets; quinoa",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0060",
+    "type": "grower",
+    "companyName": "San Quintín Harvest Group",
+    "dba": "San Quintín",
+    "location": {
+      "region": "baja",
+      "city": "San Quintín",
+      "state": "Baja California",
+      "country": "Mexico",
+      "coordinates": {
+        "lat": 30.553318530341656,
+        "lng": -115.97051915976614
+      }
+    },
+    "commodities": [
+      "pomegranates",
+      "peppers"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "345,000 lbs",
+      "annual": "1M lbs"
+    },
+    "capacity": "medium",
+    "contact": {
+      "name": "Contact at San",
+      "phone": "+1-346-555-5734",
+      "email": "info@sanquintnharvestgrou.com",
+      "whatsapp": null
+    },
+    "established": 1991,
+    "employees": 178,
+    "riskScore": 93,
+    "rating": 4.4,
+    "reviewCount": 97,
+    "bio": "USDA NOP certified organic grower. Certifier: USDA Accredited Certifying Agent. Specializing in pomegranates, peppers.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "USDA Accredited Certifying Agent Audit Report"
+    ],
+    "deals": 82,
+    "onTimeDelivery": 92,
+    "crm": {
+      "salesforce": "SF620909",
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "USDA Accredited Certifying Agent",
+      "certificationDate": "2021-04-01",
+      "scopes": "pomegranates; peppers",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0061",
+    "type": "grower",
+    "companyName": "Salinas Valley Farms",
+    "dba": "Salinas Valley",
+    "location": {
+      "region": "california",
+      "city": "Salinas",
+      "state": "CA",
+      "country": "USA",
+      "coordinates": {
+        "lat": 36.72085845055923,
+        "lng": -121.65403388047815
+      }
+    },
+    "commodities": [
+      "potatoes"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "258,000 lbs",
+      "annual": "5M lbs"
+    },
+    "capacity": "high",
+    "contact": {
+      "name": "Contact at Salinas",
+      "phone": "+1-185-555-6801",
+      "email": "info@salinasvalleyfarms.com",
+      "whatsapp": "+1-598-555-6348"
+    },
+    "established": 2015,
+    "employees": 120,
+    "riskScore": 82,
+    "rating": 4.4,
+    "reviewCount": 66,
+    "bio": "USDA NOP certified organic grower. Certifier: California Certified Organic Farmers (CCOF). Specializing in potatoes.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "California Certified Organic Farmers (CCOF) Audit Report"
+    ],
+    "deals": 43,
+    "onTimeDelivery": 94,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "California Certified Organic Farmers (CCOF)",
+      "certificationDate": "2021-07-01",
+      "scopes": "potatoes",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0062",
+    "type": "processor",
+    "companyName": "Fresno Organic Growers",
+    "dba": "Fresno Organic",
+    "location": {
+      "region": "california",
+      "city": "Fresno",
+      "state": "CA",
+      "country": "USA",
+      "coordinates": {
+        "lat": 36.78502815352262,
+        "lng": -119.81946425192955
+      }
+    },
+    "commodities": [
+      "pumpkins",
+      "honeydew",
+      "mangoes"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "503,000 lbs",
+      "annual": "5M lbs"
+    },
+    "capacity": "medium",
+    "contact": {
+      "name": "Contact at Fresno",
+      "phone": "+1-383-555-5398",
+      "email": "info@fresnoorganicgrowers.com",
+      "whatsapp": null
+    },
+    "established": 2008,
+    "employees": 309,
+    "riskScore": 87,
+    "rating": 4.1,
+    "reviewCount": 178,
+    "bio": "USDA NOP certified organic processor. Certifier: Oregon Tilth. Specializing in pumpkins, honeydew, mangoes.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Oregon Tilth Audit Report"
+    ],
+    "deals": 98,
+    "onTimeDelivery": 92,
+    "crm": {
+      "salesforce": null,
+      "hubspot": "HUB0057"
+    },
+    "usdaData": {
+      "certifier": "Oregon Tilth",
+      "certificationDate": "2022-12-01",
+      "scopes": "pumpkins; honeydew; mangoes",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0063",
+    "type": "grower",
+    "companyName": "Radishes Farms of Bakersfield",
+    "dba": "Radishes Farms",
+    "location": {
+      "region": "california",
+      "city": "Bakersfield",
+      "state": "CA",
+      "country": "USA",
+      "coordinates": {
+        "lat": 35.41593313522037,
+        "lng": -119.02161761769453
+      }
+    },
+    "commodities": [
+      "radishes",
+      "chickpeas",
+      "bok choy"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "245,000 lbs",
+      "annual": "1M lbs"
+    },
+    "capacity": "high",
+    "contact": {
+      "name": "Contact at Radishes",
+      "phone": "+1-497-555-7404",
+      "email": "info@radishesfarmsofbaker.com",
+      "whatsapp": "+1-133-555-3534"
+    },
+    "established": 1985,
+    "employees": 466,
+    "riskScore": 92,
+    "rating": 4.2,
+    "reviewCount": 161,
+    "bio": "USDA NOP certified organic grower. Certifier: Quality Assurance International (QAI). Specializing in radishes, chickpeas, bok choy.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Quality Assurance International (QAI) Audit Report"
+    ],
+    "deals": 47,
+    "onTimeDelivery": 94,
+    "crm": {
+      "salesforce": "SF572365",
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Quality Assurance International (QAI)",
+      "certificationDate": "2020-02-01",
+      "scopes": "radishes; chickpeas; bok choy",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0064",
+    "type": "grower",
+    "companyName": "Watsonville Fresh Produce",
+    "dba": "Watsonville Fresh",
+    "location": {
+      "region": "california",
+      "city": "Watsonville",
+      "state": "CA",
+      "country": "USA",
+      "coordinates": {
+        "lat": 36.89762263736807,
+        "lng": -121.76685925971157
+      }
+    },
+    "commodities": [
+      "raspberries",
+      "radicchio"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "247,000 lbs",
+      "annual": "8M lbs"
+    },
+    "capacity": "medium",
+    "contact": {
+      "name": "Contact at Watsonville",
+      "phone": "+1-271-555-3619",
+      "email": "info@watsonvillefreshprod.com",
+      "whatsapp": "+1-358-555-1730"
+    },
+    "established": 1986,
+    "employees": 168,
+    "riskScore": 83,
+    "rating": 4.5,
+    "reviewCount": 20,
+    "bio": "USDA NOP certified organic grower. Certifier: MOSA Certified Organic. Specializing in raspberries, radicchio.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "MOSA Certified Organic Audit Report"
+    ],
+    "deals": 133,
+    "onTimeDelivery": 90,
+    "crm": {
+      "salesforce": null,
+      "hubspot": "HUB4389"
+    },
+    "usdaData": {
+      "certifier": "MOSA Certified Organic",
+      "certificationDate": "2021-02-01",
+      "scopes": "raspberries; radicchio",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0065",
+    "type": "grower",
+    "companyName": "Organic Rhubarb Co.",
+    "dba": "Organic Rhubarb",
+    "location": {
+      "region": "california",
+      "city": "Oxnard",
+      "state": "CA",
+      "country": "USA",
+      "coordinates": {
+        "lat": 34.24025292985298,
+        "lng": -119.18230413666873
+      }
+    },
+    "commodities": [
+      "rhubarb",
+      "pecans"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "134,000 lbs",
+      "annual": "4M lbs"
+    },
+    "capacity": "high",
+    "contact": {
+      "name": "Contact at Organic",
+      "phone": "+1-210-555-5693",
+      "email": "info@organicrhubarbco.com",
+      "whatsapp": null
+    },
+    "established": 2013,
+    "employees": 439,
+    "riskScore": 89,
+    "rating": 4.5,
+    "reviewCount": 101,
+    "bio": "USDA NOP certified organic grower. Certifier: Organic Crop Improvement Association (OCIA). Specializing in rhubarb, pecans.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Organic Crop Improvement Association (OCIA) Audit Report"
+    ],
+    "deals": 182,
+    "onTimeDelivery": 97,
+    "crm": {
+      "salesforce": "SF376110",
+      "hubspot": "HUB9766"
+    },
+    "usdaData": {
+      "certifier": "Organic Crop Improvement Association (OCIA)",
+      "certificationDate": "2024-08-01",
+      "scopes": "rhubarb; pecans",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0066",
+    "type": "grower",
+    "companyName": "Homestead Romaine Growers",
+    "dba": "Homestead Romaine",
+    "location": {
+      "region": "florida",
+      "city": "Homestead",
+      "state": "FL",
+      "country": "USA",
+      "coordinates": {
+        "lat": 25.427548477477448,
+        "lng": -80.49550628767271
+      }
+    },
+    "commodities": [
+      "romaine"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "316,000 lbs",
+      "annual": "8M lbs"
+    },
+    "capacity": "medium",
+    "contact": {
+      "name": "Contact at Homestead",
+      "phone": "+1-481-555-4097",
+      "email": "info@homesteadromainegrow.com",
+      "whatsapp": "+1-820-555-7939"
+    },
+    "established": 2005,
+    "employees": 444,
+    "riskScore": 94,
+    "rating": 4.6,
+    "reviewCount": 178,
+    "bio": "USDA NOP certified organic grower. Certifier: Global Organic Alliance. Specializing in romaine.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Global Organic Alliance Audit Report"
+    ],
+    "deals": 18,
+    "onTimeDelivery": 97,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Global Organic Alliance",
+      "certificationDate": "2024-09-01",
+      "scopes": "romaine",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0067",
+    "type": "grower",
+    "companyName": "Premium Spinach Farms",
+    "dba": "Premium Spinach",
+    "location": {
+      "region": "florida",
+      "city": "Plant City",
+      "state": "FL",
+      "country": "USA",
+      "coordinates": {
+        "lat": 28.057383306927722,
+        "lng": -82.06551227592577
+      }
+    },
+    "commodities": [
+      "spinach",
+      "pistachios",
+      "bananas"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "226,000 lbs",
+      "annual": "9M lbs"
+    },
+    "capacity": "high",
+    "contact": {
+      "name": "Contact at Premium",
+      "phone": "+1-446-555-4282",
+      "email": "info@premiumspinachfarms.com",
+      "whatsapp": null
+    },
+    "established": 2011,
+    "employees": 308,
+    "riskScore": 80,
+    "rating": 4.4,
+    "reviewCount": 49,
+    "bio": "USDA NOP certified organic grower. Certifier: Pennsylvania Certified Organic (PCO). Specializing in spinach, pistachios, bananas.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Pennsylvania Certified Organic (PCO) Audit Report"
+    ],
+    "deals": 78,
+    "onTimeDelivery": 96,
+    "crm": {
+      "salesforce": null,
+      "hubspot": "HUB6469"
+    },
+    "usdaData": {
+      "certifier": "Pennsylvania Certified Organic (PCO)",
+      "certificationDate": "2022-05-01",
+      "scopes": "spinach; pistachios; bananas",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0068",
+    "type": "grower",
+    "companyName": "Immokalee Agriculture Group",
+    "dba": "Immokalee Agriculture",
+    "location": {
+      "region": "florida",
+      "city": "Immokalee",
+      "state": "FL",
+      "country": "USA",
+      "coordinates": {
+        "lat": 26.384490697406722,
+        "lng": -81.4620200893801
+      }
+    },
+    "commodities": [
+      "squash",
+      "honeydew"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "318,000 lbs",
+      "annual": "7M lbs"
+    },
+    "capacity": "medium",
+    "contact": {
+      "name": "Contact at Immokalee",
+      "phone": "+1-862-555-1710",
+      "email": "info@immokaleeagriculture.com",
+      "whatsapp": null
+    },
+    "established": 1988,
+    "employees": 456,
+    "riskScore": 99,
+    "rating": 4.3,
+    "reviewCount": 125,
+    "bio": "USDA NOP certified organic grower. Certifier: Ecocert ICO. Specializing in squash, honeydew.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Ecocert ICO Audit Report"
+    ],
+    "deals": 182,
+    "onTimeDelivery": 95,
+    "crm": {
+      "salesforce": "SF434211",
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Ecocert ICO",
+      "certificationDate": "2023-08-01",
+      "scopes": "squash; honeydew",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0069",
+    "type": "handler",
+    "companyName": "Green Valley Strawberries",
+    "dba": "Green Valley",
+    "location": {
+      "region": "texas",
+      "city": "Rio Grande Valley",
+      "state": "TX",
+      "country": "USA",
+      "coordinates": {
+        "lat": 26.25281367817628,
+        "lng": -98.22594757788687
+      }
+    },
+    "commodities": [
+      "strawberries",
+      "turnips",
+      "cabbage"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "414,000 lbs",
+      "annual": "8M lbs"
+    },
+    "capacity": "low",
+    "contact": {
+      "name": "Contact at Green",
+      "phone": "+1-440-555-9985",
+      "email": "info@greenvalleystrawberr.com",
+      "whatsapp": "+1-804-555-8380"
+    },
+    "established": 2003,
+    "employees": 363,
+    "riskScore": 97,
+    "rating": 4.2,
+    "reviewCount": 26,
+    "bio": "USDA NOP certified organic handler. Certifier: Vermont Organic Farmers (VOF). Specializing in strawberries, turnips, cabbage.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Vermont Organic Farmers (VOF) Audit Report"
+    ],
+    "deals": 126,
+    "onTimeDelivery": 95,
+    "crm": {
+      "salesforce": "SF128164",
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Vermont Organic Farmers (VOF)",
+      "certificationDate": "2024-07-01",
+      "scopes": "strawberries; turnips; cabbage",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0070",
+    "type": "processor",
+    "companyName": "Sustainable Winter Garden Farms",
+    "dba": "Sustainable Winter",
+    "location": {
+      "region": "texas",
+      "city": "Winter Garden",
+      "state": "TX",
+      "country": "USA",
+      "coordinates": {
+        "lat": 28.64934269336698,
+        "lng": -99.55611339012111
+      }
+    },
+    "commodities": [
+      "sweet corn",
+      "bananas",
+      "mangoes",
+      "kiwi"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "124,000 lbs",
+      "annual": "5M lbs"
+    },
+    "capacity": "medium",
+    "contact": {
+      "name": "Contact at Sustainable",
+      "phone": "+1-770-555-5108",
+      "email": "info@sustainablewintergar.com",
+      "whatsapp": "+1-218-555-7373"
+    },
+    "established": 2002,
+    "employees": 373,
+    "riskScore": 94,
+    "rating": 4.4,
+    "reviewCount": 21,
+    "bio": "USDA NOP certified organic processor. Certifier: OneCert. Specializing in sweet corn, bananas, mangoes, kiwi.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "OneCert Audit Report"
+    ],
+    "deals": 107,
+    "onTimeDelivery": 97,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "OneCert",
+      "certificationDate": "2022-06-01",
+      "scopes": "sweet corn; bananas; mangoes; kiwi",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0071",
+    "type": "handler",
+    "companyName": "Sweet potatoes International",
+    "dba": "Sweet potatoes",
+    "location": {
+      "region": "washington",
+      "city": "Yakima",
+      "state": "WA",
+      "country": "USA",
+      "coordinates": {
+        "lat": 46.647739884164686,
+        "lng": -120.48752407702725
+      }
+    },
+    "commodities": [
+      "sweet potatoes",
+      "persimmons"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "464,000 lbs",
+      "annual": "5M lbs"
+    },
+    "capacity": "low",
+    "contact": {
+      "name": "Contact at Sweet",
+      "phone": "+1-615-555-5568",
+      "email": "info@sweetpotatoesinterna.com",
+      "whatsapp": "+1-709-555-0769"
+    },
+    "established": 2017,
+    "employees": 145,
+    "riskScore": 88,
+    "rating": 4.4,
+    "reviewCount": 97,
+    "bio": "USDA NOP certified organic handler. Certifier: Mayacert. Specializing in sweet potatoes, persimmons.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Mayacert Audit Report"
+    ],
+    "deals": 127,
+    "onTimeDelivery": 95,
+    "crm": {
+      "salesforce": "SF722616",
+      "hubspot": "HUB8220"
+    },
+    "usdaData": {
+      "certifier": "Mayacert",
+      "certificationDate": "2020-08-01",
+      "scopes": "sweet potatoes; persimmons",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0072",
+    "type": "grower",
+    "companyName": "Heritage Tangerines Growers",
+    "dba": "Heritage Tangerines",
+    "location": {
+      "region": "washington",
+      "city": "Wenatchee",
+      "state": "WA",
+      "country": "USA",
+      "coordinates": {
+        "lat": 47.47226375906809,
+        "lng": -120.34492595652259
+      }
+    },
+    "commodities": [
+      "tangerines",
+      "cucumbers",
+      "honeydew"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "444,000 lbs",
+      "annual": "4M lbs"
+    },
+    "capacity": "medium",
+    "contact": {
+      "name": "Contact at Heritage",
+      "phone": "+1-550-555-6891",
+      "email": "info@heritagetangerinesgr.com",
+      "whatsapp": null
+    },
+    "established": 1994,
+    "employees": 238,
+    "riskScore": 96,
+    "rating": 4.6,
+    "reviewCount": 124,
+    "bio": "USDA NOP certified organic grower. Certifier: Certimex. Specializing in tangerines, cucumbers, honeydew.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Certimex Audit Report"
+    ],
+    "deals": 108,
+    "onTimeDelivery": 93,
+    "crm": {
+      "salesforce": "SF048387",
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Certimex",
+      "certificationDate": "2024-03-01",
+      "scopes": "tangerines; cucumbers; honeydew",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0073",
+    "type": "grower",
+    "companyName": "Hood River Organic Collective",
+    "dba": "Hood River",
+    "location": {
+      "region": "oregon",
+      "city": "Hood River",
+      "state": "OR",
+      "country": "USA",
+      "coordinates": {
+        "lat": 45.70183316695752,
+        "lng": -121.50898158492289
+      }
+    },
+    "commodities": [
+      "tomatillos",
+      "broccoli",
+      "chickpeas",
+      "microgreens"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "233,000 lbs",
+      "annual": "9M lbs"
+    },
+    "capacity": "low",
+    "contact": {
+      "name": "Contact at Hood",
+      "phone": "+1-823-555-6209",
+      "email": "info@hoodriverorganiccoll.com",
+      "whatsapp": null
+    },
+    "established": 2024,
+    "employees": 265,
+    "riskScore": 89,
+    "rating": 4.9,
+    "reviewCount": 95,
+    "bio": "USDA NOP certified organic grower. Certifier: Control Union Certifications. Specializing in tomatillos, broccoli, chickpeas, microgreens.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Control Union Certifications Audit Report"
+    ],
+    "deals": 176,
+    "onTimeDelivery": 96,
+    "crm": {
+      "salesforce": "SF175486",
+      "hubspot": "HUB2564"
+    },
+    "usdaData": {
+      "certifier": "Control Union Certifications",
+      "certificationDate": "2023-08-01",
+      "scopes": "tomatillos; broccoli; chickpeas; microgreens",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0074",
+    "type": "processor",
+    "companyName": "Pure Tomatoes Farms",
+    "dba": "Pure Tomatoes",
+    "location": {
+      "region": "oregon",
+      "city": "Willamette Valley",
+      "state": "OR",
+      "country": "USA",
+      "coordinates": {
+        "lat": 44.024952723657314,
+        "lng": -123.09095106399492
+      }
+    },
+    "commodities": [
+      "tomatoes",
+      "melons",
+      "mushrooms",
+      "olives"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "322,000 lbs",
+      "annual": "7M lbs"
+    },
+    "capacity": "low",
+    "contact": {
+      "name": "Contact at Pure",
+      "phone": "+1-174-555-3245",
+      "email": "info@puretomatoesfarms.com",
+      "whatsapp": null
+    },
+    "established": 2006,
+    "employees": 250,
+    "riskScore": 92,
+    "rating": 4.4,
+    "reviewCount": 200,
+    "bio": "USDA NOP certified organic processor. Certifier: Clemson University. Specializing in tomatoes, melons, mushrooms, olives.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Clemson University Audit Report"
+    ],
+    "deals": 193,
+    "onTimeDelivery": 98,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Clemson University",
+      "certificationDate": "2022-12-01",
+      "scopes": "tomatoes; melons; mushrooms; olives",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0075",
+    "type": "grower",
+    "companyName": "Yuma Harvest Group",
+    "dba": "Yuma Harvest",
+    "location": {
+      "region": "arizona",
+      "city": "Yuma",
+      "state": "AZ",
+      "country": "USA",
+      "coordinates": {
+        "lat": 32.67158219980815,
+        "lng": -114.66382228625316
+      }
+    },
+    "commodities": [
+      "turnips",
+      "plums"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "388,000 lbs",
+      "annual": "1M lbs"
+    },
+    "capacity": "medium",
+    "contact": {
+      "name": "Contact at Yuma",
+      "phone": "+1-869-555-7816",
+      "email": "info@yumaharvestgroup.com",
+      "whatsapp": "+1-444-555-6062"
+    },
+    "established": 1985,
+    "employees": 17,
+    "riskScore": 82,
+    "rating": 4.3,
+    "reviewCount": 36,
+    "bio": "USDA NOP certified organic grower. Certifier: USDA Accredited Certifying Agent. Specializing in turnips, plums.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "USDA Accredited Certifying Agent Audit Report"
+    ],
+    "deals": 200,
+    "onTimeDelivery": 98,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "USDA Accredited Certifying Agent",
+      "certificationDate": "2024-11-01",
+      "scopes": "turnips; plums",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0076",
+    "type": "grower",
+    "companyName": "Phoenix Valley Farms",
+    "dba": "Phoenix Valley",
+    "location": {
+      "region": "arizona",
+      "city": "Phoenix",
+      "state": "AZ",
+      "country": "USA",
+      "coordinates": {
+        "lat": 33.4471018110125,
+        "lng": -112.0993790613659
+      }
+    },
+    "commodities": [
+      "walnuts",
+      "pomegranates",
+      "pears"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "227,000 lbs",
+      "annual": "10M lbs"
+    },
+    "capacity": "high",
+    "contact": {
+      "name": "Contact at Phoenix",
+      "phone": "+1-811-555-0885",
+      "email": "info@phoenixvalleyfarms.com",
+      "whatsapp": null
+    },
+    "established": 1986,
+    "employees": 45,
+    "riskScore": 95,
+    "rating": 4.8,
+    "reviewCount": 12,
+    "bio": "USDA NOP certified organic grower. Certifier: California Certified Organic Farmers (CCOF). Specializing in walnuts, pomegranates, pears.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "California Certified Organic Farmers (CCOF) Audit Report"
+    ],
+    "deals": 64,
+    "onTimeDelivery": 91,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "California Certified Organic Farmers (CCOF)",
+      "certificationDate": "2023-05-01",
+      "scopes": "walnuts; pomegranates; pears",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0077",
+    "type": "processor",
+    "companyName": "Culiacán Organic Growers",
+    "dba": "Culiacán Organic",
+    "location": {
+      "region": "sinaloa",
+      "city": "Culiacán",
+      "state": "Sinaloa",
+      "country": "Mexico",
+      "coordinates": {
+        "lat": 24.763343093408565,
+        "lng": -107.39987880130732
+      }
+    },
+    "commodities": [
+      "watermelon"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "71,000 lbs",
+      "annual": "2M lbs"
+    },
+    "capacity": "low",
+    "contact": {
+      "name": "Contact at Culiacán",
+      "phone": "+1-886-555-4448",
+      "email": "info@culiacnorganicgrower.com",
+      "whatsapp": null
+    },
+    "established": 2009,
+    "employees": 202,
+    "riskScore": 80,
+    "rating": 4.7,
+    "reviewCount": 88,
+    "bio": "USDA NOP certified organic processor. Certifier: Oregon Tilth. Specializing in watermelon.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Oregon Tilth Audit Report"
+    ],
+    "deals": 74,
+    "onTimeDelivery": 95,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Oregon Tilth",
+      "certificationDate": "2023-01-01",
+      "scopes": "watermelon",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0078",
+    "type": "grower",
+    "companyName": "Yams Farms of Los Mochis",
+    "dba": "Yams Farms",
+    "location": {
+      "region": "sinaloa",
+      "city": "Los Mochis",
+      "state": "Sinaloa",
+      "country": "Mexico",
+      "coordinates": {
+        "lat": 25.833243683452466,
+        "lng": -108.97865665302992
+      }
+    },
+    "commodities": [
+      "yams",
+      "garlic"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "431,000 lbs",
+      "annual": "5M lbs"
+    },
+    "capacity": "low",
+    "contact": {
+      "name": "Contact at Yams",
+      "phone": "+1-198-555-3888",
+      "email": "info@yamsfarmsoflosmochis.com",
+      "whatsapp": null
+    },
+    "established": 2004,
+    "employees": 456,
+    "riskScore": 88,
+    "rating": 5,
+    "reviewCount": 53,
+    "bio": "USDA NOP certified organic grower. Certifier: Quality Assurance International (QAI). Specializing in yams, garlic.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Quality Assurance International (QAI) Audit Report"
+    ],
+    "deals": 208,
+    "onTimeDelivery": 97,
+    "crm": {
+      "salesforce": "SF691197",
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Quality Assurance International (QAI)",
+      "certificationDate": "2024-12-01",
+      "scopes": "yams; garlic",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0079",
+    "type": "grower",
+    "companyName": "Uruapan Fresh Produce",
+    "dba": "Uruapan Fresh",
+    "location": {
+      "region": "michoacan",
+      "city": "Uruapan",
+      "state": "Michoacán",
+      "country": "Mexico",
+      "coordinates": {
+        "lat": 19.45421549384993,
+        "lng": -102.04940554828151
+      }
+    },
+    "commodities": [
+      "zucchini",
+      "blackberries",
+      "horseradish",
+      "beets"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "senasica"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "71,000 lbs",
+      "annual": "3M lbs"
+    },
+    "capacity": "low",
+    "contact": {
+      "name": "Contact at Uruapan",
+      "phone": "+1-976-555-6845",
+      "email": "info@uruapanfreshproduce.com",
+      "whatsapp": "+1-131-555-7559"
+    },
+    "established": 2017,
+    "employees": 441,
+    "riskScore": 85,
+    "rating": 4.7,
+    "reviewCount": 199,
+    "bio": "USDA NOP certified organic grower. Certifier: MOSA Certified Organic. Specializing in zucchini, blackberries, horseradish, beets.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "MOSA Certified Organic Audit Report"
+    ],
+    "deals": 111,
+    "onTimeDelivery": 91,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "MOSA Certified Organic",
+      "certificationDate": "2024-12-01",
+      "scopes": "zucchini; blackberries; horseradish; beets",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0080",
+    "type": "handler",
+    "companyName": "Organic Arugula Co.",
+    "dba": "Organic Arugula",
+    "location": {
+      "region": "baja",
+      "city": "San Quintín",
+      "state": "Baja California",
+      "country": "Mexico",
+      "coordinates": {
+        "lat": 30.61952966236038,
+        "lng": -115.90226577971835
+      }
+    },
+    "commodities": [
+      "arugula",
+      "jalapeños",
+      "bananas",
+      "microgreens"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap",
+      "primusgfs",
+      "senasica"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "260,000 lbs",
+      "annual": "10M lbs"
+    },
+    "capacity": "low",
+    "contact": {
+      "name": "Contact at Organic",
+      "phone": "+1-434-555-7947",
+      "email": "info@organicarugulaco.com",
+      "whatsapp": null
+    },
+    "established": 2001,
+    "employees": 324,
+    "riskScore": 87,
+    "rating": 4.2,
+    "reviewCount": 10,
+    "bio": "USDA NOP certified organic handler. Certifier: Organic Crop Improvement Association (OCIA). Specializing in arugula, jalapeños, bananas, microgreens.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Organic Crop Improvement Association (OCIA) Audit Report"
+    ],
+    "deals": 123,
+    "onTimeDelivery": 99,
+    "crm": {
+      "salesforce": "SF913722",
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Organic Crop Improvement Association (OCIA)",
+      "certificationDate": "2022-09-01",
+      "scopes": "arugula; jalapeños; bananas; microgreens",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0081",
+    "type": "processor",
+    "companyName": "Salinas Bok choy Growers",
+    "dba": "Salinas Bok",
+    "location": {
+      "region": "california",
+      "city": "Salinas",
+      "state": "CA",
+      "country": "USA",
+      "coordinates": {
+        "lat": 36.694656653858516,
+        "lng": -121.65382110062
+      }
+    },
+    "commodities": [
+      "bok choy"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "92,000 lbs",
+      "annual": "3M lbs"
+    },
+    "capacity": "high",
+    "contact": {
+      "name": "Contact at Salinas",
+      "phone": "+1-751-555-9604",
+      "email": "info@salinasbokchoygrower.com",
+      "whatsapp": null
+    },
+    "established": 1989,
+    "employees": 222,
+    "riskScore": 85,
+    "rating": 4.7,
+    "reviewCount": 148,
+    "bio": "USDA NOP certified organic processor. Certifier: Global Organic Alliance. Specializing in bok choy.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Global Organic Alliance Audit Report"
+    ],
+    "deals": 61,
+    "onTimeDelivery": 96,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Global Organic Alliance",
+      "certificationDate": "2023-04-01",
+      "scopes": "bok choy",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0082",
+    "type": "grower",
+    "companyName": "Premium Chard Farms",
+    "dba": "Premium Chard",
+    "location": {
+      "region": "california",
+      "city": "Fresno",
+      "state": "CA",
+      "country": "USA",
+      "coordinates": {
+        "lat": 36.76961061786897,
+        "lng": -119.828332474329
+      }
+    },
+    "commodities": [
+      "chard"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "199,000 lbs",
+      "annual": "5M lbs"
+    },
+    "capacity": "low",
+    "contact": {
+      "name": "Contact at Premium",
+      "phone": "+1-756-555-0877",
+      "email": "info@premiumchardfarms.com",
+      "whatsapp": null
+    },
+    "established": 1998,
+    "employees": 198,
+    "riskScore": 91,
+    "rating": 4.2,
+    "reviewCount": 150,
+    "bio": "USDA NOP certified organic grower. Certifier: Pennsylvania Certified Organic (PCO). Specializing in chard.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Pennsylvania Certified Organic (PCO) Audit Report"
+    ],
+    "deals": 138,
+    "onTimeDelivery": 96,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Pennsylvania Certified Organic (PCO)",
+      "certificationDate": "2024-07-01",
+      "scopes": "chard",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0083",
+    "type": "processor",
+    "companyName": "Bakersfield Agriculture Group",
+    "dba": "Bakersfield Agriculture",
+    "location": {
+      "region": "california",
+      "city": "Bakersfield",
+      "state": "CA",
+      "country": "USA",
+      "coordinates": {
+        "lat": 35.40623528973711,
+        "lng": -119.04275043591609
+      }
+    },
+    "commodities": [
+      "cilantro",
+      "radishes",
+      "cherries"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "67,000 lbs",
+      "annual": "1M lbs"
+    },
+    "capacity": "medium",
+    "contact": {
+      "name": "Contact at Bakersfield",
+      "phone": "+1-864-555-9236",
+      "email": "info@bakersfieldagricultu.com",
+      "whatsapp": null
+    },
+    "established": 2012,
+    "employees": 276,
+    "riskScore": 84,
+    "rating": 4.2,
+    "reviewCount": 32,
+    "bio": "USDA NOP certified organic processor. Certifier: Ecocert ICO. Specializing in cilantro, radishes, cherries.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Ecocert ICO Audit Report"
+    ],
+    "deals": 74,
+    "onTimeDelivery": 91,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Ecocert ICO",
+      "certificationDate": "2024-01-01",
+      "scopes": "cilantro; radishes; cherries",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0084",
+    "type": "grower",
+    "companyName": "Green Valley Collard greens",
+    "dba": "Green Valley",
+    "location": {
+      "region": "california",
+      "city": "Watsonville",
+      "state": "CA",
+      "country": "USA",
+      "coordinates": {
+        "lat": 36.86359680159296,
+        "lng": -121.73443231893513
+      }
+    },
+    "commodities": [
+      "collard greens",
+      "pistachios",
+      "kale"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "400,000 lbs",
+      "annual": "3M lbs"
+    },
+    "capacity": "high",
+    "contact": {
+      "name": "Contact at Green",
+      "phone": "+1-658-555-0455",
+      "email": "info@greenvalleycollardgr.com",
+      "whatsapp": null
+    },
+    "established": 2000,
+    "employees": 147,
+    "riskScore": 85,
+    "rating": 4.9,
+    "reviewCount": 64,
+    "bio": "USDA NOP certified organic grower. Certifier: Vermont Organic Farmers (VOF). Specializing in collard greens, pistachios, kale.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Vermont Organic Farmers (VOF) Audit Report"
+    ],
+    "deals": 49,
+    "onTimeDelivery": 96,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Vermont Organic Farmers (VOF)",
+      "certificationDate": "2023-03-01",
+      "scopes": "collard greens; pistachios; kale",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0085",
+    "type": "grower",
+    "companyName": "Sustainable Oxnard Farms",
+    "dba": "Sustainable Oxnard",
+    "location": {
+      "region": "california",
+      "city": "Oxnard",
+      "state": "CA",
+      "country": "USA",
+      "coordinates": {
+        "lat": 34.18034141462821,
+        "lng": -119.19210212104444
+      }
+    },
+    "commodities": [
+      "endive",
+      "bananas"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "425,000 lbs",
+      "annual": "4M lbs"
+    },
+    "capacity": "high",
+    "contact": {
+      "name": "Contact at Sustainable",
+      "phone": "+1-147-555-1379",
+      "email": "info@sustainableoxnardfar.com",
+      "whatsapp": "+1-211-555-5888"
+    },
+    "established": 1999,
+    "employees": 36,
+    "riskScore": 81,
+    "rating": 4.7,
+    "reviewCount": 164,
+    "bio": "USDA NOP certified organic grower. Certifier: OneCert. Specializing in endive, bananas.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "OneCert Audit Report"
+    ],
+    "deals": 188,
+    "onTimeDelivery": 99,
+    "crm": {
+      "salesforce": null,
+      "hubspot": "HUB0759"
+    },
+    "usdaData": {
+      "certifier": "OneCert",
+      "certificationDate": "2023-11-01",
+      "scopes": "endive; bananas",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0086",
+    "type": "grower",
+    "companyName": "Fennel International",
+    "dba": "Fennel International",
+    "location": {
+      "region": "florida",
+      "city": "Homestead",
+      "state": "FL",
+      "country": "USA",
+      "coordinates": {
+        "lat": 25.445596554597437,
+        "lng": -80.50609405188608
+      }
+    },
+    "commodities": [
+      "fennel",
+      "peaches",
+      "rice",
+      "brussels sprouts"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "135,000 lbs",
+      "annual": "4M lbs"
+    },
+    "capacity": "high",
+    "contact": {
+      "name": "Contact at Fennel",
+      "phone": "+1-827-555-5648",
+      "email": "info@fennelinternational.com",
+      "whatsapp": "+1-816-555-1870"
+    },
+    "established": 1995,
+    "employees": 328,
+    "riskScore": 92,
+    "rating": 4.6,
+    "reviewCount": 169,
+    "bio": "USDA NOP certified organic grower. Certifier: Mayacert. Specializing in fennel, peaches, rice, brussels sprouts.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Mayacert Audit Report"
+    ],
+    "deals": 144,
+    "onTimeDelivery": 97,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Mayacert",
+      "certificationDate": "2021-09-01",
+      "scopes": "fennel; peaches; rice; brussels sprouts",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0087",
+    "type": "grower",
+    "companyName": "Heritage Herbs Growers",
+    "dba": "Heritage Herbs",
+    "location": {
+      "region": "florida",
+      "city": "Plant City",
+      "state": "FL",
+      "country": "USA",
+      "coordinates": {
+        "lat": 28.004573609841387,
+        "lng": -82.16096551273141
+      }
+    },
+    "commodities": [
+      "herbs"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "235,000 lbs",
+      "annual": "6M lbs"
+    },
+    "capacity": "medium",
+    "contact": {
+      "name": "Contact at Heritage",
+      "phone": "+1-378-555-2331",
+      "email": "info@heritageherbsgrowers.com",
+      "whatsapp": null
+    },
+    "established": 1994,
+    "employees": 33,
+    "riskScore": 84,
+    "rating": 4.3,
+    "reviewCount": 154,
+    "bio": "USDA NOP certified organic grower. Certifier: Certimex. Specializing in herbs.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Certimex Audit Report"
+    ],
+    "deals": 62,
+    "onTimeDelivery": 97,
+    "crm": {
+      "salesforce": "SF626089",
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Certimex",
+      "certificationDate": "2023-06-01",
+      "scopes": "herbs",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0088",
+    "type": "processor",
+    "companyName": "Immokalee Organic Collective",
+    "dba": "Immokalee Organic",
+    "location": {
+      "region": "florida",
+      "city": "Immokalee",
+      "state": "FL",
+      "country": "USA",
+      "coordinates": {
+        "lat": 26.435913030301442,
+        "lng": -81.42640671963362
+      }
+    },
+    "commodities": [
+      "horseradish"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "233,000 lbs",
+      "annual": "1M lbs"
+    },
+    "capacity": "low",
+    "contact": {
+      "name": "Contact at Immokalee",
+      "phone": "+1-260-555-5665",
+      "email": "info@immokaleeorganiccoll.com",
+      "whatsapp": "+1-676-555-8121"
+    },
+    "established": 2011,
+    "employees": 450,
+    "riskScore": 92,
+    "rating": 4.9,
+    "reviewCount": 209,
+    "bio": "USDA NOP certified organic processor. Certifier: Control Union Certifications. Specializing in horseradish.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Control Union Certifications Audit Report"
+    ],
+    "deals": 25,
+    "onTimeDelivery": 92,
+    "crm": {
+      "salesforce": "SF831422",
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Control Union Certifications",
+      "certificationDate": "2022-11-01",
+      "scopes": "horseradish",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0089",
+    "type": "grower",
+    "companyName": "Pure Leeks Farms",
+    "dba": "Pure Leeks",
+    "location": {
+      "region": "texas",
+      "city": "Rio Grande Valley",
+      "state": "TX",
+      "country": "USA",
+      "coordinates": {
+        "lat": 26.207883246093154,
+        "lng": -98.21481022598492
+      }
+    },
+    "commodities": [
+      "leeks",
+      "jalapeños",
+      "eggplant",
+      "walnuts"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "466,000 lbs",
+      "annual": "6M lbs"
+    },
+    "capacity": "medium",
+    "contact": {
+      "name": "Contact at Pure",
+      "phone": "+1-665-555-5424",
+      "email": "info@pureleeksfarms.com",
+      "whatsapp": "+1-137-555-3720"
+    },
+    "established": 2004,
+    "employees": 280,
+    "riskScore": 87,
+    "rating": 4,
+    "reviewCount": 163,
+    "bio": "USDA NOP certified organic grower. Certifier: Clemson University. Specializing in leeks, jalapeños, eggplant, walnuts.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Clemson University Audit Report"
+    ],
+    "deals": 18,
+    "onTimeDelivery": 94,
+    "crm": {
+      "salesforce": null,
+      "hubspot": "HUB8276"
+    },
+    "usdaData": {
+      "certifier": "Clemson University",
+      "certificationDate": "2022-10-01",
+      "scopes": "leeks; jalapeños; eggplant; walnuts",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0090",
+    "type": "handler",
+    "companyName": "Winter Garden Harvest Group",
+    "dba": "Winter Garden",
+    "location": {
+      "region": "texas",
+      "city": "Winter Garden",
+      "state": "TX",
+      "country": "USA",
+      "coordinates": {
+        "lat": 28.658677018278723,
+        "lng": -99.49544733206321
+      }
+    },
+    "commodities": [
+      "microgreens"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "239,000 lbs",
+      "annual": "5M lbs"
+    },
+    "capacity": "high",
+    "contact": {
+      "name": "Contact at Winter",
+      "phone": "+1-362-555-7376",
+      "email": "info@wintergardenharvestg.com",
+      "whatsapp": "+1-678-555-3464"
+    },
+    "established": 1994,
+    "employees": 281,
+    "riskScore": 88,
+    "rating": 4.1,
+    "reviewCount": 79,
+    "bio": "USDA NOP certified organic handler. Certifier: USDA Accredited Certifying Agent. Specializing in microgreens.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "USDA Accredited Certifying Agent Audit Report"
+    ],
+    "deals": 179,
+    "onTimeDelivery": 92,
+    "crm": {
+      "salesforce": null,
+      "hubspot": "HUB6602"
+    },
+    "usdaData": {
+      "certifier": "USDA Accredited Certifying Agent",
+      "certificationDate": "2023-08-01",
+      "scopes": "microgreens",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0091",
+    "type": "grower",
+    "companyName": "Yakima Valley Farms",
+    "dba": "Yakima Valley",
+    "location": {
+      "region": "washington",
+      "city": "Yakima",
+      "state": "WA",
+      "country": "USA",
+      "coordinates": {
+        "lat": 46.56515330796877,
+        "lng": -120.55015040089485
+      }
+    },
+    "commodities": [
+      "mint"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "165,000 lbs",
+      "annual": "7M lbs"
+    },
+    "capacity": "medium",
+    "contact": {
+      "name": "Contact at Yakima",
+      "phone": "+1-761-555-3795",
+      "email": "info@yakimavalleyfarms.com",
+      "whatsapp": null
+    },
+    "established": 2013,
+    "employees": 91,
+    "riskScore": 87,
+    "rating": 4.3,
+    "reviewCount": 106,
+    "bio": "USDA NOP certified organic grower. Certifier: California Certified Organic Farmers (CCOF). Specializing in mint.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "California Certified Organic Farmers (CCOF) Audit Report"
+    ],
+    "deals": 10,
+    "onTimeDelivery": 90,
+    "crm": {
+      "salesforce": "SF107699",
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "California Certified Organic Farmers (CCOF)",
+      "certificationDate": "2023-01-01",
+      "scopes": "mint",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0092",
+    "type": "grower",
+    "companyName": "Wenatchee Organic Growers",
+    "dba": "Wenatchee Organic",
+    "location": {
+      "region": "washington",
+      "city": "Wenatchee",
+      "state": "WA",
+      "country": "USA",
+      "coordinates": {
+        "lat": 47.38958175965215,
+        "lng": -120.30764451239841
+      }
+    },
+    "commodities": [
+      "parsley",
+      "pistachios",
+      "walnuts"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "200,000 lbs",
+      "annual": "5M lbs"
+    },
+    "capacity": "medium",
+    "contact": {
+      "name": "Contact at Wenatchee",
+      "phone": "+1-485-555-3079",
+      "email": "info@wenatcheeorganicgrow.com",
+      "whatsapp": null
+    },
+    "established": 2003,
+    "employees": 17,
+    "riskScore": 95,
+    "rating": 4.9,
+    "reviewCount": 165,
+    "bio": "USDA NOP certified organic grower. Certifier: Oregon Tilth. Specializing in parsley, pistachios, walnuts.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Oregon Tilth Audit Report"
+    ],
+    "deals": 75,
+    "onTimeDelivery": 92,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Oregon Tilth",
+      "certificationDate": "2024-03-01",
+      "scopes": "parsley; pistachios; walnuts",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0093",
+    "type": "grower",
+    "companyName": "Radicchio Farms of Hood River",
+    "dba": "Radicchio Farms",
+    "location": {
+      "region": "oregon",
+      "city": "Hood River",
+      "state": "OR",
+      "country": "USA",
+      "coordinates": {
+        "lat": 45.71848679964958,
+        "lng": -121.51143538036756
+      }
+    },
+    "commodities": [
+      "radicchio",
+      "pistachios",
+      "horseradish",
+      "cranberries"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "259,000 lbs",
+      "annual": "6M lbs"
+    },
+    "capacity": "medium",
+    "contact": {
+      "name": "Contact at Radicchio",
+      "phone": "+1-235-555-3807",
+      "email": "info@radicchiofarmsofhood.com",
+      "whatsapp": null
+    },
+    "established": 2020,
+    "employees": 499,
+    "riskScore": 85,
+    "rating": 4,
+    "reviewCount": 174,
+    "bio": "USDA NOP certified organic grower. Certifier: Quality Assurance International (QAI). Specializing in radicchio, pistachios, horseradish, cranberries.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Quality Assurance International (QAI) Audit Report"
+    ],
+    "deals": 91,
+    "onTimeDelivery": 96,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Quality Assurance International (QAI)",
+      "certificationDate": "2023-09-01",
+      "scopes": "radicchio; pistachios; horseradish; cranberries",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0094",
+    "type": "handler",
+    "companyName": "Willamette Valley Fresh Produce",
+    "dba": "Willamette Valley",
+    "location": {
+      "region": "oregon",
+      "city": "Willamette Valley",
+      "state": "OR",
+      "country": "USA",
+      "coordinates": {
+        "lat": 44.01741311323904,
+        "lng": -123.05845231128333
+      }
+    },
+    "commodities": [
+      "shallots"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "338,000 lbs",
+      "annual": "6M lbs"
+    },
+    "capacity": "low",
+    "contact": {
+      "name": "Contact at Willamette",
+      "phone": "+1-965-555-8788",
+      "email": "info@willamettevalleyfres.com",
+      "whatsapp": "+1-186-555-8407"
+    },
+    "established": 1998,
+    "employees": 357,
+    "riskScore": 86,
+    "rating": 4.5,
+    "reviewCount": 55,
+    "bio": "USDA NOP certified organic handler. Certifier: MOSA Certified Organic. Specializing in shallots.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "MOSA Certified Organic Audit Report"
+    ],
+    "deals": 97,
+    "onTimeDelivery": 91,
+    "crm": {
+      "salesforce": "SF659597",
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "MOSA Certified Organic",
+      "certificationDate": "2024-12-01",
+      "scopes": "shallots",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0095",
+    "type": "grower",
+    "companyName": "Organic Sorrel Co.",
+    "dba": "Organic Sorrel",
+    "location": {
+      "region": "arizona",
+      "city": "Yuma",
+      "state": "AZ",
+      "country": "USA",
+      "coordinates": {
+        "lat": 32.692633448924674,
+        "lng": -114.64416025173878
+      }
+    },
+    "commodities": [
+      "sorrel",
+      "squash"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "290,000 lbs",
+      "annual": "4M lbs"
+    },
+    "capacity": "low",
+    "contact": {
+      "name": "Contact at Organic",
+      "phone": "+1-737-555-0133",
+      "email": "info@organicsorrelco.com",
+      "whatsapp": "+1-521-555-5670"
+    },
+    "established": 2019,
+    "employees": 208,
+    "riskScore": 87,
+    "rating": 4,
+    "reviewCount": 18,
+    "bio": "USDA NOP certified organic grower. Certifier: Organic Crop Improvement Association (OCIA). Specializing in sorrel, squash.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Organic Crop Improvement Association (OCIA) Audit Report"
+    ],
+    "deals": 23,
+    "onTimeDelivery": 99,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Organic Crop Improvement Association (OCIA)",
+      "certificationDate": "2024-05-01",
+      "scopes": "sorrel; squash",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0096",
+    "type": "handler",
+    "companyName": "Phoenix Sprouts Growers",
+    "dba": "Phoenix Sprouts",
+    "location": {
+      "region": "arizona",
+      "city": "Phoenix",
+      "state": "AZ",
+      "country": "USA",
+      "coordinates": {
+        "lat": 33.48036576103517,
+        "lng": -112.07905263811233
+      }
+    },
+    "commodities": [
+      "sprouts",
+      "walnuts",
+      "leeks",
+      "turnips"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "495,000 lbs",
+      "annual": "5M lbs"
+    },
+    "capacity": "medium",
+    "contact": {
+      "name": "Contact at Phoenix",
+      "phone": "+1-295-555-0799",
+      "email": "info@phoenixsproutsgrower.com",
+      "whatsapp": "+1-841-555-8143"
+    },
+    "established": 2005,
+    "employees": 352,
+    "riskScore": 83,
+    "rating": 4.6,
+    "reviewCount": 98,
+    "bio": "USDA NOP certified organic handler. Certifier: Global Organic Alliance. Specializing in sprouts, walnuts, leeks, turnips.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Global Organic Alliance Audit Report"
+    ],
+    "deals": 170,
+    "onTimeDelivery": 99,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Global Organic Alliance",
+      "certificationDate": "2023-10-01",
+      "scopes": "sprouts; walnuts; leeks; turnips",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0097",
+    "type": "handler",
+    "companyName": "Premium Tarragon Farms",
+    "dba": "Premium Tarragon",
+    "location": {
+      "region": "sinaloa",
+      "city": "Culiacán",
+      "state": "Sinaloa",
+      "country": "Mexico",
+      "coordinates": {
+        "lat": 24.759422372968597,
+        "lng": -107.43729595225207
+      }
+    },
+    "commodities": [
+      "tarragon",
+      "pecans",
+      "chard",
+      "pineapples"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "231,000 lbs",
+      "annual": "7M lbs"
+    },
+    "capacity": "high",
+    "contact": {
+      "name": "Contact at Premium",
+      "phone": "+1-114-555-1194",
+      "email": "info@premiumtarragonfarms.com",
+      "whatsapp": null
+    },
+    "established": 2017,
+    "employees": 486,
+    "riskScore": 87,
+    "rating": 4.8,
+    "reviewCount": 158,
+    "bio": "USDA NOP certified organic handler. Certifier: Pennsylvania Certified Organic (PCO). Specializing in tarragon, pecans, chard, pineapples.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Pennsylvania Certified Organic (PCO) Audit Report"
+    ],
+    "deals": 19,
+    "onTimeDelivery": 97,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Pennsylvania Certified Organic (PCO)",
+      "certificationDate": "2023-05-01",
+      "scopes": "tarragon; pecans; chard; pineapples",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0098",
+    "type": "processor",
+    "companyName": "Los Mochis Agriculture Group",
+    "dba": "Los Mochis",
+    "location": {
+      "region": "sinaloa",
+      "city": "Los Mochis",
+      "state": "Sinaloa",
+      "country": "Mexico",
+      "coordinates": {
+        "lat": 25.833465680899526,
+        "lng": -109.01932462234348
+      }
+    },
+    "commodities": [
+      "thyme",
+      "cranberries",
+      "mangoes",
+      "chili peppers"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap",
+      "primusgfs",
+      "senasica"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "492,000 lbs",
+      "annual": "9M lbs"
+    },
+    "capacity": "medium",
+    "contact": {
+      "name": "Contact at Los",
+      "phone": "+1-819-555-6867",
+      "email": "info@losmochisagriculture.com",
+      "whatsapp": null
+    },
+    "established": 2016,
+    "employees": 407,
+    "riskScore": 95,
+    "rating": 4.5,
+    "reviewCount": 104,
+    "bio": "USDA NOP certified organic processor. Certifier: Ecocert ICO. Specializing in thyme, cranberries, mangoes, chili peppers.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Ecocert ICO Audit Report"
+    ],
+    "deals": 85,
+    "onTimeDelivery": 92,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Ecocert ICO",
+      "certificationDate": "2022-05-01",
+      "scopes": "thyme; cranberries; mangoes; chili peppers",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0099",
+    "type": "handler",
+    "companyName": "Green Valley Watercress",
+    "dba": "Green Valley",
+    "location": {
+      "region": "michoacan",
+      "city": "Uruapan",
+      "state": "Michoacán",
+      "country": "Mexico",
+      "coordinates": {
+        "lat": 19.46076682150331,
+        "lng": -102.11058374324324
+      }
+    },
+    "commodities": [
+      "watercress",
+      "carrots",
+      "pears"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "212,000 lbs",
+      "annual": "1M lbs"
+    },
+    "capacity": "low",
+    "contact": {
+      "name": "Contact at Green",
+      "phone": "+1-622-555-1911",
+      "email": "info@greenvalleywatercres.com",
+      "whatsapp": null
+    },
+    "established": 2021,
+    "employees": 331,
+    "riskScore": 80,
+    "rating": 4.8,
+    "reviewCount": 87,
+    "bio": "USDA NOP certified organic handler. Certifier: Vermont Organic Farmers (VOF). Specializing in watercress, carrots, pears.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Vermont Organic Farmers (VOF) Audit Report"
+    ],
+    "deals": 14,
+    "onTimeDelivery": 90,
+    "crm": {
+      "salesforce": "SF901564",
+      "hubspot": "HUB8362"
+    },
+    "usdaData": {
+      "certifier": "Vermont Organic Farmers (VOF)",
+      "certificationDate": "2024-10-01",
+      "scopes": "watercress; carrots; pears",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0100",
+    "type": "grower",
+    "companyName": "Sustainable San Quintín Farms",
+    "dba": "Sustainable San",
+    "location": {
+      "region": "baja",
+      "city": "San Quintín",
+      "state": "Baja California",
+      "country": "Mexico",
+      "coordinates": {
+        "lat": 30.55422256371197,
+        "lng": -115.93869537448764
+      }
+    },
+    "commodities": [
+      "wheat",
+      "pecans",
+      "fennel"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "424,000 lbs",
+      "annual": "7M lbs"
+    },
+    "capacity": "high",
+    "contact": {
+      "name": "Contact at Sustainable",
+      "phone": "+1-521-555-4963",
+      "email": "info@sustainablesanquintn.com",
+      "whatsapp": null
+    },
+    "established": 2020,
+    "employees": 463,
+    "riskScore": 88,
+    "rating": 4.9,
+    "reviewCount": 153,
+    "bio": "USDA NOP certified organic grower. Certifier: OneCert. Specializing in wheat, pecans, fennel.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "OneCert Audit Report"
+    ],
+    "deals": 46,
+    "onTimeDelivery": 97,
+    "crm": {
+      "salesforce": "SF127785",
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "OneCert",
+      "certificationDate": "2020-03-01",
+      "scopes": "wheat; pecans; fennel",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0101",
+    "type": "processor",
+    "companyName": "Barley International",
+    "dba": "Barley International",
+    "location": {
+      "region": "california",
+      "city": "Salinas",
+      "state": "CA",
+      "country": "USA",
+      "coordinates": {
+        "lat": 36.66649676358479,
+        "lng": -121.62586294311974
+      }
+    },
+    "commodities": [
+      "barley",
+      "squash"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "151,000 lbs",
+      "annual": "8M lbs"
+    },
+    "capacity": "low",
+    "contact": {
+      "name": "Contact at Barley",
+      "phone": "+1-502-555-3591",
+      "email": "info@barleyinternational.com",
+      "whatsapp": null
+    },
+    "established": 2024,
+    "employees": 405,
+    "riskScore": 94,
+    "rating": 5,
+    "reviewCount": 12,
+    "bio": "USDA NOP certified organic processor. Certifier: Mayacert. Specializing in barley, squash.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Mayacert Audit Report"
+    ],
+    "deals": 115,
+    "onTimeDelivery": 95,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Mayacert",
+      "certificationDate": "2024-08-01",
+      "scopes": "barley; squash",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0102",
+    "type": "grower",
+    "companyName": "Heritage Oats Growers",
+    "dba": "Heritage Oats",
+    "location": {
+      "region": "california",
+      "city": "Fresno",
+      "state": "CA",
+      "country": "USA",
+      "coordinates": {
+        "lat": 36.73080039753532,
+        "lng": -119.78758596699655
+      }
+    },
+    "commodities": [
+      "oats",
+      "bananas",
+      "barley",
+      "tomatoes"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "268,000 lbs",
+      "annual": "5M lbs"
+    },
+    "capacity": "low",
+    "contact": {
+      "name": "Contact at Heritage",
+      "phone": "+1-417-555-6053",
+      "email": "info@heritageoatsgrowers.com",
+      "whatsapp": null
+    },
+    "established": 1988,
+    "employees": 124,
+    "riskScore": 84,
+    "rating": 4,
+    "reviewCount": 163,
+    "bio": "USDA NOP certified organic grower. Certifier: Certimex. Specializing in oats, bananas, barley, tomatoes.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Certimex Audit Report"
+    ],
+    "deals": 152,
+    "onTimeDelivery": 93,
+    "crm": {
+      "salesforce": "SF962896",
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Certimex",
+      "certificationDate": "2021-06-01",
+      "scopes": "oats; bananas; barley; tomatoes",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0103",
+    "type": "grower",
+    "companyName": "Bakersfield Organic Collective",
+    "dba": "Bakersfield Organic",
+    "location": {
+      "region": "california",
+      "city": "Bakersfield",
+      "state": "CA",
+      "country": "USA",
+      "coordinates": {
+        "lat": 35.41324095010697,
+        "lng": -118.97500782100731
+      }
+    },
+    "commodities": [
+      "rice",
+      "lettuce"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "119,000 lbs",
+      "annual": "7M lbs"
+    },
+    "capacity": "medium",
+    "contact": {
+      "name": "Contact at Bakersfield",
+      "phone": "+1-608-555-8783",
+      "email": "info@bakersfieldorganicco.com",
+      "whatsapp": "+1-288-555-9208"
+    },
+    "established": 2001,
+    "employees": 198,
+    "riskScore": 90,
+    "rating": 4.1,
+    "reviewCount": 88,
+    "bio": "USDA NOP certified organic grower. Certifier: Control Union Certifications. Specializing in rice, lettuce.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Control Union Certifications Audit Report"
+    ],
+    "deals": 54,
+    "onTimeDelivery": 93,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Control Union Certifications",
+      "certificationDate": "2021-01-01",
+      "scopes": "rice; lettuce",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0104",
+    "type": "grower",
+    "companyName": "Pure Quinoa Farms",
+    "dba": "Pure Quinoa",
+    "location": {
+      "region": "california",
+      "city": "Watsonville",
+      "state": "CA",
+      "country": "USA",
+      "coordinates": {
+        "lat": 36.925059093382146,
+        "lng": -121.76655387803444
+      }
+    },
+    "commodities": [
+      "quinoa",
+      "citrus",
+      "lettuce",
+      "tomatoes"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "420,000 lbs",
+      "annual": "9M lbs"
+    },
+    "capacity": "low",
+    "contact": {
+      "name": "Contact at Pure",
+      "phone": "+1-803-555-9862",
+      "email": "info@purequinoafarms.com",
+      "whatsapp": null
+    },
+    "established": 2019,
+    "employees": 377,
+    "riskScore": 80,
+    "rating": 4.7,
+    "reviewCount": 70,
+    "bio": "USDA NOP certified organic grower. Certifier: Clemson University. Specializing in quinoa, citrus, lettuce, tomatoes.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Clemson University Audit Report"
+    ],
+    "deals": 27,
+    "onTimeDelivery": 93,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Clemson University",
+      "certificationDate": "2020-02-01",
+      "scopes": "quinoa; citrus; lettuce; tomatoes",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0105",
+    "type": "processor",
+    "companyName": "Oxnard Harvest Group",
+    "dba": "Oxnard Harvest",
+    "location": {
+      "region": "california",
+      "city": "Oxnard",
+      "state": "CA",
+      "country": "USA",
+      "coordinates": {
+        "lat": 34.23395734358525,
+        "lng": -119.17444256901284
+      }
+    },
+    "commodities": [
+      "sorghum",
+      "romaine",
+      "dates"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "450,000 lbs",
+      "annual": "1M lbs"
+    },
+    "capacity": "medium",
+    "contact": {
+      "name": "Contact at Oxnard",
+      "phone": "+1-883-555-4468",
+      "email": "info@oxnardharvestgroup.com",
+      "whatsapp": "+1-787-555-0868"
+    },
+    "established": 2001,
+    "employees": 160,
+    "riskScore": 93,
+    "rating": 4.6,
+    "reviewCount": 186,
+    "bio": "USDA NOP certified organic processor. Certifier: USDA Accredited Certifying Agent. Specializing in sorghum, romaine, dates.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "USDA Accredited Certifying Agent Audit Report"
+    ],
+    "deals": 28,
+    "onTimeDelivery": 95,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "USDA Accredited Certifying Agent",
+      "certificationDate": "2022-10-01",
+      "scopes": "sorghum; romaine; dates",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0106",
+    "type": "grower",
+    "companyName": "Homestead Valley Farms",
+    "dba": "Homestead Valley",
+    "location": {
+      "region": "florida",
+      "city": "Homestead",
+      "state": "FL",
+      "country": "USA",
+      "coordinates": {
+        "lat": 25.50421522090674,
+        "lng": -80.46779434045362
+      }
+    },
+    "commodities": [
+      "soybeans",
+      "sprouts",
+      "cabbage",
+      "berries"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "492,000 lbs",
+      "annual": "9M lbs"
+    },
+    "capacity": "medium",
+    "contact": {
+      "name": "Contact at Homestead",
+      "phone": "+1-118-555-9258",
+      "email": "info@homesteadvalleyfarms.com",
+      "whatsapp": null
+    },
+    "established": 2005,
+    "employees": 246,
+    "riskScore": 80,
+    "rating": 4.9,
+    "reviewCount": 39,
+    "bio": "USDA NOP certified organic grower. Certifier: California Certified Organic Farmers (CCOF). Specializing in soybeans, sprouts, cabbage, berries.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "California Certified Organic Farmers (CCOF) Audit Report"
+    ],
+    "deals": 74,
+    "onTimeDelivery": 98,
+    "crm": {
+      "salesforce": "SF424209",
+      "hubspot": "HUB9835"
+    },
+    "usdaData": {
+      "certifier": "California Certified Organic Farmers (CCOF)",
+      "certificationDate": "2023-09-01",
+      "scopes": "soybeans; sprouts; cabbage; berries",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0107",
+    "type": "grower",
+    "companyName": "Plant City Organic Growers",
+    "dba": "Plant City",
+    "location": {
+      "region": "florida",
+      "city": "Plant City",
+      "state": "FL",
+      "country": "USA",
+      "coordinates": {
+        "lat": 27.98249859075091,
+        "lng": -82.14533296929538
+      }
+    },
+    "commodities": [
+      "chickpeas"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "430,000 lbs",
+      "annual": "3M lbs"
+    },
+    "capacity": "medium",
+    "contact": {
+      "name": "Contact at Plant",
+      "phone": "+1-565-555-5941",
+      "email": "info@plantcityorganicgrow.com",
+      "whatsapp": null
+    },
+    "established": 2018,
+    "employees": 317,
+    "riskScore": 98,
+    "rating": 4.1,
+    "reviewCount": 11,
+    "bio": "USDA NOP certified organic grower. Certifier: Oregon Tilth. Specializing in chickpeas.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Oregon Tilth Audit Report"
+    ],
+    "deals": 60,
+    "onTimeDelivery": 99,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Oregon Tilth",
+      "certificationDate": "2021-10-01",
+      "scopes": "chickpeas",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0108",
+    "type": "processor",
+    "companyName": "Lentils Farms of Immokalee",
+    "dba": "Lentils Farms",
+    "location": {
+      "region": "florida",
+      "city": "Immokalee",
+      "state": "FL",
+      "country": "USA",
+      "coordinates": {
+        "lat": 26.375785450586974,
+        "lng": -81.45415115555015
+      }
+    },
+    "commodities": [
+      "lentils",
+      "potatoes"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "139,000 lbs",
+      "annual": "7M lbs"
+    },
+    "capacity": "high",
+    "contact": {
+      "name": "Contact at Lentils",
+      "phone": "+1-981-555-4568",
+      "email": "info@lentilsfarmsofimmoka.com",
+      "whatsapp": null
+    },
+    "established": 2007,
+    "employees": 21,
+    "riskScore": 84,
+    "rating": 4.1,
+    "reviewCount": 106,
+    "bio": "USDA NOP certified organic processor. Certifier: Quality Assurance International (QAI). Specializing in lentils, potatoes.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Quality Assurance International (QAI) Audit Report"
+    ],
+    "deals": 187,
+    "onTimeDelivery": 90,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Quality Assurance International (QAI)",
+      "certificationDate": "2021-12-01",
+      "scopes": "lentils; potatoes",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0109",
+    "type": "processor",
+    "companyName": "Rio Grande Valley Fresh Produce",
+    "dba": "Rio Grande",
+    "location": {
+      "region": "texas",
+      "city": "Rio Grande Valley",
+      "state": "TX",
+      "country": "USA",
+      "coordinates": {
+        "lat": 26.185829615348844,
+        "lng": -98.27543682638488
+      }
+    },
+    "commodities": [
+      "avocados",
+      "eggplant",
+      "almonds",
+      "rhubarb"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "globalgap",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "150,000 lbs",
+      "annual": "2M lbs"
+    },
+    "capacity": "low",
+    "contact": {
+      "name": "Contact at Rio",
+      "phone": "+1-732-555-6109",
+      "email": "info@riograndevalleyfresh.com",
+      "whatsapp": "+1-423-555-0190"
+    },
+    "established": 1993,
+    "employees": 495,
+    "riskScore": 95,
+    "rating": 4.4,
+    "reviewCount": 87,
+    "bio": "USDA NOP certified organic processor. Certifier: MOSA Certified Organic. Specializing in avocados, eggplant, almonds, rhubarb.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "MOSA Certified Organic Audit Report"
+    ],
+    "deals": 83,
+    "onTimeDelivery": 95,
+    "crm": {
+      "salesforce": "SF573806",
+      "hubspot": "HUB1997"
+    },
+    "usdaData": {
+      "certifier": "MOSA Certified Organic",
+      "certificationDate": "2020-08-01",
+      "scopes": "avocados; eggplant; almonds; rhubarb",
+      "nopCompliant": true
+    }
+  },
+  {
+    "id": "USDA0110",
+    "type": "handler",
+    "companyName": "Organic Almonds Co.",
+    "dba": "Organic Almonds",
+    "location": {
+      "region": "texas",
+      "city": "Winter Garden",
+      "state": "TX",
+      "country": "USA",
+      "coordinates": {
+        "lat": 28.6690955121353,
+        "lng": -99.52403076357537
+      }
+    },
+    "commodities": [
+      "almonds",
+      "garlic",
+      "carrots",
+      "cranberries"
+    ],
+    "certifications": [
+      "usda-organic",
+      "nop-certified",
+      "primusgfs"
+    ],
+    "foodSafetyBadges": [
+      "organic-verified",
+      "usda-compliant",
+      "nop-approved"
+    ],
+    "organic": true,
+    "volume": {
+      "weekly": "257,000 lbs",
+      "annual": "8M lbs"
+    },
+    "capacity": "high",
+    "contact": {
+      "name": "Contact at Organic",
+      "phone": "+1-130-555-7015",
+      "email": "info@organicalmondsco.com",
+      "whatsapp": "+1-912-555-2749"
+    },
+    "established": 1986,
+    "employees": 129,
+    "riskScore": 99,
+    "rating": 4.4,
+    "reviewCount": 140,
+    "bio": "USDA NOP certified organic handler. Certifier: Organic Crop Improvement Association (OCIA). Specializing in almonds, garlic, carrots, cranberries.",
+    "documents": [
+      "USDA Organic Certificate",
+      "NOP Compliance",
+      "Organic Crop Improvement Association (OCIA) Audit Report"
+    ],
+    "deals": 131,
+    "onTimeDelivery": 99,
+    "crm": {
+      "salesforce": null,
+      "hubspot": null
+    },
+    "usdaData": {
+      "certifier": "Organic Crop Improvement Association (OCIA)",
+      "certificationDate": "2021-01-01",
+      "scopes": "almonds; garlic; carrots; cranberries",
+      "nopCompliant": true
+    }
+  }
+]

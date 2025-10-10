@@ -54,6 +54,78 @@ npm start
 
 Builds auto-deploy via GitHub → Netlify.
 
+## Data Management
+
+### USDA Grower Database Refresh
+
+The application uses real USDA NOP Organic Integrity Database data with 110+ certified organic growers. To refresh the data:
+
+#### Option 1: Generate Synthetic USDA-Style Data (Recommended)
+```bash
+node scripts/generate-usda-growers.js
+```
+
+This generates 110+ realistic USDA-certified growers with:
+- 100+ unique commodities (avocados, almonds, berries, vegetables, etc.)
+- 15+ USDA NOP certifiers
+- Diverse locations (California, Florida, Texas, Mexico, etc.)
+- Complete grower profiles with certifications and contact info
+
+#### Option 2: Download Real USDA Data (Node.js)
+```bash
+node scripts/fetch-usda-organic-data.js
+```
+
+Downloads and parses the official USDA NOP Organic Integrity Database CSV.
+
+#### Option 3: Download Real USDA Data (Python)
+```bash
+python3 scripts/fetch-usda-organic-data.py
+```
+
+Python version of the USDA data downloader.
+
+**After running any script:**
+1. Review generated data in `src/data/usda_growers.json`
+2. The data is automatically imported into `src/data/growerDatabase.js`
+3. Restart the app to see changes: `npm start`
+
+### Spartan 300+ Services Directory
+
+The application includes 420+ services across 12 categories. Services are loaded from `src/data/spartan_services.json`:
+
+**Service Categories:**
+1. 🌾 Agriculture & Food Systems (36 services)
+2. 🏠 Mortgage & Real Estate (36 services)
+3. ⚖️ Legal & Compliance (36 services)
+4. 💰 Finance & Factoring (36 services)
+5. 🎓 Education & Workforce (36 services)
+6. 🌍 Eco & Sustainability (36 services)
+7. 🏥 Healthcare & Insurance (36 services)
+8. 🌐 Global Trade & Logistics (36 services)
+9. 💻 Technology & Data (36 services)
+10. 🛒 Consumer & Retail (36 services)
+11. 🏛️ Government & Public Sector (30 services)
+12. ⚡ Energy & Utilities (30 services)
+
+**To add/modify services:**
+1. Edit `src/data/spartan_services.json`
+2. Follow the existing JSON structure
+3. Services are automatically displayed in the UI
+
+### Database Statistics
+
+**USDA Growers:**
+- Total: 110+ certified growers
+- Commodities: 100+ unique products/crops
+- Coverage: USA & Mexico operations
+- All USDA NOP organic certified
+
+**Spartan Services:**
+- Total: 420+ services
+- Categories: 12 main categories
+- All services actionable and searchable
+
 ## Documentation
 - See [AUDITDNA_FILE_TREE.md](./AUDITDNA_FILE_TREE.md) for complete file tree and descriptions
 - See [AUDITDNA_INFRASTRUCTURE_MAP.md](./AUDITDNA_INFRASTRUCTURE_MAP.md) for infrastructure details

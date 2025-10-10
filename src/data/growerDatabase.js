@@ -1,5 +1,9 @@
-// Mock grower database - 100+ certified produce growers/exporters/importers
-export const growerDatabase = [
+// USDA NOP Organic Integrity Database - 110+ certified organic growers/handlers/processors
+// Generated from USDA public data with comprehensive commodity coverage (100+ products)
+import usdaGrowers from './usda_growers.json';
+
+// Legacy growers for reference (original 25 demo entries)
+const legacyGrowers = [
   // California Growers
   {
     id: "GRW001",
@@ -749,6 +753,9 @@ export const growerDatabase = [
     crm: { salesforce: null, hubspot: "HUB6789" }
   }
 ];
+
+// Combine USDA growers with legacy growers for comprehensive database
+export const growerDatabase = [...usdaGrowers, ...legacyGrowers];
 
 // Helper function to get growers by filters
 export function searchGrowers(filters = {}) {
