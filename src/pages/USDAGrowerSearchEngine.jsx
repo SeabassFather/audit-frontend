@@ -4,7 +4,7 @@ import {
   Star, TrendingUp, Award, AlertCircle, CheckCircle, Globe, 
   Truck, Clock, DollarSign, FileText, QrCode, Camera
 } from 'lucide-react';
-import { growerDatabase, searchGrowers } from '../data/growerDatabase';
+import { growerDatabase, searchGrowers, getFilterOptions } from '../data/growerDatabase';
 import { cropsTaxonomy, certificationTypes, regions, foodSafetyBadges } from '../data/cropsTaxonomy';
 import { calculateMatchScore, assessGrowerRisk, predictShipping, suggestBestDeals } from '../utils/aiMatchmaking';
 import GrowerProfileModal from '../components/GrowerProfileModal';
@@ -29,6 +29,12 @@ export default function USDAGrowerSearchEngine() {
   const [buyerRequirements, setBuyerRequirements] = useState(null);
   const [showQRScanner, setShowQRScanner] = useState(false);
 
+  // Get filter options from database
+  const filterOptions = useMemo(() => getFilterOptions(), []);
+  
+  // Calculate unique commodities count
+  const totalCommodities = useMemo(() => filterOptions.commodities.length, [filterOptions]);
+  
   // Search and filter growers
   const filteredGrowers = useMemo(() => {
     let results = searchGrowers(filters);
@@ -151,15 +157,15 @@ export default function USDAGrowerSearchEngine() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
             <div className="bg-white/10 backdrop-blur rounded-lg p-3">
               <div className="text-2xl font-bold">{growerDatabase.length}+</div>
-              <div className="text-sm text-green-100">Certified Growers</div>
+              <div className="text-sm text-green-100">USDA Certified Growers</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur rounded-lg p-3">
+              <div className="text-2xl font-bold">{totalCommodities}+</div>
+              <div className="text-sm text-green-100">Products/Commodities</div>
             </div>
             <div className="bg-white/10 backdrop-blur rounded-lg p-3">
               <div className="text-2xl font-bold">{filteredGrowers.length}</div>
               <div className="text-sm text-green-100">Search Results</div>
-            </div>
-            <div className="bg-white/10 backdrop-blur rounded-lg p-3">
-              <div className="text-2xl font-bold">24/7</div>
-              <div className="text-sm text-green-100">Platform Access</div>
             </div>
             <div className="bg-white/10 backdrop-blur rounded-lg p-3">
               <div className="text-2xl font-bold">98%</div>

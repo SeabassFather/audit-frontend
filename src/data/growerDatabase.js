@@ -775,6 +775,16 @@ export function searchGrowers(filters = {}) {
     results = results.filter(g => g.location.country === filters.country);
   }
   
+  if (filters.state) {
+    results = results.filter(g => g.location.state === filters.state);
+  }
+  
+  if (filters.city) {
+    results = results.filter(g => 
+      g.location.city.toLowerCase().includes(filters.city.toLowerCase())
+    );
+  }
+  
   if (filters.certification) {
     results = results.filter(g => g.certifications.includes(filters.certification));
   }
@@ -795,7 +805,79 @@ export function searchGrowers(filters = {}) {
     results = results.filter(g => g.rating >= filters.minRating);
   }
   
+  if (filters.certifier) {
+    results = results.filter(g => 
+      g.usdaData && g.usdaData.certifier.toLowerCase().includes(filters.certifier.toLowerCase())
+    );
+  }
+  
+  if (filters.capacity) {
+    results = results.filter(g => g.capacity === filters.capacity);
+  }
+  
+  if (filters.establishedAfter) {
+    results = results.filter(g => g.established >= filters.establishedAfter);
+  }
+  
+  if (filters.establishedBefore) {
+    results = results.filter(g => g.established <= filters.establishedBefore);
+  }
+  
+  if (filters.minEmployees) {
+    results = results.filter(g => g.employees >= filters.minEmployees);
+  }
+  
+  if (filters.minDeals) {
+    results = results.filter(g => g.deals >= filters.minDeals);
+  }
+  
+  if (filters.minOnTimeDelivery) {
+    results = results.filter(g => g.onTimeDelivery >= filters.minOnTimeDelivery);
+  }
+  
   return results;
+}
+
+// Get all unique values for filters
+export function getFilterOptions() {
+  const options = {
+    commodities: new Set(),
+    regions: new Set(),
+    countries: new Set(),
+    states: new Set(),
+    cities: new Set(),
+    certifications: new Set(),
+    certifiers: new Set(),
+    types: new Set(),
+    capacities: new Set()
+  };
+  
+  growerDatabase.forEach(grower => {
+    grower.commodities.forEach(c => options.commodities.add(c));
+    options.regions.add(grower.location.region);
+    options.countries.add(grower.location.country);
+    if (grower.location.state) options.states.add(grower.location.state);
+    if (grower.location.city) options.cities.add(grower.location.city);
+    grower.certifications.forEach(c => options.certifications.add(c));
+    if (grower.usdaData && grower.usdaData.certifier) {
+      options.certifiers.add(grower.usdaData.certifier);
+    }
+    options.types.add(grower.type);
+    options.capacities.add(grower.capacity);
+  });
+  
+  // Convert Sets to sorted arrays
+  return {
+    commodities: Array.from(options.commodities).sort(),
+    regions: Array.from(options.regions).sort(),
+    countries: Array.from(options.countries).sort(),
+    states: Array.from(options.states).sort(),
+    cities: Array.from(options.cities).sort(),
+    certifications: Array.from(options.certifications).sort(),
+    certifiers: Array.from(options.certifiers).sort(),
+    types: Array.from(options.types).sort(),
+    capacities: Array.from(options.capacities).sort()
+  };
 }
 
 // Get grower by ID
