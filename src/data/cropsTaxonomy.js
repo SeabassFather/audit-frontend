@@ -1,61 +1,41 @@
-// Comprehensive crops taxonomy for agricultural search
-export const cropsTaxonomy = {
-  vegetables: {
-    label: "Vegetables",
-    items: [
-      { value: "tomatoes", label: "Tomatoes", varieties: ["Roma", "Beefsteak", "Cherry", "Heirloom"] },
-      { value: "peppers", label: "Peppers", varieties: ["Bell", "Jalapeño", "Serrano", "Habanero"] },
-      { value: "cucumbers", label: "Cucumbers", varieties: ["English", "Persian", "Pickling"] },
-      { value: "lettuce", label: "Lettuce", varieties: ["Romaine", "Iceberg", "Butter", "Red Leaf"] },
-      { value: "broccoli", label: "Broccoli", varieties: ["Crown", "Bunched"] },
-      { value: "cauliflower", label: "Cauliflower", varieties: ["White", "Purple", "Orange"] },
-      { value: "onions", label: "Onions", varieties: ["Yellow", "Red", "White", "Sweet"] },
-      { value: "carrots", label: "Carrots", varieties: ["Orange", "Purple", "Baby"] },
-      { value: "squash", label: "Squash", varieties: ["Zucchini", "Yellow", "Butternut"] },
-      { value: "eggplant", label: "Eggplant", varieties: ["Globe", "Italian", "Japanese"] }
-    ]
-  },
-  fruits: {
-    label: "Fruits",
-    items: [
-      { value: "avocados", label: "Avocados", varieties: ["Hass", "Fuerte", "Bacon", "Reed"] },
-      { value: "berries", label: "Berries", varieties: ["Strawberries", "Blueberries", "Raspberries", "Blackberries"] },
-      { value: "citrus", label: "Citrus", varieties: ["Oranges", "Lemons", "Limes", "Grapefruit"] },
-      { value: "melons", label: "Melons", varieties: ["Watermelon", "Cantaloupe", "Honeydew"] },
-      { value: "grapes", label: "Grapes", varieties: ["Red Globe", "Green Thompson", "Black"] },
-      { value: "apples", label: "Apples", varieties: ["Gala", "Fuji", "Granny Smith", "Honeycrisp"] },
-      { value: "stone-fruits", label: "Stone Fruits", varieties: ["Peaches", "Plums", "Nectarines", "Apricots"] },
-      { value: "tropical", label: "Tropical", varieties: ["Mango", "Papaya", "Pineapple", "Dragon Fruit"] }
-    ]
-  },
-  leafyGreens: {
-    label: "Leafy Greens",
-    items: [
-      { value: "spinach", label: "Spinach", varieties: ["Baby", "Savoy", "Flat Leaf"] },
-      { value: "kale", label: "Kale", varieties: ["Curly", "Lacinato", "Red Russian"] },
-      { value: "arugula", label: "Arugula", varieties: ["Wild", "Standard"] },
-      { value: "chard", label: "Chard", varieties: ["Rainbow", "Swiss"] },
-      { value: "microgreens", label: "Microgreens", varieties: ["Mixed", "Sunflower", "Pea Shoots"] }
-    ]
-  },
-  herbs: {
-    label: "Herbs",
-    items: [
-      { value: "basil", label: "Basil", varieties: ["Sweet", "Thai", "Purple"] },
-      { value: "cilantro", label: "Cilantro", varieties: ["Standard", "Santo"] },
-      { value: "parsley", label: "Parsley", varieties: ["Curly", "Italian Flat"] },
-      { value: "mint", label: "Mint", varieties: ["Spearmint", "Peppermint"] }
-    ]
-  },
-  specialty: {
-    label: "Specialty Crops",
-    items: [
-      { value: "mushrooms", label: "Mushrooms", varieties: ["Button", "Portobello", "Shiitake", "Oyster"] },
-      { value: "asparagus", label: "Asparagus", varieties: ["Green", "White", "Purple"] },
-      { value: "artichokes", label: "Artichokes", varieties: ["Globe", "Baby"] }
-    ]
-  }
-};
+// Import comprehensive USDA commodity data
+import { usdaCommodities, packagingTypes, handlingMethods } from './usdaCommodities';
+
+// Generate cropsTaxonomy from USDA commodities
+export const cropsTaxonomy = (() => {
+  const taxonomy = {};
+  
+  // Group commodities by category
+  usdaCommodities.forEach(commodity => {
+    const category = commodity.category;
+    
+    if (!taxonomy[category]) {
+      taxonomy[category] = {
+        label: category.charAt(0).toUpperCase() + category.slice(1).replace('_', ' '),
+        items: []
+      };
+    }
+    
+    taxonomy[category].items.push({
+      value: commodity.id,
+      label: commodity.name,
+      varieties: commodity.varieties,
+      packaging: commodity.packaging,
+      sizes: commodity.sizes,
+      handling: commodity.handling
+    });
+  });
+  
+  // Sort items alphabetically within each category
+  Object.keys(taxonomy).forEach(category => {
+    taxonomy[category].items.sort((a, b) => a.label.localeCompare(b.label));
+  });
+  
+  return taxonomy;
+})();
+
+// Export packaging and handling options
+export { packagingTypes, handlingMethods };
 
 export const certificationTypes = [
   { value: "usda-organic", label: "USDA Organic", icon: "🌿", color: "green" },
@@ -72,24 +52,11 @@ export const certificationTypes = [
   { value: "non-gmo", label: "Non-GMO Project", icon: "🧬", color: "orange" }
 ];
 
-export const regions = [
-  { value: "california", label: "California", country: "USA" },
-  { value: "florida", label: "Florida", country: "USA" },
-  { value: "texas", label: "Texas", country: "USA" },
-  { value: "arizona", label: "Arizona", country: "USA" },
-  { value: "washington", label: "Washington", country: "USA" },
-  { value: "oregon", label: "Oregon", country: "USA" },
-  { value: "sinaloa", label: "Sinaloa", country: "Mexico" },
-  { value: "sonora", label: "Sonora", country: "Mexico" },
-  { value: "baja", label: "Baja California", country: "Mexico" },
-  { value: "jalisco", label: "Jalisco", country: "Mexico" },
-  { value: "michoacan", label: "Michoacán", country: "Mexico" },
-  { value: "chihuahua", label: "Chihuahua", country: "Mexico" },
-  { value: "guatemala", label: "Guatemala", country: "Guatemala" },
-  { value: "chile", label: "Chile", country: "Chile" },
-  { value: "peru", label: "Peru", country: "Peru" },
-  { value: "ecuador", label: "Ecuador", country: "Ecuador" }
-];
+// Import comprehensive USDA regions data
+import { getFormattedRegions } from './usdaRegions';
+
+// Export regions from USDA data
+export const regions = getFormattedRegions();
 
 export const foodSafetyBadges = [
   { type: "traceability", label: "Full Traceability", icon: "🔍" },
