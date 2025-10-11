@@ -1,4 +1,4 @@
-﻿export const auditDNAServices = {
+export const auditDNAServices = {
   agriculture: {
     title: "Agriculture & Trade",
     icon: "🌾",

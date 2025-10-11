@@ -1,4 +1,4 @@
-﻿import React,{useState} from 'react';
+import React,{useState} from 'react';
 const frameworks=[{name:'GDPR',status:' Compliant',details:['Right to be Forgotten','Cross-Border Transfers']},{name:'CCPA',status:' Pending',details:['Do Not Sell Links','Opt-Outs']}];
 export default function Admin(){
   const [open,setOpen]=useState(null);

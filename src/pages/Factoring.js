@@ -1,4 +1,4 @@
-﻿import React,{useState} from 'react';
+import React,{useState} from 'react';
 import Skeleton from '../components/Skeleton';
 export default function Factoring(){
   const [loading]=useState(false);

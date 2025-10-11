@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import agriTests from '../data/agriTests.json';
 import WaterTech from './WaterTech';
 

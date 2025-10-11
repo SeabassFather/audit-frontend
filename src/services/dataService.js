@@ -1,4 +1,4 @@
-﻿export async function getServicesData() {
+export async function getServicesData() {
   return { spartan: { "USDA": ["Loans"], "Mortgage": ["FHA"] } };
 }
 

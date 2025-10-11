@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import USDACommodityChart from "../../components/charts/USDACommodityChart";
 import { useAppMode } from "../../context/AppModeContext";
 import { api } from "../../utils/api";

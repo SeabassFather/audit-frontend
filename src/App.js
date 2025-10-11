@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Dashboard from './pages/Dashboard';
+import Services from './pages/Services';
 import spartanServices from './data/spartan_services.json';
 import USDA from './pages/USDA';
 import WaterTech from './pages/WaterTech';
@@ -97,100 +98,6 @@ function ContactCard({ serviceName, onClose }) {
   );
 }
 
-// ---------------- SERVICES TAB ----------------
-function ServicesTab() {
-  const [expandedCategory, setExpandedCategory] = useState(null);
-  const [selectedService, setSelectedService] = useState(null);
-  const [categories, setCategories] = useState([]);
-
-  useEffect(() => {
-    // Convert spartan_services.json object to array format
-    if (spartanServices && typeof spartanServices === 'object') {
-      const categoriesArray = Object.entries(spartanServices).map(([category, items]) => ({
-        category,
-        items,
-        icon: getCategoryIcon(category)
-      }));
-      setCategories(categoriesArray);
-    }
-  }, []);
-
-  // Helper function to get appropriate icon for each category
-  const getCategoryIcon = (category) => {
-    const iconMap = {
-      'Agriculture & Food Systems': '🌾',
-      'Mortgage & Real Estate': '🏠',
-      'Legal & Compliance': '⚖️',
-      'Finance & Factoring': '💰',
-      'Education & Workforce': '🎓',
-      'Eco & Sustainability': '🌍',
-      'Healthcare & Insurance': '🏥',
-      'Global Trade & Logistics': '🌐',
-      'Technology & Data': '💻',
-      'Consumer & Retail': '🛒'
-    };
-    return iconMap[category] || '🛠️';
-  };
-
-  return (
-    <div style={{ padding: '32px' }}>
-      <h1>AuditDNA Services Catalog</h1>
-      <p style={{ color: '#6b7280', marginTop: '8px', fontSize: '18px' }}>
-        Professional auditing, compliance, and advisory services - 200+ services across all industries
-      </p>
-      <div style={{ marginTop: '24px' }}>
-        {categories.map((cat, idx) => (
-        <div
-          key={idx}
-          style={{
-            marginBottom: '16px',
-            border: '1px solid #e2e8f0',
-            borderRadius: '8px',
-            padding: '12px',
-          }}
-        >
-          <button onClick={() => setExpandedCategory(expandedCategory === idx ? null : idx)}>
-            {cat.icon || '🛠️'} {cat.category} ({cat.items?.length || 0})
-          </button>
-          {expandedCategory === idx && (
-            <div
-              style={{
-                marginTop: '12px',
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
-                gap: '10px',
-              }}
-            >
-              {cat.items.map((svc, i) => (
-                <div
-                  key={i}
-                  onClick={() => setSelectedService({ category: cat.category, service: svc })}
-                  style={{
-                    padding: '8px',
-                    background: '#f8fafc',
-                    border: '1px solid #e2e8f0',
-                    borderRadius: '6px',
-                    cursor: 'pointer',
-                  }}
-                >
-                  {svc}
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      ))}
-      {selectedService && (
-        <ContactCard
-          serviceName={`${selectedService.category} - ${selectedService.service}`}
-          onClose={() => setSelectedService(null)}
-        />
-      )}
-      </div>
-    </div>
-  );
-}
-
 // ---------------- SEARCH ENGINES ----------------
 function SearchEngines() {
   const [activeEngine, setActiveEngine] = useState('grower');
@@ -217,7 +124,7 @@ function SearchEngines() {
         {activeEngine === 'usda' && <USDA />}
         {activeEngine === 'watertech' && <WaterTech />}
         {activeEngine === 'mortgage' && <Mortgage />}
-        {activeEngine === 'factoring' && <p>Factoring engine coming soon…</p>}
+        {activeEngine === 'factoring' && <p>Factoring engine coming soon...</p>}
       </div>
     </div>
   );
@@ -282,7 +189,7 @@ export default function App() {
           {sidebarOpen ? '←' : '→'}
         </button>
         {activeTab === 'dashboard' && <Dashboard />}
-        {activeTab === 'services' && <ServicesTab />}
+        {activeTab === 'services' && <Services />}
         {activeTab === 'search' && <SearchEngines />}
       </div>
     </div>

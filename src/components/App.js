@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // LIVE TICKERS
 function LiveTicker({ data, title, icon }) {

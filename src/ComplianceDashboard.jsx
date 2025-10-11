@@ -1,4 +1,4 @@
-﻿import React, { useState } from "react";
+import React, { useState } from "react";
 import services from "../compliance_services.json";
 
 export default function ComplianceDashboard() {

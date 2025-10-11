@@ -1,4 +1,4 @@
-﻿export function toCSV(rows) {
+export function toCSV(rows) {
   if (!rows?.length) return "";
   const keys = Object.keys(rows[0]);
   const esc = (v) => String(v ?? "").replace(/"/g, '""');

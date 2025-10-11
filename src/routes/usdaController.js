@@ -16,7 +16,7 @@ exports.getCommodityPrice = async (req, res, next) => {
     if (!priceData || (Date.now() - priceData.reportDate > 24 * 60 * 60 * 1000)) {
       logger.info(`Fetching fresh data for ${commodity} from USDA`);
       priceData = await usdaService.fetchCommodityPrice(commodity, source);
-      
+
       if (priceData) {
         // Save to database
         const record = await USDARecord.create(priceData);

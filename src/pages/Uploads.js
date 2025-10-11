@@ -1,4 +1,4 @@
-﻿import React,{useState} from 'react';
+import React,{useState} from 'react';
 import FileUpload from '../components/FileUpload';
 
 export default function Uploads(){
