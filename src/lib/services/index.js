@@ -1,4 +1,4 @@
-﻿import agriculture from "./agriculture.json";
+import agriculture from "./agriculture.json";
 import compliance from "./compliance.json";
 // add eco, finance, legal, consumer
 const services = [

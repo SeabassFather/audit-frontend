@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { Activity, TrendingUp, FileText } from 'lucide-react';
 export default function Home(){
   return (

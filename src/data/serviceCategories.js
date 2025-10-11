@@ -1,4 +1,4 @@
-﻿cd "C:\AuditDNA\AUDIT_DNA_Frontend_Final\frontend\src\data"
+cd "C:\AuditDNA\AUDIT_DNA_Frontend_Final\frontend\src\data"
 
 @'
 export const serviceCategories = {

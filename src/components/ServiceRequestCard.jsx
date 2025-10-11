@@ -1,4 +1,4 @@
-﻿import React, { useState } from "react";
+import React, { useState } from "react";
 
 export default function ServiceRequestCard({ serviceName }) {
   const [form, setForm] = useState({ name: "", email: "", message: "", file: null });

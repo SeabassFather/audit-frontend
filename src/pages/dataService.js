@@ -1,4 +1,4 @@
-﻿// Mock data service for AuditDNA Premium UI
+// Mock data service for AuditDNA Premium UI
 
 export async function getServicesData() {
   return {

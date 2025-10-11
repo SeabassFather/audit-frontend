@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Activity, Database, Server, Users, AlertCircle, CheckCircle, Clock, TrendingUp } from 'lucide-react';
 
 export default function AdminPanel() {

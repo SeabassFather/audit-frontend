@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 const sampleData = [
   { label: 'Avocados', value: 27.45, change: +1.2 },
   { label: 'Mortgage 30Y', value: 6.85, change: -0.05 },
