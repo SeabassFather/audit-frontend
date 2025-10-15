@@ -1,7 +1,8 @@
 import React, { useState, useRef, useCallback, useEffect } from "react";
 import useFileUpload from "../hooks/useFileUpload";
 
-export default function FacialRecognition({ onVerificationComplete, mode = "verification" }) {
+export default function FacialRecognition({ onVerificationComplete, initialMode = "verification" }) {
+  const [mode, setMode] = useState(initialMode);
   const [isActive, setIsActive] = useState(false);
   const [stream, setStream] = useState(null);
   const [capturedPhoto, setCapturedPhoto] = useState(null);
@@ -28,10 +29,9 @@ export default function FacialRecognition({ onVerificationComplete, mode = "veri
         video: {
           width: { ideal: 640 },
           height: { ideal: 480 },
-          facingMode: 'user' // Use front camera for selfies
+          facingMode: 'user'
         }
       });
-      
       if (videoRef.current) {
         videoRef.current.srcObject = mediaStream;
         setStream(mediaStream);
@@ -83,10 +83,9 @@ export default function FacialRecognition({ onVerificationComplete, mode = "veri
       if (blob) {
         const timestamp = new Date().toISOString();
         const file = new File([blob], `facial-recognition-${timestamp}.jpg`, { type: 'image/jpeg' });
-        
+
         setCapturedPhoto(URL.createObjectURL(blob));
-        
-        // Process facial recognition
+
         try {
           const result = await uploadFile(file, "/api/facial-recognition/verify", {
             mode,
@@ -94,7 +93,6 @@ export default function FacialRecognition({ onVerificationComplete, mode = "veri
             detectLiveness: true,
             extractFeatures: true
           });
-
           if (result.ok) {
             setVerificationResult(result.data);
             if (onVerificationComplete) {
@@ -128,15 +126,15 @@ export default function FacialRecognition({ onVerificationComplete, mode = "veri
     <div className="max-w-4xl mx-auto p-6">
       <div className="bg-white rounded-lg shadow-md p-6">
         <h2 className="text-2xl font-bold text-gray-900 mb-6">Facial Recognition</h2>
-        
+
         {/* Mode Selection */}
         <div className="mb-6">
           <div className="flex space-x-4">
             <button
               onClick={() => setMode("verification")}
               className={`px-4 py-2 rounded-lg font-medium ${
-                mode === "verification" 
-                  ? "bg-blue-600 text-white" 
+                mode === "verification"
+                  ? "bg-blue-600 text-white"
                   : "bg-gray-100 text-gray-700 hover:bg-gray-200"
               }`}
             >
@@ -145,8 +143,8 @@ export default function FacialRecognition({ onVerificationComplete, mode = "veri
             <button
               onClick={() => setMode("enrollment")}
               className={`px-4 py-2 rounded-lg font-medium ${
-                mode === "enrollment" 
-                  ? "bg-blue-600 text-white" 
+                mode === "enrollment"
+                  ? "bg-blue-600 text-white"
                   : "bg-gray-100 text-gray-700 hover:bg-gray-200"
               }`}
             >
@@ -165,10 +163,9 @@ export default function FacialRecognition({ onVerificationComplete, mode = "veri
                 </svg>
               </div>
               <p className="text-gray-600 mb-4">
-                {mode === "verification" 
-                  ? "Ready to verify your identity" 
-                  : "Ready to enroll your face"
-                }
+                {mode === "verification"
+                  ? "Ready to verify your identity"
+                  : "Ready to enroll your face"}
               </p>
               <button
                 onClick={startCamera}
@@ -187,9 +184,8 @@ export default function FacialRecognition({ onVerificationComplete, mode = "veri
                 playsInline
                 muted
                 className="w-full rounded-lg"
-                style={{ maxHeight: '400px', transform: 'scaleX(-1)' }} // Mirror effect
+                style={{ maxHeight: '400px', transform: 'scaleX(-1)' }}
               />
-              
               {/* Face Detection Overlay */}
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                 <div className="w-64 h-80 border-2 border-blue-500 rounded-full relative">
@@ -199,14 +195,12 @@ export default function FacialRecognition({ onVerificationComplete, mode = "veri
                   <div className="absolute -bottom-2 -right-2 w-6 h-6 border-b-4 border-r-4 border-blue-500 rounded-br-lg"></div>
                 </div>
               </div>
-
               {/* Countdown Display */}
               {countdown > 0 && (
                 <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
                   <div className="text-6xl font-bold text-white">{countdown}</div>
                 </div>
               )}
-
               {/* Camera Controls */}
               <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-4">
                 {countdown === 0 && (
@@ -243,7 +237,6 @@ export default function FacialRecognition({ onVerificationComplete, mode = "veri
                 className="w-full rounded-lg shadow-lg"
                 style={{ maxHeight: '400px', objectFit: 'contain', transform: 'scaleX(-1)' }}
               />
-              
               {uploading && (
                 <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-lg">
                   <div className="bg-white p-6 rounded-lg text-center">
@@ -261,8 +254,8 @@ export default function FacialRecognition({ onVerificationComplete, mode = "veri
         {/* Verification Results */}
         {verificationResult && (
           <div className={`mb-6 p-4 rounded-lg border ${
-            verificationResult.verified 
-              ? 'bg-green-50 border-green-200' 
+            verificationResult.verified
+              ? 'bg-green-50 border-green-200'
               : 'bg-red-50 border-red-200'
           }`}>
             <div className="flex items-center">

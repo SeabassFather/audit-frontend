@@ -1,517 +1,340 @@
-import React, { useState } from 'react';
-import { BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import { Search, ShoppingCart, BarChart3, X } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { TrendingUp, Download, Calendar, Loader, AlertCircle } from 'lucide-react';
+
+const USDA_NASS_API_KEY = '4F158DB1-85C2-3243-BFFA-58B53FB40D23';
+const USDA_NASS_URL = 'https://quickstats.nass.usda.gov/api/api_GET/';
 
 export default function USDA() {
   const [activeTab, setActiveTab] = useState('pricing');
-  const [selectedProduct, setSelectedProduct] = useState('');
-  const [selectedSize, setSelectedSize] = useState('');
-  const [originRegion, setOriginRegion] = useState('');
-  const [destinationMarket, setDestinationMarket] = useState('west-coast');
-  const [pricingResults, setPricingResults] = useState(null);
-  const [invoiceAmount, setInvoiceAmount] = useState('');
-  const [advancePercent, setAdvancePercent] = useState(85);
-  const [factoringTier, setFactoringTier] = useState('standard');
-  const [trendProduct, setTrendProduct] = useState('avocado');
-  const [showListingModal, setShowListingModal] = useState(false);
+  const [commodities, setCommodities] = useState([]);
+  const [selectedCommodities, setSelectedCommodities] = useState([]);
+  const [priceData, setPriceData] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [loadingCommodities, setLoadingCommodities] = useState(true);
+  const [error, setError] = useState('');
+  const [timeframe, setTimeframe] = useState('weekly');
+  
+  const [selectedProduct, setSelectedProduct] = useState('AVOCADOS');
+  const [selectedSize, setSelectedSize] = useState('48s (Medium)');
+  const [selectedPackaging, setSelectedPackaging] = useState('Carton 25lb');
+  const [yourCost, setYourCost] = useState(28);
 
-  const products = {
-    avocado: {
-      name: 'Avocado Hass',
-      nameEs: 'Aguacate Hass',
-      sizes: [
-        { id: '48s', label: '48s (Large)', baseCost: 32 },
-        { id: '60s', label: '60s (Medium)', baseCost: 28 },
-        { id: '70s', label: '70s (Small)', baseCost: 24 }
-      ]
-    },
-    strawberries: {
-      name: 'Strawberries',
-      nameEs: 'Fresas',
-      sizes: [
-        { id: '1lb', label: '1 lb Clamshell', baseCost: 4.50 },
-        { id: '8lb', label: '8 lb Flat', baseCost: 28 }
-      ]
+  // Product specifications with sizes and packaging
+  const productSpecs = {
+    'AVOCADOS': { sizes: ['32s (XLarge)', '40s (Large)', '48s (Medium)', '60s (Small)', '70s (XSmall)', '84s (Mini)'], packaging: ['Carton 25lb', 'Carton 22lb', 'Flat 11lb', 'Box 10kg', 'Bulk Bin 1000lb', 'Maya Bag 50lb'] },
+    'STRAWBERRIES': { sizes: ['Extra Large', 'Large', 'Medium', 'Small', '1lb Clamshell', '2lb Clamshell'], packaging: ['Flat 8x1lb', 'Flat 12x1lb', 'Carton 10lb', 'Pallet Bulk', 'Maya Bag 20lb'] },
+    'BLUEBERRIES': { sizes: ['Jumbo', 'Large', 'Medium', '6oz Clamshell', '12oz Clamshell', '18oz Clamshell'], packaging: ['Flat 12x6oz', 'Flat 12x12oz', 'Bulk 10lb', 'Maya Bag 25lb', 'Plastic Bag 2lb'] },
+    'TOMATOES': { sizes: ['Extra Large', 'Large', 'Medium', 'Small', '4x5', '5x6', '6x7'], packaging: ['Carton 25lb', 'Box 20lb', 'Lugs 30lb', 'Bulk Bin 800lb', 'Maya Bag 50lb', 'Plastic Bag 5lb'] },
+    'PEPPERS': { sizes: ['Jumbo', 'Extra Large', 'Large', 'Medium', 'Small'], packaging: ['Carton 25lb', 'Box 11lb', 'Bushel 28lb', 'Bulk Bin 1000lb', 'Maya Bag 50lb', 'Plastic Bag 2lb'] },
+    'CUCUMBERS': { sizes: ['Super Select', 'Select', 'Medium', 'Large'], packaging: ['Carton 24ct', 'Box 18lb', 'Bushel 55lb', 'Bulk Bin', 'Maya Bag 40lb'] },
+    'LETTUCE': { sizes: ['24ct', '30ct', 'Loose Leaf', 'Hearts 6ct'], packaging: ['Carton 50lb', 'Box 18lb', 'Bulk Bin', 'Plastic Bag 3ct'] },
+    'LIMES': { sizes: ['110ct', '150ct', '175ct', '200ct', '230ct', '250ct'], packaging: ['Carton 40lb', 'Box 10lb', 'Sack 55lb', 'Bulk Bin', 'Maya Bag 25lb'] },
+    'MANGOES': { sizes: ['6ct', '8ct', '10ct', '12ct', '14ct'], packaging: ['Carton 10lb', 'Box 8lb', 'Flat 4ct', 'Bulk Bin', 'Maya Bag 15lb'] },
+    'CARROTS': { sizes: ['Baby', 'Medium', 'Jumbo', '1lb Bag', '2lb Bag', '5lb Bag'], packaging: ['Carton 50lb', 'Sack 50lb', 'Box 24x1lb', 'Bulk Bin', 'Maya Bag 25lb'] },
+    'POTATOES': { sizes: ['A', 'B', 'C', '5lb Bag', '10lb Bag', '20lb Bag'], packaging: ['Carton 50lb', 'Sack 50lb', 'Pallet Bag 2000lb', 'Bulk Bin', 'Maya Bag 100lb'] },
+    'ONIONS': { sizes: ['Jumbo', 'Medium', '3lb Bag', '5lb Bag', '10lb Bag'], packaging: ['Sack 50lb', 'Carton 40lb', 'Mesh Bag 25lb', 'Bulk Bin 2000lb', 'Maya Bag 50lb'] }
+  };
+
+  const currentSpecs = productSpecs[selectedProduct] || { sizes: ['Small', 'Medium', 'Large'], packaging: ['Carton 25lb', 'Box 20lb', 'Bulk Bin'] };
+
+  useEffect(() => {
+    fetchAvailableCommodities();
+  }, []);
+
+  const fetchAvailableCommodities = async () => {
+    setLoadingCommodities(true);
+    try {
+      setCommodities([
+        'AVOCADOS', 'MANGOES', 'PAPAYAS', 'PINEAPPLES', 'BANANAS',
+        'STRAWBERRIES', 'BLUEBERRIES', 'RASPBERRIES', 'BLACKBERRIES', 'GRAPES',
+        'LIMES', 'LEMONS', 'ORANGES', 'TANGERINES', 'MANDARINS', 'GRAPEFRUIT',
+        'MELONS', 'WATERMELONS', 'CANTALOUPES', 'HONEYDEW MELONS',
+        'TOMATOES', 'CHERRY TOMATOES', 'ROMA TOMATOES',
+        'PEPPERS', 'BELL PEPPERS', 'JALAPEÑOS', 'HABANEROS',
+        'CUCUMBERS', 'PERSIAN CUCUMBERS',
+        'SQUASH', 'ZUCCHINI', 'YELLOW SQUASH',
+        'LETTUCE', 'ROMAINE LETTUCE', 'SPINACH', 'KALE',
+        'BROCCOLI', 'CAULIFLOWER', 'ASPARAGUS', 'GREEN BEANS',
+        'CARROTS', 'POTATOES', 'SWEET POTATOES',
+        'ONIONS', 'GREEN ONIONS', 'GARLIC',
+        'CORN', 'SWEET CORN',
+        'CILANTRO', 'BASIL', 'PARSLEY'
+      ]);
+    } catch (err) {
+      console.warn('Using fallback commodities');
+    } finally {
+      setLoadingCommodities(false);
     }
   };
 
-  const origins = [
-    { id: 'michoacan-mx', label: 'Michoacán, Mexico', country: 'mexico' },
-    { id: 'sinaloa-mx', label: 'Sinaloa, Mexico', country: 'mexico' },
-    { id: 'california-usa', label: 'California, USA', country: 'usa' }
-  ];
-
-  const freightRates = {
-    'mexico-west-coast': 0.05,
-    'mexico-midwest': 0.12,
-    'mexico-east-coast': 0.18,
-    'usa-west-coast': 0.03,
-    'usa-midwest': 0.08,
-    'usa-east-coast': 0.15
-  };
-
-  const historicalData = {
-    avocado: [
-      { week: 'W1', y2021: 32, y2022: 35, y2023: 38, y2024: 34, y2025: 36 },
-      { week: 'W8', y2021: 31, y2022: 34, y2023: 37, y2024: 33, y2025: 35 },
-      { week: 'W16', y2021: 36, y2022: 39, y2023: 42, y2024: 38, y2025: 40 },
-      { week: 'W26', y2021: 34, y2022: 37, y2023: 40, y2024: 36, y2025: 38 }
-    ],
-    strawberries: [
-      { week: 'W1', y2021: 4.2, y2022: 4.5, y2023: 4.8, y2024: 4.4, y2025: 4.6 },
-      { week: 'W8', y2021: 4.1, y2022: 4.4, y2023: 4.7, y2024: 4.3, y2025: 4.5 },
-      { week: 'W16', y2021: 4.6, y2022: 4.9, y2023: 5.2, y2024: 4.8, y2025: 5.0 },
-      { week: 'W26', y2021: 4.4, y2022: 4.7, y2023: 5.0, y2024: 4.6, y2025: 4.8 }
-    ]
-  };
-
-  const mockListings = [
-    {
-      id: 'ID-1',
-      crop: 'Avocado Hass',
-      cropEs: 'Aguacate Hass',
-      hectares: 45,
-      season: 'Year-round',
-      seasonEs: 'Todo el año',
-      targetPrice: '$24-28/case',
-      certs: ['GlobalGAP', 'PRIMUS'],
-      state: 'Michoacán, MX',
-      volume: '500 tons/week'
-    },
-    {
-      id: 'ID-2',
-      crop: 'Organic Strawberries',
-      cropEs: 'Fresas Orgánicas',
-      hectares: 12,
-      season: 'Nov - Apr',
-      seasonEs: 'Nov - Abr',
-      targetPrice: '$18-22/flat',
-      certs: ['GlobalGAP', 'Organic'],
-      state: 'Baja California, MX',
-      volume: '200 tons/week'
+  const toggleCommodity = (commodity) => {
+    if (selectedCommodities.includes(commodity)) {
+      setSelectedCommodities(prev => prev.filter(c => c !== commodity));
+    } else {
+      if (selectedCommodities.length >= 10) {
+        alert('Maximum 10 commodities can be selected');
+        return;
+      }
+      setSelectedCommodities(prev => [...prev, commodity]);
     }
-  ];
+  };
 
-  const calculatePricing = () => {
-    if (!selectedProduct || !selectedSize || !originRegion) {
-      alert('Please select all fields');
+  const fetchRealPriceData = async () => {
+    if (selectedCommodities.length === 0) {
+      alert('Please select at least one commodity');
       return;
     }
+    setLoading(true);
+    setError('');
+    setPriceData([]);
 
-    const product = products[selectedProduct];
-    const sizeData = product.sizes.find(s => s.id === selectedSize);
-    const origin = origins.find(o => o.id === originRegion);
-    const baseCost = sizeData.baseCost;
-    const freightKey = `${origin.country}-${destinationMarket}`;
-    const freightRate = freightRates[freightKey] || 0.15;
-    const freightCost = baseCost * freightRate;
-    const totalCost = baseCost + freightCost;
-    const wholesalePrice = totalCost * 1.20;
-    const retailMin = wholesalePrice * 1.25;
-    const retailMax = wholesalePrice * 1.50;
+    try {
+      const currentYear = new Date().getFullYear();
+      const years = timeframe === 'weekly' ? [currentYear] : [currentYear - 4, currentYear - 3, currentYear - 2, currentYear - 1, currentYear];
+      const allData = [];
 
-    setPricingResults({
-      product: product.name,
-      productEs: product.nameEs,
-      size: sizeData.label,
-      origin: origin.label,
-      destination: destinationMarket,
-      baseCost: baseCost.toFixed(2),
-      freightCost: freightCost.toFixed(2),
-      freightRate: (freightRate * 100).toFixed(0),
-      totalCost: totalCost.toFixed(2),
-      wholesalePrice: wholesalePrice.toFixed(2),
-      retailMin: retailMin.toFixed(2),
-      retailMax: retailMax.toFixed(2),
-      margin: (wholesalePrice - totalCost).toFixed(2),
-      marginPercent: ((wholesalePrice - totalCost) / totalCost * 100).toFixed(1)
+      for (const commodity of selectedCommodities) {
+        for (const year of years) {
+          try {
+            const response = await fetch(
+              `${USDA_NASS_URL}?key=${USDA_NASS_API_KEY}&commodity_desc=${encodeURIComponent(commodity)}&year=${year}&statisticcat_desc=PRICE RECEIVED&freq_desc=WEEKLY&format=JSON`
+            );
+            if (!response.ok) continue;
+            const data = await response.json();
+            if (data.data && data.data.length > 0) {
+              data.data.forEach(item => {
+                if (item.Value && item.Value !== '' && !isNaN(parseFloat(item.Value))) {
+                  allData.push({
+                    commodity: commodity,
+                    year: item.year,
+                    week: item.week_ending,
+                    price: parseFloat(item.Value)
+                  });
+                }
+              });
+            }
+          } catch (err) {
+            console.error(`Error fetching ${commodity} ${year}`);
+          }
+        }
+      }
+
+      if (allData.length === 0) {
+        setError('No price data available. Try different selections.');
+      } else {
+        setPriceData(allData);
+      }
+    } catch (err) {
+      setError(`Data fetch error: ${err.message}`);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const chartData = React.useMemo(() => {
+    if (priceData.length === 0) return [];
+    const grouped = {};
+    priceData.forEach(item => {
+      const key = timeframe === 'weekly' ? item.week : item.year;
+      if (!grouped[key]) grouped[key] = { timeLabel: key };
+      grouped[key][item.commodity] = item.price;
+    });
+    return Object.values(grouped).sort((a, b) => {
+      if (timeframe === 'weekly') return new Date(a.timeLabel) - new Date(b.timeLabel);
+      return a.timeLabel - b.timeLabel;
+    });
+  }, [priceData, timeframe]);
+
+  const exportToCSV = () => {
+    if (chartData.length === 0) return;
+    let csv = 'Date/Week,' + selectedCommodities.join(',') + '\n';
+    chartData.forEach(row => {
+      const values = selectedCommodities.map(c => row[c] || '').join(',');
+      csv += `${row.timeLabel},${values}\n`;
+    });
+    const blob = new Blob([csv], { type: 'text/csv' });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `USDA_Comparison_${new Date().toISOString().split('T')[0]}.csv`;
+    a.click();
+  };
+
+  const calculatePricing = () => {
+    const sizes = [
+      { name: '32s (XLarge)', multiplier: 1.14 },
+      { name: '40s (Large)', multiplier: 1.0 },
+      { name: '48s (Medium)', multiplier: 0.93 },
+      { name: '60s (Small)', multiplier: 0.86 },
+      { name: '70s (XSmall)', multiplier: 0.79 },
+      { name: '84s (Mini)', multiplier: 0.71 }
+    ];
+    return sizes.map(size => {
+      const baseCost = yourCost * size.multiplier;
+      return {
+        size: size.name,
+        yourCost: baseCost,
+        westCoast: baseCost * 1.05,
+        westRetail: baseCost * 1.05 * 1.35,
+        midwest: baseCost * 1.12,
+        midwestRetail: baseCost * 1.12 * 1.40,
+        eastCoast: baseCost * 1.18,
+        eastRetail: baseCost * 1.18 * 1.45
+      };
     });
   };
 
-  const calculateFactoringRate = () => {
-    const amount = parseFloat(invoiceAmount);
-    if (isNaN(amount) || amount <= 0) return null;
-
-    let baseRate = 3.5;
-    if (amount >= 100000) baseRate = 2.5;
-    else if (amount >= 50000) baseRate = 3.0;
-
-    const tierRates = { standard: 0, expedited: 0.5, international: 1.0 };
-    const totalRate = baseRate + tierRates[factoringTier];
-
-    return {
-      rate: totalRate.toFixed(2),
-      fee: (amount * totalRate / 100).toFixed(2),
-      advance: (amount * advancePercent / 100).toFixed(2)
-    };
-  };
-
-  const factoringQuote = calculateFactoringRate();
+  const pricingBreakdown = calculatePricing();
+  const colors = ['#16a34a', '#2563eb', '#dc2626', '#9333ea', '#ea580c', '#0891b2', '#be123c', '#7c3aed', '#0d9488', '#c026d3'];
 
   return (
-    <div className="space-y-6 p-6">
-      {/* Tab Navigation */}
-      <div className="bg-white rounded-lg shadow-lg p-2">
-        <div className="flex gap-2">
-          {[
-            { key: 'pricing', icon: Search, label: 'Pricing & Search', labelEs: 'Precios' },
-            { key: 'trends', icon: BarChart3, label: 'Market Trends', labelEs: 'Tendencias' },
-            { key: 'marketplace', icon: ShoppingCart, label: 'Grower Marketplace', labelEs: 'Mercado' }
-          ].map(tab => (
-            <button
-              key={tab.key}
-              onClick={() => setActiveTab(tab.key)}
-              className={`flex-1 py-4 px-6 rounded-lg font-bold transition-all flex items-center justify-center gap-2 ${
-                activeTab === tab.key ? 'bg-green-600 text-white shadow-lg' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-              }`}
-            >
-              <tab.icon className="w-6 h-6" />
-              <div>
-                <div>{tab.label}</div>
-                <div className="text-xs opacity-75">{tab.labelEs}</div>
-              </div>
-            </button>
-          ))}
-        </div>
+    <div className="max-w-[95%] mx-auto p-6 space-y-6">
+      <div className="bg-gradient-to-r from-green-600 to-green-700 text-white rounded-lg shadow-lg p-6">
+        <h1 className="text-3xl font-bold mb-2">🌽 USDA Pricing Comparison & Analytics</h1>
+        <p className="text-green-100">100+ Products • Regional Pricing • Market Analytics</p>
       </div>
 
-      {/* TAB 1: Pricing & Search */}
+      <div className="bg-white rounded-lg shadow-lg p-2 flex gap-2">
+        <button
+          onClick={() => setActiveTab('pricing')}
+          className={`flex-1 px-6 py-3 rounded-lg font-bold ${activeTab === 'pricing' ? 'bg-green-600 text-white' : 'bg-gray-100 text-gray-700'}`}
+        >
+          💰 Pricing vs Cost Comparison
+        </button>
+        <button
+          onClick={() => setActiveTab('analytics')}
+          className={`flex-1 px-6 py-3 rounded-lg font-bold ${activeTab === 'analytics' ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-700'}`}
+        >
+          📊 Market Analytics
+        </button>
+      </div>
+
       {activeTab === 'pricing' && (
-        <div className="space-y-8">
-          {/* Product Pricing Calculator */}
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <h2 className="text-2xl font-bold mb-6 text-gray-800">Product Pricing Calculator</h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-              <select
-                value={selectedProduct}
-                onChange={(e) => {
-                  setSelectedProduct(e.target.value);
-                  setSelectedSize('');
-                }}
-                className="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:border-transparent"
-              >
-                <option value="">Select Product...</option>
-                <option value="avocado">Avocado Hass</option>
-                <option value="strawberries">Strawberries</option>
-              </select>
-
-              <select
-                value={selectedSize}
-                onChange={(e) => setSelectedSize(e.target.value)}
-                disabled={!selectedProduct}
-                className="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:border-transparent disabled:bg-gray-100"
-              >
-                <option value="">Select Size...</option>
-                {selectedProduct && products[selectedProduct].sizes.map(s => (
-                  <option key={s.id} value={s.id}>{s.label}</option>
-                ))}
-              </select>
-
-              <select
-                value={originRegion}
-                onChange={(e) => setOriginRegion(e.target.value)}
-                className="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:border-transparent"
-              >
-                <option value="">Select Origin...</option>
-                {origins.map(o => (
-                  <option key={o.id} value={o.id}>{o.label}</option>
-                ))}
-              </select>
-
-              <select
-                value={destinationMarket}
-                onChange={(e) => setDestinationMarket(e.target.value)}
-                className="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:border-transparent"
-              >
-                <option value="west-coast">West Coast</option>
-                <option value="midwest">Midwest</option>
-                <option value="east-coast">East Coast</option>
-              </select>
-            </div>
-
-            <button
-              onClick={calculatePricing}
-              className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-bold transition-colors"
-            >
-              Calculate Pricing
-            </button>
-
-            {pricingResults && (
-              <div className="mt-6 p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-lg border border-green-200">
-                <h3 className="text-xl font-bold mb-4 text-gray-800">
-                  {pricingResults.product} - {pricingResults.size}
-                </h3>
-                <p className="text-sm text-gray-600 mb-4">
-                  {pricingResults.origin} → {pricingResults.destination}
-                </p>
-
-                <ResponsiveContainer width="100%" height={250}>
-                  <BarChart
-                    data={[
-                      { name: 'Base Cost', value: parseFloat(pricingResults.baseCost) },
-                      { name: 'Total Cost', value: parseFloat(pricingResults.totalCost) },
-                      { name: 'Wholesale', value: parseFloat(pricingResults.wholesalePrice) },
-                      { name: 'Retail Max', value: parseFloat(pricingResults.retailMax) }
-                    ]}
-                  >
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="name" />
-                    <YAxis />
-                    <Tooltip />
-                    <Bar dataKey="value" fill="#16a34a" />
-                  </BarChart>
-                </ResponsiveContainer>
-
-                <div className="grid grid-cols-2 gap-4 mt-6">
-                  <div className="bg-blue-600 text-white p-4 rounded-lg shadow">
-                    <p className="text-sm opacity-90">Wholesale Price</p>
-                    <p className="text-3xl font-bold">${pricingResults.wholesalePrice}</p>
-                    <p className="text-xs opacity-75 mt-1">Margin: {pricingResults.marginPercent}%</p>
-                  </div>
-                  <div className="bg-purple-600 text-white p-4 rounded-lg shadow">
-                    <p className="text-sm opacity-90">Retail Range</p>
-                    <p className="text-3xl font-bold">${pricingResults.retailMin} - ${pricingResults.retailMax}</p>
-                    <p className="text-xs opacity-75 mt-1">Suggested pricing</p>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Factoring Calculator */}
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <h2 className="text-2xl font-bold mb-6 text-gray-800">Factoring Services Calculator</h2>
-            <p className="text-sm text-gray-600 mb-6">Calculate financing options for your invoices</p>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-              <div>
-                <label className="block text-sm font-semibold mb-2 text-gray-700">Invoice Amount</label>
-                <input
-                  type="number"
-                  value={invoiceAmount}
-                  onChange={(e) => setInvoiceAmount(e.target.value)}
-                  placeholder="Enter amount"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-semibold mb-2 text-gray-700">
-                  Advance Rate: {advancePercent}%
-                </label>
-                <input
-                  type="range"
-                  min="80"
-                  max="90"
-                  value={advancePercent}
-                  onChange={(e) => setAdvancePercent(e.target.value)}
-                  className="w-full"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-semibold mb-2 text-gray-700">Service Tier</label>
-                <select
-                  value={factoringTier}
-                  onChange={(e) => setFactoringTier(e.target.value)}
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                >
-                  <option value="standard">Standard</option>
-                  <option value="expedited">Expedited (+0.5%)</option>
-                  <option value="international">International (+1.0%)</option>
-                </select>
-              </div>
-            </div>
-
-            {factoringQuote && (
-              <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-lg border border-purple-200">
-                <div className="grid grid-cols-3 gap-4">
-                  <div className="text-center">
-                    <p className="text-sm font-bold text-gray-700 mb-1">Factoring Rate</p>
-                    <p className="text-3xl font-bold text-purple-700">{factoringQuote.rate}%</p>
-                  </div>
-                  <div className="text-center">
-                    <p className="text-sm font-bold text-gray-700 mb-1">Service Fee</p>
-                    <p className="text-3xl font-bold text-purple-700">${factoringQuote.fee}</p>
-                  </div>
-                  <div className="text-center">
-                    <p className="text-sm font-bold text-gray-700 mb-1">Cash Advance</p>
-                    <p className="text-3xl font-bold text-purple-700">${factoringQuote.advance}</p>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
-
-      {/* TAB 2: Market Trends */}
-      {activeTab === 'trends' && (
         <div className="space-y-6">
-          {/* Search Controls */}
           <div className="bg-white rounded-lg shadow-lg p-6">
-            <h2 className="text-2xl font-bold mb-6 text-gray-800">Market Trends & Analytics</h2>
-            
-            <div className="grid grid-cols-5 gap-4">
+            <h2 className="text-2xl font-bold mb-6">Calculate Your Margin</h2>
+            <div className="grid grid-cols-4 gap-6">
               <div>
-                <label className="block text-sm font-semibold mb-2 text-gray-700">Product</label>
-                <input
-                  type="text"
-                  value={trendProduct}
-                  onChange={(e) => setTrendProduct(e.target.value)}
-                  placeholder="Type any product..."
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-semibold mb-2 text-gray-700">Size</label>
-                <select className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500">
-                  <option>48s</option>
-                  <option>60s</option>
-                  <option>70s</option>
-                  <option>84s</option>
+                <label className="block text-sm font-semibold mb-2">Product</label>
+                <select 
+                  value={selectedProduct} 
+                  onChange={(e) => {
+                    setSelectedProduct(e.target.value);
+                    const specs = productSpecs[e.target.value] || currentSpecs;
+                    setSelectedSize(specs.sizes[0]);
+                    setSelectedPackaging(specs.packaging[0]);
+                  }} 
+                  className="w-full border rounded-lg px-4 py-2"
+                >
+                  {commodities.map(c => <option key={c} value={c}>{c}</option>)}
                 </select>
               </div>
-
               <div>
-                <label className="block text-sm font-semibold mb-2 text-gray-700">Origin</label>
-                <select className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500">
-                  <option>Michoacán, MX</option>
-                  <option>Sinaloa, MX</option>
-                  <option>California, USA</option>
-                  <option>Florida, USA</option>
+                <label className="block text-sm font-semibold mb-2">Size/Grade</label>
+                <select value={selectedSize} onChange={(e) => setSelectedSize(e.target.value)} className="w-full border rounded-lg px-4 py-2">
+                  {currentSpecs.sizes.map(s => <option key={s} value={s}>{s}</option>)}
                 </select>
               </div>
-
               <div>
-                <label className="block text-sm font-semibold mb-2 text-gray-700">Your Cost</label>
-                <input
-                  type="number"
-                  defaultValue="28"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500"
-                />
+                <label className="block text-sm font-semibold mb-2">Packaging</label>
+                <select value={selectedPackaging} onChange={(e) => setSelectedPackaging(e.target.value)} className="w-full border rounded-lg px-4 py-2">
+                  {currentSpecs.packaging.map(p => <option key={p} value={p}>{p}</option>)}
+                </select>
               </div>
-
-              <div className="flex items-end">
-                <button className="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg font-bold">
-                  Analyze
-                </button>
+              <div>
+                <label className="block text-sm font-semibold mb-2">Your FOB Cost ($)</label>
+                <input type="number" value={yourCost} onChange={(e) => setYourCost(parseFloat(e.target.value) || 0)} className="w-full border rounded-lg px-4 py-2" step="0.50" />
+              </div>
+            </div>
+            <div className="mt-4 bg-blue-50 border border-blue-200 rounded-lg p-4">
+              <div className="flex items-center gap-2 text-sm flex-wrap">
+                <span className="font-bold text-blue-800">Selected:</span>
+                <span className="text-blue-900 font-semibold">{selectedProduct}</span>
+                <span className="text-gray-400">•</span>
+                <span className="text-blue-900">{selectedSize}</span>
+                <span className="text-gray-400">•</span>
+                <span className="text-blue-900 font-semibold">{selectedPackaging}</span>
+                <span className="text-gray-400">•</span>
+                <span className="text-green-700 font-bold">${yourCost.toFixed(2)} FOB</span>
               </div>
             </div>
           </div>
 
-          {/* Price Charts - Side by Side */}
-          <div className="grid grid-cols-2 gap-6">
-            {/* Historical Trends */}
-            <div className="bg-white rounded-lg shadow-lg p-6">
-              <h3 className="text-lg font-bold mb-4 text-gray-700">5-Year Price History - {trendProduct}</h3>
-              <ResponsiveContainer width="100%" height={350}>
-                <LineChart data={historicalData[trendProduct === 'avocado' ? 'avocado' : 'strawberries']}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="week" />
-                  <YAxis />
-                  <Tooltip />
-                  <Line type="monotone" dataKey="y2021" stroke="#cbd5e1" strokeWidth={2} name="2021" />
-                  <Line type="monotone" dataKey="y2022" stroke="#94a3b8" strokeWidth={2} name="2022" />
-                  <Line type="monotone" dataKey="y2023" stroke="#64748b" strokeWidth={2} name="2023" />
-                  <Line type="monotone" dataKey="y2024" stroke="#475569" strokeWidth={2} name="2024" />
-                  <Line type="monotone" dataKey="y2025" stroke="#16a34a" strokeWidth={3} name="2025" />
-                </LineChart>
-              </ResponsiveContainer>
-              
-              <div className="grid grid-cols-3 gap-3 mt-4">
-                <div className="bg-gray-50 p-3 rounded text-center">
-                  <p className="text-xs text-gray-600">2025 Avg</p>
-                  <p className="text-xl font-bold text-green-700">$37.25</p>
+          <div className="grid grid-cols-3 gap-6">
+            <div className="bg-blue-50 rounded-lg shadow-lg p-6 border-l-4 border-blue-500">
+              <h3 className="text-lg font-bold text-blue-900 mb-4">🌊 West Coast</h3>
+              <div className="space-y-3">
+                <div>
+                  <div className="text-xs text-gray-600">Wholesale Price</div>
+                  <div className="text-2xl font-bold text-blue-700">${(yourCost * 1.05).toFixed(2)}</div>
+                  <div className="text-xs text-gray-500">+5% freight</div>
                 </div>
-                <div className="bg-gray-50 p-3 rounded text-center">
-                  <p className="text-xs text-gray-600">5-Yr Avg</p>
-                  <p className="text-xl font-bold text-gray-700">$35.80</p>
-                </div>
-                <div className="bg-gray-50 p-3 rounded text-center">
-                  <p className="text-xs text-gray-600">YoY Change</p>
-                  <p className="text-xl font-bold text-green-700">+5.6%</p>
+                <div className="pt-3 border-t">
+                  <div className="text-xs text-gray-600">Est. Retail Range</div>
+                  <div className="text-lg font-semibold text-blue-800">${(yourCost * 1.05 * 1.25).toFixed(2)} - ${(yourCost * 1.05 * 1.45).toFixed(2)}</div>
                 </div>
               </div>
             </div>
 
-            {/* Regional Price Comparison */}
-            <div className="bg-white rounded-lg shadow-lg p-6">
-              <h3 className="text-lg font-bold mb-4 text-gray-700">Regional Price Comparison</h3>
-              <ResponsiveContainer width="100%" height={350}>
-                <BarChart data={[
-                  { region: 'West Coast', wholesale: 35.28, retail: 44.10 },
-                  { region: 'Midwest', wholesale: 37.63, retail: 47.04 },
-                  { region: 'East Coast', wholesale: 39.65, retail: 49.56 }
-                ]}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="region" />
-                  <YAxis />
-                  <Tooltip />
-                  <Bar dataKey="wholesale" fill="#3b82f6" name="Wholesale" />
-                  <Bar dataKey="retail" fill="#8b5cf6" name="Retail (Min)" />
-                </BarChart>
-              </ResponsiveContainer>
+            <div className="bg-orange-50 rounded-lg shadow-lg p-6 border-l-4 border-orange-500">
+              <h3 className="text-lg font-bold text-orange-900 mb-4">🌾 Midwest</h3>
+              <div className="space-y-3">
+                <div>
+                  <div className="text-xs text-gray-600">Wholesale Price</div>
+                  <div className="text-2xl font-bold text-orange-700">${(yourCost * 1.12).toFixed(2)}</div>
+                  <div className="text-xs text-gray-500">+12% freight</div>
+                </div>
+                <div className="pt-3 border-t">
+                  <div className="text-xs text-gray-600">Est. Retail Range</div>
+                  <div className="text-lg font-semibold text-orange-800">${(yourCost * 1.12 * 1.30).toFixed(2)} - ${(yourCost * 1.12 * 1.50).toFixed(2)}</div>
+                </div>
+              </div>
+            </div>
 
-              <div className="grid grid-cols-3 gap-3 mt-4">
-                <div className="bg-blue-50 p-3 rounded text-center">
-                  <p className="text-xs text-blue-700 font-semibold">West</p>
-                  <p className="text-lg font-bold text-blue-800">$35.28</p>
-                  <p className="text-xs text-gray-600">+5% freight</p>
+            <div className="bg-purple-50 rounded-lg shadow-lg p-6 border-l-4 border-purple-500">
+              <h3 className="text-lg font-bold text-purple-900 mb-4">🏙️ East Coast</h3>
+              <div className="space-y-3">
+                <div>
+                  <div className="text-xs text-gray-600">Wholesale Price</div>
+                  <div className="text-2xl font-bold text-purple-700">${(yourCost * 1.18).toFixed(2)}</div>
+                  <div className="text-xs text-gray-500">+18% freight</div>
                 </div>
-                <div className="bg-orange-50 p-3 rounded text-center">
-                  <p className="text-xs text-orange-700 font-semibold">Midwest</p>
-                  <p className="text-lg font-bold text-orange-800">$37.63</p>
-                  <p className="text-xs text-gray-600">+12% freight</p>
-                </div>
-                <div className="bg-purple-50 p-3 rounded text-center">
-                  <p className="text-xs text-purple-700 font-semibold">East</p>
-                  <p className="text-lg font-bold text-purple-800">$39.65</p>
-                  <p className="text-xs text-gray-600">+18% freight</p>
+                <div className="pt-3 border-t">
+                  <div className="text-xs text-gray-600">Est. Retail Range</div>
+                  <div className="text-lg font-semibold text-purple-800">${(yourCost * 1.18 * 1.35).toFixed(2)} - ${(yourCost * 1.18 * 1.55).toFixed(2)}</div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Detailed Breakdown Table */}
           <div className="bg-white rounded-lg shadow-lg p-6">
-            <h3 className="text-lg font-bold mb-4 text-gray-700">Detailed Pricing Breakdown by Size & Region</h3>
-            
+            <h3 className="text-xl font-bold mb-4">Complete Pricing Breakdown by Size</h3>
             <div className="overflow-x-auto">
-              <table className="w-full">
+              <table className="w-full text-sm">
                 <thead className="bg-gray-100">
                   <tr>
-                    <th className="px-4 py-3 text-left text-sm font-bold text-gray-700">Size</th>
-                    <th className="px-4 py-3 text-left text-sm font-bold text-gray-700">Your Cost</th>
-                    <th className="px-4 py-3 text-center text-sm font-bold text-blue-700">West Coast</th>
-                    <th className="px-4 py-3 text-center text-sm font-bold text-orange-700">Midwest</th>
-                    <th className="px-4 py-3 text-center text-sm font-bold text-purple-700">East Coast</th>
-                    <th className="px-4 py-3 text-right text-sm font-bold text-gray-700">Retail Range</th>
+                    <th className="px-4 py-3 text-left font-bold">Size</th>
+                    <th className="px-4 py-3 text-right font-bold">Your Cost</th>
+                    <th className="px-4 py-3 text-center font-bold text-blue-700">West Wholesale</th>
+                    <th className="px-4 py-3 text-center font-bold text-blue-600">West Retail</th>
+                    <th className="px-4 py-3 text-center font-bold text-orange-700">Midwest Wholesale</th>
+                    <th className="px-4 py-3 text-center font-bold text-orange-600">Midwest Retail</th>
+                    <th className="px-4 py-3 text-center font-bold text-purple-700">East Wholesale</th>
+                    <th className="px-4 py-3 text-center font-bold text-purple-600">East Retail</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y">
-                  {[
-                    { size: '48s (Large)', cost: 32 },
-                    { size: '60s (Medium)', cost: 28 },
-                    { size: '70s (Small)', cost: 24 },
-                    { size: '84s (XSmall)', cost: 20 }
-                  ].map(item => (
-                    <tr key={item.size} className="hover:bg-gray-50">
-                      <td className="px-4 py-3 font-semibold">{item.size}</td>
-                      <td className="px-4 py-3">${item.cost.toFixed(2)}</td>
-                      <td className="px-4 py-3 text-center bg-blue-50 font-semibold text-blue-800">
-                        ${(item.cost * 1.05 * 1.20).toFixed(2)}
-                      </td>
-                      <td className="px-4 py-3 text-center bg-orange-50 font-semibold text-orange-800">
-                        ${(item.cost * 1.12 * 1.20).toFixed(2)}
-                      </td>
-                      <td className="px-4 py-3 text-center bg-purple-50 font-semibold text-purple-800">
-                        ${(item.cost * 1.18 * 1.20).toFixed(2)}
-                      </td>
-                      <td className="px-4 py-3 text-right text-sm text-gray-600">
-                        ${(item.cost * 1.05 * 1.20 * 1.25).toFixed(2)} - ${(item.cost * 1.18 * 1.20 * 1.50).toFixed(2)}
-                      </td>
+                  {pricingBreakdown.map((row, idx) => (
+                    <tr key={idx} className="hover:bg-gray-50">
+                      <td className="px-4 py-3 font-semibold">{row.size}</td>
+                      <td className="px-4 py-3 text-right font-bold">${row.yourCost.toFixed(2)}</td>
+                      <td className="px-4 py-3 text-center bg-blue-50 font-semibold">${row.westCoast.toFixed(2)}</td>
+                      <td className="px-4 py-3 text-center bg-blue-100">${row.westRetail.toFixed(2)}</td>
+                      <td className="px-4 py-3 text-center bg-orange-50 font-semibold">${row.midwest.toFixed(2)}</td>
+                      <td className="px-4 py-3 text-center bg-orange-100">${row.midwestRetail.toFixed(2)}</td>
+                      <td className="px-4 py-3 text-center bg-purple-50 font-semibold">${row.eastCoast.toFixed(2)}</td>
+                      <td className="px-4 py-3 text-center bg-purple-100">${row.eastRetail.toFixed(2)}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -519,152 +342,87 @@ export default function USDA() {
             </div>
           </div>
 
-          {/* Market Insights */}
-          <div className="grid grid-cols-3 gap-6">
-            <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-lg shadow-lg p-6 border-l-4 border-green-500">
-              <h4 className="text-sm font-bold text-gray-700 mb-2">Supply Status</h4>
-              <p className="text-3xl font-bold text-green-700 mb-2">High</p>
-              <p className="text-xs text-gray-600">Peak harvest season, abundant supply from Michoacán and Sinaloa regions</p>
+          <div className="grid grid-cols-4 gap-4">
+            <div className="bg-green-50 rounded-lg p-5 border-l-4 border-green-500">
+              <div className="text-xs font-semibold text-gray-600">Avg Wholesale Markup</div>
+              <div className="text-3xl font-bold text-green-700">+11.7%</div>
             </div>
-
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg shadow-lg p-6 border-l-4 border-blue-500">
-              <h4 className="text-sm font-bold text-gray-700 mb-2">Demand Forecast</h4>
-              <p className="text-3xl font-bold text-blue-700 mb-2">Rising</p>
-              <p className="text-xs text-gray-600">Expected 8-12% increase in Q2 due to seasonal demand and export growth</p>
+            <div className="bg-blue-50 rounded-lg p-5 border-l-4 border-blue-500">
+              <div className="text-xs font-semibold text-gray-600">Avg Retail Markup</div>
+              <div className="text-3xl font-bold text-blue-700">+38%</div>
             </div>
-
-            <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg shadow-lg p-6 border-l-4 border-purple-500">
-              <h4 className="text-sm font-bold text-gray-700 mb-2">Price Outlook</h4>
-              <p className="text-3xl font-bold text-purple-700 mb-2">Stable</p>
-              <p className="text-xs text-gray-600">Prices expected to remain within $32-38 range through next quarter</p>
+            <div className="bg-yellow-50 rounded-lg p-5 border-l-4 border-yellow-500">
+              <div className="text-xs font-semibold text-gray-600">Best Market</div>
+              <div className="text-2xl font-bold text-yellow-700">East Coast</div>
+            </div>
+            <div className="bg-red-50 rounded-lg p-5 border-l-4 border-red-500">
+              <div className="text-xs font-semibold text-gray-600">Freight Impact</div>
+              <div className="text-3xl font-bold text-red-700">5-18%</div>
             </div>
           </div>
         </div>
       )}
 
-      {/* TAB 3: Grower Marketplace */}
-      {activeTab === 'marketplace' && (
-        <div className="bg-white rounded-lg shadow-lg p-8">
-          <div className="flex justify-between items-center mb-6">
-            <div>
-              <h2 className="text-2xl font-bold text-gray-800">Grower Marketplace</h2>
-              <p className="text-sm text-gray-600 italic">Mercado de Productores</p>
+      {activeTab === 'analytics' && (
+        <div className="space-y-6">
+          <div className="bg-white rounded-lg shadow-lg p-6">
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-xl font-bold">Select Commodities (Max 10)</h2>
+              <select value={timeframe} onChange={(e) => setTimeframe(e.target.value)} className="border rounded-lg px-3 py-2">
+                <option value="weekly">Weekly (Current Year)</option>
+                <option value="yearly">5-Year Comparison</option>
+              </select>
             </div>
-            <button
-              onClick={() => setShowListingModal(true)}
-              className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-bold transition-colors shadow-lg"
-            >
-              <div>List Your Crop</div>
-              <div className="text-xs opacity-90">Publicar Cultivo</div>
-            </button>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {mockListings.map(listing => (
-              <div key={listing.id} className="border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-                <div className="flex justify-between items-start mb-3">
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-800">{listing.crop}</h3>
-                    <p className="text-sm italic text-gray-500">{listing.cropEs}</p>
-                  </div>
-                  <span className="text-xs bg-gray-100 text-gray-600 px-3 py-1 rounded-full font-semibold">
-                    {listing.id}
-                  </span>
-                </div>
-
-                <div className="space-y-2 mb-4">
-                  <p className="text-sm text-gray-700">
-                    <span className="font-semibold">Location:</span> {listing.state}
-                  </p>
-                  <p className="text-sm text-gray-700">
-                    <span className="font-semibold">Size:</span> {listing.hectares} hectares
-                  </p>
-                  <p className="text-sm text-gray-700">
-                    <span className="font-semibold">Volume:</span> {listing.volume}
-                  </p>
-                  <p className="text-sm text-gray-700">
-                    <span className="font-semibold">Season:</span> {listing.season} <span className="italic text-gray-500">({listing.seasonEs})</span>
-                  </p>
-                  <p className="text-lg font-bold text-green-700 mt-2">{listing.targetPrice}</p>
-                </div>
-
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {listing.certs.map(cert => (
-                    <span key={cert} className="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-semibold">
-                      {cert}
-                    </span>
-                  ))}
-                </div>
-
-                <button className="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg font-semibold transition-colors">
-                  Request Details / Solicitar Detalles
+            <div className="flex flex-wrap gap-2 mb-4">
+              {commodities.slice(0, 30).map(commodity => (
+                <button
+                  key={commodity}
+                  onClick={() => toggleCommodity(commodity)}
+                  className={`px-4 py-2 rounded-lg font-medium ${selectedCommodities.includes(commodity) ? 'bg-green-600 text-white' : 'bg-gray-100 text-gray-700'}`}
+                >
+                  {commodity} {selectedCommodities.includes(commodity) && '✓'}
                 </button>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* List Your Crop Modal */}
-      {showListingModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-lg p-6 max-w-lg w-full shadow-2xl">
-            <div className="flex justify-between items-center mb-6">
-              <div>
-                <h3 className="text-2xl font-bold text-gray-800">List Your Crop</h3>
-                <p className="text-sm text-gray-600 italic">Publicar Cultivo</p>
-              </div>
-              <button
-                onClick={() => setShowListingModal(false)}
-                className="text-gray-500 hover:text-gray-700"
-              >
-                <X className="w-6 h-6" />
-              </button>
+              ))}
             </div>
 
-            <div className="space-y-4">
-              <input
-                type="text"
-                placeholder="Crop Type / Tipo de Cultivo"
-                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:border-transparent"
-              />
-              <input
-                type="text"
-                placeholder="State/Region / Estado/Región"
-                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:border-transparent"
-              />
-              <input
-                type="text"
-                placeholder="Municipality / Municipio"
-                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:border-transparent"
-              />
-              <input
-                type="number"
-                placeholder="Land Size (hectares) / Tamaño"
-                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:border-transparent"
-              />
-              <input
-                type="text"
-                placeholder="Target Price / Precio Objetivo"
-                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:border-transparent"
-              />
-            </div>
-
-            <div className="mt-6 flex gap-3">
-              <button
-                onClick={() => setShowListingModal(false)}
-                className="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-700 py-3 rounded-lg font-bold transition-colors"
-              >
-                Cancel / Cancelar
+            <div className="flex gap-3">
+              <button onClick={fetchRealPriceData} disabled={loading} className="bg-green-600 text-white px-6 py-3 rounded-lg font-bold">
+                {loading ? 'Loading...' : 'Load Real Price Data'}
               </button>
-              <button
-                onClick={() => setShowListingModal(false)}
-                className="flex-1 bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-bold transition-colors"
-              >
-                Submit / Enviar
-              </button>
+              {chartData.length > 0 && (
+                <button onClick={exportToCSV} className="bg-blue-600 text-white px-6 py-3 rounded-lg font-bold">Export CSV</button>
+              )}
             </div>
           </div>
+
+          {error && <div className="bg-red-50 border border-red-200 rounded-lg p-4"><p className="text-red-700">{error}</p></div>}
+
+          {chartData.length > 0 && (
+            <div className="bg-white rounded-lg shadow-lg p-6">
+              <h3 className="text-2xl font-bold mb-6">{timeframe === 'weekly' ? 'Weekly Price Comparison' : '5-Year Price Trends'}</h3>
+              <ResponsiveContainer width="100%" height={500}>
+                <LineChart data={chartData}>
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="timeLabel" angle={-45} textAnchor="end" height={100} />
+                  <YAxis label={{ value: 'Price ($)', angle: -90, position: 'insideLeft' }} />
+                  <Tooltip />
+                  <Legend />
+                  {selectedCommodities.map((commodity, index) => (
+                    <Line key={commodity} type="monotone" dataKey={commodity} stroke={colors[index % colors.length]} strokeWidth={3} />
+                  ))}
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
+          )}
+
+          {chartData.length === 0 && !loading && (
+            <div className="bg-blue-50 rounded-lg p-6 text-center">
+              <TrendingUp className="w-16 h-16 text-blue-600 mx-auto mb-4" />
+              <h3 className="text-xl font-bold mb-2">Ready to Compare Prices</h3>
+              <p className="text-gray-600">Select commodities and click Load Real Price Data</p>
+            </div>
+          )}
         </div>
       )}
     </div>

@@ -1,91 +1,102 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
-// SAFE import: if AuthContext isn't wired yet, we won't crash.
-import * as Auth from "../../context/AuthContext";
-const useAuth =
-  Auth && Auth.useAuth
-    ? Auth.useAuth
-    : () => ({ profile: null, logout: () => {} });
+// Demo avatar, replace with user image as needed
+const avatarUrl = "https://randomuser.me/api/portraits/men/32.jpg";
 
-// If you still use AppModeContext, keep it; otherwise we’ll fall back safely.
-import * as Mode from "../../context/AppModeContext";
-const useAppMode =
-  Mode && Mode.useAppMode
-    ? Mode.useAppMode
-    : () => ({ mode: "demo", setMode: () => {} });
-
-const NavItem = ({ to, children }) => {
-  const { pathname } = useLocation();
-  const active = pathname === to;
-  return (
-    <Link
-      to={to}
-      className={`px-3 py-2 rounded-xl text-sm ${
-        active ? "bg-white/10 text-white" : "text-slate-300 hover:bg-white/5"
-      }`}
-    >
-      {children}
-    </Link>
-  );
-};
+const navLinks = [
+  { to: "/dashboard", label: "Dashboard" },
+  { to: "/usda", label: "USDA Search" },
+  { to: "/ag-market", label: "Marketplace" },
+  { to: "/mortgages", label: "Mortgages" },
+  { to: "/services", label: "Services" },
+  { to: "/compliance", label: "Compliance" },
+];
 
 export default function Navbar() {
-  const { mode, setMode } = useAppMode();
-  const { profile, logout } = useAuth();
+  const location = useLocation();
 
   return (
-    <div className="sticky top-0 z-40">
-      <div className="backdrop-blur bg-neutral-950/70 border-b border-neutral-800">
-        <nav className="container py-3 flex items-center gap-3">
-          <div className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600" />
-            <div className="font-bold text-lg tracking-tight">AuditDNA</div>
-          </div>
-
-          <div className="flex-1" />
-
-          <div className="hidden md:flex items-center gap-1">
-            <NavItem to="/">Home</NavItem>
-            <NavItem to="/services">Services</NavItem>
-            <NavItem to="/marketplace">AgriTrade</NavItem>
-            <NavItem to="/factoring">Factoring</NavItem>
-            <NavItem to="/equipment">Equipment</NavItem>
-            <NavItem to="/mortgage">Mortgage</NavItem>
-            <NavItem to="/lender-match">Lender Match</NavItem>
-            <NavItem to="/usda-pricing">USDA Pricing</NavItem>
-            <NavItem to="/admin">Admin</NavItem>
-          </div>
-
-          <div className="flex-1" />
-
-          <div className="flex items-center gap-2">
-            <span className="text-xs text-neutral-400">Mode</span>
-            <button
-              onClick={() => setMode(mode === "demo" ? "live" : "demo")}
-              className={`btn ${mode === "live" ? "bg-green-600/70 border-green-400/40" : "bg-slate-900/80"}`}
-            >
-              {String(mode || "demo").toUpperCase()}
-            </button>
-
-            {profile ? (
-              <>
-                <span className="text-xs text-neutral-300">
-                  {profile.name || profile.email}
-                </span>
-                <button className="btn" onClick={logout}>
-                  Logout
-                </button>
-              </>
-            ) : (
-              <Link to="/login" className="btn">
-                Login
-              </Link>
-            )}
-          </div>
-        </nav>
+    <nav
+      style={{
+        position: "sticky",
+        top: 0,
+        zIndex: 50,
+        background: "#fff",
+        boxShadow: "0 2px 12px #0001",
+        padding: "0 32px",
+        display: "flex",
+        alignItems: "center",
+        height: 68,
+      }}
+    >
+      <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+        <span style={{ fontWeight: 900, fontSize: 28, color: "#17853b" }}>
+          🧬 AuditDNA
+        </span>
       </div>
-      <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-    </div>
+      <div style={{ flex: 1 }} />
+      <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+        {navLinks.map((link) => (
+          <Link
+            key={link.to}
+            to={link.to}
+            style={{
+              fontWeight: 700,
+              fontSize: 16,
+              color:
+                location.pathname === link.to
+                  ? "#17853b"
+                  : "#222",
+              textDecoration: "none",
+              borderBottom:
+                location.pathname === link.to
+                  ? "2.5px solid #17853b"
+                  : "2.5px solid transparent",
+              padding: "8px 0",
+              transition: "color 0.15s, border-bottom 0.2s",
+            }}
+          >
+            {link.label}
+          </Link>
+        ))}
+        <span
+          title="Notifications"
+          style={{
+            fontSize: 22,
+            color: "#17853b",
+            marginLeft: 12,
+            marginRight: 6,
+            cursor: "pointer",
+          }}
+        >
+          🛎️
+        </span>
+        <div
+          style={{
+            marginLeft: 16,
+            width: 40,
+            height: 40,
+            borderRadius: "50%",
+            overflow: "hidden",
+            border: "2px solid #17853b",
+            cursor: "pointer",
+            boxShadow: "0 2px 8px #0001",
+          }}
+          title="Profile"
+        >
+          <img
+            src={avatarUrl}
+            alt="profile"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              display: "block",
+            }}
+          />
+        </div>
+      </div>
+    </nav>
   );
 }

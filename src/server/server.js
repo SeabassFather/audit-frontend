@@ -1,16 +1,16 @@
-const express = require("express");
-const cors = require("cors");
-const bodyParser = require("body-parser");
-
-const app = express();
-app.use(cors());
-app.use(bodyParser.json());
-
-// Add the apply route
-app.use(require("./apply"));
-
-// Static files (React build) if deploying together
-// app.use(express.static("build"));
-
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on ${PORT}`));
+app.get("/api/usda/search", async (req, res) => {
+  const q = req.query.q || "";
+  // TODO: Replace this with real USDA/FDA/Organic registry query logic
+  // Example static response for demo:
+  const demoResults = [
+    { name: "Organic Farm LLC", location: "CA", certification: "USDA Organic", id: "12345" },
+    { name: "Green Fields Inc", location: "TX", certification: "FDA", id: "67890" }
+  ].filter(row =>
+    q === "" ||
+    row.name.toLowerCase().includes(q.toLowerCase()) ||
+    row.location.toLowerCase().includes(q.toLowerCase()) ||
+    row.certification.toLowerCase().includes(q.toLowerCase()) ||
+    row.id.includes(q)
+  );
+  res.json(demoResults);
+});

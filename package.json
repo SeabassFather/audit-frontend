@@ -23,7 +23,7 @@
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "react-router-dom": "^6.30.1",
-        "recharts": "^2.5.0"
+        "recharts": "^2.15.4"
     },
     "browserslist": {
         "production": [
@@ -44,7 +44,7 @@
         "autoprefixer": "^10.4.21",
         "postcss": "^8.5.6",
         "react-scripts": "^5.0.1",
-        "tailwindcss": "^3.4.17",
+        "tailwindcss": "^3.4.18",
         "vite": "^7.1.7"
     }
 }

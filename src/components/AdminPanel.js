@@ -1,7 +1,49 @@
 import React, { useState, useEffect } from 'react';
 import { Activity, Database, Server, Users, AlertCircle, CheckCircle, Clock, TrendingUp } from 'lucide-react';
+import ContactCard from '../components/ContactCard'; // Added for module access gating
+
+// --- AdminPanel.js ---
+// Last updated: 2025-10-14 22:40 UTC
+// AdminPanel now requires approval to access via ContactCard (per-module approval).
+// Only approved users can view the admin dashboard. Others see the request form or pending approval info.
 
 export default function AdminPanel() {
+  // Track module approval status (replace with real API check in production)
+  const [approved, setApproved] = useState(false);
+  const [pending, setPending] = useState(false);
+
+  // Simulate: On mount, check if user is approved for the AdminPanel module
+  useEffect(() => {
+    async function checkApproval() {
+      // TODO: Replace this with a real API call to your backend
+      // Should return { approved: true } or { pending: true }
+      try {
+        const res = await fetch('/api/module-approval-status?module=AdminPanel');
+        if (res.ok) {
+          const data = await res.json();
+          setApproved(!!data.approved);
+          setPending(!!data.pending && !data.approved);
+        } else {
+          setApproved(false);
+          setPending(false);
+        }
+      } catch (err) {
+        setApproved(false);
+        setPending(false);
+      }
+    }
+    checkApproval();
+  }, []);
+
+  // If not approved, show the ContactCard for access request
+  if (!approved) {
+    // If request is pending, show pending info (ContactCard handles this UI state)
+    return (
+      <ContactCard moduleName="AdminPanel" language="english" />
+    );
+  }
+
+  // --- APPROVED ADMIN VIEW ---
   const [systemStats, setSystemStats] = useState({
     uptime: '99.8%',
     apiCalls: '1,247',
@@ -32,7 +74,6 @@ export default function AdminPanel() {
   return (
     <div>
       <h2 style={s.h}>System Administration</h2>
-      
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '16px', marginBottom: '32px' }}>
         <div style={s.statCard('#4caf50')}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
@@ -41,7 +82,6 @@ export default function AdminPanel() {
           </div>
           <div style={{ fontSize: '32px', fontWeight: '800', color: '#1a365d' }}>{systemStats.uptime}</div>
         </div>
-
         <div style={s.statCard('#2196f3')}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
             <Activity size={24} color="#2196f3" />
@@ -49,7 +89,6 @@ export default function AdminPanel() {
           </div>
           <div style={{ fontSize: '32px', fontWeight: '800', color: '#1a365d' }}>{systemStats.apiCalls}</div>
         </div>
-
         <div style={s.statCard('#ff9800')}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
             <Users size={24} color="#ff9800" />
@@ -57,7 +96,6 @@ export default function AdminPanel() {
           </div>
           <div style={{ fontSize: '32px', fontWeight: '800', color: '#1a365d' }}>{systemStats.activeUsers}</div>
         </div>
-
         <div style={s.statCard('#9c27b0')}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
             <Clock size={24} color="#9c27b0" />
@@ -65,7 +103,6 @@ export default function AdminPanel() {
           </div>
           <div style={{ fontSize: '32px', fontWeight: '800', color: '#1a365d' }}>{systemStats.avgResponseTime}</div>
         </div>
-
         <div style={s.statCard('#f44336')}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
             <AlertCircle size={24} color="#f44336" />
@@ -73,7 +110,6 @@ export default function AdminPanel() {
           </div>
           <div style={{ fontSize: '32px', fontWeight: '800', color: '#1a365d' }}>{systemStats.casesPending}</div>
         </div>
-
         <div style={s.statCard('#4caf50')}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
             <TrendingUp size={24} color="#4caf50" />
@@ -81,7 +117,6 @@ export default function AdminPanel() {
           </div>
           <div style={{ fontSize: '32px', fontWeight: '800', color: '#1a365d' }}>{systemStats.casesCompleted}</div>
         </div>
-
         <div style={s.statCard('#00bcd4')}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
             <Database size={24} color="#00bcd4" />
@@ -89,7 +124,6 @@ export default function AdminPanel() {
           </div>
           <div style={{ fontSize: '32px', fontWeight: '800', color: '#1a365d' }}>{systemStats.storageUsed}</div>
         </div>
-
         <div style={s.statCard('#607d8b')}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
             <Server size={24} color="#607d8b" />
@@ -98,7 +132,6 @@ export default function AdminPanel() {
           <div style={{ fontSize: '32px', fontWeight: '800', color: '#1a365d' }}>{systemStats.bandwidth}</div>
         </div>
       </div>
-
       <div style={s.card}>
         <h3 style={{ fontSize: '20px', fontWeight: '700', color: '#1a365d', marginBottom: '20px' }}>Search Engine Status</h3>
         <div style={{ display: 'grid', gap: '12px' }}>
@@ -126,5 +159,3 @@ export default function AdminPanel() {
     </div>
   );
 }
-
-

@@ -1,6 +1,40 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import ContactCard from '../components/ContactCard'; // Enhanced module access request form
+
+// --- Dashboard.js ---
+// Last updated: 2025-10-14 22:44 UTC
+// Dashboard now requires per-module access approval via ContactCard.
+// Only approved users can view dashboard data; others will see request/pending screen.
 
 export default function Dashboard({ dashboardData }) {
+  // Track module approval status (replace with real API check in production)
+  const [approved, setApproved] = useState(false);
+
+  // On mount, check if user is approved for Dashboard
+  useEffect(() => {
+    async function checkApproval() {
+      // Replace with real API call to your backend for production
+      try {
+        const res = await fetch('/api/module-approval-status?module=Dashboard');
+        if (res.ok) {
+          const data = await res.json();
+          setApproved(!!data.approved);
+        } else {
+          setApproved(false);
+        }
+      } catch (err) {
+        setApproved(false);
+      }
+    }
+    checkApproval();
+  }, []);
+
+  // If not approved, show ContactCard to request access
+  if (!approved) {
+    return <ContactCard moduleName="Dashboard" language="english" />;
+  }
+
+  // --- APPROVED DASHBOARD VIEW ---
   const s = {
     card: { background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)', borderRadius: '16px', padding: '24px', marginBottom: '20px', border: '2px solid #e3f2fd', boxShadow: '0 4px 12px rgba(0,0,0,0.08)', color: '#2d3748' }
   };
@@ -64,5 +98,3 @@ export default function Dashboard({ dashboardData }) {
     </div>
   );
 }
-
-
