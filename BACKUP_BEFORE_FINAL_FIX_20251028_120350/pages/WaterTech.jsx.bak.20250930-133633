@@ -1,0 +1,42 @@
+import { useState } from "react";
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
+
+const sampleData = [
+  { week: "W1", pH: 6.5, oxygen: 8.2, conductivity: 1.2 },
+  { week: "W2", pH: 6.7, oxygen: 8.0, conductivity: 1.1 },
+  { week: "W3", pH: 6.8, oxygen: 7.9, conductivity: 1.3 },
+  { week: "W4", pH: 6.6, oxygen: 8.1, conductivity: 1.0 },
+];
+
+export default function WaterTech(){
+  const [file, setFile] = useState(null);
+
+  const onFile = (e) => {
+    if (e.target.files && e.target.files[0]) setFile(e.target.files[0]);
+  };
+
+  return (
+    <div className="p-6">
+      <h1 className="text-2xl font-bold mb-4">Water & Soil Lab Uploads</h1>
+      <p className="mb-3 text-gray-600">Upload CSV or PDF lab reports. Files are queued for backend analysis.</p>
+
+      <input type="file" accept=".csv,.pdf" onChange={onFile} className="mb-4" />
+      {file && <div className="mb-4 p-3 bg-green-50 border rounded">Uploaded: {file.name}</div>}
+
+      <div style={{width:"100%", height:320}}>
+        <ResponsiveContainer>
+          <LineChart data={sampleData}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="week"/>
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Line type="monotone" dataKey="pH" />
+            <Line type="monotone" dataKey="oxygen" />
+            <Line type="monotone" dataKey="conductivity" />
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
+    </div>
+  );
+}

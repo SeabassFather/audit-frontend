@@ -1,0 +1,177 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
+import './App.css';
+import AuditDNAEnvAI from './AuditDNAEnvAI';
+import WaterTechModule from './WaterTechModule';
+import SoilAnalysisModule from './SoilAnalysisModule';
+import TestingServicesHub from './TestingServicesHub';
+
+function App() {
+  return (
+    <Router>
+      <div className="app">
+        <Header />
+        <Navigation />
+        <main className="main-container">
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/environment-ai" element={<AuditDNAEnvAI />} />
+            <Route path="/water-tech" element={<WaterTechModule />} />
+            <Route path="/soil-analysis" element={<SoilAnalysisModule />} />
+            <Route path="/testing-services" element={<TestingServicesHub />} />
+            <Route path="/traceability" element={<Traceability />} />
+            <Route path="/marketplace" element={<Marketplace />} />
+            <Route path="/upload-center" element={<UploadCenter />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
+  );
+}
+
+function Header() {
+  return (
+    <header className="app-header">
+      <div className="header-content">
+        <div className="brand-section">
+          <div className="brand-logo">🌍</div>
+          <div className="brand-text">
+            <h1>AuditDNA Water Technology & Traceability</h1>
+            <p>Powered by Blockchain | Real-Time Intelligence | Global Compliance</p>
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+}
+
+function Navigation() {
+  const navigate = useNavigate();
+  
+  const tabs = [
+    { path: '/', label: '📊 Dashboard', icon: '📊' },
+    { path: '/environment-ai', label: '🌿 Environment AI', icon: '🌿' },
+    { path: '/water-tech', label: '💧 Water Technology', icon: '💧' },
+    { path: '/soil-analysis', label: '🌱 Soil Analysis', icon: '🌱' },
+    { path: '/testing-services', label: '🔬 Testing Services', icon: '🔬' },
+    { path: '/traceability', label: '🔗 Traceability', icon: '🔗' },
+    { path: '/marketplace', label: '🛒 Marketplace', icon: '🛒' },
+    { path: '/upload-center', label: '📤 Upload Center', icon: '📤' }
+  ];
+
+  return (
+    <nav className="main-nav">
+      <div className="nav-tabs">
+        {tabs.map(tab => (
+          <button
+            key={tab.path}
+            className={`nav-tab ${window.location.pathname === tab.path ? 'active' : ''}`}
+            onClick={() => navigate(tab.path)}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </div>
+    </nav>
+  );
+}
+
+function Dashboard() {
+  return (
+    <div className="dashboard-view">
+      <h1 className="page-title">
+        <span className="page-title-icon">📊</span>
+        Dashboard Overview
+      </h1>
+      
+      <div className="stats-grid" style={{display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '25px', marginBottom: '40px'}}>
+        <StatCard icon="💧" title="Water Tests" value="1,247" trend="+12%" />
+        <StatCard icon="🌱" title="Soil Analyses" value="856" trend="+8%" />
+        <StatCard icon="🔬" title="Active Tests" value="34" trend="+5%" />
+        <StatCard icon="✅" title="Compliance Rate" value="98.7%" trend="+2%" />
+      </div>
+
+      <div className="quick-actions" style={{display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '25px'}}>
+        <QuickActionCard 
+          icon="🚀" 
+          title="Run Environment AI Analysis" 
+          description="Analyze water, soil, and environmental data"
+          link="/environment-ai"
+        />
+        <QuickActionCard 
+          icon="🔬" 
+          title="Order Laboratory Testing" 
+          description="Professional testing services with certification"
+          link="/testing-services"
+        />
+        <QuickActionCard 
+          icon="📊" 
+          title="View Traceability Data" 
+          description="Blockchain-verified supply chain tracking"
+          link="/traceability"
+        />
+      </div>
+    </div>
+  );
+}
+
+function StatCard({ icon, title, value, trend }) {
+  return (
+    <div className="info-card" style={{textAlign: 'center'}}>
+      <div style={{fontSize: '3rem', marginBottom: '15px'}}>{icon}</div>
+      <div style={{color: 'var(--gray-400)', fontSize: '0.9rem', marginBottom: '10px'}}>{title}</div>
+      <div style={{fontSize: '2.5rem', fontWeight: '800', color: 'var(--accent-cyan)', marginBottom: '10px'}}>{value}</div>
+      <div className="status-badge status-success">{trend}</div>
+    </div>
+  );
+}
+
+function QuickActionCard({ icon, title, description, link }) {
+  const navigate = useNavigate();
+  
+  return (
+    <div className="info-card" style={{cursor: 'pointer'}} onClick={() => navigate(link)}>
+      <div style={{fontSize: '3rem', marginBottom: '15px'}}>{icon}</div>
+      <h3 style={{color: 'var(--accent-cyan)', marginBottom: '10px', fontSize: '1.3rem'}}>{title}</h3>
+      <p style={{color: 'var(--gray-400)', lineHeight: '1.6'}}>{description}</p>
+    </div>
+  );
+}
+
+function Traceability() {
+  return (
+    <div className="module-wrapper">
+      <h1 className="page-title">
+        <span className="page-title-icon">🔗</span>
+        Traceability Module
+      </h1>
+      <p style={{fontSize: '1.2rem', color: 'var(--gray-400)'}}>Blockchain-verified supply chain tracking coming soon...</p>
+    </div>
+  );
+}
+
+function Marketplace() {
+  return (
+    <div className="module-wrapper">
+      <h1 className="page-title">
+        <span className="page-title-icon">🛒</span>
+        Marketplace
+      </h1>
+      <p style={{fontSize: '1.2rem', color: 'var(--gray-400)'}}>Premium product marketplace coming soon...</p>
+    </div>
+  );
+}
+
+function UploadCenter() {
+  return (
+    <div className="module-wrapper">
+      <h1 className="page-title">
+        <span className="page-title-icon">📤</span>
+        Upload Center
+      </h1>
+      <p style={{fontSize: '1.2rem', color: 'var(--gray-400)'}}>Document and data upload center coming soon...</p>
+    </div>
+  );
+}
+
+export default App;

@@ -1,0 +1,148 @@
+﻿═══════════════════════════════════════════════════════════
+🔊 MANUAL FIX FOR AuditDNAEnvAI.jsx
+═══════════════════════════════════════════════════════════
+
+OPEN: C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend\src\AuditDNAEnvAI.jsx
+
+FIND LINE 1-5 (the imports at the top):
+═══════════════════════════════════════════════════════════
+import React, { useState } from 'react';
+import { useLanguage } from './LanguageContext';
+import analyzeTestResults from './aiAnalysisEngine';
+
+function AuditDNAEnvAI() {
+═══════════════════════════════════════════════════════════
+
+CHANGE TO (add audioSystem import):
+═══════════════════════════════════════════════════════════
+import React, { useState } from 'react';
+import { useLanguage } from './LanguageContext';
+import analyzeTestResults from './aiAnalysisEngine';
+import audioSystem from './audioSystem';
+
+function AuditDNAEnvAI() {
+═══════════════════════════════════════════════════════════
+
+THEN FIND LINE ~100-110 (the test type cards):
+═══════════════════════════════════════════════════════════
+{testTypes.map(type => (
+  <div
+    key={type.id}
+    onClick={() => { setTestType(type.id); setManualData({}); }}
+    style={{
+═══════════════════════════════════════════════════════════
+
+CHANGE TO (add sound events):
+═══════════════════════════════════════════════════════════
+{testTypes.map(type => (
+  <div
+    key={type.id}
+    onClick={() => { 
+      audioSystem.playClick(); 
+      setTestType(type.id); 
+      setManualData({}); 
+    }}
+    onMouseEnter={() => audioSystem.playHover()}
+    style={{
+═══════════════════════════════════════════════════════════
+
+FIND LINE ~220 (nextStep function):
+═══════════════════════════════════════════════════════════
+const nextStep = () => {
+  if (isStepValid()) {
+    setStep(step + 1);
+═══════════════════════════════════════════════════════════
+
+CHANGE TO:
+═══════════════════════════════════════════════════════════
+const nextStep = () => {
+  if (isStepValid()) {
+    audioSystem.playClick();
+    setStep(step + 1);
+═══════════════════════════════════════════════════════════
+
+FIND THE ELSE BLOCK RIGHT AFTER:
+═══════════════════════════════════════════════════════════
+} else {
+  alert(language === 'es' ? '¡Por favor complete todos los campos requeridos!' : 'Please complete all required fields!');
+}
+═══════════════════════════════════════════════════════════
+
+CHANGE TO:
+═══════════════════════════════════════════════════════════
+} else {
+  audioSystem.playWarning();
+  alert(language === 'es' ? '¡Por favor complete todos los campos requeridos!' : 'Please complete all required fields!');
+}
+═══════════════════════════════════════════════════════════
+
+FIND handleFileUpload function (~line 180):
+═══════════════════════════════════════════════════════════
+const handleFileUpload = (files) => {
+  const newFiles = Array.from(files).map(file => ({
+    file,
+    name: file.name,
+    size: file.size,
+    type: file.type,
+    uploadedAt: new Date().toISOString()
+  }));
+  setUploadedFiles(prev => [...prev, ...newFiles]);
+};
+═══════════════════════════════════════════════════════════
+
+CHANGE TO (add sound at end):
+═══════════════════════════════════════════════════════════
+const handleFileUpload = (files) => {
+  const newFiles = Array.from(files).map(file => ({
+    file,
+    name: file.name,
+    size: file.size,
+    type: file.type,
+    uploadedAt: new Date().toISOString()
+  }));
+  setUploadedFiles(prev => [...prev, ...newFiles]);
+  audioSystem.playSuccess();
+};
+═══════════════════════════════════════════════════════════
+
+FIND runAnalysis function (~line 250):
+═══════════════════════════════════════════════════════════
+setStep(6);
+audioSystem.playSuccess();  // ← ADD THIS LINE
+}, 3000);
+═══════════════════════════════════════════════════════════
+
+FIND downloadPDF function:
+═══════════════════════════════════════════════════════════
+const downloadPDF = () => {
+  alert(language === 'es' ? 'Generando PDF del reporte AI...' : 'Generating AI report PDF...');
+};
+═══════════════════════════════════════════════════════════
+
+CHANGE TO:
+═══════════════════════════════════════════════════════════
+const downloadPDF = () => {
+  audioSystem.playClick();
+  alert(language === 'es' ? 'Generando PDF del reporte AI...' : 'Generating AI report PDF...');
+};
+═══════════════════════════════════════════════════════════
+
+SAME FOR emailReport AND printReport:
+═══════════════════════════════════════════════════════════
+const emailReport = () => {
+  audioSystem.playClick();
+  alert(...);
+};
+
+const printReport = () => {
+  audioSystem.playClick();
+  window.print();
+};
+═══════════════════════════════════════════════════════════
+
+SAVE FILE (Ctrl+S)
+RESTART npm (Ctrl+C then npm start)
+HARD REFRESH BROWSER (Ctrl+Shift+R)
+
+DONE! SOUND WORKS!
+═══════════════════════════════════════════════════════════

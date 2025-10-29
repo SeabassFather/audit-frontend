@@ -1,0 +1,37 @@
+[
+  {
+    "id": "firstam",
+    "name": "First American Title",
+    "website": "https://www.firstam.com",
+    "apiIntegration": true,
+    "contact": {
+      "email": "orders@firstam.com",
+      "phone": "1-800-854-3643"
+    },
+    "serviceCapabilities": [
+      "Instant Escrow Open",
+      "Title Search",
+      "Statement of Identity Collection",
+      "Payoff Demand Automation",
+      "eSign/E-Disclosures",
+      "Fraud/KYC Checks",
+      "Closing & Funding",
+      "Compliance Audit Trail"
+    ],
+    "workflow": [
+      "Collect Borrower/Property Data",
+      "Open Escrow (API/Webform)",
+      "Collect Statement of Identity",
+      "Order Payoff (if refinance)",
+      "Upload/Review Title Report",
+      "eSign Disclosures",
+      "Clearing Conditions",
+      "Wire/Fund",
+      "Record & Close"
+    ],
+    "payoffAutomation": true,
+    "statementOfIdentityRequired": true,
+    "refiSupported": true,
+    "purchaseSupported": true
+  }
+]

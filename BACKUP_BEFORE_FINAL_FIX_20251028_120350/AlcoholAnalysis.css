@@ -1,0 +1,114 @@
+﻿@import './colors.css';
+
+.alcohol-module {
+  min-height: 100vh;
+  background: var(--gray-900);
+}
+
+.alcohol-hero {
+  background: linear-gradient(135deg, #ec4899 0%, #be185d 100%);
+}
+
+.safety-alert {
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: start;
+  gap: 15px;
+  border-left: 5px solid var(--danger);
+}
+
+.safety-alert.critical {
+  background: rgba(239, 68, 68, 0.1);
+  border-left-color: var(--danger);
+}
+
+.safety-alert .alert-icon {
+  font-size: 2.5rem;
+}
+
+.safety-alert strong {
+  color: var(--danger);
+  font-size: 1.3rem;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.safety-alert p {
+  color: var(--gray-100);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.issues-section {
+  margin-bottom: 30px;
+  padding: 25px;
+  background: var(--gray-900);
+  border-radius: 16px;
+  border: 2px solid var(--gray-700);
+}
+
+.issues-section h3 {
+  color: var(--warning);
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.issue-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+  background: rgba(245, 158, 11, 0.1);
+  border-left: 4px solid var(--warning);
+  border-radius: 8px;
+  margin-bottom: 10px;
+  color: var(--gray-100);
+}
+
+.issue-icon {
+  font-size: 1.5rem;
+}
+
+.market-value-section {
+  margin-top: 30px;
+  padding: 25px;
+  background: var(--gray-900);
+  border-radius: 16px;
+  border: 2px solid var(--gray-700);
+}
+
+.market-value-section h3 {
+  color: var(--success);
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.market-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.market-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background: var(--gray-800);
+  border-radius: 10px;
+}
+
+.market-item.full-width {
+  grid-column: 1 / -1;
+}
+
+.market-label {
+  color: var(--gray-400);
+  font-weight: 600;
+}
+
+.market-value {
+  color: var(--accent-cyan);
+  font-weight: 700;
+}

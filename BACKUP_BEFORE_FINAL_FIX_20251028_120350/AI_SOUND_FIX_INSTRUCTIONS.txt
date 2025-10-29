@@ -1,0 +1,92 @@
+﻿// ADD THIS AT THE TOP OF AuditDNAEnvAI.jsx after other imports:
+import audioSystem from './audioSystem';
+
+// THEN UPDATE THE TEST TYPE CARDS (around line 100-150):
+
+{testTypes.map(type => (
+  <div
+    key={type.id}
+    onClick={() => { 
+      audioSystem.playClick();  // ← ADD THIS
+      setTestType(type.id); 
+    }}
+    onMouseEnter={() => audioSystem.playHover()}  // ← ADD THIS
+    style={{
+      background: testType === type.id ? `rgba(${hexToRgb(type.color)}, 0.2)` : 'rgba(15,25,35,0.6)',
+      border: testType === type.id ? `3px solid ${type.color}` : '1px solid rgba(100,116,139,0.3)',
+      borderRadius: '16px',
+      padding: '30px 20px',
+      cursor: 'pointer',
+      textAlign: 'center',
+      transition: 'all 0.3s'
+    }}
+  >
+    <div style={{ fontSize: '60px', marginBottom: '12px' }}>{type.icon}</div>
+    <div style={{ fontSize: '18px', color: type.color, fontWeight: '700' }}>{type.name}</div>
+  </div>
+))}
+
+// UPDATE nextStep function (around line 200):
+const nextStep = () => {
+  if (isStepValid()) {
+    audioSystem.playClick();  // ← ADD THIS
+    setStep(step + 1);
+    if (step === 4) {
+      setTimeout(() => runAnalysis(), 2000);
+    }
+  } else {
+    audioSystem.playWarning();  // ← ADD THIS
+    alert(language === 'es' ? '¡Por favor complete todos los campos requeridos!' : 'Please complete all required fields!');
+  }
+};
+
+// UPDATE handleFileUpload (around line 180):
+const handleFileUpload = (files) => {
+  const newFiles = Array.from(files).map(file => ({
+    file,
+    name: file.name,
+    size: file.size,
+    type: file.type,
+    uploadedAt: new Date().toISOString()
+  }));
+  setUploadedFiles(prev => [...prev, ...newFiles]);
+  audioSystem.playSuccess();  // ← ADD THIS
+};
+
+// UPDATE runAnalysis (around line 240):
+const runAnalysis = () => {
+  setStep(5);
+  setTimeout(() => {
+    const contextData = {
+      ...manualData,
+      location: {
+        city: contactInfo.city,
+        state: contactInfo.state,
+        country: contactInfo.country
+      }
+    };
+    const result = analyzeTestResults(selectedModule, contextData, language);
+    result.locationRecommendations = generateLocationRecommendations(selectedModule, contactInfo.city, contactInfo.state, contactInfo.country, language);
+    setAnalysis(result);
+    const generatedQR = `AUDITDNA-${selectedModule.toUpperCase()}-${Date.now()}-${contactInfo.name.replace(/\s/g, '').toUpperCase()}`;
+    setQrCode(generatedQR);
+    setStep(6);
+    audioSystem.playSuccess();  // ← ADD THIS
+  }, 3000);
+};
+
+// UPDATE button clicks:
+const downloadPDF = () => {
+  audioSystem.playClick();  // ← ADD THIS
+  alert(language === 'es' ? 'Generando PDF del reporte AI...' : 'Generating AI report PDF...');
+};
+
+const emailReport = () => {
+  audioSystem.playClick();  // ← ADD THIS
+  alert(language === 'es' ? `Enviando reporte completo a ${contactInfo.email}...` : `Sending complete report to ${contactInfo.email}...`);
+};
+
+const printReport = () => {
+  audioSystem.playClick();  // ← ADD THIS
+  window.print();
+};

@@ -1,0 +1,290 @@
+﻿import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { LanguageProvider } from './LanguageContext';
+import LanguageToggle from './LanguageToggle';
+import audioSystem from './audioSystem';
+import AgScienceDashboard from './AgScienceDashboard';
+import AlcoholAnalysisModule from './AlcoholAnalysisModule';
+import AuditDNAEnvAI from './AuditDNAEnvAI';
+import BillingComponent from './BillingComponent';
+import ContactCardComponent from './ContactCardComponent';
+import EnginePerformanceModule from './EnginePerformanceModule';
+import FieldConditionsLogger from './FieldConditionsLogger';
+import FuelOilAnalysisModule from './FuelOilAnalysisModule';
+import LabDashboard from './LabDashboard';
+import ResultsPortal from './ResultsPortal';
+import SoilAnalysisModule from './SoilAnalysisModule';
+import TestingServicesHub from './TestingServicesHub';
+import TraceabilityModule from './TraceabilityModule';
+import WaterTechModuleAdvanced from './WaterTechModuleAdvanced';
+import './App.css';
+
+function App() {
+  const [soundEnabled, setSoundEnabled] = useState(true);
+
+  const toggleSound = () => {
+    const newState = audioSystem.toggle();
+    setSoundEnabled(newState);
+    audioSystem.playToggle();
+  };
+
+  return (
+    <LanguageProvider>
+      <Router>
+        <div className="App" style={{ minHeight: '100vh', background: 'linear-gradient(135deg, #0a1628 0%, #1a2332 50%, #0f1923 100%)' }}>
+          
+          <header style={{ 
+            background: 'rgba(30, 41, 59, 0.7)',
+            backdropFilter: 'blur(20px) saturate(180%)',
+            WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+            padding: '20px 40px', 
+            borderBottom: '1px solid rgba(59,130,246,0.3)',
+            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+            position: 'sticky',
+            top: 0,
+            zIndex: 100
+          }}>
+            <div style={{ maxWidth: '1800px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <Link to="/" style={{ textDecoration: 'none' }} onClick={() => audioSystem.playSwoosh()}>
+                <h1 style={{ 
+                  color: '#3b82f6', 
+                  fontSize: '32px', 
+                  fontWeight: 'bold',
+                  margin: 0,
+                  textShadow: '0 0 30px rgba(59,130,246,0.8), 0 0 60px rgba(6,182,212,0.6)',
+                  background: 'linear-gradient(135deg, #3b82f6, #06b6d4, #10b981)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  animation: 'shimmer 3s ease-in-out infinite'
+                }}>
+                  AuditDNA Complete
+                </h1>
+                <p style={{ color: '#64748b', fontSize: '14px', margin: '5px 0 0 0' }}>
+                  220 Premium Tests | Real-Time Analysis | AI-Powered | QR Tracking
+                </p>
+              </Link>
+              
+              <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
+                <button 
+                  onClick={toggleSound}
+                  onMouseEnter={() => audioSystem.playHover()}
+                  style={{ 
+                    background: soundEnabled ? 'rgba(16,185,129,0.2)' : 'rgba(239,68,68,0.2)', 
+                    backdropFilter: 'blur(10px)',
+                    color: soundEnabled ? '#10b981' : '#ef4444', 
+                    padding: '8px 16px', 
+                    borderRadius: '8px',
+                    border: soundEnabled ? '1px solid rgba(16,185,129,0.4)' : '1px solid rgba(239,68,68,0.4)',
+                    fontSize: '14px',
+                    fontWeight: '600',
+                    cursor: 'pointer',
+                    boxShadow: soundEnabled ? '0 4px 15px rgba(16,185,129,0.3)' : '0 4px 15px rgba(239,68,68,0.3)'
+                  }}
+                >
+                  {soundEnabled ? '🔊 Sound ON' : '🔇 Sound OFF'}
+                </button>
+                <LanguageToggle />
+                <div style={{ background: 'rgba(16,185,129,0.2)', backdropFilter: 'blur(10px)', color: '#10b981', padding: '8px 16px', borderRadius: '8px', border: '1px solid rgba(16,185,129,0.4)', fontSize: '14px', fontWeight: '600', boxShadow: '0 4px 15px rgba(16,185,129,0.3)' }}>
+                  ● ONLINE
+                </div>
+                <div style={{ background: 'rgba(59,130,246,0.2)', backdropFilter: 'blur(10px)', color: '#3b82f6', padding: '8px 16px', borderRadius: '8px', border: '1px solid rgba(59,130,246,0.4)', fontSize: '14px', fontWeight: '600', boxShadow: '0 4px 15px rgba(59,130,246,0.3)' }}>
+                  PORT: 8001
+                </div>
+              </div>
+            </div>
+          </header>
+
+          <nav style={{ background: 'rgba(15, 23, 42, 0.6)', backdropFilter: 'blur(15px) saturate(180%)', WebkitBackdropFilter: 'blur(15px) saturate(180%)', padding: '20px 40px', borderBottom: '1px solid rgba(100,116,139,0.2)', boxShadow: '0 4px 20px rgba(0, 0, 0, 0.2)' }}>
+            <div style={{ maxWidth: '1800px', margin: '0 auto', display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+              <NavButton to="/" label="Home" color="#3b82f6" />
+              <NavButton to="/ag" label="AG Science (55)" color="#10b981" />
+              <NavButton to="/ai" label="AI Analysis" color="#ec4899" />
+              <NavButton to="/alcohol" label="Alcohol (25)" color="#facc15" />
+              <NavButton to="/payment" label="Billing" color="#10b981" />
+              <NavButton to="/contact" label="Contact" color="#64748b" />
+              <NavButton to="/engine" label="Engine (20)" color="#8b5cf6" />
+              <NavButton to="/field" label="Field Logger" color="#f59e0b" />
+              <NavButton to="/fuel" label="Fuel (30)" color="#94a3b8" />
+              <NavButton to="/lab" label="Lab" color="#8b5cf6" />
+              <NavButton to="/results" label="Results" color="#ec4899" />
+              <NavButton to="/soil" label="Soil (40)" color="#4ade80" />
+              <NavButton to="/testing" label="Testing Hub" color="#f97316" />
+              <NavButton to="/traceability" label="Traceability" color="#10b981" />
+              <NavButton to="/water" label="Water (50)" color="#06b6d4" />
+            </div>
+          </nav>
+
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/ag" element={<AgScienceDashboard />} />
+            <Route path="/ai" element={<AuditDNAEnvAI />} />
+            <Route path="/alcohol" element={<AlcoholAnalysisModule />} />
+            <Route path="/contact" element={<ContactCardComponent />} />
+            <Route path="/engine" element={<EnginePerformanceModule />} />
+            <Route path="/field" element={<FieldConditionsLogger />} />
+            <Route path="/fuel" element={<FuelOilAnalysisModule />} />
+            <Route path="/lab" element={<LabDashboard />} />
+            <Route path="/payment" element={<BillingComponent />} />
+            <Route path="/results" element={<ResultsPortal />} />
+            <Route path="/soil" element={<SoilAnalysisModule />} />
+            <Route path="/testing" element={<TestingServicesHub />} />
+            <Route path="/traceability" element={<TraceabilityModule />} />
+            <Route path="/water" element={<WaterTechModuleAdvanced />} />
+          </Routes>
+
+          <style>{`
+            @keyframes shimmer {
+              0%, 100% { filter: brightness(1) hue-rotate(0deg); }
+              50% { filter: brightness(1.3) hue-rotate(10deg); }
+            }
+          `}</style>
+        </div>
+      </Router>
+    </LanguageProvider>
+  );
+}
+
+function NavButton({ to, label, color }) {
+  return (
+    <Link to={to} style={{ textDecoration: 'none' }}>
+      <button 
+        style={{
+          background: `linear-gradient(135deg, rgba(${hexToRgb(color)}, 0.2), rgba(${hexToRgb(color)}, 0.1))`,
+          backdropFilter: 'blur(10px)',
+          WebkitBackdropFilter: 'blur(10px)',
+          color: color,
+          border: `1px solid rgba(${hexToRgb(color)}, 0.4)`,
+          borderRadius: '10px',
+          padding: '12px 24px',
+          fontSize: '14px',
+          fontWeight: '600',
+          cursor: 'pointer',
+          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+          boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
+        }}
+        onMouseEnter={(e) => {
+          audioSystem.playHover();
+          e.currentTarget.style.background = `linear-gradient(135deg, rgba(${hexToRgb(color)}, 0.4), rgba(${hexToRgb(color)}, 0.2))`;
+          e.currentTarget.style.transform = 'translateY(-3px) scale(1.05)';
+          e.currentTarget.style.boxShadow = `0 8px 25px rgba(${hexToRgb(color)}, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2)`;
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.background = `linear-gradient(135deg, rgba(${hexToRgb(color)}, 0.2), rgba(${hexToRgb(color)}, 0.1))`;
+          e.currentTarget.style.transform = 'translateY(0) scale(1)';
+          e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)';
+        }}
+        onClick={() => audioSystem.playClick()}
+      >
+        {label}
+      </button>
+    </Link>
+  );
+}
+
+function hexToRgb(hex) {
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result ? `${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)}` : '59, 130, 246';
+}
+
+function HomePage() {
+  const [mousePos, setMousePos] = React.useState({ x: 0, y: 0 });
+
+  React.useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePos({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  const modules = [
+    { name: 'AG Science', tests: '55 tests', color: '#10b981', icon: '🌾', path: '/ag', description: 'Produce, Veggies, Fruits' },
+    { name: 'AI Analysis', tests: 'Smart AI', color: '#ec4899', icon: '🤖', path: '/ai', description: 'Environmental Intelligence' },
+    { name: 'Alcohol Testing', tests: '25 tests', color: '#facc15', icon: '🍷', path: '/alcohol', description: 'Purity & Safety' },
+    { name: 'Billing', tests: 'Payments', color: '#10b981', icon: '💳', path: '/payment', description: 'Secure Processing' },
+    { name: 'Contact', tests: 'Support', color: '#64748b', icon: '📧', path: '/contact', description: 'Get In Touch' },
+    { name: 'Engine Diagnostics', tests: '20 tests', color: '#f97316', icon: '🔧', path: '/engine', description: 'Oil & Performance' },
+    { name: 'Field Logger', tests: 'Live Data', color: '#f59e0b', icon: '📝', path: '/field', description: 'Real-Time Conditions' },
+    { name: 'Fuel Testing', tests: '30 tests', color: '#94a3b8', icon: '⛽', path: '/fuel', description: 'Quality Control' },
+    { name: 'Lab Dashboard', tests: '220 Total', color: '#3b82f6', icon: '🔬', path: '/lab', description: 'Central Hub' },
+    { name: 'Results Portal', tests: 'Reports', color: '#ec4899', icon: '📊', path: '/results', description: 'Public Showcase' },
+    { name: 'Soil Analysis', tests: '40 tests', color: '#4ade80', icon: '🌱', path: '/soil', description: 'NPK & Nutrients' },
+    { name: 'Testing Hub', tests: 'Workflow', color: '#f97316', icon: '🧪', path: '/testing', description: 'Order Process' },
+    { name: 'Traceability', tests: 'QR + GPS', color: '#10b981', icon: '📍', path: '/traceability', description: 'Chain of Custody' },
+    { name: 'Water Analysis', tests: '50 tests', color: '#06b6d4', icon: '💧', path: '/water', description: 'Purity & Safety' }
+  ];
+
+  return (
+    <div style={{ padding: '60px 40px' }}>
+      <div style={{ maxWidth: '1800px', margin: '0 auto' }}>
+        <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+          <h1 style={{ 
+            fontSize: '72px', 
+            fontWeight: 'bold', 
+            color: 'white', 
+            marginBottom: '20px',
+            textShadow: '0 0 40px rgba(59, 130, 246, 0.8), 0 0 80px rgba(6, 182, 212, 0.6)',
+            background: 'linear-gradient(135deg, #3b82f6 0%, #06b6d4 50%, #10b981 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            animation: 'titleShimmer 4s ease-in-out infinite',
+            transform: `perspective(1000px) rotateX(${(mousePos.y / window.innerHeight - 0.5) * 10}deg) rotateY(${(mousePos.x / window.innerWidth - 0.5) * 10}deg)`,
+            transition: 'transform 0.1s ease-out',
+            cursor: 'pointer'
+          }}
+          onMouseEnter={(e) => {
+            audioSystem.playHover();
+            e.currentTarget.style.transform = 'scale(1.05)';
+            e.currentTarget.style.textShadow = '0 0 60px rgba(59, 130, 246, 1), 0 0 100px rgba(6, 182, 212, 0.8)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = `perspective(1000px) rotateX(${(mousePos.y / window.innerHeight - 0.5) * 10}deg) rotateY(${(mousePos.x / window.innerWidth - 0.5) * 10}deg)`;
+            e.currentTarget.style.textShadow = '0 0 40px rgba(59, 130, 246, 0.8), 0 0 80px rgba(6, 182, 212, 0.6)';
+          }}
+          onClick={() => audioSystem.playClick()}>
+            AuditDNA Complete
+          </h1>
+          <p style={{ fontSize: '24px', color: '#94a3b8', marginBottom: '40px' }}>
+            220 Premium Laboratory Tests | AI-Powered Analysis | Real-Time Results
+          </p>
+          <div style={{ display: 'inline-block', background: 'rgba(16,185,129,0.15)', backdropFilter: 'blur(15px)', border: '1px solid rgba(16,185,129,0.4)', borderRadius: '16px', padding: '20px 40px', boxShadow: '0 8px 32px rgba(16, 185, 129, 0.3)' }}>
+            <span style={{ fontSize: '18px', color: '#10b981', fontWeight: '700' }}>
+              ✅ Alphabetically Organized | Fully Bilingual | 220+ Tests Available
+            </span>
+          </div>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '30px' }}>
+          {modules.map((module, idx) => (
+            <Link key={idx} to={module.path} style={{ textDecoration: 'none' }}>
+              <div style={{ background: `linear-gradient(135deg, rgba(${hexToRgb(module.color)}, 0.15), rgba(15, 23, 42, 0.9))`, backdropFilter: 'blur(20px)', border: `1px solid rgba(${hexToRgb(module.color)}, 0.4)`, borderRadius: '24px', padding: '40px', cursor: 'pointer', transition: 'all 0.4s', boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)' }}
+              onMouseEnter={(e) => {
+                audioSystem.playHover();
+                e.currentTarget.style.transform = 'translateY(-12px) scale(1.03)';
+                e.currentTarget.style.boxShadow = `0 20px 60px rgba(${hexToRgb(module.color)}, 0.4)`;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                e.currentTarget.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.3)';
+              }}
+              onClick={() => audioSystem.playSwoosh()}>
+                <div style={{ fontSize: '80px', textAlign: 'center', marginBottom: '20px' }}>{module.icon}</div>
+                <h3 style={{ fontSize: '24px', color: module.color, marginBottom: '10px', fontWeight: '700', textAlign: 'center' }}>{module.name}</h3>
+                <p style={{ fontSize: '18px', color: '#94a3b8', textAlign: 'center', marginBottom: '8px' }}>{module.tests}</p>
+                <p style={{ fontSize: '14px', color: '#64748b', textAlign: 'center', fontStyle: 'italic' }}>{module.description}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+      <style>{`
+        @keyframes titleShimmer {
+          0%, 100% { filter: brightness(1); }
+          50% { filter: brightness(1.3); }
+        }
+      `}</style>
+    </div>
+  );
+}
+
+export default App;

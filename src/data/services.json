@@ -1,0 +1,233 @@
+[
+  {
+    "category": "Agriculture & Trade",
+    "icon": "🌾",
+    "description": "Comprehensive agricultural and trade compliance services",
+    "items": [
+      {
+        "id": "usda-pricing-w1-w26",
+        "name": "USDA Weekly Pricing (W1–W26)",
+        "description": "Real-time USDA commodity pricing across all 26 weekly reports",
+        "price": "$297/mo",
+        "features": ["Live data feed", "Historical trends", "Export reports"]
+      },
+      {
+        "id": "commodity-5yr-avg",
+        "name": "5-Year Commodity Averages",
+        "description": "Historical pricing analysis for strategic planning",
+        "price": "$197/mo",
+        "features": ["5-year trends", "Predictive analytics", "Custom reports"]
+      },
+      {
+        "id": "produce-factoring-search",
+        "name": "Produce Factoring Search",
+        "description": "Connect buyers and growers for invoice factoring",
+        "price": "$497/mo",
+        "features": ["Buyer matching", "Invoice verification", "Fast funding"]
+      },
+      {
+        "id": "mexico-grower-us-buyer",
+        "name": "Mexico Grower → U.S. Buyer Matching",
+        "description": "Cross-border produce trade connections",
+        "price": "$397/mo",
+        "features": ["Verified growers", "Compliance tracking", "Trade finance"]
+      },
+      {
+        "id": "water-soil-lab",
+        "name": "Water & Soil Lab Uploads",
+        "description": "Lab results management and compliance tracking",
+        "price": "$147/mo",
+        "features": ["Document vault", "Quality tracking", "Alert system"]
+      },
+      {
+        "id": "pesticide-compliance",
+        "name": "Pesticide Compliance Tracker",
+        "description": "Monitor and document pesticide usage for regulatory compliance",
+        "price": "$247/mo",
+        "features": ["Usage logs", "Safety data sheets", "Regulatory updates"]
+      },
+      {
+        "id": "globalgap-audit",
+        "name": "GlobalGAP Certification Audit",
+        "description": "Complete GlobalGAP certification management",
+        "price": "$497/mo",
+        "features": ["Audit preparation", "Document tracking", "Renewal reminders"]
+      },
+      {
+        "id": "usda-organic",
+        "name": "USDA Organic Certification Tracker",
+        "description": "Organic certification compliance and renewal management",
+        "price": "$297/mo",
+        "features": ["Certification tracking", "Compliance logs", "Audit ready"]
+      },
+      {
+        "id": "cold-chain",
+        "name": "Cold Chain Compliance Audit",
+        "description": "Temperature monitoring and cold chain compliance",
+        "price": "$397/mo",
+        "features": ["Real-time monitoring", "Temperature logs", "Violation alerts"]
+      },
+      {
+        "id": "supply-chain-transparency",
+        "name": "Supply Chain Transparency Engine",
+        "description": "End-to-end supply chain visibility and compliance",
+        "price": "$697/mo",
+        "features": ["Blockchain tracking", "Audit trail", "Stakeholder portal"]
+      }
+    ]
+  },
+  {
+    "category": "Mortgage & Real Estate",
+    "icon": "🏠",
+    "description": "Complete mortgage fraud detection and real estate services",
+    "items": [
+      {
+        "id": "mortgage-rate-search",
+        "name": "Mortgage Rate Search Engine",
+        "description": "Compare rates from multiple lenders in real-time",
+        "price": "$97/mo",
+        "features": ["Live rates", "Lender comparison", "Pre-qualification"]
+      },
+      {
+        "id": "reverse-mortgage-audit",
+        "name": "Reverse Mortgage Compliance Audit",
+        "description": "HECM and reverse mortgage compliance review",
+        "price": "$1,497",
+        "features": ["HECM compliance", "Counseling verification", "Risk assessment"]
+      },
+      {
+        "id": "fha-va-checker",
+        "name": "FHA/VA Loan Eligibility Checker",
+        "description": "Instant FHA and VA loan eligibility verification",
+        "price": "$47/check",
+        "features": ["Quick approval", "Document verification", "COE validation"]
+      },
+      {
+        "id": "mexico-leasehold",
+        "name": "Cross-Border Leasehold Financing (Mexico)",
+        "description": "US citizen financing for Mexico property leasehold",
+        "price": "$997",
+        "features": ["Fideicomiso support", "US lender network", "Legal review"]
+      },
+      {
+        "id": "trid-validator",
+        "name": "TRID/RESPA Disclosure Validator",
+        "description": "AI-powered TRID compliance and fraud detection",
+        "price": "$2,997",
+        "features": ["Auto-violation detection", "CFPB filing", "QR verification"]
+      },
+      {
+        "id": "ecoa-audit",
+        "name": "ECOA Fair Lending Audit Logs",
+        "description": "Fair lending compliance and discrimination monitoring",
+        "price": "$1,497",
+        "features": ["Automated monitoring", "Compliance reports", "Risk alerts"]
+      },
+      {
+        "id": "appraisal-review",
+        "name": "Appraisal Upload & Review",
+        "description": "Professional appraisal review and validation",
+        "price": "$297/appraisal",
+        "features": ["Expert review", "Comp verification", "Fraud detection"]
+      },
+      {
+        "id": "nmls-validation",
+        "name": "Loan Officer NMLS Licensing Validation",
+        "description": "Verify loan officer licensing and compliance",
+        "price": "$97/mo",
+        "features": ["License verification", "CE tracking", "Renewal alerts"]
+      },
+      {
+        "id": "escrow-title-tracker",
+        "name": "Escrow & Title Compliance Tracker",
+        "description": "Complete escrow and title service compliance",
+        "price": "$497/mo",
+        "features": ["Document management", "Timeline tracking", "Compliance logs"]
+      },
+      {
+        "id": "heloc-audit",
+        "name": "HELOC/Second Mortgage Audit",
+        "description": "Home equity and second mortgage compliance review",
+        "price": "$797",
+        "features": ["Rate verification", "Disclosure review", "Lien position check"]
+      }
+    ]
+  },
+  {
+    "category": "Factoring & Finance",
+    "icon": "💰",
+    "description": "Invoice factoring and trade finance solutions",
+    "items": [
+      {
+        "id": "produce-factoring",
+        "name": "Produce Factoring Search (buyers/growers)",
+        "description": "Connect produce buyers with factoring services",
+        "price": "$297/mo",
+        "features": ["Buyer network", "Quick funding", "Credit protection"]
+      },
+      {
+        "id": "lender-licensing",
+        "name": "Lender Licensing Compliance Check",
+        "description": "Verify lender licenses across all states",
+        "price": "$497/mo",
+        "features": ["Multi-state tracking", "Renewal alerts", "Compliance reports"]
+      },
+      {
+        "id": "factoring-escrow",
+        "name": "Escrow Engine for Factored Invoices",
+        "description": "Secure escrow management for factored invoices",
+        "price": "$697/mo",
+        "features": ["Automated disbursement", "Fraud protection", "Audit trail"]
+      },
+      {
+        "id": "fee-benchmarking",
+        "name": "Advance/Fee Benchmarking Engine",
+        "description": "Compare factoring rates and fees across the industry",
+        "price": "$197/mo",
+        "features": ["Rate comparison", "Industry benchmarks", "Pricing analytics"]
+      },
+      {
+        "id": "smb-factoring",
+        "name": "Small Business Factoring Module",
+        "description": "Factoring services tailored for small businesses",
+        "price": "$397/mo",
+        "features": ["Fast approval", "Flexible terms", "Growth support"]
+      },
+      {
+        "id": "ar-compliance",
+        "name": "Accounts Receivable Compliance Dashboard",
+        "description": "Monitor AR and collection compliance",
+        "price": "$497/mo",
+        "features": ["Real-time monitoring", "Compliance alerts", "Reporting"]
+      },
+      {
+        "id": "trade-credit-insurance",
+        "name": "Trade Credit Insurance Audit",
+        "description": "Credit insurance compliance and risk assessment",
+        "price": "$797",
+        "features": ["Risk analysis", "Policy review", "Claim support"]
+      },
+      {
+        "id": "cross-border-factoring",
+        "name": "Cross-Border Factoring Compliance",
+        "description": "International factoring compliance for Mexico-US trade",
+        "price": "$997/mo",
+        "features": ["Multi-jurisdiction", "Currency handling", "Tax compliance"]
+      },
+      {
+        "id": "invoice-upload",
+        "name": "Invoice Upload + Verification",
+        "description": "AI-powered invoice verification and fraud detection",
+        "price": "$297/mo",
+        "features": ["OCR scanning", "Fraud detection", "Auto-verification"]
+      },
+      {
+        "id": "factor-risk-score",
+        "name": "Factor Risk Score Generator",
+        "description": "Automated risk scoring for factoring decisions",
+        "price": "$497/mo",
+        "features": ["AI scoring", "Credit analysis", "Risk metrics"]
+      }
+    ]
+  }
+]

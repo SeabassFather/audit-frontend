@@ -1,0 +1,13 @@
+﻿================================
+📝 APP.JSX UPDATE INSTRUCTIONS
+================================
+
+Add this import at the top of App.jsx:
+
+import TestingServicesHub from './TestingServicesHub';
+
+Add this route inside your <Routes> component:
+
+<Route path="/testing-services" element={<TestingServicesHub />} />
+
+================================

@@ -1,0 +1,44 @@
+const serviceCategories = [
+  {
+    key: "mortgages",
+    title: "Mortgages",
+    description: "Search pricing, lock, and submit leads.",
+    route: "/mortgages",
+    services: [
+      { key:"mortgage-search",  title:"Mortgage Search",  route:"/mortgages" },
+      { key:"lock-rate",        title:"Lock Rate",        route:"/mortgages#lock" },
+      { key:"price-scenario",   title:"Price Scenario",   route:"/mortgages#price" }
+    ]
+  },
+  {
+    key: "trade",
+    title: "Trade Finance",
+    description: "Invoice factoring & PO finance.",
+    route: "/trade",
+    services: [
+      { key:"factoring",  title:"Invoice Factoring", route:"/trade#factoring" },
+      { key:"po-finance", title:"PO Finance",        route:"/trade#po" }
+    ]
+  },
+  {
+    key: "ag",
+    title: "Ag Marketplace",
+    description: "Producer onboarding & market search.",
+    route: "/ag",
+    services: [
+      { key:"onboarding", title:"Onboarding", route:"/ag#onboarding" },
+      { key:"market",     title:"Market",     route:"/ag#market" }
+    ]
+  },
+  {
+    key: "market",
+    title: "Market",
+    description: "Rates & stock tickers.",
+    route: "/tickers",
+    services: [
+      { key:"rates",  title:"Interest Rates", route:"/tickers#rates" },
+      { key:"stocks", title:"Stocks",         route:"/tickers#stocks" }
+    ]
+  }
+];
+export default serviceCategories;
