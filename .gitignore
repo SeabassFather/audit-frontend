@@ -21,3 +21,13 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# local backups & test pages
+*.bak
+public/audio-test.html
+public/test-audio.html
+
+# local backups & test pages
+*.bak
+public/audio-test.html
+public/test-audio.html
