@@ -1,0 +1,19 @@
+<<<<<<< HEAD
+﻿{
+  "extends": ["react-app", "react-app/jest"],
+  "rules": {
+    "react-hooks/exhaustive-deps": "warn"
+  }
+}
+=======
+{
+  "extends": "react-app",
+  "rules": {
+    "unicode-bom": "off",
+    "no-unused-vars": "off",
+    "no-useless-escape": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "react-hooks/exhaustive-deps": "off"
+  }
+}
+>>>>>>> my/push-branch

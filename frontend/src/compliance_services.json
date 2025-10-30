@@ -1,0 +1,60 @@
+﻿{
+  "Mortgage Compliance": [
+    "TRID Compliance Audit",
+    "ECOA/Fair Lending Audit",
+    "HMDA Audit",
+    "RESPA Section 8 Audit",
+    "NMLS Licensing Validation",
+    "Reverse Mortgage Compliance Audit",
+    "Cross-Border Mortgage Compliance",
+    "Mortgage Insurance Compliance",
+    "Mortgage Servicing Rule Audit",
+    "Loan Document Audit Engine"
+  ],
+  "Escrow & Title Compliance": [
+    "Escrow Trust Account Audit",
+    "Wire Fraud Prevention Checks",
+    "Settlement Statement Audit",
+    "Good Funds Act Compliance",
+    "Escrow Agent Licensing Verification",
+    "1099-S Filing Audit",
+    "Title Chain of Ownership Verification",
+    "Title Insurance Policy Audit",
+    "Cybersecurity & Escrow Email Audit",
+    "RESPA Tolerances Audit"
+  ],
+  "Legal & CPA Audits": [
+    "Contract Compliance Audit",
+    "Attorney Trust Account Audit (IOLTA)",
+    "CPA GAAP/IFRS Compliance",
+    "Tax Compliance Audit",
+    "Anti-Money Laundering (AML) Checks",
+    "Know Your Customer (KYC) Audits",
+    "Privacy Law Compliance (CCPA, GLBA, GDPR, PDPA, PIPEDA)",
+    "Insurance Coverage Audit",
+    "Legislative Proposal Generator"
+  ],
+  "Consumer Protection & Fair Lending": [
+    "UDAAP Compliance Audit",
+    "Consumer Complaint Audit",
+    "Disclosure Timing Compliance",
+    "Notary & Recording Compliance",
+    "Foreclosure Compliance Audit",
+    "Fair Housing Act Audit"
+  ],
+  "Fraud Detection & Risk": [
+    "Escrow Fraud Pattern Recognition",
+    "Cross-Border Fraud Checks",
+    "Identity Fraud Verification",
+    "Shell Company Risk Audit"
+  ],
+  "Privacy & Cybersecurity": [
+    "GLBA Privacy Compliance",
+    "CCPA/CPRA Data Rights Audit",
+    "GDPR/PDPA/PIPEDA Global Compliance",
+    "Cybersecurity Audit (MFA, email security, escrow data)"
+  ]
+}
+
+
+

@@ -1,0 +1,3 @@
+﻿import React, { useState } from "react";
+// ...full AgentRegistration code from above...
+export default AgentRegistrationCard;

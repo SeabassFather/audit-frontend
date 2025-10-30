@@ -1,0 +1,331 @@
+[
+  {
+    "category": "Corporate & Financial Audits",
+    "service": "Financial Statement Audit",
+    "subsections": [
+      "Internal Control Walkthroughs",
+      "Expense vs Revenue Matching",
+      "Fraud Risk Matrix",
+      "Materiality Threshold Testing",
+      "Balance Sheet Reconciliation",
+      "Asset Valuation Consistency"
+    ]
+  },
+  {
+    "category": "Corporate & Financial Audits",
+    "service": "Fraud & Risk Assessment",
+    "subsections": [
+      "Whistleblower Hotline Testing",
+      "Duplicate Payment Detection",
+      "Conflict-of-Interest Matrix",
+      "Fraud Triangle Behavior Mapping"
+    ]
+  },
+  {
+    "category": "Corporate & Financial Audits",
+    "service": "Compliance Audit",
+    "subsections": [
+      "SOX 302/404 Mapping",
+      "IFRS & GAAP Variance Analysis",
+      "Statutory Audit Validation",
+      "Treasury & FX Control Testing"
+    ]
+  },
+  {
+    "category": "Agriculture & USDA / NASS Compliance",
+    "service": "Crop Production Audit",
+    "subsections": [
+      "Planting & Harvest Cycle Traceability",
+      "Fertilizer & Nutrient Efficiency Validation",
+      "Organic Certification Maintenance Logs"
+    ]
+  },
+  {
+    "category": "Agriculture & USDA / NASS Compliance",
+    "service": "Market Price Verification",
+    "subsections": [
+      "USDA AMS Market Price Cross-Check",
+      "NASS Weekly W1â€“W26 Historical Graph Audit",
+      "Commodity Price 5-Year Averages Visualization"
+    ]
+  },
+  {
+    "category": "Agriculture & USDA / NASS Compliance",
+    "service": "Water & Pesticide Regulation Audit",
+    "subsections": [
+      "Irrigation Water Sampling & Lab Testing",
+      "Pesticide Residue Benchmarking",
+      "Greywater Reuse Compliance"
+    ]
+  },
+  {
+    "category": "Agriculture & USDA / NASS Compliance",
+    "service": "Packaging & Labeling Audit",
+    "subsections": [
+      "Country-of-Origin Verification",
+      "PTI Label Code Scanning Audit",
+      "Cold Chain Compliance Validation"
+    ]
+  },
+  {
+    "category": "Agriculture & USDA / NASS Compliance",
+    "service": "Cross-Border Trade Audit",
+    "subsections": [
+      "Import/Export Produce Factoring Review",
+      "Phytosanitary Certification Monitoring",
+      "NAFTA/USMCA Documentation Compliance"
+    ]
+  },
+  {
+    "category": "Water, Environmental & Soil Analytics",
+    "service": "Water Quality Assessment",
+    "subsections": [
+      "pH, Chlorine, TDS, Nitrate Testing",
+      "Heavy Metal & Pathogen Screening",
+      "Boiler & Cooling Tower Efficiency"
+    ]
+  },
+  {
+    "category": "Water, Environmental & Soil Analytics",
+    "service": "Industrial Water Systems Audit",
+    "subsections": [
+      "Wastewater Treatment Log Validation",
+      "Scale Build-Up Prevention Review",
+      "Food Plant Disinfection Analysis"
+    ]
+  },
+  {
+    "category": "Water, Environmental & Soil Analytics",
+    "service": "Soil Health Review",
+    "subsections": [
+      "Nutrient Density Mapping",
+      "Pesticide Residue Trend Analysis",
+      "Erosion & Runoff Impact Metrics"
+    ]
+  },
+  {
+    "category": "Water, Environmental & Soil Analytics",
+    "service": "Environmental Reporting",
+    "subsections": [
+      "EPA Submission Automation",
+      "Carbon Sequestration Tracking",
+      "Water Use Efficiency Ratios"
+    ]
+  },
+  {
+    "category": "Real Estate, Mortgage & Escrow Compliance",
+    "service": "Lending File Integrity Audit",
+    "subsections": [
+      "Borrower Documentation Completeness",
+      "Appraisal & Valuation Validation",
+      "Loan Repurchase Risk Audit"
+    ]
+  },
+  {
+    "category": "Real Estate, Mortgage & Escrow Compliance",
+    "service": "Disclosure & Regulation Audit",
+    "subsections": [
+      "RESPA/TILA/HOEPA Mapping",
+      "Fair Lending (ECOA) Testing",
+      "HUD/FHA/VA Review"
+    ]
+  },
+  {
+    "category": "Real Estate, Mortgage & Escrow Compliance",
+    "service": "Escrow Management",
+    "subsections": [
+      "Trust Fund Reconciliation",
+      "Title Defect Detection",
+      "Disbursement Verification"
+    ]
+  },
+  {
+    "category": "Real Estate, Mortgage & Escrow Compliance",
+    "service": "Cross-Border Real Estate Audit",
+    "subsections": [
+      "Mexico-to-U.S. Transfer Compliance",
+      "Currency Conversion & Tax Reporting",
+      "Title & Deed Cross-Verification"
+    ]
+  },
+  {
+    "category": "Legal, CPA & Regulatory Frameworks",
+    "service": "CPA & Financial Regulation",
+    "subsections": [
+      "Workpaper Index Standardization",
+      "Peer Review Preparedness",
+      "Independence & Conflict Tracking"
+    ]
+  },
+  {
+    "category": "Legal, CPA & Regulatory Frameworks",
+    "service": "Legal Risk & Ethics",
+    "subsections": [
+      "Attorney Trust Account (IOLTA) Reconciliation",
+      "Client Confidentiality Controls",
+      "Law Firm Compliance Dashboard"
+    ]
+  },
+  {
+    "category": "Legal, CPA & Regulatory Frameworks",
+    "service": "Data Privacy & Retention",
+    "subsections": [
+      "GDPR / CCPA / PDPA Mapping",
+      "Record Retention Lifecycle Automation",
+      "eDiscovery Policy Alignment"
+    ]
+  },
+  {
+    "category": "Legal, CPA & Regulatory Frameworks",
+    "service": "Corporate Law Compliance",
+    "subsections": [
+      "Licensing Verification",
+      "Sanctions & Export Control Screening",
+      "Board Governance Review"
+    ]
+  },
+  {
+    "category": "Technology, Cyber & Data Security",
+    "service": "Security Frameworks",
+    "subsections": [
+      "SOC 2 Type I/II Gap Analysis",
+      "ISO 27001 Annex A Controls Mapping",
+      "NIST 800-53 Policy Validation"
+    ]
+  },
+  {
+    "category": "Technology, Cyber & Data Security",
+    "service": "Infrastructure Security",
+    "subsections": [
+      "Server & Network Pen-Test Reports",
+      "Cloud (AWS/Azure/GCP) Configuration Audit",
+      "Firewall / IDS / IPS Rule Review"
+    ]
+  },
+  {
+    "category": "Technology, Cyber & Data Security",
+    "service": "Applications & APIs",
+    "subsections": [
+      "Endpoint Vulnerability Scans",
+      "Secure API Test Harness",
+      "Encryption Key Rotation Checks"
+    ]
+  },
+  {
+    "category": "Technology, Cyber & Data Security",
+    "service": "Incident Management",
+    "subsections": [
+      "Breach Simulation (Red/Blue Team)",
+      "Backup & Recovery Drills",
+      "DRP & BCP Maturity Scoring"
+    ]
+  },
+  {
+    "category": "Eco-Housing & Green Compliance",
+    "service": "Sustainability Certification",
+    "subsections": [
+      "LEED / ENERGY STAR Verification",
+      "ASHRAE Benchmarking",
+      "Carbon Credit Registry Validation"
+    ]
+  },
+  {
+    "category": "Eco-Housing & Green Compliance",
+    "service": "Energy Systems Audit",
+    "subsections": [
+      "Solar Panel Output Audit",
+      "HVAC Efficiency Review",
+      "Smart Meter Calibration"
+    ]
+  },
+  {
+    "category": "Eco-Housing & Green Compliance",
+    "service": "Building Materials",
+    "subsections": [
+      "Low-VOC & Sustainable Material Verification",
+      "Recycled Material Tracking",
+      "Insulation R-Value Testing"
+    ]
+  },
+  {
+    "category": "Eco-Housing & Green Compliance",
+    "service": "Water & Waste",
+    "subsections": [
+      "Rainwater Collection & Usage Validation",
+      "Greywater System Compliance",
+      "Waste Diversion & Recycling Metrics"
+    ]
+  },
+  {
+    "category": "Human Capital, Payroll & Ethics Compliance",
+    "service": "Payroll & HR Data",
+    "subsections": [
+      "W-2 / 1099 Classification Audit",
+      "Payroll Accuracy Verification",
+      "Remote Workforce Policy Compliance"
+    ]
+  },
+  {
+    "category": "Human Capital, Payroll & Ethics Compliance",
+    "service": "Employee Relations",
+    "subsections": [
+      "DEI Reporting & Metrics Validation",
+      "Sexual Harassment Policy Testing",
+      "Whistleblower Policy Compliance"
+    ]
+  },
+  {
+    "category": "Human Capital, Payroll & Ethics Compliance",
+    "service": "Legal & Safety",
+    "subsections": [
+      "OSHA Workplace Audit",
+      "Immigration / I-9 Review",
+      "Benefits Plan Compliance"
+    ]
+  },
+  {
+    "category": "Human Capital, Payroll & Ethics Compliance",
+    "service": "Training & Ethics",
+    "subsections": [
+      "Code of Conduct Alignment",
+      "Conflict-of-Interest Declarations",
+      "Continuous Ethics Training Logs"
+    ]
+  },
+  {
+    "category": "Insurance, Health & Risk Compliance",
+    "service": "Claims Management",
+    "subsections": [
+      "Fraud & Duplicate Claim Detection",
+      "Adjuster Licensing Validation",
+      "Data Accuracy Sampling"
+    ]
+  },
+  {
+    "category": "Insurance, Health & Risk Compliance",
+    "service": "Underwriting & Policy",
+    "subsections": [
+      "Risk Model Reconciliation",
+      "Premium Accuracy Verification",
+      "Product Disclosure Review"
+    ]
+  },
+  {
+    "category": "Insurance, Health & Risk Compliance",
+    "service": "Health Compliance",
+    "subsections": [
+      "HIPAA Security Assessment",
+      "Provider Credential Verification",
+      "Medicare / Medi-Cal File Review"
+    ]
+  },
+  {
+    "category": "Insurance, Health & Risk Compliance",
+    "service": "Risk & Actuarial",
+    "subsections": [
+      "Reinsurance Treaty Validation",
+      "Catastrophic Risk Stress Test",
+      "ESG-Linked Policy Compliance"
+    ]
+  }
+]

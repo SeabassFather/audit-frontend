@@ -1,0 +1,66 @@
+import React, {useState, useEffect, Suspense, lazy} from 'react';
+import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
+import './simple-theme.css';
+import {pingBackend} from './api';
+import Loader from './Loader';
+
+const Dashboard = lazy(()=>import('./modules/Dashboard'));
+const LabDashboard = lazy(()=>import('./modules/LabDashboard'));
+const WaterTechModuleAdvanced = lazy(()=>import('./modules/WaterTechModuleAdvanced'));
+const SoilAnalysisModule = lazy(()=>import('./modules/SoilAnalysisModule'));
+const AlcoholAnalysisModule = lazy(()=>import('./modules/AlcoholAnalysisModule'));
+const FuelOilAnalysisModule = lazy(()=>import('./modules/FuelOilAnalysisModule'));
+const EnginePerformanceModule = lazy(()=>import('./modules/EnginePerformanceModule'));
+const TestingServicesHub = lazy(()=>import('./components/TestingServicesHub'));
+const ResultsPortal = lazy(()=>import('./components/ResultsPortal'));
+
+export default function App() {
+  const [collapsed, setCollapsed] = useState(false);
+  const [backendUp, setBackendUp] = useState(false);
+  useEffect(()=>{pingBackend().then(setBackendUp);},[]);
+
+  const navItems = [
+    {to:'/',label:'Home'},{to:'/lab',label:'Lab'},{to:'/water',label:'Water'},
+    {to:'/soil',label:'Soil'},{to:'/alcohol',label:'Alcohol'},
+    {to:'/fuel',label:'Fuel'},{to:'/engine',label:'Engine'},
+    {to:'/testing',label:'Testing Hub'},{to:'/results',label:'Results'}
+  ];
+
+  return (
+    <Router>
+      <div className={\pp-shell \\}>
+        <aside className='sidebar'>
+          <div className='sidebar-header'>
+            <h2 className='sidebar-title'>?? AuditDNA</h2>
+            <button className='toggle-btn' onClick={()=>setCollapsed(!collapsed)}>{collapsed?'??':'??'}</button>
+          </div>
+          <div className='backend-status'>{backendUp?'?? Backend Connected':'?? Offline'}</div>
+          <nav className='nav-list'>
+            {navItems.map(i=>(
+              <Link key={i.to} to={i.to} className='nav-item'>{i.label}</Link>
+            ))}
+          </nav>
+        </aside>
+
+        <main className='main-content fade-in'>
+          <Suspense fallback={<Loader />}>
+            <Routes>
+              <Route path='/' element={<Dashboard />} />
+              <Route path='/lab' element={<LabDashboard />} />
+              <Route path='/water' element={<WaterTechModuleAdvanced />} />
+              <Route path='/soil' element={<SoilAnalysisModule />} />
+              <Route path='/alcohol' element={<AlcoholAnalysisModule />} />
+              <Route path='/fuel' element={<FuelOilAnalysisModule />} />
+              <Route path='/engine' element={<EnginePerformanceModule />} />
+              <Route path='/testing' element={<TestingServicesHub />} />
+              <Route path='/results' element={<ResultsPortal />} />
+            </Routes>
+          </Suspense>
+          <footer className='footer'>
+            Powered by <strong>AuditDNA Intelligence</strong> • MexaUSA Food Group © {new Date().getFullYear()}
+          </footer>
+        </main>
+      </div>
+    </Router>
+  );
+}

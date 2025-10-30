@@ -1,0 +1,155 @@
+﻿================================
+ AUDITDNA TESTING SERVICES
+Pricing & Service Catalog
+================================
+
+Created: 2025-10-27 19:09:19 UTC
+User: SeabassFather
+
+ WATER QUALITY TESTING
+
+Basic Water Test - 
+- pH, Turbidity, TDS, Temperature
+- 3-5 business days
+- Ideal for: General monitoring
+
+Agricultural Water Panel - 
+- pH, Turbidity, TDS, Nitrate, Phosphate, Conductivity, Heavy Metals Screen
+- 5-7 business days
+- Ideal for: Irrigation water, crop production
+
+Drinking Water Safety - 
+- pH, Turbidity, TDS, Coliform/E.coli, Nitrate, Lead, Arsenic, Bacteria
+- 5-7 business days
+- Ideal for: Well water, domestic supply
+- EPA-compliant
+
+Comprehensive Analysis - 
+- Full spectrum: pH, Turbidity, TDS, Nitrate, Phosphate, All Heavy Metals, 
+  Bacteria, Pesticides, VOCs
+- 7-10 business days
+- Ideal for: Export compliance, regulatory requirements
+
+ SOIL ANALYSIS TESTING
+
+Basic Soil Test - 
+- pH, Organic Matter, N-P-K
+- 3-5 business days
+- Ideal for: Home gardens, basic fertility
+
+Standard Soil Panel - 
+- pH, OM, N-P-K, Ca, Mg, S, CEC, Salinity
+- 5-7 business days
+- Ideal for: Commercial farming
+
+Precision Ag Package - 
+- pH, OM, All Macros, Micronutrients (Zn, Fe, Mn, Cu, B), CEC, Texture, Moisture
+- 7-10 business days
+- Ideal for: Precision agriculture, zone management
+
+Carbon Credit Analysis - 
+- Organic Matter, Soil Carbon Stock, Bulk Density, pH, All Nutrients, 
+  Microbial Activity
+- 10-14 business days
+- Ideal for: Carbon credit programs, sustainability verification
+
+ FERTILIZER TESTING
+
+N-P-K Analysis - 
+- Nitrogen, Phosphorus, Potassium content verification
+- 3-5 business days
+- Ideal for: Quality control
+
+Complete Fertilizer Analysis - 
+- N-P-K, Secondary Nutrients, Micronutrients, Heavy Metals, Contaminants
+- 5-7 business days
+- Ideal for: Product verification, safety testing
+
+Organic Certification Test - 
+- N-P-K, All Nutrients, Heavy Metals, Synthetic Chemical Screen, Pathogen Test
+- 7-10 business days
+- Ideal for: USDA Organic compliance
+
+ ENVIRONMENTAL MONITORING
+
+Environmental Monitoring - 
+- Temperature, Humidity, Air Quality Index
+- Ongoing monitoring
+- Ideal for: Basic climate tracking
+
+Climate Analytics Package - /month
+- Temp, Humidity, Rainfall, Light Intensity, Wind, Soil Temp, Evapotranspiration
+- Ongoing + Monthly AI-powered report
+- Ideal for: Precision ag, greenhouse operations
+
+ TRACEABILITY SERVICES
+
+Batch Traceability Report - 
+- Batch ID Verification, Origin Documentation, Water/Soil/Fertilizer Linkage
+- 2-3 business days
+- Ideal for: Supply chain transparency
+
+Blockchain-Verified Trace - 
+- All Standard Tests + Blockchain Hash + Smart Contract + Immutable Record
+- 3-5 business days
+- Ideal for: Premium markets, export
+
+ COMPLIANCE & CERTIFICATION
+
+EPA Compliance Report - 
+- Water Quality, Soil Contamination, Runoff Analysis, Regulatory Documentation
+- 7-10 business days
+- Ideal for: Environmental compliance
+
+Export Certification Package - 
+- All Quality Tests, Phytosanitary Certificate, USDA Verification, 
+  Country-Specific Requirements
+- 10-14 business days
+- Ideal for: International trade
+
+ URGENCY FEES
+
+Standard: Base price (no rush)
+Rush Service: +50% (cut turnaround time in half)
+Emergency: +100% (24-48 hour turnaround)
+
+ VOLUME DISCOUNTS
+
+5-10 samples: 10% discount
+11-25 samples: 15% discount
+26-50 samples: 20% discount
+51+ samples: 25% discount + dedicated account manager
+
+ INTERNATIONAL SHIPPING
+
+USA: Free for orders +
+International: -75 depending on location
+
+ PAYMENT OPTIONS
+
+- Credit/Debit Cards (Visa, MC, Amex, Discover)
+- ACH/Wire Transfer
+- Net 30 terms for qualified businesses
+- Purchase Orders accepted
+- Financing available through AgFinance partners
+
+ CERTIFICATIONS
+
+ ISO 17025 Accredited Laboratory
+ EPA Approved Testing Facility
+ USDA Certified Lab
+ NELAP Accredited (National Environmental Laboratory Accreditation Program)
+ GlobalG.A.P. Approved Testing Partner
+ A2LA Accredited
+ OSHA Compliant
+
+ CONTACT
+
+Email: testing@auditdna.com / servicios@auditdna.com
+Phone: +1 (555) 837-8362
+Lab: 123 AuditDNA Plaza, AgTech District, CA 90210
+Hours: Mon-Fri 8AM-6PM PST | Emergency: 24/7
+
+================================
+Real Testing. Real Results. Real ROI.
+================================

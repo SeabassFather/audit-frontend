@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Google Calendar + SendGrid Email Triggers",
+    "description": "Triggered upon inquiry and document upload completion. Adds event to admin calendar and sends operational instruction emails to admin & consumer.",
+    "features": ["Inquiry & upload triggers", "Admin calendar integration", "Instructional emails"]
+  },
+  {
+    "title": "Documentation Enforcement Engine",
+    "description": "No payments accepted until full document set uploaded. Validates audit type requirements and blocks Stripe/PayPal until server-side check returns 'complete'.",
+    "features": ["Document checklist", "Payment blocking", "Audit type validation"]
+  },
+  {
+    "title": "Per-Audit Document Checklist Engine",
+    "description": "Document requirements per audit type: credit card, utilities, cell phone, internet, garbage, mortgage, promissory, servicing audits.",
+    "features": ["Custom checklists", "Audit-specific logic"]
+  },
+  {
+    "title": "Tiered AI Validation System",
+    "description": "OCR, legal triggers, consensus confidence (3-model agreement) before PDF/CFPB/agency notification. Admin override/logs in /admin/validation-log.",
+    "features": ["OCR", "Legal triggers", "Consensus AI", "Admin override"]
+  },
+  {
+    "title": "UCC Tracking System (Articles 2 & 9)",
+    "description": "Contract dispute audits, secured loan lien reviews, county/state-level logic flagging.",
+    "features": ["Contract disputes", "Lien reviews", "Logic flagging"]
+  },
+  {
+    "title": "Legal Violation Explainer System",
+    "description": "/consumer/violations page with code citations, layman breakdown, action history, and QR trace logs.",
+    "features": ["Code citations", "Layman breakdown", "QR trace logs"]
+  },
+  {
+    "title": "Contract & Agreement Flowchart Module",
+    "description": "Agreements for real estate, employment, partnership, vendor. Summarizes clauses and builds flowcharts with deadlines, steps, risk tags.",
+    "features": ["Clause summaries", "Automated flowcharts"]
+  },
+  {
+    "title": "Full CFPB/State/County Reporting Automation",
+    "description": "Ties audit results to jurisdiction, auto-generates complaint packets, timestamps, embeds QR in PDF.",
+    "features": ["Jurisdiction mapping", "Auto complaint packets", "QR in PDF"]
+  },
+  {
+    "title": "Zadarma CRM + PBX Integration",
+    "description": "Call routing, consumer call history logs, voicemail transcription to MongoDB.",
+    "features": ["Call routing", "History logs", "Voicemail transcription"]
+  },
+  {
+    "title": "Partner Referral Disclosure + Agreements",
+    "description": "MOU for nonprofits, CPA, NMLS, escrow officers, role-based access control, commission logs.",
+    "features": ["Role-based access", "Commission logs"]
+  },
+  {
+    "title": "Admin Legal Vault",
+    "description": "Add/edit audit logic, CFPB state routing override, UCC editor, AI rule toggles.",
+    "features": ["Audit logic editor", "Routing override", "AI rule toggles"]
+  },
+  {
+    "title": "Business Loan + Factoring + P.O. Audits",
+    "description": "Mexico cross-border loan tracking, referral flow to business lending partners, disclosure and documentation enforcement included.",
+    "features": ["Cross-border tracking", "Referral flow", "Disclosure enforcement"]
+  }
+]

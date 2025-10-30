@@ -1,0 +1,6 @@
+<<<<<<< HEAD
+﻿import React from "react";
+=======
+import React from "react";
+>>>>>>> my/push-branch
+export default function USDA(){ return <h2> USDA Pricing</h2>; }

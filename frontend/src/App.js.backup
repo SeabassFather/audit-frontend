@@ -1,0 +1,238 @@
+﻿import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+
+// Import existing components
+import WaterTechModuleAdvanced from './WaterTechModuleAdvanced';
+import SoilAnalysisModule from './SoilAnalysisModule';
+import AlcoholAnalysisModule from './AlcoholAnalysisModule';
+import FuelOilAnalysisModule from './FuelOilAnalysisModule';
+import EnginePerformanceModule from './EnginePerformanceModule';
+import LabDashboard from './LabDashboard';
+import ResultsPortal from './ResultsPortal';
+import TestingServicesHub from './TestingServicesHub';
+
+function App() {
+  return (
+    <Router>
+      <div style={{ minHeight: '100vh', background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%)', position: 'relative', overflow: 'hidden' }}>
+        
+        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, overflow: 'hidden', zIndex: 0, pointerEvents: 'none' }}>
+          <div className="glow-orb" style={{ position: 'absolute', width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(56,189,248,0.2) 0%, transparent 70%)', top: '-200px', left: '-200px', animation: 'float 8s ease-in-out infinite' }}></div>
+          <div className="glow-orb" style={{ position: 'absolute', width: '500px', height: '500px', background: 'radial-gradient(circle, rgba(74,222,128,0.15) 0%, transparent 70%)', bottom: '-150px', right: '-150px', animation: 'float 10s ease-in-out infinite reverse' }}></div>
+          <div className="glow-orb" style={{ position: 'absolute', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(139,92,246,0.12) 0%, transparent 70%)', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', animation: 'pulse 6s ease-in-out infinite' }}></div>
+        </div>
+
+        <div style={{ position: 'relative', zIndex: 1 }}>
+          <nav style={{ background: 'rgba(15,23,42,0.8)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', padding: '24px 40px', borderBottom: '1px solid rgba(56,189,248,0.3)', boxShadow: '0 8px 32px rgba(0,0,0,0.5)' }}>
+            <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
+                <div>
+                  <h1 style={{ fontSize: '36px', fontWeight: 'bold', background: 'linear-gradient(135deg, #38bdf8, #3b82f6, #8b5cf6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', margin: 0, letterSpacing: '2px', textShadow: '0 0 30px rgba(56,189,248,0.3)' }}>
+                    AuditDNA Complete
+                  </h1>
+                  <p style={{ color: '#94a3b8', fontSize: '14px', margin: 0, marginTop: '6px', letterSpacing: '1px' }}>
+                    165 Premium Tests | Real-Time Analysis | AI-Powered | QR Tracking
+                  </p>
+                </div>
+                <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+                  <div style={{ background: 'rgba(56,189,248,0.15)', backdropFilter: 'blur(10px)', border: '1px solid rgba(56,189,248,0.4)', color: '#38bdf8', padding: '10px 18px', borderRadius: '10px', fontWeight: '700', fontSize: '14px', boxShadow: '0 4px 15px rgba(56,189,248,0.2)' }}>
+                    PORT: 8001
+                  </div>
+                  <div style={{ background: 'rgba(74,222,128,0.15)', backdropFilter: 'blur(10px)', border: '1px solid rgba(74,222,128,0.4)', color: '#4ade80', padding: '10px 18px', borderRadius: '10px', fontWeight: '700', fontSize: '14px', boxShadow: '0 4px 15px rgba(74,222,128,0.2)', animation: 'pulse 2s ease-in-out infinite' }}>
+                    ● ONLINE
+                  </div>
+                </div>
+              </div>
+              
+              <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+                <NavButton to="/" text="Home" gradient="linear-gradient(135deg, #38bdf8, #0284c7)" />
+                <NavButton to="/lab" text="Lab" gradient="linear-gradient(135deg, #3b82f6, #1d4ed8)" />
+                <NavButton to="/water" text="Water (50)" gradient="linear-gradient(135deg, #06b6d4, #0891b2)" />
+                <NavButton to="/soil" text="Soil (40)" gradient="linear-gradient(135deg, #4ade80, #16a34a)" />
+                <NavButton to="/alcohol" text="Alcohol (25)" gradient="linear-gradient(135deg, #facc15, #eab308)" />
+                <NavButton to="/fuel" text="Fuel (30)" gradient="linear-gradient(135deg, #94a3b8, #64748b)" />
+                <NavButton to="/engine" text="Engine (20)" gradient="linear-gradient(135deg, #8b5cf6, #7c3aed)" />
+                <NavButton to="/results" text="Results" gradient="linear-gradient(135deg, #ec4899, #be185d)" />
+                <NavButton to="/testing" text="Testing Hub" gradient="linear-gradient(135deg, #f97316, #ea580c)" />
+              </div>
+            </div>
+          </nav>
+
+          <div style={{ padding: '60px 20px' }}>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/lab" element={<LabDashboard />} />
+              <Route path="/water" element={<WaterTechModuleAdvanced />} />
+              <Route path="/soil" element={<SoilAnalysisModule />} />
+              <Route path="/alcohol" element={<AlcoholAnalysisModule />} />
+              <Route path="/fuel" element={<FuelOilAnalysisModule />} />
+              <Route path="/engine" element={<EnginePerformanceModule />} />
+              <Route path="/results" element={<ResultsPortal />} />
+              <Route path="/testing" element={<TestingServicesHub />} />
+            </Routes>
+          </div>
+        </div>
+
+        <style>{`
+          @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(5deg); }
+          }
+          @keyframes pulse {
+            0%, 100% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+          }
+          @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+          }
+          .glass-card {
+            background: rgba(30,41,59,0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(148,163,184,0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          }
+          .glass-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            border-color: rgba(56,189,248,0.5);
+            background: rgba(30,41,59,0.8);
+          }
+          .glass-card:hover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: shimmer 1.5s;
+          }
+        `}</style>
+      </div>
+    </Router>
+  );
+}
+
+function NavButton({ to, text, gradient }) {
+  const [isHover, setIsHover] = useState(false);
+  
+  return (
+    <Link to={to} style={{ textDecoration: 'none' }}>
+      <div 
+        onMouseEnter={() => setIsHover(true)}
+        onMouseLeave={() => setIsHover(false)}
+        style={{ 
+          background: gradient, 
+          color: 'white', 
+          padding: '14px 24px', 
+          borderRadius: '12px', 
+          fontWeight: '700', 
+          fontSize: '14px', 
+          cursor: 'pointer', 
+          boxShadow: isHover ? '0 12px 35px rgba(0,0,0,0.6), 0 0 25px rgba(56,189,248,0.4)' : '0 6px 20px rgba(0,0,0,0.4)',
+          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+          border: '1px solid rgba(255,255,255,0.15)',
+          transform: isHover ? 'translateY(-4px) scale(1.05)' : 'translateY(0) scale(1)',
+          letterSpacing: '0.5px'
+        }}>
+        {text}
+      </div>
+    </Link>
+  );
+}
+
+function HomePage() {
+  return (
+    <div style={{ maxWidth: '1400px', margin: '0 auto', textAlign: 'center' }}>
+      <div style={{ marginBottom: '80px' }}>
+        <h1 style={{ 
+          fontSize: '90px', 
+          fontWeight: 'bold', 
+          background: 'linear-gradient(135deg, #38bdf8, #3b82f6, #8b5cf6, #ec4899)', 
+          WebkitBackgroundClip: 'text', 
+          WebkitTextFillColor: 'transparent', 
+          marginBottom: '30px', 
+          letterSpacing: '3px',
+          textShadow: '0 0 80px rgba(56,189,248,0.5)',
+          animation: 'pulse 3s ease-in-out infinite'
+        }}>
+          Welcome to AuditDNA
+        </h1>
+        <p style={{ fontSize: '32px', color: '#cbd5e1', marginBottom: '16px', fontWeight: '300', letterSpacing: '2px' }}>
+          Professional Agricultural & Environmental Analysis Platform
+        </p>
+        <p style={{ fontSize: '22px', color: '#64748b', fontWeight: '600' }}>
+          165 Premium Tests | Real-Time Results | AI-Powered Insights | QR Tracking
+        </p>
+      </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '40px' }}>
+        {[
+          { title: 'Lab Dashboard', desc: 'Manage orders, track samples, view analytics', link: '/lab', gradient: 'linear-gradient(135deg, #3b82f6, #1d4ed8)', icon: '🧪', glow: 'rgba(59,130,246,0.4)' },
+          { title: 'Water Testing', desc: '50 quality tests - pH, TDS, bacteria, metals', link: '/water', gradient: 'linear-gradient(135deg, #06b6d4, #0891b2)', icon: '💧', glow: 'rgba(6,182,212,0.4)' },
+          { title: 'Soil Analysis', desc: '40 tests - NPK, pH, organic matter, fertility', link: '/soil', gradient: 'linear-gradient(135deg, #4ade80, #16a34a)', icon: '🌱', glow: 'rgba(74,222,128,0.4)' },
+          { title: 'Alcohol Analysis', desc: '25 tests - purity, methanol, ethanol content', link: '/alcohol', gradient: 'linear-gradient(135deg, #facc15, #eab308)', icon: '🍷', glow: 'rgba(250,204,21,0.4)' },
+          { title: 'Fuel Testing', desc: '30 tests - octane, sulfur, contamination', link: '/fuel', gradient: 'linear-gradient(135deg, #94a3b8, #64748b)', icon: '⛽', glow: 'rgba(148,163,184,0.4)' },
+          { title: 'Engine Diagnostics', desc: '20 tests - oil analysis, wear metals, performance', link: '/engine', gradient: 'linear-gradient(135deg, #8b5cf6, #7c3aed)', icon: '🔧', glow: 'rgba(139,92,246,0.4)' },
+          { title: 'Results Portal', desc: 'View reports, download PDFs, track history', link: '/results', gradient: 'linear-gradient(135deg, #ec4899, #be185d)', icon: '📊', glow: 'rgba(236,72,153,0.4)' },
+          { title: 'Testing Hub', desc: 'Order tests, upload samples, QR tracking', link: '/testing', gradient: 'linear-gradient(135deg, #f97316, #ea580c)', icon: '🔬', glow: 'rgba(249,115,22,0.4)' }
+        ].map((item, i) => (
+          <ModuleCard key={i} {...item} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ModuleCard({ title, desc, link, gradient, icon, glow }) {
+  const [isHover, setIsHover] = useState(false);
+  
+  return (
+    <Link to={link} style={{ textDecoration: 'none' }}>
+      <div 
+        className="glass-card"
+        onMouseEnter={() => setIsHover(true)}
+        onMouseLeave={() => setIsHover(false)}
+        style={{ 
+          borderRadius: '24px', 
+          padding: '50px 35px', 
+          textAlign: 'center', 
+          cursor: 'pointer', 
+          boxShadow: isHover ? `0 25px 50px rgba(0,0,0,0.6), 0 0 40px ${glow}` : '0 10px 30px rgba(0,0,0,0.4)',
+          position: 'relative',
+          overflow: 'hidden'
+        }}>
+        <div style={{ fontSize: '80px', marginBottom: '24px', transform: isHover ? 'scale(1.2) rotate(10deg)' : 'scale(1) rotate(0deg)', transition: 'all 0.4s' }}>
+          {icon}
+        </div>
+        <h2 style={{ fontSize: '34px', color: 'white', marginBottom: '16px', fontWeight: 'bold', letterSpacing: '1px' }}>
+          {title}
+        </h2>
+        <p style={{ color: '#cbd5e1', fontSize: '16px', marginBottom: '32px', lineHeight: '1.6' }}>
+          {desc}
+        </p>
+        <div style={{ 
+          background: gradient, 
+          color: 'white', 
+          padding: '18px 36px', 
+          borderRadius: '14px', 
+          fontWeight: '700', 
+          fontSize: '17px', 
+          display: 'inline-block', 
+          boxShadow: `0 8px 25px rgba(0,0,0,0.4), 0 0 20px ${glow}`,
+          transform: isHover ? 'scale(1.1)' : 'scale(1)',
+          transition: 'all 0.3s',
+          letterSpacing: '1px'
+        }}>
+          ACCESS NOW
+        </div>
+      </div>
+    </Link>
+  );
+}
+
+export default App;
+
+

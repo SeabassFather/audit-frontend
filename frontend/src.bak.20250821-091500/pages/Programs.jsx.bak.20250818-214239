@@ -1,0 +1,19 @@
+﻿import React from "react";
+
+export default function Programs() {
+  return (
+    <div className="page">
+      <h1> Programs & Services</h1>
+      <p>Select a category below to explore available programs.</p>
+
+      <div className="cards">
+        <div className="card"> Agriculture Loans</div>
+        <div className="card"> Water Projects</div>
+        <div className="card"> Factoring</div>
+        <div className="card"> Mortgage Loans</div>
+        <div className="card"> Consumer Credit</div>
+        <div className="card"> Innovation Grants</div>
+      </div>
+    </div>
+  );
+}

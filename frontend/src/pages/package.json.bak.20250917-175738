@@ -1,0 +1,4 @@
+"scripts": {
+  "dev": "vite",
+  "dev:watch": "concurrently \"vite --port 3001\""
+}

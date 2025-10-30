@@ -1,0 +1,16 @@
+{
+  "ARM/Rate Change Accuracy Check": [
+    "Last 12 months of mortgage statements (PDF)",
+    "Signed Borrower Consent Form",
+    "Most recent Loan Estimate (LE)",
+    "Promissory Note",
+    "Government ID"
+  ],
+  "Mortgage Loan Audit": [
+    "12 months of statements",
+    "NDA signed",
+    "Copy of Note",
+    "HUD-1 or Closing Disclosure",
+    "Photo ID"
+  ]
+}

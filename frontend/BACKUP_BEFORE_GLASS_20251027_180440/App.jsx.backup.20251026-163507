@@ -1,0 +1,111 @@
+﻿import React, { lazy, Suspense } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import MegaNavbar from './components/MegaNavbar';
+import TopRibbonTicker from './components/TopRibbonTicker';
+import Loading from './components/Loading';
+import MicroFrontendLoader from './MicroFrontendLoader';
+import { FEATURES } from './config/features';
+
+// TIER 3: Core pages (always loaded)
+import Dashboard from './pages/Dashboard';
+import FinancialServices from './pages/FinancialServices';
+import Factoring from './pages/Factoring';
+import Settings from './pages/Settings';
+import Search from './pages/Search';
+
+// TIER 2: Lazy-loaded modules
+const ComplianceModule = lazy(() => import('./modules/Compliance'));
+const AnalyticsModule = lazy(() => import('./modules/Analytics'));
+const MexicoOpsModule = lazy(() => import('./modules/MexicoOps'));
+
+function PlaceholderPage({ title }) {
+  return (
+    <div className='min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-8'>
+      <div className='max-w-7xl mx-auto'>
+        <div className='bg-white rounded-xl shadow-xl p-12 text-center'>
+          <h1 className='text-5xl font-bold text-blue-900 mb-4'> {title}</h1>
+          <p className='text-2xl text-gray-700 mb-8'>Module Coming Soon! </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <div className='min-h-screen bg-gray-50'>
+        <TopRibbonTicker />
+        <MegaNavbar />
+        
+        <Routes>
+          {/* TIER 3: CORE PAGES - Always Loaded */}
+          <Route path='/' element={<Dashboard />} />
+          <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/settings' element={<Settings />} />
+          <Route path='/search' element={<Search />} />
+
+          {/* TIER 1: MICRO-FRONTENDS - Separate Apps */}
+          {FEATURES.FINANCIAL_MODULE && (
+            <Route 
+              path='/financial/*' 
+              element={<MicroFrontendLoader app='financial' />} 
+            />
+          )}
+
+          {FEATURES.REALESTATE_MODULE && (
+            <Route 
+              path='/real-estate/*' 
+              element={<MicroFrontendLoader app='realestate' />} 
+            />
+          )}
+
+          {FEATURES.AGRICULTURE_MODULE && (
+            <Route 
+              path='/agriculture/*' 
+              element={<MicroFrontendLoader app='agriculture' />} 
+            />
+          )}
+
+          {/* TIER 2: LAZY-LOADED MODULES */}
+          {FEATURES.COMPLIANCE_MODULE && (
+            <Route 
+              path='/compliance/*' 
+              element={
+                <Suspense fallback={<Loading module='Compliance' />}>
+                  <ComplianceModule />
+                </Suspense>
+              } 
+            />
+          )}
+
+          {FEATURES.ANALYTICS_MODULE && (
+            <Route 
+              path='/analytics/*' 
+              element={
+                <Suspense fallback={<Loading module='Analytics' />}>
+                  <AnalyticsModule />
+                </Suspense>
+              } 
+            />
+          )}
+
+          {FEATURES.MEXICO_OPS_MODULE && (
+            <Route 
+              path='/mexico/*' 
+              element={
+                <Suspense fallback={<Loading module='Mexico Operations' />}>
+                  <MexicoOpsModule />
+                </Suspense>
+              } 
+            />
+          )}
+
+          {/* FALLBACK */}
+          <Route path='*' element={<PlaceholderPage title='Page Not Found' />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
+  );
+}
+

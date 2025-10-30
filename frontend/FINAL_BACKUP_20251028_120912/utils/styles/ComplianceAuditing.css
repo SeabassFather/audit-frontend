@@ -1,0 +1,563 @@
+import React, { useState } from 'react';
+import { Shield, AlertTriangle, CheckCircle, FileText, Bell, Send, Database, Eye, Lock, Scale, Building, Users, Globe } from 'lucide-react';
+import './ComplianceAuditing.css';
+
+// Full Compliance Services Database
+const COMPLIANCE_SERVICES = {
+  "Mortgage Compliance & Auditing": {
+    icon: "🏠",
+    color: "#00ff88",
+    services: [
+      {
+        name: "TRID Compliance Audit",
+        description: "Ensures TILA-RESPA Integrated Disclosure rules compliance (Loan Estimate, Closing Disclosure timing validation)",
+        regulators: ["CFPB"],
+        riskLevel: "HIGH",
+        automationLevel: "FULL"
+      },
+      {
+        name: "ECOA/Fair Lending Audit",
+        description: "Equal Credit Opportunity Act compliance check, detects discriminatory lending practices",
+        regulators: ["CFPB", "HUD"],
+        riskLevel: "HIGH",
+        automationLevel: "FULL"
+      },
+      {
+        name: "HMDA Audit",
+        description: "Home Mortgage Disclosure Act data submission validation and accuracy verification",
+        regulators: ["CFPB", "Federal Reserve"],
+        riskLevel: "MEDIUM",
+        automationLevel: "FULL"
+      },
+      {
+        name: "RESPA Section 8 Audit",
+        description: "Anti-kickback rule compliance for referral fees and settlement services",
+        regulators: ["CFPB", "HUD"],
+        riskLevel: "HIGH",
+        automationLevel: "FULL"
+      },
+      {
+        name: "NMLS Licensing Validation",
+        description: "Cross-checks loan officers and brokers against NMLS registry for valid licenses",
+        regulators: ["State Mortgage Regulators", "NMLS"],
+        riskLevel: "MEDIUM",
+        automationLevel: "FULL"
+      },
+      {
+        name: "Reverse Mortgage Compliance",
+        description: "Specialized compliance for HECM loans, LTV caps (65-85%), senior eligibility verification",
+        regulators: ["HUD", "CFPB"],
+        riskLevel: "HIGH",
+        automationLevel: "PARTIAL"
+      },
+      {
+        name: "Cross-Border Mortgage Audit",
+        description: "Lease-hold and fideicomiso (Mexico trust) compliance for international borrowers",
+        regulators: ["FinCEN", "State Regulators"],
+        riskLevel: "HIGH",
+        automationLevel: "PARTIAL"
+      },
+      {
+        name: "Mortgage Insurance Compliance",
+        description: "PMI/MIP disclosure accuracy and timing verification",
+        regulators: ["CFPB", "HUD"],
+        riskLevel: "MEDIUM",
+        automationLevel: "FULL"
+      },
+      {
+        name: "Mortgage Servicing Rule Audit",
+        description: "Reg Z & X compliance - foreclosure timeline, error resolution response times",
+        regulators: ["CFPB"],
+        riskLevel: "HIGH",
+        automationLevel: "FULL"
+      },
+      {
+        name: "Loan Document Audit Engine",
+        description: "Auto-scans 1003, notes, deeds, LE/CD for missing signatures and incorrect disclosures",
+        regulators: ["Internal Compliance"],
+        riskLevel: "MEDIUM",
+        automationLevel: "FULL"
+      }
+    ]
+  },
+  "Escrow & Title Compliance": {
+    icon: "🏛️",
+    color: "#4a96ff",
+    services: [
+      {
+        name: "Escrow Trust Account Audit",
+        description: "Daily reconciliation verification, no commingling, Good Funds Act adherence",
+        regulators: ["State Escrow Licensing", "FinCEN"],
+        riskLevel: "HIGH",
+        automationLevel: "FULL"
+      },
+      {
+        name: "Wire Fraud Prevention Checks",
+        description: "Verifies bank account/routing numbers against certified escrow instructions",
+        regulators: ["FBI/IC3", "FinCEN"],
+        riskLevel: "CRITICAL",
+        automationLevel: "FULL"
+      },
+      {
+        name: "Settlement Statement Audit",
+        description: "HUD-1/CD vs escrow ledger reconciliation and fee validation",
+        regulators: ["CFPB", "State Escrow Boards"],
+        riskLevel: "MEDIUM",
+        automationLevel: "FULL"
+      },
+      {
+        name: "Good Funds Act Compliance",
+        description: "Ensures only verified wired funds disbursed per state-specific requirements",
+        regulators: ["State Banking Regulators"],
+        riskLevel: "HIGH",
+        automationLevel: "FULL"
+      },
+      {
+        name: "Escrow Agent License Verification",
+        description: "Confirms agents hold valid state escrow licenses with expiration monitoring",
+        regulators: ["State Escrow Licensing"],
+        riskLevel: "MEDIUM",
+        automationLevel: "FULL"
+      },
+      {
+        name: "RESPA Tolerances Audit",
+        description: "Checks allowable fee variances (0%, 10%, unlimited categories)",
+        regulators: ["CFPB"],
+        riskLevel: "MEDIUM",
+        automationLevel: "FULL"
+      },
+      {
+        name: "1099-S Filing Audit",
+        description: "Ensures escrow reports real estate transactions to IRS correctly",
+        regulators: ["IRS"],
+        riskLevel: "HIGH",
+        automationLevel: "FULL"
+      },
+      {
+        name: "Title Chain of Ownership Verification",
+        description: "Automated deed transfer, lien, and encumbrance validation",
+        regulators: ["County Recorders", "Title Underwriters"],
+        riskLevel: "HIGH",
+        automationLevel: "FULL"
+      },
+      {
+        name: "Title Insurance Policy Audit",
+        description: "ALTA coverage verification, endorsement validation, premium remittance tracking",
+        regulators: ["State Insurance Departments"],
+        riskLevel: "MEDIUM",
+        automationLevel: "FULL"
+      },
+      {
+        name: "Cybersecurity & Email Audit",
+        description: "Validates secure email, MFA for wire instructions, penetration testing",
+        regulators: ["FTC", "State Privacy Agencies"],
+        riskLevel: "CRITICAL",
+        automationLevel: "PARTIAL"
+      }
+    ]
+  },
+  "Legal & CPA Compliance": {
+    icon: "⚖️",
+    color: "#8b5cf6",
+    services: [
+      {
+        name: "Contract Compliance Audit",
+        description: "Compares contract clauses against statutory and regulatory requirements",
+        regulators: ["State Bar Associations"],
+        riskLevel: "MEDIUM",
+        automationLevel: "PARTIAL"
+      },
+      {
+        name: "Attorney Trust Account Audit (IOLTA)",
+        description: "Validates compliance with state bar rules for client fund handling",
+        regulators: ["State Bar Associations"],
+        riskLevel: "HIGH",
+        automationLevel: "FULL"
+      },
+      {
+        name: "CPA GAAP/IFRS Compliance",
+        description: "Automated financial statement ingestion, flags accounting standard variances",
+        regulators: ["State Boards of Accountancy", "SEC"],
+        riskLevel: "HIGH",
+        automationLevel: "FULL"
+      },
+      {
+        name: "Tax Compliance Audit",
+        description: "Verifies IRS/state tax filings, detects missed deductions and credits",
+        regulators: ["IRS", "State Tax Boards"],
+        riskLevel: "HIGH",
+        automationLevel: "FULL"
+      },
+      {
+        name: "Anti-Money Laundering (AML) Checks",
+        description: "Transaction monitoring against OFAC/FinCEN watchlists and suspicious patterns",
+        regulators: ["FinCEN", "OFAC"],
+        riskLevel: "CRITICAL",
+        automationLevel: "FULL"
+      },
+      {
+        name: "Know Your Customer (KYC) Audits",
+        description: "Required identity and document verification for lenders, escrow, and title",
+        regulators: ["FinCEN", "Federal Banking Regulators"],
+        riskLevel: "HIGH",
+        automationLevel: "FULL"
+      },
+      {
+        name: "Privacy Law Compliance Engine",
+        description: "CCPA, CPRA, GLBA, GDPR, PDPA, PIPEDA multi-jurisdiction validation",
+        regulators: ["FTC", "State AGs", "EU Regulators", "International Bodies"],
+        riskLevel: "HIGH",
+        automationLevel: "FULL"
+      },
+      {
+        name: "Insurance Coverage Audit",
+        description: "E&O, title underwriter, cyber liability policy verification",
+        regulators: ["State Insurance Departments"],
+        riskLevel: "MEDIUM",
+        automationLevel: "FULL"
+      },
+      {
+        name: "Legislative Proposal Generator",
+        description: "Drafts regulatory proposals in AB/SB format for county and state submission",
+        regulators: ["State Legislatures"],
+        riskLevel: "LOW",
+        automationLevel: "PARTIAL"
+      }
+    ]
+  },
+  "Consumer Protection & Fair Lending": {
+    icon: "👥",
+    color: "#ff6b35",
+    services: [
+      {
+        name: "UDAAP Compliance Audit",
+        description: "Detects Unfair, Deceptive, or Abusive Acts or Practices in lending",
+        regulators: ["CFPB"],
+        riskLevel: "CRITICAL",
+        automationLevel: "FULL"
+      },
+      {
+        name: "Consumer Complaint Audit",
+        description: "Pulls CFPB complaint database, compares with internal complaint logs",
+        regulators: ["CFPB"],
+        riskLevel: "MEDIUM",
+        automationLevel: "FULL"
+      },
+      {
+        name: "Disclosure Timing Compliance",
+        description: "Validates LE/CD delivery within mandated 3/7 day windows",
+        regulators: ["CFPB"],
+        riskLevel: "HIGH",
+        automationLevel: "FULL"
+      },
+      {
+        name: "Notary & Recording Compliance",
+        description: "State notarization law validation and eRecording acceptance verification",
+        regulators: ["County Recorders", "State Notary Boards"],
+        riskLevel: "MEDIUM",
+        automationLevel: "FULL"
+      },
+      {
+        name: "Foreclosure Compliance Audit",
+        description: "State-by-state pre-foreclosure notice requirement verification",
+        regulators: ["State AGs", "CFPB"],
+        riskLevel: "HIGH",
+        automationLevel: "FULL"
+      },
+      {
+        name: "Fair Housing Act Audit",
+        description: "Ensures no discriminatory advertising, lending, or servicing practices",
+        regulators: ["HUD", "State Fair Housing Agencies"],
+        riskLevel: "CRITICAL",
+        automationLevel: "FULL"
+      }
+    ]
+  },
+  "Fraud Detection & Risk": {
+    icon: "🔍",
+    color: "#ef4444",
+    services: [
+      {
+        name: "Escrow Fraud Pattern Recognition",
+        description: "AI detection of abnormal wiring patterns, suspicious parties, duplicate names",
+        regulators: ["FinCEN", "FBI/IC3"],
+        riskLevel: "CRITICAL",
+        automationLevel: "FULL"
+      },
+      {
+        name: "Cross-Border Fraud Checks",
+        description: "Detects fake fideicomiso/trust deeds in Mexico-US transactions",
+        regulators: ["FinCEN", "International Law Enforcement"],
+        riskLevel: "HIGH",
+        automationLevel: "PARTIAL"
+      },
+      {
+        name: "Identity Fraud Verification",
+        description: "Driver's license/passport verification against DMV and global databases",
+        regulators: ["FBI", "State Law Enforcement"],
+        riskLevel: "CRITICAL",
+        automationLevel: "FULL"
+      },
+      {
+        name: "Shell Company Risk Audit",
+        description: "Flags borrower/seller entities tied to blacklisted regions or high-risk countries",
+        regulators: ["OFAC", "FinCEN"],
+        riskLevel: "HIGH",
+        automationLevel: "FULL"
+      }
+    ]
+  },
+  "Privacy & Cybersecurity": {
+    icon: "🔒",
+    color: "#10b981",
+    services: [
+      {
+        name: "GLBA Privacy Compliance",
+        description: "Gramm-Leach-Bliley Act safeguards for financial institution data",
+        regulators: ["FTC", "Federal Banking Regulators"],
+        riskLevel: "HIGH",
+        automationLevel: "FULL"
+      },
+      {
+        name: "CCPA/CPRA Data Rights Audit",
+        description: "California Consumer Privacy Act compliance and data rights validation",
+        regulators: ["California AG", "California Privacy Protection Agency"],
+        riskLevel: "HIGH",
+        automationLevel: "FULL"
+      },
+      {
+        name: "GDPR/PDPA/PIPEDA Global Compliance",
+        description: "International privacy framework compliance for global data flows",
+        regulators: ["EU Data Protection Authorities", "International Regulators"],
+        riskLevel: "HIGH",
+        automationLevel: "FULL"
+      },
+      {
+        name: "Cybersecurity Audit",
+        description: "MFA enforcement, email security, escrow data protection, penetration testing",
+        regulators: ["FTC", "State Cybersecurity Agencies"],
+        riskLevel: "CRITICAL",
+        automationLevel: "PARTIAL"
+      }
+    ]
+  }
+};
+
+// Regulatory Agency Contact Database
+const REGULATORY_AGENCIES = {
+  "CFPB": {
+    name: "Consumer Financial Protection Bureau",
+    jurisdiction: "Federal",
+    filingMethods: ["XML Export", "CSV Upload", "Online Portal"],
+    automatedFiling: true,
+    website: "consumerfinance.gov"
+  },
+  "HUD": {
+    name: "Department of Housing and Urban Development",
+    jurisdiction: "Federal",
+    filingMethods: ["Online Portal", "PDF Submission"],
+    automatedFiling: true,
+    website: "hud.gov"
+  },
+  "FinCEN": {
+    name: "Financial Crimes Enforcement Network",
+    jurisdiction: "Federal",
+    filingMethods: ["BSA E-Filing System", "SAR Filing"],
+    automatedFiling: true,
+    website: "fincen.gov"
+  },
+  "IRS": {
+    name: "Internal Revenue Service",
+    jurisdiction: "Federal",
+    filingMethods: ["FIRE System", "1099-S Electronic Filing"],
+    automatedFiling: true,
+    website: "irs.gov"
+  },
+  "FBI/IC3": {
+    name: "FBI Internet Crime Complaint Center",
+    jurisdiction: "Federal",
+    filingMethods: ["IC3 Online Portal"],
+    automatedFiling: false,
+    website: "ic3.gov"
+  },
+  "State AGs": {
+    name: "State Attorneys General",
+    jurisdiction: "State",
+    filingMethods: ["Email", "PDF Portal", "State-Specific Systems"],
+    automatedFiling: "PARTIAL",
+    website: "Varies by State"
+  }
+};
+
+function ComplianceAuditingModule() {
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedService, setSelectedService] = useState(null);
+  const [auditStatus, setAuditStatus] = useState(null);
+
+  const runAudit = (service) => {
+    setSelectedService(service);
+    setAuditStatus('RUNNING');
+    
+    // Simulate audit process
+    setTimeout(() => {
+      const risk = Math.random();
+      if (risk > 0.7) {
+        setAuditStatus('FLAGGED');
+      } else {
+        setAuditStatus('PASSED');
+      }
+    }, 2000);
+  };
+
+  const notifyRegulators = (regulators) => {
+    alert(`Notification sent to:\n${regulators.join('\n')}\n\nFiling format: XML/CSV\nStatus: Filed Successfully`);
+  };
+
+  return (
+    <div className="compliance-module">
+      <div className="compliance-header">
+        <Shield size={48} color="#00ff88" />
+        <div>
+          <h1>AuditDNA Compliance & Auditing Services</h1>
+          <p>Professional-Grade Regulatory Compliance & Audit Framework</p>
+        </div>
+      </div>
+
+      <div className="compliance-stats">
+        <div className="stat-box">
+          <CheckCircle size={32} color="#00ff88" />
+          <div>
+            <h3>{Object.values(COMPLIANCE_SERVICES).reduce((acc, cat) => acc + cat.services.length, 0)}</h3>
+            <p>Total Audits</p>
+          </div>
+        </div>
+        <div className="stat-box">
+          <AlertTriangle size={32} color="#ff6b35" />
+          <div>
+            <h3>{Object.keys(REGULATORY_AGENCIES).length}</h3>
+            <p>Regulatory Agencies</p>
+          </div>
+        </div>
+        <div className="stat-box">
+          <Database size={32} color="#4a96ff" />
+          <div>
+            <h3>6</h3>
+            <p>Compliance Categories</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="categories-grid">
+        {Object.entries(COMPLIANCE_SERVICES).map(([category, data]) => (
+          <div
+            key={category}
+            className={`category-card ${selectedCategory === category ? 'active' : ''}`}
+            onClick={() => setSelectedCategory(category)}
+          >
+            <div className="category-icon" style={{ fontSize: '3rem' }}>{data.icon}</div>
+            <h3>{category}</h3>
+            <p>{data.services.length} Services</p>
+            <div className="category-color" style={{ background: data.color }}></div>
+          </div>
+        ))}
+      </div>
+
+      {selectedCategory && (
+        <div className="services-detail">
+          <h2>{selectedCategory}</h2>
+          <div className="services-list">
+            {COMPLIANCE_SERVICES[selectedCategory].services.map((service, idx) => (
+              <div key={idx} className="service-card">
+                <div className="service-header">
+                  <h4>{service.name}</h4>
+                  <span className={`risk-badge ${service.riskLevel.toLowerCase()}`}>
+                    {service.riskLevel}
+                  </span>
+                </div>
+                <p>{service.description}</p>
+                <div className="service-meta">
+                  <div className="regulators">
+                    <Scale size={16} />
+                    <span>{service.regulators.join(', ')}</span>
+                  </div>
+                  <div className="automation">
+                    <Eye size={16} />
+                    <span>Automation: {service.automationLevel}</span>
+                  </div>
+                </div>
+                <div className="service-actions">
+                  <button className="btn-run" onClick={() => runAudit(service)}>
+                    Run Audit
+                  </button>
+                  <button className="btn-notify" onClick={() => notifyRegulators(service.regulators)}>
+                    <Send size={16} />
+                    Notify Regulators
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {selectedService && auditStatus && (
+        <div className="audit-modal">
+          <div className="modal-content">
+            <h3>Audit Results: {selectedService.name}</h3>
+            {auditStatus === 'RUNNING' && (
+              <div className="audit-running">
+                <div className="spinner"></div>
+                <p>Running compliance audit...</p>
+              </div>
+            )}
+            {auditStatus === 'PASSED' && (
+              <div className="audit-passed">
+                <CheckCircle size={64} color="#00ff88" />
+                <h4>Audit Passed</h4>
+                <p>No compliance issues detected</p>
+              </div>
+            )}
+            {auditStatus === 'FLAGGED' && (
+              <div className="audit-flagged">
+                <AlertTriangle size={64} color="#ff6b35" />
+                <h4>Compliance Issue Detected</h4>
+                <p>High-risk violation found. Regulator notification required.</p>
+                <button className="btn-notify" onClick={() => notifyRegulators(selectedService.regulators)}>
+                  <Bell size={16} />
+                  Send to {selectedService.regulators[0]}
+                </button>
+              </div>
+            )}
+            <button className="btn-close" onClick={() => { setSelectedService(null); setAuditStatus(null); }}>
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+
+      <div className="regulators-section">
+        <h2>Regulatory Agency Integration</h2>
+        <div className="regulators-grid">
+          {Object.entries(REGULATORY_AGENCIES).map(([key, agency]) => (
+            <div key={key} className="regulator-card">
+              <Building size={32} color="#4a96ff" />
+              <h4>{agency.name}</h4>
+              <p>{agency.jurisdiction}</p>
+              <div className="filing-methods">
+                {agency.filingMethods.map(method => (
+                  <span key={method} className="method-badge">{method}</span>
+                ))}
+              </div>
+              <div className="automation-status">
+                {agency.automatedFiling === true && <CheckCircle size={16} color="#00ff88" />}
+                <span>{agency.automatedFiling === true ? 'Automated Filing' : 'Manual Filing'}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default ComplianceAuditingModule;

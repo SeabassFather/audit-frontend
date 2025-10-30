@@ -1,0 +1,140 @@
+﻿/* Soil Analysis Module Styles */
+.soil-analysis-module {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #38a169 0%, #2f855a 100%);
+  padding: 20px;
+}
+
+.soil-hero {
+  background: linear-gradient(135deg, #f6e05e 0%, #ecc94b 100%);
+}
+
+.soil-hero h1,
+.soil-hero p {
+  color: #744210;
+}
+
+.soil-hero .stat {
+  border-left-color: #38a169;
+}
+
+.soil-hero .stat-value {
+  color: #38a169;
+}
+
+.health-score-card {
+  background: linear-gradient(135deg, #f6e05e 0%, #ecc94b 100%);
+  border-radius: 16px;
+  padding: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.health-score-card h2 {
+  color: #744210;
+  margin-bottom: 30px;
+}
+
+.score-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.score-circle {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.score-circle svg {
+  transform: rotate(-90deg);
+}
+
+.score-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  font-weight: 700;
+  color: #744210;
+}
+
+.score-label {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #744210;
+}
+
+.input-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.rec-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.priority-badge {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.priority-badge.HIGH {
+  background: #f56565;
+  color: white;
+}
+
+.priority-badge.MEDIUM {
+  background: #ed8936;
+  color: white;
+}
+
+.priority-badge.LOW {
+  background: #48bb78;
+  color: white;
+}
+
+.rec-body {
+  color: #4a5568;
+  line-height: 1.6;
+}
+
+.rec-economics {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 2px dashed #e2e8f0;
+}
+
+.cost {
+  font-weight: 600;
+  color: #f56565;
+}
+
+.roi-arrow {
+  font-size: 1.5rem;
+  color: #667eea;
+}
+
+.roi-value {
+  font-weight: 700;
+  color: #48bb78;
+}
+
+@media (max-width: 768px) {
+  .input-row {
+    grid-template-columns: 1fr;
+  }
+}

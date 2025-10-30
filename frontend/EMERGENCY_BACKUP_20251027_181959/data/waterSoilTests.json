@@ -1,0 +1,41 @@
+{
+  "sample1": {
+    "water": {
+      "pH": 7.8,
+      "EC": 2.3,
+      "Sodium": 50,
+      "Chloride": 120,
+      "EColi": 5,
+      "TDS": 1100
+    },
+    "soil": {
+      "pH": 6.2,
+      "OrganicMatter": 3.8,
+      "N": 25,
+      "P": 12,
+      "K": 40,
+      "Lead": 0.02
+    }
+  },
+  "sample2": {
+    "water": {
+      "pH": 6.5,
+      "EC": 0.9,
+      "Sodium": 20,
+      "Chloride": 30,
+      "EColi": 0,
+      "TDS": 400
+    },
+    "soil": {
+      "pH": 5.5,
+      "OrganicMatter": 2.2,
+      "N": 15,
+      "P": 8,
+      "K": 18,
+      "Lead": 0.005
+    }
+  }
+}
+
+
+

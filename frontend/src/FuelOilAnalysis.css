@@ -1,0 +1,174 @@
+﻿@import './colors.css';
+
+.fuel-oil-module {
+  min-height: 100vh;
+  background: var(--gray-900);
+}
+
+.fuel-hero {
+  background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+}
+
+.helper-text {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--gray-400);
+  margin-top: 5px;
+}
+
+.helper-text.danger {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+.quality-badge {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+
+.quality-badge.grade-excellent {
+  background: var(--success);
+  color: white;
+}
+
+.quality-badge.grade-good {
+  background: var(--info);
+  color: white;
+}
+
+.quality-badge.grade-fair {
+  background: var(--warning);
+  color: white;
+}
+
+.quality-badge.grade-poor,
+.quality-badge.grade-critical,
+.quality-badge.grade-below-standard,
+.quality-badge.grade-reject {
+  background: var(--danger);
+  color: white;
+}
+
+.quality-overview {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.parameters-section,
+.compliance-section,
+.actions-section,
+.cost-impact-section {
+  margin-bottom: 30px;
+  padding: 25px;
+  background: var(--gray-900);
+  border-radius: 16px;
+  border: 2px solid var(--gray-700);
+}
+
+.parameters-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.parameter-card {
+  background: var(--gray-800);
+  padding: 20px;
+  border-radius: 12px;
+  border: 2px solid var(--gray-700);
+}
+
+.param-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.param-name {
+  font-weight: 700;
+  color: var(--gray-300);
+  text-transform: capitalize;
+}
+
+.param-status {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.param-status.status-good {
+  background: rgba(16, 185, 129, 0.2);
+  color: var(--success);
+}
+
+.param-status.status-out-of-spec,
+.param-status.status-critical {
+  background: rgba(239, 68, 68, 0.2);
+  color: var(--danger);
+}
+
+.param-value {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--accent-cyan);
+  margin-bottom: 8px;
+}
+
+.param-optimal {
+  font-size: 0.85rem;
+  color: var(--gray-400);
+}
+
+.cost-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.cost-item {
+  text-align: center;
+  padding: 20px;
+  background: var(--gray-800);
+  border-radius: 12px;
+}
+
+.cost-label {
+  font-size: 0.9rem;
+  color: var(--gray-400);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.cost-value {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.cost-value.loss {
+  color: var(--danger);
+}
+
+.cost-value.prevention {
+  color: var(--warning);
+}
+
+.cost-value.savings {
+  color: var(--success);
+}
+
+@media (max-width: 1200px) {
+  .quality-overview {
+    grid-template-columns: 1fr;
+  }
+  
+  .parameters-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

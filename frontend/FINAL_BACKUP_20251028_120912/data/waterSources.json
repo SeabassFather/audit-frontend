@@ -1,0 +1,12 @@
+{
+  "Sanitation": { "EColi": 200, "Nitrate": 25, "pH": 7.1 },
+  "Well": { "Hardness": 350, "Arsenic": 0.02, "Nitrate": 15, "Iron": 0.5 },
+  "Reservoir": { "Turbidity": 12, "Salinity": 1.8, "pH": 7.4 },
+  "City": { "Chlorine": 2.5, "Fluoride": 0.7, "Lead": 0.01 },
+  "Ocean": { "TDS": 35000, "Chloride": 19000, "Boron": 5.5, "pH": 8.1 },
+  "Rain": { "pH": 5.2, "Sediment": 3, "EColi": 2 },
+  "Residual": { "EColi": 150, "BOD": 220, "COD": 500, "Turbidity": 25, "Chlorine": 0.1, "Lead": 0.04, "pH": 6.1 }
+}
+
+
+

@@ -1,0 +1,2 @@
+﻿import React from "react";
+export default function USDA(){ return <h2> USDA Pricing</h2>; }

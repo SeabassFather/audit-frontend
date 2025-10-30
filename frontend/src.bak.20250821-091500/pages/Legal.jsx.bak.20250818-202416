@@ -1,0 +1,10 @@
+import React from "react";
+
+export default function Legal() {
+  return (
+    <div style={{ padding: "20px" }}>
+      <h1>📜 Legal & Disclosures</h1>
+      <p>Service terms, compliance, and disclosures go here...</p>
+    </div>
+  );
+}

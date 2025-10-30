@@ -1,0 +1,44 @@
+body {
+  background: #f4f8fa;
+  font-family: 'Roboto', 'Arial', sans-serif;
+}
+.ag-header {
+  background: linear-gradient(90deg, #4fc3f7 40%, #aee571 100%);
+  color: #1769aa;
+  padding: 2rem;
+  border-radius: 1rem 1rem 0 0;
+  box-shadow: 0 6px 18px #1769aa33;
+  font-weight: 800;
+  text-align: center;
+}
+.ag-section {
+  background: #fff;
+  border: 2px solid #aee571;
+  border-radius: 0 0 1rem 1rem;
+  margin: 2rem auto;
+  max-width: 1100px;
+  box-shadow: 0 2px 12px #8d674322;
+  padding: 2rem;
+}
+.ag-btn {
+  background: #388e3c;
+  color: #fff;
+  border-radius: 7px;
+  padding: 0.7em 2em;
+  font-weight: 700;
+  border: none;
+  margin-bottom: 1em;
+  box-shadow: 0 3px 8px #388e3c22;
+}
+.ag-btn-print {
+  background: #1769aa;
+}
+.ag-table th, .ag-table td {
+  border: 2px solid #aee571;
+  padding: 0.8em;
+}
+.ag-table th {
+  background: #e0f2f1;
+  color: #1769aa;
+  font-weight: 700;
+}

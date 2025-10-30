@@ -1,0 +1,508 @@
+﻿import React from 'react';
+
+function TestingServicesHub() {
+  return (
+    <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+      <h1 style={{ fontSize: '56px', fontWeight: 'bold', color: '#f97316', marginBottom: '40px', textAlign: 'center' }}>
+        Testing Services Hub
+      </h1>
+      <div style={{ background: 'rgba(30,41,59,0.6)', backdropFilter: 'blur(16px)', border: '1px solid rgba(249,115,22,0.3)', borderRadius: '24px', padding: '80px', textAlign: 'center' }}>
+        <div style={{ fontSize: '80px', marginBottom: '30px' }}>🔬</div>
+        <p style={{ fontSize: '32px', color: 'white', marginBottom: '20px', fontWeight: '600' }}>Order Tests & Manage Samples</p>
+        <p style={{ fontSize: '18px', color: '#94a3b8' }}>Browse 165 Tests, Upload Samples, Track Orders</p>
+      </div>
+    </div>
+  );
+}
+
+export default TestingServicesHub;
+        {/* Step 3: Payment & Customer Info */}
+        {currentStep === 3 && (
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px' }}>
+            
+            {/* Customer Information */}
+            <div style={{ 
+              background: '#0f1923', 
+              borderRadius: '24px', 
+              padding: '40px',
+              border: '1px solid rgba(249,115,22,0.3)'
+            }}>
+              <h2 style={{ fontSize: '32px', color: '#f97316', marginBottom: '30px', fontWeight: '700' }}>
+                Customer Information
+              </h2>
+
+              <div style={{ display: 'grid', gap: '20px' }}>
+                <div>
+                  <label style={{ color: '#94a3b8', fontSize: '14px', marginBottom: '8px', display: 'block', fontWeight: '600' }}>
+                    Full Name *
+                  </label>
+                  <input
+                    type="text"
+                    value={customerData.name}
+                    onChange={(e) => setCustomerData(prev => ({ ...prev, name: e.target.value }))}
+                    placeholder="John Doe"
+                    style={{
+                      width: '100%',
+                      padding: '14px 16px',
+                      fontSize: '16px',
+                      background: 'rgba(15,25,35,0.6)',
+                      border: '1px solid rgba(100,116,139,0.3)',
+                      borderRadius: '10px',
+                      color: 'white',
+                      outline: 'none'
+                    }}
+                  />
+                </div>
+
+                <div>
+                  <label style={{ color: '#94a3b8', fontSize: '14px', marginBottom: '8px', display: 'block', fontWeight: '600' }}>
+                    Email Address *
+                  </label>
+                  <input
+                    type="email"
+                    value={customerData.email}
+                    onChange={(e) => setCustomerData(prev => ({ ...prev, email: e.target.value }))}
+                    placeholder="john@company.com"
+                    style={{
+                      width: '100%',
+                      padding: '14px 16px',
+                      fontSize: '16px',
+                      background: 'rgba(15,25,35,0.6)',
+                      border: '1px solid rgba(100,116,139,0.3)',
+                      borderRadius: '10px',
+                      color: 'white',
+                      outline: 'none'
+                    }}
+                  />
+                </div>
+
+                <div>
+                  <label style={{ color: '#94a3b8', fontSize: '14px', marginBottom: '8px', display: 'block', fontWeight: '600' }}>
+                    Phone Number *
+                  </label>
+                  <input
+                    type="tel"
+                    value={customerData.phone}
+                    onChange={(e) => setCustomerData(prev => ({ ...prev, phone: e.target.value }))}
+                    placeholder="(555) 123-4567"
+                    style={{
+                      width: '100%',
+                      padding: '14px 16px',
+                      fontSize: '16px',
+                      background: 'rgba(15,25,35,0.6)',
+                      border: '1px solid rgba(100,116,139,0.3)',
+                      borderRadius: '10px',
+                      color: 'white',
+                      outline: 'none'
+                    }}
+                  />
+                </div>
+
+                <div>
+                  <label style={{ color: '#94a3b8', fontSize: '14px', marginBottom: '8px', display: 'block', fontWeight: '600' }}>
+                    Company Name
+                  </label>
+                  <input
+                    type="text"
+                    value={customerData.company}
+                    onChange={(e) => setCustomerData(prev => ({ ...prev, company: e.target.value }))}
+                    placeholder="Acme Agriculture Inc."
+                    style={{
+                      width: '100%',
+                      padding: '14px 16px',
+                      fontSize: '16px',
+                      background: 'rgba(15,25,35,0.6)',
+                      border: '1px solid rgba(100,116,139,0.3)',
+                      borderRadius: '10px',
+                      color: 'white',
+                      outline: 'none'
+                    }}
+                  />
+                </div>
+
+                <div>
+                  <label style={{ color: '#94a3b8', fontSize: '14px', marginBottom: '8px', display: 'block', fontWeight: '600' }}>
+                    Address *
+                  </label>
+                  <input
+                    type="text"
+                    value={customerData.address}
+                    onChange={(e) => setCustomerData(prev => ({ ...prev, address: e.target.value }))}
+                    placeholder="123 Farm Road"
+                    style={{
+                      width: '100%',
+                      padding: '14px 16px',
+                      fontSize: '16px',
+                      background: 'rgba(15,25,35,0.6)',
+                      border: '1px solid rgba(100,116,139,0.3)',
+                      borderRadius: '10px',
+                      color: 'white',
+                      outline: 'none'
+                    }}
+                  />
+                </div>
+
+                <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr', gap: '12px' }}>
+                  <div>
+                    <label style={{ color: '#94a3b8', fontSize: '14px', marginBottom: '8px', display: 'block', fontWeight: '600' }}>
+                      City *
+                    </label>
+                    <input
+                      type="text"
+                      value={customerData.city}
+                      onChange={(e) => setCustomerData(prev => ({ ...prev, city: e.target.value }))}
+                      placeholder="City"
+                      style={{
+                        width: '100%',
+                        padding: '14px 16px',
+                        fontSize: '16px',
+                        background: 'rgba(15,25,35,0.6)',
+                        border: '1px solid rgba(100,116,139,0.3)',
+                        borderRadius: '10px',
+                        color: 'white',
+                        outline: 'none'
+                      }}
+                    />
+                  </div>
+                  <div>
+                    <label style={{ color: '#94a3b8', fontSize: '14px', marginBottom: '8px', display: 'block', fontWeight: '600' }}>
+                      State *
+                    </label>
+                    <input
+                      type="text"
+                      value={customerData.state}
+                      onChange={(e) => setCustomerData(prev => ({ ...prev, state: e.target.value }))}
+                      placeholder="CA"
+                      style={{
+                        width: '100%',
+                        padding: '14px 16px',
+                        fontSize: '16px',
+                        background: 'rgba(15,25,35,0.6)',
+                        border: '1px solid rgba(100,116,139,0.3)',
+                        borderRadius: '10px',
+                        color: 'white',
+                        outline: 'none'
+                      }}
+                    />
+                  </div>
+                  <div>
+                    <label style={{ color: '#94a3b8', fontSize: '14px', marginBottom: '8px', display: 'block', fontWeight: '600' }}>
+                      ZIP *
+                    </label>
+                    <input
+                      type="text"
+                      value={customerData.zip}
+                      onChange={(e) => setCustomerData(prev => ({ ...prev, zip: e.target.value }))}
+                      placeholder="12345"
+                      style={{
+                        width: '100%',
+                        padding: '14px 16px',
+                        fontSize: '16px',
+                        background: 'rgba(15,25,35,0.6)',
+                        border: '1px solid rgba(100,116,139,0.3)',
+                        borderRadius: '10px',
+                        color: 'white',
+                        outline: 'none'
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Payment & Order Summary */}
+            <div>
+              {/* Order Summary */}
+              <div style={{ 
+                background: '#0f1923', 
+                borderRadius: '24px', 
+                padding: '40px',
+                border: '1px solid rgba(249,115,22,0.3)',
+                marginBottom: '30px'
+              }}>
+                <h2 style={{ fontSize: '32px', color: '#f97316', marginBottom: '30px', fontWeight: '700' }}>
+                  Order Summary
+                </h2>
+
+                <div style={{ marginBottom: '24px' }}>
+                  <div style={{ fontSize: '16px', color: '#94a3b8', marginBottom: '12px', fontWeight: '600' }}>
+                    Selected Tests ({selectedTests.length})
+                  </div>
+                  <div style={{ maxHeight: '200px', overflowY: 'auto', display: 'grid', gap: '8px' }}>
+                    {selectedTests.map(testId => {
+                      const test = allTests.find(t => t.id === testId);
+                      return test ? (
+                        <div key={testId} style={{ 
+                          display: 'flex', 
+                          justifyContent: 'space-between', 
+                          padding: '12px',
+                          background: 'rgba(15,25,35,0.6)',
+                          borderRadius: '8px',
+                          fontSize: '14px',
+                          color: '#cbd5e1'
+                        }}>
+                          <span>{test.name}</span>
+                          <span style={{ fontWeight: '700', color: '#f97316' }}>${test.price}</span>
+                        </div>
+                      ) : null;
+                    })}
+                  </div>
+                </div>
+
+                <div style={{ marginBottom: '24px' }}>
+                  <div style={{ fontSize: '16px', color: '#94a3b8', marginBottom: '12px', fontWeight: '600' }}>
+                    Uploaded Files ({uploadedFiles.length})
+                  </div>
+                  <div style={{ fontSize: '14px', color: '#64748b' }}>
+                    {uploadedFiles.length === 0 ? 'No files uploaded' : uploadedFiles.map(f => f.name).join(', ')}
+                  </div>
+                </div>
+
+                <div style={{ 
+                  borderTop: '2px solid rgba(100,116,139,0.3)', 
+                  paddingTop: '24px',
+                  marginTop: '24px'
+                }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
+                    <span style={{ color: '#94a3b8', fontSize: '16px' }}>Subtotal:</span>
+                    <span style={{ color: 'white', fontSize: '18px', fontWeight: '600' }}>${totalCost}</span>
+                  </div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
+                    <span style={{ color: '#94a3b8', fontSize: '16px' }}>Processing Fee:</span>
+                    <span style={{ color: 'white', fontSize: '18px', fontWeight: '600' }}>$25</span>
+                  </div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', paddingTop: '12px', borderTop: '1px solid rgba(100,116,139,0.3)' }}>
+                    <span style={{ color: '#f97316', fontSize: '20px', fontWeight: '700' }}>Total:</span>
+                    <span style={{ color: '#f97316', fontSize: '32px', fontWeight: '700' }}>${totalCost + 25}</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Payment Method */}
+              <div style={{ 
+                background: '#0f1923', 
+                borderRadius: '24px', 
+                padding: '40px',
+                border: '1px solid rgba(249,115,22,0.3)'
+              }}>
+                <h2 style={{ fontSize: '28px', color: '#f97316', marginBottom: '24px', fontWeight: '700' }}>
+                  Payment Method
+                </h2>
+
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', marginBottom: '30px' }}>
+                  {[
+                    { id: 'card', name: 'Credit Card', icon: '💳' },
+                    { id: 'bank', name: 'Bank Transfer', icon: '🏦' },
+                    { id: 'invoice', name: 'Net 30', icon: '📄' }
+                  ].map(method => (
+                    <button
+                      key={method.id}
+                      onClick={() => setPaymentMethod(method.id)}
+                      style={{
+                        background: paymentMethod === method.id 
+                          ? 'rgba(249,115,22,0.2)' 
+                          : 'rgba(15,25,35,0.6)',
+                        border: `2px solid ${paymentMethod === method.id ? 'rgba(249,115,22,0.6)' : 'rgba(100,116,139,0.3)'}`,
+                        borderRadius: '12px',
+                        padding: '20px',
+                        cursor: 'pointer',
+                        textAlign: 'center',
+                        transition: 'all 0.3s'
+                      }}
+                    >
+                      <div style={{ fontSize: '36px', marginBottom: '8px' }}>{method.icon}</div>
+                      <div style={{ fontSize: '14px', color: 'white', fontWeight: '600' }}>{method.name}</div>
+                    </button>
+                  ))}
+                </div>
+
+                {/* Navigation Buttons */}
+                <div style={{ display: 'flex', gap: '16px' }}>
+                  <button
+                    onClick={() => setCurrentStep(2)}
+                    style={{
+                      background: 'rgba(100,116,139,0.2)',
+                      color: '#94a3b8',
+                      border: '1px solid rgba(100,116,139,0.4)',
+                      borderRadius: '12px',
+                      padding: '18px 40px',
+                      fontSize: '16px',
+                      fontWeight: '700',
+                      cursor: 'pointer',
+                      flex: 1
+                    }}
+                  >
+                    ← Back
+                  </button>
+                  <button
+                    onClick={handleSubmitOrder}
+                    disabled={!customerData.name || !customerData.email || !customerData.phone}
+                    style={{
+                      background: (customerData.name && customerData.email && customerData.phone)
+                        ? 'linear-gradient(135deg, #10b981, #059669)'
+                        : 'rgba(100,116,139,0.2)',
+                      color: 'white',
+                      border: 'none',
+                      borderRadius: '12px',
+                      padding: '18px 40px',
+                      fontSize: '18px',
+                      fontWeight: '700',
+                      cursor: (customerData.name && customerData.email && customerData.phone) ? 'pointer' : 'not-allowed',
+                      boxShadow: (customerData.name && customerData.email && customerData.phone) ? '0 8px 25px rgba(16,185,129,0.4)' : 'none',
+                      flex: 2
+                    }}
+                  >
+                    Submit Order ${totalCost + 25}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Step 4: Order Complete */}
+        {currentStep === 4 && orderSubmitted && (
+          <div style={{ 
+            background: '#0f1923', 
+            borderRadius: '24px', 
+            padding: '80px',
+            border: '1px solid rgba(16,185,129,0.3)',
+            textAlign: 'center'
+          }}>
+            <div style={{ fontSize: '120px', marginBottom: '30px' }}>✅</div>
+            <h2 style={{ fontSize: '48px', color: '#10b981', marginBottom: '20px', fontWeight: '700' }}>
+              Order Submitted Successfully!
+            </h2>
+            <p style={{ fontSize: '20px', color: '#94a3b8', marginBottom: '40px' }}>
+              Your order has been received and is being processed
+            </p>
+
+            {/* Order Details */}
+            <div style={{ 
+              background: 'rgba(16,185,129,0.1)', 
+              border: '2px solid rgba(16,185,129,0.3)', 
+              borderRadius: '20px', 
+              padding: '40px',
+              marginBottom: '40px',
+              maxWidth: '800px',
+              margin: '0 auto 40px'
+            }}>
+              <div style={{ fontSize: '16px', color: '#94a3b8', marginBottom: '12px' }}>Order ID</div>
+              <div style={{ fontSize: '32px', color: '#10b981', fontWeight: '700', marginBottom: '30px', fontFamily: 'monospace' }}>
+                {orderId}
+              </div>
+
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', textAlign: 'left' }}>
+                <div>
+                  <div style={{ fontSize: '14px', color: '#64748b', marginBottom: '8px' }}>Customer</div>
+                  <div style={{ fontSize: '18px', color: 'white', fontWeight: '600' }}>{customerData.name}</div>
+                  <div style={{ fontSize: '14px', color: '#94a3b8' }}>{customerData.email}</div>
+                </div>
+                <div>
+                  <div style={{ fontSize: '14px', color: '#64748b', marginBottom: '8px' }}>Total Amount</div>
+                  <div style={{ fontSize: '32px', color: '#10b981', fontWeight: '700' }}>${totalCost + 25}</div>
+                </div>
+                <div>
+                  <div style={{ fontSize: '14px', color: '#64748b', marginBottom: '8px' }}>Tests Selected</div>
+                  <div style={{ fontSize: '18px', color: 'white', fontWeight: '600' }}>{selectedTests.length} tests</div>
+                </div>
+                <div>
+                  <div style={{ fontSize: '14px', color: '#64748b', marginBottom: '8px' }}>Files Uploaded</div>
+                  <div style={{ fontSize: '18px', color: 'white', fontWeight: '600' }}>{uploadedFiles.length} files</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Actions */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '20px', maxWidth: '1000px', margin: '0 auto 40px' }}>
+              <button style={{
+                background: 'rgba(249,115,22,0.2)',
+                color: '#f97316',
+                border: '1px solid rgba(249,115,22,0.4)',
+                borderRadius: '12px',
+                padding: '24px',
+                fontSize: '16px',
+                fontWeight: '700',
+                cursor: 'pointer',
+                transition: 'all 0.3s'
+              }}>
+                <div style={{ fontSize: '36px', marginBottom: '12px' }}>📱</div>
+                View QR Code
+              </button>
+              <button style={{
+                background: 'rgba(239,68,68,0.2)',
+                color: '#ef4444',
+                border: '1px solid rgba(239,68,68,0.4)',
+                borderRadius: '12px',
+                padding: '24px',
+                fontSize: '16px',
+                fontWeight: '700',
+                cursor: 'pointer',
+                transition: 'all 0.3s'
+              }}>
+                <div style={{ fontSize: '36px', marginBottom: '12px' }}>📄</div>
+                Download PDF
+              </button>
+              <button style={{
+                background: 'rgba(59,130,246,0.2)',
+                color: '#3b82f6',
+                border: '1px solid rgba(59,130,246,0.4)',
+                borderRadius: '12px',
+                padding: '24px',
+                fontSize: '16px',
+                fontWeight: '700',
+                cursor: 'pointer',
+                transition: 'all 0.3s'
+              }}>
+                <div style={{ fontSize: '36px', marginBottom: '12px' }}>📧</div>
+                Email Receipt
+              </button>
+              <button style={{
+                background: 'rgba(168,85,247,0.2)',
+                color: '#a855f7',
+                border: '1px solid rgba(168,85,247,0.4)',
+                borderRadius: '12px',
+                padding: '24px',
+                fontSize: '16px',
+                fontWeight: '700',
+                cursor: 'pointer',
+                transition: 'all 0.3s'
+              }}>
+                <div style={{ fontSize: '36px', marginBottom: '12px' }}>📊</div>
+                Track Order
+              </button>
+            </div>
+
+            {/* Email Confirmation */}
+            <div style={{ 
+              background: 'rgba(56,189,248,0.1)', 
+              border: '1px solid rgba(56,189,248,0.3)', 
+              borderRadius: '16px', 
+              padding: '30px',
+              marginBottom: '30px'
+            }}>
+              <p style={{ color: '#94a3b8', fontSize: '16px', lineHeight: '1.8' }}>
+                📧 <strong style={{ color: '#38bdf8' }}>Confirmation email sent to {customerData.email}</strong><br/>
+                You will receive updates as your samples are processed.<br/>
+                QR code and sample tracking information included in email.
+              </p>
+            </div>
+
+            <button
+              onClick={() => window.location.reload()}
+              style={{
+                background: 'linear-gradient(135deg, #f97316, #ea580c)',
+                color: 'white',
+                border: 'none',
+                borderRadius: '12px',
+                padding: '18px 50px',
+                fontSize: '18px',
+                fontWeight: '700',
+                cursor: 'pointer',
+                boxShadow: '0 8px 25px rgba(249,115,22,0.4)'
+              }}
+            >
+              Submit Another Order
+            </button>
+          </div>
+        )}

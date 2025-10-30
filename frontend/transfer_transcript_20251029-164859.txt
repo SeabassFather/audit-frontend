@@ -1,0 +1,119 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20251029164859
+Username: MFGIINC\Mexausa
+RunAs User: MFGIINC\Mexausa
+Configuration Name: 
+Machine: MFGIINC (Microsoft Windows NT 10.0.26100.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 12196
+PSVersion: 5.1.26100.6725
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.6725
+BuildVersion: 10.0.26100.6725
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend\transfer_transcript_20251029-164859.txt
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> # Prompt for Source folder (where your "supreme" frontend files live)
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> $defaultSuggested = ''
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> Write-Host ""
+
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> Write-Host "STEP 1  Enter the FULL path to the folder that contains the SUPREME frontend files."
+STEP 1  Enter the FULL path to the folder that contains the SUPREME frontend files.
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> Write-Host "Example: C:\Users\You\Desktop\supreme_frontend"
+Example: C:\Users\You\Desktop\supreme_frontend
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> $SourceFolder = Read-Host "Source folder (paste full path here)"
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> if (-not $SourceFolder -or -not (Test-Path $SourceFolder)) {
+    Write-Host ""
+    Write-Host "ERROR: Source folder is missing or invalid. Aborting."
+    Stop-Transcript 2>$null
+    exit 1
+}
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> # Find repo root (ensure we are inside a git repo)
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> try {
+    $repoRoot = (git rev-parse --show-toplevel).Trim()
+} catch {
+    Write-Host ""
+    Write-Host "ERROR: This script must be run from inside a git repository. Aborting."
+    Stop-Transcript 2>$null
+    exit 1
+}
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> Write-Host ""
+
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> Write-Host "REPO_ROOT: $repoRoot"
+REPO_ROOT: C:/AuditDNA/AuditDNA_Supreme_Frontend/frontend
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> # Destination frontend folder inside repo
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> $dest = Join-Path $repoRoot "frontend"
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> # Timestamp and branch names
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> $timestamp = Get-Date -Format "yyyyMMdd-HHmmss"
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> $preSnapshotBranch = "pre-transfer-snapshot-$timestamp"
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> $transferBranch = "transfer-supreme-$timestamp"
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> $backupRoot = Join-Path $repoRoot "transfer_backups"
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> $backup = Join-Path $backupRoot "backup_$timestamp"
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> Write-Host ""
+
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> Write-Host "SUMMARY OF ACTIONS (preview):"
+SUMMARY OF ACTIONS (preview):
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> Write-Host "  Source: $SourceFolder"
+  Source: C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> Write-Host "  Destination (repo frontend): $dest"
+  Destination (repo frontend): C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend\frontend
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> Write-Host "  Backup location: $backup"
+  Backup location: C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend\transfer_backups\backup_20251029-164920
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> Write-Host "  Snapshot branch (safe rollback): $preSnapshotBranch"
+  Snapshot branch (safe rollback): pre-transfer-snapshot-20251029-164920
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> Write-Host "  Transfer branch to be created: $transferBranch"
+  Transfer branch to be created: transfer-supreme-20251029-164920
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> Write-Host ""
+
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> $ok = Read-Host "Type YES to proceed with the above actions (or anything else to cancel)"
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> if ($ok -ne "YES") {
+    Write-Host "Cancelled by user. No changes made."
+    Stop-Transcript 2>$null
+    exit 0
+}
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> # Create backup dir and copy existing frontend to backup (if dest exists)
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> if (Test-Path $dest) {
+    New-Item -ItemType Directory -Path $backup -Force | Out-Null
+    Write-Host "Backing up existing frontend -> $backup (this may take a moment)..."
+    # Use robocopy for robust Windows copying; exclude node_modules and .git
+    $robocopyArgs = @($dest, $backup, "/E", "/COPYALL", "/R:2", "/W:1", "/XD", ".git", "node_modules", "transfer_backups", "/NFL", "/NDL")
+    $rc = Start-Process -FilePath "robocopy" -ArgumentList $robocopyArgs -NoNewWindow -Wait -PassThru
+    if ($rc.ExitCode -le 7) {
+        Write-Host "BACKUP_DONE: $backup (robocopy exit code $($rc.ExitCode))"
+    } else {
+        Write-Host "WARNING: robocopy returned code $($rc.ExitCode). Check $backup for completeness."
+    }
+} else {
+    Write-Host "Destination frontend did not exist. Creating folder: $dest"
+    New-Item -ItemType Directory -Path $dest -Force | Out-Null
+    Write-Host "DEST_CREATED"
+}
+Destination frontend did not exist. Creating folder: C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend\frontend
+DEST_CREATED
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> # Create a safe snapshot branch (local only) for rollback
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> Write-Host "Creating snapshot branch: $preSnapshotBranch"
+Creating snapshot branch: pre-transfer-snapshot-20251029-164920
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> git branch $preSnapshotBranch 2>$null
+
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> if ($LASTEXITCODE -eq 0) { Write-Host "SNAPSHOT_BRANCH_CREATED: $preSnapshotBranch" } else { Write-Host "SNAPSHOT_BRANCH_MAY_EXIST_OR_FAILED" }
+SNAPSHOT_BRANCH_CREATED: pre-transfer-snapshot-20251029-164920
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> # Create and switch to transfer branch
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> Write-Host "Creating and switching to transfer branch: $transferBranch"
+Creating and switching to transfer branch: transfer-supreme-20251029-164920
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> git checkout -b $transferBranch
+Switched to a new branch 'transfer-supreme-20251029-164920'
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> if ($LASTEXITCODE -ne 0) {
+    Write-Host "ERROR: failed to create or checkout branch $transferBranch. Aborting."
+    Stop-Transcript 2>$null
+    exit 1
+}
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> Write-Host "ON_BRANCH: $(git rev-parse --abbrev-ref HEAD)."
+ON_BRANCH: transfer-supreme-20251029-164920.
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> # Copy files from source to destination
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> Write-Host "Copying files from source -> dest (excluding .git and node_modules). This may take a while..."
+Copying files from source -> dest (excluding .git and node_modules). This may take a while...
+PS C:\AuditDNA\AuditDNA_Supreme_Frontend\frontend> $robocopyArgs2 = @($SourceFolder, $dest, "/E", "/COPY:DAT", "/R:2", "/W:1", "/XD", ".git", "node_modules", "transfer_backups", "/NFL", "/NDL")

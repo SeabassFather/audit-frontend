@@ -1,0 +1,8 @@
+[
+  { "id": "tariff", "name": "Tariff Compliance", "link": "/compliance/tariff", "category": "Compliance" },
+  { "id": "gdpr", "name": "GDPR Compliance", "link": "/compliance/gdpr", "category": "Compliance" },
+  { "id": "ccpa", "name": "CCPA Compliance", "link": "/compliance/ccpa", "category": "Compliance" }
+]
+
+
+

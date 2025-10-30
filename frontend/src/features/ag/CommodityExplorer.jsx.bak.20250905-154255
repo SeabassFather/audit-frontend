@@ -1,0 +1,83 @@
+import React, { useEffect, useMemo, useState } from "react";
+import USDACommodityChart from "../../components/charts/USDACommodityChart";
+import { useAppMode } from "../../context/AppModeContext";
+import { api } from "../../utils/api";
+
+const COMMODITIES = ["Papaya","Orange","Lemon","Avocado","Tomato","Strawberry","Blueberry","Mango","Grape","Apple","Banana"];
+
+function genDemoSeries(name){
+  // 104 weeks fake data with seasonality + noise + 5y avg
+  const out = [];
+  const base = Math.max(5, 25 - (name.length % 7));
+  for(let i=0;i<104;i++){
+    const season = 4*Math.sin((i/52)*Math.PI*2) + 2*Math.cos((i/26)*Math.PI*2);
+    const noise = (Math.random()-0.5)*1.2;
+    const price = Math.max(0, base + season + noise);
+    const avg5y = base + 0.3*season;
+    out.push({ label:`W${(i%52)+1}`, price:+price.toFixed(2), avg5y:+avg5y.toFixed(2) });
+  }
+  return out;
+}
+
+export default function CommodityExplorer(){
+  const { mode } = useAppMode();
+  const [commodity, setCommodity] = useState("Papaya");
+  const [series, setSeries] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [err, setErr] = useState("");
+
+  useEffect(()=>{
+    let alive = true;
+    async function load(){
+      setLoading(true); setErr("");
+      try{
+        if(mode==="demo"){
+          const s = genDemoSeries(commodity);
+          if(alive) setSeries(s);
+        }else{
+          const data = await api.get(`/ag/commodity?name=${encodeURIComponent(commodity)}&range=2y`);
+          // Expect backend to return [{weekLabel, price, avg5y}]
+          const s = (data || []).map(d=>({ label:String(d.weekLabel||d.label), price:+d.price, avg5y:+(d.avg5y ?? 0)}));
+          if(alive) setSeries(s);
+        }
+      }catch(e){ if(alive){ setErr(String(e.message||e)); } }
+      finally{ if(alive) setLoading(false); }
+    }
+    load();
+    return ()=>{ alive=false; }
+  },[commodity, mode]);
+
+  const stats = useMemo(()=>{
+    if(!series.length) return null;
+    const last = series[series.length-1]?.price ?? 0;
+    const avg  = series.reduce((a,b)=>a+(b.price||0),0)/series.length;
+    return { last:+last.toFixed(2), avg:+avg.toFixed(2) };
+  },[series]);
+
+  return (
+    <div className="max-w-7xl mx-auto px-4 py-6">
+      <h1 className="text-2xl font-bold">USDA Commodity Explorer</h1>
+      <div className="mt-3 flex flex-wrap items-center gap-2">
+        <select value={commodity} onChange={e=>setCommodity(e.target.value)} className="h-10 rounded-xl border px-3 bg-white">
+          {COMMODITIES.map(c=><option key={c} value={c}>{c}</option>)}
+        </select>
+        <span className="text-sm text-gray-600">Data mode: <b>{mode.toUpperCase()}</b></span>
+<<<<<<< HEAD
+        {stats && <span className="text-sm px-3 py-1 rounded-xl border bg-white">Last ${stats.last} • Avg ${stats.avg}</span>}
+      </div>
+
+      <div className="mt-4">{loading? <div className="text-sm text-gray-500">Loading…</div> : <USDACommodityChart data={series} />}</div>
+=======
+        {stats && <span className="text-sm px-3 py-1 rounded-xl border bg-white">Last ${stats.last} â€¢ Avg ${stats.avg}</span>}
+      </div>
+
+      <div className="mt-4">{loading? <div className="text-sm text-gray-500">Loadingâ€¦</div> : <USDACommodityChart data={series} />}</div>
+>>>>>>> my/push-branch
+      {err && <div className="mt-3 text-sm text-red-600">Error: {err}</div>}
+
+      <p className="text-xs text-gray-500 mt-3">
+        Demo mode shows synthetic weekly series; Live mode expects backend endpoint <code>/ag/commodity?name=&amp;range=</code>.
+      </p>
+    </div>
+  );
+}

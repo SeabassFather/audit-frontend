@@ -1,0 +1,10 @@
+﻿import React from "react";
+
+export default function LoanMatch() {
+  return (
+    <div className="page">
+      <h1> Loan Match</h1>
+      <p>Find tailored loan opportunities to meet your needs.</p>
+    </div>
+  );
+}

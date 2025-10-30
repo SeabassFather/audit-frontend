@@ -1,0 +1,29 @@
+﻿import React from "react";
+
+export default function HomePage() {
+  return (
+    <article className="prose max-w-none">
+      <h2>Service Terms (Summary)</h2>
+      <p>
+        This is a summary of the binding service agreement between the customer and{" "}
+        <strong>AuditDNA a MFG, Inc. dba AuditDNA</strong> (patent pending)...
+      </p>
+
+      <h3>1. Agreement Scope</h3>
+      <p>
+        The customer agrees to use AuditDNA services only for authorized
+        business purposes...
+      </p>
+
+      <h3>2. Compliance</h3>
+      <p>
+        Customer data may be subject to U.S. and international regulations.
+      </p>
+
+      <h3>3. Liability</h3>
+      <p>
+        AuditDNA provides services on an "AS IS" basis, without warranty...
+      </p>
+    </article>
+  );
+}
